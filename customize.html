@@ -23,11 +23,16 @@
       text-align: center;
       padding: 0 20px;
     }
-    <h2 id="greeting"></h2>
 
     header h1 {
       font-size: 2.5rem;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    h2#greeting {
+      text-align: center;
+      color: #007b5f;
+      margin-top: 20px;
     }
 
     main {
@@ -87,98 +92,100 @@
 </head>
 <body>
 
-<header>
-  <h1>Customize Your Trek</h1>
-</header>
+  <header>
+    <h1>Customize Your Trek</h1>
+  </header>
 
-<main>
-  <div id="intro-message">Loading intro...</div>
+  <h2 id="greeting"></h2>
 
-  <label for="accommodation">Accommodation Type:</label>
-  <select id="accommodation">
-    <option value="hut-to-hut">Hut-to-Hut</option>
-    <option value="camping">Camping</option>
-    <option value="luxury-lodges">Luxury Lodges</option>
-  </select>
+  <main>
+    <div id="intro-message">Loading intro...</div>
 
-  <label for="difficulty">Difficulty:</label>
-  <select id="difficulty">
-    <option value="easy">Easy</option>
-    <option value="moderate">Moderate</option>
-    <option value="challenging">Challenging</option>
-  </select>
+    <label for="accommodation">Accommodation Type:</label>
+    <select id="accommodation">
+      <option value="hut-to-hut">Hut-to-Hut</option>
+      <option value="camping">Camping</option>
+      <option value="luxury-lodges">Luxury Lodges</option>
+    </select>
 
-  <label for="altitude">Altitude:</label>
-  <select id="altitude">
-    <option value="low">Below 2000m</option>
-    <option value="mid">2000–3000m</option>
-    <option value="high">Above 3000m</option>
-  </select>
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="moderate">Moderate</option>
+      <option value="challenging">Challenging</option>
+    </select>
 
-  <label for="technical">Technical Requirements:</label>
-  <select id="technical">
-    <option value="none">None</option>
-    <option value="moderate">Some scrambling</option>
-    <option value="advanced">Advanced mountaineering</option>
-  </select>
+    <label for="altitude">Altitude:</label>
+    <select id="altitude">
+      <option value="low">Below 2000m</option>
+      <option value="mid">2000–3000m</option>
+      <option value="high">Above 3000m</option>
+    </select>
 
-  <label for="comments">Additional Comments:</label>
-  <textarea id="comments" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
+    <label for="technical">Technical Requirements:</label>
+    <select id="technical">
+      <option value="none">None</option>
+      <option value="moderate">Some scrambling</option>
+      <option value="advanced">Advanced mountaineering</option>
+    </select>
 
- <button type="submit">Generate Itinerary</button>
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
 
-  <div id="itinerary-output"></div>
-</main>
+    <button type="button" onclick="generateItinerary()">Generate Itinerary</button>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const location = params.get('location') || "the Alps";
+    <div id="itinerary-output"></div>
+  </main>
 
-  async function fetchIntro() {
-    try {
-      const res = await fetch('https://trekai-api.onrender.com/api/start', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ location })
-      });
-      const data = await res.json();
-      document.getElementById('intro-message').innerText = data.reply || "Welcome to your custom trek planner!";
-    } catch (err) {
-      document.getElementById('intro-message').innerText = "We couldn't load the intro message.";
-      console.error(err);
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const location = params.get('location') || "the Alps";
+
+    async function fetchIntro() {
+      try {
+        const res = await fetch('https://trekai-api.onrender.com/api/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ location })
+        });
+        const data = await res.json();
+        document.getElementById('intro-message').innerText = data.reply || "Welcome to your custom trek planner!";
+        document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
+      } catch (err) {
+        document.getElementById('intro-message').innerText = "We couldn't load the intro message.";
+        console.error(err);
+      }
     }
-  }
 
-  async function generateItinerary() {
-    const filters = {
-      accommodation: document.getElementById('accommodation').value,
-      difficulty: document.getElementById('difficulty').value,
-      altitude: document.getElementById('altitude').value,
-      technical: document.getElementById('technical').value
-    };
+    async function generateItinerary() {
+      const filters = {
+        accommodation: document.getElementById('accommodation').value,
+        difficulty: document.getElementById('difficulty').value,
+        altitude: document.getElementById('altitude').value,
+        technical: document.getElementById('technical').value
+      };
 
-    const comments = document.getElementById('comments').value;
-    const outputDiv = document.getElementById('itinerary-output');
-    outputDiv.innerText = '⏳ Generating itinerary...';
+      const comments = document.getElementById('comments').value;
+      const outputDiv = document.getElementById('itinerary-output');
+      outputDiv.innerText = '⏳ Generating itinerary...';
 
-    try {
-      const res = await fetch('https://trekai-api.onrender.com/api/finalize', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ location, filters, comments })
-      });
+      try {
+        const res = await fetch('https://trekai-api.onrender.com/api/finalize', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ location, filters, comments })
+        });
 
-      const data = await res.json();
-      outputDiv.innerText = data.reply || 'No itinerary received.';
-    } catch (err) {
-      outputDiv.innerText = '❌ Failed to generate itinerary.';
-      console.error(err);
+        const data = await res.json();
+        outputDiv.innerText = data.reply || 'No itinerary received.';
+      } catch (err) {
+        outputDiv.innerText = '❌ Failed to generate itinerary.';
+        console.error(err);
+      }
     }
-  }
 
-  // Fetch intro on page load
-  fetchIntro();
-</script>
-<script src="customize.js"></script>
+    // Load the intro message on page load
+    fetchIntro();
+  </script>
 </body>
 </html>
