@@ -4,54 +4,53 @@
   <meta charset="UTF-8">
   <title>Customize Your Trek</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
+      margin: 0;
     }
 
     header {
-      background-image: url('Images/trekkingheader.jpg');
+      background-image: url('images/trek-header.jpg');
       background-size: cover;
       background-position: center;
-      height: 300px;
+      height: 250px;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 0 20px;
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     }
 
     main {
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
       background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      margin-top: 0;
-      color: #333;
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
     }
 
-    textarea {
+    select, textarea, input[type="text"] {
       width: 100%;
-      height: 100px;
-      margin-top: 10px;
       padding: 10px;
+      font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 6px;
-      resize: vertical;
-      font-size: 1rem;
+      margin-bottom: 15px;
     }
 
     button {
@@ -62,57 +61,123 @@
       border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
-      margin-top: 15px;
     }
 
     button:hover {
       background-color: #005e47;
     }
 
+    #intro-message {
+      background: #eef8f3;
+      padding: 12px 16px;
+      border-left: 4px solid #007b5f;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
     #itinerary-output {
-      margin-top: 30px;
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 6px;
       white-space: pre-wrap;
-      font-family: monospace;
+      margin-top: 25px;
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Customize Your Adventure</h1>
-  </header>
 
-  <main>
-    <h2>Tell us more to tailor your trek:</h2>
-    <label for="comments">Add any additional preferences or comments:</label>
-    <textarea id="comments" placeholder="e.g. I’d prefer short daily hikes and scenic viewpoints..."></textarea>
-    <button onclick="submitPreferences()">Generate My Itinerary</button>
+<header>
+  <h1>Customize Your Trek</h1>
+</header>
 
-    <div id="itinerary-output"></div>
-  </main>
+<main>
+  <div id="intro-message">Loading intro...</div>
 
-  <script>
-    async function submitPreferences() {
-      const params = new URLSearchParams(window.location.search);
-      const filters = {
-        accommodation: params.get('accommodation'),
-        technical: params.get('technical'),
-        altitude: params.get('altitude'),
-        difficulty: params.get('difficulty')
-      };
+  <label for="accommodation">Accommodation Type:</label>
+  <select id="accommodation">
+    <option value="hut-to-hut">Hut-to-Hut</option>
+    <option value="camping">Camping</option>
+    <option value="luxury-lodges">Luxury Lodges</option>
+  </select>
 
-      const location = params.get('location') || "the selected region";
-      const comments = document.getElementById('comments').value;
+  <label for="difficulty">Difficulty:</label>
+  <select id="difficulty">
+    <option value="easy">Easy</option>
+    <option value="moderate">Moderate</option>
+    <option value="challenging">Challenging</option>
+  </select>
 
-      const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
+  <label for="altitude">Altitude:</label>
+  <select id="altitude">
+    <option value="low">Below 2000m</option>
+    <option value="mid">2000–3000m</option>
+    <option value="high">Above 3000m</option>
+  </select>
+
+  <label for="technical">Technical Requirements:</label>
+  <select id="technical">
+    <option value="none">None</option>
+    <option value="moderate">Some scrambling</option>
+    <option value="advanced">Advanced mountaineering</option>
+  </select>
+
+  <label for="comments">Additional Comments:</label>
+  <textarea id="comments" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
+
+  <button onclick="generateItinerary()">Generate Itinerary</button>
+
+  <div id="itinerary-output"></div>
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const location = params.get('location') || "the Alps";
+
+  async function fetchIntro() {
+    try {
+      const res = await fetch('https://trekai-api.onrender.com/api/start', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ location })
+      });
+      const data = await res.json();
+      document.getElementById('intro-message').innerText = data.reply || "Welcome to your custom trek planner!";
+    } catch (err) {
+      document.getElementById('intro-message').innerText = "We couldn't load the intro message.";
+      console.error(err);
+    }
+  }
+
+  async function generateItinerary() {
+    const filters = {
+      accommodation: document.getElementById('accommodation').value,
+      difficulty: document.getElementById('difficulty').value,
+      altitude: document.getElementById('altitude').value,
+      technical: document.getElementById('technical').value
+    };
+
+    const comments = document.getElementById('comments').value;
+    const outputDiv = document.getElementById('itinerary-output');
+    outputDiv.innerText = '⏳ Generating itinerary...';
+
+    try {
+      const res = await fetch('https://trekai-api.onrender.com/api/finalize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ location, filters, comments })
       });
 
-      const data = await response.json();
-      document.getElementById('itinerary-output').textContent = data.reply || "No itinerary returned.";
+      const data = await res.json();
+      outputDiv.innerText = data.reply || 'No itinerary received.';
+    } catch (err) {
+      outputDiv.innerText = '❌ Failed to generate itinerary.';
+      console.error(err);
     }
-  </script>
+  }
+
+  // Fetch intro on page load
+  fetchIntro();
+</script>
+
 </body>
 </html>
