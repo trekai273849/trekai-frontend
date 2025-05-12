@@ -59,7 +59,7 @@
         comments: formData.get('comments')
       };
 
-      const response = await fetch('https://your-api-url.com/api/generate', {
+      const response = await fetch('https://trekai-api.onrender.com/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
