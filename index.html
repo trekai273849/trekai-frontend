@@ -153,5 +153,15 @@
     }
   });
 </script>
+  <script>
+  document.getElementById('itinerary-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const location = document.getElementById('user-input').value;
+    localStorage.setItem('userLocation', location);
+    window.location.href = 'customize.html'; // make sure this file exists
+  });
+</script>
+</body>
+</html>
 </body>
 </html>
