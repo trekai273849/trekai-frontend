@@ -29,12 +29,6 @@
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     }
 
-    h2#greeting {
-      text-align: center;
-      color: #007b5f;
-      margin-top: 20px;
-    }
-
     main {
       max-width: 700px;
       margin: 30px auto;
@@ -92,15 +86,15 @@
 </head>
 <body>
 
-  <header>
-    <h1>Customize Your Trek</h1>
-  </header>
+<header>
+  <h1>Customize Your Trek</h1>
+</header>
 
+<main>
   <h2 id="greeting"></h2>
+  <div id="intro-message">Loading intro...</div>
 
-  <main>
-    <div id="intro-message">Loading intro...</div>
-
+  <form id="customization-form">
     <label for="accommodation">Accommodation Type:</label>
     <select id="accommodation">
       <option value="hut-to-hut">Hut-to-Hut</option>
@@ -132,60 +126,12 @@
     <label for="comments">Additional Comments:</label>
     <textarea id="comments" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
 
-    <button type="button" onclick="generateItinerary()">Generate Itinerary</button>
+    <button type="submit">Generate Itinerary</button>
+  </form>
 
-    <div id="itinerary-output"></div>
-  </main>
+  <div id="itinerary-output"></div>
+</main>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const location = params.get('location') || "the Alps";
-
-    async function fetchIntro() {
-      try {
-        const res = await fetch('https://trekai-api.onrender.com/api/start', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ location })
-        });
-        const data = await res.json();
-        document.getElementById('intro-message').innerText = data.reply || "Welcome to your custom trek planner!";
-        document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
-      } catch (err) {
-        document.getElementById('intro-message').innerText = "We couldn't load the intro message.";
-        console.error(err);
-      }
-    }
-
-    async function generateItinerary() {
-      const filters = {
-        accommodation: document.getElementById('accommodation').value,
-        difficulty: document.getElementById('difficulty').value,
-        altitude: document.getElementById('altitude').value,
-        technical: document.getElementById('technical').value
-      };
-
-      const comments = document.getElementById('comments').value;
-      const outputDiv = document.getElementById('itinerary-output');
-      outputDiv.innerText = '⏳ Generating itinerary...';
-
-      try {
-        const res = await fetch('https://trekai-api.onrender.com/api/finalize', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ location, filters, comments })
-        });
-
-        const data = await res.json();
-        outputDiv.innerText = data.reply || 'No itinerary received.';
-      } catch (err) {
-        outputDiv.innerText = '❌ Failed to generate itinerary.';
-        console.error(err);
-      }
-    }
-
-    // Load the intro message on page load
-    fetchIntro();
-  </script>
+<script src="customize.js"></script>
 </body>
 </html>
