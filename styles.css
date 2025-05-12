@@ -14,7 +14,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-  background: url('/Users/charleswitherdin-costigan/Desktop/trekkingheader.jpg') center/cover no-repeat;
+  background: url('Images/trekkingheader.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
