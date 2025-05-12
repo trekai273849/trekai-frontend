@@ -75,7 +75,7 @@
       font-style: italic;
     }
 
-    #itinerary-output {
+    #output {
       background: #f0f0f0;
       padding: 15px;
       border-radius: 6px;
@@ -91,45 +91,45 @@
 </header>
 
 <main>
-  <h2 id="greeting"></h2>
+  <h2 id="greeting">Welcome!</h2>
   <div id="intro-message">Loading intro...</div>
 
   <form id="customization-form">
     <label for="accommodation">Accommodation Type:</label>
-    <select id="accommodation">
+    <select name="accommodation" id="accommodation">
       <option value="hut-to-hut">Hut-to-Hut</option>
       <option value="camping">Camping</option>
       <option value="luxury-lodges">Luxury Lodges</option>
     </select>
 
     <label for="difficulty">Difficulty:</label>
-    <select id="difficulty">
+    <select name="difficulty" id="difficulty">
       <option value="easy">Easy</option>
       <option value="moderate">Moderate</option>
       <option value="challenging">Challenging</option>
     </select>
 
     <label for="altitude">Altitude:</label>
-    <select id="altitude">
+    <select name="altitude" id="altitude">
       <option value="low">Below 2000m</option>
       <option value="mid">2000–3000m</option>
       <option value="high">Above 3000m</option>
     </select>
 
     <label for="technical">Technical Requirements:</label>
-    <select id="technical">
+    <select name="technical" id="technical">
       <option value="none">None</option>
       <option value="moderate">Some scrambling</option>
       <option value="advanced">Advanced mountaineering</option>
     </select>
 
     <label for="comments">Additional Comments:</label>
-    <textarea id="comments" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
+    <textarea name="comments" id="comments" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
 
     <button type="submit">Generate Itinerary</button>
   </form>
 
-  <div id="itinerary-output"></div>
+  <div id="output"></div>
 </main>
 
 <script src="customize.js"></script>
