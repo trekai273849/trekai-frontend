@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Trek Planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">TrekAI</div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#signup" class="btn">Sign Up</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>AI-Powered Trekking Itineraries</h1>
+      <p>Generate custom trekking plans tailored to your preferences with AI.</p>
+      <form id="itinerary-form" class="search-form">
+  <input type="text" id="user-input" placeholder="e.g. 5-day trek in the Alps, moderate difficulty">
+  <button type="submit">Generate Itinerary</button>
+</form>
+
+<div id="itinerary-output"></div>
+    </div>
+  </header>
+
+  <section id="features" class="features">
+    <h2>Features</h2>
+    <div class="feature-cards">
+      <a href="#itinerary" class="feature-card">
+        <i class="fas fa-route fa-2x"></i>
+        <span>Personalized Itinerary Generation</span>
+      </a>
+      <a href="#weather" class="feature-card">
+        <i class="fas fa-cloud-sun-rain fa-2x"></i>
+        <span>Weather & Terrain-Aware Planning</span>
+      </a>
+      <a href="#checklists" class="feature-card">
+        <i class="fas fa-map-marked-alt fa-2x"></i>
+        <span>Offline Maps & Packing Checklists</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="destinations" class="destinations">
+  <h2>Popular Destinations</h2>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button data-filter="all">Show All</button>
+    <button data-difficulty="easy">Easy</button>
+    <button data-difficulty="moderate">Moderate</button>
+    <button data-difficulty="challenging">Challenging</button>
+    <button data-altitude="low">Below 2000m</button>
+    <button data-altitude="mid">2000–3000m</button>
+    <button data-altitude="high">Above 3000m</button>
+  </div>
+
+  <!-- Destination Cards -->
+  <div class="cards">
+    <a href="alps.html" class="card"
+       data-difficulty="moderate"
+       data-altitude="mid"
+       data-days="5"
+       data-technical="no"
+       style="background-image: url('images/alps.jpg');">
+      <span>Alps</span>
+    </a>
+
+    <a href="himalayas.html" class="card"
+       data-difficulty="challenging"
+       data-altitude="high"
+       data-days="7"
+       data-technical="yes"
+       style="background-image: url('images/himalayas.jpg');">
+      <span>Himalayas</span>
+    </a>
+
+    <a href="andes.html" class="card"
+       data-difficulty="moderate"
+       data-altitude="high"
+       data-days="4"
+       data-technical="no"
+       style="background-image: url('images/andes.jpg');">
+      <span>Andes</span>
+    </a>
+  </div>
+</section>
+
+  <section id="about" class="about">
+    <h2>About TrekAI</h2>
+    <p>TrekAI uses cutting-edge artificial intelligence to design smart, safe, and stunning treks for adventurers around the globe.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TrekAI. All rights reserved.</p>
+  </footer>
+  <script>
+  const filterButtons = document.querySelectorAll('.filter-buttons button');
+  const cards = document.querySelectorAll('.cards .card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const difficulty = button.getAttribute('data-difficulty');
+      const altitude = button.getAttribute('data-altitude');
+      const filter = button.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const matchDifficulty = difficulty ? card.dataset.difficulty === difficulty : true;
+        const matchAltitude = altitude ? card.dataset.altitude === altitude : true;
+
+        if (filter === 'all' || (matchDifficulty && matchAltitude)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+<script>
+  document.getElementById('itinerary-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const userInput = document.getElementById('user-input').value;
+    const outputDiv = document.getElementById('itinerary-output');
+    outputDiv.innerHTML = '⏳ Generating itinerary...';
+
+    try {
+      const response = await fetch("https://trekai-api.onrender.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: userInput })
+      });
+
+      const data = await response.json();
+
+      if (data.reply) {
+        outputDiv.innerHTML = `<pre>${data.reply}</pre>`;
+      } else {
+        outputDiv.innerHTML = "⚠️ Unexpected response. Try again.";
+        console.error("Unexpected response format:", data);
+      }
+    } catch (error) {
+      outputDiv.innerHTML = "❌ Something went wrong. Check the console.";
+      console.error("Fetch error:", error);
+    }
+  });
+</script>
+</body>
+</html>
