@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Form submission
   document.getElementById('customization-form').addEventListener('submit', async function (e) {
     e.preventDefault();
+    generateItinerary();
+  });
 
+  async function generateItinerary(additionalFeedback = '') {
     const filters = {};
     document.querySelectorAll('.filter-group').forEach(group => {
       const category = group.dataset.category;
@@ -26,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    const comments = document.getElementById('comments').value;
+    const comments = document.getElementById('comments').value + (additionalFeedback ? ' ' + additionalFeedback : '');
     const outputDiv = document.getElementById('itinerary-cards');
     outputDiv.innerHTML = '<p><em>Loading itinerary...</em></p>';
 
@@ -54,13 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
       outputDiv.innerHTML = '<p style="color:red;">❌ Failed to generate itinerary.</p>';
       console.error(error);
     }
-  });
+  }
 
   function renderItineraryCards(responseText) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
     const days = responseText.split(/### Day \d+: /).filter(Boolean);
+    const intro = days.shift(); // first item is the intro
+    const introMessage = document.createElement('div');
+    introMessage.id = 'intro-message';
+    introMessage.innerText = intro.trim();
+    container.appendChild(introMessage);
 
     days.forEach((section, index) => {
       const lines = section.trim().split('\n').filter(l => l.trim());
@@ -70,8 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = lines
         .filter(line => line.includes(':'))
         .map(line => {
-          const [label, ...rest] = line.split(':');
-          const value = rest.join(':').trim().replace(/\*\*/g, '');
+          const cleaned = line.replace(/\*\*/g, '').replace(/^[-–]\s*/, '');
+          const [label, ...rest] = cleaned.split(':');
+          const value = rest.join(':').trim();
           return `<li><strong>${label.trim()}:</strong> ${value}</li>`;
         }).join('');
 
@@ -97,6 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       container.appendChild(accordion);
+    });
+
+    // Add feedback box
+    const feedbackBox = document.createElement('div');
+    feedbackBox.innerHTML = `
+      <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
+      <button id="regenerate-itinerary" style="margin-top: 10px;">Update Itinerary</button>
+    `;
+    container.appendChild(feedbackBox);
+
+    document.getElementById('regenerate-itinerary').addEventListener('click', () => {
+      const feedback = document.getElementById('feedback').value;
+      if (feedback) {
+        generateItinerary(feedback);
+      }
     });
   }
 });
