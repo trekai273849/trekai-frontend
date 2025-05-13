@@ -103,6 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
       container.appendChild(accordion);
+
+    if (tipsContent) {
+      const tipBox = document.createElement('div');
+      tipBox.className = 'day-tips';
+      tipBox.innerHTML = `<strong>Tips:</strong> ${tipsContent}`;
+      container.appendChild(tipBox);
+    }
     });
 
     document.querySelectorAll('.accordion-header').forEach(header => {
