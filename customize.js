@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
 
-  // Filter card activation
   document.querySelectorAll('.filter-group').forEach(group => {
     const cards = group.querySelectorAll('.filter-card');
     cards.forEach(card => {
@@ -62,8 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
-    const days = responseText.split(/### Day \d+: /).filter(Boolean);
-    const intro = days.shift(); // first item is the intro
+    const parts = responseText.split(/### Day \d+: /).filter(Boolean);
+    let days = parts;
+    let tipsBlock = '';
+
+    if (parts.length > 0 && parts[parts.length - 1].includes('Additional Tips')) {
+      tipsBlock = parts.pop();
+    }
+
+    const intro = days.shift(); // remove intro
     const introMessage = document.createElement('div');
     introMessage.id = 'intro-message';
     introMessage.innerText = intro.trim();
@@ -85,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const accordion = document.createElement('div');
       accordion.className = 'accordion-item';
-
       accordion.innerHTML = `
         <button class="accordion-header">
           <span>${shortTitle}</span>
@@ -95,11 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul>${details}</ul>
         </div>
       `;
-
       container.appendChild(accordion);
     });
 
-    // Event binding must happen after DOM elements are inserted
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         header.classList.toggle('open');
@@ -108,7 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Add feedback box
+    if (tipsBlock) {
+      const tipsDiv = document.createElement('div');
+      tipsDiv.className = 'overall-tips';
+      tipsDiv.innerHTML = `<h3>Overall Tips for Your Trek</h3><p>${tipsBlock.replace(/\n/g, '<br>')}</p>`;
+      container.appendChild(tipsDiv);
+    }
+
     const feedbackBox = document.createElement('div');
     feedbackBox.innerHTML = `
       <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
