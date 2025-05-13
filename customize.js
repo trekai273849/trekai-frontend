@@ -61,7 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
-    const parts = responseText.split(/\*\*Day \d+: /).filter(Boolean);
+    const parts = responseText
+      .replace(/\*\*Day \d+: /g, '### Day ')  // normalize bold headers
+      .split(/### Day \d+: /)
+      .filter(Boolean);
     let days = parts;
     let tipsBlock = '';
 
@@ -77,13 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     days.forEach((section, index) => {
       const lines = section.trim().split('\n').filter(l => l.trim());
-      const titleLine = lines.shift().replace(/\*\*/g, '').trim();
-      const shortTitle = `Day ${index + 1}: ${titleLine}`;
+      const titleLine = `Day ${index + 1}: ${lines.shift().trim()}`;
 
       const details = lines
         .filter(line => line.includes(':'))
         .map(line => {
-          const cleaned = line.replace(/\*\*/g, '').replace(/^[-–]\s*/, '');
+          const cleaned = line.replace(/^[-–]\s*/, '');
           const [label, ...rest] = cleaned.split(':');
           const value = rest.join(':').trim();
           return `<li><strong>${label.trim()}:</strong> ${value}</li>`;
@@ -93,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accordion.className = 'accordion-item';
       accordion.innerHTML = `
         <button class="accordion-header">
-          <span>${shortTitle}</span>
+          <span>${titleLine}</span>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-body">
