@@ -206,6 +206,7 @@
 
   <!-- Itinerary Cards -->
   <div id="itinerary-cards"></div>
+  <button type="button" onclick="document.getElementById('itinerary-cards').innerHTML = ''">Clear Itinerary</button>
 </main>
 
 <script>
@@ -240,15 +241,17 @@
     };
 
     try {
-      const res = await fetch('https://trekai-api.onrender.com/api/finalize', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data)
-})
+  document.getElementById('itinerary-cards').innerHTML = '<p><em>Loading itinerary...</em></p>';
 
-      const result = await res.json();
+  const res = await fetch('https://trekai-api.onrender.com/api/finalize', {
+  ...
+});
+
+if (!res.ok) {
+  throw new Error(`Server returned status ${res.status}`);
+}
+
+const result = await res.json();
       renderItinerary(result.reply);
     } catch (err) {
       alert("Something went wrong.");
