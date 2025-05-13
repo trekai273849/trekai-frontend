@@ -4,7 +4,7 @@
 }
 
 .accordion-header {
-  background: rgba(0, 0, 0, 0.05); /* semi-transparent grey */
+  background: none;
   border: none;
   width: 100%;
   padding: 12px;
@@ -15,11 +15,6 @@
   justify-content: space-between;
   cursor: pointer;
   color: #333;
-  transition: background 0.3s ease;
-}
-
-.accordion-header:hover {
-  background: rgba(0, 0, 0, 0.1); /* lighter on hover */
 }
 
 .accordion-icon {
@@ -34,8 +29,8 @@
 .accordion-body {
   max-height: 0;
   overflow: hidden;
-  padding: 0 12px;
   transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 12px;
 }
 
 .accordion-body.open {
@@ -49,12 +44,4 @@
 
 .accordion-body li {
   margin-bottom: 8px;
-}
-
-#intro-message {
-  padding: 20px;
-  background-color: #f3f3f3;
-  border-left: 4px solid #007b5f;
-  font-style: italic;
-  margin-bottom: 20px;
 }
