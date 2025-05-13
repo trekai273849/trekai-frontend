@@ -1,0 +1,23 @@
+.day-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.day-card h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.day-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.day-card li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}

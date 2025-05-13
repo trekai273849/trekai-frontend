@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('customization-form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    // Extract selected filters
     const filters = {};
     document.querySelectorAll('.filter-group').forEach(group => {
       const category = group.dataset.category;
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
           location,
           filters: {
             ...filters,
-            altitude: "2000–3000m" // static value for now
+            altitude: "2000–3000m"
           },
           comments
         })
@@ -64,26 +63,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const days = responseText.split(/### Day \d+: /).filter(Boolean);
 
     days.forEach((section, index) => {
-      const card = document.createElement('div');
-      card.className = 'day-card';
+      const lines = section.trim().split('\n').filter(l => l.trim());
+      const titleLine = lines.shift();
+      const shortTitle = `Day ${index + 1}: ${titleLine}`;
 
-      const lines = section.trim().split('\n').filter(line => line.trim());
-      const title = lines.shift();
-
-      card.innerHTML = `<h2>Day ${index + 1}: ${title}</h2><ul></ul>`;
-      const ul = card.querySelector('ul');
-
-      lines.forEach(line => {
-        if (line.includes(':')) {
+      const details = lines
+        .filter(line => line.includes(':'))
+        .map(line => {
           const [label, ...rest] = line.split(':');
-          const value = rest.join(':').trim();
-          const li = document.createElement('li');
-          li.innerHTML = `<strong>${label.trim()}:</strong> ${value}`;
-          ul.appendChild(li);
-        }
+          const value = rest.join(':').trim().replace(/\*\*/g, '');
+          return `<li><strong>${label.trim()}:</strong> ${value}</li>`;
+        }).join('');
+
+      const accordion = document.createElement('div');
+      accordion.className = 'accordion-item';
+
+      accordion.innerHTML = `
+        <button class="accordion-header">
+          <span>${shortTitle}</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <ul>${details}</ul>
+        </div>
+      `;
+
+      const header = accordion.querySelector('.accordion-header');
+      const body = accordion.querySelector('.accordion-body');
+
+      header.addEventListener('click', () => {
+        header.classList.toggle('open');
+        body.classList.toggle('open');
       });
 
-      container.appendChild(card);
+      container.appendChild(accordion);
     });
   }
 });
