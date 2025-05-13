@@ -107,12 +107,25 @@
       background-color: #005e47;
     }
 
-    #output {
+    .day-card {
       background: #f0f0f0;
       padding: 15px;
-      border-radius: 6px;
-      white-space: pre-wrap;
-      margin-top: 25px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .day-card h2 {
+      margin-top: 0;
+    }
+
+    .day-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .day-card li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -131,15 +144,15 @@
     <div class="filter-group" data-category="accommodation">
       <h3>Accommodation Type</h3>
       <div class="card-options">
-        <div class="filter-card" data-value="hut-to-hut">
+        <div class="filter-card" data-value="Hut-to-Hut">
           <i class="fas fa-hiking"></i>
           <span>Hut-to-Hut</span>
         </div>
-        <div class="filter-card" data-value="camping">
+        <div class="filter-card" data-value="Camping">
           <i class="fas fa-campground"></i>
           <span>Camping</span>
         </div>
-        <div class="filter-card" data-value="luxury-lodges">
+        <div class="filter-card" data-value="Luxury Lodges">
           <i class="fas fa-hotel"></i>
           <span>Luxury Lodges</span>
         </div>
@@ -150,15 +163,15 @@
     <div class="filter-group" data-category="difficulty">
       <h3>Difficulty</h3>
       <div class="card-options">
-        <div class="filter-card" data-value="easy">
+        <div class="filter-card" data-value="Easy">
           <i class="fas fa-walking"></i>
           <span>Easy</span>
         </div>
-        <div class="filter-card" data-value="moderate">
+        <div class="filter-card" data-value="Moderate">
           <i class="fas fa-mountain"></i>
           <span>Moderate</span>
         </div>
-        <div class="filter-card" data-value="challenging">
+        <div class="filter-card" data-value="Challenging">
           <i class="fas fa-person-hiking"></i>
           <span>Challenging</span>
         </div>
@@ -169,15 +182,15 @@
     <div class="filter-group" data-category="technical">
       <h3>Technical Requirements</h3>
       <div class="card-options">
-        <div class="filter-card" data-value="none">
+        <div class="filter-card" data-value="None">
           <i class="fas fa-shoe-prints"></i>
           <span>None</span>
         </div>
-        <div class="filter-card" data-value="moderate">
+        <div class="filter-card" data-value="Scrambling">
           <i class="fas fa-helmet-safety"></i>
           <span>Scrambling</span>
         </div>
-        <div class="filter-card" data-value="advanced">
+        <div class="filter-card" data-value="Mountaineering">
           <i class="fas fa-ice-axe"></i>
           <span>Mountaineering</span>
         </div>
@@ -191,9 +204,86 @@
     <button type="submit">Generate Itinerary</button>
   </form>
 
-  <div id="output"></div>
+  <!-- Itinerary Cards -->
+  <div id="itinerary-cards"></div>
 </main>
 
-<script src="customize.js"></script>
+<script>
+  // Card selection logic
+  document.querySelectorAll('.filter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const group = card.closest('.filter-group');
+      group.querySelectorAll('.filter-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+
+  // Form handling
+  document.getElementById('customization-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const getSelectedValue = (category) => {
+      const group = document.querySelector(`.filter-group[data-category="${category}"]`);
+      const active = group?.querySelector('.filter-card.active');
+      return active ? active.dataset.value : null;
+    };
+
+    const data = {
+      location: "Dolomites",
+      filters: {
+        accommodation: getSelectedValue("accommodation"),
+        difficulty: getSelectedValue("difficulty"),
+        technical: getSelectedValue("technical"),
+        altitude: "2000–3000m" // optional static value
+      },
+      comments: document.getElementById('comments').value
+    };
+
+    try {
+      const res = await fetch('http://localhost:5050/api/finalize', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      renderItinerary(result.reply);
+    } catch (err) {
+      alert("Something went wrong.");
+      console.error(err);
+    }
+  });
+
+  function renderItinerary(responseText) {
+    const container = document.getElementById('itinerary-cards');
+    container.innerHTML = '';
+
+    const days = responseText.split(/### Day \d+: /).filter(Boolean);
+
+    days.forEach((section, index) => {
+      const card = document.createElement('div');
+      card.className = 'day-card';
+
+      const lines = section.trim().split('\n').filter(line => line.trim());
+      const title = lines.shift();
+
+      card.innerHTML = `<h2>Day ${index + 1}: ${title}</h2><ul></ul>`;
+      const ul = card.querySelector('ul');
+
+      lines.forEach(line => {
+        if (line.includes(':')) {
+          const [label, ...rest] = line.split(':');
+          const value = rest.join(':').trim();
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>${label.trim()}:</strong> ${value}`;
+          ul.appendChild(li);
+        }
+      });
+
+      container.appendChild(card);
+    });
+  }
+</script>
+
 </body>
 </html>
