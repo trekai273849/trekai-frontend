@@ -209,86 +209,9 @@
   <button type="button" onclick="document.getElementById('itinerary-cards').innerHTML = ''">Clear Itinerary</button>
 </main>
 
-<script>
-  // Card selection logic
-  document.querySelectorAll('.filter-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const group = card.closest('.filter-group');
-      group.querySelectorAll('.filter-card').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-    });
-  });
-
-  // Form handling
-  document.getElementById('customization-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const getSelectedValue = (category) => {
-      const group = document.querySelector(`.filter-group[data-category="${category}"]`);
-      const active = group?.querySelector('.filter-card.active');
-      return active ? active.dataset.value : null;
-    };
-
-    const data = {
-      location: "Dolomites",
-      filters: {
-        accommodation: getSelectedValue("accommodation"),
-        difficulty: getSelectedValue("difficulty"),
-        technical: getSelectedValue("technical"),
-        altitude: "2000–3000m" // optional static value
-      },
-      comments: document.getElementById('comments').value
-    };
-
-    try {
-  document.getElementById('itinerary-cards').innerHTML = '<p><em>Loading itinerary...</em></p>';
-
-  const res = await fetch('https://trekai-api.onrender.com/api/finalize', {
-  ...
-});
-
-if (!res.ok) {
-  throw new Error(`Server returned status ${res.status}`);
-}
-
-const result = await res.json();
-      renderItinerary(result.reply);
-    } catch (err) {
-      alert("Something went wrong.");
-      console.error(err);
-    }
-  });
-
-  function renderItinerary(responseText) {
-    const container = document.getElementById('itinerary-cards');
-    container.innerHTML = '';
-
-    const days = responseText.split(/### Day \d+: /).filter(Boolean);
-
-    days.forEach((section, index) => {
-      const card = document.createElement('div');
-      card.className = 'day-card';
-
-      const lines = section.trim().split('\n').filter(line => line.trim());
-      const title = lines.shift();
-
-      card.innerHTML = `<h2>Day ${index + 1}: ${title}</h2><ul></ul>`;
-      const ul = card.querySelector('ul');
-
-      lines.forEach(line => {
-        if (line.includes(':')) {
-          const [label, ...rest] = line.split(':');
-          const value = rest.join(':').trim();
-          const li = document.createElement('li');
-          li.innerHTML = `<strong>${label.trim()}:</strong> ${value}`;
-          ul.appendChild(li);
-        }
-      });
-
-      container.appendChild(card);
-    });
-  }
-</script>
+<script src="customize.js"></script>
+</body>
+</html>
 
 </body>
 </html>
