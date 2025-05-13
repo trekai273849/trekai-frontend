@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.getElementById('customization-form').addEventListener('submit', async function(e) {
+  document.getElementById('customization-form').addEventListener('submit', async function (e) {
     e.preventDefault();
     generateItinerary();
   });
@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           location,
           filters: {
@@ -64,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = '';
 
     const parts = responseText
-      .replace(/\*\*Day \d+: /g, '### Day ') // normalize bold headers
+      .replace(/\*\*Day \d+: /g, '### Day ')  // normalize bold headers
       .split(/### Day \d+: /)
       .filter(Boolean);
     let days = parts;
@@ -111,20 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       header.addEventListener('click', () => {
         header.classList.toggle('open');
         const body = header.nextElementSibling;
-        document.querySelectorAll('.accordion-header').forEach(header => {
-          header.addEventListener('click', () => {
-            const body = header.nextElementSibling;
-            const isOpen = body.classList.contains('open');
-            header.classList.toggle('open');
-            body.classList.toggle('open');
-
-            if (isOpen) {
-              body.style.maxHeight = null;
-            } else {
-              body.style.maxHeight = body.scrollHeight + "px";
-            }
-          });
-        });
+        body.classList.toggle('open');
       });
     });
 
