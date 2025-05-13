@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Form submission
   document.getElementById('customization-form').addEventListener('submit', async function (e) {
     e.preventDefault();
     generateItinerary();
@@ -31,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const comments = document.getElementById('comments').value + (additionalFeedback ? ' ' + additionalFeedback : '');
     const outputDiv = document.getElementById('itinerary-cards');
-    outputDiv.innerHTML = `<div class="loading-shimmer">Preparing your personal itinerary...</div>
-`;;
+    outputDiv.innerHTML = '<div class="loading-shimmer">Preparing your personal itinerary...</div>';
 
     try {
       const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
@@ -98,15 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      const header = accordion.querySelector('.accordion-header');
-      const body = accordion.querySelector('.accordion-body');
+      container.appendChild(accordion);
+    });
 
+    // Event binding must happen after DOM elements are inserted
+    document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         header.classList.toggle('open');
+        const body = header.nextElementSibling;
         body.classList.toggle('open');
       });
-
-      container.appendChild(accordion);
     });
 
     // Add feedback box
