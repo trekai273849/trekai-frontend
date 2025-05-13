@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
-    const parts = responseText.split(/### Day \d+: /).filter(Boolean);
+    const parts = responseText.split(/\*\*Day \d+: /).filter(Boolean);
     let days = parts;
     let tipsBlock = '';
 
@@ -69,15 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
       tipsBlock = parts.pop();
     }
 
-    const intro = days.shift(); // remove intro
+    const intro = days.shift(); // first part is the intro
     const introMessage = document.createElement('div');
     introMessage.id = 'intro-message';
-    introMessage.innerText = intro.trim();
+    introMessage.innerHTML = `<p>${intro.trim().replace(/\n/g, '<br>')}</p>`;
     container.appendChild(introMessage);
 
     days.forEach((section, index) => {
       const lines = section.trim().split('\n').filter(l => l.trim());
-      const titleLine = lines.shift();
+      const titleLine = lines.shift().replace(/\*\*/g, '').trim();
       const shortTitle = `Day ${index + 1}: ${titleLine}`;
 
       const details = lines
