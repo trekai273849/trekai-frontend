@@ -1,0 +1,32 @@
+.day-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 24px;
+  border-left: 6px solid #2e7d32;
+}
+
+.day-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #2e7d32;
+}
+
+.day-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.day-card li {
+  margin-bottom: 8px;
+}
+
+.day-tips {
+  background: #f1f8e9;
+  padding: 12px 16px;
+  margin: 10px 0 30px;
+  border-left: 4px solid #558b2f;
+  border-radius: 6px;
+  font-style: italic;
+}
