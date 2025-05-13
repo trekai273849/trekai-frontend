@@ -107,9 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
-        header.classList.toggle('open');
         const body = header.nextElementSibling;
+        const isOpen = body.classList.contains('open');
+
+        header.classList.toggle('open');
         body.classList.toggle('open');
+
+        if (isOpen) {
+          body.style.maxHeight = null;
+        } else {
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
       });
     });
 
