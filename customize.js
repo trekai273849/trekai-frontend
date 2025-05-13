@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const comments = document.getElementById('comments').value + (additionalFeedback ? ' ' + additionalFeedback : '');
     const outputDiv = document.getElementById('itinerary-cards');
-    outputDiv.innerHTML = '<p><em>Loading itinerary...</em></p>';
+    outputDiv.innerHTML = `<div class="loading-shimmer">Preparing your personal itinerary...</div>
+`;;
 
     try {
       const response = await fetch('https://trekai-api.onrender.com/api/finalize', {

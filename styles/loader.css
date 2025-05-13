@@ -1,0 +1,18 @@
+.loading-shimmer {
+  width: 100%;
+  background: linear-gradient(90deg, #f4f4f4 25%, #e0e0e0 50%, #f4f4f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  padding: 16px;
+  border-radius: 6px;
+  font-style: italic;
+  color: #444;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
