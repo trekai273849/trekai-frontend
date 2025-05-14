@@ -1,57 +1,65 @@
+:root {
+  --primary-color: #FF5A5F;
+  --background-color: #F7F7F7;
+  --font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
 .filter-group {
-  margin-bottom: 25px;
+  margin-bottom: 32px;
 }
 
 .card-options {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .filter-card {
-  background: #f5f5f5;
+  padding: 10px 20px;
+  background: #fff;
   border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-size: 0.95rem;
+  border-radius: 32px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease;
   user-select: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.filter-card i {
-  display: none; /* Hide icons for cleaner look */
+.filter-card:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
 }
 
 .filter-card.active {
-  background: #007b5f;
-  color: white;
-  border-color: #007b5f;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
 }
 
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  margin-top: 12px;
   margin-bottom: 20px;
 }
 
-button {
-  background-color: #007b5f;
+.generate-button {
+  background-color: var(--primary-color);
   color: white;
-  padding: 12px 20px;
+  padding: 12px 24px;
+  border-radius: 8px;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  margin-top: 16px;
 }
 
-button:hover {
-  background-color: #005e47;
+.generate-button:hover {
+  background-color: #e04a4e;
 }
