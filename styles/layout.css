@@ -37,3 +37,11 @@ main {
   left: 20px;
   z-index: 1000;
 }
+
+.homepage .brand-logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin: 20px;
+}
