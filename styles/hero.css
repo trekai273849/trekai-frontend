@@ -1,58 +1,30 @@
-.hero {
-  background: url('Images/trekkingheader.jpg') center/cover no-repeat;
-  height: 100vh;
+.hero-header {
+  position: relative;
+  height: 320px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
+  justify-content: center;
+  text-align: center;
   color: white;
-  text-decoration: none;
 }
 
-.nav-links .btn {
-  border: 1px solid white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.hero-content {
-  max-width: 600px;
-  margin: auto;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-/* Only apply this hero background to customize.html */
 .hero-header.customize-hero {
-  background-image: url('Images/alps.jpg');
+  background: url('../Images/alps.jpg') center center / cover no-repeat;
+}
+
+/* Dark overlay for readability */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-overlay h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
 }
