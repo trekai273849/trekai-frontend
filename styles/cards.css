@@ -53,3 +53,20 @@
   font-style: italic;
   color: #444;
 }
+
+.generate-button {
+  margin-bottom: 48px; /* More white space below the button */
+}
+
+#response-separator {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 40px;
+  margin-top: -16px; /* Bring it closer to the white space */
+  width: 100%;
+}
+
+#itinerary-cards {
+  margin-top: 32px;
+}
