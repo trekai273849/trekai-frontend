@@ -1,32 +1,55 @@
+/* cards.css */
+
 .day-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 20px;
-  margin-bottom: 24px;
-  border-left: 6px solid #2e7d32;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin-bottom: 28px;
+  border-left: 5px solid #FF5A5F;
+  transition: box-shadow 0.3s ease;
+}
+
+.day-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .day-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  color: #2e7d32;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
 }
 
 .day-card ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .day-card li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.day-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #FF5A5F;
+  font-size: 18px;
 }
 
 .day-tips {
-  background: #f1f8e9;
-  padding: 12px 16px;
-  margin: 10px 0 30px;
-  border-left: 4px solid #558b2f;
-  border-radius: 6px;
+  background: #fff8f2;
+  border-left: 4px solid #ffa07a;
+  padding: 16px;
+  margin-top: 32px;
+  border-radius: 8px;
   font-style: italic;
+  color: #444;
 }
