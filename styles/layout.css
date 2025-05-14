@@ -11,34 +11,16 @@ main {
   position: absolute;
   top: 20px;
   left: 30px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  z-index: 10;
-}
-
-.logo-icon {
-  height: 28px;
-  width: 28px;
-  margin-right: 10px;
-  filter: brightness(0) invert(1); /* Make icon white */
-}
-
-.logo-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
-
-.brand-logo {
-  position: absolute; /* or use flex layout if in a nav */
-  top: 20px;
-  left: 30px;
   font-size: 24px;
   font-weight: bold;
   color: white;
   text-decoration: none;
   z-index: 10;
+}
+
+.brand-logo:visited {
+  color: white;
+  text-decoration: none;
 }
 
 .brand-logo:hover {
