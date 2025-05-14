@@ -55,7 +55,7 @@
 }
 
 .generate-button {
-  margin-bottom: 48px; /* More white space below the button */
+  margin-bottom: 64px; /* More white space below the button */
 }
 
 #response-separator {
@@ -69,4 +69,12 @@
 
 #itinerary-cards {
   margin-top: 32px;
+}
+
+.response-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 48px;
+  margin-bottom: 16px;
 }
