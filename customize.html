@@ -17,10 +17,42 @@
   <link rel="stylesheet" href="styles/responsive.css" />
   <link rel="stylesheet" href="styles/loader.css" />
   <link rel="stylesheet" href="styles/tips.css" />
+
+  <style>
+    .customize-hero {
+      background-image: url('Images/alps.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      position: relative;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .hero-overlay h1,
+    .hero-overlay h2 {
+      color: white;
+      margin: 0;
+    }
+
+    h3 i {
+      margin-right: 8px;
+      color: #FF5A5F;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HERO HEADER WITH CUSTOM BACKGROUND IMAGE -->
+  <!-- HERO HEADER -->
   <header class="hero-header customize-hero">
     <div class="hero-overlay">
       <h1>Customize Your Trek</h1>
@@ -32,7 +64,7 @@
     <form id="customization-form">
       <!-- Accommodation -->
       <div class="filter-group" data-category="accommodation">
-        <h3>Accommodation Type</h3>
+        <h3><i class="fas fa-bed"></i>Accommodation Type</h3>
         <div class="card-options">
           <div class="filter-card" data-value="Hut-to-Hut">Hut-to-Hut</div>
           <div class="filter-card" data-value="Camping">Camping</div>
@@ -42,7 +74,7 @@
 
       <!-- Difficulty -->
       <div class="filter-group" data-category="difficulty">
-        <h3>Difficulty</h3>
+        <h3><i class="fas fa-mountain"></i>Difficulty</h3>
         <div class="card-options">
           <div class="filter-card" data-value="Easy">Easy</div>
           <div class="filter-card" data-value="Moderate">Moderate</div>
@@ -52,7 +84,7 @@
 
       <!-- Technical -->
       <div class="filter-group" data-category="technical">
-        <h3>Technical Requirements</h3>
+        <h3><i class="fas fa-hiking"></i>Technical Requirements</h3>
         <div class="card-options">
           <div class="filter-card" data-value="None">None</div>
           <div class="filter-card" data-value="Scrambling">Scrambling</div>
