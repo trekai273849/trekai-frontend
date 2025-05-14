@@ -136,10 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const feedbackBox = document.createElement('div');
-    feedbackBox.innerHTML = `
-      <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
-      <button id="regenerate-itinerary" style="margin-top: 10px;">Update Itinerary</button>
-    `;
+feedbackBox.innerHTML = `
+  <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
+  <button id="regenerate-itinerary" class="generate-button">Update Itinerary</button>
+`;
     container.appendChild(feedbackBox);
 
     document.getElementById('regenerate-itinerary').addEventListener('click', () => {
