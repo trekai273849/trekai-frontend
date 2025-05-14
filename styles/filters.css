@@ -4,30 +4,33 @@
 
 .card-options {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .filter-card {
-  background: #f7f7f7;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
-  min-width: 120px;
+  transition: background 0.2s ease, color 0.2s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-card i {
-  font-size: 24px;
-  margin-bottom: 6px;
-  display: block;
+  display: none; /* Hide icons for cleaner look */
 }
 
 .filter-card.active {
+  background: #007b5f;
+  color: white;
   border-color: #007b5f;
-  background: #e0f6ed;
 }
 
 textarea {
