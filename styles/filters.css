@@ -4,14 +4,29 @@
   --font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+}
+
 .filter-group {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+}
+
+.filter-group h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px; /* Add spacing between title and buttons */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .card-options {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 8px;
 }
 
 .filter-card {
@@ -44,8 +59,8 @@ textarea {
   font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
-  margin-top: 12px;
-  margin-bottom: 20px;
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 .generate-button {
