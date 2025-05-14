@@ -6,3 +6,49 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
+
+.brand-logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.logo-icon {
+  height: 28px;
+  width: 28px;
+  margin-right: 10px;
+  filter: brightness(0) invert(1); /* Make icon white */
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.brand-logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.logo-icon {
+  height: 28px;
+  width: 28px;
+  margin-right: 10px;
+  filter: brightness(0) invert(1); /* Make white on dark background */
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}

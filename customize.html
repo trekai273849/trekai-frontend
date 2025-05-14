@@ -44,6 +44,29 @@
       margin: 0;
     }
 
+    .brand-logo {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      z-index: 10;
+    }
+
+    .logo-icon {
+      height: 28px;
+      width: 28px;
+      margin-right: 10px;
+      filter: brightness(0) invert(1);
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
     h3 i {
       margin-right: 8px;
       color: #FF5A5F;
@@ -54,6 +77,10 @@
 
   <!-- HERO HEADER -->
   <header class="hero-header customize-hero">
+    <a href="index.html" class="brand-logo">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/mountain.png" alt="Mountain Icon" class="logo-icon">
+      <span class="logo-text">Smart Trails</span>
+    </a>
     <div class="hero-overlay">
       <h1>Customize Your Trek</h1>
       <h2 id="greeting">Loading...</h2>
@@ -99,10 +126,7 @@
       <button type="submit" class="generate-button">Generate Itinerary</button>
     </form>
 
-  </form>
-<hr id="response-separator">
-<div id="itinerary-cards"></div>
-
+    <hr id="response-separator">
     <div id="itinerary-cards"></div>
   </main>
 
