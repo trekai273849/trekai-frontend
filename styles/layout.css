@@ -31,24 +31,16 @@ main {
 }
 
 .brand-logo {
-  position: absolute;
+  position: absolute; /* or use flex layout if in a nav */
   top: 20px;
   left: 30px;
-  display: flex;
-  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
   text-decoration: none;
   z-index: 10;
 }
 
-.logo-icon {
-  height: 28px;
-  width: 28px;
-  margin-right: 10px;
-  filter: brightness(0) invert(1); /* Make white on dark background */
-}
-
-.logo-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
+.brand-logo:hover {
+  text-decoration: underline;
 }
