@@ -117,3 +117,24 @@ body {
   margin: 0 0 10px 0;
   color: #fff;
 }
+
+.icon-box {
+  width: 120px;
+  height: 120px;
+  background-color: #f4f4f4; /* optional */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.icon-image {
+  width: 48px;  /* Adjust size */
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
