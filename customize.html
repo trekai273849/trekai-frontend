@@ -71,6 +71,17 @@
       margin-right: 8px;
       color: #FF5A5F;
     }
+
+    #accordion-controls {
+      text-align: right;
+      margin: 1em 0;
+    }
+
+    #accordion-controls button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -124,6 +135,12 @@
     </form>
 
     <hr id="response-separator">
+
+    <!-- Accordion Controls -->
+    <div id="accordion-controls" style="display: none;">
+      <button id="toggle-all" class="generate-button">Expand All</button>
+    </div>
+
     <div id="itinerary-cards"></div>
   </main>
 

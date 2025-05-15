@@ -45,3 +45,11 @@
 .accordion-body li {
   margin-bottom: 8px;
 }
+.accordion-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1b4332;
+}
+#accordion-controls button {
+  margin-bottom: 10px;
+}

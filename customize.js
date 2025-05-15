@@ -99,11 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const accordion = document.createElement('div');
       accordion.className = 'accordion-item';
       accordion.innerHTML = `
-        <button class="accordion-header">
+        <button class="accordion-header ${index === 0 ? 'open' : ''}">
           <span class="accordion-title">${titleLine}</span>
-          <span class="accordion-icon">+</span>
+          <span class="accordion-icon">${index === 0 ? '−' : '+'}</span>
         </button>
-        <div class="accordion-body">
+        <div class="accordion-body ${index === 0 ? 'open' : ''}" style="${index === 0 ? 'max-height: 1000px;' : ''}">
           <ul>${details}</ul>
         </div>
       `;
@@ -120,8 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isOpen) {
           body.style.maxHeight = null;
+          header.querySelector('.accordion-icon').textContent = '+';
         } else {
           body.style.maxHeight = body.scrollHeight + 'px';
+          header.querySelector('.accordion-icon').textContent = '−';
         }
       });
     });
@@ -146,5 +148,26 @@ document.addEventListener('DOMContentLoaded', () => {
         generateItinerary(feedback);
       }
     });
+
+    // Toggle All Logic
+    const toggleBtn = document.getElementById('toggle-all');
+    if (toggleBtn) {
+      let allOpen = false;
+      toggleBtn.onclick = () => {
+        allOpen = !allOpen;
+        const headers = document.querySelectorAll('.accordion-header');
+        const bodies = document.querySelectorAll('.accordion-body');
+        headers.forEach(h => {
+          h.classList.toggle('open', allOpen);
+          const icon = h.querySelector('.accordion-icon');
+          if (icon) icon.textContent = allOpen ? '−' : '+';
+        });
+        bodies.forEach(b => {
+          b.classList.toggle('open', allOpen);
+          b.style.maxHeight = allOpen ? b.scrollHeight + 'px' : null;
+        });
+        toggleBtn.textContent = allOpen ? 'Collapse All' : 'Expand All';
+      };
+    }
   }
 });
