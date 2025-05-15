@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
-  document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
+  document.getElementById('greeting').innerText = \`\${location} is a great idea! Tell us more about your ideal trekking experience.\`;
 
   document.querySelectorAll('.filter-group').forEach(group => {
     const cards = group.querySelectorAll('.filter-card');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       });
 
-      if (!response.ok) throw new Error(`Server returned status ${response.status}`);
+      if (!response.ok) throw new Error(\`Server returned status \${response.status}\`);
 
       const data = await response.json();
       renderItineraryCards(data.reply);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const introBlock = document.createElement('div');
     introBlock.id = 'intro-message';
-    introBlock.innerHTML = `<p><strong>${intro.split('.')[0]}.</strong><br><br>${intro.slice(intro.indexOf('.') + 1).replace(/\n/g, '<br>')}</p>`;
+    introBlock.innerHTML = \`<p><strong>\${intro.split('.')[0]}.</strong><br><br>\${intro.slice(intro.indexOf('.') + 1).replace(/\n/g, '<br>')}</p>\`;
     container.appendChild(introBlock);
 
     parts.forEach((section, index) => {
@@ -77,20 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = lines.map(line => {
         const cleaned = line.replace(/^[-–•\*]\s*/, '');
         const [label, ...rest] = cleaned.split(':');
-        return `<li><strong>${label.trim()}:</strong> ${rest.join(':').trim()}</li>`;
+        return \`<li><strong>\${label.trim()}:</strong> \${rest.join(':').trim()}</li>\`;
       }).join('');
 
       const item = document.createElement('div');
       item.className = 'accordion-item';
-      item.innerHTML = `
-        <button class="accordion-header ${index === 0 ? 'open' : ''}">
-          <span class="accordion-title"><strong>Day ${index + 1}: ${title}</strong></span>
-          <span class="accordion-icon">${index === 0 ? '−' : '+'}</span>
+      item.innerHTML = \`
+        <button class="accordion-header \${index === 0 ? 'open' : ''}">
+          <span class="accordion-title"><strong>Day \${index + 1}: \${title}</strong></span>
+          <span class="accordion-icon">\${index === 0 ? '−' : '+'}</span>
         </button>
-        <div class="accordion-body ${index === 0 ? 'open' : ''}" style="max-height: ${index === 0 ? '500px' : '0'};">
-          <ul>${details}</ul>
+        <div class="accordion-body \${index === 0 ? 'open' : ''}" style="max-height: \${index === 0 ? '500px' : '0'};">
+          <ul>\${details}</ul>
         </div>
-      `;
+      \`;
       container.appendChild(item);
     });
 
@@ -99,14 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const body = header.nextElementSibling;
         const isOpen = body.classList.contains('open');
 
+        header.classList.toggle('open');
+        body.classList.toggle('open');
+
         if (isOpen) {
-          body.classList.remove('open');
-          header.classList.remove('open');
           body.style.maxHeight = null;
           header.querySelector('.accordion-icon').textContent = '+';
         } else {
-          body.classList.add('open');
-          header.classList.add('open');
           body.style.maxHeight = body.scrollHeight + 'px';
           header.querySelector('.accordion-icon').textContent = '−';
         }
@@ -136,5 +135,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     };
+
+    // Add feedback box
+    const feedbackBox = document.createElement('div');
+    feedbackBox.innerHTML = \`
+      <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
+      <button id="regenerate-itinerary" class="generate-button">Update Itinerary</button>
+    \`;
+    container.appendChild(feedbackBox);
+
+    document.getElementById('regenerate-itinerary').addEventListener('click', () => {
+      const feedback = document.getElementById('feedback').value;
+      if (feedback) {
+        generateItinerary(feedback);
+      }
+    });
   }
 });
