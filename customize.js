@@ -45,9 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       });
 
-      if (!response.ok) {
-        throw new Error(`Server returned status ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`Server returned status ${response.status}`);
 
       const data = await response.json();
       renderItineraryCards(data.reply);
@@ -61,53 +59,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
-    const parts = responseText
-      .replace(/\*\*Day \d+: /g, '### Day ')
-      .split(/### Day \d+: /)
-      .filter(Boolean);
+    // Show Expand/Collapse All button
+    const accordionToggle = document.getElementById('accordion-controls');
+    accordionToggle.style.display = 'block';
 
-    let days = parts;
-    let tipsBlock = '';
+    const parts = responseText.split(/Day \d+:/).filter(Boolean);
+    let intro = parts.shift();
 
-    if (parts.length > 0 && parts[parts.length - 1].includes('Additional Tips')) {
-      tipsBlock = parts.pop();
-    }
+    const introBlock = document.createElement('div');
+    introBlock.id = 'intro-message';
+    introBlock.innerHTML = `<p><strong>${intro.split('.')[0]}.</strong><br><br>${intro.slice(intro.indexOf('.') + 1).replace(/\n/g, '<br>')}</p>`;
+    container.appendChild(introBlock);
 
-    const intro = days.shift();
-    const introMessage = document.createElement('div');
-    introMessage.id = 'intro-message';
-    introMessage.innerHTML = `<p>${intro
-      .trim()
-      .replace(/^(.+?\.)\s*/s, '<strong>$1</strong><br><br>')
-      .replace(/\n/g, '<br>')}</p>`;
-    container.appendChild(introMessage);
-
-    days.forEach((section, index) => {
+    parts.forEach((section, index) => {
       const lines = section.trim().split('\n').filter(l => l.trim());
-      const titleText = lines.shift().trim();
-      const titleLine = `<strong>Day ${index + 1}: ${titleText}</strong>`;
+      const title = lines.shift().trim();
+      const details = lines.map(line => {
+        const cleaned = line.replace(/^[-–•\*]\s*/, '');
+        const [label, ...rest] = cleaned.split(':');
+        return `<li><strong>${label.trim()}:</strong> ${rest.join(':').trim()}</li>`;
+      }).join('');
 
-      const details = lines
-        .filter(line => line.includes(':'))
-        .map(line => {
-          const cleaned = line.trim().replace(/^[-–•\*]\s*/, '');
-          const [label, ...rest] = cleaned.split(':');
-          const value = rest.join(':').trim();
-          return `<li><strong>${label.trim()}:</strong> ${value}</li>`;
-        }).join('');
-
-      const accordion = document.createElement('div');
-      accordion.className = 'accordion-item';
-      accordion.innerHTML = `
+      const item = document.createElement('div');
+      item.className = 'accordion-item';
+      item.innerHTML = `
         <button class="accordion-header ${index === 0 ? 'open' : ''}">
-          <span class="accordion-title">${titleLine}</span>
+          <span class="accordion-title"><strong>Day ${index + 1}: ${title}</strong></span>
           <span class="accordion-icon">${index === 0 ? '−' : '+'}</span>
         </button>
-        <div class="accordion-body ${index === 0 ? 'open' : ''}" style="${index === 0 ? 'max-height: 1000px;' : ''}">
+        <div class="accordion-body ${index === 0 ? 'open' : ''}" style="max-height: ${index === 0 ? '500px' : '0'};">
           <ul>${details}</ul>
         </div>
       `;
-      container.appendChild(accordion);
+      container.appendChild(item);
     });
 
     document.querySelectorAll('.accordion-header').forEach(header => {
@@ -115,59 +99,42 @@ document.addEventListener('DOMContentLoaded', () => {
         const body = header.nextElementSibling;
         const isOpen = body.classList.contains('open');
 
-        header.classList.toggle('open');
-        body.classList.toggle('open');
-
         if (isOpen) {
+          body.classList.remove('open');
+          header.classList.remove('open');
           body.style.maxHeight = null;
           header.querySelector('.accordion-icon').textContent = '+';
         } else {
+          body.classList.add('open');
+          header.classList.add('open');
           body.style.maxHeight = body.scrollHeight + 'px';
           header.querySelector('.accordion-icon').textContent = '−';
         }
       });
     });
 
-    if (tipsBlock) {
-      const tipsDiv = document.createElement('div');
-      tipsDiv.className = 'overall-tips';
-      tipsDiv.innerHTML = `<h3>Overall Tips for Your Trek</h3><p>${tipsBlock.replace(/\n/g, '<br>')}</p>`;
-      container.appendChild(tipsDiv);
-    }
-
-    const feedbackBox = document.createElement('div');
-    feedbackBox.innerHTML = `
-      <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
-      <button id="regenerate-itinerary" class="generate-button">Update Itinerary</button>
-    `;
-    container.appendChild(feedbackBox);
-
-    document.getElementById('regenerate-itinerary').addEventListener('click', () => {
-      const feedback = document.getElementById('feedback').value;
-      if (feedback) {
-        generateItinerary(feedback);
-      }
-    });
-
-    // Toggle All Logic
+    // Expand/Collapse All
     const toggleBtn = document.getElementById('toggle-all');
-    if (toggleBtn) {
-      let allOpen = false;
-      toggleBtn.onclick = () => {
-        allOpen = !allOpen;
-        const headers = document.querySelectorAll('.accordion-header');
-        const bodies = document.querySelectorAll('.accordion-body');
-        headers.forEach(h => {
-          h.classList.toggle('open', allOpen);
-          const icon = h.querySelector('.accordion-icon');
-          if (icon) icon.textContent = allOpen ? '−' : '+';
-        });
-        bodies.forEach(b => {
-          b.classList.toggle('open', allOpen);
-          b.style.maxHeight = allOpen ? b.scrollHeight + 'px' : null;
-        });
-        toggleBtn.textContent = allOpen ? 'Collapse All' : 'Expand All';
-      };
-    }
+    toggleBtn.textContent = 'Expand All';
+    let expanded = false;
+    toggleBtn.onclick = () => {
+      expanded = !expanded;
+      toggleBtn.textContent = expanded ? 'Collapse All' : 'Expand All';
+      document.querySelectorAll('.accordion-item').forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const body = item.querySelector('.accordion-body');
+        if (expanded) {
+          header.classList.add('open');
+          body.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+          header.querySelector('.accordion-icon').textContent = '−';
+        } else {
+          header.classList.remove('open');
+          body.classList.remove('open');
+          body.style.maxHeight = null;
+          header.querySelector('.accordion-icon').textContent = '+';
+        }
+      });
+    };
   }
 });
