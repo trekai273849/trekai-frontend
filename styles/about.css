@@ -134,10 +134,10 @@ body {
 
 
 .feature-card img {
-  width: 96px;          /* Larger default size */
+  max-width: 70%;       /* Fill most of the card width */
   height: auto;
-  margin-bottom: 16px;
-  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto 16px auto;
 }
 
 @media (min-width: 768px) {
