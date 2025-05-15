@@ -103,3 +103,17 @@ body {
 .btn-primary:hover {
   background-color: #005f47;
 }
+
+.hero-text-box {
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  padding: 20px 30px;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 90%;
+}
+
+.hero-text-box h1,
+.hero-text-box p {
+  margin: 0 0 10px 0;
+  color: #fff;
+}
