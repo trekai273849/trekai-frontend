@@ -134,20 +134,24 @@ body {
 
 
 .feature-card img {
-  width: 64px;          /* Increase size from default (e.g., 32px or 48px) */
-  height: auto;         /* Keep aspect ratio */
-  margin-bottom: 12px;  /* Adds space between icon and heading */
+  width: 96px;          /* Larger default size */
+  height: auto;
+  margin-bottom: 16px;
   transition: transform 0.3s ease;
 }
 
 @media (min-width: 768px) {
   .feature-card img {
-    width: 72px;        /* Slightly larger on medium+ screens */
+    width: 112px;       /* Bigger for tablets */
   }
 }
 
 @media (min-width: 1024px) {
   .feature-card img {
-    width: 80px;        /* Larger on desktops */
+    width: 128px;       /* Even bigger for desktops */
   }
+}
+
+.feature-card img:hover {
+  transform: scale(1.05);
 }
