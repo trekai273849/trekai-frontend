@@ -14,7 +14,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-  background: url('images/trekkingheader.jpg') center/cover no-repeat;
+  background: url('../images/trekkingheader.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -322,7 +322,7 @@ footer {
   }
 
   .hero-alps {
-    background: url('images/alps.jpg') center/cover no-repeat;
+    background: url('../images/alps.jpg') center/cover no-repeat;
     height: 100vh;
     position: relative;
     color: white;
