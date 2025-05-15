@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Smart Trails</title>
-  <link rel="stylesheet" href="styles/about.css" />
+  <title>About Smart Trails</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-
-  <header class="hero-header about-hero">
-    <div class="hero-overlay">
-      <div class="hero-text-box">
-        <h1>About Smart Trails</h1>
-      </div>
+<body class="bg-white text-gray-900 font-sans">
+  <header class="bg-gradient-to-b from-green-800 to-green-700 py-6 shadow-lg">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-white font-bold text-xl">Smart Trails</a>
+      <nav>
+        <ul class="flex space-x-4 text-white">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="/sign-up.html" class="hover:underline">Sign Up</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <main class="about-content">
-    <section class="intro">
-      <h2>Why Smart Trails?</h2>
-      <p>
-        At <strong>Smart Trails</strong>, no two adventures are alike. We use AI-powered personalization and rich trekking data to turn your hiking dreams into detailed, practical itineraries built just for you.
-      </p>
-    </section>
-
-    <section class="features">
-      <h2>Powered by Cutting-Edge Technology</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <img src="images/plan.png" alt="Itinerary Planning Icon" class="feature-icon" />
-          <h3>AI-Personalized Itineraries</h3>
-          <p>We analyze your preferences and generate fully customized daily plans.</p>
-        </div>
-        <div class="feature-card">
-          <img src="images/map.png" alt="Trail Map Icon" class="feature-icon" />
-          <h3>Trail Intelligence</h3>
-          <p>We combine verified trail data, elevation stats, and route tips to guide you accurately.</p>
-        </div>
-        <div class="feature-card">
-          <img src="images/conversation.png" alt="Chat Icon" class="feature-icon" />
-          <h3>Conversational Planning</h3>
-          <p>Just describe your ideal trek and we’ll build the plan as your personal guide.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <h2>Start Planning Smarter</h2>
-      <p>Try our Trek Planner to see how fast you can go from <em>idea</em> to <strong>ready-to-hike itinerary</strong>.</p>
-      <a href="customize.html" class="btn-primary">Plan My Trek</a>
-    </section>
+  <main class="container mx-auto px-4 py-12 max-w-3xl">
+    <h1 class="text-4xl font-bold mb-6 text-green-800">About Smart Trails</h1>
+    <p class="mb-4 text-lg leading-relaxed">
+      Smart Trails was founded with a mission to empower hikers and adventurers through personalized, AI-powered trekking itineraries.
+      Whether you're looking to explore the Alps, Himalayas, Andes or other stunning destinations, our platform generates custom treks tailored
+      to your preferences.
+    </p>
+    <p class="mb-4 text-lg leading-relaxed">
+      We understand that planning outdoor adventures can be overwhelming. That's why Smart Trails uses AI to optimize your itinerary for weather,
+      terrain, distance, and experience level. We offer features like offline maps, packing checklists, and weather-aware route planning to ensure
+      every trekker feels confident, prepared, and inspired.
+    </p>
+    <p class="mb-6 text-lg leading-relaxed">
+      Join us as we revolutionize trekking for the modern adventurer.
+    </p>
+    <a href="/sign-up.html" class="bg-green-700 hover:bg-green-800 text-white py-3 px-6 rounded-lg shadow-md transition duration-300">
+      Join Smart Trails Pro
+    </a>
   </main>
 
+  <footer class="text-center text-sm text-gray-600 py-6 border-t mt-12">
+    &copy; 2025 Smart Trails. All rights reserved.
+  </footer>
 </body>
 </html>

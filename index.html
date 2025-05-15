@@ -1,75 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Trek Planner</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/hero.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Trails | AI Trek Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body class="bg-white text-gray-800 font-sans">
+    <!-- Navbar -->
+    <header class="bg-green-900 text-white py-4">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="text-xl font-bold">Smart Trails</div>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="/sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200">Sign Up</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-</head>
-<body class="homepage">
-  <header class="hero">
-    <nav class="navbar">
-      <div class="brand-logo">Smart Trails</div>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="/sign-up.html" class="btn-signup">Sign Up</a></li>
-      </ul>
-    </nav>
-    <div class="hero-content">
-      <h1>Personalised Trekking Itineraries</h1>
-      <p>Generate custom trekking plans tailored to your preferences with AI.</p>
-      <form id="itinerary-form" class="search-form">
-        <input type="text" id="user-input" placeholder="e.g. 5-day trek in the Alps, moderate difficulty">
-        <button type="submit">Generate Itinerary</button>
+    <!-- Hero Section -->
+    <section class="bg-cover bg-center h-screen text-white flex flex-col justify-center items-center px-4 text-center" style="background-image: url('images/trekkingheader.jpg');">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Personalised Trekking Itineraries</h1>
+      <p class="text-lg md:text-xl mb-6">Generate custom trekking plans tailored to your preferences with AI.</p>
+      <form id="itinerary-form" class="w-full max-w-lg flex flex-col md:flex-row gap-4">
+        <input type="text" id="user-input" placeholder="e.g. 5-day trek in the Alps, moderate difficulty" class="flex-1 px-4 py-3 rounded text-gray-900" />
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded">Generate Itinerary</button>
       </form>
-      <div id="itinerary-output"></div>
+      <div id="itinerary-output" class="mt-4"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Elite Planning for Serious Hikers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white shadow-md rounded p-6">
+          <i class="fas fa-route fa-2x text-green-700 mb-4"></i>
+          <h3 class="font-semibold">Advanced & Detailed Itineraries</h3>
+        </div>
+        <div class="bg-white shadow-md rounded p-6">
+          <i class="fas fa-cloud-sun-rain fa-2x text-green-700 mb-4"></i>
+          <h3 class="font-semibold">Weather & Terrain-Aware Planning</h3>
+        </div>
+        <div class="bg-white shadow-md rounded p-6">
+          <i class="fas fa-map-marked-alt fa-2x text-green-700 mb-4"></i>
+          <h3 class="font-semibold">Offline Maps & Packing Checklists</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="text-center mb-12">
+      <a href="/sign-up.html" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Join Smart Trails Pro</a>
     </div>
-  </header>
 
-  <section id="features" class="features">
-    <h2>Elite Planning for Serious Hikers</h2>
-    <div class="feature-cards">
-      <a href="#itinerary" class="feature-card">
-        <i class="fas fa-route fa-2x"></i>
-        <span>Advanced & Detailed Itineraries</span>
-      </a>
-      <a href="#weather" class="feature-card">
-        <i class="fas fa-cloud-sun-rain fa-2x"></i>
-        <span>Weather & Terrain-Aware Planning</span>
-      </a>
-      <a href="#checklists" class="feature-card">
-        <i class="fas fa-map-marked-alt fa-2x"></i>
-        <span>Offline Maps & Packing Checklists</span>
-      </a>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white text-center py-4">
+      <p>&copy; 2025 Smart Trails. All rights reserved.</p>
+    </footer>
 
-  <div class="cta-button-container">
-  <a href="/sign-up.html" class="cta-button">Join Smart Trails Pro</a>
-</div>
-
-  <footer>
-    <p>&copy; 2025 Smart Trails. All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById('itinerary-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const location = document.getElementById('user-input').value;
-      localStorage.setItem('userLocation', location);
-      window.location.href = 'customize.html';
-    });
-
-    document.querySelectorAll('.cards .card').forEach(card => {
-      card.addEventListener('click', () => {
-        const location = card.dataset.location;
-        localStorage.setItem('userLocation', location);
+    <!-- Script -->
+    <script>
+      document.getElementById("itinerary-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const location = document.getElementById("user-input").value;
+        localStorage.setItem("userLocation", location);
+        window.location.href = "customize.html";
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,150 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta charset="UTF-8">
-  <title>Customize Your Trek</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Modular CSS -->
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/layout.css" />
-  <link rel="stylesheet" href="styles/hero.css" />
-  <link rel="stylesheet" href="styles/filters.css" />
-  <link rel="stylesheet" href="styles/accordion.css" />
-  <link rel="stylesheet" href="styles/cards.css" />
-  <link rel="stylesheet" href="styles/footer.css" />
-  <link rel="stylesheet" href="styles/responsive.css" />
-  <link rel="stylesheet" href="styles/loader.css" />
-  <link rel="stylesheet" href="styles/tips.css" />
-
-  <style>
-    .customize-hero {
-      background-image: url('Images/alps.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 300px;
-      position: relative;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .hero-overlay h1,
-    .hero-overlay h2 {
-      color: white;
-      margin: 0;
-    }
-
-    .brand-logo {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      z-index: 10;
-    }
-
-    .logo-icon {
-      height: 28px;
-      width: 28px;
-      margin-right: 10px;
-      filter: brightness(0) invert(1);
-    }
-
-    .logo-text {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-    }
-
-    h3 i {
-      margin-right: 8px;
-      color: #FF5A5F;
-    }
-
-    #accordion-controls {
-      text-align: right;
-      margin: 1em 0;
-    }
-
-    #accordion-controls button {
-      padding: 8px 16px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- HERO HEADER -->
-  <header class="hero-header customize-hero">
-    <a href="index.html" class="brand-logo">Smart Trails</a>
-    <div class="hero-overlay">
-      <h1>Customize Your Trek</h1>
-      <h2 id="greeting">Loading...</h2>
-    </div>
-  </header>
-
-  <main class="customize-container">
-    <form id="customization-form">
-      <!-- Accommodation -->
-      <div class="filter-group" data-category="accommodation">
-        <h3><i class="fas fa-bed"></i>Accommodation Type</h3>
-        <div class="card-options">
-          <div class="filter-card" data-value="Camping">Camping</div>
-          <div class="filter-card" data-value="Hut-to-Hut">Hut-to-Hut</div>
-          <div class="filter-card" data-value="Luxury Lodges">Luxury Lodges</div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customize Your Trek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Hero Header -->
+    <header class="relative h-72 bg-cover bg-center" style="background-image: url('Images/alps.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center px-4">
+        <a href="index.html" class="absolute top-6 left-6 text-white text-xl font-bold">Smart Trails</a>
+        <h1 class="text-3xl font-bold text-white">Customize Your Trek</h1>
+        <h2 id="greeting" class="text-lg text-white mt-2">Loading...</h2>
       </div>
+    </header>
 
-      <!-- Difficulty -->
-      <div class="filter-group" data-category="difficulty">
-        <h3><i class="fas fa-mountain"></i>Difficulty</h3>
-        <div class="card-options">
-          <div class="filter-card" data-value="Easy">Easy</div>
-          <div class="filter-card" data-value="Moderate">Moderate</div>
-          <div class="filter-card" data-value="Challenging">Challenging</div>
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto p-6">
+      <form id="customization-form" class="space-y-6">
+        <!-- Accommodation -->
+        <div data-category="accommodation">
+          <h3 class="text-xl font-semibold mb-2"><i class="fas fa-bed mr-2"></i>Accommodation Type</h3>
+          <div class="flex gap-4">
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Camping">Camping</div>
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Hut-to-Hut">Hut-to-Hut</div>
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Luxury Lodges">Luxury Lodges</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Technical -->
-      <div class="filter-group" data-category="technical">
-        <h3><i class="fas fa-hiking"></i>Technical Requirements</h3>
-        <div class="card-options">
-          <div class="filter-card" data-value="None">None</div>
-          <div class="filter-card" data-value="Scrambling">Scrambling</div>
-          <div class="filter-card" data-value="Mountaineering">Mountaineering</div>
+        <!-- Difficulty -->
+        <div data-category="difficulty">
+          <h3 class="text-xl font-semibold mb-2"><i class="fas fa-mountain mr-2"></i>Difficulty</h3>
+          <div class="flex gap-4">
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Easy">Easy</div>
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Moderate">Moderate</div>
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Challenging">Challenging</div>
+          </div>
         </div>
+
+        <!-- Technical -->
+        <div data-category="technical">
+          <h3 class="text-xl font-semibold mb-2"><i class="fas fa-hiking mr-2"></i>Technical Requirements</h3>
+          <div class="flex gap-4">
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="None">None</div>
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Scrambling">Scrambling</div>
+            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Mountaineering">Mountaineering</div>
+          </div>
+        </div>
+
+        <!-- Comments -->
+        <div>
+          <label for="comments" class="block text-lg font-medium">Additional Comments:</label>
+          <textarea
+            id="comments"
+            name="comments"
+            placeholder="e.g. Scenic views, short daily distances, beginner friendly..."
+            class="w-full border border-gray-300 rounded p-3 mt-1"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700">
+          Generate Itinerary
+        </button>
+      </form>
+
+      <hr class="my-10" />
+      <div id="accordion-controls" class="hidden mb-4">
+        <button id="toggle-all" class="bg-gray-200 px-4 py-2 rounded">Expand All</button>
       </div>
+      <div id="itinerary-cards"></div>
+    </main>
 
-      <!-- Comments -->
-      <label for="comments">Additional Comments:</label>
-      <textarea id="comments" name="comments" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
-
-      <button type="submit" class="generate-button">Generate Itinerary</button>
-    </form>
-
-    <hr id="response-separator">
-
-    <!-- Accordion Controls -->
-    <div id="accordion-controls" style="display: none;">
-      <button id="toggle-all" class="generate-button">Expand All</button>
-    </div>
-
-    <div id="itinerary-cards"></div>
-  </main>
-
-  <script src="customize.js"></script>
-</body>
+    <script src="customize.js"></script>
+  </body>
 </html>
