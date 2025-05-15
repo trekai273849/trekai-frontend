@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!response.ok) throw new Error(`Server returned status ${response.status}`);
+
       const data = await response.json();
       renderItineraryCards(data.reply);
     } catch (error) {
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     accordionToggle.style.display = 'block';
 
     const parts = responseText.split(/Day \d+:/).filter(Boolean);
-    const intro = parts.shift();
+    let intro = parts.shift();
 
     const introBlock = document.createElement('div');
     introBlock.id = 'intro-message';
@@ -98,27 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = header.querySelector('.accordion-icon');
         const isOpen = body.classList.contains('open');
 
-        if (isOpen) {
-          body.style.maxHeight = body.scrollHeight + 'px';
-          requestAnimationFrame(() => {
-            body.style.maxHeight = '0';
-            body.classList.remove('open');
-            header.classList.remove('open');
-            icon.textContent = '+';
-          });
-        } else {
-          body.classList.add('open');
-          header.classList.add('open');
-          body.style.maxHeight = body.scrollHeight + 'px';
-          icon.textContent = '−';
-        }
+        header.classList.toggle('open');
+        body.classList.toggle('open');
+        icon.textContent = isOpen ? '+' : '−';
+        body.style.maxHeight = isOpen ? null : body.scrollHeight + 'px';
       });
     });
 
     const toggleBtn = document.getElementById('toggle-all');
     toggleBtn.textContent = 'Expand All';
     let expanded = false;
-
     toggleBtn.onclick = () => {
       expanded = !expanded;
       toggleBtn.textContent = expanded ? 'Collapse All' : 'Expand All';
@@ -126,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const header = item.querySelector('.accordion-header');
         const body = item.querySelector('.accordion-body');
         const icon = header.querySelector('.accordion-icon');
+
         if (expanded) {
           header.classList.add('open');
           body.classList.add('open');
@@ -134,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           header.classList.remove('open');
           body.classList.remove('open');
-          body.style.maxHeight = '0';
+          body.style.maxHeight = null;
           icon.textContent = '+';
         }
       });
@@ -142,8 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const feedbackBox = document.createElement('div');
     feedbackBox.innerHTML = `
-      <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
-      <button id="regenerate-itinerary" class="generate-button">Update Itinerary</button>
+      <label for="feedback" style="font-weight: bold;">Feedback:</label>
+      <textarea id="feedback" placeholder="e.g. Scenic views, short daily distances, beginner friendly..." style="width: 100%; height: 100px; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-top: 10px; font-size: 1rem;"></textarea>
+      <button id="regenerate-itinerary" class="generate-button" style="margin-top: 15px;">Update Itinerary</button>
     `;
     container.appendChild(feedbackBox);
 
