@@ -17,8 +17,7 @@
 .accordion-body {
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background: #fff;
-  padding: 0 1em;
+  max-height: 0;
 }
 
 .accordion-body.open {

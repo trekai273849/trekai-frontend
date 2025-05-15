@@ -98,10 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const isOpen = body.classList.contains('open');
 
         if (isOpen) {
-          body.classList.remove('open');
-          header.classList.remove('open');
-          body.style.maxHeight = null;
-          header.querySelector('.accordion-icon').textContent = '+';
+          body.style.maxHeight = body.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            body.style.maxHeight = '0';
+            body.classList.remove('open');
+            header.classList.remove('open');
+            header.querySelector('.accordion-icon').textContent = '+';
+          });
         } else {
           body.classList.add('open');
           header.classList.add('open');
