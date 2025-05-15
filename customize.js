@@ -95,22 +95,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const body = header.nextElementSibling;
-        const isOpen = body.classList.contains('open');
+    header.addEventListener('click', () => {
+      const body = header.nextElementSibling;
+      const isOpen = body.classList.contains('open');
 
-        header.classList.toggle('open');
-        body.classList.toggle('open');
+    header.classList.toggle('open');
+    body.classList.toggle('open');
 
-        if (isOpen) {
-          body.style.maxHeight = null;
-          header.querySelector('.accordion-icon').textContent = '+';
-        } else {
-          body.style.maxHeight = body.scrollHeight + 'px';
-          header.querySelector('.accordion-icon').textContent = '−';
-        }
-      });
-    });
+    if (isOpen) {
+      body.style.maxHeight = null;
+      header.querySelector('.accordion-icon').textContent = '+';
+    } else {
+      body.style.maxHeight = body.scrollHeight + 'px';
+      header.querySelector('.accordion-icon').textContent = '−';
+    }
+  });
+});
 
     // Expand/Collapse All
     const toggleBtn = document.getElementById('toggle-all');
