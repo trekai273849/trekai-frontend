@@ -62,9 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = '';
 
     const parts = responseText
-      .replace(/\*\*Day \d+: /g, '### Day ')  // normalize bold headers
+      .replace(/\*\*Day \d+: /g, '### Day ')
       .split(/### Day \d+: /)
       .filter(Boolean);
+
     let days = parts;
     let tipsBlock = '';
 
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tipsBlock = parts.pop();
     }
 
-    const intro = days.shift(); // first part is the intro
+    const intro = days.shift();
     const introMessage = document.createElement('div');
     introMessage.id = 'intro-message';
     introMessage.innerHTML = `<p>${intro.trim().replace(/\n/g, '<br>')}</p>`;
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = lines
         .filter(line => line.includes(':'))
         .map(line => {
-          const cleaned = line.replace(/^[-–]\s*/, '');
+          const cleaned = line.replace(/^[-–•\*]\s*/, ''); // remove dash or bullet
           const [label, ...rest] = cleaned.split(':');
           const value = rest.join(':').trim();
           return `<li><strong>${label.trim()}:</strong> ${value}</li>`;
