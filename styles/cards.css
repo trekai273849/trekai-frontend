@@ -79,23 +79,14 @@
   margin-bottom: 16px;
 }
 
-.card.alps {
-  background-image: url('../images/alps.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.card-alps {
+  background-image: url('images/alps.jpg');
 }
 
-.card.himalayas {
-  background-image: url('../images/himalayas.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.card-himalayas {
+  background-image: url('images/himalayas.jpg');
 }
 
-.card.andes {
-  background-image: url('../images/andes.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.card-andes {
+  background-image: url('images/andes.jpg');
 }
