@@ -35,6 +35,7 @@
 
 .accordion-body.open {
   padding: 12px;
+  max-height: 1000px;
 }
 
 .accordion-body ul {
