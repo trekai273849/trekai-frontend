@@ -436,6 +436,14 @@ footer {
   margin-bottom: 8px;
 }
 
+.cta-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0;
+  background: none; /* Removes any inherited grey */
+  padding: 0; /* Ensures clean spacing */
+}
+
 .cta-button {
   background-color: #007bff; /* Bootstrap blue */
   color: #fff;
@@ -452,3 +460,4 @@ footer {
 .cta-button:hover {
   background-color: #0056b3;
 }
+
