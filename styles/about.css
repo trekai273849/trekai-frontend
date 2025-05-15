@@ -132,9 +132,22 @@ body {
   margin: 10px;
 }
 
-.icon-image {
-  width: 48px;  /* Adjust size */
-  height: 48px;
-  object-fit: contain;
-  margin-bottom: 8px;
+
+.feature-card img {
+  width: 64px;          /* Increase size from default (e.g., 32px or 48px) */
+  height: auto;         /* Keep aspect ratio */
+  margin-bottom: 12px;  /* Adds space between icon and heading */
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .feature-card img {
+    width: 72px;        /* Slightly larger on medium+ screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .feature-card img {
+    width: 80px;        /* Larger on desktops */
+  }
 }
