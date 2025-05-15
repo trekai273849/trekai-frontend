@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     days.forEach((section, index) => {
       const lines = section.trim().split('\n').filter(l => l.trim());
-      const titleText = `Day ${index + 1}: ${lines.shift().trim()}`;
-      const titleLine = `<strong>${titleText}</strong>`;
+      const titleText = lines.shift().trim();
+      const titleLine = `<strong>Day ${index + 1}: ${titleText}</strong>`;
 
       const details = lines
         .filter(line => line.includes(':'))
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accordion.className = 'accordion-item';
       accordion.innerHTML = `
         <button class="accordion-header">
-          <span>${titleLine}</span>
+          <span class="accordion-title">${titleLine}</span>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-body">
