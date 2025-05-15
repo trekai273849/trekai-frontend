@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         const body = header.nextElementSibling;
+        const icon = header.querySelector('.accordion-icon');
         const isOpen = body.classList.contains('open');
 
         if (isOpen) {
@@ -103,13 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
             body.style.maxHeight = '0';
             body.classList.remove('open');
             header.classList.remove('open');
-            header.querySelector('.accordion-icon').textContent = '+';
+            icon.textContent = '+';
           });
         } else {
           body.classList.add('open');
           header.classList.add('open');
           body.style.maxHeight = body.scrollHeight + 'px';
-          header.querySelector('.accordion-icon').textContent = '−';
+          icon.textContent = '−';
         }
       });
     });
@@ -124,16 +125,17 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.accordion-item').forEach(item => {
         const header = item.querySelector('.accordion-header');
         const body = item.querySelector('.accordion-body');
+        const icon = header.querySelector('.accordion-icon');
         if (expanded) {
           header.classList.add('open');
           body.classList.add('open');
           body.style.maxHeight = body.scrollHeight + 'px';
-          header.querySelector('.accordion-icon').textContent = '−';
+          icon.textContent = '−';
         } else {
           header.classList.remove('open');
           body.classList.remove('open');
-          body.style.maxHeight = null;
-          header.querySelector('.accordion-icon').textContent = '+';
+          body.style.maxHeight = '0';
+          icon.textContent = '+';
         }
       });
     };
