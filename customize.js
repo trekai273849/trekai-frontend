@@ -76,7 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const intro = days.shift();
     const introMessage = document.createElement('div');
     introMessage.id = 'intro-message';
-    introMessage.innerHTML = `<p>${intro.trim().replace(/\n/g, '<br>')}</p>`;
+    introMessage.innerHTML = `<p>${intro
+      .trim()
+      .replace(/^(.+?\.)\s*/s, '<strong>$1</strong><br><br>')
+      .replace(/\n/g, '<br>')}</p>`;
     container.appendChild(introMessage);
 
     days.forEach((section, index) => {
@@ -86,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = lines
         .filter(line => line.includes(':'))
         .map(line => {
-          const cleaned = line.replace(/^[-–•\*]\s*/, ''); // remove dash or bullet
+          const cleaned = line.trim().replace(/^[-–•\*]\s*/, '');
           const [label, ...rest] = cleaned.split(':');
           const value = rest.join(':').trim();
           return `<li><strong>${label.trim()}:</strong> ${value}</li>`;

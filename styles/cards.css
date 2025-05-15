@@ -67,9 +67,19 @@
   width: 100%;
 }
 
-#itinerary-cards {
-  margin-top: 32px;
+#itinerary-cards ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
 }
+#itinerary-cards li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+#intro-message p {
+  line-height: 1.6;
+  font-size: 1.05em;
+}
+
 
 .response-title {
   font-size: 24px;
@@ -90,3 +100,4 @@
 .card-andes {
   background-image: url('...images/andes.jpg');
 }
+
