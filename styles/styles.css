@@ -442,7 +442,7 @@ footer {
 }
 
 .cta-button {
-  background-color: #2d6a4f;
+  background-color: ##007bff;
   color: #fff;
   padding: 14px 28px;
   border-radius: 8px;
@@ -454,5 +454,5 @@ footer {
 }
 
 .cta-button:hover {
-  background-color: #1b4332;
+  background-color: #0056b3;
 }
