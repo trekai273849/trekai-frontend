@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     days.forEach((section, index) => {
       const lines = section.trim().split('\n').filter(l => l.trim());
-      const titleLine = `Day ${index + 1}: ${lines.shift().trim()}`;
+      const titleText = `Day ${index + 1}: ${lines.shift().trim()}`;
+      const titleLine = `<strong>${titleText}</strong>`;
 
       const details = lines
         .filter(line => line.includes(':'))
