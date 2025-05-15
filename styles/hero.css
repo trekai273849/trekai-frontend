@@ -28,3 +28,34 @@
   font-size: 1.2rem;
   font-weight: normal;
 }
+.hero-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-search input[type="text"] {
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  width: 500px; /* Adjust as needed */
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.hero-search button {
+  padding: 1.2rem 2rem;
+  font-size: 1.1rem;
+  background-color: #2f6df3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-search button:hover {
+  background-color: #1e53c1;
+}
