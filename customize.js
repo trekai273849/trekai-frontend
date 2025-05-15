@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!response.ok) throw new Error(`Server returned status ${response.status}`);
-
       const data = await response.json();
       renderItineraryCards(data.reply);
     } catch (error) {
@@ -59,12 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
-    // Show Expand/Collapse All button
     const accordionToggle = document.getElementById('accordion-controls');
     accordionToggle.style.display = 'block';
 
     const parts = responseText.split(/Day \d+:/).filter(Boolean);
-    let intro = parts.shift();
+    const intro = parts.shift();
 
     const introBlock = document.createElement('div');
     introBlock.id = 'intro-message';
@@ -87,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="accordion-title"><strong>Day ${index + 1}: ${title}</strong></span>
           <span class="accordion-icon">${index === 0 ? '−' : '+'}</span>
         </button>
-        <div class="accordion-body ${index === 0 ? 'open' : ''}" style="max-height: ${index === 0 ? '500px' : '0'};">
+        <div class="accordion-body ${index === 0 ? 'open' : ''}" style="max-height: ${index === 0 ? '1000px' : '0'};">
           <ul>${details}</ul>
         </div>
       `;
@@ -95,27 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const body = header.nextElementSibling;
-      const isOpen = body.classList.contains('open');
+      header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        const isOpen = body.classList.contains('open');
 
-    header.classList.toggle('open');
-    body.classList.toggle('open');
+        if (isOpen) {
+          body.classList.remove('open');
+          header.classList.remove('open');
+          body.style.maxHeight = null;
+          header.querySelector('.accordion-icon').textContent = '+';
+        } else {
+          body.classList.add('open');
+          header.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+          header.querySelector('.accordion-icon').textContent = '−';
+        }
+      });
+    });
 
-    if (isOpen) {
-      body.style.maxHeight = null;
-      header.querySelector('.accordion-icon').textContent = '+';
-    } else {
-      body.style.maxHeight = body.scrollHeight + 'px';
-      header.querySelector('.accordion-icon').textContent = '−';
-    }
-  });
-});
-
-    // Expand/Collapse All
     const toggleBtn = document.getElementById('toggle-all');
     toggleBtn.textContent = 'Expand All';
     let expanded = false;
+
     toggleBtn.onclick = () => {
       expanded = !expanded;
       toggleBtn.textContent = expanded ? 'Collapse All' : 'Expand All';
@@ -136,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    // Add feedback box
     const feedbackBox = document.createElement('div');
     feedbackBox.innerHTML = `
       <input type="text" id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" style="width: 100%; padding: 10px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;" />
