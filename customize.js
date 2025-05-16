@@ -62,20 +62,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderAccordionBlock(title, content, open = false) {
-    const card = document.createElement('div');
-    card.className = 'mb-4 border rounded shadow-sm';
+  const card = document.createElement('div');
+  card.className = 'mb-4 border rounded shadow-sm';
 
-    card.innerHTML = `
-      <button class="w-full flex justify-between items-center px-4 py-3 bg-blue-100 text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
-        <span>${title}</span>
-        <svg class="w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-body ${open ? '' : 'max-h-0 overflow-hidden'} transition-all duration-300 bg-white px-4">
-        <p class="py-3 whitespace-pre-wrap">${content}</p>
-      </div>
-    `;
+  card.innerHTML = `
+    <button class="w-full flex justify-between items-center px-4 py-3 bg-blue-100 text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
+      <span>${title}</span>
+      <svg class="w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="accordion-body ${open ? '' : 'max-h-0 overflow-hidden'} transition-all duration-300 bg-white px-4">
+      <p class="py-3 whitespace-pre-wrap">${content}</p>
+    </div>
+  `;
+
+  const toggle = card.querySelector('.accordion-toggle');
+  const body = card.querySelector('.accordion-body');
+  const icon = card.querySelector('svg');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = !body.classList.contains('max-h-0');
+    if (isOpen) {
+      body.classList.add('max-h-0');
+      icon.classList.remove('rotate-180');
+    } else {
+      body.classList.remove('max-h-0');
+      icon.classList.add('rotate-180');
+    }
+  });
+
+  return card;
+}
 
     card.querySelector('.accordion-toggle').addEventListener('click', () => {
       const body = card.querySelector('.accordion-body');
