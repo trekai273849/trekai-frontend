@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = "Tell us more about your ideal trekking experience.";
 
+  let cachedPackingList = '';
+  let cachedInsights = '';
+  let rawItineraryText = '';
+
   document.getElementById('customization-form').addEventListener('submit', function (e) {
     e.preventDefault();
     generateItinerary();
@@ -34,7 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!response.ok) throw new Error(`Server returned status ${response.status}`);
       const data = await response.json();
-      renderItineraryAccordion(data.reply);
+      rawItineraryText = data.reply;
+      renderItineraryAccordion(rawItineraryText);
+
+      // Fetch extras in parallel
+      fetchPackingList(rawItineraryText);
+      fetchLocalInsights(rawItineraryText);
+
     } catch (error) {
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
       console.error(error);
@@ -109,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(card);
     });
 
-    // Feedback box
     const feedbackDiv = document.createElement('div');
     feedbackDiv.className = 'mt-6';
     feedbackDiv.innerHTML = `
@@ -127,26 +136,44 @@ document.addEventListener('DOMContentLoaded', () => {
       if (feedback) generateItinerary(feedback);
     });
 
-    document.getElementById('packing-list').addEventListener('click', async () => {
-      const text = intro + '\n' + sections.join('\n');
+    document.getElementById('packing-list').addEventListener('click', () => {
+      if (cachedPackingList) {
+        container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, true));
+      }
+    });
+
+    document.getElementById('local-insights').addEventListener('click', () => {
+      if (cachedInsights) {
+        container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, true));
+      }
+    });
+  }
+
+  async function fetchPackingList(text) {
+    try {
       const res = await fetch('https://trekai-api.onrender.com/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt: `Create a detailed packing list for this itinerary:\n${text}` })
       });
       const data = await res.json();
-      container.appendChild(renderAccordionBlock('Packing List', data.reply || 'Could not fetch packing list.', true));
-    });
+      cachedPackingList = data.reply;
+    } catch (e) {
+      cachedPackingList = 'Could not fetch packing list.';
+    }
+  }
 
-    document.getElementById('local-insights').addEventListener('click', async () => {
-      const text = intro + '\n' + sections.join('\n');
+  async function fetchLocalInsights(text) {
+    try {
       const res = await fetch('https://trekai-api.onrender.com/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt: `Based on this itinerary, provide local insights including cultural highlights, food, and helpful local tips:\n${text}` })
       });
       const data = await res.json();
-      container.appendChild(renderAccordionBlock('Local Insights', data.reply || 'Could not fetch local insights.', true));
-    });
+      cachedInsights = data.reply;
+    } catch (e) {
+      cachedInsights = 'Could not fetch local insights.';
+    }
   }
 });
