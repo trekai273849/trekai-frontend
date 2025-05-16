@@ -39,16 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!response.ok) throw new Error(`Server returned status ${response.status}`);
       const data = await response.json();
       rawItineraryText = data.reply;
-      renderItineraryAccordion(rawItineraryText);
 
-      // Fetch extras in parallel
-      fetchPackingList(rawItineraryText);
-      fetchLocalInsights(rawItineraryText);
+      // Extract extras
+      cachedPackingList = extractSection(data.reply, 'Packing List');
+      cachedInsights = extractSection(data.reply, 'Local Insights');
+
+      const itineraryTextOnly = data.reply
+        .replace(/### Packing List[\s\S]*?(?=###|$)/, '')
+        .replace(/### Local Insights[\s\S]*?(?=###|$)/, '');
+
+      renderItineraryAccordion(itineraryTextOnly);
 
     } catch (error) {
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
       console.error(error);
     }
+  }
+
+  function extractSection(text, header) {
+    const regex = new RegExp(`### ${header}[\\s\\S]*?(?=###|$)`);
+    const match = text.match(regex);
+    return match ? match[0].replace(`### ${header}`, '').trim() : '';
   }
 
   function renderAccordionBlock(title, content, open = false) {
@@ -147,33 +158,5 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, true));
       }
     });
-  }
-
-  async function fetchPackingList(text) {
-    try {
-      const res = await fetch('https://trekai-api.onrender.com/api/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: `Create a detailed packing list for this itinerary:\n${text}` })
-      });
-      const data = await res.json();
-      cachedPackingList = data.reply;
-    } catch (e) {
-      cachedPackingList = 'Could not fetch packing list.';
-    }
-  }
-
-  async function fetchLocalInsights(text) {
-    try {
-      const res = await fetch('https://trekai-api.onrender.com/api/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: `Based on this itinerary, provide local insights including cultural highlights, food, and helpful local tips:\n${text}` })
-      });
-      const data = await res.json();
-      cachedInsights = data.reply;
-    } catch (e) {
-      cachedInsights = 'Could not fetch local insights.';
-    }
   }
 });
