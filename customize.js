@@ -61,12 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return match ? match[0].replace(`### ${header}`, '').trim() : '';
   }
 
-  function renderAccordionBlock(title, content, open = false) {
+  function renderAccordionBlock(title, content, open = false, bgColor = 'bg-blue-100') {
     const card = document.createElement('div');
-    card.className = 'mb-4 border rounded shadow-sm';
+    card.className = `mb-4 border rounded shadow-sm`;
 
     card.innerHTML = `
-      <button class="w-full flex justify-between items-center px-4 py-3 bg-blue-100 text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
+      <button class="w-full flex justify-between items-center px-4 py-3 ${bgColor} text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
         <span>${title}</span>
         <svg class="w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -98,6 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderItineraryAccordion(text) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
+
+    const itineraryHeader = document.createElement('h2');
+    itineraryHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-6';
+    itineraryHeader.innerText = 'Itinerary';
+    container.appendChild(itineraryHeader);
 
     const sections = text.split(/Day \d+:/).filter(Boolean);
     let intro = sections.shift();
@@ -148,12 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(card);
     });
 
-    // Add Packing List & Local Insights accordions after the itinerary
+    if (cachedPackingList || cachedInsights) {
+      const extrasHeader = document.createElement('h2');
+      extrasHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-10';
+      extrasHeader.innerText = 'Additional Information';
+      container.appendChild(extrasHeader);
+    }
+
     if (cachedPackingList) {
-      container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, false));
+      container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, false, 'bg-blue-50'));
     }
     if (cachedInsights) {
-      container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, false));
+      container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, false, 'bg-blue-50'));
     }
 
     const feedbackInput = document.createElement('div');
