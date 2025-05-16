@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function extractSection(text, header) {
-    const regex = new RegExp(`### ${header}[\s\S]*?(?=###|$)`);
+    const regex = new RegExp(`### ${header}[\\s\\S]*?(?=###|$)`);
     const match = text.match(regex);
     return match ? match[0].replace(`### ${header}`, '').trim() : '';
   }
@@ -98,28 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderItineraryAccordion(text) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
-
-    const feedbackDiv = document.createElement('div');
-    feedbackDiv.className = 'mb-6';
-    feedbackDiv.innerHTML = `
-      <div class="flex gap-3 flex-wrap mb-4">
-        <button id="packing-list" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Packing List</button>
-        <button id="local-insights" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Local Insights</button>
-      </div>
-    `;
-    container.appendChild(feedbackDiv);
-
-    document.getElementById('packing-list').addEventListener('click', () => {
-      if (cachedPackingList) {
-        container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, true));
-      }
-    });
-
-    document.getElementById('local-insights').addEventListener('click', () => {
-      if (cachedInsights) {
-        container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, true));
-      }
-    });
 
     const sections = text.split(/Day \d+:/).filter(Boolean);
     let intro = sections.shift();
@@ -169,6 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       container.appendChild(card);
     });
+
+    // Add Packing List & Local Insights accordions after the itinerary
+    if (cachedPackingList) {
+      container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, false));
+    }
+    if (cachedInsights) {
+      container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, false));
+    }
 
     const feedbackInput = document.createElement('div');
     feedbackInput.className = 'mt-6';
