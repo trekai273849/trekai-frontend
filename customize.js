@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
 
     try {
-      const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
+      const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
       rawItineraryText = data.reply;
 
-      // Extract extras
       cachedPackingList = extractSection(data.reply, 'Packing List');
       cachedInsights = extractSection(data.reply, 'Local Insights');
 
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function extractSection(text, header) {
-    const regex = new RegExp(`### ${header}[\\s\\S]*?(?=###|$)`);
+    const regex = new RegExp(`### ${header}[\s\S]*?(?=###|$)`);
     const match = text.match(regex);
     return match ? match[0].replace(`### ${header}`, '').trim() : '';
   }
@@ -78,13 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    card.querySelector('.accordion-toggle').addEventListener('click', () => {
-      const body = card.querySelector('.accordion-body');
-      const icon = card.querySelector('svg');
+    const toggle = card.querySelector('.accordion-toggle');
+    const body = card.querySelector('.accordion-body');
+    const icon = card.querySelector('svg');
+
+    toggle.addEventListener('click', () => {
       const isOpen = !body.classList.contains('max-h-0');
-      document.querySelectorAll('.accordion-body').forEach(el => el.classList.add('max-h-0'));
-      document.querySelectorAll('.accordion-toggle svg').forEach(i => i.classList.remove('rotate-180'));
-      if (!isOpen) {
+      if (isOpen) {
+        body.classList.add('max-h-0');
+        icon.classList.remove('rotate-180');
+      } else {
         body.classList.remove('max-h-0');
         icon.classList.add('rotate-180');
       }
@@ -96,6 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderItineraryAccordion(text) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
+
+    // Insert extras first
+    if (cachedPackingList) {
+      container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, true));
+    }
+    if (cachedInsights) {
+      container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, true));
+    }
 
     const sections = text.split(/Day \d+:/).filter(Boolean);
     let intro = sections.shift();
@@ -127,6 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul class="list-none py-2">${listItems}</ul>
         </div>
       `;
+
+      const toggle = card.querySelector('.accordion-toggle');
+      const body = card.querySelector('.accordion-body');
+      const icon = card.querySelector('svg');
+
+      toggle.addEventListener('click', () => {
+        const isOpen = !body.classList.contains('max-h-0');
+        if (isOpen) {
+          body.classList.add('max-h-0');
+          icon.classList.remove('rotate-180');
+        } else {
+          body.classList.remove('max-h-0');
+          icon.classList.add('rotate-180');
+        }
+      });
+
       container.appendChild(card);
     });
 
@@ -136,8 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <input type="text" id="feedback" placeholder="Add feedback to adjust your itinerary" class="w-full border px-3 py-2 rounded mb-4" />
       <div class="flex gap-3 flex-wrap">
         <button id="regenerate-itinerary" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Update Itinerary</button>
-        <button id="packing-list" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Packing List</button>
-        <button id="local-insights" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Local Insights</button>
       </div>
     `;
     container.appendChild(feedbackDiv);
@@ -145,18 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('regenerate-itinerary').addEventListener('click', () => {
       const feedback = document.getElementById('feedback').value;
       if (feedback) generateItinerary(feedback);
-    });
-
-    document.getElementById('packing-list').addEventListener('click', () => {
-      if (cachedPackingList) {
-        container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, true));
-      }
-    });
-
-    document.getElementById('local-insights').addEventListener('click', () => {
-      if (cachedInsights) {
-        container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, true));
-      }
     });
   }
 });
