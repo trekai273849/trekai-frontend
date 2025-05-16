@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
 
     try {
-      const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
+      const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
       rawItineraryText = data.reply;
 
+      // Extract extras
       cachedPackingList = extractSection(data.reply, 'Packing List');
       cachedInsights = extractSection(data.reply, 'Local Insights');
 
@@ -77,16 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    const toggle = card.querySelector('.accordion-toggle');
-    const body = card.querySelector('.accordion-body');
-    const icon = card.querySelector('svg');
-
-    toggle.addEventListener('click', () => {
+    card.querySelector('.accordion-toggle').addEventListener('click', () => {
+      const body = card.querySelector('.accordion-body');
+      const icon = card.querySelector('svg');
       const isOpen = !body.classList.contains('max-h-0');
-      if (isOpen) {
-        body.classList.add('max-h-0');
-        icon.classList.remove('rotate-180');
-      } else {
+      document.querySelectorAll('.accordion-body').forEach(el => el.classList.add('max-h-0'));
+      document.querySelectorAll('.accordion-toggle svg').forEach(i => i.classList.remove('rotate-180'));
+      if (!isOpen) {
         body.classList.remove('max-h-0');
         icon.classList.add('rotate-180');
       }
@@ -129,22 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul class="list-none py-2">${listItems}</ul>
         </div>
       `;
-
-      const toggle = card.querySelector('.accordion-toggle');
-      const body = card.querySelector('.accordion-body');
-      const icon = card.querySelector('svg');
-
-      toggle.addEventListener('click', () => {
-        const isOpen = !body.classList.contains('max-h-0');
-        if (isOpen) {
-          body.classList.add('max-h-0');
-          icon.classList.remove('rotate-180');
-        } else {
-          body.classList.remove('max-h-0');
-          icon.classList.add('rotate-180');
-        }
-      });
-
       container.appendChild(card);
     });
 
