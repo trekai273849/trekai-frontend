@@ -99,13 +99,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
-    // Insert extras first
-    if (cachedPackingList) {
-      container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, true));
-    }
-    if (cachedInsights) {
-      container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, true));
-    }
+    const feedbackDiv = document.createElement('div');
+    feedbackDiv.className = 'mb-6';
+    feedbackDiv.innerHTML = `
+      <div class="flex gap-3 flex-wrap mb-4">
+        <button id="packing-list" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Packing List</button>
+        <button id="local-insights" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Local Insights</button>
+      </div>
+    `;
+    container.appendChild(feedbackDiv);
+
+    document.getElementById('packing-list').addEventListener('click', () => {
+      if (cachedPackingList) {
+        container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, true));
+      }
+    });
+
+    document.getElementById('local-insights').addEventListener('click', () => {
+      if (cachedInsights) {
+        container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, true));
+      }
+    });
 
     const sections = text.split(/Day \d+:/).filter(Boolean);
     let intro = sections.shift();
@@ -156,15 +170,13 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(card);
     });
 
-    const feedbackDiv = document.createElement('div');
-    feedbackDiv.className = 'mt-6';
-    feedbackDiv.innerHTML = `
+    const feedbackInput = document.createElement('div');
+    feedbackInput.className = 'mt-6';
+    feedbackInput.innerHTML = `
       <input type="text" id="feedback" placeholder="Add feedback to adjust your itinerary" class="w-full border px-3 py-2 rounded mb-4" />
-      <div class="flex gap-3 flex-wrap">
-        <button id="regenerate-itinerary" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Update Itinerary</button>
-      </div>
+      <button id="regenerate-itinerary" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Update Itinerary</button>
     `;
-    container.appendChild(feedbackDiv);
+    container.appendChild(feedbackInput);
 
     document.getElementById('regenerate-itinerary').addEventListener('click', () => {
       const feedback = document.getElementById('feedback').value;
