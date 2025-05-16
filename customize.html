@@ -4,12 +4,21 @@
   <meta charset="UTF-8" />
   <title>Customize Your Trek</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://unpkg.com/feather-icons"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
     .filter-btn {
-      @apply px-4 py-2 border border-gray-300 rounded-md hover:bg-blue-100 transition;
+      padding: 0.5rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      transition: background-color 0.2s, color 0.2s;
+      background-color: #f9fafb;
     }
+
+    .filter-btn:hover {
+      background-color: #e0f2fe;
+    }
+
     .filter-btn.active {
       background-color: #2563eb;
       color: white;
@@ -18,25 +27,25 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <header class="bg-cover bg-center h-64 flex items-center justify-center relative" style="background-image: url('images/alps.jpg');">
-    <a href="index.html" class="absolute top-4 left-6 text-white font-semibold text-xl z-10">Smart Trails</a>
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="relative text-center text-white z-10">
-      <h1 class="text-3xl font-bold">Customize Your Trek</h1>
-      <h2 id="greeting" class="text-lg mt-2">Tell us more about your ideal trekking experience</h2>
+  <!-- Hero Header -->
+  <header class="relative bg-cover bg-center h-64 flex items-center justify-center text-white" style="background-image: url('Images/alps.jpg');">
+    <a href="index.html" class="absolute top-4 left-6 text-white text-xl font-bold">Smart Trails</a>
+    <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+      <h1 class="text-3xl font-bold mb-2">Customize Your Trek</h1>
+      <h2 id="greeting" class="text-lg font-medium">Tell us more about your ideal trekking experience</h2>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <form id="customization-form" class="space-y-8">
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto p-6">
+    <form id="customization-form" class="space-y-6">
 
       <!-- Accommodation -->
       <div>
-        <h2 class="text-xl font-semibold flex items-center gap-2">
-          <img src="icons/hotel.svg" class="w-6 h-6" alt="Tent icon" />
-          Accommodation Type
-        </h2>
-        <div class="mt-2 flex flex-wrap gap-3">
+        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+          🏕️ Accommodation Type
+        </h3>
+        <div class="flex gap-3 flex-wrap">
           <button type="button" class="filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
           <button type="button" class="filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
           <button type="button" class="filter-btn" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
@@ -45,11 +54,10 @@
 
       <!-- Difficulty -->
       <div>
-        <h2 class="text-xl font-semibold flex items-center gap-2">
-          <img src="icons/mountain.svg" class="w-6 h-6" alt="Mountain icon" />
-          Difficulty
-        </h2>
-        <div class="mt-2 flex flex-wrap gap-3">
+        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+          🏔️ Difficulty
+        </h3>
+        <div class="flex gap-3 flex-wrap">
           <button type="button" class="filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
           <button type="button" class="filter-btn" data-category="difficulty" data-value="Moderate">Moderate</button>
           <button type="button" class="filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
@@ -58,11 +66,10 @@
 
       <!-- Technical -->
       <div>
-        <h2 class="text-xl font-semibold flex items-center gap-2">
-          <img src="icons/hiker.svg" class="w-6 h-6" alt="Ice axe icon" />
-          Technical Requirements
-        </h2>
-        <div class="mt-2 flex flex-wrap gap-3">
+        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+          🥾 Technical Requirements
+        </h3>
+        <div class="flex gap-3 flex-wrap">
           <button type="button" class="filter-btn" data-category="technical" data-value="None">None</button>
           <button type="button" class="filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
           <button type="button" class="filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
@@ -71,24 +78,26 @@
 
       <!-- Comments -->
       <div>
-        <label for="comments" class="block font-medium text-gray-700">Additional Comments:</label>
-        <textarea id="comments" name="comments" class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g. Scenic views, beginner friendly, prefer forested trails"></textarea>
+        <label for="comments" class="block mb-1 font-medium">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="4" class="w-full p-2 border border-gray-300 rounded-md" placeholder="e.g. Scenic views, short daily distances, beginner friendly..."></textarea>
       </div>
 
-      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Generate Itinerary</button>
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md">Generate Itinerary</button>
     </form>
 
-    <hr class="my-8 border-t" />
-    <div id="itinerary-cards"></div>
+    <div id="accordion-controls" class="my-6 hidden text-center">
+      <button id="toggle-all" class="bg-gray-200 hover:bg-gray-300 text-sm px-4 py-2 rounded">Expand All</button>
+    </div>
+
+    <div id="itinerary-cards" class="space-y-4 mt-8"></div>
   </main>
 
   <script src="customize.js"></script>
-  <script>
-    feather.replace();
 
+  <script>
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const group = btn.closest('[data-category]')?.dataset.category || btn.dataset.category;
+        const group = btn.dataset.category;
         document.querySelectorAll(`.filter-btn[data-category="${group}"]`).forEach(el => el.classList.remove('active'));
         btn.classList.add('active');
       });
