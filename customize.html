@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Customize Your Trek</title>
+    ,<h1>Tell us more about your ideal trekking experience.</h1>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://unpkg.com/feather-icons"></script>
     <link
@@ -29,41 +30,38 @@
     <main class="max-w-4xl mx-auto px-4 py-8">
       <form id="customization-form" class="space-y-8">
 
-        <!-- Accommodation -->
-        <div class="filter-group space-y-2" data-category="accommodation">
-          <h3 class="text-xl font-semibold flex items-center gap-2">
-            <i data-feather="home"></i> Accommodation Type
-          </h3>
-          <div class="flex flex-wrap gap-4">
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Camping">Camping</div>
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Hut-to-Hut">Hut-to-Hut</div>
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Luxury Lodges">Luxury Lodges</div>
-          </div>
-        </div>
+        <!-- Accommodation Type -->
+<div class="mb-6">
+  <h2 class="flex items-center text-xl font-semibold text-gray-800 mb-3">
+    <!-- Tent / Camp Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l9-16 9 16H3z" />
+    </svg>
+    Accommodation Type
+  </h2>
+</div>
 
-        <!-- Difficulty -->
-        <div class="filter-group space-y-2" data-category="difficulty">
-          <h3 class="text-xl font-semibold flex items-center gap-2">
-            <i data-feather="activity"></i> Difficulty
-          </h3>
-          <div class="flex flex-wrap gap-4">
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Easy">Easy</div>
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Moderate">Moderate</div>
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Challenging">Challenging</div>
-          </div>
-        </div>
+<!-- Difficulty -->
+<div class="mb-6">
+  <h2 class="flex items-center text-xl font-semibold text-gray-800 mb-3">
+    <!-- Mountain Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 7 3-5 4 10H3z" />
+    </svg>
+    Difficulty
+  </h2>
+</div>
 
-        <!-- Technical -->
-        <div class="filter-group space-y-2" data-category="technical">
-          <h3 class="text-xl font-semibold flex items-center gap-2">
-            <i data-feather="tool"></i> Technical Requirements
-          </h3>
-          <div class="flex flex-wrap gap-4">
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="None">None</div>
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Scrambling">Scrambling</div>
-            <div class="filter-card border px-4 py-2 rounded cursor-pointer" data-value="Mountaineering">Mountaineering</div>
-          </div>
-        </div>
+<!-- Technical Requirements -->
+<div class="mb-6">
+  <h2 class="flex items-center text-xl font-semibold text-gray-800 mb-3">
+    <!-- Ice Axe / Rope Icon (Mountaineering) -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 3l6.5 6.5m-6.5 0l6.5-6.5m-6.5 0v6.5m0 0L3 21" />
+    </svg>
+    Technical Requirements
+  </h2>
+</div>
 
         <!-- Comments -->
         <div>

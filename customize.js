@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
-  document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
+  // document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
 
   // Filter button toggle logic
   document.querySelectorAll('[data-category]').forEach(group => {
