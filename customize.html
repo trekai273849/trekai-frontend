@@ -20,38 +20,42 @@
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-4xl mx-auto p-6">
-      <form id="customization-form" class="space-y-6">
-        <!-- Accommodation -->
-        <div data-category="accommodation">
-          <h3 class="text-xl font-semibold mb-2"><i class="fas fa-bed mr-2"></i>Accommodation Type</h3>
-          <div class="flex gap-4">
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Camping">Camping</div>
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Hut-to-Hut">Hut-to-Hut</div>
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Luxury Lodges">Luxury Lodges</div>
-          </div>
-        </div>
+<form id="customization-form" class="space-y-8">
+  <!-- Accommodation -->
+  <div data-category="accommodation">
+    <h3 class="text-xl font-semibold mb-4 flex items-center">
+      <i class="fas fa-bed mr-2"></i>Accommodation Type
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Camping">Camping</div>
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Hut-to-Hut">Hut-to-Hut</div>
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Luxury Lodges">Luxury Lodges</div>
+    </div>
+  </div>
 
-        <!-- Difficulty -->
-        <div data-category="difficulty">
-          <h3 class="text-xl font-semibold mb-2"><i class="fas fa-mountain mr-2"></i>Difficulty</h3>
-          <div class="flex gap-4">
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Easy">Easy</div>
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Moderate">Moderate</div>
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Challenging">Challenging</div>
-          </div>
-        </div>
+  <!-- Difficulty -->
+  <div data-category="difficulty">
+    <h3 class="text-xl font-semibold mb-4 flex items-center">
+      <i class="fas fa-mountain mr-2"></i>Difficulty
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Easy">Easy</div>
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Moderate">Moderate</div>
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Challenging">Challenging</div>
+    </div>
+  </div>
 
-        <!-- Technical -->
-        <div data-category="technical">
-          <h3 class="text-xl font-semibold mb-2"><i class="fas fa-hiking mr-2"></i>Technical Requirements</h3>
-          <div class="flex gap-4">
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="None">None</div>
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Scrambling">Scrambling</div>
-            <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer" data-value="Mountaineering">Mountaineering</div>
-          </div>
-        </div>
+  <!-- Technical -->
+  <div data-category="technical">
+    <h3 class="text-xl font-semibold mb-4 flex items-center">
+      <i class="fas fa-hiking mr-2"></i>Technical Requirements
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="None">None</div>
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Scrambling">Scrambling</div>
+      <div class="filter-card bg-gray-100 p-4 rounded cursor-pointer text-center hover:bg-blue-100" data-value="Mountaineering">Mountaineering</div>
+    </div>
+  </div>
 
         <!-- Comments -->
         <div>
