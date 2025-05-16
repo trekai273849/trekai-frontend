@@ -114,9 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedbackDiv = document.createElement('div');
     feedbackDiv.className = 'mt-6';
     feedbackDiv.innerHTML = `
-      <input type="text" id="feedback" placeholder="Add feedback to adjust your itinerary" class="w-full border px-3 py-2 rounded mb-3" />
-      <button id="regenerate-itinerary" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Update Itinerary</button>
-    `;
+  <input type="text" id="feedback" placeholder="Add feedback to adjust your itinerary" class="w-full border px-3 py-2 rounded mb-4" />
+  <div class="flex gap-3 flex-wrap">
+    <button id="regenerate-itinerary" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Update Itinerary</button>
+    <button id="packing-list" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Packing List</button>
+    <button id="local-insights" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">Local Insights</button>
+  </div>
+`;
+// Attach event listeners after rendering
+document.getElementById('packing-list').addEventListener('click', () => {
+  alert("Packing list feature coming soon!");
+});
+
+document.getElementById('local-insights').addEventListener('click', () => {
+  alert("Local insights feature coming soon!");
+});
     container.appendChild(feedbackDiv);
 
     document.getElementById('regenerate-itinerary').addEventListener('click', () => {
