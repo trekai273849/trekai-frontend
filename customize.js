@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
       rawItineraryText = data.reply;
 
-      // Extract extras
       cachedPackingList = extractSection(data.reply, 'Packing List');
       cachedInsights = extractSection(data.reply, 'Local Insights');
 
@@ -82,9 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const body = card.querySelector('.accordion-body');
       const icon = card.querySelector('svg');
       const isOpen = !body.classList.contains('max-h-0');
-      document.querySelectorAll('.accordion-body').forEach(el => el.classList.add('max-h-0'));
-      document.querySelectorAll('.accordion-toggle svg').forEach(i => i.classList.remove('rotate-180'));
-      if (!isOpen) {
+
+      if (isOpen) {
+        body.classList.add('max-h-0');
+        icon.classList.remove('rotate-180');
+      } else {
         body.classList.remove('max-h-0');
         icon.classList.add('rotate-180');
       }
@@ -127,6 +128,21 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul class="list-none py-2">${listItems}</ul>
         </div>
       `;
+
+      card.querySelector('.accordion-toggle').addEventListener('click', () => {
+        const body = card.querySelector('.accordion-body');
+        const icon = card.querySelector('svg');
+        const isOpen = !body.classList.contains('max-h-0');
+
+        if (isOpen) {
+          body.classList.add('max-h-0');
+          icon.classList.remove('rotate-180');
+        } else {
+          body.classList.remove('max-h-0');
+          icon.classList.add('rotate-180');
+        }
+      });
+
       container.appendChild(card);
     });
 
