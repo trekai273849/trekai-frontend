@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = `${location} is a great idea! Tell us more about your ideal trekking experience.`;
 
-  document.querySelectorAll('[data-category]').forEach(group => {
+  document.querySelectorAll('.filter-group').forEach(group => {
     const cards = group.querySelectorAll('.filter-card');
     cards.forEach(card => {
       card.addEventListener('click', () => {
@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.getElementById('customization-form').addEventListener('submit', async function (e) {
+  document.getElementById('customization-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     generateItinerary();
   });
 
   async function generateItinerary(additionalFeedback = '') {
     const filters = {};
-    document.querySelectorAll('[data-category]').forEach(group => {
+    document.querySelectorAll('.filter-group').forEach(group => {
       const category = group.dataset.category;
       const selected = group.querySelector('.filter-card.active');
       if (selected) {
@@ -29,27 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const comments = document.getElementById('comments').value + (additionalFeedback ? ' ' + additionalFeedback : '');
     const outputDiv = document.getElementById('itinerary-cards');
-    outputDiv.innerHTML = '<div class="text-center text-gray-600">Preparing your personal itinerary...</div>';
+    outputDiv.innerHTML = `<div class="text-center py-8">Preparing your personal itinerary...</div>`;
 
     try {
       const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          location,
-          filters: {
-            ...filters,
-            altitude: "2000–3000m"
-          },
-          comments
-        })
+        body: JSON.stringify({ location, filters: { ...filters, altitude: '2000–3000m' }, comments })
       });
 
       if (!response.ok) throw new Error(`Server returned status ${response.status}`);
       const data = await response.json();
       renderItineraryCards(data.reply);
     } catch (error) {
-      outputDiv.innerHTML = '<p class="text-red-600">❌ Failed to generate itinerary.</p>';
+      outputDiv.innerHTML = `<p class="text-red-600 text-center">❌ Failed to generate itinerary.</p>`;
       console.error(error);
     }
   }
@@ -58,94 +51,92 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
-    const accordionToggle = document.getElementById('accordion-controls');
-    accordionToggle.classList.remove('hidden');
+    const toggleWrapper = document.createElement('div');
+    toggleWrapper.className = 'mb-4';
+    toggleWrapper.innerHTML = `<button id="toggle-all" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Expand All</button>`;
+    container.appendChild(toggleWrapper);
 
     const parts = responseText.split(/Day \d+:/).filter(Boolean);
-    let intro = parts.shift();
+    const intro = parts.shift();
 
     const introBlock = document.createElement('div');
     introBlock.className = 'mb-6';
-    introBlock.innerHTML = `<p class="text-base"><strong>${intro.split('.')[0]}.</strong><br><br>${intro.slice(intro.indexOf('.') + 1).replace(/\n/g, '<br>')}</p>`;
+    introBlock.innerHTML = `<p class="font-semibold mb-2">${intro.split('.')[0]}.</p><p>${intro.slice(intro.indexOf('.') + 1)}</p>`;
     container.appendChild(introBlock);
+
+    let expanded = false;
 
     parts.forEach((section, index) => {
       const lines = section.trim().split('\n').filter(l => l.trim());
       const title = lines.shift().trim();
-      const details = lines.map(line => {
+      const content = lines.map(line => {
         const cleaned = line.replace(/^[-–•\*]\s*/, '');
         const [label, ...rest] = cleaned.split(':');
         return `<li><strong>${label.trim()}:</strong> ${rest.join(':').trim()}</li>`;
       }).join('');
 
-      const isOpen = index === 0;
       const item = document.createElement('div');
-      item.className = 'mb-4 border border-gray-300 rounded';
+      item.className = 'border rounded mb-2';
 
       item.innerHTML = `
-        <button class="accordion-header flex justify-between items-center w-full p-4 font-semibold text-left ${isOpen ? 'open' : ''}">
+        <button class="accordion-header w-full text-left px-4 py-3 bg-gray-100 font-semibold flex justify-between items-center ${index === 0 ? 'open' : ''}">
           <span>Day ${index + 1}: ${title}</span>
-          <span class="accordion-icon">${isOpen ? '−' : '+'}</span>
+          <span class="accordion-icon text-xl">${index === 0 ? '−' : '+'}</span>
         </button>
-        <div class="accordion-body overflow-hidden transition-all ${isOpen ? 'open' : ''}" style="max-height: ${isOpen ? '1000px' : '0'};">
-          <ul class="p-4">${details}</ul>
+        <div class="accordion-body overflow-hidden px-4 transition-all duration-300 ${index === 0 ? 'max-h-96 py-4' : 'max-h-0'}">
+          <ul class="space-y-2">${content}</ul>
         </div>
       `;
+
       container.appendChild(item);
     });
 
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const body = header.nextElementSibling;
-        const icon = header.querySelector('.accordion-icon');
-        const isOpen = body.classList.contains('open');
-
-        header.classList.toggle('open');
-        body.classList.toggle('open');
-        icon.textContent = isOpen ? '+' : '−';
-        body.style.maxHeight = isOpen ? null : body.scrollHeight + 'px';
-      });
-    });
-
-    const toggleBtn = document.getElementById('toggle-all');
-    toggleBtn.textContent = 'Expand All';
-    let expanded = false;
-    toggleBtn.onclick = () => {
-      expanded = !expanded;
-      toggleBtn.textContent = expanded ? 'Collapse All' : 'Expand All';
-      document.querySelectorAll('.accordion-item').forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        const body = item.querySelector('.accordion-body');
-        const icon = header.querySelector('.accordion-icon');
-
-        if (expanded) {
-          header.classList.add('open');
-          body.classList.add('open');
-          body.style.maxHeight = body.scrollHeight + 'px';
-          icon.textContent = '−';
-        } else {
-          header.classList.remove('open');
-          body.classList.remove('open');
-          body.style.maxHeight = null;
-          icon.textContent = '+';
-        }
-      });
-    };
-
-    const feedbackBox = document.createElement('div');
-    feedbackBox.className = 'mt-8';
-    feedbackBox.innerHTML = `
-      <label for="feedback" class="block font-semibold mb-2">Further Customisation:</label>
-      <textarea id="feedback" placeholder="e.g. prefer forests, need a rest day, etc..." class="w-full p-3 border border-gray-300 rounded mb-4"></textarea>
-      <button id="regenerate-itinerary" class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700">Update Itinerary</button>
+    // Add feedback form
+    const feedbackForm = document.createElement('div');
+    feedbackForm.className = 'mt-6';
+    feedbackForm.innerHTML = `
+      <textarea id="feedback" placeholder="Provide feedback and we can further customise this itinerary for you!" class="w-full p-3 border rounded mb-4"></textarea>
+      <button id="regenerate-itinerary" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Update Itinerary</button>
     `;
-    container.appendChild(feedbackBox);
+    container.appendChild(feedbackForm);
 
     document.getElementById('regenerate-itinerary').addEventListener('click', () => {
       const feedback = document.getElementById('feedback').value;
-      if (feedback) {
-        generateItinerary(feedback);
-      }
+      if (feedback) generateItinerary(feedback);
+    });
+
+    // Accordion logic
+    document.querySelectorAll('.accordion-header').forEach((header, i) => {
+      header.addEventListener('click', () => {
+        const icon = header.querySelector('.accordion-icon');
+        const body = header.nextElementSibling;
+        const isOpen = body.classList.contains('max-h-96');
+
+        if (isOpen) {
+          body.classList.replace('max-h-96', 'max-h-0');
+          body.classList.remove('py-4');
+          icon.textContent = '+';
+        } else {
+          body.classList.replace('max-h-0', 'max-h-96');
+          body.classList.add('py-4');
+          icon.textContent = '−';
+        }
+      });
+    });
+
+    document.getElementById('toggle-all').addEventListener('click', () => {
+      expanded = !expanded;
+      document.getElementById('toggle-all').innerText = expanded ? 'Collapse All' : 'Expand All';
+
+      document.querySelectorAll('.accordion-body').forEach(body => {
+        body.classList.toggle('max-h-96', expanded);
+        body.classList.toggle('max-h-0', !expanded);
+        body.classList.toggle('py-4', expanded);
+      });
+
+      document.querySelectorAll('.accordion-icon').forEach(icon => {
+        icon.textContent = expanded ? '−' : '+';
+      });
     });
   }
 });

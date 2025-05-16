@@ -424,7 +424,6 @@ footer {
 
 .accordion-body.open {
   max-height: 500px;
-  padding: 12px;
 }
 
 .accordion-body ul {
