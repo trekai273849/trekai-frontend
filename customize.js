@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
 
     try {
-      const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
+      const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
