@@ -7,74 +7,92 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
-    .filter-card.active {
-      background-color: #2563eb; /* Tailwind blue-600 */
+    .filter-btn {
+      @apply px-4 py-2 border border-gray-300 rounded-md hover:bg-blue-100 transition;
+    }
+    .filter-btn.active {
+      background-color: #2563eb;
       color: white;
       border-color: #2563eb;
     }
   </style>
 </head>
-  <body class="bg-gray-50 text-gray-800">
-    <header class="bg-cover bg-center h-64 flex items-center justify-center relative" style="background-image: url('images/alps.jpg');">
-      <div class="absolute inset-0 bg-black opacity-50"></div>
-      <div class="relative text-center text-white z-10">
-        <h1 class="text-3xl font-bold">Customize Your Trek</h1>
-        <h2 id="greeting" class="text-lg mt-2">Loading...</h2>
-      </div>
-    </header>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-cover bg-center h-64 flex items-center justify-center relative" style="background-image: url('images/alps.jpg');">
+    <a href="index.html" class="absolute top-4 left-6 text-white font-semibold text-xl z-10">Smart Trails</a>
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative text-center text-white z-10">
+      <h1 class="text-3xl font-bold">Customize Your Trek</h1>
+      <h2 id="greeting" class="text-lg mt-2">Tell us more about your ideal trekking experience</h2>
+    </div>
+  </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8">
-      <form id="customization-form" class="space-y-8">
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <form id="customization-form" class="space-y-8">
 
-        <!-- Accommodation Type -->
-<div class="mb-6">
-  <h2 class="flex items-center text-xl font-semibold text-gray-800 mb-3">
-    <!-- Tent / Camp Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l9-16 9 16H3z" />
-    </svg>
-    Accommodation Type
-  </h2>
-</div>
-
-<!-- Difficulty -->
-<div class="mb-6">
-  <h2 class="flex items-center text-xl font-semibold text-gray-800 mb-3">
-    <!-- Mountain Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20l7-12 4 7 3-5 4 10H3z" />
-    </svg>
-    Difficulty
-  </h2>
-</div>
-
-<!-- Technical Requirements -->
-<div class="mb-6">
-  <h2 class="flex items-center text-xl font-semibold text-gray-800 mb-3">
-    <!-- Ice Axe / Rope Icon (Mountaineering) -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 3l6.5 6.5m-6.5 0l6.5-6.5m-6.5 0v6.5m0 0L3 21" />
-    </svg>
-    Technical Requirements
-  </h2>
-</div>
-
-        <!-- Comments -->
-        <div>
-          <label for="comments" class="block font-medium text-gray-700">Additional Comments:</label>
-          <textarea id="comments" name="comments" class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g. Scenic views, beginner friendly, prefer forested trails"></textarea>
+      <!-- Accommodation -->
+      <div>
+        <h2 class="text-xl font-semibold flex items-center gap-2">
+          <img src="icons/hotel.svg" class="w-6 h-6" alt="Tent icon" />
+          Accommodation Type
+        </h2>
+        <div class="mt-2 flex flex-wrap gap-3">
+          <button type="button" class="filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
+          <button type="button" class="filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
+          <button type="button" class="filter-btn" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
         </div>
+      </div>
 
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Generate Itinerary</button>
-      </form>
+      <!-- Difficulty -->
+      <div>
+        <h2 class="text-xl font-semibold flex items-center gap-2">
+          <img src="icons/mountain.svg" class="w-6 h-6" alt="Mountain icon" />
+          Difficulty
+        </h2>
+        <div class="mt-2 flex flex-wrap gap-3">
+          <button type="button" class="filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
+          <button type="button" class="filter-btn" data-category="difficulty" data-value="Moderate">Moderate</button>
+          <button type="button" class="filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
+        </div>
+      </div>
 
-      <hr class="my-8 border-t" />
-      <div id="itinerary-cards"></div>
-    </main>
+      <!-- Technical -->
+      <div>
+        <h2 class="text-xl font-semibold flex items-center gap-2">
+          <img src="icons/hiker.svg" class="w-6 h-6" alt="Ice axe icon" />
+          Technical Requirements
+        </h2>
+        <div class="mt-2 flex flex-wrap gap-3">
+          <button type="button" class="filter-btn" data-category="technical" data-value="None">None</button>
+          <button type="button" class="filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
+          <button type="button" class="filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
+        </div>
+      </div>
 
-    <script src="customize.js"></script>
-    <script>
-      feather.replace();
-    </script>
-  </body>
+      <!-- Comments -->
+      <div>
+        <label for="comments" class="block font-medium text-gray-700">Additional Comments:</label>
+        <textarea id="comments" name="comments" class="w-full border rounded px-3 py-2 mt-1" placeholder="e.g. Scenic views, beginner friendly, prefer forested trails"></textarea>
+      </div>
+
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Generate Itinerary</button>
+    </form>
+
+    <hr class="my-8 border-t" />
+    <div id="itinerary-cards"></div>
+  </main>
+
+  <script src="customize.js"></script>
+  <script>
+    feather.replace();
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('[data-category]')?.dataset.category || btn.dataset.category;
+        document.querySelectorAll(`.filter-btn[data-category="${group}"]`).forEach(el => el.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
 </html>
