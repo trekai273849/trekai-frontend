@@ -122,13 +122,29 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 `;
 // Attach event listeners after rendering
-document.getElementById('packing-list').addEventListener('click', () => {
-  alert("Packing list feature coming soon!");
-});
+const packingBtn = document.getElementById('packing-list');
+if (packingBtn) {
+  packingBtn.addEventListener('click', () => {
+    alert("Packing list feature coming soon!");
+  });
+}
 
-document.getElementById('local-insights').addEventListener('click', () => {
-  alert("Local insights feature coming soon!");
-});
+const insightsBtn = document.getElementById('local-insights');
+if (insightsBtn) {
+  insightsBtn.addEventListener('click', () => {
+    alert("Local insights feature coming soon!");
+  });
+}
+
+const regenBtn = document.getElementById('regenerate-itinerary');
+if (regenBtn) {
+  regenBtn.addEventListener('click', () => {
+    const feedback = document.getElementById('feedback').value;
+    if (feedback) {
+      generateItinerary(feedback);
+    }
+  });
+}
     container.appendChild(feedbackDiv);
 
     document.getElementById('regenerate-itinerary').addEventListener('click', () => {
