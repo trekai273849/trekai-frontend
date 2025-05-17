@@ -64,14 +64,14 @@ if (requestedDays) {
       rawItineraryText = data.reply;
       console.log('[GPT Raw Reply]:', rawItineraryText);
 
-// ✅ Extract *before* mutating text
-cachedPackingList = extractSection(rawItineraryText, 'Packing List');
-cachedInsights = extractSection(rawItineraryText, 'Local Insights');
+// Extract BEFORE removing anything
+cachedPackingList = extractSection(data.reply, 'Packing List');
+cachedInsights = extractSection(data.reply, 'Local Insights');
 
-// ✅ Then strip for the accordion content
-const itineraryTextOnly = rawItineraryText
-  .replace(/### Packing List[\s\S]*?(?=###|$)/, '')
-  .replace(/### Local Insights[\s\S]*?(?=###|$)/, '');
+// Then remove those sections
+const itineraryTextOnly = data.reply
+  .replace(/###\s*Packing List[\s\S]*?(?=###|$)/i, '')
+  .replace(/###\s*Local Insights[\s\S]*?(?=###|$)/i, '');
 
       renderItineraryAccordion(itineraryTextOnly);
 
@@ -82,10 +82,10 @@ const itineraryTextOnly = rawItineraryText
   }
 
   function extractSection(text, header) {
-  const regex = new RegExp(`#+\\s*${header}[\\s\\S]*?(?=\\n#+\\s|$)`, 'i');
+  const regex = new RegExp(`###\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
   const match = text.match(regex);
-  return match ? match[0].replace(/#+\s*[^#]+/, '').trim() : '';
-  }
+  return match ? match[0].replace(new RegExp(`###\\s*${header}`, 'i'), '').trim() : '';
+}
 
   function renderAccordionBlock(title, content, open = false, bgColor = 'bg-blue-100') {
     const card = document.createElement('div');
@@ -130,7 +130,7 @@ const itineraryTextOnly = rawItineraryText
     itineraryHeader.innerText = 'Itinerary';
     container.appendChild(itineraryHeader);
 
-    const sections = text.split(/Day \d+:/).filter(Boolean);
+    const sections = text.split(/(?:\*\*)?Day \d+:.*(?:\*\*)?/i).filter(Boolean);
     let intro = sections.shift();
 
     const introBlock = document.createElement('div');
