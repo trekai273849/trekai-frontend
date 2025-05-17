@@ -81,9 +81,9 @@ const itineraryTextOnly = rawItineraryText
   }
 
   function extractSection(text, header) {
-    const regex = new RegExp(`### ${header}[\s\S]*?(?=###|$)`);
-    const match = text.match(regex);
-    return match ? match[0].replace(`### ${header}`, '').trim() : '';
+  const regex = new RegExp(`#+\\s*${header}[\\s\\S]*?(?=\\n#+\\s|$)`, 'i');
+  const match = text.match(regex);
+  return match ? match[0].replace(/#+\s*[^#]+/, '').trim() : '';
   }
 
   function renderAccordionBlock(title, content, open = false, bgColor = 'bg-blue-100') {
