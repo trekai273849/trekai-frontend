@@ -62,6 +62,7 @@ if (requestedDays) {
       }
 
       rawItineraryText = data.reply;
+      console.log('[GPT Raw Reply]:', rawItineraryText);
 
 // ✅ Extract *before* mutating text
 cachedPackingList = extractSection(rawItineraryText, 'Packing List');
