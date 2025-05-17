@@ -18,9 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
       filters[category] = btn.dataset.value;
     });
 
-    const comments = document.getElementById('comments').value + (additionalFeedback ? ' ' + additionalFeedback : '');
-    const outputDiv = document.getElementById('itinerary-cards');
-    outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
+    let comments = document.getElementById('comments').value.trim();
+if (!comments && !additionalFeedback) {
+  comments = 'Please generate a 3-day trekking itinerary.';
+} else if (additionalFeedback) {
+  comments = (comments ? comments + ' ' : '') + additionalFeedback;
+}
 
     try {
       const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
