@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let userComment = document.getElementById('comments').value.trim();
     let baseText = `${userComment} ${location}`;
+
     const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
     const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
 
@@ -60,14 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
       rawItineraryText = data.reply;
       console.log('[GPT Raw Reply]:', rawItineraryText);
 
-      cachedPackingList = extractSection(rawItineraryText, 'Packing List');
-      cachedInsights = extractSection(rawItineraryText, 'Local Insights');
+      cachedPackingList = extractSection(data.reply, 'Packing List');
+      cachedInsights = extractSection(data.reply, 'Local Insights');
 
-      const itineraryTextOnly = rawItineraryText
-        .replace(/###\s*Itinerary\s*/i, '')
+      const itineraryTextOnly = data.reply
         .replace(/###\s*Packing List[\s\S]*?(?=###|$)/i, '')
-        .replace(/###\s*Local Insights[\s\S]*?(?=###|$)/i, '')
-        .trim();
+        .replace(/###\s*Local Insights[\s\S]*?(?=###|$)/i, '');
 
       renderItineraryAccordion(itineraryTextOnly);
 
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function extractSection(text, header) {
-    const regex = new RegExp(`###\\s*${header}[\\s\\S]*?(?=\\n###|$)`, 'i');
+    const regex = new RegExp(`###\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
     const match = text.match(regex);
     return match ? match[0].replace(new RegExp(`###\\s*${header}`, 'i'), '').trim() : '';
   }
@@ -121,11 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
     itineraryHeader.innerText = 'Itinerary';
     container.appendChild(itineraryHeader);
 
-    const dayPattern = /\*\*Day \d+:.*?\*\*/g;
-    const matches = text.match(dayPattern) || [];
-    const splitText = text.split(dayPattern).map(part => part.trim()).filter(Boolean);
+    const introMatch = text.match(/^(.*?)\n(?=Day \d+:)/s);
+    const intro = introMatch ? introMatch[1].trim() : '';
+    const dayEntries = [...text.matchAll(/Day (\d+):\s*([^\n]+)\n([\s\S]*?)(?=(?:\nDay \d+:)|$)/g)];
 
-    const intro = splitText.shift();
     if (intro) {
       const introBlock = document.createElement('div');
       introBlock.className = 'mb-6 text-gray-700';
@@ -133,13 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(introBlock);
     }
 
-    matches.forEach((header, index) => {
-      const dayTitle = header.replace(/\*\*/g, '').trim();
-      const bodyText = splitText[index] || '';
-      const lines = bodyText.split('\n').filter(Boolean);
-
+    dayEntries.forEach(([_, dayNum, title, details]) => {
+      const lines = details.trim().split('\n').filter(Boolean);
       const listItems = lines.map(line => {
-        const [label, ...rest] = line.replace(/^[-•–\*]\s*/, '').split(':');
+        const [label, ...rest] = line.replace(/^[-•–*]\s*/, '').split(':');
         return `<li class="mb-1"><strong>${label.trim()}:</strong> ${rest.join(':').trim()}</li>`;
       }).join('');
 
@@ -148,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       card.innerHTML = `
         <button class="w-full flex justify-between items-center px-4 py-3 bg-blue-100 text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
-          <span>${dayTitle}</span>
+          <span>Day ${dayNum}: ${title}</span>
           <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -181,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cachedPackingList) {
       container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, false, 'bg-blue-50'));
     }
+
     if (cachedInsights) {
       container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, false, 'bg-blue-50'));
     }
