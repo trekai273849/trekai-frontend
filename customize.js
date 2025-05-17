@@ -1,5 +1,4 @@
-// FULLY UPDATED customize.js with enhanced content display
-
+// customize.js with nature-inspired color palette
 document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = "Tell us more about your ideal trekking experience.";
@@ -8,6 +7,33 @@ document.addEventListener('DOMContentLoaded', () => {
   let cachedInsights = '';
   let cachedPracticalInfo = '';
   let rawItineraryText = '';
+
+  // Add custom nature-inspired colors to the stylesheet
+  const style = document.createElement('style');
+  style.textContent = `
+    .bg-earthy-green {
+      background-color: #e8f0e5; /* Subtle sage green */
+    }
+    .bg-earthy-tan {
+      background-color: #f2efe9; /* Warm stone/sand color */
+    }
+    .bg-earthy-blue {
+      background-color: #e6eef2; /* Muted sky blue */
+    }
+    .text-earthy-green {
+      color: #3c6e47; /* Darker green for text */
+    }
+    .text-earthy-tan {
+      color: #7d6c54; /* Darker tan for text */
+    }
+    .text-earthy-blue {
+      color: #496a81; /* Darker blue for text */
+    }
+    .bg-mountain-blue {
+      background-color: #e6eef2; /* Light mountain blue for day headers */
+    }
+  `;
+  document.head.appendChild(style);
 
   document.getElementById('customization-form').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -92,12 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return altMatch ? altMatch[0].replace(new RegExp(`${header}:?`, 'i'), '').trim() : '';
   }
 
-  function renderAccordionBlock(title, content, open = false, bgColor = 'bg-blue-100') {
+  function renderAccordionBlock(title, content, open = false, bgColor = 'bg-mountain-blue') {
     const card = document.createElement('div');
-    card.className = `mb-4 border rounded shadow-sm`;
+    card.className = `mb-4 border border-gray-200 rounded shadow-sm`;
 
     card.innerHTML = `
-      <button class="w-full flex justify-between items-center px-4 py-3 ${bgColor} text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
+      <button class="w-full flex justify-between items-center px-4 py-3 ${bgColor} text-left font-semibold text-gray-800 focus:outline-none accordion-toggle">
         <span>${title}</span>
         <svg class="w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -126,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add itinerary header
     const itineraryHeader = document.createElement('h2');
-    itineraryHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-6';
+    itineraryHeader.className = 'text-2xl font-bold text-gray-800 mb-4 mt-6';
     itineraryHeader.innerText = 'Itinerary';
     container.appendChild(itineraryHeader);
 
@@ -177,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (key && value) {
             // Add special styling to highlight certain fields
             if (key === 'Highlights' || key === 'Terrain' || key === 'Water sources') {
-              itemsArray.push(`<li class="mb-2"><strong class="text-blue-700">${key}:</strong> <span class="text-blue-600">${value}</span></li>`);
+              itemsArray.push(`<li class="mb-2"><strong class="text-earthy-green">${key}:</strong> <span class="text-gray-700">${value}</span></li>`);
             } else if (key === 'Difficulty') {
               // Style difficulty differently based on value
               let difficultyClass = 'text-green-600'; // Default for Easy
@@ -209,10 +235,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Create the enhanced accordion card
       const card = document.createElement('div');
-      card.className = 'mb-4 border rounded shadow-sm';
+      card.className = 'mb-4 border border-gray-200 rounded shadow-sm';
 
       card.innerHTML = `
-        <button class="w-full flex justify-between items-center px-4 py-3 bg-blue-100 text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
+        <button class="w-full flex justify-between items-center px-4 py-3 bg-mountain-blue text-left font-semibold text-gray-800 focus:outline-none accordion-toggle">
           <span>Day ${dayNum}: ${title}</span>
           <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -247,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add additional information section if we have packing list, insights, or practical info
     if (cachedPackingList || cachedInsights || cachedPracticalInfo) {
       const extrasHeader = document.createElement('h2');
-      extrasHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-10';
+      extrasHeader.className = 'text-2xl font-bold text-gray-800 mb-4 mt-10';
       extrasHeader.innerText = 'Additional Information';
       container.appendChild(extrasHeader);
     }
@@ -256,19 +282,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cachedPackingList) {
       // Process subsections if they exist
       let formattedPackingList = processSubsections(cachedPackingList);
-      container.appendChild(renderAccordionBlock('Packing List', formattedPackingList, false, 'bg-green-50'));
+      container.appendChild(renderAccordionBlock('Packing List', formattedPackingList, false, 'bg-earthy-green'));
     }
 
     // Format and render local insights with subsections
     if (cachedInsights) {
       let formattedInsights = processSubsections(cachedInsights);
-      container.appendChild(renderAccordionBlock('Local Insights', formattedInsights, false, 'bg-yellow-50'));
+      container.appendChild(renderAccordionBlock('Local Insights', formattedInsights, false, 'bg-earthy-tan'));
     }
 
     // Format and render practical information with subsections
     if (cachedPracticalInfo) {
       let formattedInfo = processSubsections(cachedPracticalInfo);
-      container.appendChild(renderAccordionBlock('Practical Information', formattedInfo, false, 'bg-blue-50'));
+      container.appendChild(renderAccordionBlock('Practical Information', formattedInfo, false, 'bg-earthy-blue'));
+    }
+
+    // Show accordion controls if we have sections
+    if (dayCount > 0 || cachedPackingList || cachedInsights || cachedPracticalInfo) {
+      const accordionControls = document.getElementById('accordion-controls');
+      if (accordionControls) {
+        accordionControls.classList.remove('hidden');
+      }
     }
 
     // Add feedback input
@@ -291,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!content) return '';
     
     // Format subsection headers (e.g., *Essentials:* to styled headings)
-    let formatted = content.replace(/\*(.*?):\*/g, '<h4 class="font-bold text-blue-700 mt-3 mb-2">$1</h4>');
+    let formatted = content.replace(/\*(.*?):\*/g, '<h4 class="font-bold text-gray-800 mt-3 mb-2">$1</h4>');
     
     // Format bold text
     formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -313,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlContent += line;
       } else if (line.startsWith('-')) {
         if (!inList) {
-          htmlContent += '<ul class="list-disc pl-5 mb-4">';
+          htmlContent += '<ul class="list-disc pl-5 mb-4 text-gray-700">';
           inList = true;
         }
         htmlContent += `<li class="mb-1">${line.substring(1).trim()}</li>`;
@@ -322,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
           htmlContent += '</ul>';
           inList = false;
         }
-        htmlContent += `<p class="mb-2">${line}</p>`;
+        htmlContent += `<p class="mb-2 text-gray-700">${line}</p>`;
       }
     });
     
@@ -332,5 +366,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     return htmlContent;
+  }
+
+  // Add expand/collapse all functionality
+  const accordionControls = document.getElementById('accordion-controls');
+  const toggleAllButton = document.getElementById('toggle-all');
+  
+  if (toggleAllButton) {
+    let expanded = false;
+    
+    toggleAllButton.addEventListener('click', () => {
+      const accordionBodies = document.querySelectorAll('.accordion-body');
+      const icons = document.querySelectorAll('.accordion-toggle svg');
+      
+      expanded = !expanded;
+      
+      accordionBodies.forEach(body => {
+        if (expanded) {
+          body.classList.remove('max-h-0');
+        } else {
+          body.classList.add('max-h-0');
+        }
+      });
+      
+      icons.forEach(icon => {
+        if (expanded) {
+          icon.classList.add('rotate-180');
+        } else {
+          icon.classList.remove('rotate-180');
+        }
+      });
+      
+      toggleAllButton.textContent = expanded ? 'Collapse All' : 'Expand All';
+    });
   }
 });
