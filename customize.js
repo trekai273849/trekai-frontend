@@ -19,21 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let userComment = document.getElementById('comments').value.trim();
-let baseText = `${userComment} ${location}`;
+    let baseText = `${userComment} ${location}`;
+    const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
+    const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
 
-// 🧠 Extract day count from full input context
-const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
-const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
+    let comments = userComment;
+    if (requestedDays) {
+      comments += ` Please generate a ${requestedDays}-day itinerary.`;
+    } else {
+      comments += ' Please generate a 3-day trekking itinerary.';
+    }
 
-// 🛠️ Compose final comment
-let comments = userComment;
-if (requestedDays) {
-  comments += ` Please generate a ${requestedDays}-day itinerary.`;
-} else {
-  comments += ' Please generate a 3-day trekking itinerary.';
-}
-
-    // ✅ Confirm what’s being sent
     console.log({ location, filters, comments });
 
     const outputDiv = document.getElementById('itinerary-cards');
@@ -64,14 +60,14 @@ if (requestedDays) {
       rawItineraryText = data.reply;
       console.log('[GPT Raw Reply]:', rawItineraryText);
 
-// Extract BEFORE removing anything
-cachedPackingList = extractSection(data.reply, 'Packing List');
-cachedInsights = extractSection(data.reply, 'Local Insights');
+      cachedPackingList = extractSection(rawItineraryText, 'Packing List');
+      cachedInsights = extractSection(rawItineraryText, 'Local Insights');
 
-// Then remove those sections
-const itineraryTextOnly = data.reply
-  .replace(/###\s*Packing List[\s\S]*?(?=###|$)/i, '')
-  .replace(/###\s*Local Insights[\s\S]*?(?=###|$)/i, '');
+      const itineraryTextOnly = rawItineraryText
+        .replace(/###\s*Itinerary\s*/i, '')
+        .replace(/###\s*Packing List[\s\S]*?(?=###|$)/i, '')
+        .replace(/###\s*Local Insights[\s\S]*?(?=###|$)/i, '')
+        .trim();
 
       renderItineraryAccordion(itineraryTextOnly);
 
@@ -82,10 +78,10 @@ const itineraryTextOnly = data.reply
   }
 
   function extractSection(text, header) {
-  const regex = new RegExp(`###\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
-  const match = text.match(regex);
-  return match ? match[0].replace(new RegExp(`###\\s*${header}`, 'i'), '').trim() : '';
-}
+    const regex = new RegExp(`###\\s*${header}[\\s\\S]*?(?=\\n###|$)`, 'i');
+    const match = text.match(regex);
+    return match ? match[0].replace(new RegExp(`###\\s*${header}`, 'i'), '').trim() : '';
+  }
 
   function renderAccordionBlock(title, content, open = false, bgColor = 'bg-blue-100') {
     const card = document.createElement('div');
@@ -109,13 +105,8 @@ const itineraryTextOnly = data.reply
 
     toggle.addEventListener('click', () => {
       const isOpen = !body.classList.contains('max-h-0');
-      if (isOpen) {
-        body.classList.add('max-h-0');
-        icon.classList.remove('rotate-180');
-      } else {
-        body.classList.remove('max-h-0');
-        icon.classList.add('rotate-180');
-      }
+      body.classList.toggle('max-h-0');
+      icon.classList.toggle('rotate-180');
     });
 
     return card;
@@ -130,19 +121,25 @@ const itineraryTextOnly = data.reply
     itineraryHeader.innerText = 'Itinerary';
     container.appendChild(itineraryHeader);
 
-    const sections = text.split(/(?:\*\*)?Day \d+:.*(?:\*\*)?/i).filter(Boolean);
-    let intro = sections.shift();
+    const dayPattern = /\*\*Day \d+:.*?\*\*/g;
+    const matches = text.match(dayPattern) || [];
+    const splitText = text.split(dayPattern).map(part => part.trim()).filter(Boolean);
 
-    const introBlock = document.createElement('div');
-    introBlock.className = 'mb-6 text-gray-700';
-    introBlock.innerHTML = `<p class="mb-4">${intro.replace(/\n/g, '<br>')}</p>`;
-    container.appendChild(introBlock);
+    const intro = splitText.shift();
+    if (intro) {
+      const introBlock = document.createElement('div');
+      introBlock.className = 'mb-6 text-gray-700';
+      introBlock.innerHTML = `<p class="mb-4">${intro.replace(/\n/g, '<br>')}</p>`;
+      container.appendChild(introBlock);
+    }
 
-    sections.forEach((section, index) => {
-      const lines = section.trim().split('\n').filter(Boolean);
-      const title = lines.shift().trim();
+    matches.forEach((header, index) => {
+      const dayTitle = header.replace(/\*\*/g, '').trim();
+      const bodyText = splitText[index] || '';
+      const lines = bodyText.split('\n').filter(Boolean);
+
       const listItems = lines.map(line => {
-        const [label, ...rest] = line.replace(/^[-•–*]\s*/, '').split(':');
+        const [label, ...rest] = line.replace(/^[-•–\*]\s*/, '').split(':');
         return `<li class="mb-1"><strong>${label.trim()}:</strong> ${rest.join(':').trim()}</li>`;
       }).join('');
 
@@ -151,7 +148,7 @@ const itineraryTextOnly = data.reply
 
       card.innerHTML = `
         <button class="w-full flex justify-between items-center px-4 py-3 bg-blue-100 text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
-          <span>Day ${index + 1}: ${title}</span>
+          <span>${dayTitle}</span>
           <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -167,13 +164,8 @@ const itineraryTextOnly = data.reply
 
       toggle.addEventListener('click', () => {
         const isOpen = !body.classList.contains('max-h-0');
-        if (isOpen) {
-          body.classList.add('max-h-0');
-          icon.classList.remove('rotate-180');
-        } else {
-          body.classList.remove('max-h-0');
-          icon.classList.add('rotate-180');
-        }
+        body.classList.toggle('max-h-0');
+        icon.classList.toggle('rotate-180');
       });
 
       container.appendChild(card);
