@@ -61,14 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
       rawItineraryText = data.reply;
       console.log('[GPT Raw Reply]:', rawItineraryText);
 
-      cachedPackingList = extractSection(data.reply, 'Packing List');
-      cachedInsights = extractSection(data.reply, 'Local Insights');
+      // Extract sections with improved robustness
+      cachedPackingList = extractSection(rawItineraryText, 'Packing List');
+      cachedInsights = extractSection(rawItineraryText, 'Local Insights');
 
-      const itineraryTextOnly = data.reply
-        .replace(/###\s*Packing List[\s\S]*?(?=###|$)/i, '')
-        .replace(/###\s*Local Insights[\s\S]*?(?=###|$)/i, '');
-
-      renderItineraryAccordion(itineraryTextOnly);
+      // Process the itinerary with our enhanced parser
+      processAndRenderItinerary(rawItineraryText);
 
     } catch (error) {
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
@@ -77,9 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function extractSection(text, header) {
-    const regex = new RegExp(`###\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
+    // More robust section extraction
+    const regex = new RegExp(`#{1,3}\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
     const match = text.match(regex);
-    return match ? match[0].replace(new RegExp(`###\\s*${header}`, 'i'), '').trim() : '';
+    if (match) {
+      return match[0].replace(new RegExp(`#{1,3}\\s*${header}`, 'i'), '').trim();
+    }
+    
+    // Try alternate format (without ### but with header)
+    const altRegex = new RegExp(`${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
+    const altMatch = text.match(altRegex);
+    return altMatch ? altMatch[0].replace(new RegExp(`${header}:?`, 'i'), '').trim() : '';
   }
 
   function renderAccordionBlock(title, content, open = false, bgColor = 'bg-blue-100') {
@@ -103,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = card.querySelector('svg');
 
     toggle.addEventListener('click', () => {
-      const isOpen = !body.classList.contains('max-h-0');
       body.classList.toggle('max-h-0');
       icon.classList.toggle('rotate-180');
     });
@@ -111,38 +116,82 @@ document.addEventListener('DOMContentLoaded', () => {
     return card;
   }
 
-  function renderItineraryAccordion(text) {
+  function processAndRenderItinerary(text) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
 
+    // Add itinerary header
     const itineraryHeader = document.createElement('h2');
     itineraryHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-6';
     itineraryHeader.innerText = 'Itinerary';
     container.appendChild(itineraryHeader);
 
-    const introMatch = text.match(/^(.*?)(?=\n\*?\*?Day \d+:)/s);
-    const intro = introMatch ? introMatch[1].trim() : '';
-    if (intro) {
+    // Extract and display intro text if present
+    const introRegex = /^([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+:|$)/i;
+    const introMatch = text.match(introRegex);
+    const intro = introMatch && introMatch[1].trim();
+    
+    if (intro && intro.length > 10) { // Only show if it has meaningful content
       const introBlock = document.createElement('div');
       introBlock.className = 'mb-6 text-gray-700';
       introBlock.innerHTML = `<p class="mb-4">${intro.replace(/\n/g, '<br>')}</p>`;
       container.appendChild(introBlock);
     }
 
-    const dayRegex = /\*{0,2}Day\s+(\d+):\s*(.*?)\*{0,2}\n([\s\S]*?)(?=\n\*{0,2}Day\s+\d+:|$)/gi;
-    let match;
+    // Extract days with a more robust regex
+    // This pattern matches various day formats like "### Day 1: Title", "Day 1: Title", "**Day 1: Title**", etc.
+    const dayRegex = /(?:(?:\*\*\*|\#{1,3}|\*\*|\*)?\s*Day\s+(\d+)[:\s]+([^\n]*?)(?:\*\*\*|\*\*|\*)?)(?:\n)([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+[:\s]|#{1,3}\s*Packing List|#{1,3}\s*Local Insights|$)/gi;
+    
+    let dayMatch;
+    let dayCount = 0;
 
-    while ((match = dayRegex.exec(text)) !== null) {
-      const dayNum = match[1];
-      const title = match[2].trim();
-      const bodyText = match[3].trim();
+    while ((dayMatch = dayRegex.exec(text)) !== null) {
+      dayCount++;
+      const dayNum = dayMatch[1];
+      const title = dayMatch[2].trim();
+      let bodyText = dayMatch[3].trim();
 
-      const lines = bodyText.split('\n').filter(Boolean);
-      const listItems = lines.map(line => {
-        const [label, ...rest] = line.replace(/^[-•–*]\s*/, '').split(':');
-        return `<li class="mb-1"><strong>${label.trim()}:</strong> ${rest.join(':').trim()}</li>`;
-      }).join('');
+      // Create a structured HTML list for the day details
+      let formattedDetails = '';
+      
+      // Process the body text into structured items
+      // Look for items in format "- Key: Value" or "Key: Value"
+      const itemsArray = [];
+      
+      // Split by newlines and process each line
+      const lines = bodyText.split('\n').filter(line => line.trim());
+      
+      lines.forEach(line => {
+        // Remove any bullet points or dashes at start
+        const cleanLine = line.replace(/^[-•–*]\s*/, '').trim();
+        
+        // Check if line contains a key-value pair (with colon)
+        if (cleanLine.includes(':')) {
+          const [key, ...valueParts] = cleanLine.split(':');
+          const value = valueParts.join(':').trim();
+          
+          if (key && value) {
+            itemsArray.push(`<li class="mb-1"><strong>${key.trim()}:</strong> ${value}</li>`);
+          } else {
+            // If not properly formatted, just add as is
+            itemsArray.push(`<li class="mb-1">${cleanLine}</li>`);
+          }
+        } else if (cleanLine) {
+          // If there's no colon, just add the line as is
+          itemsArray.push(`<li class="mb-1">${cleanLine}</li>`);
+        }
+      });
+      
+      formattedDetails = itemsArray.join('');
+      
+      // If we couldn't parse structured items, show the raw text
+      if (!formattedDetails) {
+        formattedDetails = `<p>${bodyText}</p>`;
+      } else {
+        formattedDetails = `<ul class="list-none py-2">${formattedDetails}</ul>`;
+      }
 
+      // Create the accordion card
       const card = document.createElement('div');
       card.className = 'mb-4 border rounded shadow-sm';
 
@@ -154,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </svg>
         </button>
         <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 bg-white px-4">
-          <ul class="list-none py-2">${listItems}</ul>
+          ${formattedDetails}
         </div>
       `;
 
@@ -163,7 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const icon = card.querySelector('svg');
 
       toggle.addEventListener('click', () => {
-        const isOpen = !body.classList.contains('max-h-0');
         body.classList.toggle('max-h-0');
         icon.classList.toggle('rotate-180');
       });
@@ -171,6 +219,16 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(card);
     }
 
+    // Handle case where day parsing fails or returns zero days
+    if (dayCount === 0) {
+      // Fallback: Just show the whole text as pre-formatted
+      const fallbackCard = document.createElement('div');
+      fallbackCard.className = 'mb-4 border rounded shadow-sm p-4 bg-white';
+      fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${text}</pre>`;
+      container.appendChild(fallbackCard);
+    }
+
+    // Add additional information section if we have packing list or insights
     if (cachedPackingList || cachedInsights) {
       const extrasHeader = document.createElement('h2');
       extrasHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-10';
@@ -179,13 +237,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (cachedPackingList) {
-      container.appendChild(renderAccordionBlock('Packing List', cachedPackingList, false, 'bg-blue-50'));
+      // Format packing list as bullet points if it isn't already
+      let formattedPackingList = cachedPackingList;
+      if (!formattedPackingList.includes('<li>') && !formattedPackingList.includes('<ul>')) {
+        // Convert plain text to HTML list if needed
+        const items = formattedPackingList.split('\n')
+          .map(item => item.trim())
+          .filter(item => item)
+          .map(item => {
+            // Remove bullet points if present
+            return `<li>${item.replace(/^[-•–*]\s*/, '')}</li>`;
+          });
+        formattedPackingList = `<ul class="list-disc pl-5">${items.join('')}</ul>`;
+      }
+      container.appendChild(renderAccordionBlock('Packing List', formattedPackingList, false, 'bg-blue-50'));
     }
 
     if (cachedInsights) {
-      container.appendChild(renderAccordionBlock('Local Insights', cachedInsights, false, 'bg-blue-50'));
+      // Format insights as bullet points if it isn't already
+      let formattedInsights = cachedInsights;
+      if (!formattedInsights.includes('<li>') && !formattedInsights.includes('<ul>')) {
+        // Convert plain text to HTML list if needed
+        const items = formattedInsights.split('\n')
+          .map(item => item.trim())
+          .filter(item => item)
+          .map(item => {
+            // Remove bullet points if present
+            return `<li>${item.replace(/^[-•–*]\s*/, '')}</li>`;
+          });
+        formattedInsights = `<ul class="list-disc pl-5">${items.join('')}</ul>`;
+      }
+      container.appendChild(renderAccordionBlock('Local Insights', formattedInsights, false, 'bg-blue-50'));
     }
 
+    // Add feedback input
     const feedbackInput = document.createElement('div');
     feedbackInput.className = 'mt-6';
     feedbackInput.innerHTML = `
