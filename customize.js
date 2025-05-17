@@ -1,287 +1,315 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const location = localStorage.getItem('userLocation') || 'Your chosen location';
-  document.getElementById('greeting').innerText = "Tell us more about your ideal trekking experience.";
+// ✅ COMPLETE ENHANCED index.js — With rich content generation
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const OpenAI = require('openai');
 
-  let cachedPackingList = '';
-  let cachedInsights = '';
-  let rawItineraryText = '';
+const app = express();
+app.use(express.json());
 
-  document.getElementById('customization-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    generateItinerary();
+const allowedOrigins = [
+  'https://smarttrails.pro',
+  'https://your-frontend.netlify.app',
+  'http://localhost:3000',
+  'https://feature-test-customize-page--delightful-croquembouche-cafa23.netlify.app'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+app.get('/', (req, res) => {
+  res.send('✅ TrekAI server is running');
+});
+
+// Enhanced normalizer function for rich content
+function enhancedNormalizeOutput(gptResponse) {
+  let output = gptResponse;
+
+  // Make sure day headings are properly formatted with ### prefix
+  output = output.replace(/^(\s*Day\s+\d+:)/gm, '### $1');
+  
+  // Make sure section headings are properly formatted
+  const sectionHeaders = [
+    'Packing List', 
+    'Local Insights', 
+    'Practical Information'
+  ];
+  
+  sectionHeaders.forEach(header => {
+    if (!output.includes(`### ${header}`)) {
+      // Find section and add proper heading if not formatted correctly
+      const headerRegex = new RegExp(`(?:^|\\n)(?:\\d+\\.\\s*)?(?:${header})(?:\\s*\\:)?`, 'i');
+      const headerMatch = output.match(headerRegex);
+      if (headerMatch) {
+        output = output.replace(headerMatch[0], `\n\n### ${header}\n`);
+      }
+    }
   });
 
-  async function generateItinerary(additionalFeedback = '') {
-    const filters = {};
-    document.querySelectorAll('.filter-btn.active').forEach(btn => {
-      const category = btn.dataset.category;
-      filters[category] = btn.dataset.value;
-    });
-
-    let userComment = document.getElementById('comments').value.trim();
-    let baseText = `${userComment} ${location}`;
-
-    const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
-    const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
-
-    let comments = userComment;
-    if (requestedDays) {
-      comments += ` Please generate a ${requestedDays}-day itinerary.`;
-    } else {
-      comments += ' Please generate a 3-day trekking itinerary.';
-    }
-
-    console.log({ location, filters, comments });
-
-    const outputDiv = document.getElementById('itinerary-cards');
-    outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
-
-    try {
-      const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          location,
-          filters: {
-            ...filters,
-            altitude: "2000–3000m"
-          },
-          comments
-        })
-      });
-
-      if (!response.ok) throw new Error(`Server returned status ${response.status}`);
-      const data = await response.json();
-
-      if (!data.reply) {
-        outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-        return;
-      }
-
-      rawItineraryText = data.reply;
-      console.log('[GPT Raw Reply]:', rawItineraryText);
-
-      // Extract sections with improved robustness
-      cachedPackingList = extractSection(rawItineraryText, 'Packing List');
-      cachedInsights = extractSection(rawItineraryText, 'Local Insights');
-
-      // Process the itinerary with our enhanced parser
-      processAndRenderItinerary(rawItineraryText);
-
-    } catch (error) {
-      outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-      console.error(error);
-    }
-  }
-
-  function extractSection(text, header) {
-    // More robust section extraction
-    const regex = new RegExp(`#{1,3}\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
-    const match = text.match(regex);
-    if (match) {
-      return match[0].replace(new RegExp(`#{1,3}\\s*${header}`, 'i'), '').trim();
-    }
+  // Process each day section to ensure proper field formatting
+  const dayRegex = /### Day \d+:.*?(?=### Day \d+:|### Packing List|### Local Insights|### Practical Information|$)/gs;
+  let processedOutput = output;
+  let match;
+  
+  while ((match = dayRegex.exec(output)) !== null) {
+    let daySection = match[0];
+    const dayHeaderMatch = daySection.match(/(### Day \d+:.*?)(?:\n|$)/);
     
-    // Try alternate format (without ### but with header)
-    const altRegex = new RegExp(`${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
-    const altMatch = text.match(altRegex);
-    return altMatch ? altMatch[0].replace(new RegExp(`${header}:?`, 'i'), '').trim() : '';
-  }
-
-  function renderAccordionBlock(title, content, open = false, bgColor = 'bg-blue-100') {
-    const card = document.createElement('div');
-    card.className = `mb-4 border rounded shadow-sm`;
-
-    card.innerHTML = `
-      <button class="w-full flex justify-between items-center px-4 py-3 ${bgColor} text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
-        <span>${title}</span>
-        <svg class="w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-body ${open ? '' : 'max-h-0 overflow-hidden'} transition-all duration-300 bg-white px-4">
-        <p class="py-3 whitespace-pre-wrap">${content}</p>
-      </div>
-    `;
-
-    const toggle = card.querySelector('.accordion-toggle');
-    const body = card.querySelector('.accordion-body');
-    const icon = card.querySelector('svg');
-
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('max-h-0');
-      icon.classList.toggle('rotate-180');
-    });
-
-    return card;
-  }
-
-  function processAndRenderItinerary(text) {
-    const container = document.getElementById('itinerary-cards');
-    container.innerHTML = '';
-
-    // Add itinerary header
-    const itineraryHeader = document.createElement('h2');
-    itineraryHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-6';
-    itineraryHeader.innerText = 'Itinerary';
-    container.appendChild(itineraryHeader);
-
-    // Extract and display intro text if present
-    const introRegex = /^([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+:|$)/i;
-    const introMatch = text.match(introRegex);
-    const intro = introMatch && introMatch[1].trim();
+    if (!dayHeaderMatch) continue;
     
-    if (intro && intro.length > 10) { // Only show if it has meaningful content
-      const introBlock = document.createElement('div');
-      introBlock.className = 'mb-6 text-gray-700';
-      introBlock.innerHTML = `<p class="mb-4">${intro.replace(/\n/g, '<br>')}</p>`;
-      container.appendChild(introBlock);
-    }
-
-    // Extract days with a more robust regex
-    // This pattern matches various day formats like "### Day 1: Title", "Day 1: Title", "**Day 1: Title**", etc.
-    const dayRegex = /(?:(?:\*\*\*|\#{1,3}|\*\*|\*)?\s*Day\s+(\d+)[:\s]+([^\n]*?)(?:\*\*\*|\*\*|\*)?)(?:\n)([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+[:\s]|#{1,3}\s*Packing List|#{1,3}\s*Local Insights|$)/gi;
+    const dayHeader = dayHeaderMatch[0];
     
-    let dayMatch;
-    let dayCount = 0;
-
-    while ((dayMatch = dayRegex.exec(text)) !== null) {
-      dayCount++;
-      const dayNum = dayMatch[1];
-      const title = dayMatch[2].trim();
-      let bodyText = dayMatch[3].trim();
-
-      // Create a structured HTML list for the day details
-      let formattedDetails = '';
+    // Get section content without the header
+    let dayContent = daySection.replace(dayHeader, '').trim();
+    
+    // Process each expected field if not already formatted with bullet points
+    if (!dayContent.match(/\n\s*-\s*Start:/)) {
+      // List of all possible fields in enhanced format
+      const fields = [
+        'Start', 'End', 'Distance', 'Elevation gain/loss', 'Elevation',
+        'Terrain', 'Difficulty', 'Highlights', 'Lunch', 'Accommodation',
+        'Water sources', 'Tips'
+      ];
       
-      // Process the body text into structured items
-      // Look for items in format "- Key: Value" or "Key: Value"
-      const itemsArray = [];
-      
-      // Split by newlines and process each line
-      const lines = bodyText.split('\n').filter(line => line.trim());
-      
-      lines.forEach(line => {
-        // Remove any bullet points or dashes at start
-        const cleanLine = line.replace(/^[-•–*]\s*/, '').trim();
+      fields.forEach(field => {
+        const fieldRegex = new RegExp(`\\b${field.replace(/\//g, '\\/').replace(/\(/g, '\\(').replace(/\)/g, '\\)')}\\s*:\\s*([^\\n]+)`, 'i');
+        const fieldMatch = dayContent.match(fieldRegex);
         
-        // Check if line contains a key-value pair (with colon)
-        if (cleanLine.includes(':')) {
-          const [key, ...valueParts] = cleanLine.split(':');
-          const value = valueParts.join(':').trim();
-          
-          if (key && value) {
-            itemsArray.push(`<li class="mb-1"><strong>${key.trim()}:</strong> ${value}</li>`);
-          } else {
-            // If not properly formatted, just add as is
-            itemsArray.push(`<li class="mb-1">${cleanLine}</li>`);
-          }
-        } else if (cleanLine) {
-          // If there's no colon, just add the line as is
-          itemsArray.push(`<li class="mb-1">${cleanLine}</li>`);
+        if (fieldMatch) {
+          // Replace the old format with bullet point format
+          dayContent = dayContent.replace(
+            fieldMatch[0], 
+            `\n- ${field}: ${fieldMatch[1].trim()}`
+          );
         }
       });
       
-      formattedDetails = itemsArray.join('');
-      
-      // If we couldn't parse structured items, show the raw text
-      if (!formattedDetails) {
-        formattedDetails = `<p>${bodyText}</p>`;
-      } else {
-        formattedDetails = `<ul class="list-none py-2">${formattedDetails}</ul>`;
+      // Replace the day section in the processed output
+      const newDaySection = dayHeader + '\n' + dayContent;
+      processedOutput = processedOutput.replace(daySection, newDaySection);
+    }
+  }
+
+  // Process detailed subsections in Packing List, Local Insights, etc.
+  const sectionRegex = /### (Packing List|Local Insights|Practical Information)\s*([\s\S]*?)(?=###|$)/g;
+  let sectionMatch;
+  
+  while ((sectionMatch = sectionRegex.exec(processedOutput)) !== null) {
+    const sectionName = sectionMatch[1];
+    let sectionContent = sectionMatch[2].trim();
+    
+    // Handle subsection headers (marked with asterisks)
+    const subsectionRegex = /\*(.*?):\*/g;
+    let formattedContent = sectionContent;
+    
+    // Format subsection headers to be bold
+    formattedContent = formattedContent.replace(subsectionRegex, '*$1:*');
+    
+    // Ensure each line in the section starts with a bullet point
+    const lines = formattedContent.split('\n').map(line => {
+      line = line.trim();
+      if (line && !line.startsWith('-') && !line.startsWith('*') && !line.startsWith('**')) {
+        return `- ${line}`;
       }
-
-      // Create the accordion card
-      const card = document.createElement('div');
-      card.className = 'mb-4 border rounded shadow-sm';
-
-      card.innerHTML = `
-        <button class="w-full flex justify-between items-center px-4 py-3 bg-blue-100 text-left font-semibold text-blue-800 focus:outline-none accordion-toggle">
-          <span>Day ${dayNum}: ${title}</span>
-          <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 bg-white px-4">
-          ${formattedDetails}
-        </div>
-      `;
-
-      const toggle = card.querySelector('.accordion-toggle');
-      const body = card.querySelector('.accordion-body');
-      const icon = card.querySelector('svg');
-
-      toggle.addEventListener('click', () => {
-        body.classList.toggle('max-h-0');
-        icon.classList.toggle('rotate-180');
-      });
-
-      container.appendChild(card);
-    }
-
-    // Handle case where day parsing fails or returns zero days
-    if (dayCount === 0) {
-      // Fallback: Just show the whole text as pre-formatted
-      const fallbackCard = document.createElement('div');
-      fallbackCard.className = 'mb-4 border rounded shadow-sm p-4 bg-white';
-      fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${text}</pre>`;
-      container.appendChild(fallbackCard);
-    }
-
-    // Add additional information section if we have packing list or insights
-    if (cachedPackingList || cachedInsights) {
-      const extrasHeader = document.createElement('h2');
-      extrasHeader.className = 'text-2xl font-bold text-blue-900 mb-4 mt-10';
-      extrasHeader.innerText = 'Additional Information';
-      container.appendChild(extrasHeader);
-    }
-
-    if (cachedPackingList) {
-      // Format packing list as bullet points if it isn't already
-      let formattedPackingList = cachedPackingList;
-      if (!formattedPackingList.includes('<li>') && !formattedPackingList.includes('<ul>')) {
-        // Convert plain text to HTML list if needed
-        const items = formattedPackingList.split('\n')
-          .map(item => item.trim())
-          .filter(item => item)
-          .map(item => {
-            // Remove bullet points if present
-            return `<li>${item.replace(/^[-•–*]\s*/, '')}</li>`;
-          });
-        formattedPackingList = `<ul class="list-disc pl-5">${items.join('')}</ul>`;
-      }
-      container.appendChild(renderAccordionBlock('Packing List', formattedPackingList, false, 'bg-blue-50'));
-    }
-
-    if (cachedInsights) {
-      // Format insights as bullet points if it isn't already
-      let formattedInsights = cachedInsights;
-      if (!formattedInsights.includes('<li>') && !formattedInsights.includes('<ul>')) {
-        // Convert plain text to HTML list if needed
-        const items = formattedInsights.split('\n')
-          .map(item => item.trim())
-          .filter(item => item)
-          .map(item => {
-            // Remove bullet points if present
-            return `<li>${item.replace(/^[-•–*]\s*/, '')}</li>`;
-          });
-        formattedInsights = `<ul class="list-disc pl-5">${items.join('')}</ul>`;
-      }
-      container.appendChild(renderAccordionBlock('Local Insights', formattedInsights, false, 'bg-blue-50'));
-    }
-
-    // Add feedback input
-    const feedbackInput = document.createElement('div');
-    feedbackInput.className = 'mt-6';
-    feedbackInput.innerHTML = `
-      <input type="text" id="feedback" placeholder="Add feedback to adjust your itinerary" class="w-full border px-3 py-2 rounded mb-4" />
-      <button id="regenerate-itinerary" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Update Itinerary</button>
-    `;
-    container.appendChild(feedbackInput);
-
-    document.getElementById('regenerate-itinerary').addEventListener('click', () => {
-      const feedback = document.getElementById('feedback').value;
-      if (feedback) generateItinerary(feedback);
+      return line;
     });
+    
+    const newSectionContent = '\n' + lines.join('\n') + '\n\n';
+    processedOutput = processedOutput.replace(sectionMatch[0], `### ${sectionName}${newSectionContent}`);
+  }
+  
+  return processedOutput;
+}
+
+app.post('/api/start', async (req, res) => {
+  const { location } = req.body;
+  if (!location) return res.status(400).json({ error: 'Location is required.' });
+
+  try {
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a trekking guide assistant. Ask helpful follow-up questions to personalize the trek.'
+        },
+        {
+          role: 'user',
+          content: `I'm interested in trekking in ${location}.`
+        }
+      ],
+      temperature: 0.7
+    });
+
+    const reply = completion.choices?.[0]?.message?.content?.trim();
+    res.json({ reply });
+  } catch (error) {
+    console.error('❌ Error in /api/start:', error);
+    res.status(500).send('Failed to generate intro response.');
   }
 });
+
+app.post('/api/finalize', async (req, res) => {
+  const { location, filters, comments } = req.body;
+
+  if (!location || !filters) {
+    return res.status(400).json({ error: 'Location and filters are required.' });
+  }
+
+  const dayMatch = location.match(/(\d+)\s*(day|night)/i);
+  const dayInfo = dayMatch ? `${dayMatch[1]}-day` : '';
+
+  const filterSummary = `
+Location: ${location}
+Accommodation: ${filters.accommodation || 'Not specified'}
+Difficulty: ${filters.difficulty || 'Not specified'}
+Altitude: ${filters.altitude || 'Not specified'}
+Technical: ${filters.technical || 'Not specified'}
+User Notes: ${comments || 'None'}
+`;
+
+  // Enhanced GPT prompt for richer trek itineraries
+  const enhancedSystemPrompt = `
+You are an expert trekking guide AI specializing in creating detailed, practical itineraries with rich local knowledge.
+
+Your response MUST follow this EXACT format with these enhanced sections:
+
+1. A compelling intro paragraph (2-3 sentences) that captures the essence of the trek and highlights a unique feature.
+
+2. Day-by-day itinerary using this exact format for EACH day:
+### Day X: [Descriptive Title with Notable Feature]
+- Start: [location, with altitude if relevant]
+- End: [location, with altitude if relevant]
+- Distance: [X km (X miles)] - mention if it's mostly uphill/downhill/flat
+- Elevation gain/loss: [X m (X ft)]
+- Terrain: [brief description e.g., rocky paths, forest trails, alpine meadows, etc.]
+- Difficulty: [Easy/Moderate/Challenging] with brief explanation why
+- Highlights: [2-3 specific points of interest, landmarks, or views]
+- Lunch: [specific recommendation with local specialties if applicable]
+- Accommodation: [specific name if known, with brief description]
+- Water sources: [information about water availability on trail]
+- Tips: [practical advice specific to this day's trek]
+
+3. A detailed packing list section with categories:
+### Packing List
+*Essentials:*
+- [item with brief explanation if needed]
+- [item]
+
+*Clothing:*
+- [specific clothing recommendations for this trek's conditions]
+- [item]
+
+*Trek-Specific Gear:*
+- [items particularly important for this region/trek]
+- [item]
+
+*Documentation:*
+- [permits, maps, or documentation needed]
+- [item]
+
+4. A comprehensive local insights section:
+### Local Insights
+*Cultural Considerations:*
+- [specific cultural practices or etiquette for the region]
+- [insight]
+
+*Safety Information:*
+- [region-specific safety tips, wildlife awareness, weather patterns]
+- [insight]
+
+*Local Food & Specialties:*
+- [regional dishes or foods worth trying]
+- [insight]
+
+*Language Tips:*
+- [2-3 useful phrases in local language if relevant]
+- [insight]
+
+5. A practical information section:
+### Practical Information
+*Best Time to Visit:*
+- [specific months or seasons with brief weather patterns]
+
+*Getting There:*
+- [practical transportation options to starting point]
+
+*Permits & Regulations:*
+- [any required permits, fees, or regulations]
+
+*Emergency Contacts:*
+- [nearest medical facilities or emergency numbers]
+
+CRITICAL FORMATTING RULES:
+- Use "### Day X:" format for EVERY day header
+- Use bullet points (single hyphen) for ALL data points within each day
+- ALWAYS include ALL sections (intro, all days, packing list, local insights, practical info)
+- Use the EXACT format shown above including all field names
+- ALWAYS include all fields for every day, with specific, actionable information
+- Focus on providing SPECIFIC details rather than generic advice
+- Include regional specialties, cultural insights, and location-specific information
+- Mention actual place names, trail features, and local terminology when possible
+`;
+
+  try {
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: [
+        {
+          role: 'system',
+          content: enhancedSystemPrompt
+        },
+        {
+          role: 'user',
+          content: `
+Here are the trek preferences:
+
+${filterSummary}
+
+If the user specifies a number of days (e.g. "6-day trek", "10 days in Nepal", etc), generate that number of individual day entries.
+
+Each day MUST follow the exact format specified, with special attention to:
+1. Providing SPECIFIC locations, landmarks, and points of interest by name
+2. Including practical details about terrain, water sources, and trail conditions
+3. Mentioning actual local food specialties and accommodation options
+4. Adding region-specific cultural and safety information
+
+For ${location}, include authentic local knowledge about the trails, culture, and environment. 
+Make this itinerary highly specific to the region rather than generic trekking advice.
+
+Please generate the full itinerary with proper formatting for each day, plus the enhanced sections.
+          `.trim()
+        }
+      ],
+      temperature: 0.7, // Slightly lower temperature for more consistent outputs
+      max_tokens: 3000  // Increased token limit for more detailed content
+    });
+
+    const reply = completion.choices?.[0]?.message?.content?.trim();
+
+    // Normalize the output before sending it to the client
+    const normalizedReply = enhancedNormalizeOutput(reply);
+
+    // Log both original and normalized replies for debugging
+    console.log('\n📦 Original GPT Reply:\n', reply);
+    console.log('\n📦 Enhanced Normalized GPT Reply:\n', normalizedReply);
+
+    if (!normalizedReply) return res.status(500).json({ error: 'No response from OpenAI' });
+    res.json({ reply: normalizedReply });
+  } catch (error) {
+    console.error('❌ Error in /api/finalize:', error.response?.data || error.message);
+    res.status(500).send('Failed to generate final itinerary.');
+  }
+});
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
