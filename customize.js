@@ -1,4 +1,4 @@
-// Full solution to remove Markdown characters in customize.js
+// Complete solution with specific fix for merged Tips and Packing List sections
 
 document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Enhanced preprocessing function to normalize formatting issues and remove markdown
+  // Enhanced preprocessing function to normalize formatting issues and fix section boundaries
   function preprocessRawText(text) {
     let processed = text;
     
@@ -131,6 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return match.endsWith(':') ? match : match + ': ';
     });
     
+    // Fix merged Tips and Packing List sections - this is the critical fix
+    processed = processed.replace(/(Tips:.+?)(\*Essentials:\*)/gs, '$1\n\n### Packing List\n$2');
+    
+    // Also fix any Tips field that contains "Packing List"
+    processed = processed.replace(/(Tips:.+?)(Packing List)/gs, '$1\n\n### $2');
+    
     // Remove standalone ### markers that shouldn't be visible to users
     processed = processed.replace(/^###\s*$/gm, '');
     processed = processed.replace(/\n###\s*$/gm, '');
@@ -139,17 +145,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Remove trailing ### from any line
     processed = processed.replace(/(.+?)###\s*$/gm, '$1');
     
-    // Remove ### at the end of any field value
-    fieldNames.forEach(field => {
-      const valueRegex = new RegExp(`(${field.replace(':', '\\:')}\\s*[^\\n]+?)###`, 'g');
-      processed = processed.replace(valueRegex, '$1');
-    });
-    
     return processed;
   }
 
   function extractSection(text, header) {
-    // More robust section extraction
+    // More robust section extraction that checks for merged sections
+    if (header === 'Packing List') {
+      // Special case for Packing List which might be merged with Tips
+      const tipsPackingMergeCheck = text.match(/Tips:[\s\S]*?\*Essentials:\*/);
+      if (tipsPackingMergeCheck) {
+        // Extract just the Packing List part
+        const packingContent = text.match(/\*Essentials:\*[\s\S]*?(?=\n#{1,3}\s|$)/);
+        if (packingContent) {
+          return packingContent[0].trim();
+        }
+      }
+    }
+    
+    // Standard section extraction
     const regex = new RegExp(`#{1,3}\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
     const match = text.match(regex);
     if (match) {
@@ -239,33 +252,54 @@ document.addEventListener('DOMContentLoaded', () => {
       // Process the body text into structured items
       const itemsArray = [];
       
-      // Improved field detection regex that handles inconsistent formatting
-      const fieldRegex = /(?:^|\n)\s*-?\s*([A-Za-z][A-Za-z\s/]+):\s*([\s\S]*?)(?=(?:\n\s*-?\s*[A-Za-z][A-Za-z\s/]+:|\n\s*#{1,3}|$))/g;
-      let fieldMatch;
+      // List of known field names
+      const knownFields = [
+        'Start', 'End', 'Distance', 'Elevation gain', 'Elevation gain/loss', 'Elevation loss',
+        'Terrain', 'Difficulty', 'Highlights', 'Lunch', 'Accommodation',
+        'Water sources', 'Tips'
+      ];
       
-      while ((fieldMatch = fieldRegex.exec(bodyText)) !== null) {
-        const key = fieldMatch[1].trim();
-        // Clean any markdown characters from the value
-        const value = fieldMatch[2].trim().replace(/#{1,3}/g, '');
-        
-        if (key && value) {
-          // Add special styling to highlight certain fields
-          if (key === 'Highlights' || key === 'Terrain' || key === 'Water sources') {
-            itemsArray.push(`<li class="mb-2"><strong class="text-earthy-green">${key}:</strong> <span class="text-gray-700">${value}</span></li>`);
-          } else if (key === 'Difficulty') {
-            // Style difficulty differently based on value
-            let difficultyClass = 'text-green-600'; // Default for Easy
-            if (value.toLowerCase().includes('moderate')) {
+      // Extract fields with special handling for field boundaries
+      const fieldContents = {};
+      
+      // First pass: extract all field contents into a structured object
+      knownFields.forEach(field => {
+        // This pattern matches each field and captures its content up to the next field
+        const fieldPattern = new RegExp(`(?:^|\\n)\\s*-?\\s*${field}:\\s*([\\s\\S]*?)(?=(?:\\n\\s*-?\\s*(?:${knownFields.join('|')}):|\\n\\n\\*|$))`, 'i');
+        const match = bodyText.match(fieldPattern);
+        if (match) {
+          let content = match[1].trim();
+          
+          // Special handling for Tips field
+          if (field === 'Tips' && content.includes('Packing List')) {
+            // Only keep content up to "Packing List"
+            content = content.split(/Packing List|\*/)[0].trim();
+          }
+          
+          // Clean up content
+          fieldContents[field] = content.replace(/\*.*?\*/g, '').replace(/#{1,3}/g, '');
+        }
+      });
+      
+      // Second pass: render each field in proper order with appropriate styling
+      knownFields.forEach(field => {
+        if (fieldContents[field]) {
+          // Style fields based on their type
+          if (field === 'Highlights' || field === 'Terrain' || field === 'Water sources') {
+            itemsArray.push(`<li class="mb-2"><strong class="text-earthy-green">${field}:</strong> <span class="text-gray-700">${fieldContents[field]}</span></li>`);
+          } else if (field === 'Difficulty') {
+            let difficultyClass = 'text-green-600';
+            if (fieldContents[field].toLowerCase().includes('moderate')) {
               difficultyClass = 'text-yellow-600';
-            } else if (value.toLowerCase().includes('challenging') || value.toLowerCase().includes('difficult')) {
+            } else if (fieldContents[field].toLowerCase().includes('challenging') || fieldContents[field].toLowerCase().includes('difficult')) {
               difficultyClass = 'text-red-600';
             }
-            itemsArray.push(`<li class="mb-2"><strong>${key}:</strong> <span class="${difficultyClass}">${value}</span></li>`);
+            itemsArray.push(`<li class="mb-2"><strong>${field}:</strong> <span class="${difficultyClass}">${fieldContents[field]}</span></li>`);
           } else {
-            itemsArray.push(`<li class="mb-2"><strong>${key}:</strong> ${value}</li>`);
+            itemsArray.push(`<li class="mb-2"><strong>${field}:</strong> ${fieldContents[field]}</li>`);
           }
         }
-      }
+      });
       
       formattedDetails = itemsArray.join('');
       
