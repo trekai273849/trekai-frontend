@@ -1,4 +1,5 @@
-// Enhanced customize.js with more robust parsing logic
+// Full solution to remove Markdown characters in customize.js
+
 document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = "Tell us more about your ideal trekking experience.";
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       rawItineraryText = data.reply;
       console.log('[GPT Raw Reply]:', rawItineraryText);
 
-      // Preprocess the raw text to normalize format issues
+      // Preprocess the raw text to normalize format issues and remove markdown
       const preprocessedText = preprocessRawText(rawItineraryText);
 
       // Extract all sections
@@ -107,12 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // New preprocessing function to normalize formatting issues
+  // Enhanced preprocessing function to normalize formatting issues and remove markdown
   function preprocessRawText(text) {
-    // Fix issues with inconsistent line breaks and dashes before field names
     let processed = text;
     
-    // Step 1: Fix fields preceded by newlines and dashes
+    // Fix fields preceded by newlines and dashes
     const fieldNames = [
       'Start:', 'End:', 'Distance:', 'Elevation gain:', 'Elevation gain/loss:', 'Elevation:',
       'Terrain:', 'Difficulty:', 'Highlights:', 'Lunch:', 'Accommodation:',
@@ -125,12 +125,26 @@ document.addEventListener('DOMContentLoaded', () => {
       processed = processed.replace(regex, `\n- ${field}`);
     });
 
-    // Step 2: Normalize day headers
+    // Normalize day headers
     processed = processed.replace(/### Day \d+\s*:?\s*/g, match => {
       // Ensure the colon is present and format is consistent
       return match.endsWith(':') ? match : match + ': ';
     });
-
+    
+    // Remove standalone ### markers that shouldn't be visible to users
+    processed = processed.replace(/^###\s*$/gm, '');
+    processed = processed.replace(/\n###\s*$/gm, '');
+    processed = processed.replace(/###\s*$/, '');
+    
+    // Remove trailing ### from any line
+    processed = processed.replace(/(.+?)###\s*$/gm, '$1');
+    
+    // Remove ### at the end of any field value
+    fieldNames.forEach(field => {
+      const valueRegex = new RegExp(`(${field.replace(':', '\\:')}\\s*[^\\n]+?)###`, 'g');
+      processed = processed.replace(valueRegex, '$1');
+    });
+    
     return processed;
   }
 
@@ -139,13 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const regex = new RegExp(`#{1,3}\\s*${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
     const match = text.match(regex);
     if (match) {
-      return match[0].replace(new RegExp(`#{1,3}\\s*${header}`, 'i'), '').trim();
+      // Clean up any markdown characters from the extracted content
+      return match[0].replace(new RegExp(`#{1,3}\\s*${header}`, 'i'), '').replace(/#{1,3}/g, '').trim();
     }
     
     // Try alternate format (without ### but with header)
     const altRegex = new RegExp(`${header}[\\s\\S]*?(?=\\n#{1,3}\\s|$)`, 'i');
     const altMatch = text.match(altRegex);
-    return altMatch ? altMatch[0].replace(new RegExp(`${header}:?`, 'i'), '').trim() : '';
+    return altMatch ? altMatch[0].replace(new RegExp(`${header}:?`, 'i'), '').replace(/#{1,3}/g, '').trim() : '';
   }
 
   function renderAccordionBlock(title, content, open = false, bgColor = 'bg-mountain-blue') {
@@ -192,9 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const intro = introMatch && introMatch[1].trim();
     
     if (intro && intro.length > 10) { // Only show if it has meaningful content
+      // Clean up intro text by removing markdown
+      const cleanedIntro = intro.replace(/#{1,3}/g, '').trim();
+      
       const introBlock = document.createElement('div');
       introBlock.className = 'mb-6 text-gray-700';
-      introBlock.innerHTML = `<p class="mb-4">${intro.replace(/\n/g, '<br>')}</p>`;
+      introBlock.innerHTML = `<p class="mb-4">${cleanedIntro.replace(/\n/g, '<br>')}</p>`;
       container.appendChild(introBlock);
     }
 
@@ -211,6 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const dayNum = dayMatch[1];
       const title = dayMatch[2].trim();
       let bodyText = dayMatch[3].trim();
+      
+      // Remove any markdown characters from the body text
+      bodyText = bodyText.replace(/#{1,3}/g, '');
 
       // Create a better formatted day content with improved styling
       let formattedDetails = '';
@@ -224,7 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       while ((fieldMatch = fieldRegex.exec(bodyText)) !== null) {
         const key = fieldMatch[1].trim();
-        const value = fieldMatch[2].trim();
+        // Clean any markdown characters from the value
+        const value = fieldMatch[2].trim().replace(/#{1,3}/g, '');
         
         if (key && value) {
           // Add special styling to highlight certain fields
@@ -254,7 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const simpleItems = [];
         
         lines.forEach(line => {
-          const cleanLine = line.replace(/^[-•–*]\s*/, '').trim();
+          // Remove markdown and clean up line
+          const cleanLine = line.replace(/^[-•–*]\s*/, '').replace(/#{1,3}/g, '').trim();
+          
           if (cleanLine.includes(':')) {
             const [key, ...valueParts] = cleanLine.split(':');
             const value = valueParts.join(':').trim();
@@ -321,7 +345,8 @@ document.addEventListener('DOMContentLoaded', () => {
       while ((simpleDayMatch = simpleDayRegex.exec(text)) !== null) {
         const dayNum = simpleDayMatch[1];
         const title = simpleDayMatch[2].trim();
-        const content = simpleDayMatch[3].trim();
+        // Clean markdown from content
+        const content = simpleDayMatch[3].trim().replace(/#{1,3}/g, '');
         
         const card = document.createElement('div');
         card.className = 'mb-4 border border-gray-200 rounded shadow-sm';
@@ -356,10 +381,11 @@ document.addEventListener('DOMContentLoaded', () => {
           container.appendChild(item.card);
         });
       } else {
-        // Ultimate fallback: Just show the whole text
+        // Ultimate fallback: Just show the whole text with markdown removed
+        const cleanText = text.replace(/#{1,3}/g, '');
         const fallbackCard = document.createElement('div');
         fallbackCard.className = 'mb-4 border rounded shadow-sm p-4 bg-white';
-        fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${text}</pre>`;
+        fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${cleanText}</pre>`;
         container.appendChild(fallbackCard);
       }
     }
@@ -423,6 +449,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Format bold text
     formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    // Remove any markdown characters
+    formatted = formatted.replace(/#{1,3}/g, '');
     
     // Process bullet points and convert to a better-looking list
     const lines = formatted.split('\n');
