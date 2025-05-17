@@ -19,18 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let comments = document.getElementById('comments').value.trim();
-    if (!comments && !additionalFeedback) {
-      comments = 'Please generate a 3-day trekking itinerary.';
-    } else if (additionalFeedback) {
-      comments = (comments ? comments + ' ' : '') + additionalFeedback;
-    }
+let baseText = comments || location;
 
-    // 🧠 Extract number of days if included
-    const dayMatch = comments.match(/(\d+)[- ]*day/i);
-    const requestedDays = dayMatch ? parseInt(dayMatch[1]) : 3;
+// 🧠 Try to extract a number of days from the user's input
+const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
+const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
 
-    // 🔁 Add explicit instruction to comments
-    comments += ` Please generate a ${requestedDays}-day itinerary.`;
+// 🔁 Construct the final comment
+if (!baseText) {
+  comments = 'Please generate a 3-day trekking itinerary.';
+} else {
+  comments += requestedDays
+    ? ` Please generate a ${requestedDays}-day itinerary.`
+    : ' Please generate a 3-day trekking itinerary.';
+}
 
     // ✅ Confirm what’s being sent
     console.log({ location, filters, comments });
