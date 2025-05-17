@@ -120,10 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     itineraryHeader.innerText = 'Itinerary';
     container.appendChild(itineraryHeader);
 
-    const introMatch = text.match(/^(.*?)\n(?=Day \d+:)/s);
+    const introMatch = text.match(/^(.*?)(?=\n\*?\*?Day \d+:)/s);
     const intro = introMatch ? introMatch[1].trim() : '';
-    const dayEntries = [...text.matchAll(/Day (\d+):\s*([^\n]+)\n([\s\S]*?)(?=(?:\nDay \d+:)|$)/g)];
-
     if (intro) {
       const introBlock = document.createElement('div');
       introBlock.className = 'mb-6 text-gray-700';
@@ -131,8 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(introBlock);
     }
 
-    dayEntries.forEach(([_, dayNum, title, details]) => {
-      const lines = details.trim().split('\n').filter(Boolean);
+    const dayRegex = /\*{0,2}Day\s+(\d+):\s*(.*?)\*{0,2}\n([\s\S]*?)(?=\n\*{0,2}Day\s+\d+:|$)/gi;
+    let match;
+
+    while ((match = dayRegex.exec(text)) !== null) {
+      const dayNum = match[1];
+      const title = match[2].trim();
+      const bodyText = match[3].trim();
+
+      const lines = bodyText.split('\n').filter(Boolean);
       const listItems = lines.map(line => {
         const [label, ...rest] = line.replace(/^[-•–*]\s*/, '').split(':');
         return `<li class="mb-1"><strong>${label.trim()}:</strong> ${rest.join(':').trim()}</li>`;
@@ -164,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       container.appendChild(card);
-    });
+    }
 
     if (cachedPackingList || cachedInsights) {
       const extrasHeader = document.createElement('h2');
