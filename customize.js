@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
 
     try {
-      const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
+      const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -38,7 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!response.ok) throw new Error(`Server returned status ${response.status}`);
       const data = await response.json();
-      rawItineraryText = data.reply;
+
+if (!data.reply) {
+  outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
+  return;. Please try again later
+}
+
+rawItineraryText = data.reply;
 
       cachedPackingList = extractSection(data.reply, 'Packing List');
       cachedInsights = extractSection(data.reply, 'Local Insights');
