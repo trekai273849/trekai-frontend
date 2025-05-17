@@ -62,12 +62,15 @@ if (requestedDays) {
       }
 
       rawItineraryText = data.reply;
-      cachedPackingList = extractSection(data.reply, 'Packing List');
-      cachedInsights = extractSection(data.reply, 'Local Insights');
 
-      const itineraryTextOnly = data.reply
-        .replace(/### Packing List[\s\S]*?(?=###|$)/, '')
-        .replace(/### Local Insights[\s\S]*?(?=###|$)/, '');
+// ✅ Extract *before* mutating text
+cachedPackingList = extractSection(rawItineraryText, 'Packing List');
+cachedInsights = extractSection(rawItineraryText, 'Local Insights');
+
+// ✅ Then strip for the accordion content
+const itineraryTextOnly = rawItineraryText
+  .replace(/### Packing List[\s\S]*?(?=###|$)/, '')
+  .replace(/### Local Insights[\s\S]*?(?=###|$)/, '');
 
       renderItineraryAccordion(itineraryTextOnly);
 
