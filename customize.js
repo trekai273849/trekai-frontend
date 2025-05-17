@@ -18,20 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
       filters[category] = btn.dataset.value;
     });
 
-    let comments = document.getElementById('comments').value.trim();
-let baseText = comments || location;
+    let userComment = document.getElementById('comments').value.trim();
+let baseText = `${userComment} ${location}`;
 
-// 🧠 Try to extract a number of days from the user's input
+// 🧠 Extract day count from full input context
 const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
 const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
 
-// 🔁 Construct the final comment
-if (!baseText) {
-  comments = 'Please generate a 3-day trekking itinerary.';
+// 🛠️ Compose final comment
+let comments = userComment;
+if (requestedDays) {
+  comments += ` Please generate a ${requestedDays}-day itinerary.`;
 } else {
-  comments += requestedDays
-    ? ` Please generate a ${requestedDays}-day itinerary.`
-    : ' Please generate a 3-day trekking itinerary.';
+  comments += ' Please generate a 3-day trekking itinerary.';
 }
 
     // ✅ Confirm what’s being sent
