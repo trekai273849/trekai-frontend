@@ -19,11 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let comments = document.getElementById('comments').value.trim();
-if (!comments && !additionalFeedback) {
-  comments = 'Please generate a 3-day trekking itinerary.';
-} else if (additionalFeedback) {
-  comments = (comments ? comments + ' ' : '') + additionalFeedback;
-}
+    if (!comments && !additionalFeedback) {
+      comments = 'Please generate a 3-day trekking itinerary.';
+    } else if (additionalFeedback) {
+      comments = (comments ? comments + ' ' : '') + additionalFeedback;
+    }
+
+    const outputDiv = document.getElementById('itinerary-cards');
+    outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
 
     try {
       const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
@@ -42,13 +45,12 @@ if (!comments && !additionalFeedback) {
       if (!response.ok) throw new Error(`Server returned status ${response.status}`);
       const data = await response.json();
 
-if (!data.reply) {
-  outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-  return;
-}
+      if (!data.reply) {
+        outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
+        return;
+      }
 
-rawItineraryText = data.reply;
-
+      rawItineraryText = data.reply;
       cachedPackingList = extractSection(data.reply, 'Packing List');
       cachedInsights = extractSection(data.reply, 'Local Insights');
 
