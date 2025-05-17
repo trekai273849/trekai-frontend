@@ -1,4 +1,4 @@
-// customize.js with nature-inspired color palette
+// Enhanced customize.js with more robust parsing logic
 document.addEventListener('DOMContentLoaded', () => {
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = "Tell us more about your ideal trekking experience.";
@@ -90,18 +90,48 @@ document.addEventListener('DOMContentLoaded', () => {
       rawItineraryText = data.reply;
       console.log('[GPT Raw Reply]:', rawItineraryText);
 
+      // Preprocess the raw text to normalize format issues
+      const preprocessedText = preprocessRawText(rawItineraryText);
+
       // Extract all sections
-      cachedPackingList = extractSection(rawItineraryText, 'Packing List');
-      cachedInsights = extractSection(rawItineraryText, 'Local Insights');
-      cachedPracticalInfo = extractSection(rawItineraryText, 'Practical Information');
+      cachedPackingList = extractSection(preprocessedText, 'Packing List');
+      cachedInsights = extractSection(preprocessedText, 'Local Insights');
+      cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
 
       // Process and render the enhanced itinerary
-      processAndRenderEnhancedItinerary(rawItineraryText);
+      processAndRenderEnhancedItinerary(preprocessedText);
 
     } catch (error) {
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
       console.error(error);
     }
+  }
+
+  // New preprocessing function to normalize formatting issues
+  function preprocessRawText(text) {
+    // Fix issues with inconsistent line breaks and dashes before field names
+    let processed = text;
+    
+    // Step 1: Fix fields preceded by newlines and dashes
+    const fieldNames = [
+      'Start:', 'End:', 'Distance:', 'Elevation gain:', 'Elevation gain/loss:', 'Elevation:',
+      'Terrain:', 'Difficulty:', 'Highlights:', 'Lunch:', 'Accommodation:',
+      'Water sources:', 'Tips:'
+    ];
+
+    fieldNames.forEach(field => {
+      // Replace any pattern of newline + optional whitespace + optional dash + whitespace + field
+      const regex = new RegExp(`\\n\\s*-?\\s*(${field.replace(':', '\\:')})`, 'g');
+      processed = processed.replace(regex, `\n- ${field}`);
+    });
+
+    // Step 2: Normalize day headers
+    processed = processed.replace(/### Day \d+\s*:?\s*/g, match => {
+      // Ensure the colon is present and format is consistent
+      return match.endsWith(':') ? match : match + ': ';
+    });
+
+    return processed;
   }
 
   function extractSection(text, header) {
@@ -168,12 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(introBlock);
     }
 
-    // Extract days with a more robust regex
-    // This pattern matches various day formats
+    // Enhanced day extraction regex to handle more variations
+    // This improved pattern is more forgiving about formatting
     const dayRegex = /(?:(?:\*\*\*|\#{1,3}|\*\*|\*)?\s*Day\s+(\d+)[:\s]+([^\n]*?)(?:\*\*\*|\*\*|\*)?)(?:\n)([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+[:\s]|#{1,3}\s*Packing List|#{1,3}\s*Local Insights|#{1,3}\s*Practical Information|$)/gi;
     
     let dayMatch;
     let dayCount = 0;
+    let dayCards = [];
 
     while ((dayMatch = dayRegex.exec(text)) !== null) {
       dayCount++;
@@ -187,46 +218,60 @@ document.addEventListener('DOMContentLoaded', () => {
       // Process the body text into structured items
       const itemsArray = [];
       
-      // Split by newlines and process each line
-      const lines = bodyText.split('\n').filter(line => line.trim());
+      // Improved field detection regex that handles inconsistent formatting
+      const fieldRegex = /(?:^|\n)\s*-?\s*([A-Za-z][A-Za-z\s/]+):\s*([\s\S]*?)(?=(?:\n\s*-?\s*[A-Za-z][A-Za-z\s/]+:|\n\s*#{1,3}|$))/g;
+      let fieldMatch;
       
-      lines.forEach(line => {
-        // Remove any bullet points or dashes at start
-        const cleanLine = line.replace(/^[-•–*]\s*/, '').trim();
+      while ((fieldMatch = fieldRegex.exec(bodyText)) !== null) {
+        const key = fieldMatch[1].trim();
+        const value = fieldMatch[2].trim();
         
-        // Check if line contains a key-value pair (with colon)
-        if (cleanLine.includes(':')) {
-          const colonIndex = cleanLine.indexOf(':');
-          const key = cleanLine.substring(0, colonIndex).trim();
-          const value = cleanLine.substring(colonIndex + 1).trim();
-          
-          if (key && value) {
-            // Add special styling to highlight certain fields
-            if (key === 'Highlights' || key === 'Terrain' || key === 'Water sources') {
-              itemsArray.push(`<li class="mb-2"><strong class="text-earthy-green">${key}:</strong> <span class="text-gray-700">${value}</span></li>`);
-            } else if (key === 'Difficulty') {
-              // Style difficulty differently based on value
-              let difficultyClass = 'text-green-600'; // Default for Easy
-              if (value.toLowerCase().includes('moderate')) {
-                difficultyClass = 'text-yellow-600';
-              } else if (value.toLowerCase().includes('challenging') || value.toLowerCase().includes('difficult')) {
-                difficultyClass = 'text-red-600';
-              }
-              itemsArray.push(`<li class="mb-2"><strong>${key}:</strong> <span class="${difficultyClass}">${value}</span></li>`);
-            } else {
-              itemsArray.push(`<li class="mb-2"><strong>${key}:</strong> ${value}</li>`);
+        if (key && value) {
+          // Add special styling to highlight certain fields
+          if (key === 'Highlights' || key === 'Terrain' || key === 'Water sources') {
+            itemsArray.push(`<li class="mb-2"><strong class="text-earthy-green">${key}:</strong> <span class="text-gray-700">${value}</span></li>`);
+          } else if (key === 'Difficulty') {
+            // Style difficulty differently based on value
+            let difficultyClass = 'text-green-600'; // Default for Easy
+            if (value.toLowerCase().includes('moderate')) {
+              difficultyClass = 'text-yellow-600';
+            } else if (value.toLowerCase().includes('challenging') || value.toLowerCase().includes('difficult')) {
+              difficultyClass = 'text-red-600';
             }
+            itemsArray.push(`<li class="mb-2"><strong>${key}:</strong> <span class="${difficultyClass}">${value}</span></li>`);
           } else {
-            itemsArray.push(`<li class="mb-1">${cleanLine}</li>`);
+            itemsArray.push(`<li class="mb-2"><strong>${key}:</strong> ${value}</li>`);
           }
-        } else if (cleanLine) {
-          itemsArray.push(`<li class="mb-1">${cleanLine}</li>`);
         }
-      });
+      }
       
       formattedDetails = itemsArray.join('');
       
-      // If we couldn't parse structured items, show the raw text
+      // If we couldn't parse structured items, try a simpler approach
+      if (!formattedDetails) {
+        // Alternative parsing for less structured content
+        const lines = bodyText.split('\n').filter(line => line.trim());
+        const simpleItems = [];
+        
+        lines.forEach(line => {
+          const cleanLine = line.replace(/^[-•–*]\s*/, '').trim();
+          if (cleanLine.includes(':')) {
+            const [key, ...valueParts] = cleanLine.split(':');
+            const value = valueParts.join(':').trim();
+            if (key && value) {
+              simpleItems.push(`<li class="mb-2"><strong>${key.trim()}:</strong> ${value}</li>`);
+            } else {
+              simpleItems.push(`<li class="mb-1">${cleanLine}</li>`);
+            }
+          } else if (cleanLine) {
+            simpleItems.push(`<li class="mb-1">${cleanLine}</li>`);
+          }
+        });
+        
+        formattedDetails = simpleItems.join('');
+      }
+      
+      // If still no structured content, show the raw text
       if (!formattedDetails) {
         formattedDetails = `<p>${bodyText}</p>`;
       } else {
@@ -258,16 +303,65 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.toggle('rotate-180');
       });
 
-      container.appendChild(card);
+      dayCards.push({ day: parseInt(dayNum), card });
     }
+
+    // Sort and append the day cards in order
+    dayCards.sort((a, b) => a.day - b.day).forEach(item => {
+      container.appendChild(item.card);
+    });
 
     // Handle case where day parsing fails or returns zero days
     if (dayCount === 0) {
-      // Fallback: Just show the whole text as pre-formatted
-      const fallbackCard = document.createElement('div');
-      fallbackCard.className = 'mb-4 border rounded shadow-sm p-4 bg-white';
-      fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${text}</pre>`;
-      container.appendChild(fallbackCard);
+      // Fallback: Try a more lenient approach to extracting days
+      const simpleDayRegex = /Day\s+(\d+)[:\s]+([^\n]*?)(?:\n)([\s\S]*?)(?=Day\s+\d+[:\s]|Packing List|Local Insights|Practical Information|$)/gi;
+      let simpleDayMatch;
+      let simpleDayCards = [];
+      
+      while ((simpleDayMatch = simpleDayRegex.exec(text)) !== null) {
+        const dayNum = simpleDayMatch[1];
+        const title = simpleDayMatch[2].trim();
+        const content = simpleDayMatch[3].trim();
+        
+        const card = document.createElement('div');
+        card.className = 'mb-4 border border-gray-200 rounded shadow-sm';
+        
+        card.innerHTML = `
+          <button class="w-full flex justify-between items-center px-4 py-3 bg-mountain-blue text-left font-semibold text-gray-800 focus:outline-none accordion-toggle">
+            <span>Day ${dayNum}: ${title}</span>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 bg-white px-4">
+            <div class="py-3 whitespace-pre-wrap">${content.replace(/\n/g, '<br>')}</div>
+          </div>
+        `;
+        
+        const toggle = card.querySelector('.accordion-toggle');
+        const body = card.querySelector('.accordion-body');
+        const icon = card.querySelector('svg');
+        
+        toggle.addEventListener('click', () => {
+          body.classList.toggle('max-h-0');
+          icon.classList.toggle('rotate-180');
+        });
+        
+        simpleDayCards.push({ day: parseInt(dayNum), card });
+      }
+      
+      if (simpleDayCards.length > 0) {
+        // Found days with simpler regex
+        simpleDayCards.sort((a, b) => a.day - b.day).forEach(item => {
+          container.appendChild(item.card);
+        });
+      } else {
+        // Ultimate fallback: Just show the whole text
+        const fallbackCard = document.createElement('div');
+        fallbackCard.className = 'mb-4 border rounded shadow-sm p-4 bg-white';
+        fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${text}</pre>`;
+        container.appendChild(fallbackCard);
+      }
     }
 
     // Add additional information section if we have packing list, insights, or practical info
