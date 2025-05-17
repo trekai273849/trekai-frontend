@@ -25,6 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
       comments = (comments ? comments + ' ' : '') + additionalFeedback;
     }
 
+    // 🧠 Extract number of days if included
+    const dayMatch = comments.match(/(\d+)[- ]*day/i);
+    const requestedDays = dayMatch ? parseInt(dayMatch[1]) : 3;
+
+    // 🔁 Add explicit instruction to comments
+    comments += ` Please generate a ${requestedDays}-day itinerary.`;
+
     const outputDiv = document.getElementById('itinerary-cards');
     outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
 
@@ -67,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function extractSection(text, header) {
-    const regex = new RegExp(`### ${header}[\\s\\S]*?(?=###|$)`);
+    const regex = new RegExp(`### ${header}[\s\S]*?(?=###|$)`);
     const match = text.match(regex);
     return match ? match[0].replace(`### ${header}`, '').trim() : '';
   }
