@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 if (!data.reply) {
   outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-  return;. Please try again later
+  return;
 }
 
 rawItineraryText = data.reply;
