@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       // Add CORS proxy to the API URL
-      const apiUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://trekai-api.onrender.com/api/finalize');
+      const apiUrl = 'https://cors-anywhere.herokuapp.com/https://trekai-api.onrender.com/api/finalize';
       
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         // Create a proxied URL for saving
-        const saveApiUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://trekai-api.onrender.com/api/itineraries');
+        const saveApiUrl = 'https://cors-anywhere.herokuapp.com/https://trekai-api.onrender.com/api/itineraries';
         
         // Send to API
         const response = await fetch(saveApiUrl, {
