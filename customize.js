@@ -1,6 +1,32 @@
 // Complete solution with specific fix for merged Tips and Packing List sections
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Import Firebase modules
+  let firebase;
+  import('https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js')
+    .then((firebaseApp) => {
+      import('https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js')
+        .then((firebaseAuth) => {
+          const { initializeApp } = firebaseApp;
+          const { getAuth, onAuthStateChanged } = firebaseAuth;
+          
+          // Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyD48TPwzdcYiD6AfVgh6PX1P86OQ7qgPHg",
+            authDomain: "smarttrailsauth.firebaseapp.com",
+            projectId: "smarttrailsauth",
+            storageBucket: "smarttrailsauth.firebasestorage.app",
+            messagingSenderId: "763807584090",
+            appId: "1:763807584090:web:822fb9109f7be5d432ed63",
+            measurementId: "G-M6N5V4TDX6"
+          };
+          
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          firebase = { app, auth: getAuth(app) };
+        });
+    });
+
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = "Tell us more about your ideal trekking experience.";
 
@@ -470,6 +496,73 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('regenerate-itinerary').addEventListener('click', () => {
       const feedback = document.getElementById('feedback').value;
       if (feedback) generateItinerary(feedback);
+    });
+
+    // Add Save Itinerary button
+    const saveButtonContainer = document.createElement('div');
+    saveButtonContainer.className = 'mt-4 text-center';
+    saveButtonContainer.innerHTML = `
+      <button id="save-itinerary" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded mr-4">Save Itinerary</button>
+    `;
+    container.appendChild(saveButtonContainer);
+
+    // Add event listener for save button
+    document.getElementById('save-itinerary').addEventListener('click', async () => {
+      try {
+        // Check if Firebase is initialized
+        if (!firebase || !firebase.auth) {
+          alert('Authentication is initializing. Please try again in a moment.');
+          return;
+        }
+
+        // Get Firebase user
+        const user = firebase.auth.currentUser;
+        
+        if (!user) {
+          alert('Please log in to save itineraries');
+          window.location.href = '/sign-up.html';
+          return;
+        }
+        
+        const token = await user.getIdToken();
+        
+        // Prepare data to save
+        const title = `${location} Trek`;
+        const itineraryData = {
+          title,
+          location,
+          content: rawItineraryText,
+          comments: document.getElementById('comments').value || '',
+          filters: {}
+        };
+        
+        // Get active filters
+        document.querySelectorAll('.filter-btn.active').forEach(btn => {
+          const category = btn.dataset.category;
+          itineraryData.filters[category] = btn.dataset.value;
+        });
+        
+        // Send to API
+        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(itineraryData)
+        });
+        
+        if (!response.ok) throw new Error(`Server returned status ${response.status}`);
+        
+        const data = await response.json();
+        alert('Itinerary saved successfully!');
+        
+        // Optionally, redirect to the saved itineraries page
+        // window.location.href = '/my-itineraries.html';
+      } catch (error) {
+        console.error('Error saving itinerary:', error);
+        alert('Failed to save itinerary. Please try again.');
+      }
     });
   }
 
