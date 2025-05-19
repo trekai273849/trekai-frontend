@@ -93,7 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
     outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
 
     try {
-      const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
+      // Add CORS proxy to the API URL
+      const apiUrl = 'https://corsproxy.io/?' + encodeURIComponent('https://trekai-api.onrender.com/api/finalize');
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -542,8 +545,11 @@ document.addEventListener('DOMContentLoaded', () => {
           itineraryData.filters[category] = btn.dataset.value;
         });
         
+        // Create a proxied URL for saving
+        const saveApiUrl = 'https://corsproxy.io/?' + encodeURIComponent('https://trekai-api.onrender.com/api/itineraries');
+        
         // Send to API
-        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
+        const response = await fetch(saveApiUrl, {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
