@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up | Smart Trails</title>
-  <link rel="stylesheet" href="styles/sign-up.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/components/auth.css" />
 </head>
 <body>
   <div class="signup-container">
@@ -33,23 +34,7 @@
   </div>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyD48TPwzdcYiD6AfVgh6PX1P86OQ7qgPHg",
-      authDomain: "smarttrailsauth.firebaseapp.com",
-      projectId: "smarttrailsauth",
-      storageBucket: "smarttrailsauth.firebasestorage.app",
-      messagingSenderId: "763807584090",
-      appId: "1:763807584090:web:822fb9109f7be5d432ed63",
-      measurementId: "G-M6N5V4TDX6"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    import { signUp, signIn } from './js/auth/auth.js';
     
     // Add tabs functionality
     const signupTab = document.getElementById('signup-tab');
@@ -80,59 +65,30 @@
       const email = document.getElementById("signup-email").value;
       const password = document.getElementById("signup-password").value;
 
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        // Redirect to subscription plans page after successful signup
-        window.location.href = '/subscription/plans';
-      } catch (error) {
-        console.error("Signup error:", error);
-        alert(error.message);
+      const result = await signUp(email, password);
+      if (result.success) {
+        // Redirect to home page after successful signup
+        window.location.href = 'index.html';
+      } else {
+        alert(result.error);
       }
     });
     
     // Handle login form submission
-    loginForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
 
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Redirect to home page or dashboard
-          window.location.href = 'index.html';
-        })
-        .catch((error) => {
-          console.error("Login error:", error);
-          alert(error.message);
-        });
+      const result = await signIn(email, password);
+      if (result.success) {
+        // Redirect to home page after successful login
+        window.location.href = 'index.html';
+      } else {
+        alert(result.error);
+      }
     });
   </script>
-  
-  <style>
-    .auth-tabs {
-      display: flex;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    .auth-tab {
-      flex: 1;
-      padding: 10px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      color: #666;
-    }
-    
-    .auth-tab.active {
-      color: #6c63ff;
-      border-bottom: 2px solid #6c63ff;
-    }
-    
-    .hidden {
-      display: none;
-    }
-  </style>
-  <script src="navbar.js" type="module"></script>
+  <script src="js/components/navbar.js" type="module"></script>
 </body>
 </html>

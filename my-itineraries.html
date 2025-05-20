@@ -13,8 +13,7 @@
   <title>My Saved Itineraries | Smart Trails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js" type="module"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js" type="module"></script>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Google Tag Manager (noscript) -->
@@ -48,23 +47,9 @@
 
   <!-- Scripts -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyD48TPwzdcYiD6AfVgh6PX1P86OQ7qgPHg",
-      authDomain: "smarttrailsauth.firebaseapp.com",
-      projectId: "smarttrailsauth",
-      storageBucket: "smarttrailsauth.firebasestorage.app",
-      messagingSenderId: "763807584090",
-      appId: "1:763807584090:web:822fb9109f7be5d432ed63",
-      measurementId: "G-M6N5V4TDX6"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    import { auth } from './js/auth/firebase.js';
+    import { getCurrentUser, logOut } from './js/auth/auth.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
     // Check if user is logged in
     onAuthStateChanged(auth, (user) => {
@@ -83,14 +68,13 @@
         `;
         
         // Add logout functionality
-        document.getElementById('logout-btn').addEventListener('click', () => {
-          auth.signOut()
-            .then(() => {
-              window.location.href = 'index.html';
-            })
-            .catch(error => {
-              console.error('Sign out error:', error);
-            });
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+          const result = await logOut();
+          if (result.success) {
+            window.location.href = 'index.html';
+          } else {
+            console.error('Sign out error:', result.error);
+          }
         });
         
         // Fetch user's itineraries
@@ -207,6 +191,6 @@
       }
     }
   </script>
-  <script src="navbar.js" type="module"></script>
+  <script src="js/components/navbar.js" type="module"></script>
 </body>
 </html>

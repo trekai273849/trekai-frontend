@@ -1,0 +1,13 @@
+CSS Restructuring Manifest:
+------------------------
+reset.css -> styles/base/reset.css
+sign-up.css -> styles/components/auth.css
+cards.css -> styles/components/cards.css
+about.css -> styles/pages/about.css
+customize.css -> styles/pages/itinerary.css
+------------------------
+New files created:
+styles/base/typography.css
+styles/components/navbar.css
+styles/pages/home.css
+styles/main.css
