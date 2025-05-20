@@ -86,7 +86,11 @@
     <div id="itinerary-cards" class="space-y-4 mt-8"></div>
   </main>
 
-  <script src="js/utils/itinerary.js"></script>
+  <!-- Add type="module" to itinerary.js script -->
+  <script src="js/utils/itinerary.js" type="module"></script>
+  
+  <!-- Add link to customize.js (reference to original functionality) -->
+  <script src="customize.js"></script>
 
   <script>
     document.querySelectorAll('.filter-btn').forEach(btn => {

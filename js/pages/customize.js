@@ -1,32 +1,29 @@
-// Complete solution with specific fix for merged Tips and Packing List sections
+// js/pages/customize.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyD48TPwzdcYiD6AfVgh6PX1P86OQ7qgPHg",
+  authDomain: "smarttrailsauth.firebaseapp.com",
+  projectId: "smarttrailsauth",
+  storageBucket: "smarttrailsauth.firebasestorage.app",
+  messagingSenderId: "763807584090",
+  appId: "1:763807584090:web:822fb9109f7be5d432ed63",
+  measurementId: "G-M6N5V4TDX6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Store Firebase in a global variable for easier access
+let firebase = {
+  app,
+  auth
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Import Firebase modules
-  let firebase;
-  import('https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js')
-    .then((firebaseApp) => {
-      import('https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js')
-        .then((firebaseAuth) => {
-          const { initializeApp } = firebaseApp;
-          const { getAuth, onAuthStateChanged } = firebaseAuth;
-          
-          // Firebase configuration
-          const firebaseConfig = {
-            apiKey: "AIzaSyD48TPwzdcYiD6AfVgh6PX1P86OQ7qgPHg",
-            authDomain: "smarttrailsauth.firebaseapp.com",
-            projectId: "smarttrailsauth",
-            storageBucket: "smarttrailsauth.firebasestorage.app",
-            messagingSenderId: "763807584090",
-            appId: "1:763807584090:web:822fb9109f7be5d432ed63",
-            measurementId: "G-M6N5V4TDX6"
-          };
-          
-          // Initialize Firebase
-          const app = initializeApp(firebaseConfig);
-          firebase = { app, auth: getAuth(app) };
-        });
-    });
-
   const location = localStorage.getItem('userLocation') || 'Your chosen location';
   document.getElementById('greeting').innerText = "Tell us more about your ideal trekking experience.";
 
@@ -395,59 +392,16 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(item.card);
     });
 
+    // Render additional sections and add event handlers for feedback and save buttons
+    renderAdditionalSections(container, dayCount);
+  }
+
+  // Function to render additional sections (extracted for clarity)
+  function renderAdditionalSections(container, dayCount) {
     // Handle case where day parsing fails or returns zero days
     if (dayCount === 0) {
-      // Fallback: Try a more lenient approach to extracting days
-      const simpleDayRegex = /Day\s+(\d+)[:\s]+([^\n]*?)(?:\n)([\s\S]*?)(?=Day\s+\d+[:\s]|Packing List|Local Insights|Practical Information|$)/gi;
-      let simpleDayMatch;
-      let simpleDayCards = [];
-      
-      while ((simpleDayMatch = simpleDayRegex.exec(text)) !== null) {
-        const dayNum = simpleDayMatch[1];
-        const title = simpleDayMatch[2].trim();
-        // Clean markdown from content
-        const content = simpleDayMatch[3].trim().replace(/#{1,3}/g, '');
-        
-        const card = document.createElement('div');
-        card.className = 'mb-4 border border-gray-200 rounded shadow-sm';
-        
-        card.innerHTML = `
-          <button class="w-full flex justify-between items-center px-4 py-3 bg-mountain-blue text-left font-semibold text-gray-800 focus:outline-none accordion-toggle">
-            <span>Day ${dayNum}: ${title}</span>
-            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 bg-white px-4">
-            <div class="py-3 whitespace-pre-wrap">${content.replace(/\n/g, '<br>')}</div>
-          </div>
-        `;
-        
-        const toggle = card.querySelector('.accordion-toggle');
-        const body = card.querySelector('.accordion-body');
-        const icon = card.querySelector('svg');
-        
-        toggle.addEventListener('click', () => {
-          body.classList.toggle('max-h-0');
-          icon.classList.toggle('rotate-180');
-        });
-        
-        simpleDayCards.push({ day: parseInt(dayNum), card });
-      }
-      
-      if (simpleDayCards.length > 0) {
-        // Found days with simpler regex
-        simpleDayCards.sort((a, b) => a.day - b.day).forEach(item => {
-          container.appendChild(item.card);
-        });
-      } else {
-        // Ultimate fallback: Just show the whole text with markdown removed
-        const cleanText = text.replace(/#{1,3}/g, '');
-        const fallbackCard = document.createElement('div');
-        fallbackCard.className = 'mb-4 border rounded shadow-sm p-4 bg-white';
-        fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${cleanText}</pre>`;
-        container.appendChild(fallbackCard);
-      }
+      renderFallbackContent(container);
+      return;
     }
 
     // Add additional information section if we have packing list, insights, or practical info
@@ -485,6 +439,73 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    addFeedbackAndSaveButtons(container);
+  }
+
+  // Function to render fallback content when day parsing fails
+  function renderFallbackContent(container) {
+    // Fallback: Try a more lenient approach to extracting days
+    const text = rawItineraryText; // Use the original raw text
+    const simpleDayRegex = /Day\s+(\d+)[:\s]+([^\n]*?)(?:\n)([\s\S]*?)(?=Day\s+\d+[:\s]|Packing List|Local Insights|Practical Information|$)/gi;
+    let simpleDayMatch;
+    let simpleDayCards = [];
+    
+    while ((simpleDayMatch = simpleDayRegex.exec(text)) !== null) {
+      const dayNum = simpleDayMatch[1];
+      const title = simpleDayMatch[2].trim();
+      // Clean markdown from content
+      const content = simpleDayMatch[3].trim().replace(/#{1,3}/g, '');
+      
+      const card = document.createElement('div');
+      card.className = 'mb-4 border border-gray-200 rounded shadow-sm';
+      
+      card.innerHTML = `
+        <button class="w-full flex justify-between items-center px-4 py-3 bg-mountain-blue text-left font-semibold text-gray-800 focus:outline-none accordion-toggle">
+          <span>Day ${dayNum}: ${title}</span>
+          <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="accordion-body max-h-0 overflow-hidden transition-all duration-300 bg-white px-4">
+          <div class="py-3 whitespace-pre-wrap">${content.replace(/\n/g, '<br>')}</div>
+        </div>
+      `;
+      
+      const toggle = card.querySelector('.accordion-toggle');
+      const body = card.querySelector('.accordion-body');
+      const icon = card.querySelector('svg');
+      
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('max-h-0');
+        icon.classList.toggle('rotate-180');
+      });
+      
+      simpleDayCards.push({ day: parseInt(dayNum), card });
+    }
+    
+    if (simpleDayCards.length > 0) {
+      // Found days with simpler regex
+      simpleDayCards.sort((a, b) => a.day - b.day).forEach(item => {
+        container.appendChild(item.card);
+      });
+      
+      // Add additional sections
+      renderAdditionalSections(container, simpleDayCards.length);
+    } else {
+      // Ultimate fallback: Just show the whole text with markdown removed
+      const cleanText = text.replace(/#{1,3}/g, '');
+      const fallbackCard = document.createElement('div');
+      fallbackCard.className = 'mb-4 border rounded shadow-sm p-4 bg-white';
+      fallbackCard.innerHTML = `<pre class="whitespace-pre-wrap">${cleanText}</pre>`;
+      container.appendChild(fallbackCard);
+      
+      // Add feedback and save buttons
+      addFeedbackAndSaveButtons(container);
+    }
+  }
+
+  // Function to add feedback and save buttons
+  function addFeedbackAndSaveButtons(container) {
     // Add feedback input
     const feedbackInput = document.createElement('div');
     feedbackInput.className = 'mt-6';
@@ -507,25 +528,16 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     container.appendChild(saveButtonContainer);
 
-    // Add event listener for save button
     document.getElementById('save-itinerary').addEventListener('click', async () => {
       try {
-        // Check if Firebase is initialized
-        if (!firebase || !firebase.auth) {
-          alert('Authentication is initializing. Please try again in a moment.');
-          return;
-        }
-
-        // Get Firebase user
-        const user = firebase.auth.currentUser;
-        
-        if (!user) {
+        // Check if user is authenticated
+        if (!auth || !auth.currentUser) {
           alert('Please log in to save itineraries');
           window.location.href = '/sign-up.html';
           return;
         }
-        
-        const token = await user.getIdToken();
+
+        const token = await auth.currentUser.getIdToken();
         
         // Prepare data to save
         const title = `${location} Trek`;
@@ -619,7 +631,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Add expand/collapse all functionality
-  const accordionControls = document.getElementById('accordion-controls');
   const toggleAllButton = document.getElementById('toggle-all');
   
   if (toggleAllButton) {
@@ -651,3 +662,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Export key functions for potential reuse
+export { 
+  preprocessRawText, 
+  extractSection,
+  processSubsections 
+};
