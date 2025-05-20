@@ -83,7 +83,7 @@
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         // Redirect to subscription plans page after successful signup
-        window.location.href = '/subscription/plans.html';
+        window.location.href = '/subscription/plans';
       } catch (error) {
         console.error("Signup error:", error);
         alert(error.message);
