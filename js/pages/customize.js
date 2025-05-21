@@ -570,97 +570,101 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
     `;
     container.appendChild(feedbackInput);
 
-    // Add buttons container with all requested buttons
+    // Add buttons container with requested buttons
     const buttonsContainer = document.createElement('div');
-buttonsContainer.className = 'mt-6 flex flex-col md:flex-row gap-3';
-buttonsContainer.innerHTML = `
-  <button id="regenerate-itinerary" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors flex-1">
-    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-    </svg>
-    Update Itinerary
-  </button>
-  <button id="save-itinerary" class="flex items-center justify-center border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors flex-1">
-    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
-    </svg>
-    Save My Adventure
-  </button>
-  <button id="talk-to-guide" class="flex items-center justify-center border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors flex-1">
-    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-    </svg>
-    Chat to Pro Guide
-  </button>
-`;
+    buttonsContainer.className = 'mt-6 flex flex-col md:flex-row gap-3';
+    buttonsContainer.innerHTML = `
+      <button id="regenerate-itinerary" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors flex-1">
+        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+        Update Itinerary
+      </button>
+      <button id="save-itinerary" class="flex items-center justify-center border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors flex-1">
+        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+        </svg>
+        Save My Adventure
+      </button>
+      <button id="talk-to-guide" class="flex items-center justify-center border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors flex-1">
+        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+        Chat to Pro Guide
+      </button>
+    `;
     container.appendChild(buttonsContainer);
 
     // Event listeners for the buttons
-    document.getElementById('regenerate-itinerary').addEventListener('click', () => {
-      const feedback = document.getElementById('feedback').value;
-      if (feedback) generateItinerary(feedback);
-    });
+    const regenerateBtn = document.getElementById('regenerate-itinerary');
+    if (regenerateBtn) {
+      regenerateBtn.addEventListener('click', () => {
+        const feedback = document.getElementById('feedback').value;
+        if (feedback) generateItinerary(feedback);
+      });
+    }
 
-    document.getElementById('save-itinerary').addEventListener('click', async () => {
-      try {
-        // Check if user is authenticated
-        if (!auth || !auth.currentUser) {
-          alert('Please log in to save itineraries');
-          window.location.href = '/sign-up.html';
-          return;
+    const saveBtn = document.getElementById('save-itinerary');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', async () => {
+        try {
+          // Check if user is authenticated
+          if (!auth || !auth.currentUser) {
+            alert('Please log in to save itineraries');
+            window.location.href = '/sign-up.html';
+            return;
+          }
+
+          const token = await auth.currentUser.getIdToken();
+          
+          // Prepare data to save
+          const location = localStorage.getItem('userLocation') || 'Trek Location';
+          const title = `${location} Trek`;
+          const itineraryData = {
+            title,
+            location,
+            content: rawItineraryText,
+            comments: document.getElementById('comments').value || '',
+            filters: {}
+          };
+          
+          // Get active filters
+          document.querySelectorAll('.filter-btn.active').forEach(btn => {
+            const category = btn.dataset.category;
+            itineraryData.filters[category] = btn.dataset.value;
+          });
+          
+          // Use direct URL for production
+          const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(itineraryData)
+          });
+          
+          if (!response.ok) throw new Error(`Server returned status ${response.status}`);
+          
+          const data = await response.json();
+          alert('Itinerary saved successfully!');
+          
+          // Optionally, redirect to the saved itineraries page
+          // window.location.href = '/my-itineraries.html';
+        } catch (error) {
+          console.error('Error saving itinerary:', error);
+          alert('Failed to save itinerary. Please try again.');
         }
+      });
+    }
 
-        const token = await auth.currentUser.getIdToken();
-        
-        // Prepare data to save
-        const location = localStorage.getItem('userLocation') || 'Trek Location';
-        const title = `${location} Trek`;
-        const itineraryData = {
-          title,
-          location,
-          content: rawItineraryText,
-          comments: document.getElementById('comments').value || '',
-          filters: {}
-        };
-        
-        // Get active filters
-        document.querySelectorAll('.filter-btn.active').forEach(btn => {
-          const category = btn.dataset.category;
-          itineraryData.filters[category] = btn.dataset.value;
-        });
-        
-        // Use direct URL for production
-        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify(itineraryData)
-        });
-        
-        if (!response.ok) throw new Error(`Server returned status ${response.status}`);
-        
-        const data = await response.json();
-        alert('Itinerary saved successfully!');
-        
-        // Optionally, redirect to the saved itineraries page
-        // window.location.href = '/my-itineraries.html';
-      } catch (error) {
-        console.error('Error saving itinerary:', error);
-        alert('Failed to save itinerary. Please try again.');
-      }
-    });
-
-    document.getElementById('download-pdf').addEventListener('click', () => {
-      alert('PDF download feature coming soon! We\'re working on making your itineraries downloadable.');
-      // Future implementation: Generate and download PDF
-    });
-
-    document.getElementById('talk-to-guide').addEventListener('click', () => {
-      alert('Pro Guide Chat feature coming soon! Get personalized advice from our trekking experts.');
-      // Future implementation: Open chat interface or redirect to guide page
-    });
+    const guideBtn = document.getElementById('talk-to-guide');
+    if (guideBtn) {
+      guideBtn.addEventListener('click', () => {
+        alert('Pro Guide Chat feature coming soon! Get personalized advice from our trekking experts.');
+        // Future implementation: Open chat interface or redirect to guide page
+      });
+    }
   }
 
   function renderAccordionBlock(title, content, open = false, bgColor = 'bg-mountain-blue') {
