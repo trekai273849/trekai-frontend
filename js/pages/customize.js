@@ -58,8 +58,46 @@ document.addEventListener('DOMContentLoaded', () => {
     .bg-mountain-blue {
       background-color: #e6eef2; /* Light mountain blue for day headers */
     }
+    
+    /* Filter button styling */
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      background-color: white;
+      border: 2px solid #e5e7eb;
+      color: #4b5563;
+    }
+    
+    .filter-btn:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+    
+    .filter-btn.active {
+      background-color: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
   `;
   document.head.appendChild(style);
+
+  // Initialize filter buttons
+  const setupFilterButtons = () => {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.category;
+        document.querySelectorAll(`.filter-btn[data-category="${group}"]`).forEach(el => {
+          el.classList.remove('active');
+        });
+        btn.classList.add('active');
+      });
+    });
+  };
+
+  // Call setupFilterButtons immediately after DOM is loaded
+  setupFilterButtons();
 
   document.getElementById('customization-form').addEventListener('submit', function (e) {
     e.preventDefault();

@@ -40,9 +40,9 @@
           🏕️ Accommodation Type
         </h3>
         <div class="flex gap-3 flex-wrap">
-          <button type="button" class="filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
-          <button type="button" class="filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
-          <button type="button" class="filter-btn" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
+          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Camping">Camping</button>
+          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
+          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
         </div>
       </div>
 
@@ -52,9 +52,9 @@
           🏔️ Difficulty
         </h3>
         <div class="flex gap-3 flex-wrap">
-          <button type="button" class="filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
-          <button type="button" class="filter-btn active" data-category="difficulty" data-value="Moderate">Moderate</button>
-          <button type="button" class="filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
+          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="difficulty" data-value="Easy">Easy</button>
+          <button type="button" class="filter-btn active py-2 px-4 rounded-lg" data-category="difficulty" data-value="Moderate">Moderate</button>
+          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="difficulty" data-value="Challenging">Challenging</button>
         </div>
       </div>
 
@@ -64,9 +64,9 @@
           🥾 Technical Requirements
         </h3>
         <div class="flex gap-3 flex-wrap">
-          <button type="button" class="filter-btn active" data-category="technical" data-value="None">None</button>
-          <button type="button" class="filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
-          <button type="button" class="filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
+          <button type="button" class="filter-btn active py-2 px-4 rounded-lg" data-category="technical" data-value="None">None</button>
+          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="technical" data-value="Scrambling">Scrambling</button>
+          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="technical" data-value="Mountaineering">Mountaineering</button>
         </div>
       </div>
 
@@ -91,18 +91,7 @@
   
   <!-- Changed to the correct path and added type="module" -->
   <script src="js/pages/customize.js" type="module"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const group = btn.dataset.category;
-          document.querySelectorAll(`.filter-btn[data-category="${group}"]`).forEach(el => el.classList.remove('active'));
-          btn.classList.add('active');
-        });
-      });
-    });
-  </script>
+  
   <script src="js/components/navbar.js" type="module"></script>
 </body>
 </html>
