@@ -95,7 +95,7 @@
       try {
         // First check if the API health endpoint is responding
         try {
-          const healthResponse = await fetch('https://trekai-api-staging.onrender.com/api/health');
+          const healthResponse = await fetch('https://trekai-api-staging.onrender.com/api/itineraries');
           const healthData = await healthResponse.json();
           if (healthData.status !== 'ok') {
             throw new Error(`API health check failed: ${healthData.message}`);
@@ -108,7 +108,7 @@
         // Get fresh token
         const token = await user.getIdToken(true);
         
-        const response = await fetch('https://trekai-api-staging.onrender.com/api/health', {
+        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Accept': 'application/json'
