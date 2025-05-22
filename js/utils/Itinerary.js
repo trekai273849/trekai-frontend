@@ -1,4 +1,4 @@
-// js/utils/itinerary.js - Non-React version
+// js/utils/itinerary.js - Fixed version with proper accordion styling
 // This file contains utility functions for processing and displaying itineraries
 
 /**
@@ -8,6 +8,9 @@
  */
 export function processItineraryContent(content, container) {
   if (!content || !container) return;
+
+  // Add the necessary CSS styles if not already present
+  addRequiredStyles();
 
   // Clean up the content by removing any extra markdown or formatting issues
   const cleanedContent = preprocessRawText(content);
@@ -21,6 +24,70 @@ export function processItineraryContent(content, container) {
 
   // Render the content into the container
   renderContent(intro, days, packingList, localInsights, practicalInfo, container);
+}
+
+/**
+ * Add required CSS styles for proper accordion functionality
+ */
+function addRequiredStyles() {
+  // Check if styles are already added
+  if (document.getElementById('itinerary-accordion-styles')) return;
+
+  const style = document.createElement('style');
+  style.id = 'itinerary-accordion-styles';
+  style.textContent = `
+    .bg-earthy-green {
+      background-color: #e8f0e5; /* Subtle sage green */
+    }
+    .bg-earthy-tan {
+      background-color: #f2efe9; /* Warm stone/sand color */
+    }
+    .bg-earthy-blue {
+      background-color: #e6eef2; /* Muted sky blue */
+    }
+    .text-earthy-green {
+      color: #3c6e47; /* Darker green for text */
+    }
+    .text-earthy-tan {
+      color: #7d6c54; /* Darker tan for text */
+    }
+    .text-earthy-blue {
+      color: #496a81; /* Darker blue for text */
+    }
+    .bg-mountain-blue {
+      background-color: #e6eef2; /* Light mountain blue for day headers */
+    }
+    
+    /* Accordion specific styles */
+    .accordion-toggle {
+      transition: background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .accordion-toggle:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .accordion-body {
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+    }
+    
+    .accordion-body.expanded {
+      max-height: 1000px; /* Large enough to accommodate content */
+    }
+    
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+    
+    /* Override any conflicting styles */
+    .accordion-body.max-h-0 {
+      max-height: 0 !important;
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 /**
@@ -284,49 +351,10 @@ function renderContent(intro, days, packingList, localInsights, practicalInfo, c
       container.appendChild(createAccordionCard('Practical Information', formattedInfo, false, 'bg-earthy-blue'));
     }
   }
-  
-  // Add accordion controls
-  if (days.length > 0 || packingList || localInsights || practicalInfo) {
-    const accordionControls = document.getElementById('accordion-controls');
-    if (accordionControls) {
-      accordionControls.classList.remove('hidden');
-      
-      // Add toggle all functionality
-      const toggleAllButton = document.getElementById('toggle-all');
-      if (toggleAllButton) {
-        let expanded = false;
-        
-        toggleAllButton.addEventListener('click', () => {
-          const accordionBodies = document.querySelectorAll('.accordion-body');
-          const icons = document.querySelectorAll('.accordion-toggle svg');
-          
-          expanded = !expanded;
-          
-          accordionBodies.forEach(body => {
-            if (expanded) {
-              body.classList.remove('max-h-0');
-            } else {
-              body.classList.add('max-h-0');
-            }
-          });
-          
-          icons.forEach(icon => {
-            if (expanded) {
-              icon.classList.add('rotate-180');
-            } else {
-              icon.classList.remove('rotate-180');
-            }
-          });
-          
-          toggleAllButton.textContent = expanded ? 'Collapse All' : 'Expand All';
-        });
-      }
-    }
-  }
 }
 
 /**
- * Creates an accordion card
+ * Creates an accordion card with proper event handling
  * @param {string} title 
  * @param {string} content 
  * @param {boolean} open 
@@ -335,17 +363,17 @@ function renderContent(intro, days, packingList, localInsights, practicalInfo, c
  */
 function createAccordionCard(title, content, open = false, bgColor = 'bg-mountain-blue') {
   const card = document.createElement('div');
-  card.className = `mb-4 border border-gray-200 rounded shadow-sm`;
+  card.className = 'mb-4 border border-gray-200 rounded shadow-sm';
 
   card.innerHTML = `
     <button class="w-full flex justify-between items-center px-4 py-3 ${bgColor} text-left font-semibold text-gray-800 focus:outline-none accordion-toggle">
       <span>${title}</span>
-      <svg class="w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-5 h-5 transform transition-transform duration-200 ${open ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
     </button>
-    <div class="accordion-body ${open ? '' : 'max-h-0 overflow-hidden'} transition-all duration-300 bg-white px-4">
-      <div class="py-3 whitespace-pre-wrap">${content}</div>
+    <div class="accordion-body ${open ? 'expanded' : 'max-h-0'} bg-white px-4">
+      <div class="py-3">${content}</div>
     </div>
   `;
 
@@ -353,9 +381,27 @@ function createAccordionCard(title, content, open = false, bgColor = 'bg-mountai
   const body = card.querySelector('.accordion-body');
   const icon = card.querySelector('svg');
 
-  toggle.addEventListener('click', () => {
-    body.classList.toggle('max-h-0');
-    icon.classList.toggle('rotate-180');
+  // Add click event listener with proper debugging
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('Accordion clicked:', title); // Debug log
+    
+    // Toggle the accordion state
+    const isCurrentlyOpen = !body.classList.contains('max-h-0');
+    
+    if (isCurrentlyOpen) {
+      // Close the accordion
+      body.classList.remove('expanded');
+      body.classList.add('max-h-0');
+      icon.classList.remove('rotate-180');
+    } else {
+      // Open the accordion
+      body.classList.remove('max-h-0');
+      body.classList.add('expanded');
+      icon.classList.add('rotate-180');
+    }
   });
 
   return card;
