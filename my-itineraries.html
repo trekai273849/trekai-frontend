@@ -100,6 +100,23 @@
       opacity: 0;
       transform: scale(0.95);
     }
+
+    /* Gradient background for cards without specific images */
+    .gradient-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gradient-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      z-index: -1;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -188,40 +205,150 @@
       }
     });
 
-    // Location-based image mapping
-    const locationImages = {
-      // Common trek locations
-      "london": "Images/alps.jpg", // Replace with actual location images
-      "french alps": "Images/alps.jpg",
-      "italian alps": "Images/alps.jpg",
-      "alps": "Images/alps.jpg",
-      "new york": "Images/alps.jpg",
-      
-      // Default fallback
-      "default": "Images/alps.jpg"
+    // Location-specific data for images and gradients
+    const locationData = [
+      {
+        keywords: ["london", "uk", "england", "british", "britain"],
+        image: "Images/locations/london.jpg", 
+        gradient: "linear-gradient(135deg, #3c70b4 0%, #63a4ff 100%)",
+        icon: "🏰"
+      },
+      {
+        keywords: ["french alps", "france", "chamonix", "mont blanc"],
+        image: "Images/locations/french-alps.jpg",
+        gradient: "linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["italian alps", "italy", "dolomites"],
+        image: "Images/locations/italian-alps.jpg",
+        gradient: "linear-gradient(135deg, #38ef7d 0%, #11998e 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["alps", "alpine"],
+        image: "Images/locations/alps.jpg",
+        gradient: "linear-gradient(135deg, #00c6fb 0%, #005bea 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["new york", "ny", "usa", "united states", "america"],
+        image: "Images/locations/new-york.jpg",
+        gradient: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
+        icon: "🗽"
+      },
+      {
+        keywords: ["andes", "peru", "south america", "machu picchu", "cusco"],
+        image: "Images/locations/peru.jpg",
+        gradient: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)",
+        icon: "🌄"
+      },
+      {
+        keywords: ["himalayas", "nepal", "tibet", "everest"],
+        image: "Images/locations/himalayas.jpg",
+        gradient: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
+        image: "Images/locations/japan.jpg",
+        gradient: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
+        icon: "🗻"
+      },
+      {
+        keywords: ["norway", "norwegian", "scandinavia", "fjords"],
+        image: "Images/locations/norway.jpg",
+        gradient: "linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["scotland", "scottish", "highlands"],
+        image: "Images/locations/scotland.jpg",
+        gradient: "linear-gradient(135deg, #3e5151 0%, #decba4 100%)",
+        icon: "🏞️"
+      },
+      {
+        keywords: ["switzerland", "swiss"],
+        image: "Images/locations/switzerland.jpg",
+        gradient: "linear-gradient(135deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%)",
+        icon: "🏔️"
+      }
+    ];
+    
+    // Default gradient for when no match is found
+    const defaultLocationData = {
+      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      icon: "🥾"
     };
     
-    // Function to get image for a location
-    function getLocationImage(location) {
-      if (!location) return locationImages.default;
+    // Function to get location-specific data based on the location name
+    function getLocationData(location) {
+      if (!location) return defaultLocationData;
       
       // Convert to lowercase for case-insensitive matching
       const locationLower = location.toLowerCase();
       
-      // Check for exact matches
-      if (locationImages[locationLower]) {
-        return locationImages[locationLower];
-      }
-      
-      // Check for partial matches
-      for (const [key, imageUrl] of Object.entries(locationImages)) {
-        if (locationLower.includes(key) || key.includes(locationLower)) {
-          return imageUrl;
+      // Try to find a match in our location data
+      for (const locData of locationData) {
+        for (const keyword of locData.keywords) {
+          if (locationLower.includes(keyword) || keyword.includes(locationLower)) {
+            return locData;
+          }
         }
       }
       
-      // Return default image if no match found
-      return locationImages.default;
+      // Return default if no match found
+      return defaultLocationData;
+    }
+    
+    // Function to create a header for an itinerary card
+    function createCardHeader(itinerary) {
+      const locationInfo = getLocationData(itinerary.location);
+      
+      // Check if the image exists
+      if (locationInfo.image) {
+        // Try to load the image first to check if it exists
+        const img = new Image();
+        img.src = locationInfo.image;
+        
+        return new Promise((resolve) => {
+          img.onload = () => {
+            // Image loaded successfully, use it
+            resolve(`
+              <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center" 
+                   style="background-image: url('${locationInfo.image}')">
+                <h3 class="text-xl font-bold p-4 bg-black bg-opacity-50 text-white rounded">${itinerary.location}</h3>
+              </div>
+            `);
+          };
+          
+          img.onerror = () => {
+            // Image failed to load, use gradient fallback
+            resolve(createGradientHeader(itinerary, locationInfo));
+          };
+          
+          // If neither success nor error events fire after a timeout, use gradient
+          setTimeout(() => {
+            if (!img.complete) {
+              resolve(createGradientHeader(itinerary, locationInfo));
+            }
+          }, 1000);
+        });
+      } else {
+        // No image specified, use gradient
+        return Promise.resolve(createGradientHeader(itinerary, locationInfo));
+      }
+    }
+    
+    // Function to create a gradient header when no image is available
+    function createGradientHeader(itinerary, locationInfo) {
+      return `
+        <div class="h-32 flex items-center justify-center text-white relative overflow-hidden"
+             style="background: ${locationInfo.gradient}">
+          <div class="absolute right-3 bottom-3 text-4xl opacity-30">${locationInfo.icon}</div>
+          <h3 class="text-xl font-bold p-4 bg-black bg-opacity-30 rounded z-10">${itinerary.location}</h3>
+        </div>
+      `;
     }
 
     // Function to fetch itineraries
@@ -267,7 +394,8 @@
           const container = document.getElementById('itineraries-container');
           container.classList.remove('hidden');
           
-          itineraries.forEach(itinerary => {
+          // Process itineraries with async/await to handle the image checking
+          for (const itinerary of itineraries) {
             // Create a date formatter
             const dateFormatter = new Intl.DateTimeFormat('en-US', {
               year: 'numeric',
@@ -278,16 +406,14 @@
             // Format the date
             const createdDate = dateFormatter.format(new Date(itinerary.createdAt));
             
-            // Get location-specific image
-            const locationImage = getLocationImage(itinerary.location);
+            // Get the card header (which may include an image check)
+            const cardHeader = await createCardHeader(itinerary);
             
             // Create card for itinerary
             const card = document.createElement('div');
             card.className = 'bg-white rounded-lg shadow-md overflow-hidden itinerary-card';
             card.innerHTML = `
-              <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center" style="background-image: url('${locationImage}')">
-                <h3 class="text-xl font-bold p-4 bg-black bg-opacity-50 text-white rounded">${itinerary.location}</h3>
-              </div>
+              ${cardHeader}
               <div class="p-4">
                 <p class="text-gray-600 text-sm mb-3">Created: ${createdDate}</p>
                 <div class="flex flex-wrap gap-2 mb-4">
@@ -303,7 +429,7 @@
                     </svg>
                     View
                   </a>
-                  <button class="delete-btn flex items-center justify-center bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors duration-200" data-id="${itinerary._id}">
+                  <button class="delete-btn flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 rounded-md transition-colors duration-200" data-id="${itinerary._id}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                     </svg>
@@ -313,7 +439,7 @@
             `;
             
             container.appendChild(card);
-          });
+          }
           
           // Set up delete functionality with modal
           const modal = document.getElementById('delete-modal');

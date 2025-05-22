@@ -21,6 +21,7 @@
   font-weight: 600;
   min-width: 180px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 /* Ensure proper responsive layout */
@@ -28,6 +29,10 @@
   #itinerary-form button {
     width: 100%;
     margin-top: 10px;
+  }
+  
+  #itinerary-form .flex {
+    flex-direction: column;
   }
 }
 
