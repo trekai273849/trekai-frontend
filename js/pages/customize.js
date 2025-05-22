@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       try {
         // Use direct API URL for production
-        const response = await fetch('http://localhost:8010/proxy/api/finalize', {
+        const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -673,7 +673,7 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
           });
           
           // Use direct URL for production
-          const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
+          const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
             method: 'POST',
             headers: { 
               'Content-Type': 'application/json',
