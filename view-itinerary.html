@@ -72,12 +72,8 @@
       const authStatusDiv = document.getElementById('auth-status');
       
       if (user) {
-        // User is signed in
-        authStatusDiv.innerHTML = `
-          <div class="flex justify-between items-center mb-4">
-            <p class="text-gray-700">Signed in as: <span class="font-semibold">${user.email}</span></p>
-          </div>
-        `;
+        // User is signed in - hide auth status and fetch itinerary
+        authStatusDiv.style.display = 'none';
         
         // Fetch the itinerary
         fetchItinerary(user, itineraryId);
