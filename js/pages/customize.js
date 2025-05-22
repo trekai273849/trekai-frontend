@@ -685,7 +685,7 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
           if (!response.ok) throw new Error(`Server returned status ${response.status}`);
           
           const data = await response.json();
-          alert('Itinerary saved successfully!');
+          showSuccessModal();
           
           // Optionally, redirect to the saved itineraries page
           // window.location.href = '/my-itineraries.html';
@@ -748,4 +748,41 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
       if (defaultTechnicalBtn) defaultTechnicalBtn.classList.add('active');
     }
   }, 100);
+
+  // Success Modal Functions
+  function showSuccessModal() {
+    const modal = document.getElementById('itinerary-success-modal');
+    modal.style.display = 'flex';
+  }
+
+  function closeSuccessModal() {
+    const modal = document.getElementById('itinerary-success-modal');
+    modal.style.animation = 'fadeOut 0.2s ease-out forwards';
+    setTimeout(() => {
+      modal.style.display = 'none';
+      modal.style.animation = ''; // Reset animation
+    }, 200);
+  }
+
+  // Make functions globally available
+  window.showSuccessModal = showSuccessModal;
+  window.closeSuccessModal = closeSuccessModal;
+
+  // Close modal when clicking outside
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('itinerary-success-modal');
+    if (e.target === modal) {
+      closeSuccessModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('itinerary-success-modal');
+      if (modal.style.display === 'flex') {
+        closeSuccessModal();
+      }
+    }
+  });
 });
