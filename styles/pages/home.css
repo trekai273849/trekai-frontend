@@ -5,38 +5,51 @@
   margin: 0 auto;
 }
 
-/* Input and button styling */
+/* Updated form styling with proper alignment */
+#itinerary-form {
+  max-width: 700px;
+}
+
+#itinerary-form .flex {
+  display: flex;
+  align-items: stretch; /* This ensures both elements have the same height */
+}
+
 #itinerary-form input[type="text"] {
-  height: 56px;
   font-size: 16px;
   background: white;
-  width: 100%;
-  border: none;
+  border: 1px solid #d1d5db;
+  min-height: 56px;
+  height: 56px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+#itinerary-form input[type="text"]:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
 #itinerary-form button {
-  height: 56px;
   font-size: 16px;
   font-weight: 600;
   min-width: 180px;
+  min-height: 56px;
+  height: 56px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0; /* Prevent button from shrinking */
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Ensure proper responsive layout */
+/* Responsive layout */
 @media (max-width: 640px) {
-  #itinerary-form button {
-    width: 100%;
-    margin-top: 10px;
-  }
-  
   #itinerary-form .flex {
     flex-direction: column;
   }
-}
-
-/* Fix vertical alignment */
-#itinerary-form .flex {
-  align-items: center;
+  
+  #itinerary-form button {
+    width: 100%;
+  }
 }
