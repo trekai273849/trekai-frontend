@@ -76,9 +76,6 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Navigation will be inserted here -->
-    <div id="navbar-container"></div>
-
     <main>
 
     <!-- Hero Section -->
@@ -232,70 +229,14 @@
         </div>
     </div>
 
-    <!-- Original Simple Footer - Enhanced for reliability -->
+    <!-- Original Simple Footer - EXACTLY like your other pages -->
     <footer class="bg-gray-800 text-white py-8 mt-auto" style="display: block !important; position: relative; z-index: 10;">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2024 Smart Trails. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Simple script to create navbar directly -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create the green navbar directly
-            const navbarContainer = document.getElementById('navbar-container');
-            if (navbarContainer) {
-                navbarContainer.innerHTML = `
-                    <div class="bg-green-900 text-white py-3 md:py-4">
-                        <div class="container mx-auto flex justify-between items-center px-3 md:px-4">
-                            <a href="index.html" class="text-lg md:text-xl font-bold flex-shrink-0">Smart Trails</a>
-                            
-                            <!-- Desktop Navigation -->
-                            <nav class="hidden md:block">
-                                <ul class="flex space-x-4 items-center">
-                                    <li><a href="index.html" class="hover:text-green-200 transition-colors">Home</a></li>
-                                    <li><a href="my-itineraries.html" class="hover:text-green-200 transition-colors">My Itineraries</a></li>
-                                    <li><a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a></li>
-                                </ul>
-                            </nav>
-
-                            <!-- Mobile Navigation -->
-                            <div class="md:hidden flex items-center space-x-2">
-                                <a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>
-                                <button id="mobile-menu-toggle" class="text-white hover:text-green-200 transition-colors p-1">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Mobile Menu Dropdown -->
-                        <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-b from-green-800 to-green-900 border-t border-green-600 shadow-lg">
-                            <div class="container mx-auto px-4 py-4">
-                                <ul class="space-y-1">
-                                    <li><a href="index.html" class="block py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">Home</a></li>
-                                    <li><a href="my-itineraries.html" class="block py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">My Itineraries</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                // Add mobile menu toggle functionality
-                const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-                const mobileMenu = document.getElementById('mobile-menu');
-                
-                if (mobileMenuToggle && mobileMenu) {
-                    mobileMenuToggle.addEventListener('click', function() {
-                        mobileMenu.classList.toggle('hidden');
-                    });
-                }
-            }
-        });
-    </script>
-    
-    <!-- Original navbar.js as backup (if the above doesn't work, this might) -->
+    <!-- Load ONLY the original navbar.js -->
     <script src="js/components/navbar.js" type="module"></script>
 
     <!-- Main functionality -->
