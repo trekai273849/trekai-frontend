@@ -24,7 +24,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Hero Header -->
-  <header class="relative bg-cover bg-center h-48 flex items-center justify-center text-white" style="background-image: url('Images/alps.jpg');">
+  <header id="itinerary-header" class="relative bg-cover bg-center h-48 flex items-center justify-center text-white" style="background-image: url('Images/alps.jpg');">
     <div class="bg-black bg-opacity-50 p-6 rounded-lg">
       <h1 id="itinerary-title" class="text-3xl font-bold mb-2">Loading Itinerary...</h1>
     </div>
@@ -62,6 +62,144 @@
       return str.replace(/\w\S*/g, (txt) => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
+    }
+
+    // Location-specific data for images and gradients (same as in my-itineraries.html)
+    const locationData = [
+      {
+        keywords: ["london", "uk", "england", "british", "britain"],
+        image: "Images/locations/london.jpg", 
+        gradient: "linear-gradient(135deg, #3c70b4 0%, #63a4ff 100%)",
+        icon: "🏰"
+      },
+      {
+        keywords: ["french alps", "france", "chamonix", "mont blanc"],
+        image: "Images/locations/french-alps.jpg",
+        gradient: "linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["italian alps", "italy", "dolomites"],
+        image: "Images/locations/italian-alps.jpg",
+        gradient: "linear-gradient(135deg, #38ef7d 0%, #11998e 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["alps", "alpine"],
+        image: "Images/locations/alps.jpg",
+        gradient: "linear-gradient(135deg, #00c6fb 0%, #005bea 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["new york", "ny", "usa", "united states", "america"],
+        image: "Images/locations/new-york.jpg",
+        gradient: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
+        icon: "🗽"
+      },
+      {
+        keywords: ["andes", "peru", "south america", "machu picchu", "cusco"],
+        image: "Images/locations/peru.jpg",
+        gradient: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)",
+        icon: "🌄"
+      },
+      {
+        keywords: ["himalayas", "nepal", "tibet", "everest"],
+        image: "Images/locations/himalayas.jpg",
+        gradient: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
+        image: "Images/locations/japan.jpg",
+        gradient: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
+        icon: "🗻"
+      },
+      {
+        keywords: ["norway", "norwegian", "scandinavia", "fjords"],
+        image: "Images/locations/norway.jpg",
+        gradient: "linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["scotland", "scottish", "highlands"],
+        image: "Images/locations/scotland.jpg",
+        gradient: "linear-gradient(135deg, #3e5151 0%, #decba4 100%)",
+        icon: "🏞️"
+      },
+      {
+        keywords: ["switzerland", "swiss"],
+        image: "Images/locations/switzerland.jpg",
+        gradient: "linear-gradient(135deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%)",
+        icon: "🏔️"
+      }
+    ];
+    
+    // Default gradient for when no match is found
+    const defaultLocationData = {
+      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      icon: "🥾"
+    };
+    
+    // Function to get location-specific data based on the location name
+    function getLocationData(location) {
+      if (!location) return defaultLocationData;
+      
+      // Convert to lowercase for case-insensitive matching
+      const locationLower = location.toLowerCase();
+      
+      // Try to find a match in our location data
+      for (const locData of locationData) {
+        for (const keyword of locData.keywords) {
+          if (locationLower.includes(keyword) || keyword.includes(locationLower)) {
+            return locData;
+          }
+        }
+      }
+      
+      // Return default if no match found
+      return defaultLocationData;
+    }
+
+    // Function to update header background based on location
+    async function updateHeaderBackground(location) {
+      const header = document.getElementById('itinerary-header');
+      const locationInfo = getLocationData(location);
+      
+      if (locationInfo.image) {
+        // Try to load the image first to check if it exists
+        const img = new Image();
+        img.src = locationInfo.image;
+        
+        return new Promise((resolve) => {
+          img.onload = () => {
+            // Image loaded successfully, use it
+            header.style.backgroundImage = `url('${locationInfo.image}')`;
+            header.style.background = '';
+            resolve();
+          };
+          
+          img.onerror = () => {
+            // Image failed to load, use gradient fallback
+            header.style.backgroundImage = '';
+            header.style.background = locationInfo.gradient;
+            resolve();
+          };
+          
+          // If neither success nor error events fire after a timeout, use gradient
+          setTimeout(() => {
+            if (!img.complete) {
+              header.style.backgroundImage = '';
+              header.style.background = locationInfo.gradient;
+              resolve();
+            }
+          }, 1000);
+        });
+      } else {
+        // No image specified, use gradient
+        header.style.backgroundImage = '';
+        header.style.background = locationInfo.gradient;
+        return Promise.resolve();
+      }
     }
     
     // Get itinerary ID from URL
@@ -125,6 +263,11 @@
         // Apply title case formatting to the itinerary title
         const formattedTitle = toTitleCase(itinerary.title || 'Your Trek');
         document.getElementById('itinerary-title').textContent = formattedTitle;
+        
+        // Update header background based on itinerary location
+        if (itinerary.location) {
+          await updateHeaderBackground(itinerary.location);
+        }
         
         // Process and display the itinerary content
         const contentDiv = document.getElementById('itinerary-content');
