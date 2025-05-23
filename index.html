@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -14,21 +14,75 @@
     <title>Smart Trails | AI Trek Planner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/pages/home.css" />
-  </head>
-  <body class="bg-white text-gray-800 font-sans">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tech-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        .blue-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        
+        /* Ensure footer always displays */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Hero Section - UPDATED -->
+    <main>
+
+    <!-- Hero Section -->
     <section class="bg-cover bg-center h-screen text-white flex flex-col justify-center items-center px-4 text-center" style="background-image: url('images/trekkingheader.jpg');">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Personalised Trekking Itineraries</h1>
       <p class="text-lg md:text-xl mb-6">Generate custom trekking plans tailored to your preferences with AI.</p>
       
-      <!-- Fixed form with proper alignment -->
       <form id="itinerary-form" class="w-full max-w-2xl mx-auto">
         <div class="flex items-stretch sm:flex-row flex-col gap-3">
           <input 
@@ -49,172 +103,216 @@
     </section>
     
     <!-- About Section -->
-    <section class="bg-white py-16 px-4 sm:px-6 lg:px-20">
-      <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
-          Powered by Cutting-Edge Tech
-        </h2>
-        <p class="text-xl text-gray-600 mb-12">
-          <span class="block mt-2">We analyze your preferences and generate fully customized itineraries.</span>
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-          <div class="bg-gray-50 rounded-lg p-6 shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold text-green-800 mb-2">AI-Personalized Itineraries</h3>
-            <p class="text-gray-700">
-              We analyze your preferences and generate fully customized daily plans.
+    <section id="about" class="bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+                Powered by Cutting-Edge Tech
+            </h2>
+            <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+                We analyze your preferences and generate fully customized itineraries.
             </p>
-          </div>
 
-          <div class="bg-gray-50 rounded-lg p-6 shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold text-green-800 mb-2">Trail Intelligence</h3>
-            <p class="text-gray-700">
-              We combine verified trail data, elevation stats, and route tips to guide you accurately.
-            </p>
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="tech-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-cog text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">AI-Personalized Itineraries</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        We analyze your preferences and generate fully customized daily plans.
+                    </p>
+                </div>
 
-          <div class="bg-gray-50 rounded-lg p-6 shadow hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold text-green-800 mb-2">Conversational Planning</h3>
-            <p class="text-gray-700">
-              Just describe your ideal trek and we'll build the plan as your personal guide.
-            </p>
-          </div>
+                <div class="tech-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mountain text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">Trail Intelligence</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        We combine verified trail data, elevation stats, and route tips to guide you accurately.
+                    </p>
+                </div>
+
+                <div class="tech-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-comments text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">Conversational Planning</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Just describe your ideal trek and we'll build the plan as your personal guide.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Features Section - UPDATED with Pro subscription features -->
-    <section class="py-16 px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8">Elite Planning for Serious Hikers</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        <div class="bg-white shadow-md rounded p-6">
-          <i class="fas fa-infinity fa-2x text-green-700 mb-4"></i>
-          <h3 class="font-semibold mb-2">Unlimited Itineraries</h3>
-          <p class="text-gray-600">Create unlimited itineraries and save them all with our Pro subscription.</p>
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4 gradient-text">Elite Planning for Serious Hikers</h2>
+            <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+                Unlock advanced features designed for passionate adventurers
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-infinity text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Unlimited Itineraries</h3>
+                    <p class="text-gray-600 leading-relaxed">Create unlimited itineraries and save them all with our Pro subscription.</p>
+                </div>
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-sliders-h text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Advanced Planning</h3>
+                    <p class="text-gray-600 leading-relaxed">Use advanced filters, preferences, and regenerate itineraries with feedback.</p>
+                </div>
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Premium Features</h3>
+                    <p class="text-gray-600 leading-relaxed">Access conversational planning and get early access to new features.</p>
+                </div>
+            </div>
         </div>
-        <div class="bg-white shadow-md rounded p-6">
-          <i class="fas fa-sliders-h fa-2x text-green-700 mb-4"></i>
-          <h3 class="font-semibold mb-2">Advanced Planning</h3>
-          <p class="text-gray-600">Use advanced filters, preferences, and regenerate itineraries with feedback.</p>
-        </div>
-        <div class="bg-white shadow-md rounded p-6">
-          <i class="fas fa-rocket fa-2x text-green-700 mb-4"></i>
-          <h3 class="font-semibold mb-2">Premium Features</h3>
-          <p class="text-gray-600">Access conversational planning and get early access to new features.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Call to Action - UPDATED with single button -->
-    <div class="text-center mb-12">
-      <button id="join-community-btn" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">Join Our Community</button>
-    </div>
+    <!-- Call to Action -->
+    <section class="blue-gradient py-20">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold text-white mb-10">
+                Start Your Adventure Today
+            </h2>
+            <button id="join-community-btn" class="bg-white text-blue-600 px-10 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+                Join Our Community
+            </button>
+        </div>
+    </section>
 
     <!-- Community Modal -->
     <div id="community-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl transform transition-all">
-        <div class="text-center">
-          <!-- Icon -->
-          <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-4">
-            <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-          </div>
-          
-          <!-- Title -->
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Community Coming Soon!</h3>
-          
-          <!-- Message -->
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            We're building something amazing for our hiking community. We'll let you know when we launch premium features and exclusive member benefits!
-          </p>
-          
-          <!-- Features preview -->
-          <div class="text-left bg-gray-50 rounded-lg p-4 mb-6">
-            <h4 class="font-semibold text-gray-800 mb-2">Coming soon:</h4>
-            <ul class="text-sm text-gray-600 space-y-1">
-              <li>• Exclusive trail recommendations</li>
-              <li>• Community trip planning</li>
-              <li>• Expert guide connections</li>
-              <li>• Early access to new features</li>
-            </ul>
-          </div>
-          
-          <!-- Buttons -->
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button id="notify-me-btn" class="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-              Notify Me
-            </button>
-            <button id="close-modal-btn" class="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
-              Maybe Later
-            </button>
-          </div>
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 shadow-2xl transform transition-all">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 mb-6">
+                    <svg class="h-10 w-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Community Coming Soon!</h3>
+                
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    We're building something amazing for our hiking community. We'll let you know when we launch premium features and exclusive member benefits!
+                </p>
+                
+                <div class="text-left bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-4 mb-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">Coming soon:</h4>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Exclusive trail recommendations</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Community trip planning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Expert guide connections</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Early access to new features</li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="notify-me-btn" class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:from-blue-700 hover:to-purple-700 transition-all">
+                        Notify Me
+                    </button>
+                    <button id="close-modal-btn" class="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-200 transition-colors">
+                        Maybe Later
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-    <!-- Script -->
-    <script>
-      // Form submission handler
-      document.getElementById("itinerary-form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const location = document.getElementById("user-input").value;
-        localStorage.setItem("userLocation", location);
-        window.location.href = "customize.html";
-      });
+  <!-- Footer Container - This is where the footer will be inserted -->
+    <div id="footer-container"></div>
 
-      // Community modal handlers
-      const joinCommunityBtn = document.getElementById('join-community-btn');
-      const communityModal = document.getElementById('community-modal');
-      const closeModalBtn = document.getElementById('close-modal-btn');
-      const notifyMeBtn = document.getElementById('notify-me-btn');
-
-      // Open modal
-      joinCommunityBtn.addEventListener('click', () => {
-        communityModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-      });
-
-      // Close modal
-      const closeModal = () => {
-        communityModal.classList.add('hidden');
-        document.body.style.overflow = 'auto'; // Restore scrolling
-      };
-
-      closeModalBtn.addEventListener('click', closeModal);
-
-      // Close modal when clicking outside
-      communityModal.addEventListener('click', (e) => {
-        if (e.target === communityModal) {
-          closeModal();
-        }
-      });
-
-      // Close modal with Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !communityModal.classList.contains('hidden')) {
-          closeModal();
-        }
-      });
-
-      // Handle notify me button
-      notifyMeBtn.addEventListener('click', () => {
-        // You can redirect to sign-up or collect email here
-        window.location.href = 'sign-up.html';
-        
-        // Alternative: Show success message and close modal
-        // notifyMeBtn.textContent = 'Thanks! We\'ll be in touch 🎉';
-        // notifyMeBtn.disabled = true;
-        // setTimeout(closeModal, 2000);
-      });
-    </script>
-
- <!-- Footer Container - This is where the footer will be inserted -->
-  <div id="footer-container"></div>
-
+    <!-- Load ONLY the original navbar.js -->
     <script src="js/components/navbar.js" type="module"></script>
 
-      <!-- Add the Footer Component Script -->
-  <script src="js/components/footer.js" type="module"></script>
-  </body>
+    <!-- Add the Footer Component Script -->
+    <script src="js/components/footer.js" type="module"></script>
+
+    <!-- Main functionality -->
+    <script>
+        // Form submission handler
+        document.getElementById("itinerary-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const location = document.getElementById("user-input").value;
+            localStorage.setItem("userLocation", location);
+            window.location.href = "customize.html";
+        });
+
+        // Community modal handlers
+        const joinCommunityBtn = document.getElementById('join-community-btn');
+        const communityModal = document.getElementById('community-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const notifyMeBtn = document.getElementById('notify-me-btn');
+
+        joinCommunityBtn.addEventListener('click', () => {
+            communityModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeModal = () => {
+            communityModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        communityModal.addEventListener('click', (e) => {
+            if (e.target === communityModal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !communityModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        notifyMeBtn.addEventListener('click', () => {
+            window.location.href = 'sign-up.html';
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
 </html>
