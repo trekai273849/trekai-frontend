@@ -134,95 +134,101 @@ document.addEventListener('DOMContentLoaded', () => {
       100% { background-position: -200% 0; }
     }
     
-    .community-tip-container {
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      border: 2px solid #cbd5e1;
+    .fact-container {
+      background: linear-gradient(135deg, #fef7ff 0%, #f3e8ff 100%);
+      border: 1px solid #e9d5ff;
       position: relative;
       overflow: hidden;
     }
     
-    .community-tip-container::before {
+    .fact-container::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #10b981, #059669, #047857);
-      opacity: 0.8;
+      height: 2px;
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+      opacity: 0.6;
     }
     
-    .tip-header {
+    .fact-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
+      gap: 10px;
+      margin-bottom: 12px;
     }
     
-    .community-badge {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 12px;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
-    }
-    
-    .tip-icon {
-      width: 20px;
-      height: 20px;
-      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    .fact-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
     }
     
-    .tip-content {
+    .fact-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #4c1d95;
+      letter-spacing: 0.3px;
+    }
+    
+    .fact-content {
       color: #374151;
-      line-height: 1.5;
+      line-height: 1.6;
       font-size: 14px;
+      font-weight: 400;
     }
     
-    .community-stats {
+    .status-indicator {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-top: 8px;
-      font-size: 11px;
-      color: #6b7280;
+      justify-content: center;
+      margin: 20px 0;
     }
     
-    .stat-item {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    
-    .stat-dot {
-      width: 6px;
-      height: 6px;
+    .pulse-circle {
+      width: 12px;
+      height: 12px;
       background: #10b981;
       border-radius: 50%;
-      opacity: 0.7;
+      animation: gentlePulse 2s ease-in-out infinite;
+      margin: 0 8px;
     }
     
-    .bounce-animation {
-      animation: gentleBounce 2s ease-in-out infinite;
+    .pulse-circle:nth-child(2) {
+      animation-delay: 0.3s;
     }
     
-    @keyframes gentleBounce {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+    .pulse-circle:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    
+    @keyframes gentlePulse {
+      0%, 100% { 
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      50% { 
+        transform: scale(1.2);
+        opacity: 1;
+      }
     }
     
     .loading-message {
       transition: all 0.3s ease-in-out;
+    }
+    
+    .time-estimate {
+      font-size: 11px;
+      color: #9ca3af;
+      font-weight: 400;
+      opacity: 0.8;
     }
   `;
   document.head.appendChild(style);
@@ -230,22 +236,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to get location-specific tips
   function getLocationTip(location) {
     const tips = {
-      'french alps': 'The French Alps contain the highest peak in Western Europe - Mont Blanc at 4,809m!',
-      'italian alps': 'The Dolomites are a UNESCO World Heritage site known for their unique pale-colored rock.',
-      'alps': 'The Alps stretch across 8 countries and are home to over 30,000 animal species.',
-      'himalayas': 'The Himalayas contain the world\'s 10 highest peaks, including Mount Everest.',
-      'himalaya': 'The Himalayas contain the world\'s 10 highest peaks, including Mount Everest.',
-      'andes': 'The Andes is the longest continental mountain range in the world at 7,000km.',
-      'patagonia': 'Patagonia is home to some of the world\'s most dramatic landscapes and unique wildlife.',
-      'kilimanjaro': 'Mount Kilimanjaro is the highest free-standing mountain in the world.',
-      'norway': 'Norway has over 1,000 fjords carved by glaciers over millions of years.',
-      'scotland': 'Scotland has 282 Munros (mountains over 3,000 feet) to explore.',
-      'switzerland': 'Switzerland has over 7,000 lakes and 48 peaks over 4,000 meters high.',
-      'japan': 'Japan has over 100 active volcanoes and some of the world\'s most beautiful mountain trails.',
-      'new zealand': 'New Zealand\'s South Island contains 23 peaks over 3,000 meters high.',
-      'rockies': 'The Rocky Mountains extend over 3,000 miles from Canada to New Mexico.',
-      'appalachian': 'The Appalachian Trail spans 2,190 miles across 14 states.',
-      'default': 'Mountain trekking burns 400-700 calories per hour depending on terrain and pace.'
+      'french alps': 'The French Alps contain Mont Blanc, Western Europe\'s highest peak at 4,809m!',
+      'italian alps': 'The Dolomites\' unique pale rock formations are made of ancient coral reefs.',
+      'alps': 'Alpine glaciers carved these valleys over millions of years, creating dramatic landscapes.',
+      'himalayas': 'The Himalayas contain 14 peaks over 8,000m, formed by tectonic plate collision.',
+      'himalaya': 'The Himalayas are still growing about 1cm per year due to continental drift.',
+      'andes': 'The Andes stretch 7,000km - longer than the distance from New York to Paris!',
+      'patagonia': 'Patagonia\'s weather can change from sun to snow in minutes due to its unique geography.',
+      'kilimanjaro': 'Kilimanjaro has three distinct climate zones: tropical, temperate, and arctic.',
+      'norway': 'Norwegian fjords were carved by glaciers that were over 1km thick.',
+      'scotland': 'Scotland\'s highlands were formed 400 million years ago during mountain-building events.',
+      'switzerland': 'Switzerland generates 60% of its electricity from hydropower thanks to alpine geography.',
+      'japan': 'Japan sits on four tectonic plates, creating its mountainous terrain and hot springs.',
+      'new zealand': 'New Zealand was the last landmass on Earth to be discovered by humans.',
+      'rockies': 'The Rocky Mountains contain ecosystems ranging from prairie to alpine tundra.',
+      'appalachian': 'The Appalachian Mountains are among Earth\'s oldest, formed 480 million years ago.',
+      'default': 'Mountain air contains less oxygen, which is why you might feel breathless at first.'
     };
     
     if (!location) return tips.default;
@@ -260,41 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     return tips.default;
-  }
-
-  // Function to get community stats based on location
-  function getCommunityStats(location) {
-    const stats = {
-      'french alps': { hikers: '25K+', popular: 'Most popular in Europe' },
-      'italian alps': { hikers: '18K+', popular: 'UNESCO favorite' },
-      'alps': { hikers: '30K+', popular: 'Classic European trek' },
-      'himalayas': { hikers: '40K+', popular: 'Ultimate challenge' },
-      'himalaya': { hikers: '40K+', popular: 'Ultimate challenge' },
-      'andes': { hikers: '22K+', popular: 'South America\'s best' },
-      'patagonia': { hikers: '12K+', popular: 'Wilderness favorite' },
-      'kilimanjaro': { hikers: '35K+', popular: 'Africa\'s crown jewel' },
-      'norway': { hikers: '14K+', popular: 'Nordic adventure' },
-      'scotland': { hikers: '20K+', popular: 'Highland classic' },
-      'switzerland': { hikers: '28K+', popular: 'Alpine perfection' },
-      'japan': { hikers: '16K+', popular: 'Cultural journey' },
-      'new zealand': { hikers: '19K+', popular: 'Middle-earth magic' },
-      'rockies': { hikers: '45K+', popular: 'North America\'s backbone' },
-      'appalachian': { hikers: '50K+', popular: 'East coast classic' },
-      'default': { hikers: '15K+', popular: 'Adventure awaits' }
-    };
-    
-    if (!location) return stats.default;
-    
-    const locationLower = location.toLowerCase();
-    
-    // Find matching stats
-    for (const [key, stat] of Object.entries(stats)) {
-      if (key !== 'default' && locationLower.includes(key)) {
-        return stat;
-      }
-    }
-    
-    return stats.default;
   }
   function getLocationTip(location) {
     const tips = {
@@ -332,8 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to show progressive loading with stages and tips
   function showProgressiveLoading(container, location) {
-    const communityStats = getCommunityStats(location);
-    
     const stages = [
       { 
         message: "🗺️ Analyzing your destination...", 
@@ -342,22 +311,22 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       { 
         message: "🥾 Planning optimal routes...", 
-        tip: "We're considering elevation, weather patterns, and difficulty levels to find the perfect path.",
+        tip: "The best trekking routes balance scenic beauty with safety, avoiding steep drop-offs and unstable terrain.",
         duration: 5000
       },
       { 
         message: "🏔️ Selecting scenic highlights...", 
-        tip: "Finding the best viewpoints, photo opportunities, and must-see landmarks.",
+        tip: "Dawn and dusk provide the most dramatic mountain lighting - photographers call it 'alpenglow'.",
         duration: 4500
       },
       { 
         message: "🎒 Customizing your experience...", 
-        tip: "Tailoring recommendations based on your preferences and skill level.",
+        tip: "Every 1000m of elevation gain requires an extra day for proper acclimatization.",
         duration: 4000
       },
       { 
         message: "📋 Finalizing your itinerary...", 
-        tip: "Almost ready! Adding final touches and safety recommendations.",
+        tip: "The 'leave no trace' principle helps preserve these incredible landscapes for future generations.",
         duration: 3000
       }
     ];
@@ -382,35 +351,24 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Progress percentage -->
         <div id="progress-text" class="text-sm text-gray-600 mb-6">0% Complete</div>
         
-        <!-- Enhanced community tip section -->
-        <div class="community-tip-container rounded-xl p-4 mb-6">
-          <div class="tip-header">
-            <div class="community-badge">Trek Community</div>
-            <div class="tip-icon">💡</div>
-            <span class="text-sm font-semibold text-gray-700">From Fellow Adventurers</span>
+        <!-- Clean fact section -->
+        <div class="fact-container rounded-xl p-5 mb-6">
+          <div class="fact-header">
+            <div class="fact-icon">🌍</div>
+            <span class="fact-title">Did You Know?</span>
           </div>
-          <div id="loading-tip" class="tip-content">${stages[0].tip}</div>
-          <div class="community-stats">
-            <div class="stat-item">
-              <div class="stat-dot"></div>
-              <span>Shared by ${communityStats.hikers} hikers</span>
-            </div>
-            <div class="stat-item">
-              <div class="stat-dot"></div>
-              <span>${communityStats.popular}</span>
-            </div>
-            <div class="stat-item">
-              <div class="stat-dot"></div>
-              <span>Verified by guides</span>
-            </div>
-          </div>
+          <div id="loading-tip" class="fact-content">${stages[0].tip}</div>
         </div>
         
-        <!-- Animated icon -->
-        <div class="text-4xl bounce-animation">🚶‍♂️</div>
+        <!-- Elegant status indicator -->
+        <div class="status-indicator">
+          <div class="pulse-circle"></div>
+          <div class="pulse-circle"></div>
+          <div class="pulse-circle"></div>
+        </div>
         
-        <!-- Encouragement text -->
-        <div class="text-xs text-gray-500 mt-4">This may take up to 30 seconds - we're crafting something amazing!</div>
+        <!-- Subtle time estimate -->
+        <div class="time-estimate">Crafting your perfect adventure</div>
       </div>
     `;
     
