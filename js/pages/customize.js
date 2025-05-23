@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       try {
         // Use direct API URL for production
-        const response = await fetch('https://trekai-api-staging.onrender.com/api/finalize', {
+        const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1072,7 +1072,7 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
       });
       
       // Use direct URL for production
-      const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+      const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -1167,7 +1167,7 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
         const token = await auth.currentUser.getIdToken();
         const itineraryData = JSON.parse(pendingItinerary);
         
-        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
