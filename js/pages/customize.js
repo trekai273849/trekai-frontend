@@ -110,8 +110,232 @@ document.addEventListener('DOMContentLoaded', () => {
     .flex.gap-3::-webkit-scrollbar-thumb:hover {
       background: #a1a1a1;
     }
+
+    /* Progressive Loading Styles */
+    .loading-container {
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .progress-bar-container {
+      background-color: #f3f4f6;
+      overflow: hidden;
+    }
+    
+    .progress-bar {
+      background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+      background-size: 200% 100%;
+      animation: progressShimmer 2s ease-in-out infinite;
+      transition: width 0.5s ease-out;
+    }
+    
+    @keyframes progressShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    
+    .loading-tip-container {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border: 1px solid #93c5fd;
+    }
+    
+    .bounce-animation {
+      animation: gentleBounce 2s ease-in-out infinite;
+    }
+    
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .loading-message {
+      transition: all 0.3s ease-in-out;
+    }
   `;
   document.head.appendChild(style);
+
+  // Function to get location-specific tips
+  function getLocationTip(location) {
+    const tips = {
+      'french alps': 'The French Alps contain the highest peak in Western Europe - Mont Blanc at 4,809m!',
+      'italian alps': 'The Dolomites are a UNESCO World Heritage site known for their unique pale-colored rock.',
+      'alps': 'The Alps stretch across 8 countries and are home to over 30,000 animal species.',
+      'himalayas': 'The Himalayas contain the world\'s 10 highest peaks, including Mount Everest.',
+      'himalaya': 'The Himalayas contain the world\'s 10 highest peaks, including Mount Everest.',
+      'andes': 'The Andes is the longest continental mountain range in the world at 7,000km.',
+      'patagonia': 'Patagonia is home to some of the world\'s most dramatic landscapes and unique wildlife.',
+      'kilimanjaro': 'Mount Kilimanjaro is the highest free-standing mountain in the world.',
+      'norway': 'Norway has over 1,000 fjords carved by glaciers over millions of years.',
+      'scotland': 'Scotland has 282 Munros (mountains over 3,000 feet) to explore.',
+      'switzerland': 'Switzerland has over 7,000 lakes and 48 peaks over 4,000 meters high.',
+      'japan': 'Japan has over 100 active volcanoes and some of the world\'s most beautiful mountain trails.',
+      'new zealand': 'New Zealand\'s South Island contains 23 peaks over 3,000 meters high.',
+      'rockies': 'The Rocky Mountains extend over 3,000 miles from Canada to New Mexico.',
+      'appalachian': 'The Appalachian Trail spans 2,190 miles across 14 states.',
+      'default': 'Mountain trekking burns 400-700 calories per hour depending on terrain and pace.'
+    };
+    
+    if (!location) return tips.default;
+    
+    const locationLower = location.toLowerCase();
+    
+    // Find matching tip
+    for (const [key, tip] of Object.entries(tips)) {
+      if (key !== 'default' && locationLower.includes(key)) {
+        return tip;
+      }
+    }
+    
+    return tips.default;
+  }
+
+  // Function to show progressive loading with stages and tips
+  function showProgressiveLoading(container, location) {
+    const stages = [
+      { 
+        message: "🗺️ Analyzing your destination...", 
+        tip: getLocationTip(location),
+        duration: 4000
+      },
+      { 
+        message: "🥾 Planning optimal routes...", 
+        tip: "We're considering elevation, weather patterns, and difficulty levels to find the perfect path.",
+        duration: 5000
+      },
+      { 
+        message: "🏔️ Selecting scenic highlights...", 
+        tip: "Finding the best viewpoints, photo opportunities, and must-see landmarks.",
+        duration: 4500
+      },
+      { 
+        message: "🎒 Customizing your experience...", 
+        tip: "Tailoring recommendations based on your preferences and skill level.",
+        duration: 4000
+      },
+      { 
+        message: "📋 Finalizing your itinerary...", 
+        tip: "Almost ready! Adding final touches and safety recommendations.",
+        duration: 3000
+      }
+    ];
+    
+    let currentStage = 0;
+    let progress = 0;
+    const totalDuration = stages.reduce((sum, stage) => sum + stage.duration, 0);
+    let elapsedTime = 0;
+    
+    container.innerHTML = `
+      <div class="loading-container bg-white rounded-lg p-8 text-center">
+        <!-- Progress bar -->
+        <div class="w-full progress-bar-container rounded-full h-3 mb-6">
+          <div id="progress-bar" class="progress-bar h-3 rounded-full" style="width: 0%"></div>
+        </div>
+        
+        <!-- Main message -->
+        <div id="loading-message" class="loading-message text-xl font-semibold text-gray-800 mb-4">
+          ${stages[0].message}
+        </div>
+        
+        <!-- Progress percentage -->
+        <div id="progress-text" class="text-sm text-gray-600 mb-6">0% Complete</div>
+        
+        <!-- Tip section -->
+        <div class="loading-tip-container rounded-lg p-4 mb-6">
+          <div class="text-sm font-medium text-blue-800 mb-2">💡 Trek Tip</div>
+          <div id="loading-tip" class="text-sm text-blue-700">${stages[0].tip}</div>
+        </div>
+        
+        <!-- Animated icon -->
+        <div class="text-4xl bounce-animation">🚶‍♂️</div>
+        
+        <!-- Encouragement text -->
+        <div class="text-xs text-gray-500 mt-4">This may take up to 30 seconds - we're crafting something amazing!</div>
+      </div>
+    `;
+    
+    // Update progress and stages
+    const progressInterval = setInterval(() => {
+      elapsedTime += 500; // Update every 500ms
+      progress = Math.min((elapsedTime / totalDuration) * 100, 95); // Cap at 95% until complete
+      
+      // Determine current stage based on elapsed time
+      let cumulativeTime = 0;
+      let newStageIndex = 0;
+      
+      for (let i = 0; i < stages.length; i++) {
+        cumulativeTime += stages[i].duration;
+        if (elapsedTime < cumulativeTime) {
+          newStageIndex = i;
+          break;
+        }
+        newStageIndex = stages.length - 1;
+      }
+      
+      // Update stage if changed
+      if (newStageIndex !== currentStage) {
+        currentStage = newStageIndex;
+        const messageEl = document.getElementById('loading-message');
+        const tipEl = document.getElementById('loading-tip');
+        
+        if (messageEl && tipEl) {
+          // Smooth transition effect
+          messageEl.style.opacity = '0.5';
+          tipEl.style.opacity = '0.5';
+          
+          setTimeout(() => {
+            messageEl.textContent = stages[currentStage].message;
+            tipEl.textContent = stages[currentStage].tip;
+            messageEl.style.opacity = '1';
+            tipEl.style.opacity = '1';
+          }, 150);
+        }
+      }
+      
+      // Update progress bar
+      const progressBar = document.getElementById('progress-bar');
+      const progressText = document.getElementById('progress-text');
+      
+      if (progressBar && progressText) {
+        progressBar.style.width = `${progress}%`;
+        progressText.textContent = `${Math.round(progress)}% Complete`;
+      }
+      
+    }, 500);
+    
+    // Store interval ID to clear it when done
+    container.dataset.progressInterval = progressInterval;
+  }
+
+  // Function to clear loading intervals
+  function clearLoadingIntervals(container) {
+    const progressInterval = container.dataset.progressInterval;
+    
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      container.removeAttribute('data-progress-interval');
+    }
+  }
+
+  // Function to complete loading animation
+  function completeLoadingAnimation(container) {
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const messageEl = document.getElementById('loading-message');
+    
+    if (progressBar && progressText && messageEl) {
+      // Complete the progress bar
+      progressBar.style.width = '100%';
+      progressText.textContent = '100% Complete';
+      messageEl.textContent = '✅ Your adventure is ready!';
+      
+      // Brief delay before clearing
+      setTimeout(() => {
+        clearLoadingIntervals(container);
+      }, 1000);
+    } else {
+      clearLoadingIntervals(container);
+    }
+  }
 
   // Initialize filter buttons
   const setupFilterButtons = () => {
@@ -185,7 +409,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log({ location, filters, comments });
 
     const outputDiv = document.getElementById('itinerary-cards');
-    outputDiv.innerHTML = `<div class="text-center text-blue-600 font-semibold animate-pulse">Building your adventure...</div>`;
+    
+    // Show progressive loading instead of simple message
+    showProgressiveLoading(outputDiv, location);
 
     try {
       // First try the actual API
@@ -229,8 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (useMockData) {
         console.log("Using mock data for development");
         
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // Simulate API delay (shorter since we already have loading animation)
+        await new Promise(resolve => setTimeout(resolve, 2000));
         
         // Generate location-specific mock data
         const locationName = location.toLowerCase();
@@ -332,6 +558,9 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
         };
       }
       
+      // Complete the loading animation
+      completeLoadingAnimation(outputDiv);
+      
       // Now process the data (whether from API or mock)
       rawItineraryText = data.reply;
       
@@ -343,10 +572,14 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
       cachedInsights = extractSection(preprocessedText, 'Local Insights');
       cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
 
-      // Process and render the enhanced itinerary
-      processAndRenderEnhancedItinerary(preprocessedText);
+      // Small delay for UX, then show results
+      setTimeout(() => {
+        // Process and render the enhanced itinerary
+        processAndRenderEnhancedItinerary(preprocessedText);
+      }, 1000);
 
     } catch (error) {
+      clearLoadingIntervals(outputDiv);
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
       console.error('Error generating itinerary:', error);
     }
