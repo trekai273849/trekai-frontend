@@ -16,31 +16,52 @@
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/pages/itinerary.css" />
   <style>
-    /* Fixed filter button styling - restore blue theme */
+    /* Filter button styling - blue theme with proper layout */
+    .filter-container {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
     .filter-btn {
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
+      padding: 12px 20px;
+      border-radius: 8px;
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 14px;
       transition: all 0.2s ease;
-      background-color: #e5e7eb;
-      border: 2px solid #e5e7eb;
-      color: #4b5563;
-      white-space: nowrap;
-      flex-shrink: 0;
+      background-color: #f8fafc;
+      border: 2px solid #e2e8f0;
+      color: #64748b;
       cursor: pointer;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
     }
     
     .filter-btn:hover {
-      background-color: #dbeafe;
+      background-color: #eff6ff;
       border-color: #3b82f6;
-      color: #1d4ed8;
+      color: #2563eb;
+      transform: translateY(-1px);
     }
     
     .filter-btn.active {
       background-color: #3b82f6;
       color: white;
-      border-color: #3b82f6;
+      border-color: #2563eb;
+      box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .filter-container {
+        flex-direction: column;
+      }
+      
+      .filter-btn {
+        flex: none;
+        width: 100%;
+      }
     }
 
     /* Updated modal styles to match the sign-up widget */
@@ -275,37 +296,37 @@
     <form id="customization-form" class="space-y-6">
       <!-- Accommodation -->
       <div>
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
           🏕️ Accommodation Type
         </h3>
-        <div class="flex gap-3">
-          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Camping">Camping</button>
-          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
-          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
+        <div class="filter-container">
+          <button type="button" class="filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
+          <button type="button" class="filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
+          <button type="button" class="filter-btn" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
         </div>
       </div>
 
       <!-- Difficulty -->
       <div>
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
           🏔️ Difficulty
         </h3>
-        <div class="flex gap-3">
-          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="difficulty" data-value="Easy">Easy</button>
-          <button type="button" class="filter-btn active py-2 px-4 rounded-lg" data-category="difficulty" data-value="Moderate">Moderate</button>
-          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="difficulty" data-value="Challenging">Challenging</button>
+        <div class="filter-container">
+          <button type="button" class="filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
+          <button type="button" class="filter-btn active" data-category="difficulty" data-value="Moderate">Moderate</button>
+          <button type="button" class="filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
         </div>
       </div>
 
       <!-- Technical -->
       <div>
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
           🥾 Technical Requirements
         </h3>
-        <div class="flex gap-3">
-          <button type="button" class="filter-btn active py-2 px-4 rounded-lg" data-category="technical" data-value="None">None</button>
-          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="technical" data-value="Scrambling">Scrambling</button>
-          <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="technical" data-value="Mountaineering">Mountaineering</button>
+        <div class="filter-container">
+          <button type="button" class="filter-btn active" data-category="technical" data-value="None">None</button>
+          <button type="button" class="filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
+          <button type="button" class="filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
         </div>
       </div>
 
