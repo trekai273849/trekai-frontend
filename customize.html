@@ -1,66 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
+  <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8" />
   <title>Customize Your Trek</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/pages/itinerary.css" />
   <style>
+    /* Filter button styling - IMPORTANT: Override any existing green styling */
+    .filter-container {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
     .filter-btn {
-      padding: 0.5rem 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: 0.375rem;
-      transition: background-color 0.2s, color 0.2s;
-      background-color: #f9fafb;
+      padding: 12px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 500 !important;
+      font-size: 14px !important;
+      transition: all 0.2s ease !important;
+      background-color: #f8fafc !important;
+      border: 2px solid #e2e8f0 !important;
+      color: #64748b !important;
+      cursor: pointer !important;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
     }
-
+    
     .filter-btn:hover {
-      background-color: #e0f2fe;
+      background-color: #eff6ff !important;
+      border-color: #3b82f6 !important;
+      color: #2563eb !important;
+      transform: translateY(-1px) !important;
+    }
+    
+    .filter-btn.active {
+      background-color: #3b82f6 !important;
+      color: white !important;
+      border-color: #2563eb !important;
+      box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25) !important;
+    }
+    
+    /* Hide the Chat to Pro Guide button */
+    #talk-to-guide {
+      display: none !important;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .filter-container {
+        flex-direction: column;
+      }
+      
+      .filter-btn {
+        flex: none;
+        width: 100%;
+      }
     }
 
-    .filter-btn.active {
-      background-color: #2563eb;
+    /* Updated modal styles to match the sign-up widget */
+    .auth-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      animation: iconBounce 0.6s ease-out 0.2s both;
+      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+    }
+    
+    .welcome-icon {
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+    }
+    
+    .auth-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: white;
+      stroke-width: 2;
+      fill: white;
+    }
+    
+    /* Updated modal styling to match sign-up widget */
+    .modal {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 480px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: scale(1);
+      animation: modalAppear 0.3s ease-out;
+    }
+    
+    .modal-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1f2937;
+      text-align: center;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #1f2937, #4b5563);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .modal-message {
+      font-size: 16px;
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    
+    .auth-benefits {
+      margin: 24px 0;
+      text-align: left;
+      background: #f0fdf4;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid #16a34a;
+    }
+    
+    .auth-benefits h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #166534;
+      margin-bottom: 12px;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #166534;
+    }
+    
+    .benefit-item:before {
+      content: "✓";
+      color: #16a34a;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    
+    /* Updated button styling */
+    .button-primary {
+      background: linear-gradient(135deg, #16a34a, #15803d);
       color: white;
-      border-color: #2563eb;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+      margin-bottom: 12px;
+    }
+    
+    .button-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
+    }
+    
+    .button-secondary {
+      background: transparent;
+      color: #15803d;
+      border: 2px solid #16a34a;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+    }
+    
+    .button-secondary:hover {
+      background: #16a34a;
+      color: white;
+      transform: translateY(-1px);
+    }
+    
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    
+    /* Close button styling */
+    .close-button {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: #f3f4f6;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      color: #6b7280;
+    }
+    
+    .close-button:hover {
+      background: #e5e7eb;
+      transform: scale(1.1);
+    }
+    
+    /* Modal overlay styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+    }
+    
+    @keyframes iconBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes modalAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
     }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Hero Header -->
   <header class="relative bg-cover bg-center h-64 flex items-center justify-center text-white" style="background-image: url('Images/alps.jpg');">
-    <a href="index.html" class="absolute top-4 left-6 text-white text-xl font-bold">Smart Trails</a>
     <div class="bg-black bg-opacity-50 p-6 rounded-lg">
       <h1 class="text-3xl font-bold mb-2">Customize Your Trek</h1>
-      <h2 id="greeting" class="text-lg font-medium">Tell us more about your ideal trekking experience</h2>
+      <h2 id="greeting" class="text-lg font-medium">Tell us more about your ideal trekking experience.</h2>
     </div>
   </header>
 
   <!-- Main Content -->
   <main class="max-w-3xl mx-auto p-6">
     <form id="customization-form" class="space-y-6">
-
       <!-- Accommodation -->
       <div>
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
           🏕️ Accommodation Type
         </h3>
-        <div class="flex gap-3 flex-wrap">
+        <div class="filter-container">
           <button type="button" class="filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
           <button type="button" class="filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
           <button type="button" class="filter-btn" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
@@ -69,23 +313,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Difficulty -->
       <div>
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
           🏔️ Difficulty
         </h3>
-        <div class="flex gap-3 flex-wrap">
+        <div class="filter-container">
           <button type="button" class="filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
-          <button type="button" class="filter-btn" data-category="difficulty" data-value="Moderate">Moderate</button>
+          <button type="button" class="filter-btn active" data-category="difficulty" data-value="Moderate">Moderate</button>
           <button type="button" class="filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
         </div>
       </div>
 
       <!-- Technical -->
       <div>
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
           🥾 Technical Requirements
         </h3>
-        <div class="flex gap-3 flex-wrap">
-          <button type="button" class="filter-btn" data-category="technical" data-value="None">None</button>
+        <div class="filter-container">
+          <button type="button" class="filter-btn active" data-category="technical" data-value="None">None</button>
           <button type="button" class="filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
           <button type="button" class="filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
         </div>
@@ -107,15 +351,132 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="itinerary-cards" class="space-y-4 mt-8"></div>
   </main>
 
-  <script src="customize.js"></script>
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="itinerary-success-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeSuccessModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="auth-icon">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20,6 9,17 4,12"></polyline>
+        </svg>
+      </div>
+      
+      <h2 class="modal-title">Adventure Saved! 🎉</h2>
+      <p class="modal-message">Your custom itinerary has been safely stored in your account. Ready to hit the trails!</p>
+      
+      <div class="button-group">
+        <a href="my-itineraries.html" class="button button-primary">
+          View My Adventures
+        </a>
+        <button class="button button-secondary" onclick="closeSuccessModal()">
+          Plan Another Trek
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Authentication Required Modal -->
+  <div class="modal-overlay" id="auth-required-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeAuthModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="auth-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+          <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
+        </svg>
+      </div>
+      
+      <h2 class="modal-title">🏔️ Save Your Adventure</h2>
+      <p class="modal-message">Join thousands of adventurers and save your custom itinerary to access it anytime, anywhere!</p>
+      
+      <div class="auth-benefits">
+        <h4>🎯 What you'll get:</h4>
+        <div class="benefit-item">Personalized trail recommendations</div>
+        <div class="benefit-item">Gear lists and local insights</div>
+        <div class="benefit-item">Save your favorite itineraries</div>
+        <div class="benefit-item">Regenerate itineraries with feedback</div>
+      </div>
+      
+      <div class="button-group">
+        <button class="button-primary" onclick="redirectToSignUp()">
+          🚀 Join Our Community
+        </button>
+        <button class="button-secondary" onclick="redirectToSignIn()">
+          🏠 I Have an Account
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Back Modal -->
+  <div class="modal-overlay" id="welcome-back-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeWelcomeModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="auth-icon welcome-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22,4 12,14.01 9,11.01"/>
+        </svg>
+      </div>
+      
+      <h2 class="modal-title">🎉 Welcome to Smart Trails!</h2>
+      <p class="modal-message">Your adventure has been saved! You're now part of our amazing trekking community.</p>
+      
+      <div class="button-group">
+        <a href="my-itineraries.html" class="button-primary">
+          🗺️ View My Adventures
+        </a>
+        <button class="button-secondary" onclick="closeWelcomeModal()">
+          🥾 Plan Another Trek
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add type="module" to js scripts -->
+  <script src="js/utils/itinerary.js" type="module"></script>
+  
+  <!-- Changed to the correct path and added type="module" -->
+  <script src="js/pages/customize.js" type="module"></script>
+  
+  <script src="js/components/navbar.js" type="module"></script>
+  
+  <!-- Override dynamic greeting and ensure buttons stay blue -->
   <script>
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const group = btn.dataset.category;
-        document.querySelectorAll(`.filter-btn[data-category="${group}"]`).forEach(el => el.classList.remove('active'));
-        btn.classList.add('active');
+    document.addEventListener('DOMContentLoaded', () => {
+      // Keep greeting static
+      const greeting = document.getElementById('greeting');
+      if (greeting) {
+        greeting.innerText = 'Tell us more about your ideal trekking experience.';
+      }
+      
+      // Ensure filter buttons maintain blue styling
+      const observer = new MutationObserver(() => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+          // Remove any conflicting classes that might make buttons green
+          btn.classList.remove('bg-green-600', 'bg-green-500', 'text-green-600');
+        });
       });
+      
+      observer.observe(document.body, { childList: true, subtree: true });
     });
   </script>
 </body>

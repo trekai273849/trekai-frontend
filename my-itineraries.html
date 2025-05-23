@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <title>My Saved Itineraries | Smart Trails</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    /* Modal styles */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      background-color: white;
+      border-radius: 0.5rem;
+      max-width: 90%;
+      width: 400px;
+      transform: scale(0.95);
+      transition: transform 0.2s ease;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .modal-backdrop.active .modal-content {
+      transform: scale(1);
+    }
+    
+    /* Button hover effect */
+    .delete-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      min-width: 42px;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+    }
+    
+    .delete-btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%, -50%);
+      transform-origin: 50% 50%;
+    }
+    
+    .delete-btn:hover::after {
+      animation: ripple 1s ease-out;
+    }
+    
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(20, 20);
+        opacity: 0;
+      }
+    }
+    
+    /* Card transition effect */
+    .itinerary-card {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .itinerary-card.removing {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    /* Gradient background for cards without specific images */
+    .gradient-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gradient-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Hero Header -->
+  <header class="relative bg-cover bg-center h-48 flex items-center justify-center text-white" style="background-image: url('Images/alps.jpg');">
+    <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+      <h1 class="text-3xl font-bold mb-2">My Saved Itineraries</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6">
+    <div id="auth-status" class="mb-6">
+      <p class="text-center text-gray-600">Checking authentication status...</p>
+    </div>
+    
+    <div id="itineraries-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+      <!-- Itineraries will be loaded here -->
+    </div>
+
+    <div id="no-itineraries" class="text-center py-10 hidden">
+      <p class="text-xl text-gray-600 mb-4">You don't have any saved itineraries yet.</p>
+      <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">Create an Itinerary</a>
+    </div>
+  </main>
+  
+  <!-- Delete Confirmation Modal -->
+  <div id="delete-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="p-6">
+        <div class="flex items-center justify-center mb-5 text-red-500">
+          <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-center mb-2">Delete Itinerary</h3>
+        <p class="text-gray-600 text-center mb-6">Are you sure you want to delete this itinerary? This action cannot be undone.</p>
+        <div class="flex gap-3">
+          <button id="cancel-delete" class="flex-1 py-2.5 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md transition duration-200 font-medium">
+            Cancel
+          </button>
+          <button id="confirm-delete" class="flex-1 py-2.5 px-4 bg-red-600 hover:bg-red-700 text-white rounded-md transition duration-200 font-medium">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { auth } from './js/auth/firebase.js';
+    import { getCurrentUser, logOut } from './js/auth/auth.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+    // Function to convert text to title case
+    function toTitleCase(str) {
+      return str.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
+
+    // Check if user is logged in
+    onAuthStateChanged(auth, (user) => {
+      const authStatusDiv = document.getElementById('auth-status');
+      
+      if (user) {
+        // User is signed in - MODIFIED to remove the "Signed in as" text
+        authStatusDiv.innerHTML = `
+          <div class="flex justify-end items-center mb-8">
+            <div>
+              <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Create New Itinerary</a>
+            </div>
+          </div>
+        `;
+        
+        // Fetch user's itineraries
+        fetchItineraries(user);
+      } else {
+        // User is not signed in
+        authStatusDiv.innerHTML = `
+          <div class="text-center py-8">
+            <p class="text-xl text-gray-700 mb-4">Please sign in to view your saved itineraries.</p>
+            <a href="sign-up.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">Sign In</a>
+          </div>
+        `;
+      }
+    });
+
+    // Location-specific data for images and gradients
+    const locationData = [
+      {
+        keywords: ["london", "uk", "england", "british", "britain"],
+        image: "Images/locations/london.jpg", 
+        gradient: "linear-gradient(135deg, #3c70b4 0%, #63a4ff 100%)",
+        icon: "🏰"
+      },
+      {
+        keywords: ["french alps", "france", "chamonix", "mont blanc"],
+        image: "Images/locations/french-alps.jpg",
+        gradient: "linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["italian alps", "italy", "dolomites"],
+        image: "Images/locations/italian-alps.jpg",
+        gradient: "linear-gradient(135deg, #38ef7d 0%, #11998e 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["alps", "alpine"],
+        image: "Images/locations/alps.jpg",
+        gradient: "linear-gradient(135deg, #00c6fb 0%, #005bea 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["new york", "ny", "usa", "united states", "america"],
+        image: "Images/locations/new-york.jpg",
+        gradient: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
+        icon: "🗽"
+      },
+      {
+        keywords: ["andes", "peru", "south america", "machu picchu", "cusco"],
+        image: "Images/locations/peru.jpg",
+        gradient: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)",
+        icon: "🌄"
+      },
+      {
+        keywords: ["himalayas", "nepal", "tibet", "everest"],
+        image: "Images/locations/himalayas.jpg",
+        gradient: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
+        image: "Images/locations/japan.jpg",
+        gradient: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
+        icon: "🗻"
+      },
+      {
+        keywords: ["norway", "norwegian", "scandinavia", "fjords"],
+        image: "Images/locations/norway.jpg",
+        gradient: "linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["scotland", "scottish", "highlands"],
+        image: "Images/locations/scotland.jpg",
+        gradient: "linear-gradient(135deg, #3e5151 0%, #decba4 100%)",
+        icon: "🏞️"
+      },
+      {
+        keywords: ["switzerland", "swiss"],
+        image: "Images/locations/switzerland.jpg",
+        gradient: "linear-gradient(135deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%)",
+        icon: "🏔️"
+      }
+    ];
+    
+    // Default gradient for when no match is found
+    const defaultLocationData = {
+      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      icon: "🥾"
+    };
+    
+    // Function to get location-specific data based on the location name
+    function getLocationData(location) {
+      if (!location) return defaultLocationData;
+      
+      // Convert to lowercase for case-insensitive matching
+      const locationLower = location.toLowerCase();
+      
+      // Try to find a match in our location data
+      for (const locData of locationData) {
+        for (const keyword of locData.keywords) {
+          if (locationLower.includes(keyword) || keyword.includes(locationLower)) {
+            return locData;
+          }
+        }
+      }
+      
+      // Return default if no match found
+      return defaultLocationData;
+    }
+    
+    // Function to create a header for an itinerary card
+    function createCardHeader(itinerary) {
+      const locationInfo = getLocationData(itinerary.location);
+      // Apply title case formatting to the location
+      const formattedLocation = toTitleCase(itinerary.location);
+      
+      // Check if the image exists
+      if (locationInfo.image) {
+        // Try to load the image first to check if it exists
+        const img = new Image();
+        img.src = locationInfo.image;
+        
+        return new Promise((resolve) => {
+          img.onload = () => {
+            // Image loaded successfully, use it
+            resolve(`
+              <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center" 
+                   style="background-image: url('${locationInfo.image}')">
+                <h3 class="text-xl font-bold p-4 bg-black bg-opacity-50 text-white rounded">${formattedLocation}</h3>
+              </div>
+            `);
+          };
+          
+          img.onerror = () => {
+            // Image failed to load, use gradient fallback
+            resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
+          };
+          
+          // If neither success nor error events fire after a timeout, use gradient
+          setTimeout(() => {
+            if (!img.complete) {
+              resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
+            }
+          }, 1000);
+        });
+      } else {
+        // No image specified, use gradient
+        return Promise.resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
+      }
+    }
+    
+    // Function to create a gradient header when no image is available
+    function createGradientHeader(itinerary, locationInfo, formattedLocation) {
+      return `
+        <div class="h-32 flex items-center justify-center text-white relative overflow-hidden"
+             style="background: ${locationInfo.gradient}">
+          <div class="absolute right-3 bottom-3 text-4xl opacity-30">${locationInfo.icon}</div>
+          <h3 class="text-xl font-bold p-4 bg-black bg-opacity-30 rounded z-10">${formattedLocation}</h3>
+        </div>
+      `;
+    }
+
+    // ✅ FIXED: Function to fetch itineraries with proper response handling
+    async function fetchItineraries(user) {
+      try {
+        // First check if the API health endpoint is responding
+        try {
+          const healthResponse = await fetch('https://trekai-api-staging.onrender.com/api/health');
+          if (!healthResponse.ok) {
+            console.warn('API health check failed, continuing anyway...');
+          }
+        } catch (healthError) {
+          console.error('API health check error:', healthError);
+          // Continue anyway - we'll try the main request
+        }
+
+        // Get fresh token
+        const token = await user.getIdToken(true);
+        
+        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (!response.ok) {
+          if (response.status === 401 || response.status === 403) {
+            throw new Error('Authentication failed. Please sign out and sign in again.');
+          } else if (response.status === 500) {
+            throw new Error('The server is currently experiencing issues. Please try again later.');
+          } else {
+            throw new Error(`Server responded with status: ${response.status}`);
+          }
+        }
+        
+        // ✅ FIX: Handle the new response format with pagination
+        const responseData = await response.json();
+        console.log('Raw response:', responseData); // Debug log
+        
+        // Extract itineraries array from response - handle both old and new formats
+        let itineraries;
+        if (responseData.itineraries && Array.isArray(responseData.itineraries)) {
+          // New format with pagination
+          itineraries = responseData.itineraries;
+        } else if (Array.isArray(responseData)) {
+          // Old format - direct array
+          itineraries = responseData;
+        } else {
+          // Fallback
+          itineraries = [];
+        }
+        
+        console.log('Processed itineraries:', itineraries); // Debug log
+        
+        if (itineraries.length === 0) {
+          document.getElementById('no-itineraries').classList.remove('hidden');
+        } else {
+          const container = document.getElementById('itineraries-container');
+          container.classList.remove('hidden');
+          
+          // Process itineraries with async/await to handle the image checking
+          for (const itinerary of itineraries) {
+            // Create a date formatter
+            const dateFormatter = new Intl.DateTimeFormat('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            });
+            
+            // Format the date
+            const createdDate = dateFormatter.format(new Date(itinerary.createdAt));
+            
+            // Get the card header (which may include an image check)
+            const cardHeader = await createCardHeader(itinerary);
+            
+            // Create card for itinerary
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-md overflow-hidden itinerary-card';
+            card.innerHTML = `
+              ${cardHeader}
+              <div class="p-4">
+                <p class="text-gray-600 text-sm mb-3">Created: ${createdDate}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  ${itinerary.filters?.difficulty ? `<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">${itinerary.filters.difficulty}</span>` : ''}
+                  ${itinerary.filters?.accommodation ? `<span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">${itinerary.filters.accommodation}</span>` : ''}
+                  ${itinerary.filters?.technical ? `<span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">${itinerary.filters.technical}</span>` : ''}
+                </div>
+                <div class="flex gap-2">
+                  <a href="view-itinerary.html?id=${itinerary._id}" class="flex-1 flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                    <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    View
+                  </a>
+                  <button class="delete-btn flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 rounded-md transition-colors duration-200" data-id="${itinerary._id}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            `;
+            
+            container.appendChild(card);
+          }
+          
+          // Set up delete functionality with modal
+          const modal = document.getElementById('delete-modal');
+          const cancelButton = document.getElementById('cancel-delete');
+          const confirmButton = document.getElementById('confirm-delete');
+          let currentItineraryId = null;
+          
+          // Close modal when cancel is clicked
+          cancelButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+            currentItineraryId = null;
+          });
+          
+          // Handle clicking outside modal to close
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.classList.remove('active');
+              currentItineraryId = null;
+            }
+          });
+          
+          // Add keyboard support for Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+              modal.classList.remove('active');
+              currentItineraryId = null;
+            }
+          });
+          
+          // Set up delete buttons to show modal
+          document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              // Get the itinerary ID from the button's data attribute
+              currentItineraryId = e.currentTarget.dataset.id;
+              
+              // Show the modal
+              modal.classList.add('active');
+            });
+          });
+          
+          // Handle confirm delete action
+          confirmButton.addEventListener('click', async () => {
+            if (!currentItineraryId) return;
+            
+            try {
+              const token = await user.getIdToken();
+              
+              const response = await fetch(`https://trekai-api-staging.onrender.com/api/itineraries/${currentItineraryId}`, {
+                method: 'DELETE',
+                headers: {
+                  'Authorization': `Bearer ${token}`
+                }
+              });
+              
+              if (!response.ok) throw new Error('Failed to delete itinerary');
+              
+              // Find and remove the card from the DOM
+              const deleteButton = document.querySelector(`.delete-btn[data-id="${currentItineraryId}"]`);
+              const card = deleteButton.closest('.itinerary-card');
+              card.classList.add('removing');
+              
+              setTimeout(() => {
+                card.remove();
+                
+                // Check if there are any itineraries left
+                if (container.children.length === 0) {
+                  document.getElementById('no-itineraries').classList.remove('hidden');
+                  container.classList.add('hidden');
+                }
+              }, 300);
+              
+              // Hide the modal
+              modal.classList.remove('active');
+              currentItineraryId = null;
+              
+            } catch (error) {
+              console.error('Error deleting itinerary:', error);
+              alert('Failed to delete itinerary. Please try again.');
+              modal.classList.remove('active');
+            }
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching itineraries:', error);
+        const authStatusDiv = document.getElementById('auth-status');
+        authStatusDiv.innerHTML += `
+          <div class="bg-red-100 text-red-700 p-4 rounded-md">
+            <p>Failed to load itineraries. Please try again later.</p>
+            <p class="text-sm mt-2">${error.message}</p>
+            <button id="retry-btn" class="mt-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md">Retry</button>
+          </div>
+        `;
+        
+        // Add retry button functionality
+        document.getElementById('retry-btn')?.addEventListener('click', () => {
+          window.location.reload();
+        });
+      }
+    }
+  </script>
+  <script src="js/components/navbar.js" type="module"></script>
+</body>
+</html>

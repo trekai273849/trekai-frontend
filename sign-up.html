@@ -4,24 +4,625 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up | Smart Trails</title>
-  <link rel="stylesheet" href="styles/sign-up.css" />
+  <title>Join Smart Trails Community</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .signup-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      padding: 48px 40px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-section {
+      margin-bottom: 32px;
+    }
+
+    .logo-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #1f2937, #4b5563);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .welcome-message {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .auth-tabs {
+      display: flex;
+      background: #f3f4f6;
+      border-radius: 12px;
+      padding: 4px;
+      margin-bottom: 32px;
+    }
+
+    .auth-tab {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #6b7280;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .auth-tab.active {
+      background: white;
+      color: #1f2937;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #fafafa;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #16a34a;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+    }
+
+    .primary-button {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+    }
+
+    .primary-button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
+    }
+
+    .primary-button:active {
+      transform: translateY(0);
+    }
+
+    .secondary-button {
+      width: 100%;
+      padding: 16px;
+      background: transparent;
+      color: #15803d;
+      border: 2px solid #16a34a;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 24px;
+    }
+
+    .secondary-button:hover:not(:disabled) {
+      background: #16a34a;
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .disclaimer {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .disclaimer a {
+      color: #16a34a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .disclaimer a:hover {
+      text-decoration: underline;
+    }
+
+    .benefits {
+      text-align: left;
+      margin: 24px 0;
+      padding: 20px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      border-left: 4px solid #16a34a;
+    }
+
+    .benefits h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #166534;
+      margin-bottom: 12px;
+    }
+
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .benefits li {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: #166534;
+      margin-bottom: 8px;
+    }
+
+    .benefits li:before {
+      content: "✓";
+      color: #16a34a;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .error-message {
+      background: #fee2e2;
+      color: #b91c1c;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .success-message {
+      background: #dcfce7;
+      color: #15803d;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .signup-container {
+        padding: 32px 24px;
+        margin: 10px;
+      }
+      
+      .logo-text {
+        font-size: 24px;
+      }
+    }
+
+    /* Loading state */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .loading .primary-button,
+    .loading .secondary-button {
+      position: relative;
+    }
+
+    .loading .primary-button:after,
+    .loading .secondary-button:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: -10px;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-
   <div class="signup-container">
-    <h1>Join Smart Trails</h1>
-    <p class="subtitle">Create your free account</p>
+    <div class="logo-section">
+      <div class="logo-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+          <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
+        </svg>
+      </div>
+      <div class="logo-text">Smart Trails</div>
+      <p class="welcome-message">
+        🏔️ Join thousands of adventurers discovering amazing trails around the world
+      </p>
+    </div>
+    
+    <div class="auth-tabs">
+      <button id="signup-tab" class="auth-tab active">Create Account</button>
+      <button id="login-tab" class="auth-tab">Welcome Back</button>
+    </div>
+
+    <div id="error-message" class="error-message hidden"></div>
+    <div id="success-message" class="success-message hidden"></div>
 
     <form id="signup-form">
-      <input type="email" id="signup-email" placeholder="Email address" required />
-      <input type="password" id="signup-password" placeholder="Password" required />
-      <button type="submit">Create Account</button>
+      <div class="form-group">
+        <label class="form-label" for="signup-email">Email Address</label>
+        <input type="email" id="signup-email" class="form-input" placeholder="your@email.com" required />
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="signup-password">Create Password</label>
+        <input type="password" id="signup-password" class="form-input" placeholder="At least 6 characters" required />
+      </div>
+      
+      <div class="benefits">
+        <h4>🎯 What you'll get:</h4>
+        <ul>
+          <li>Personalized trail recommendations</li>
+          <li>Gear lists and local insights</li>
+          <li>Save your favorite itineraries</li>
+          <li>Regenerate itineraries with feedback</li>
+        </ul>
+      </div>
+      
+      <button type="submit" class="primary-button">🚀 Join Our Community</button>
+    </form>
+    
+    <form id="login-form" class="hidden">
+      <div class="form-group">
+        <label class="form-label" for="login-email">Email Address</label>
+        <input type="email" id="login-email" class="form-input" placeholder="your@email.com" required />
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="login-password">Password</label>
+        <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required />
+      </div>
+      
+      <button type="submit" class="secondary-button">🏠 Welcome Back</button>
     </form>
 
-    <p class="disclaimer">By signing up, you agree to our terms of service.</p>
+    <p class="disclaimer">
+      By joining, you agree to our <a href="#" onclick="alert('Terms of Service')">Terms of Service</a> and <a href="#" onclick="alert('Privacy Policy')">Privacy Policy</a>. We promise to keep your data safe! 🔒
+    </p>
   </div>
 
-  <script type="module" src="scripts/auth.js"></script>
+  <script type="module">
+    // Import Firebase auth functions
+    import { signUp, signIn } from './js/auth/auth.js';
+    import { auth } from './js/auth/firebase.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+    // Tab switching functionality
+    const signupTab = document.getElementById('signup-tab');
+    const loginTab = document.getElementById('login-tab');
+    const signupForm = document.getElementById('signup-form');
+    const loginForm = document.getElementById('login-form');
+    const errorDiv = document.getElementById('error-message');
+    const successDiv = document.getElementById('success-message');
+    
+    // Utility functions
+    function showError(message) {
+      errorDiv.textContent = message;
+      errorDiv.classList.remove('hidden');
+      successDiv.classList.add('hidden');
+    }
+    
+    function showSuccess(message) {
+      successDiv.textContent = message;
+      successDiv.classList.remove('hidden');
+      errorDiv.classList.add('hidden');
+    }
+    
+    function hideMessages() {
+      errorDiv.classList.add('hidden');
+      successDiv.classList.add('hidden');
+    }
+    
+    function setLoading(loading) {
+      const container = document.querySelector('.signup-container');
+      if (loading) {
+        container.classList.add('loading');
+      } else {
+        container.classList.remove('loading');
+      }
+    }
+    
+    signupTab.addEventListener('click', () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signupForm.classList.remove('hidden');
+      loginForm.classList.add('hidden');
+      hideMessages();
+    });
+    
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.classList.remove('hidden');
+      signupForm.classList.add('hidden');
+      hideMessages();
+    });
+
+    // Function to save pending itinerary after authentication
+    async function savePendingItinerary(user) {
+      const pendingItinerary = localStorage.getItem('pendingItinerary');
+      if (!pendingItinerary) return null;
+      
+      try {
+        const token = await user.getIdToken();
+        const itineraryData = JSON.parse(pendingItinerary);
+        
+        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(itineraryData)
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Failed to save itinerary: ${response.status}`);
+        }
+        
+        const savedItinerary = await response.json();
+        
+        // Clear the pending data
+        localStorage.removeItem('pendingItinerary');
+        localStorage.removeItem('returnToCustomize');
+        
+        return savedItinerary;
+      } catch (error) {
+        console.error('Error saving pending itinerary:', error);
+        // Don't throw error here - we still want to complete the auth flow
+        return null;
+      }
+    }
+
+    // Function to get user-friendly error messages
+    function getUserFriendlyError(error) {
+      const errorCode = error.code || error.message;
+      
+      switch (errorCode) {
+        case 'auth/email-already-in-use':
+          return 'Email already in use';
+        case 'auth/weak-password':
+          return 'Password should be at least 6 characters';
+        case 'auth/invalid-email':
+          return 'Please enter a valid email address';
+        case 'auth/user-not-found':
+          return 'No account found with this email address';
+        case 'auth/wrong-password':
+          return 'Incorrect password. Please try again';
+        case 'auth/too-many-requests':
+          return 'Too many failed attempts. Please try again later';
+        case 'auth/network-request-failed':
+          return 'Network error. Please check your connection';
+        default:
+          // If error message contains specific phrases, return friendly versions
+          if (errorCode.includes('email-already-in-use') || errorCode.includes('already in use')) {
+            return 'Email already in use';
+          }
+          if (errorCode.includes('weak-password') || errorCode.includes('6 characters')) {
+            return 'Password should be at least 6 characters';
+          }
+          if (errorCode.includes('invalid-email') || errorCode.includes('badly formatted')) {
+            return 'Please enter a valid email address';
+          }
+          
+          // Fallback to a generic friendly message
+          return 'Something went wrong. Please try again';
+      }
+    }
+
+    // Handle signup form submission
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      setLoading(true);
+      hideMessages();
+      
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      
+      try {
+        // Create the user account
+        const result = await signUp(email, password);
+        
+        if (!result.success) {
+          throw new Error(result.error);
+        }
+        
+        // Wait for auth state to be established
+        await new Promise((resolve) => {
+          const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+              unsubscribe();
+              resolve(user);
+            }
+          });
+        });
+        
+        // Check for and save any pending itinerary
+        const savedItinerary = await savePendingItinerary(result.user);
+        
+        if (savedItinerary) {
+          showSuccess('🎉 Account created and your trek has been saved!');
+          
+          // Redirect to view the saved itinerary after a short delay
+          setTimeout(() => {
+            window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+          }, 2000);
+        } else {
+          showSuccess('🎉 Welcome to Smart Trails! Your account has been created.');
+          
+          // Redirect to customize page after a short delay
+          setTimeout(() => {
+            window.location.href = 'customize.html';
+          }, 2000);
+        }
+        
+      } catch (error) {
+        console.error('Signup error:', error);
+        showError(getUserFriendlyError(error));
+      } finally {
+        setLoading(false);
+      }
+    });
+    
+    // Handle login form submission
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      setLoading(true);
+      hideMessages();
+      
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      
+      try {
+        const result = await signIn(email, password);
+        
+        if (!result.success) {
+          throw new Error(result.error);
+        }
+        
+        // Wait for auth state to be established
+        await new Promise((resolve) => {
+          const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+              unsubscribe();
+              resolve(user);
+            }
+          });
+        });
+        
+        // Check for and save any pending itinerary
+        const savedItinerary = await savePendingItinerary(result.user);
+        
+        if (savedItinerary) {
+          showSuccess('🎉 Welcome back! Your trek has been saved.');
+          
+          // Redirect to view the saved itinerary after a short delay
+          setTimeout(() => {
+            window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+          }, 2000);
+        } else {
+          showSuccess('🎉 Welcome back!');
+          
+          // Check if they came from customize page
+          const returnToCustomize = localStorage.getItem('returnToCustomize');
+          if (returnToCustomize) {
+            localStorage.removeItem('returnToCustomize');
+            setTimeout(() => {
+              window.location.href = 'customize.html';
+            }, 1500);
+          } else {
+            setTimeout(() => {
+              window.location.href = 'my-itineraries.html';
+            }, 1500);
+          }
+        }
+        
+      } catch (error) {
+        console.error('Login error:', error);
+        showError(getUserFriendlyError(error));
+      } finally {
+        setLoading(false);
+      }
+    });
+
+    // Add some nice focus effects
+    document.querySelectorAll('.form-input').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.style.transform = 'translateY(-2px)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentElement.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Check if user is already authenticated on page load
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is already signed in, redirect them
+        const pendingItinerary = localStorage.getItem('pendingItinerary');
+        if (pendingItinerary) {
+          // If there's a pending itinerary, save it first
+          savePendingItinerary(user).then((savedItinerary) => {
+            if (savedItinerary) {
+              window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+            } else {
+              window.location.href = 'my-itineraries.html';
+            }
+          });
+        } else {
+          window.location.href = 'my-itineraries.html';
+        }
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <title>View Itinerary | Smart Trails</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/pages/itinerary.css" />
+  <link rel="stylesheet" href="styles/accordion.css" /> 
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Hero Header -->
+  <header id="itinerary-header" class="relative bg-cover bg-center h-48 flex items-center justify-center text-white" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+    <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+      <h1 id="itinerary-title" class="text-3xl font-bold mb-2">Loading Itinerary...</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto p-6">
+    <div id="auth-status" class="mb-6">
+      <p class="text-center text-gray-600">Checking authentication status...</p>
+    </div>
+    
+    <div id="itinerary-details" class="space-y-6 hidden">
+      <div class="mb-6">
+        <a href="my-itineraries.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to My Itineraries
+        </a>
+      </div>
+      
+      <div id="itinerary-content" class="mt-6">
+        <!-- Loading skeleton -->
+        <div id="itinerary-skeleton" class="space-y-6">
+          <!-- Intro skeleton -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="animate-pulse">
+              <div class="h-4 bg-gray-300 rounded w-3/4 mb-3"></div>
+              <div class="h-4 bg-gray-300 rounded w-full mb-3"></div>
+              <div class="h-4 bg-gray-300 rounded w-5/6"></div>
+            </div>
+          </div>
+          
+          <!-- Itinerary title skeleton -->
+          <div class="h-8 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+          
+          <!-- Day cards skeleton -->
+          <div class="space-y-4">
+            <div class="bg-white border border-gray-200 rounded shadow-sm">
+              <div class="bg-gray-100 px-4 py-3">
+                <div class="h-6 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+              </div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded shadow-sm">
+              <div class="bg-gray-100 px-4 py-3">
+                <div class="h-6 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+              </div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded shadow-sm">
+              <div class="bg-gray-100 px-4 py-3">
+                <div class="h-6 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Additional info skeleton -->
+          <div class="h-8 bg-gray-300 rounded w-1/2 animate-pulse mt-10"></div>
+          <div class="space-y-4">
+            <div class="bg-white border border-gray-200 rounded shadow-sm">
+              <div class="bg-green-50 px-4 py-3">
+                <div class="h-6 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+              </div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded shadow-sm">
+              <div class="bg-yellow-50 px-4 py-3">
+                <div class="h-6 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+              </div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded shadow-sm">
+              <div class="bg-blue-50 px-4 py-3">
+                <div class="h-6 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Actual itinerary content will be loaded here and replace the skeleton -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { auth } from './js/auth/firebase.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    
+    // Function to convert text to title case
+    function toTitleCase(str) {
+      return str.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
+
+    // Location-specific data for images and gradients (same as in my-itineraries.html)
+    const locationData = [
+      {
+        keywords: ["london", "uk", "england", "british", "britain"],
+        image: "Images/locations/london.jpg", 
+        gradient: "linear-gradient(135deg, #3c70b4 0%, #63a4ff 100%)",
+        icon: "🏰"
+      },
+      {
+        keywords: ["french alps", "france", "chamonix", "mont blanc"],
+        image: "Images/locations/french-alps.jpg",
+        gradient: "linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["italian alps", "italy", "dolomites"],
+        image: "Images/locations/italian-alps.jpg",
+        gradient: "linear-gradient(135deg, #38ef7d 0%, #11998e 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["alps", "alpine"],
+        image: "Images/locations/alps.jpg",
+        gradient: "linear-gradient(135deg, #00c6fb 0%, #005bea 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["new york", "ny", "usa", "united states", "america"],
+        image: "Images/locations/new-york.jpg",
+        gradient: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
+        icon: "🗽"
+      },
+      {
+        keywords: ["andes", "peru", "south america", "machu picchu", "cusco"],
+        image: "Images/locations/peru.jpg",
+        gradient: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)",
+        icon: "🌄"
+      },
+      {
+        keywords: ["himalayas", "nepal", "tibet", "everest"],
+        image: "Images/locations/himalayas.jpg",
+        gradient: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+        icon: "🏔️"
+      },
+      {
+        keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
+        image: "Images/locations/japan.jpg",
+        gradient: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
+        icon: "🗻"
+      },
+      {
+        keywords: ["norway", "norwegian", "scandinavia", "fjords"],
+        image: "Images/locations/norway.jpg",
+        gradient: "linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["scotland", "scottish", "highlands"],
+        image: "Images/locations/scotland.jpg",
+        gradient: "linear-gradient(135deg, #3e5151 0%, #decba4 100%)",
+        icon: "🏞️"
+      },
+      {
+        keywords: ["switzerland", "swiss"],
+        image: "Images/locations/switzerland.jpg",
+        gradient: "linear-gradient(135deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%)",
+        icon: "🏔️"
+      }
+    ];
+    
+    // Default gradient for when no match is found
+    const defaultLocationData = {
+      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      icon: "🥾"
+    };
+    
+    // Function to get location-specific data based on the location name
+    function getLocationData(location) {
+      if (!location) return defaultLocationData;
+      
+      // Convert to lowercase for case-insensitive matching
+      const locationLower = location.toLowerCase();
+      
+      // Try to find a match in our location data
+      for (const locData of locationData) {
+        for (const keyword of locData.keywords) {
+          if (locationLower.includes(keyword) || keyword.includes(locationLower)) {
+            return locData;
+          }
+        }
+      }
+      
+      // Return default if no match found
+      return defaultLocationData;
+    }
+
+    // Function to update header background based on location
+    async function updateHeaderBackground(location) {
+      const header = document.getElementById('itinerary-header');
+      const locationInfo = getLocationData(location);
+      
+      if (locationInfo.image) {
+        // Try to load the image first to check if it exists
+        const img = new Image();
+        img.src = locationInfo.image;
+        
+        return new Promise((resolve) => {
+          img.onload = () => {
+            // Image loaded successfully, use it
+            header.style.background = '';
+            header.style.backgroundImage = `url('${locationInfo.image}')`;
+            header.style.backgroundSize = 'cover';
+            header.style.backgroundPosition = 'center';
+            header.style.backgroundRepeat = 'no-repeat';
+            console.log('Header image set to:', locationInfo.image);
+            resolve();
+          };
+          
+          img.onerror = () => {
+            // Image failed to load, use gradient fallback
+            console.log('Image failed to load, using gradient for:', location);
+            header.style.backgroundImage = '';
+            header.style.background = locationInfo.gradient;
+            resolve();
+          };
+          
+          // Timeout fallback
+          setTimeout(() => {
+            if (!img.complete) {
+              console.log('Image load timeout, using gradient for:', location);
+              header.style.backgroundImage = '';
+              header.style.background = locationInfo.gradient;
+              resolve();
+            }
+          }, 3000);
+        });
+      } else {
+        // No image specified, use gradient
+        console.log('No image specified, using gradient for:', location);
+        header.style.backgroundImage = '';
+        header.style.background = locationInfo.gradient;
+        return Promise.resolve();
+      }
+    }
+    
+    // Get itinerary ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const itineraryId = urlParams.get('id');
+    
+    if (!itineraryId) {
+      window.location.href = 'my-itineraries.html';
+    }
+    
+    let currentItinerary = null;
+
+    // Check if user is logged in
+    onAuthStateChanged(auth, (user) => {
+      const authStatusDiv = document.getElementById('auth-status');
+      
+      if (user) {
+        // User is signed in - hide auth status and fetch itinerary
+        authStatusDiv.style.display = 'none';
+        
+        // Fetch the itinerary
+        fetchItinerary(user, itineraryId);
+      } else {
+        // User is not signed in
+        authStatusDiv.innerHTML = `
+          <div class="text-center py-8">
+            <p class="text-xl text-gray-700 mb-4">Please sign in to view this itinerary.</p>
+            <a href="sign-up.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">Sign In</a>
+          </div>
+        `;
+      }
+    });
+
+    // Function to fetch an itinerary
+    async function fetchItinerary(user, itineraryId) {
+      try {
+        const token = await user.getIdToken();
+        
+        const response = await fetch(`https://trekai-api-staging.onrender.com/api/itineraries/${itineraryId}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        
+        if (!response.ok) {
+          if (response.status === 404) {
+            throw new Error('Itinerary not found');
+          } else if (response.status === 403) {
+            throw new Error('You do not have permission to view this itinerary');
+          } else {
+            throw new Error('Failed to fetch itinerary');
+          }
+        }
+        
+        const itinerary = await response.json();
+        currentItinerary = itinerary;
+        
+        // Show itinerary details
+        document.getElementById('itinerary-details').classList.remove('hidden');
+        
+        // Apply title case formatting to the itinerary title
+        const formattedTitle = toTitleCase(itinerary.title || 'Your Trek');
+        document.getElementById('itinerary-title').textContent = formattedTitle;
+        
+        // Update header background based on itinerary location
+        if (itinerary.location) {
+          await updateHeaderBackground(itinerary.location);
+        }
+        
+        // Process and display the itinerary content
+        const contentDiv = document.getElementById('itinerary-content');
+        const skeleton = document.getElementById('itinerary-skeleton');
+        
+        // Import and use the itinerary processor
+        import('./js/utils/itinerary.js').then(module => {
+          const { processItineraryContent } = module;
+          
+          // Hide skeleton and show actual content
+          if (skeleton) {
+            skeleton.style.display = 'none';
+          }
+          
+          // Create a new container for the actual content
+          const actualContent = document.createElement('div');
+          actualContent.id = 'actual-itinerary-content';
+          contentDiv.appendChild(actualContent);
+          
+          processItineraryContent(itinerary.content, actualContent);
+        });
+      } catch (error) {
+        console.error('Error fetching itinerary:', error);
+        document.getElementById('auth-status').innerHTML += `
+          <div class="bg-red-100 text-red-700 p-4 rounded-md">
+            <p>${error.message || 'Failed to load itinerary. Please try again later.'}</p>
+          </div>
+        `;
+      }
+    }
+  </script>
+  <script src="js/components/navbar.js" type="module"></script>
+</body>
+</html>
