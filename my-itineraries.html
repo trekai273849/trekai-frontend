@@ -117,6 +117,37 @@
       opacity: 0.8;
       z-index: -1;
     }
+
+    /* Loading skeleton animations */
+    @keyframes shimmer {
+      0% {
+        background-position: -200px 0;
+      }
+      100% {
+        background-position: calc(200px + 100%) 0;
+      }
+    }
+    
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200px 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease-out;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -178,6 +209,54 @@
     import { getCurrentUser, logOut } from './js/auth/auth.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
+    // Loading skeleton HTML template
+    const createLoadingSkeleton = (count = 3) => {
+      let skeletons = '';
+      
+      for (let i = 0; i < count; i++) {
+        skeletons += `
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <!-- Header skeleton -->
+          <div class="skeleton h-32 w-full"></div>
+          
+          <!-- Content skeleton -->
+          <div class="p-4">
+            <!-- Date skeleton -->
+            <div class="skeleton h-4 w-24 rounded mb-3"></div>
+            
+            <!-- Filter tags skeleton -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <div class="skeleton h-6 w-16 rounded-full"></div>
+              <div class="skeleton h-6 w-20 rounded-full"></div>
+              <div class="skeleton h-6 w-14 rounded-full"></div>
+            </div>
+            
+            <!-- Buttons skeleton -->
+            <div class="flex gap-2">
+              <div class="skeleton flex-1 h-9 rounded-md"></div>
+              <div class="skeleton h-9 w-10 rounded-md"></div>
+            </div>
+          </div>
+        </div>
+        `;
+      }
+      
+      return skeletons;
+    };
+
+    // Function to show loading skeletons
+    function showLoadingSkeletons() {
+      const container = document.getElementById('itineraries-container');
+      container.innerHTML = createLoadingSkeleton(6); // Show 6 skeleton cards
+      container.classList.remove('hidden');
+    }
+
+    // Function to hide loading and show content
+    function hideLoadingSkeletons() {
+      const container = document.getElementById('itineraries-container');
+      container.classList.add('fade-in');
+    }
+
     // Function to convert text to title case
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, (txt) => {
@@ -198,6 +277,9 @@
             </div>
           </div>
         `;
+        
+        // Show loading skeletons before fetching
+        showLoadingSkeletons();
         
         // Fetch user's itineraries
         fetchItineraries(user);
@@ -413,11 +495,14 @@
         
         console.log('Processed itineraries:', itineraries); // Debug log
         
+        const container = document.getElementById('itineraries-container');
+        
         if (itineraries.length === 0) {
+          container.classList.add('hidden');
           document.getElementById('no-itineraries').classList.remove('hidden');
         } else {
-          const container = document.getElementById('itineraries-container');
-          container.classList.remove('hidden');
+          // Clear loading skeletons
+          container.innerHTML = '';
           
           // Process itineraries with async/await to handle the image checking
           for (const itinerary of itineraries) {
@@ -465,6 +550,9 @@
             
             container.appendChild(card);
           }
+          
+          // Add fade-in animation after all cards are loaded
+          hideLoadingSkeletons();
           
           // Set up delete functionality with modal
           const modal = document.getElementById('delete-modal');
@@ -549,9 +637,9 @@
         }
       } catch (error) {
         console.error('Error fetching itineraries:', error);
-        const authStatusDiv = document.getElementById('auth-status');
-        authStatusDiv.innerHTML += `
-          <div class="bg-red-100 text-red-700 p-4 rounded-md">
+        const container = document.getElementById('itineraries-container');
+        container.innerHTML = `
+          <div class="col-span-full bg-red-100 text-red-700 p-4 rounded-md">
             <p>Failed to load itineraries. Please try again later.</p>
             <p class="text-sm mt-2">${error.message}</p>
             <button id="retry-btn" class="mt-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md">Retry</button>
