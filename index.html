@@ -107,7 +107,50 @@
 
     <!-- Call to Action - UPDATED with single button -->
     <div class="text-center mb-12">
-      <a href="/community.html" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">Join Our Community</a>
+      <button id="join-community-btn" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">Join Our Community</button>
+    </div>
+
+    <!-- Community Modal -->
+    <div id="community-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl transform transition-all">
+        <div class="text-center">
+          <!-- Icon -->
+          <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-4">
+            <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          
+          <!-- Title -->
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Community Coming Soon!</h3>
+          
+          <!-- Message -->
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            We're building something amazing for our hiking community. We'll let you know when we launch premium features and exclusive member benefits!
+          </p>
+          
+          <!-- Features preview -->
+          <div class="text-left bg-gray-50 rounded-lg p-4 mb-6">
+            <h4 class="font-semibold text-gray-800 mb-2">Coming soon:</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Exclusive trail recommendations</li>
+              <li>• Community trip planning</li>
+              <li>• Expert guide connections</li>
+              <li>• Early access to new features</li>
+            </ul>
+          </div>
+          
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button id="notify-me-btn" class="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+              Notify Me
+            </button>
+            <button id="close-modal-btn" class="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+              Maybe Later
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->
@@ -117,11 +160,57 @@
 
     <!-- Script -->
     <script>
+      // Form submission handler
       document.getElementById("itinerary-form").addEventListener("submit", function (e) {
         e.preventDefault();
         const location = document.getElementById("user-input").value;
         localStorage.setItem("userLocation", location);
         window.location.href = "customize.html";
+      });
+
+      // Community modal handlers
+      const joinCommunityBtn = document.getElementById('join-community-btn');
+      const communityModal = document.getElementById('community-modal');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const notifyMeBtn = document.getElementById('notify-me-btn');
+
+      // Open modal
+      joinCommunityBtn.addEventListener('click', () => {
+        communityModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      });
+
+      // Close modal
+      const closeModal = () => {
+        communityModal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+      };
+
+      closeModalBtn.addEventListener('click', closeModal);
+
+      // Close modal when clicking outside
+      communityModal.addEventListener('click', (e) => {
+        if (e.target === communityModal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !communityModal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Handle notify me button
+      notifyMeBtn.addEventListener('click', () => {
+        // You can redirect to sign-up or collect email here
+        window.location.href = 'sign-up.html';
+        
+        // Alternative: Show success message and close modal
+        // notifyMeBtn.textContent = 'Thanks! We\'ll be in touch 🎉';
+        // notifyMeBtn.disabled = true;
+        // setTimeout(closeModal, 2000);
       });
     </script>
     <script src="js/components/navbar.js" type="module"></script>
