@@ -675,54 +675,7 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
     const saveBtn = document.getElementById('save-itinerary');
     if (saveBtn) {
       saveBtn.addEventListener('click', async () => {
-        try {
-          // Check if user is authenticated
-          if (!auth || !auth.currentUser) {
-            alert('Please log in to save itineraries');
-            window.location.href = '/sign-up.html';
-            return;
-          }
-
-          const token = await auth.currentUser.getIdToken();
-          
-          // Prepare data to save
-          const location = localStorage.getItem('userLocation') || 'Trek Location';
-          const title = `${location} Trek`;
-          const itineraryData = {
-            title,
-            location,
-            content: rawItineraryText,
-            comments: document.getElementById('comments').value || '',
-            filters: {}
-          };
-          
-          // Get active filters
-          document.querySelectorAll('.filter-btn.active').forEach(btn => {
-            const category = btn.dataset.category;
-            itineraryData.filters[category] = btn.dataset.value;
-          });
-          
-          // Use direct URL for production
-          const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
-            method: 'POST',
-            headers: { 
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(itineraryData)
-          });
-          
-          if (!response.ok) throw new Error(`Server returned status ${response.status}`);
-          
-          const data = await response.json();
-          showSuccessModal();
-          
-          // Optionally, redirect to the saved itineraries page
-          // window.location.href = '/my-itineraries.html';
-        } catch (error) {
-          console.error('Error saving itinerary:', error);
-          alert('Failed to save itinerary. Please try again.');
-        }
+        await handleSaveItinerary();
       });
     }
 
@@ -734,6 +687,171 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
       });
     }
   }
+
+  // NEW FUNCTION: Handle save itinerary with authentication check
+  async function handleSaveItinerary() {
+    try {
+      // Check if user is authenticated
+      if (!auth || !auth.currentUser) {
+        // Store the current itinerary data before redirecting
+        storeItineraryForLater();
+        // Show authentication modal instead of basic alert
+        showAuthModal();
+        return;
+      }
+
+      const token = await auth.currentUser.getIdToken();
+      
+      // Prepare data to save
+      const location = localStorage.getItem('userLocation') || 'Trek Location';
+      const title = `${location} Trek`;
+      const itineraryData = {
+        title,
+        location,
+        content: rawItineraryText,
+        comments: document.getElementById('comments').value || '',
+        filters: {}
+      };
+      
+      // Get active filters
+      document.querySelectorAll('.filter-btn.active').forEach(btn => {
+        const category = btn.dataset.category;
+        itineraryData.filters[category] = btn.dataset.value;
+      });
+      
+      // Use direct URL for production
+      const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(itineraryData)
+      });
+      
+      if (!response.ok) throw new Error(`Server returned status ${response.status}`);
+      
+      const data = await response.json();
+      showSuccessModal();
+      
+    } catch (error) {
+      console.error('Error saving itinerary:', error);
+      alert('Failed to save itinerary. Please try again.');
+    }
+  }
+
+  // Function to store itinerary data for saving after authentication
+  function storeItineraryForLater() {
+    const location = localStorage.getItem('userLocation') || 'Trek Location';
+    const title = `${location} Trek`;
+    const itineraryData = {
+      title,
+      location,
+      content: rawItineraryText,
+      comments: document.getElementById('comments').value || '',
+      filters: {}
+    };
+    
+    // Get active filters
+    document.querySelectorAll('.filter-btn.active').forEach(btn => {
+      const category = btn.dataset.category;
+      itineraryData.filters[category] = btn.dataset.value;
+    });
+    
+    // Store in localStorage with a special key
+    localStorage.setItem('pendingItinerary', JSON.stringify(itineraryData));
+    localStorage.setItem('returnToCustomize', 'true');
+  }
+
+  // Function to show authentication modal
+  function showAuthModal() {
+    const modal = document.getElementById('auth-required-modal');
+    modal.style.display = 'flex';
+  }
+
+  // Function to close authentication modal
+  function closeAuthModal() {
+    const modal = document.getElementById('auth-required-modal');
+    modal.style.animation = 'fadeOut 0.2s ease-out forwards';
+    setTimeout(() => {
+      modal.style.display = 'none';
+      modal.style.animation = '';
+    }, 200);
+  }
+
+  // Function to redirect to sign up
+  function redirectToSignUp() {
+    window.location.href = 'sign-up.html';
+  }
+
+  // Function to redirect to sign in
+  function redirectToSignIn() {
+    window.location.href = 'sign-up.html'; // They can switch to login on the sign-up page
+  }
+
+  // Function to show welcome back modal
+  function showWelcomeModal() {
+    const modal = document.getElementById('welcome-back-modal');
+    modal.style.display = 'flex';
+  }
+
+  // Function to close welcome modal
+  function closeWelcomeModal() {
+    const modal = document.getElementById('welcome-back-modal');
+    modal.style.animation = 'fadeOut 0.2s ease-out forwards';
+    setTimeout(() => {
+      modal.style.display = 'none';
+      modal.style.animation = '';
+    }, 200);
+  }
+
+  // Function to handle auto-save after authentication
+  async function handlePendingItinerary() {
+    const pendingItinerary = localStorage.getItem('pendingItinerary');
+    const returnToCustomize = localStorage.getItem('returnToCustomize');
+    
+    if (pendingItinerary && returnToCustomize && auth.currentUser) {
+      try {
+        const token = await auth.currentUser.getIdToken();
+        const itineraryData = JSON.parse(pendingItinerary);
+        
+        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(itineraryData)
+        });
+        
+        if (response.ok) {
+          // Clear the pending data
+          localStorage.removeItem('pendingItinerary');
+          localStorage.removeItem('returnToCustomize');
+          
+          // Show welcome modal
+          setTimeout(() => {
+            showWelcomeModal();
+          }, 1000); // Delay to ensure page is loaded
+        }
+      } catch (error) {
+        console.error('Error auto-saving itinerary:', error);
+        // Clear the pending data even on error to prevent infinite loops
+        localStorage.removeItem('pendingItinerary');
+        localStorage.removeItem('returnToCustomize');
+      }
+    }
+  }
+
+  // Check for pending itinerary on page load
+  setTimeout(() => {
+    // Wait for Firebase auth to initialize
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        handlePendingItinerary();
+      }
+    });
+  }, 2000);
 
   function renderAccordionBlock(title, content, open = false, bgColor = 'bg-mountain-blue') {
     const card = document.createElement('div');
@@ -790,28 +908,52 @@ The final day offers a gentle descent with spectacular views throughout. Enjoy t
     modal.style.animation = 'fadeOut 0.2s ease-out forwards';
     setTimeout(() => {
       modal.style.display = 'none';
-      modal.style.animation = ''; // Reset animation
+      modal.style.animation = '';
     }, 200);
   }
 
   // Make functions globally available
   window.showSuccessModal = showSuccessModal;
   window.closeSuccessModal = closeSuccessModal;
+  window.showAuthModal = showAuthModal;
+  window.closeAuthModal = closeAuthModal;
+  window.redirectToSignUp = redirectToSignUp;
+  window.redirectToSignIn = redirectToSignIn;
+  window.showWelcomeModal = showWelcomeModal;
+  window.closeWelcomeModal = closeWelcomeModal;
 
   // Close modal when clicking outside
   document.addEventListener('click', function(e) {
-    const modal = document.getElementById('itinerary-success-modal');
-    if (e.target === modal) {
+    const successModal = document.getElementById('itinerary-success-modal');
+    const authModal = document.getElementById('auth-required-modal');
+    const welcomeModal = document.getElementById('welcome-back-modal');
+    
+    if (e.target === successModal) {
       closeSuccessModal();
+    }
+    if (e.target === authModal) {
+      closeAuthModal();
+    }
+    if (e.target === welcomeModal) {
+      closeWelcomeModal();
     }
   });
 
   // Close modal with Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      const modal = document.getElementById('itinerary-success-modal');
-      if (modal.style.display === 'flex') {
+      const successModal = document.getElementById('itinerary-success-modal');
+      const authModal = document.getElementById('auth-required-modal');
+      const welcomeModal = document.getElementById('welcome-back-modal');
+      
+      if (successModal.style.display === 'flex') {
         closeSuccessModal();
+      }
+      if (authModal.style.display === 'flex') {
+        closeAuthModal();
+      }
+      if (welcomeModal.style.display === 'flex') {
+        closeWelcomeModal();
       }
     }
   });
