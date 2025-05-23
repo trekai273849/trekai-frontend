@@ -57,6 +57,13 @@
     import { auth } from './js/auth/firebase.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
     
+    // Function to convert text to title case
+    function toTitleCase(str) {
+      return str.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
+    
     // Get itinerary ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const itineraryId = urlParams.get('id');
@@ -114,7 +121,10 @@
         
         // Show itinerary details
         document.getElementById('itinerary-details').classList.remove('hidden');
-        document.getElementById('itinerary-title').textContent = itinerary.title;
+        
+        // Apply title case formatting to the itinerary title
+        const formattedTitle = toTitleCase(itinerary.title || 'Your Trek');
+        document.getElementById('itinerary-title').textContent = formattedTitle;
         
         // Process and display the itinerary content
         const contentDiv = document.getElementById('itinerary-content');
