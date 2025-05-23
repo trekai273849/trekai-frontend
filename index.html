@@ -53,6 +53,21 @@
         .blue-gradient {
             background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
         }
+        
+        /* Ensure footer always displays */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        footer {
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -60,6 +75,8 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <main>
 
     <!-- Hero Section -->
     <section class="bg-cover bg-center h-screen text-white flex flex-col justify-center items-center px-4 text-center" style="background-image: url('images/trekkingheader.jpg');">
@@ -212,8 +229,8 @@
         </div>
     </div>
 
-    <!-- Original Simple Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <!-- Original Simple Footer - Enhanced for reliability -->
+    <footer class="bg-gray-800 text-white py-8 mt-auto" style="display: block !important; position: relative; z-index: 10;">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2024 Smart Trails. All rights reserved.</p>
         </div>
