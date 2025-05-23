@@ -59,26 +59,56 @@ document.addEventListener('DOMContentLoaded', () => {
       background-color: #e6eef2; /* Light mountain blue for day headers */
     }
     
-    /* Filter button styling */
+    /* Updated filter button styling */
     .filter-btn {
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 0.5rem;
       font-weight: 500;
+      font-size: 0.9rem;
       transition: all 0.2s ease;
       background-color: white;
       border: 2px solid #e5e7eb;
       color: #4b5563;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     
     .filter-btn:hover {
-      border-color: #2563eb;
-      color: #2563eb;
+      border-color: #16a34a;
+      color: #16a34a;
+      background-color: #f0fdf4;
     }
     
     .filter-btn.active {
-      background-color: #2563eb;
+      background-color: #16a34a;
       color: white;
-      border-color: #2563eb;
+      border-color: #16a34a;
+    }
+    
+    /* Ensure buttons stay on single line */
+    .flex.gap-3 {
+      flex-wrap: nowrap !important;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    
+    /* Add scrollbar styling for mobile */
+    .flex.gap-3::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    .flex.gap-3::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 2px;
+    }
+    
+    .flex.gap-3::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 2px;
+    }
+    
+    .flex.gap-3::-webkit-scrollbar-thumb:hover {
+      background: #a1a1a1;
     }
   `;
   document.head.appendChild(style);
