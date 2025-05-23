@@ -15,6 +15,52 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/pages/itinerary.css" />
+  <style>
+    /* Additional modal styles for auth and welcome modals */
+    .auth-icon, .welcome-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      animation: iconBounce 0.6s ease-out 0.2s both;
+    }
+    
+    .auth-icon svg, .welcome-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: white;
+      stroke-width: 2;
+    }
+    
+    .auth-benefits {
+      margin: 20px 0;
+      text-align: left;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #374151;
+    }
+    
+    .benefit-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      flex-shrink: 0;
+      stroke: #10b981;
+    }
+    
+    .welcome-icon {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Google Tag Manager (noscript) -->
@@ -38,7 +84,7 @@
         <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
           🏕️ Accommodation Type
         </h3>
-        <div class="flex gap-3 flex-wrap">
+        <div class="flex gap-3">
           <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Camping">Camping</button>
           <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
           <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
@@ -50,7 +96,7 @@
         <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
           🏔️ Difficulty
         </h3>
-        <div class="flex gap-3 flex-wrap">
+        <div class="flex gap-3">
           <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="difficulty" data-value="Easy">Easy</button>
           <button type="button" class="filter-btn active py-2 px-4 rounded-lg" data-category="difficulty" data-value="Moderate">Moderate</button>
           <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="difficulty" data-value="Challenging">Challenging</button>
@@ -62,7 +108,7 @@
         <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
           🥾 Technical Requirements
         </h3>
-        <div class="flex gap-3 flex-wrap">
+        <div class="flex gap-3">
           <button type="button" class="filter-btn active py-2 px-4 rounded-lg" data-category="technical" data-value="None">None</button>
           <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="technical" data-value="Scrambling">Scrambling</button>
           <button type="button" class="filter-btn py-2 px-4 rounded-lg" data-category="technical" data-value="Mountaineering">Mountaineering</button>
@@ -109,6 +155,91 @@
           View Saved Itineraries
         </a>
         <button class="button button-secondary" onclick="closeSuccessModal()">
+          Continue Planning
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Authentication Required Modal -->
+  <div class="modal-overlay" id="auth-required-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeAuthModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="auth-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 12l2 2 4-4"/>
+          <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+          <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+          <path d="M12 3v18"/>
+        </svg>
+      </div>
+      
+      <h2 class="modal-title">Save Your Adventure</h2>
+      <p class="modal-message">Create a free account to save your custom itinerary and access it anytime, anywhere.</p>
+      
+      <div class="auth-benefits">
+        <div class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span>Save unlimited itineraries</span>
+        </div>
+        <div class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span>Access from any device</span>
+        </div>
+        <div class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span>Get personalized recommendations</span>
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <button class="button button-primary" onclick="redirectToSignUp()">
+          Create Free Account
+        </button>
+        <button class="button button-secondary" onclick="redirectToSignIn()">
+          I Have an Account
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Back Modal -->
+  <div class="modal-overlay" id="welcome-back-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeWelcomeModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="welcome-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22,4 12,14.01 9,11.01"/>
+        </svg>
+      </div>
+      
+      <h2 class="modal-title">Welcome to Smart Trails!</h2>
+      <p class="modal-message">Your itinerary has been saved successfully. You're now part of our trekking community!</p>
+      
+      <div class="button-group">
+        <a href="my-itineraries.html" class="button button-primary">
+          View My Itineraries
+        </a>
+        <button class="button button-secondary" onclick="closeWelcomeModal()">
           Continue Planning
         </button>
       </div>
