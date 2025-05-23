@@ -35,13 +35,13 @@
     .logo-icon {
       width: 64px;
       height: 64px;
-      background: linear-gradient(135deg, #4ade80, #22c55e);
+      background: linear-gradient(135deg, #16a34a, #15803d);
       border-radius: 16px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 16px;
-      box-shadow: 0 8px 16px rgba(34, 197, 94, 0.3);
+      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
     }
 
     .logo-text {
@@ -114,15 +114,15 @@
 
     .form-input:focus {
       outline: none;
-      border-color: #4ade80;
+      border-color: #16a34a;
       background: white;
-      box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
     }
 
     .primary-button {
       width: 100%;
       padding: 16px;
-      background: linear-gradient(135deg, #4ade80, #22c55e);
+      background: linear-gradient(135deg, #16a34a, #15803d);
       color: white;
       border: none;
       border-radius: 12px;
@@ -131,12 +131,12 @@
       cursor: pointer;
       transition: all 0.2s ease;
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
     }
 
     .primary-button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
     }
 
     .primary-button:active {
@@ -147,8 +147,8 @@
       width: 100%;
       padding: 16px;
       background: transparent;
-      color: #4ade80;
-      border: 2px solid #4ade80;
+      color: #15803d;
+      border: 2px solid #16a34a;
       border-radius: 12px;
       font-size: 16px;
       font-weight: 600;
@@ -158,7 +158,7 @@
     }
 
     .secondary-button:hover {
-      background: #4ade80;
+      background: #16a34a;
       color: white;
       transform: translateY(-1px);
     }
@@ -170,7 +170,7 @@
     }
 
     .disclaimer a {
-      color: #4ade80;
+      color: #16a34a;
       text-decoration: none;
       font-weight: 600;
     }
@@ -185,7 +185,7 @@
       padding: 20px;
       background: #f0fdf4;
       border-radius: 12px;
-      border-left: 4px solid #4ade80;
+      border-left: 4px solid #16a34a;
     }
 
     .benefits h4 {
@@ -211,7 +211,7 @@
 
     .benefits li:before {
       content: "✓";
-      color: #22c55e;
+      color: #16a34a;
       font-weight: bold;
       margin-right: 8px;
     }
@@ -353,11 +353,11 @@
       const container = document.querySelector('.signup-container');
       container.classList.add('loading');
       
-      // Simulate API call
+      // Simulate API call then redirect
       setTimeout(() => {
         container.classList.remove('loading');
-        alert('🎉 Welcome to Smart Trails! Check your email to verify your account.');
-      }, 2000);
+        window.location.href = 'customize.html';
+      }, 1500);
     });
     
     loginForm.addEventListener('submit', async (e) => {
@@ -365,10 +365,10 @@
       const container = document.querySelector('.signup-container');
       container.classList.add('loading');
       
-      // Simulate API call
+      // Simulate API call then redirect
       setTimeout(() => {
         container.classList.remove('loading');
-        alert('🏠 Welcome back! Redirecting to your dashboard...');
+        window.location.href = 'customize.html';
       }, 1500);
     });
 
