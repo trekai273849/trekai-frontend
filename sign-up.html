@@ -442,6 +442,42 @@
       }
     }
 
+    // Function to get user-friendly error messages
+    function getUserFriendlyError(error) {
+      const errorCode = error.code || error.message;
+      
+      switch (errorCode) {
+        case 'auth/email-already-in-use':
+          return 'Email already in use';
+        case 'auth/weak-password':
+          return 'Password should be at least 6 characters';
+        case 'auth/invalid-email':
+          return 'Please enter a valid email address';
+        case 'auth/user-not-found':
+          return 'No account found with this email address';
+        case 'auth/wrong-password':
+          return 'Incorrect password. Please try again';
+        case 'auth/too-many-requests':
+          return 'Too many failed attempts. Please try again later';
+        case 'auth/network-request-failed':
+          return 'Network error. Please check your connection';
+        default:
+          // If error message contains specific phrases, return friendly versions
+          if (errorCode.includes('email-already-in-use') || errorCode.includes('already in use')) {
+            return 'Email already in use';
+          }
+          if (errorCode.includes('weak-password') || errorCode.includes('6 characters')) {
+            return 'Password should be at least 6 characters';
+          }
+          if (errorCode.includes('invalid-email') || errorCode.includes('badly formatted')) {
+            return 'Please enter a valid email address';
+          }
+          
+          // Fallback to a generic friendly message
+          return 'Something went wrong. Please try again';
+      }
+    }
+
     // Handle signup form submission
     signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -490,7 +526,7 @@
         
       } catch (error) {
         console.error('Signup error:', error);
-        showError(error.message || 'Failed to create account. Please try again.');
+        showError(getUserFriendlyError(error));
       } finally {
         setLoading(false);
       }
@@ -551,7 +587,7 @@
         
       } catch (error) {
         console.error('Login error:', error);
-        showError(error.message || 'Failed to sign in. Please check your credentials.');
+        showError(getUserFriendlyError(error));
       } finally {
         setLoading(false);
       }

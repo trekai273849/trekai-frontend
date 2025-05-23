@@ -178,6 +178,13 @@
     import { getCurrentUser, logOut } from './js/auth/auth.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
+    // Function to convert text to title case
+    function toTitleCase(str) {
+      return str.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
+
     // Check if user is logged in
     onAuthStateChanged(auth, (user) => {
       const authStatusDiv = document.getElementById('auth-status');
@@ -304,6 +311,8 @@
     // Function to create a header for an itinerary card
     function createCardHeader(itinerary) {
       const locationInfo = getLocationData(itinerary.location);
+      // Apply title case formatting to the location
+      const formattedLocation = toTitleCase(itinerary.location);
       
       // Check if the image exists
       if (locationInfo.image) {
@@ -317,36 +326,36 @@
             resolve(`
               <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center" 
                    style="background-image: url('${locationInfo.image}')">
-                <h3 class="text-xl font-bold p-4 bg-black bg-opacity-50 text-white rounded">${itinerary.location}</h3>
+                <h3 class="text-xl font-bold p-4 bg-black bg-opacity-50 text-white rounded">${formattedLocation}</h3>
               </div>
             `);
           };
           
           img.onerror = () => {
             // Image failed to load, use gradient fallback
-            resolve(createGradientHeader(itinerary, locationInfo));
+            resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
           };
           
           // If neither success nor error events fire after a timeout, use gradient
           setTimeout(() => {
             if (!img.complete) {
-              resolve(createGradientHeader(itinerary, locationInfo));
+              resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
             }
           }, 1000);
         });
       } else {
         // No image specified, use gradient
-        return Promise.resolve(createGradientHeader(itinerary, locationInfo));
+        return Promise.resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
       }
     }
     
     // Function to create a gradient header when no image is available
-    function createGradientHeader(itinerary, locationInfo) {
+    function createGradientHeader(itinerary, locationInfo, formattedLocation) {
       return `
         <div class="h-32 flex items-center justify-center text-white relative overflow-hidden"
              style="background: ${locationInfo.gradient}">
           <div class="absolute right-3 bottom-3 text-4xl opacity-30">${locationInfo.icon}</div>
-          <h3 class="text-xl font-bold p-4 bg-black bg-opacity-30 rounded z-10">${itinerary.location}</h3>
+          <h3 class="text-xl font-bold p-4 bg-black bg-opacity-30 rounded z-10">${formattedLocation}</h3>
         </div>
       `;
     }
