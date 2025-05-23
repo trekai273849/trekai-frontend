@@ -52,14 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (user) {
       // User is signed in - show round button with cog icon
       authButton.innerHTML = `
-        <div class="relative group">
-          <button class="w-10 h-10 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center shadow-sm">
+        <div class="relative">
+          <button id="user-menu-button" class="w-10 h-10 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-900">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="3"></circle>
               <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
             </svg>
           </button>
-          <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-50 border border-gray-200">
+          <div id="user-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-50 border border-gray-200">
             <div class="px-4 py-2 border-b border-gray-100">
               <p class="text-sm text-gray-500">Signed in as:</p>
               <p class="text-sm font-medium text-gray-900 truncate">${user.email}</p>
@@ -85,6 +85,32 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
+      
+      // Add click functionality for dropdown toggle
+      const userMenuButton = document.getElementById('user-menu-button');
+      const userDropdown = document.getElementById('user-dropdown');
+      
+      if (userMenuButton && userDropdown) {
+        // Toggle dropdown on button click
+        userMenuButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          userDropdown.classList.toggle('hidden');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
+            userDropdown.classList.add('hidden');
+          }
+        });
+        
+        // Close dropdown on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            userDropdown.classList.add('hidden');
+          }
+        });
+      }
       
       // Add sign out functionality
       document.getElementById('sign-out-btn')?.addEventListener('click', (e) => {
