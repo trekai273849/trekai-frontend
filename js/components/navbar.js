@@ -19,19 +19,57 @@ const auth = getAuth(app);
 
 // Main navbar functionality
 document.addEventListener('DOMContentLoaded', () => {
-  // Create the navbar
+  // Create the navbar with mobile-responsive design
   const navbar = document.createElement('div');
-  navbar.className = 'bg-green-900 text-white py-4';
+  navbar.className = 'bg-green-900 text-white py-3 md:py-4';
   navbar.innerHTML = `
-    <div class="container mx-auto flex justify-between items-center px-4">
-      <a href="index.html" class="text-xl font-bold">Smart Trails</a>
-      <nav id="nav-items">
+    <div class="container mx-auto flex justify-between items-center px-3 md:px-4">
+      <a href="index.html" class="text-lg md:text-xl font-bold flex-shrink-0">Smart Trails</a>
+      
+      <!-- Desktop Navigation -->
+      <nav id="nav-items" class="hidden md:block">
         <ul class="flex space-x-4 items-center">
-          <li><a href="index.html" class="hover:text-green-200">Home</a></li>
-          <li><a href="my-itineraries.html" class="hover:text-green-200">My Itineraries</a></li>
-          <li id="auth-button"><a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200">Sign Up</a></li>
+          <li><a href="index.html" class="hover:text-green-200 transition-colors">Home</a></li>
+          <li><a href="my-itineraries.html" class="hover:text-green-200 transition-colors">My Itineraries</a></li>
+          <li id="auth-button"><a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a></li>
         </ul>
       </nav>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden flex items-center space-x-2">
+        <div id="mobile-auth-button">
+          <a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>
+        </div>
+        <button id="mobile-menu-toggle" class="text-white hover:text-green-200 transition-colors p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-b from-green-800 to-green-900 border-t border-green-600 shadow-lg backdrop-blur-sm">
+      <div class="container mx-auto px-4 py-4">
+        <ul class="space-y-1">
+          <li>
+            <a href="index.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
+              <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              <span class="font-medium group-hover:text-white transition-colors">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="my-itineraries.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
+              <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <span class="font-medium group-hover:text-white transition-colors">My Itineraries</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   `;
 
@@ -44,13 +82,74 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     document.body.insertBefore(navbar, document.body.firstChild);
   }
+
+  // Helper function for smooth menu animation
+  window.toggleMobileMenu = () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (!mobileMenu) return false;
+    
+    const isHidden = mobileMenu.classList.contains('hidden');
+    
+    if (isHidden) {
+      // Show menu with animation
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.transform = 'translateY(-10px)';
+      
+      // Trigger animation
+      requestAnimationFrame(() => {
+        mobileMenu.style.transition = 'all 0.3s ease-out';
+        mobileMenu.style.maxHeight = '400px';
+        mobileMenu.style.opacity = '1';
+        mobileMenu.style.transform = 'translateY(0)';
+      });
+    } else {
+      // Hide menu with animation
+      mobileMenu.style.transition = 'all 0.2s ease-in';
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.transform = 'translateY(-10px)';
+      
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.style.transition = '';
+        mobileMenu.style.maxHeight = '';
+        mobileMenu.style.opacity = '';
+        mobileMenu.style.transform = '';
+      }, 200);
+    }
+    
+    return !isHidden; // Return new state (true if now hidden)
+  };
+
+  // Mobile menu toggle functionality
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const nowHidden =           window.toggleMobileMenu();
+      
+      // Update hamburger icon
+      const icon = mobileMenuToggle.querySelector('svg');
+      if (nowHidden) {
+        // Hamburger icon
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+      } else {
+        // X icon
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+      }
+    });
+  }
   
   // Update auth button based on authentication status
   onAuthStateChanged(auth, (user) => {
     const authButton = document.getElementById('auth-button');
+    const mobileAuthButton = document.getElementById('mobile-auth-button');
     
     if (user) {
-      // User is signed in - show round button with cog icon
+      // Desktop signed-in state
       authButton.innerHTML = `
         <div class="relative">
           <button id="user-menu-button" class="w-10 h-10 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-900">
@@ -85,34 +184,72 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
+
+      // Mobile signed-in state
+      mobileAuthButton.innerHTML = `
+        <button id="mobile-user-button" class="w-8 h-8 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors flex items-center justify-center text-sm font-semibold">
+          ${user.email.charAt(0).toUpperCase()}
+        </button>
+      `;
       
-      // Add click functionality for dropdown toggle
+      // Add dropdown functionality for desktop
       const userMenuButton = document.getElementById('user-menu-button');
       const userDropdown = document.getElementById('user-dropdown');
       
       if (userMenuButton && userDropdown) {
-        // Toggle dropdown on button click
         userMenuButton.addEventListener('click', (e) => {
           e.stopPropagation();
           userDropdown.classList.toggle('hidden');
         });
         
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
             userDropdown.classList.add('hidden');
           }
         });
         
-        // Close dropdown on escape key
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
             userDropdown.classList.add('hidden');
           }
         });
       }
+
+      // Add mobile user button functionality
+      const mobileUserButton = document.getElementById('mobile-user-button');
+      if (mobileUserButton) {
+        mobileUserButton.addEventListener('click', () => {
+          // Toggle mobile menu to show user options
+          const mobileMenu = document.getElementById('mobile-menu');
+          const mobileMenuList = mobileMenu.querySelector('ul');
+          
+          // Check if user options are already added
+          if (!mobileMenuList.querySelector('#mobile-sign-out')) {
+            mobileMenuList.innerHTML += `
+              <li class="border-t border-green-700 pt-2 mt-2">
+                <div class="text-sm text-green-200 px-2 py-1">${user.email}</div>
+              </li>
+              <li><button id="mobile-sign-out" class="block w-full text-left py-2 text-red-300 hover:text-red-200 transition-colors">Sign Out</button></li>
+            `;
+            
+            // Add mobile sign out functionality
+            document.getElementById('mobile-sign-out')?.addEventListener('click', (e) => {
+              e.preventDefault();
+              signOut(auth)
+                .then(() => {
+                  window.location.reload();
+                })
+                .catch(error => {
+                  console.error('Sign out error:', error);
+                });
+            });
+          }
+          
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
       
-      // Add sign out functionality
+      // Add sign out functionality for desktop
       document.getElementById('sign-out-btn')?.addEventListener('click', (e) => {
         e.preventDefault();
         signOut(auth)
@@ -125,7 +262,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     } else {
       // User is signed out
-      authButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200">Sign Up</a>`;
+      authButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
+      mobileAuthButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
     }
   });
 });
