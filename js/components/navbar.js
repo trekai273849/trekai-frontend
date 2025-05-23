@@ -19,19 +19,43 @@ const auth = getAuth(app);
 
 // Main navbar functionality
 document.addEventListener('DOMContentLoaded', () => {
-  // Create the navbar
+  // Create the navbar with mobile-responsive design
   const navbar = document.createElement('div');
-  navbar.className = 'bg-green-900 text-white py-4';
+  navbar.className = 'bg-green-900 text-white py-3 md:py-4';
   navbar.innerHTML = `
-    <div class="container mx-auto flex justify-between items-center px-4">
-      <a href="index.html" class="text-xl font-bold">Smart Trails</a>
-      <nav id="nav-items">
+    <div class="container mx-auto flex justify-between items-center px-3 md:px-4">
+      <a href="index.html" class="text-lg md:text-xl font-bold flex-shrink-0">Smart Trails</a>
+      
+      <!-- Desktop Navigation -->
+      <nav id="nav-items" class="hidden md:block">
         <ul class="flex space-x-4 items-center">
-          <li><a href="index.html" class="hover:text-green-200">Home</a></li>
-          <li><a href="my-itineraries.html" class="hover:text-green-200">My Itineraries</a></li>
-          <li id="auth-button"><a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200">Sign Up</a></li>
+          <li><a href="index.html" class="hover:text-green-200 transition-colors">Home</a></li>
+          <li><a href="my-itineraries.html" class="hover:text-green-200 transition-colors">My Itineraries</a></li>
+          <li id="auth-button"><a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a></li>
         </ul>
       </nav>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden flex items-center space-x-2">
+        <div id="mobile-auth-button">
+          <a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>
+        </div>
+        <button id="mobile-menu-toggle" class="text-white hover:text-green-200 transition-colors p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="md:hidden hidden bg-green-800 border-t border-green-700">
+      <div class="container mx-auto px-3 py-3">
+        <ul class="space-y-2">
+          <li><a href="index.html" class="block py-2 hover:text-green-200 transition-colors">Home</a></li>
+          <li><a href="my-itineraries.html" class="block py-2 hover:text-green-200 transition-colors">My Itineraries</a></li>
+        </ul>
+      </div>
     </div>
   `;
 
@@ -44,13 +68,34 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     document.body.insertBefore(navbar, document.body.firstChild);
   }
+
+  // Mobile menu toggle functionality
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      // Update hamburger icon
+      const icon = mobileMenuToggle.querySelector('svg');
+      if (mobileMenu.classList.contains('hidden')) {
+        // Hamburger icon
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+      } else {
+        // X icon
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+      }
+    });
+  }
   
   // Update auth button based on authentication status
   onAuthStateChanged(auth, (user) => {
     const authButton = document.getElementById('auth-button');
+    const mobileAuthButton = document.getElementById('mobile-auth-button');
     
     if (user) {
-      // User is signed in - show round button with cog icon
+      // Desktop signed-in state
       authButton.innerHTML = `
         <div class="relative">
           <button id="user-menu-button" class="w-10 h-10 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-900">
@@ -85,34 +130,72 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
+
+      // Mobile signed-in state
+      mobileAuthButton.innerHTML = `
+        <button id="mobile-user-button" class="w-8 h-8 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors flex items-center justify-center text-sm font-semibold">
+          ${user.email.charAt(0).toUpperCase()}
+        </button>
+      `;
       
-      // Add click functionality for dropdown toggle
+      // Add dropdown functionality for desktop
       const userMenuButton = document.getElementById('user-menu-button');
       const userDropdown = document.getElementById('user-dropdown');
       
       if (userMenuButton && userDropdown) {
-        // Toggle dropdown on button click
         userMenuButton.addEventListener('click', (e) => {
           e.stopPropagation();
           userDropdown.classList.toggle('hidden');
         });
         
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
             userDropdown.classList.add('hidden');
           }
         });
         
-        // Close dropdown on escape key
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
             userDropdown.classList.add('hidden');
           }
         });
       }
+
+      // Add mobile user button functionality
+      const mobileUserButton = document.getElementById('mobile-user-button');
+      if (mobileUserButton) {
+        mobileUserButton.addEventListener('click', () => {
+          // Toggle mobile menu to show user options
+          const mobileMenu = document.getElementById('mobile-menu');
+          const mobileMenuList = mobileMenu.querySelector('ul');
+          
+          // Check if user options are already added
+          if (!mobileMenuList.querySelector('#mobile-sign-out')) {
+            mobileMenuList.innerHTML += `
+              <li class="border-t border-green-700 pt-2 mt-2">
+                <div class="text-sm text-green-200 px-2 py-1">${user.email}</div>
+              </li>
+              <li><button id="mobile-sign-out" class="block w-full text-left py-2 text-red-300 hover:text-red-200 transition-colors">Sign Out</button></li>
+            `;
+            
+            // Add mobile sign out functionality
+            document.getElementById('mobile-sign-out')?.addEventListener('click', (e) => {
+              e.preventDefault();
+              signOut(auth)
+                .then(() => {
+                  window.location.reload();
+                })
+                .catch(error => {
+                  console.error('Sign out error:', error);
+                });
+            });
+          }
+          
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
       
-      // Add sign out functionality
+      // Add sign out functionality for desktop
       document.getElementById('sign-out-btn')?.addEventListener('click', (e) => {
         e.preventDefault();
         signOut(auth)
@@ -125,7 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     } else {
       // User is signed out
-      authButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200">Sign Up</a>`;
+      authButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
+      mobileAuthButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
     }
   });
 });
