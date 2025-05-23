@@ -16,6 +16,33 @@
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/pages/itinerary.css" />
   <style>
+    /* Fixed filter button styling - restore blue theme */
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      background-color: #e5e7eb;
+      border: 2px solid #e5e7eb;
+      color: #4b5563;
+      white-space: nowrap;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    
+    .filter-btn:hover {
+      background-color: #dbeafe;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+    }
+    
+    .filter-btn.active {
+      background-color: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+
     /* Updated modal styles to match the sign-up widget */
     .auth-icon {
       width: 80px;
@@ -397,42 +424,12 @@
     </div>
   </div>
 
-  <!-- Placeholder scripts - you'll need to include your actual JavaScript files -->
-  <script>
-    // Placeholder functions - replace with your actual implementation
-    function closeSuccessModal() {
-      document.getElementById('itinerary-success-modal').style.display = 'none';
-    }
-    
-    function closeAuthModal() {
-      document.getElementById('auth-required-modal').style.display = 'none';
-    }
-    
-    function closeWelcomeModal() {
-      document.getElementById('welcome-back-modal').style.display = 'none';
-    }
-    
-    function redirectToSignUp() {
-      window.location.href = 'sign-up.html';
-    }
-    
-    function redirectToSignIn() {
-      window.location.href = 'sign-up.html';
-    }
-    
-    // Demo function to show the auth modal
-    function showAuthModal() {
-      document.getElementById('auth-required-modal').style.display = 'flex';
-    }
-    
-    // Add demo button to test the modal
-    document.addEventListener('DOMContentLoaded', () => {
-      const testButton = document.createElement('button');
-      testButton.innerText = 'Test Auth Modal';
-      testButton.className = 'bg-green-600 text-white px-4 py-2 rounded mt-4';
-      testButton.onclick = showAuthModal;
-      document.querySelector('main').appendChild(testButton);
-    });
-  </script>
+  <!-- Add type="module" to js scripts -->
+  <script src="js/utils/itinerary.js" type="module"></script>
+  
+  <!-- Changed to the correct path and added type="module" -->
+  <script src="js/pages/customize.js" type="module"></script>
+  
+  <script src="js/components/navbar.js" type="module"></script>
 </body>
 </html>
