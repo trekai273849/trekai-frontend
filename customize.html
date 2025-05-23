@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/pages/itinerary.css" />
   <style>
-    /* Filter button styling - blue theme with proper layout */
+    /* Filter button styling - IMPORTANT: Override any existing green styling */
     .filter-container {
       display: flex;
       gap: 12px;
@@ -24,32 +24,37 @@
     }
     
     .filter-btn {
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 14px;
-      transition: all 0.2s ease;
-      background-color: #f8fafc;
-      border: 2px solid #e2e8f0;
-      color: #64748b;
-      cursor: pointer;
+      padding: 12px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 500 !important;
+      font-size: 14px !important;
+      transition: all 0.2s ease !important;
+      background-color: #f8fafc !important;
+      border: 2px solid #e2e8f0 !important;
+      color: #64748b !important;
+      cursor: pointer !important;
       flex: 1;
       min-width: 120px;
       text-align: center;
     }
     
     .filter-btn:hover {
-      background-color: #eff6ff;
-      border-color: #3b82f6;
-      color: #2563eb;
-      transform: translateY(-1px);
+      background-color: #eff6ff !important;
+      border-color: #3b82f6 !important;
+      color: #2563eb !important;
+      transform: translateY(-1px) !important;
     }
     
     .filter-btn.active {
-      background-color: #3b82f6;
-      color: white;
-      border-color: #2563eb;
-      box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+      background-color: #3b82f6 !important;
+      color: white !important;
+      border-color: #2563eb !important;
+      box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25) !important;
+    }
+    
+    /* Hide the Chat to Pro Guide button */
+    #talk-to-guide {
+      display: none !important;
     }
     
     /* Mobile responsive */
@@ -287,7 +292,7 @@
   <header class="relative bg-cover bg-center h-64 flex items-center justify-center text-white" style="background-image: url('Images/alps.jpg');">
     <div class="bg-black bg-opacity-50 p-6 rounded-lg">
       <h1 class="text-3xl font-bold mb-2">Customize Your Trek</h1>
-      <h2 id="greeting" class="text-lg font-medium">Tell us more about your ideal trekking experience</h2>
+      <h2 id="greeting" class="text-lg font-medium">Tell us more about your ideal trekking experience.</h2>
     </div>
   </header>
 
@@ -452,5 +457,27 @@
   <script src="js/pages/customize.js" type="module"></script>
   
   <script src="js/components/navbar.js" type="module"></script>
+  
+  <!-- Override dynamic greeting and ensure buttons stay blue -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Keep greeting static
+      const greeting = document.getElementById('greeting');
+      if (greeting) {
+        greeting.innerText = 'Tell us more about your ideal trekking experience.';
+      }
+      
+      // Ensure filter buttons maintain blue styling
+      const observer = new MutationObserver(() => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+          // Remove any conflicting classes that might make buttons green
+          btn.classList.remove('bg-green-600', 'bg-green-500', 'text-green-600');
+        });
+      });
+      
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script>
 </body>
 </html>
