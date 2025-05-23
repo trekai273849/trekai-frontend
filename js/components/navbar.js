@@ -49,11 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu" class="md:hidden hidden bg-green-800 border-t border-green-700">
-      <div class="container mx-auto px-3 py-3">
-        <ul class="space-y-2">
-          <li><a href="index.html" class="block py-2 hover:text-green-200 transition-colors">Home</a></li>
-          <li><a href="my-itineraries.html" class="block py-2 hover:text-green-200 transition-colors">My Itineraries</a></li>
+    <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-b from-green-800 to-green-900 border-t border-green-600 shadow-lg backdrop-blur-sm">
+      <div class="container mx-auto px-4 py-4">
+        <ul class="space-y-1">
+          <li>
+            <a href="index.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
+              <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              <span class="font-medium group-hover:text-white transition-colors">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="my-itineraries.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
+              <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <span class="font-medium group-hover:text-white transition-colors">My Itineraries</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -69,17 +83,57 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.insertBefore(navbar, document.body.firstChild);
   }
 
+  // Helper function for smooth menu animation
+  window.toggleMobileMenu = () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (!mobileMenu) return false;
+    
+    const isHidden = mobileMenu.classList.contains('hidden');
+    
+    if (isHidden) {
+      // Show menu with animation
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.transform = 'translateY(-10px)';
+      
+      // Trigger animation
+      requestAnimationFrame(() => {
+        mobileMenu.style.transition = 'all 0.3s ease-out';
+        mobileMenu.style.maxHeight = '400px';
+        mobileMenu.style.opacity = '1';
+        mobileMenu.style.transform = 'translateY(0)';
+      });
+    } else {
+      // Hide menu with animation
+      mobileMenu.style.transition = 'all 0.2s ease-in';
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.transform = 'translateY(-10px)';
+      
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.style.transition = '';
+        mobileMenu.style.maxHeight = '';
+        mobileMenu.style.opacity = '';
+        mobileMenu.style.transform = '';
+      }, 200);
+    }
+    
+    return !isHidden; // Return new state (true if now hidden)
+  };
+
   // Mobile menu toggle functionality
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   
   if (mobileMenuToggle && mobileMenu) {
     mobileMenuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const nowHidden =           window.toggleMobileMenu();
       
       // Update hamburger icon
       const icon = mobileMenuToggle.querySelector('svg');
-      if (mobileMenu.classList.contains('hidden')) {
+      if (nowHidden) {
         // Hamburger icon
         icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
       } else {
