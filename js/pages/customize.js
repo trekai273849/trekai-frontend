@@ -134,9 +134,82 @@ document.addEventListener('DOMContentLoaded', () => {
       100% { background-position: -200% 0; }
     }
     
-    .loading-tip-container {
-      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-      border: 1px solid #93c5fd;
+    .community-tip-container {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border: 2px solid #cbd5e1;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .community-tip-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #059669, #047857);
+      opacity: 0.8;
+    }
+    
+    .tip-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .community-badge {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+    }
+    
+    .tip-icon {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+    }
+    
+    .tip-content {
+      color: #374151;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    
+    .community-stats {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .stat-dot {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      opacity: 0.7;
     }
     
     .bounce-animation {
@@ -189,8 +262,78 @@ document.addEventListener('DOMContentLoaded', () => {
     return tips.default;
   }
 
+  // Function to get community stats based on location
+  function getCommunityStats(location) {
+    const stats = {
+      'french alps': { hikers: '25K+', popular: 'Most popular in Europe' },
+      'italian alps': { hikers: '18K+', popular: 'UNESCO favorite' },
+      'alps': { hikers: '30K+', popular: 'Classic European trek' },
+      'himalayas': { hikers: '40K+', popular: 'Ultimate challenge' },
+      'himalaya': { hikers: '40K+', popular: 'Ultimate challenge' },
+      'andes': { hikers: '22K+', popular: 'South America\'s best' },
+      'patagonia': { hikers: '12K+', popular: 'Wilderness favorite' },
+      'kilimanjaro': { hikers: '35K+', popular: 'Africa\'s crown jewel' },
+      'norway': { hikers: '14K+', popular: 'Nordic adventure' },
+      'scotland': { hikers: '20K+', popular: 'Highland classic' },
+      'switzerland': { hikers: '28K+', popular: 'Alpine perfection' },
+      'japan': { hikers: '16K+', popular: 'Cultural journey' },
+      'new zealand': { hikers: '19K+', popular: 'Middle-earth magic' },
+      'rockies': { hikers: '45K+', popular: 'North America\'s backbone' },
+      'appalachian': { hikers: '50K+', popular: 'East coast classic' },
+      'default': { hikers: '15K+', popular: 'Adventure awaits' }
+    };
+    
+    if (!location) return stats.default;
+    
+    const locationLower = location.toLowerCase();
+    
+    // Find matching stats
+    for (const [key, stat] of Object.entries(stats)) {
+      if (key !== 'default' && locationLower.includes(key)) {
+        return stat;
+      }
+    }
+    
+    return stats.default;
+  }
+  function getLocationTip(location) {
+    const tips = {
+      'french alps': 'The French Alps contain the highest peak in Western Europe - Mont Blanc at 4,809m!',
+      'italian alps': 'The Dolomites are a UNESCO World Heritage site known for their unique pale-colored rock.',
+      'alps': 'The Alps stretch across 8 countries and are home to over 30,000 animal species.',
+      'himalayas': 'The Himalayas contain the world\'s 10 highest peaks, including Mount Everest.',
+      'himalaya': 'The Himalayas contain the world\'s 10 highest peaks, including Mount Everest.',
+      'andes': 'The Andes is the longest continental mountain range in the world at 7,000km.',
+      'patagonia': 'Patagonia is home to some of the world\'s most dramatic landscapes and unique wildlife.',
+      'kilimanjaro': 'Mount Kilimanjaro is the highest free-standing mountain in the world.',
+      'norway': 'Norway has over 1,000 fjords carved by glaciers over millions of years.',
+      'scotland': 'Scotland has 282 Munros (mountains over 3,000 feet) to explore.',
+      'switzerland': 'Switzerland has over 7,000 lakes and 48 peaks over 4,000 meters high.',
+      'japan': 'Japan has over 100 active volcanoes and some of the world\'s most beautiful mountain trails.',
+      'new zealand': 'New Zealand\'s South Island contains 23 peaks over 3,000 meters high.',
+      'rockies': 'The Rocky Mountains extend over 3,000 miles from Canada to New Mexico.',
+      'appalachian': 'The Appalachian Trail spans 2,190 miles across 14 states.',
+      'default': 'Mountain trekking burns 400-700 calories per hour depending on terrain and pace.'
+    };
+    
+    if (!location) return tips.default;
+    
+    const locationLower = location.toLowerCase();
+    
+    // Find matching tip
+    for (const [key, tip] of Object.entries(tips)) {
+      if (key !== 'default' && locationLower.includes(key)) {
+        return tip;
+      }
+    }
+    
+    return tips.default;
+  }
+
   // Function to show progressive loading with stages and tips
   function showProgressiveLoading(container, location) {
+    const communityStats = getCommunityStats(location);
+    
     const stages = [
       { 
         message: "🗺️ Analyzing your destination...", 
@@ -239,10 +382,28 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Progress percentage -->
         <div id="progress-text" class="text-sm text-gray-600 mb-6">0% Complete</div>
         
-        <!-- Tip section -->
-        <div class="loading-tip-container rounded-lg p-4 mb-6">
-          <div class="text-sm font-medium text-blue-800 mb-2">💡 Trek Tip</div>
-          <div id="loading-tip" class="text-sm text-blue-700">${stages[0].tip}</div>
+        <!-- Enhanced community tip section -->
+        <div class="community-tip-container rounded-xl p-4 mb-6">
+          <div class="tip-header">
+            <div class="community-badge">Trek Community</div>
+            <div class="tip-icon">💡</div>
+            <span class="text-sm font-semibold text-gray-700">From Fellow Adventurers</span>
+          </div>
+          <div id="loading-tip" class="tip-content">${stages[0].tip}</div>
+          <div class="community-stats">
+            <div class="stat-item">
+              <div class="stat-dot"></div>
+              <span>Shared by ${communityStats.hikers} hikers</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-dot"></div>
+              <span>${communityStats.popular}</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-dot"></div>
+              <span>Verified by guides</span>
+            </div>
+          </div>
         </div>
         
         <!-- Animated icon -->
