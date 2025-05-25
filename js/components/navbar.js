@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu" class="md:hidden hidden bg-gradient-to-b from-green-800 to-green-900 border-t border-green-600 shadow-lg backdrop-blur-sm">
       <div class="container mx-auto px-4 py-4">
-        <ul class="space-y-1">
+        <ul class="space-y-1" id="mobile-menu-list">
           <li>
             <a href="index.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
               <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (mobileMenuToggle && mobileMenu) {
     mobileMenuToggle.addEventListener('click', () => {
-      const nowHidden =           window.toggleMobileMenu();
+      const nowHidden = window.toggleMobileMenu();
       
       // Update hamburger icon
       const icon = mobileMenuToggle.querySelector('svg');
@@ -141,6 +141,56 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
       }
     });
+  }
+
+  // Function to update mobile menu with user info
+  function updateMobileMenuForUser(user) {
+    const mobileMenuList = document.getElementById('mobile-menu-list');
+    
+    // Remove existing user info if present
+    const existingUserInfo = mobileMenuList.querySelector('#mobile-user-info');
+    if (existingUserInfo) {
+      existingUserInfo.remove();
+    }
+    
+    if (user) {
+      // Add user info section to mobile menu
+      const userInfoHtml = `
+        <li id="mobile-user-info" class="border-t border-green-700 pt-3 mt-3">
+          <div class="px-4 py-2">
+            <div class="flex items-center space-x-3 mb-3">
+              <div class="w-10 h-10 bg-white text-green-900 rounded-full flex items-center justify-center font-semibold">
+                ${user.email.charAt(0).toUpperCase()}
+              </div>
+              <div>
+                <p class="text-sm text-green-200">Signed in as:</p>
+                <p class="text-sm font-medium text-white truncate">${user.email}</p>
+              </div>
+            </div>
+            <button id="mobile-sign-out" class="flex items-center w-full py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group text-red-300 hover:text-red-200">
+              <svg class="w-5 h-5 mr-3 text-red-400 group-hover:text-red-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+              </svg>
+              <span class="font-medium group-hover:text-red-200 transition-colors">Sign Out</span>
+            </button>
+          </div>
+        </li>
+      `;
+      
+      mobileMenuList.insertAdjacentHTML('beforeend', userInfoHtml);
+      
+      // Add sign out functionality for mobile
+      document.getElementById('mobile-sign-out')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        signOut(auth)
+          .then(() => {
+            window.location.reload();
+          })
+          .catch(error => {
+            console.error('Sign out error:', error);
+          });
+      });
+    }
   }
   
   // Update auth button based on authentication status
@@ -185,12 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      // Mobile signed-in state
-      mobileAuthButton.innerHTML = `
-        <button id="mobile-user-button" class="w-8 h-8 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors flex items-center justify-center text-sm font-semibold">
-          ${user.email.charAt(0).toUpperCase()}
-        </button>
-      `;
+      // Mobile signed-in state - hide the auth button completely
+      mobileAuthButton.style.display = 'none';
+      
+      // Update mobile menu with user info
+      updateMobileMenuForUser(user);
       
       // Add dropdown functionality for desktop
       const userMenuButton = document.getElementById('user-menu-button');
@@ -214,40 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
-
-      // Add mobile user button functionality
-      const mobileUserButton = document.getElementById('mobile-user-button');
-      if (mobileUserButton) {
-        mobileUserButton.addEventListener('click', () => {
-          // Toggle mobile menu to show user options
-          const mobileMenu = document.getElementById('mobile-menu');
-          const mobileMenuList = mobileMenu.querySelector('ul');
-          
-          // Check if user options are already added
-          if (!mobileMenuList.querySelector('#mobile-sign-out')) {
-            mobileMenuList.innerHTML += `
-              <li class="border-t border-green-700 pt-2 mt-2">
-                <div class="text-sm text-green-200 px-2 py-1">${user.email}</div>
-              </li>
-              <li><button id="mobile-sign-out" class="block w-full text-left py-2 text-red-300 hover:text-red-200 transition-colors">Sign Out</button></li>
-            `;
-            
-            // Add mobile sign out functionality
-            document.getElementById('mobile-sign-out')?.addEventListener('click', (e) => {
-              e.preventDefault();
-              signOut(auth)
-                .then(() => {
-                  window.location.reload();
-                })
-                .catch(error => {
-                  console.error('Sign out error:', error);
-                });
-            });
-          }
-          
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
       
       // Add sign out functionality for desktop
       document.getElementById('sign-out-btn')?.addEventListener('click', (e) => {
@@ -264,6 +279,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // User is signed out
       authButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
       mobileAuthButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
+      mobileAuthButton.style.display = 'block';
+      
+      // Remove user info from mobile menu
+      updateMobileMenuForUser(null);
     }
   });
 });
