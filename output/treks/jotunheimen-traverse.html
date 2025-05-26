@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jotunheimen Traverse Guide 2024 | Norway's Highest Peaks Trek</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -887,7 +892,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1036,7 +1041,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1140,5 +1145,529 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "jotunheimen-traverse",
+        "name": "Jotunheimen Traverse",
+        "slug": "jotunheimen-traverse",
+        "region": "Norway/Scandinavia",
+        "country": "Norway",
+        "summary": "Journey through Norway's highest mountain range, home of the giants, crossing glaciers and summiting Northern Europe's highest peaks.",
+        "duration": {
+            "min_days": 5,
+            "max_days": 7,
+            "recommended_days": 6
+        },
+        "distance_km": 55,
+        "difficulty": "challenging",
+        "max_elevation_m": 2469,
+        "starting_elevation_m": 1400,
+        "airport": "Oslo (OSL)",
+        "nearest_city": "Lom",
+        "coordinates": {
+            "start": {
+                "lat": 61.5736,
+                "lng": 8.3126,
+                "location": "Gjendesheim"
+            },
+            "end": {
+                "lat": 61.6766,
+                "lng": 7.9737,
+                "location": "Turtagrø"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Summer",
+                "months": [
+                    "July",
+                    "August"
+                ],
+                "description": "Snow-free passes, all routes open, midnight sun"
+            },
+            {
+                "name": "Early Autumn",
+                "months": [
+                    "September"
+                ],
+                "description": "Stable weather, autumn colors, fewer people"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Besseggen Ridge",
+                "start_location": "Gjendesheim",
+                "end_location": "Memurubu",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 984,
+                "elevation_end_m": 1008,
+                "elevation_gain_m": 750,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "DNT lodge",
+                    "options": [
+                        "Memurubu Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Famous Besseggen ridge",
+                    "Lake Gjende views",
+                    "Dramatic ridge traverse",
+                    "Classic Norwegian hike"
+                ],
+                "description": "Start with Norway's most famous day hike. Take morning boat to Memurubu, then traverse the spectacular Besseggen ridge with its famous view of green and blue lakes side by side."
+            },
+            {
+                "day": 2,
+                "title": "Memurubu to Gjendebu",
+                "start_location": "Memurubu",
+                "end_location": "Gjendebu",
+                "distance_km": 18,
+                "duration_hours": 7,
+                "elevation_start_m": 1008,
+                "elevation_end_m": 990,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "DNT lodge",
+                    "options": [
+                        "Gjendebu Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Bukkelægret viewpoint",
+                    "Lake Gjende shoreline",
+                    "Remote valleys",
+                    "Historic DNT hut"
+                ],
+                "description": "Beautiful valley hike with option to climb Bukkelægret for panoramic views. Follow the shores of Lake Gjende to reach historic Gjendebu lodge."
+            },
+            {
+                "day": 3,
+                "title": "Gjendebu to Glitterheim",
+                "start_location": "Gjendebu",
+                "end_location": "Glitterheim",
+                "distance_km": 7,
+                "duration_hours": 8,
+                "elevation_start_m": 990,
+                "elevation_end_m": 1553,
+                "elevation_gain_m": 1200,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "DNT lodge",
+                    "options": [
+                        "Glitterheim Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Glittertind summit (2,464m)",
+                    "Norway's second highest peak",
+                    "Glacier crossing",
+                    "360-degree views"
+                ],
+                "description": "Big day summiting Glittertind, Norway's second highest peak. Cross the summit glacier (crampons may be needed) for incredible views of the entire Jotunheimen range."
+            },
+            {
+                "day": 4,
+                "title": "Glitterheim to Spiterstulen",
+                "start_location": "Glitterheim",
+                "end_location": "Spiterstulen",
+                "distance_km": 7,
+                "duration_hours": 3,
+                "elevation_start_m": 1553,
+                "elevation_end_m": 1104,
+                "elevation_gain_m": -449,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "DNT lodge",
+                    "options": [
+                        "Spiterstulen Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Rest day option",
+                    "Visdalen valley",
+                    "Prepare for Galdhøpiggen",
+                    "Mountain environment"
+                ],
+                "description": "Short valley walk to Spiterstulen. Rest and prepare for tomorrow's summit attempt, or use extra time for side hikes in the area."
+            },
+            {
+                "day": 5,
+                "title": "Galdhøpiggen Summit",
+                "start_location": "Spiterstulen",
+                "end_location": "Leirvassbu",
+                "distance_km": 12,
+                "duration_hours": 9,
+                "elevation_start_m": 1104,
+                "elevation_end_m": 1400,
+                "elevation_gain_m": 1365,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "DNT lodge",
+                    "options": [
+                        "Leirvassbu Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Galdhøpiggen summit (2,469m)",
+                    "Northern Europe's highest peak",
+                    "Glacier traverse",
+                    "Achievement of highest point"
+                ],
+                "description": "Summit Northern Europe's highest peak! Guided glacier crossing usually required. Incredible achievement and views before descending to Leirvassbu."
+            },
+            {
+                "day": 6,
+                "title": "Leirvassbu to Turtagrø",
+                "start_location": "Leirvassbu",
+                "end_location": "Turtagrø",
+                "distance_km": 14,
+                "duration_hours": 5,
+                "elevation_start_m": 1400,
+                "elevation_end_m": 884,
+                "elevation_gain_m": -516,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Turtagrø Hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Descent through valleys",
+                    "Hurrungane peaks views",
+                    "Complete traverse",
+                    "Historic climbers' hotel"
+                ],
+                "description": "Final descent through beautiful valleys to Turtagrø, historic base for Norwegian mountaineering. Celebrate completing the traverse of Norway's mightiest mountains."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Mountain boots",
+                    "description": "Sturdy, waterproof, crampon compatible",
+                    "rental_available": true
+                },
+                {
+                    "item": "Crampons",
+                    "description": "For glacier crossings",
+                    "rental_available": true
+                },
+                {
+                    "item": "Ice axe",
+                    "description": "For glacier safety",
+                    "rental_available": true
+                },
+                {
+                    "item": "Harness and rope",
+                    "description": "If unguided on glaciers",
+                    "rental_available": true
+                },
+                {
+                    "item": "4-season clothing",
+                    "description": "Can snow anytime",
+                    "rental_available": false
+                },
+                {
+                    "item": "Waterproofs",
+                    "description": "High quality essential",
+                    "rental_available": true
+                },
+                {
+                    "item": "Map and compass",
+                    "description": "GPS backup recommended",
+                    "rental_available": false
+                },
+                {
+                    "item": "Warm sleeping bag",
+                    "description": "If camping option",
+                    "rental_available": true
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Trekking poles",
+                    "description": "Very helpful on terrain",
+                    "rental_available": true
+                },
+                {
+                    "item": "Gaiters",
+                    "description": "For snow and streams",
+                    "rental_available": false
+                },
+                {
+                    "item": "Glacier glasses",
+                    "description": "High UV protection",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "None required",
+                "cost_usd": 0,
+                "notes": "DNT membership recommended for lodge discounts"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 0,
+            "guide_daily_usd": 250,
+            "accommodation_daily_usd": 70,
+            "meals_daily_usd": 60,
+            "transportation_usd": 100,
+            "glacier_guide_usd": 150,
+            "total_budget_range_usd": {
+                "min": 600,
+                "max": 1800
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Norwegian"
+            ],
+            "primary_religion": "Lutheran/Secular",
+            "languages": [
+                "Norwegian",
+                "English widely spoken"
+            ],
+            "customs_etiquette": [
+                "DNT hut etiquette important",
+                "Remove boots at entrance",
+                "Help with communal tasks",
+                "Respect quiet hours",
+                "Leave huts cleaner than found"
+            ],
+            "local_foods": [
+                {
+                    "name": "Fårikål",
+                    "description": "Lamb and cabbage stew"
+                },
+                {
+                    "name": "Rømmegrøt",
+                    "description": "Sour cream porridge"
+                },
+                {
+                    "name": "Lefse",
+                    "description": "Traditional flatbread"
+                },
+                {
+                    "name": "Brunost",
+                    "description": "Brown cheese"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "low",
+                "notes": "Maximum 2,469m rarely causes issues"
+            },
+            "main_concerns": {
+                "glaciers": {
+                    "risk_level": "high",
+                    "description": "Crevasse danger",
+                    "prevention": [
+                        "Use certified guide",
+                        "Proper equipment",
+                        "Rope up always",
+                        "Know rescue techniques"
+                    ]
+                },
+                "weather": {
+                    "risk_level": "high",
+                    "description": "Rapid changes, whiteouts",
+                    "prevention": [
+                        "Check forecasts",
+                        "Start early",
+                        "Know escape routes",
+                        "Carry emergency gear"
+                    ]
+                },
+                "navigation": {
+                    "risk_level": "moderate",
+                    "description": "Fog common",
+                    "prevention": [
+                        "GPS essential",
+                        "Map and compass backup",
+                        "Stay on marked routes",
+                        "Consider guide"
+                    ]
+                }
+            },
+            "evacuation": {
+                "method": "Helicopter",
+                "cost_usd": "Free with insurance",
+                "insurance_required": true
+            }
+        },
+        "weather_patterns": {
+            "summer": {
+                "months": [
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "2 to 10",
+                "precipitation": "Frequent",
+                "snow_level": "Above 2000m possible",
+                "notes": "Most stable period"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Bus",
+                    "from": "Oslo",
+                    "to": "Gjendesheim",
+                    "duration": "5 hours",
+                    "cost_usd": 60,
+                    "frequency": "2-3 daily summer"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Bus",
+                    "from": "Turtagrø",
+                    "to": "Oslo",
+                    "duration": "6 hours",
+                    "cost_usd": 70,
+                    "frequency": "Daily"
+                }
+            ]
+        },
+        "accommodation": {
+            "type": "DNT mountain lodges",
+            "description": "Norwegian Trekking Association huts",
+            "amenities": [
+                "Staffed lodges with meals",
+                "Self-service huts available",
+                "Bedding provided",
+                "Hot meals at staffed lodges",
+                "Sauna at some lodges",
+                "Drying rooms"
+            ],
+            "booking": "Recommended for staffed lodges",
+            "cost_per_night_usd": {
+                "dnt_member": "35-50",
+                "non_member": "60-80",
+                "includes": "Bed and breakfast"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Excellent fitness for long days",
+            "technical_skills": "Glacier travel experience helpful",
+            "altitude_challenge": "Minimal",
+            "trail_conditions": "Rocky, glaciated sections",
+            "navigation_challenge": "Moderate to difficult",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 4600,
+            "total_elevation_loss": 4100
+        },
+        "alternative_routes": [
+            {
+                "name": "Hut to Hut Classic",
+                "variation": "Without summit days",
+                "fewer_days": 2,
+                "highlights": [
+                    "Easier version",
+                    "Skip glaciers",
+                    "Still spectacular"
+                ]
+            },
+            {
+                "name": "Extended Traverse",
+                "variation": "Add Hurrungane",
+                "extra_days": 3,
+                "highlights": [
+                    "Technical peaks",
+                    "Alpine climbing",
+                    "Full experience"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Besseggen Ridge",
+                "best_time": "Morning",
+                "subjects": [
+                    "Two-colored lakes",
+                    "Ridge traverse",
+                    "Classic view"
+                ]
+            },
+            {
+                "location": "Galdhøpiggen summit",
+                "best_time": "Clear days",
+                "subjects": [
+                    "Highest point",
+                    "Glacier views",
+                    "Summit achievements"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Do I need glacier experience?",
+                "answer": "For independent travel, yes. Most people hire guides for Galdhøpiggen (about $150). Glittertind's glacier is easier but still requires caution."
+            },
+            {
+                "question": "What's DNT membership?",
+                "answer": "Norwegian Trekking Association membership ($90/year) gives huge discounts on huts and priority booking. Worth it for trips over 5 days."
+            },
+            {
+                "question": "Can I do this in winter?",
+                "answer": "Yes, but it becomes a serious ski mountaineering expedition requiring extensive experience, avalanche training, and winter equipment."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 87,
+        "seo": {
+            "meta_title": "Jotunheimen Traverse Guide 2024 | Norway's Highest Peaks Trek",
+            "meta_description": "Complete guide to hiking Jotunheimen including Galdhøpiggen and Glittertind. 6-day traverse through Norway's highest mountains with glaciers and epic views.",
+            "keywords": [
+                "jotunheimen traverse",
+                "galdhøpiggen hike",
+                "norway hiking",
+                "glittertind",
+                "besseggen ridge"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

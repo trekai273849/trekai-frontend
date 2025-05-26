@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huayhuash Circuit Trek Guide 2024 | Peru's Ultimate 10-Day Alpine Trek</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -971,7 +976,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1137,7 +1142,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1217,5 +1222,570 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "huayhuash-circuit",
+        "name": "Huayhuash Circuit",
+        "slug": "huayhuash-circuit",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "One of the world's most spectacular high-altitude treks, circling the dramatic Huayhuash range with pristine alpine lakes, glaciers, and multiple 5000m passes.",
+        "duration": {
+            "min_days": 8,
+            "max_days": 12,
+            "recommended_days": 10
+        },
+        "distance_km": 130,
+        "difficulty": "challenging",
+        "max_elevation_m": 5000,
+        "starting_elevation_m": 3750,
+        "airport": "Lima (LIM)",
+        "nearest_city": "Huaraz",
+        "coordinates": {
+            "start": {
+                "lat": -10.2953,
+                "lng": -76.9053,
+                "location": "Pocpa/Cuartelwain"
+            },
+            "end": {
+                "lat": -10.2953,
+                "lng": -76.9053,
+                "location": "Llamac"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Dry Season",
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "description": "Stable weather, clear skies, cold nights"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Cuartelwain to Laguna Mitucocha",
+                "start_location": "Cuartelwain",
+                "end_location": "Laguna Mitucocha",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 4170,
+                "elevation_end_m": 4230,
+                "elevation_gain_m": 60,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Mitucocha campsite"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "First mountain views",
+                    "Acclimatization day",
+                    "Laguna Mitucocha",
+                    "Condor sightings possible"
+                ],
+                "description": "Drive from Huaraz to Cuartelwain (4-5 hours). Begin trek with gradual ascent to beautiful Laguna Mitucocha, good acclimatization start."
+            },
+            {
+                "day": 2,
+                "title": "Mitucocha to Laguna Carhuacocha",
+                "start_location": "Laguna Mitucocha",
+                "end_location": "Laguna Carhuacocha",
+                "distance_km": 12,
+                "duration_hours": 7,
+                "elevation_start_m": 4230,
+                "elevation_end_m": 4138,
+                "elevation_gain_m": 650,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Carhuacocha campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Carhuac Pass (4,650m)",
+                    "Laguna Carhuacocha views",
+                    "Siula Grande",
+                    "Yerupaja views"
+                ],
+                "description": "Cross first high pass with stunning views of Siula Grande (made famous by 'Touching the Void'). Descend to spectacular Carhuacocha lake."
+            },
+            {
+                "day": 3,
+                "title": "Carhuacocha to Huayhuash",
+                "start_location": "Laguna Carhuacocha",
+                "end_location": "Huayhuash",
+                "distance_km": 10,
+                "duration_hours": 6,
+                "elevation_start_m": 4138,
+                "elevation_end_m": 4330,
+                "elevation_gain_m": 600,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Huayhuash campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Siula Pass (4,830m)",
+                    "Triple lakes viewpoint",
+                    "360-degree mountain views",
+                    "Alpine environment"
+                ],
+                "description": "Another spectacular pass crossing with views of three lakes. Camp near traditional stone corrals with panoramic mountain views."
+            },
+            {
+                "day": 4,
+                "title": "Huayhuash to Viconga",
+                "start_location": "Huayhuash",
+                "end_location": "Viconga",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 4330,
+                "elevation_end_m": 4407,
+                "elevation_gain_m": 470,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Viconga campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Portachuelo Pass (4,750m)",
+                    "Hot springs option",
+                    "Viconga lake",
+                    "Remote valleys"
+                ],
+                "description": "Cross Portachuelo de Huayhuash pass. Optional side trip to hot springs. Camp by turquoise Viconga lake beneath towering peaks."
+            },
+            {
+                "day": 5,
+                "title": "Viconga to Cutatambo",
+                "start_location": "Viconga",
+                "end_location": "Cutatambo",
+                "distance_km": 16,
+                "duration_hours": 8,
+                "elevation_start_m": 4407,
+                "elevation_end_m": 4250,
+                "elevation_gain_m": 500,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Cutatambo campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Cuyoc Pass (5,000m)",
+                    "Highest point of trek",
+                    "Incredible 360° views",
+                    "Sense of achievement"
+                ],
+                "description": "The big day! Climb to Cuyoc Pass at 5,000m - the highest point. Breathtaking panoramic views before long descent to camp."
+            },
+            {
+                "day": 6,
+                "title": "Rest Day or Side Trips",
+                "start_location": "Cutatambo",
+                "end_location": "Cutatambo",
+                "distance_km": 0,
+                "duration_hours": 0,
+                "elevation_start_m": 4250,
+                "elevation_end_m": 4250,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Same campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Rest and recovery",
+                    "Optional glacier hikes",
+                    "Photography",
+                    "Laundry opportunity"
+                ],
+                "description": "Well-deserved rest day. Options for short hikes to viewpoints or glacial lakes. Good for recovery before final passes."
+            },
+            {
+                "day": 7,
+                "title": "Cutatambo to Huayllapa",
+                "start_location": "Cutatambo",
+                "end_location": "Huayllapa",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 4250,
+                "elevation_end_m": 3600,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping/village",
+                    "options": [
+                        "Huayllapa village camp"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Punta Llapa pass (4,850m)",
+                    "Descent to village",
+                    "Local culture",
+                    "Resupply opportunity"
+                ],
+                "description": "Final high pass before descending to Huayllapa village. Opportunity to interact with locals and resupply basics."
+            },
+            {
+                "day": 8,
+                "title": "Huayllapa to Laguna Jahuacocha",
+                "start_location": "Huayllapa",
+                "end_location": "Laguna Jahuacocha",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 3600,
+                "elevation_end_m": 4066,
+                "elevation_gain_m": 466,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Jahuacocha campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Laguna Jahuacocha",
+                    "Yerupaja reflection",
+                    "Jirishanca views",
+                    "Picture-perfect campsite"
+                ],
+                "description": "Climb to arguably the most beautiful lake of the circuit. Perfect reflections of Yerupaja and Jirishanca. Popular campsite."
+            },
+            {
+                "day": 9,
+                "title": "Jahuacocha to Pocpa",
+                "start_location": "Laguna Jahuacocha",
+                "end_location": "Pocpa",
+                "distance_km": 16,
+                "duration_hours": 7,
+                "elevation_start_m": 4066,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Pocpa campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Pampa Llamac Pass (4,300m)",
+                    "Final pass crossing",
+                    "Valley descent",
+                    "Circuit nearly complete"
+                ],
+                "description": "Cross the final pass of the circuit. Gentle descent through valleys back towards civilization. Last night camping."
+            },
+            {
+                "day": 10,
+                "title": "Pocpa to Llamac, return Huaraz",
+                "start_location": "Pocpa",
+                "end_location": "Huaraz",
+                "distance_km": 8,
+                "duration_hours": 3,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 3750,
+                "elevation_gain_m": -100,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Return to Huaraz"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Trek completion",
+                    "Return to Llamac",
+                    "Drive to Huaraz",
+                    "Celebration"
+                ],
+                "description": "Final easy walk to Llamac village. Meet transport for 4-hour drive back to Huaraz. Celebrate completing one of the world's best treks!"
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "4-season tent",
+                    "description": "Wind resistant, snow capable",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-20°C rated essential",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping pad",
+                    "description": "Good insulation from ground",
+                    "rental_available": true
+                },
+                {
+                    "item": "Mountain boots",
+                    "description": "Sturdy, waterproof, broken in",
+                    "rental_available": false
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Essential for cold nights",
+                    "rental_available": true
+                },
+                {
+                    "item": "Hardshell jacket",
+                    "description": "Wind and waterproof",
+                    "rental_available": true
+                },
+                {
+                    "item": "Thermal layers",
+                    "description": "Multiple sets",
+                    "rental_available": false
+                },
+                {
+                    "item": "Gloves and hat",
+                    "description": "Warm options essential",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "High SPF, glacier glasses",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Essential for passes",
+                    "rental_available": true
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "For snow/mud",
+                    "rental_available": false
+                },
+                {
+                    "item": "Down pants",
+                    "description": "For extreme cold",
+                    "rental_available": true
+                },
+                {
+                    "item": "Balaclava",
+                    "description": "Face protection",
+                    "rental_available": false
+                },
+                {
+                    "item": "Portable charger",
+                    "description": "Solar ideal",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "Huayhuash Circuit Fee",
+                "cost_usd": 65,
+                "cost_pen": 210,
+                "where_to_obtain": "Paid at checkpoints en route",
+                "validity": "Entire circuit",
+                "notes": "Covers multiple communities"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 65,
+            "guide_daily_usd": 40,
+            "cook_daily_usd": 30,
+            "arriero_daily_usd": 20,
+            "pack_animal_daily_usd": 15,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 60,
+            "total_budget_range_usd": {
+                "min": 400,
+                "max": 1200
+            }
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "very high",
+                "prevention": [
+                    "Mandatory acclimatization in Huaraz",
+                    "Consider doing shorter trek first",
+                    "Ascend very slowly",
+                    "Diamox recommended",
+                    "Emergency descent plan"
+                ],
+                "critical_points": [
+                    "All passes above 4,800m",
+                    "Especially Cuyoc Pass"
+                ]
+            },
+            "medical_facilities": [
+                {
+                    "location": "Trail",
+                    "type": "None - remote area"
+                },
+                {
+                    "location": "Huayllapa",
+                    "type": "Very basic"
+                },
+                {
+                    "location": "Huaraz",
+                    "type": "Good hospital"
+                }
+            ],
+            "evacuation": {
+                "method": "Horse to road, then vehicle",
+                "cost_usd": "2000-5000",
+                "insurance_required": true,
+                "response_time": "1-2 days"
+            }
+        },
+        "weather_patterns": {
+            "dry_season": {
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "-10 to 0",
+                "precipitation": "Minimal",
+                "notes": "Can snow at passes anytime"
+            },
+            "wet_season": {
+                "months": [
+                    "October",
+                    "November",
+                    "December",
+                    "January",
+                    "February",
+                    "March",
+                    "April"
+                ],
+                "day_temp_c": "8 to 15",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Frequent",
+                "notes": "Not recommended, dangerous passes"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Excellent fitness required",
+            "technical_skills": "Basic only but stamina crucial",
+            "altitude_challenge": "Extreme - multiple days above 4,500m",
+            "trail_conditions": "Remote, rugged, weather exposed",
+            "daily_hiking_hours": "6-8 hours",
+            "total_elevation_gain": 7000,
+            "total_elevation_loss": 7000
+        },
+        "alternative_routes": [
+            {
+                "name": "Short Circuit",
+                "variation": "8-day version",
+                "fewer_days": 2,
+                "highlights": [
+                    "Skip some valleys",
+                    "Hit main highlights",
+                    "Less demanding"
+                ]
+            },
+            {
+                "name": "Alpine Circuit",
+                "variation": "Technical version",
+                "extra_days": 2,
+                "highlights": [
+                    "Glacier travel",
+                    "Technical passes",
+                    "Extreme adventure"
+                ]
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 86,
+        "seo": {
+            "meta_title": "Huayhuash Circuit Trek Guide 2024 | Peru's Ultimate 10-Day Alpine Trek",
+            "meta_description": "Complete guide to Peru's Huayhuash Circuit. Detailed 10-day itinerary through pristine wilderness, costs, gear list, and high-altitude trekking tips.",
+            "keywords": [
+                "huayhuash circuit",
+                "peru trekking",
+                "high altitude trek",
+                "huaraz trekking",
+                "cordillera huayhuash"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

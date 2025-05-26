@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upper Mustang Trek Guide 2024 | Nepal's Forbidden Kingdom</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -1013,7 +1018,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1153,7 +1158,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1257,5 +1262,773 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "upper-mustang-trek",
+        "name": "Upper Mustang Trek",
+        "slug": "upper-mustang-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "Journey to the ancient forbidden kingdom of Lo, a hidden Tibetan culture preserved behind the Himalayas with desert landscapes, cave monasteries, and medieval walled cities.",
+        "duration": {
+            "min_days": 10,
+            "max_days": 14,
+            "recommended_days": 12
+        },
+        "distance_km": 160,
+        "difficulty": "moderate",
+        "max_elevation_m": 4230,
+        "starting_elevation_m": 2720,
+        "airport": "Jomsom (JMO) or Pokhara (PKR)",
+        "nearest_city": "Pokhara",
+        "coordinates": {
+            "start": {
+                "lat": 28.7816,
+                "lng": 83.7274,
+                "location": "Jomsom"
+            },
+            "end": {
+                "lat": 29.1778,
+                "lng": 83.9542,
+                "location": "Lo Manthang"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Spring",
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "description": "Clear skies, moderate temperatures, some wind"
+            },
+            {
+                "name": "Autumn",
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "description": "Best weather, clear mountain views, harvest season"
+            },
+            {
+                "name": "Monsoon",
+                "months": [
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "description": "Possible due to rain shadow, but some rain occurs"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Fly Pokhara to Jomsom, Trek to Kagbeni",
+                "start_location": "Pokhara",
+                "end_location": "Kagbeni",
+                "distance_km": 11,
+                "duration_hours": 3,
+                "elevation_start_m": 2720,
+                "elevation_end_m": 2858,
+                "elevation_gain_m": 138,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Red House Lodge",
+                        "Hotel YacDonalds",
+                        "Nilgiri View"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Mountain flight",
+                    "Kali Gandaki valley",
+                    "Medieval Kagbeni village",
+                    "Gateway to Mustang"
+                ],
+                "description": "Spectacular 20-minute flight between Dhaulagiri and Annapurna. Walk along the Kali Gandaki riverbed to ancient Kagbeni, the gateway to Upper Mustang."
+            },
+            {
+                "day": 2,
+                "title": "Kagbeni to Chele",
+                "start_location": "Kagbeni",
+                "end_location": "Chele",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 2858,
+                "elevation_end_m": 3050,
+                "elevation_gain_m": 350,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Himalaya Lodge",
+                        "Local guesthouses"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Enter restricted area",
+                    "Tangbe village",
+                    "Desert landscapes begin",
+                    "Ancient chortens"
+                ],
+                "description": "Check permits and enter Upper Mustang. The landscape transforms into high desert with red cliffs and eroded canyons."
+            },
+            {
+                "day": 3,
+                "title": "Chele to Syangboche",
+                "start_location": "Chele",
+                "end_location": "Syangboche",
+                "distance_km": 16,
+                "duration_hours": 7,
+                "elevation_start_m": 3050,
+                "elevation_end_m": 3475,
+                "elevation_gain_m": 850,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Local lodges",
+                        "Basic teahouses"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Multiple pass crossings",
+                    "Ramchung cave monastery",
+                    "Painted cliffs",
+                    "Remote valleys"
+                ],
+                "description": "Cross several passes with stunning views. Optional visit to Ramchung cave monastery with ancient Buddhist art."
+            },
+            {
+                "day": 4,
+                "title": "Syangboche to Ghami",
+                "start_location": "Syangboche",
+                "end_location": "Ghami",
+                "distance_km": 13,
+                "duration_hours": 6,
+                "elevation_start_m": 3475,
+                "elevation_end_m": 3520,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Dhakmar Lodge",
+                        "Local guesthouses"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Nyi La pass (4,010m)",
+                    "Ghami village",
+                    "Longest mani wall",
+                    "Red cliffs of Dhakmar"
+                ],
+                "description": "Pass through Dhakmar with its dramatic red cliffs. Ghami has one of the longest mani walls in Nepal."
+            },
+            {
+                "day": 5,
+                "title": "Ghami to Charang",
+                "start_location": "Ghami",
+                "end_location": "Charang",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3520,
+                "elevation_end_m": 3500,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Charang Lodge",
+                        "Local homestays"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Tsarang monastery",
+                    "Medieval fortress",
+                    "Traditional architecture",
+                    "Approaching Lo Manthang"
+                ],
+                "description": "Visit the impressive Tsarang monastery and fortress. The architecture becomes more Tibetan as you near the capital."
+            },
+            {
+                "day": 6,
+                "title": "Charang to Lo Manthang",
+                "start_location": "Charang",
+                "end_location": "Lo Manthang",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3500,
+                "elevation_end_m": 3840,
+                "elevation_gain_m": 340,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Lotus Holiday Inn",
+                        "Royal Mustang Resort",
+                        "Local lodges"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Lo La pass (3,950m)",
+                    "First view of Lo Manthang",
+                    "Walled city entrance",
+                    "Medieval atmosphere"
+                ],
+                "description": "Exciting arrival at the walled city of Lo Manthang, capital of the former Kingdom of Lo. Explore the medieval streets."
+            },
+            {
+                "day": 7,
+                "title": "Explore Lo Manthang",
+                "start_location": "Lo Manthang",
+                "end_location": "Lo Manthang",
+                "distance_km": 0,
+                "duration_hours": 0,
+                "elevation_start_m": 3840,
+                "elevation_end_m": 3840,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Royal palace",
+                    "Three main monasteries",
+                    "Amchi museum",
+                    "Local culture"
+                ],
+                "description": "Full day exploring Lo Manthang's monasteries, palace, and unique culture. Visit Jampa, Thubchen, and Chodey monasteries."
+            },
+            {
+                "day": 8,
+                "title": "Day Trip to Chhoser",
+                "start_location": "Lo Manthang",
+                "end_location": "Lo Manthang",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 3840,
+                "elevation_end_m": 3840,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Chhoser cave monastery",
+                    "Ancient sky caves",
+                    "Garphu monastery",
+                    "Remote landscapes"
+                ],
+                "description": "Optional day trip to Chhoser village with its remarkable cave monastery and ancient sky caves carved into cliffs."
+            },
+            {
+                "day": 9,
+                "title": "Lo Manthang to Yara",
+                "start_location": "Lo Manthang",
+                "end_location": "Yara",
+                "distance_km": 18,
+                "duration_hours": 7,
+                "elevation_start_m": 3840,
+                "elevation_end_m": 3650,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "basic lodge",
+                    "options": [
+                        "Local homestay",
+                        "Basic lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Different return route",
+                    "Remote villages",
+                    "Spectacular erosion",
+                    "Authentic experience"
+                ],
+                "description": "Take alternative route back through remote areas. Yara is a small village with unique geological formations."
+            },
+            {
+                "day": 10,
+                "title": "Yara to Tangge",
+                "start_location": "Yara",
+                "end_location": "Tangge",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 3650,
+                "elevation_end_m": 3240,
+                "elevation_gain_m": 200,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "basic lodge",
+                    "options": [
+                        "Village homestay",
+                        "Basic lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Remote trail",
+                    "Desert canyon",
+                    "Traditional village",
+                    "Few tourists"
+                ],
+                "description": "Continue through remote terrain to Tangge, one of the most isolated villages in Mustang."
+            },
+            {
+                "day": 11,
+                "title": "Tangge to Chhusang",
+                "start_location": "Tangge",
+                "end_location": "Chhusang",
+                "distance_km": 16,
+                "duration_hours": 7,
+                "elevation_start_m": 3240,
+                "elevation_end_m": 2980,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Hotel Nilgiri",
+                        "Local lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Pa pass (4,200m)",
+                    "Rejoin main trail",
+                    "Spectacular views",
+                    "Nearly complete"
+                ],
+                "description": "Cross high pass before descending to rejoin the main trail at Chhusang. Long but rewarding day."
+            },
+            {
+                "day": 12,
+                "title": "Chhusang to Jomsom",
+                "start_location": "Chhusang",
+                "end_location": "Jomsom",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 2980,
+                "elevation_end_m": 2720,
+                "elevation_gain_m": -260,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Om's Home",
+                        "Hotel Majesty",
+                        "Marco Polo"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Return to Kagbeni",
+                    "Complete circuit",
+                    "Jomsom facilities",
+                    "Trek completion"
+                ],
+                "description": "Final walk back through Kagbeni to Jomsom. Celebrate completing the journey to the forbidden kingdom."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Wind-proof jacket",
+                    "description": "Strong winds common",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Intense high-altitude sun",
+                    "rental_available": false
+                },
+                {
+                    "item": "Dust mask/buff",
+                    "description": "For windy, dusty conditions",
+                    "rental_available": false
+                },
+                {
+                    "item": "Warm layers",
+                    "description": "Cold nights despite lower altitude",
+                    "rental_available": false
+                },
+                {
+                    "item": "Good hiking boots",
+                    "description": "Rocky, dusty terrain",
+                    "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "20-30L sufficient",
+                    "rental_available": true
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Lip balm with SPF",
+                    "description": "Very dry conditions",
+                    "rental_available": false
+                },
+                {
+                    "item": "Moisturizer",
+                    "description": "Combat dry air",
+                    "rental_available": false
+                },
+                {
+                    "item": "Camera gear",
+                    "description": "Unique landscapes",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "Restricted Area Permit",
+                "cost_usd": 500,
+                "cost_npr": 50000,
+                "where_to_obtain": "Only through registered agency in Kathmandu",
+                "validity": "10 days",
+                "notes": "Additional days $50/day"
+            },
+            {
+                "name": "Annapurna Conservation Area Permit",
+                "cost_usd": 30,
+                "cost_npr": 3000,
+                "where_to_obtain": "Kathmandu or Pokhara",
+                "validity": "Duration of trek"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 530,
+            "guide_daily_usd": 30,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 15,
+            "meals_daily_usd": 25,
+            "transportation_usd": 300,
+            "total_budget_range_usd": {
+                "min": 1500,
+                "max": 3000
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Loba (Tibetan origin)"
+            ],
+            "primary_religion": "Tibetan Buddhism",
+            "languages": [
+                "Loba",
+                "Tibetan",
+                "Nepali"
+            ],
+            "customs_etiquette": [
+                "Photography restrictions in monasteries",
+                "Respect the former king if met",
+                "Conservative dress required",
+                "Remove shoes when entering homes",
+                "Walk clockwise around religious sites",
+                "Don't touch religious artifacts"
+            ],
+            "local_foods": [
+                {
+                    "name": "Tsampa",
+                    "description": "Roasted barley flour staple"
+                },
+                {
+                    "name": "Butter tea",
+                    "description": "Traditional Tibetan tea"
+                },
+                {
+                    "name": "Tingmo",
+                    "description": "Steamed Tibetan bread"
+                },
+                {
+                    "name": "Local apple brandy",
+                    "description": "Mustang specialty"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Tiji Festival",
+                    "when": "May",
+                    "description": "Three-day festival in Lo Manthang"
+                },
+                {
+                    "name": "Yartung Festival",
+                    "when": "August",
+                    "description": "Horse racing and celebrations"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent built in",
+                    "Maximum altitude only 4,230m",
+                    "Stay hydrated in dry climate",
+                    "Rest days in Lo Manthang"
+                ]
+            },
+            "main_concerns": {
+                "wind_and_dust": {
+                    "risk_level": "high",
+                    "description": "Strong afternoon winds",
+                    "prevention": [
+                        "Start trekking early",
+                        "Protect eyes and face",
+                        "Stay hydrated",
+                        "Use lip balm"
+                    ]
+                },
+                "dehydration": {
+                    "risk_level": "high",
+                    "description": "Very dry climate",
+                    "prevention": [
+                        "Drink 4-5 liters daily",
+                        "Avoid alcohol",
+                        "Use moisturizer",
+                        "Monitor urine color"
+                    ]
+                }
+            },
+            "medical_facilities": [
+                {
+                    "location": "Jomsom",
+                    "type": "Basic health post"
+                },
+                {
+                    "location": "Lo Manthang",
+                    "type": "Amchi traditional medicine"
+                }
+            ]
+        },
+        "weather_patterns": {
+            "spring": {
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "wind": "Strong afternoon winds",
+                "notes": "Can be dusty"
+            },
+            "monsoon": {
+                "months": [
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Some rain (rain shadow)",
+                "wind": "Less wind",
+                "notes": "Possible to trek"
+            },
+            "autumn": {
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Very low",
+                "wind": "Moderate",
+                "notes": "Best season"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Flight",
+                    "from": "Pokhara",
+                    "to": "Jomsom",
+                    "duration": "20 minutes",
+                    "cost_usd": 120,
+                    "frequency": "Morning flights only"
+                },
+                {
+                    "method": "Drive + Trek",
+                    "from": "Pokhara",
+                    "to": "Jomsom",
+                    "duration": "2 days",
+                    "cost_usd": 50,
+                    "notes": "Via Beni and Ghasa"
+                }
+            ],
+            "from_end": "Same options in reverse"
+        },
+        "accommodation": {
+            "type": "Basic lodges",
+            "description": "Simple but adequate",
+            "amenities": [
+                "Basic rooms",
+                "Shared bathrooms mostly",
+                "Solar hot water (limited)",
+                "Charging available",
+                "Basic meals",
+                "No WiFi in most places"
+            ],
+            "booking": "Not required but limited options",
+            "cost_per_night_usd": "10-20"
+        },
+        "difficulty_details": {
+            "physical_demands": "Moderate fitness sufficient",
+            "technical_skills": "None required",
+            "altitude_challenge": "Moderate",
+            "trail_conditions": "Dusty, rocky, well-defined",
+            "daily_hiking_hours": "5-7 hours",
+            "total_elevation_gain": 5000,
+            "total_elevation_loss": 5000
+        },
+        "alternative_routes": [
+            {
+                "name": "Eastern Mustang",
+                "variation": "Via Luri Gompa",
+                "extra_days": 2,
+                "highlights": [
+                    "Remote monasteries",
+                    "Fewer tourists",
+                    "Challenging terrain"
+                ]
+            },
+            {
+                "name": "Teri La Pass",
+                "variation": "High route option",
+                "extra_days": 1,
+                "highlights": [
+                    "5,595m pass",
+                    "Connects to Nar Phu",
+                    "Technical"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Lo Manthang walls",
+                "best_time": "Sunrise/sunset",
+                "subjects": [
+                    "Medieval architecture",
+                    "Mountain backdrop",
+                    "Daily life"
+                ]
+            },
+            {
+                "location": "Red cliffs of Dhakmar",
+                "best_time": "Late afternoon",
+                "subjects": [
+                    "Eroded landscapes",
+                    "Color contrasts",
+                    "Geological formations"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Why is the permit so expensive?",
+                "answer": "Upper Mustang was closed until 1992 and remains restricted to preserve its unique Tibetan culture. The high permit fee limits visitors and funds conservation."
+            },
+            {
+                "question": "Can I trek independently?",
+                "answer": "No, you must be with a registered guide due to restricted area regulations. This helps preserve the culture and ensures proper permits."
+            },
+            {
+                "question": "Is it worth the cost?",
+                "answer": "For those interested in Tibetan culture, unique landscapes, and off-beaten paths, absolutely. It's unlike anywhere else in Nepal."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 82,
+        "seo": {
+            "meta_title": "Upper Mustang Trek Guide 2024 | Nepal's Forbidden Kingdom",
+            "meta_description": "Complete guide to trekking Upper Mustang, the former forbidden kingdom. 12-day journey through Tibetan culture, desert landscapes, and ancient monasteries.",
+            "keywords": [
+                "upper mustang trek",
+                "forbidden kingdom",
+                "lo manthang",
+                "nepal restricted area",
+                "tibetan culture trek"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

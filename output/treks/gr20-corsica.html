@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GR20 Corsica Complete Guide 2024 | Europe's Toughest Trek</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -1076,7 +1081,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1210,7 +1215,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1314,5 +1319,743 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "gr20-corsica",
+        "name": "GR20",
+        "slug": "gr20-corsica",
+        "region": "European Alps",
+        "country": "France",
+        "summary": "Europe's toughest long-distance trail, crossing Corsica from north to south through rugged mountains, offering spectacular scenery and a true wilderness challenge.",
+        "duration": {
+            "min_days": 12,
+            "max_days": 16,
+            "recommended_days": 15
+        },
+        "distance_km": 180,
+        "difficulty": "very challenging",
+        "max_elevation_m": 2706,
+        "starting_elevation_m": 580,
+        "airport": "Calvi (CLY) or Bastia (BIA)",
+        "nearest_city": "Calenzana/Conca",
+        "coordinates": {
+            "start": {
+                "lat": 42.5075,
+                "lng": 8.9486,
+                "location": "Calenzana"
+            },
+            "end": {
+                "lat": 41.7669,
+                "lng": 9.3453,
+                "location": "Conca"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Summer",
+                "months": [
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "description": "Snow-free passes, all refuges open, can be very hot"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Calenzana to Refuge Ortu di u Piobbu",
+                "start_location": "Calenzana",
+                "end_location": "Refuge Ortu di u Piobbu",
+                "distance_km": 11,
+                "duration_hours": 7,
+                "elevation_start_m": 275,
+                "elevation_end_m": 1520,
+                "elevation_gain_m": 1245,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge Ortu di u Piobbu",
+                        "Wild camping"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Steep ascent from sea level",
+                    "First mountain views",
+                    "Introduction to GR20 terrain",
+                    "Mediterranean to alpine transition"
+                ],
+                "description": "Tough first day with major elevation gain. The trail climbs steeply through maquis scrubland and forest to reach the first mountain refuge."
+            },
+            {
+                "day": 2,
+                "title": "Ortu di u Piobbu to Refuge de Carozzu",
+                "start_location": "Refuge Ortu di u Piobbu",
+                "end_location": "Refuge de Carozzu",
+                "distance_km": 8,
+                "duration_hours": 6,
+                "elevation_start_m": 1520,
+                "elevation_end_m": 1270,
+                "elevation_gain_m": 600,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de Carozzu"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Technical rocky terrain",
+                    "Scrambling sections",
+                    "Mountain ridges",
+                    "Spectacular views"
+                ],
+                "description": "Technical day with scrambling over granite slabs and boulders. The infamous Spasimata slabs require careful footwork, especially when wet."
+            },
+            {
+                "day": 3,
+                "title": "Carozzu to Refuge d'Asco Stagnu",
+                "start_location": "Refuge de Carozzu",
+                "end_location": "Refuge d'Asco Stagnu",
+                "distance_km": 6,
+                "duration_hours": 7,
+                "elevation_start_m": 1270,
+                "elevation_end_m": 1422,
+                "elevation_gain_m": 850,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "refuge/hotel",
+                    "options": [
+                        "Refuge d'Asco Stagnu",
+                        "Hotel le Chalet"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Suspension bridge crossing",
+                    "Muvrella summit option",
+                    "Cirque de Bonifatu",
+                    "Supply point at Asco"
+                ],
+                "description": "Short but intense day featuring a swinging suspension bridge and steep climbs. Haut Asco offers chance to resupply and rest."
+            },
+            {
+                "day": 4,
+                "title": "Asco to Refuge Tighjettu",
+                "start_location": "Refuge d'Asco Stagnu",
+                "end_location": "Refuge Tighjettu",
+                "distance_km": 9,
+                "duration_hours": 8,
+                "elevation_start_m": 1422,
+                "elevation_end_m": 1683,
+                "elevation_gain_m": 1000,
+                "difficulty": "extremely challenging",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge Tighjettu"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Monte Cinto ascent option",
+                    "Highest point of GR20",
+                    "Technical terrain",
+                    "Alpine environment"
+                ],
+                "description": "One of the toughest stages with technical scrambling. Option to climb Monte Cinto (2,706m), Corsica's highest peak."
+            },
+            {
+                "day": 5,
+                "title": "Tighjettu to Refuge de Ciottulu",
+                "start_location": "Refuge Tighjettu",
+                "end_location": "Refuge de Ciottulu",
+                "distance_km": 7,
+                "duration_hours": 4,
+                "elevation_start_m": 1683,
+                "elevation_end_m": 1991,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de Ciottulu"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Easier day for recovery",
+                    "Beautiful ridge walking",
+                    "Paglia Orba views",
+                    "Alpine lakes"
+                ],
+                "description": "Welcome easier stage along ridges with spectacular views. Good for recovery before challenging days ahead."
+            },
+            {
+                "day": 6,
+                "title": "Ciottulu to Refuge de Manganu",
+                "start_location": "Refuge de Ciottulu",
+                "end_location": "Refuge de Manganu",
+                "distance_km": 24,
+                "duration_hours": 8,
+                "elevation_start_m": 1991,
+                "elevation_end_m": 1601,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de Manganu"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Longest stage",
+                    "Lac de Nino",
+                    "Pozzi (mountain pools)",
+                    "Varied terrain"
+                ],
+                "description": "Long but less technical day passing beautiful Lac de Nino with its pozzi - grassy areas with mountain pools where horses graze."
+            },
+            {
+                "day": 7,
+                "title": "Manganu to Refuge de Petra Piana",
+                "start_location": "Refuge de Manganu",
+                "end_location": "Refuge de Petra Piana",
+                "distance_km": 9,
+                "duration_hours": 5,
+                "elevation_start_m": 1601,
+                "elevation_end_m": 1842,
+                "elevation_gain_m": 600,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de Petra Piana"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Breche de Capitellu",
+                    "Ridge walking",
+                    "Mountain lakes",
+                    "Easier terrain"
+                ],
+                "description": "Pleasant stage with beautiful ridge sections and mountain lakes. More straightforward walking compared to northern stages."
+            },
+            {
+                "day": 8,
+                "title": "Petra Piana to Refuge de l'Onda",
+                "start_location": "Refuge de Petra Piana",
+                "end_location": "Refuge de l'Onda",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 1842,
+                "elevation_end_m": 1430,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de l'Onda"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Mount Rotondo views",
+                    "Alpine meadows",
+                    "Swimming holes",
+                    "Vizzavona approach"
+                ],
+                "description": "Scenic descent towards Vizzavona, the halfway point. Beautiful swimming holes for a refreshing dip."
+            },
+            {
+                "day": 9,
+                "title": "L'Onda to Vizzavona",
+                "start_location": "Refuge de l'Onda",
+                "end_location": "Vizzavona",
+                "distance_km": 11,
+                "duration_hours": 5,
+                "elevation_start_m": 1430,
+                "elevation_end_m": 910,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel/gite",
+                    "options": [
+                        "Hotel I Larici",
+                        "Gite d'etape",
+                        "Casa Natura"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Cascade des Anglais",
+                    "Forest walking",
+                    "Vizzavona village",
+                    "Resupply opportunity"
+                ],
+                "description": "Descent through beautiful forests to Vizzavona village. Major resupply point and chance for comfort at halfway mark."
+            },
+            {
+                "day": 10,
+                "title": "Vizzavona to Refuge de Capannelle",
+                "start_location": "Vizzavona",
+                "end_location": "Refuge de Capannelle",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 910,
+                "elevation_end_m": 1586,
+                "elevation_gain_m": 900,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de Capannelle"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Monte d'Oro views",
+                    "Beech forests",
+                    "Alpine plateaus",
+                    "Southern GR20 begins"
+                ],
+                "description": "Begin the southern section with steady climb through forests to alpine plateaus. Generally easier terrain than the north."
+            },
+            {
+                "day": 11,
+                "title": "Capannelle to Refuge de Prati",
+                "start_location": "Refuge de Capannelle",
+                "end_location": "Refuge de Prati",
+                "distance_km": 17,
+                "duration_hours": 7,
+                "elevation_start_m": 1586,
+                "elevation_end_m": 1820,
+                "elevation_gain_m": 700,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de Prati"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Plateau de Cuscione",
+                    "Pozzi areas",
+                    "Vast open landscapes",
+                    "Wild horses"
+                ],
+                "description": "Beautiful stage across high plateaus with pozzi and possible wild horse sightings. Very different character from the north."
+            },
+            {
+                "day": 12,
+                "title": "Prati to Refuge d'Usciolu",
+                "start_location": "Refuge de Prati",
+                "end_location": "Refuge d'Usciolu",
+                "distance_km": 11,
+                "duration_hours": 6,
+                "elevation_start_m": 1820,
+                "elevation_end_m": 1750,
+                "elevation_gain_m": 600,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge d'Usciolu"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Monte Furmicula option",
+                    "Ridge walking",
+                    "Coastal views appear",
+                    "Dramatic position"
+                ],
+                "description": "Spectacular ridge walking with first views of both coasts. Refuge d'Usciolu has one of the best positions on the trail."
+            },
+            {
+                "day": 13,
+                "title": "Usciolu to Refuge d'Asinau",
+                "start_location": "Refuge d'Usciolu",
+                "end_location": "Refuge d'Asinau",
+                "distance_km": 11,
+                "duration_hours": 7,
+                "elevation_start_m": 1750,
+                "elevation_end_m": 1530,
+                "elevation_gain_m": 700,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge d'Asinau"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Arête a Monda ridge",
+                    "Technical sections return",
+                    "Monte Alcudina",
+                    "Alpine environment"
+                ],
+                "description": "Return of technical terrain with exposed ridge sections. Beautiful but demanding day through high mountains."
+            },
+            {
+                "day": 14,
+                "title": "Asinau to Refuge de Paliri",
+                "start_location": "Refuge d'Asinau",
+                "end_location": "Refuge de Paliri",
+                "distance_km": 15,
+                "duration_hours": 8,
+                "elevation_start_m": 1530,
+                "elevation_end_m": 1055,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "refuge/gite",
+                    "options": [
+                        "Refuge de Paliri",
+                        "Village de Bavella option"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Aiguilles de Bavella",
+                    "Alpine variant option",
+                    "Dramatic rock formations",
+                    "Last mountain refuge"
+                ],
+                "description": "Spectacular day passing the famous Bavella needles. Technical alpine variant available for experienced hikers."
+            },
+            {
+                "day": 15,
+                "title": "Paliri to Conca",
+                "start_location": "Refuge de Paliri",
+                "end_location": "Conca",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 1055,
+                "elevation_end_m": 252,
+                "elevation_gain_m": 100,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "gite/hotel",
+                    "options": [
+                        "Gite d'etape Conca",
+                        "Hotels in Porto-Vecchio"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Final descent",
+                    "Mediterranean vegetation",
+                    "Trail completion",
+                    "Celebration in Conca"
+                ],
+                "description": "Final descent through maquis to Conca village. Celebrate completing one of Europe's toughest trails!"
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Sturdy hiking boots",
+                    "description": "Ankle support crucial for rocky terrain",
+                    "rental_available": false
+                },
+                {
+                    "item": "Lightweight tent",
+                    "description": "If camping to save money",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "Summer weight sufficient",
+                    "rental_available": true
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Essential for technical sections",
+                    "rental_available": true
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Comprehensive for remote areas",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water capacity 3L",
+                    "description": "Sources can be far apart",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Intense exposure on ridges",
+                    "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "Protection from scratchy maquis",
+                    "rental_available": false
+                },
+                {
+                    "item": "Lightweight shoes",
+                    "description": "For refuge/camp",
+                    "rental_available": false
+                },
+                {
+                    "item": "Duct tape",
+                    "description": "Gear repairs",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "None required",
+                "cost_usd": 0,
+                "notes": "But refuge bookings essential in peak season"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 0,
+            "guide_daily_usd": 150,
+            "accommodation_daily_usd": 15,
+            "meals_daily_usd": 40,
+            "transportation_usd": 100,
+            "total_budget_range_usd": {
+                "min": 600,
+                "max": 1500
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Corsican",
+                "French"
+            ],
+            "primary_religion": "Catholic",
+            "languages": [
+                "French",
+                "Corsican",
+                "Limited English"
+            ],
+            "customs_etiquette": [
+                "Respect refuge rules",
+                "Help with communal tasks",
+                "Quiet hours strictly observed",
+                "Pack out all trash",
+                "Yield to uphill hikers"
+            ],
+            "local_foods": [
+                {
+                    "name": "Brocciu",
+                    "description": "Fresh sheep/goat cheese"
+                },
+                {
+                    "name": "Figatellu",
+                    "description": "Corsican liver sausage"
+                },
+                {
+                    "name": "Pietra beer",
+                    "description": "Local chestnut beer"
+                },
+                {
+                    "name": "Canistrelli",
+                    "description": "Traditional cookies"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "low",
+                "notes": "Maximum 2,706m rarely causes issues"
+            },
+            "main_concerns": {
+                "technical_terrain": {
+                    "risk_level": "very high",
+                    "description": "Scrambling, exposure, loose rock",
+                    "prevention": [
+                        "Take your time",
+                        "Use poles for balance",
+                        "Proper footwear essential",
+                        "Consider guide if inexperienced"
+                    ]
+                },
+                "heat": {
+                    "risk_level": "high",
+                    "description": "Can be very hot in summer",
+                    "prevention": [
+                        "Start very early",
+                        "Carry 3L water minimum",
+                        "Electrolyte replacement",
+                        "Rest in shade during hottest hours"
+                    ]
+                },
+                "weather": {
+                    "risk_level": "high",
+                    "description": "Violent thunderstorms possible",
+                    "prevention": [
+                        "Check forecasts at refuges",
+                        "Start early to avoid afternoon storms",
+                        "Know escape routes",
+                        "Carry emergency shelter"
+                    ]
+                }
+            },
+            "evacuation": {
+                "method": "Helicopter",
+                "cost_usd": "2000-4000",
+                "insurance_required": true,
+                "response_time": "Several hours"
+            }
+        },
+        "weather_patterns": {
+            "summer": {
+                "months": [
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "day_temp_c": "25 to 35",
+                "night_temp_c": "10 to 20",
+                "precipitation": "Afternoon storms common",
+                "notes": "Very hot at low elevations"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Bus",
+                    "from": "Calvi",
+                    "to": "Calenzana",
+                    "duration": "15 minutes",
+                    "cost_usd": 5,
+                    "frequency": "Several daily"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Shuttle/Bus",
+                    "from": "Conca",
+                    "to": "Porto-Vecchio",
+                    "duration": "1 hour",
+                    "cost_usd": 20,
+                    "frequency": "Pre-arrange"
+                }
+            ]
+        },
+        "accommodation": {
+            "type": "Mountain refuges and camping",
+            "description": "Basic refuges or wild camping",
+            "amenities": [
+                "Bunk beds in refuges",
+                "Basic meals available",
+                "Cold showers (maybe)",
+                "Camping near refuges allowed",
+                "Very basic facilities"
+            ],
+            "booking": "Essential for refuges in summer",
+            "cost_per_night_usd": {
+                "refuge_bed": "15-20",
+                "camping": "7-10",
+                "half_board": "45-55"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Excellent fitness essential",
+            "technical_skills": "Scrambling experience helpful",
+            "altitude_challenge": "Minimal",
+            "trail_conditions": "Rocky, technical, exposed sections",
+            "daily_hiking_hours": "6-8 hours",
+            "total_elevation_gain": 13000,
+            "total_elevation_loss": 13000
+        },
+        "alternative_routes": [
+            {
+                "name": "North-South sections",
+                "variation": "Do only north or south",
+                "fewer_days": 7,
+                "highlights": [
+                    "More manageable",
+                    "North is harder",
+                    "South more scenic"
+                ]
+            },
+            {
+                "name": "Mare a Mare",
+                "variation": "Easier coast-to-coast",
+                "fewer_days": 8,
+                "highlights": [
+                    "Less technical",
+                    "Village stays",
+                    "Cultural focus"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Cirque de la Solitude",
+                "best_time": "Morning",
+                "subjects": [
+                    "Technical terrain",
+                    "Dramatic cirque",
+                    "Achievement shots"
+                ]
+            },
+            {
+                "location": "Aiguilles de Bavella",
+                "best_time": "Sunset",
+                "subjects": [
+                    "Rock spires",
+                    "Alpine glow",
+                    "Dramatic formations"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Is it really that difficult?",
+                "answer": "Yes. The GR20 is extremely challenging with technical scrambling, long days, and basic facilities. Many underestimate it and quit. Proper fitness and experience essential."
+            },
+            {
+                "question": "North to south or south to north?",
+                "answer": "North to south is traditional and recommended. The north is harder, so you tackle it while fresh. South has easier escape options if needed."
+            },
+            {
+                "question": "Refuges or camping?",
+                "answer": "Refuges book up but guarantee a bed and meals. Camping is cheaper and always available but means carrying more gear on tough terrain."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 89,
+        "seo": {
+            "meta_title": "GR20 Corsica Complete Guide 2024 | Europe's Toughest Trek",
+            "meta_description": "Complete guide to hiking the GR20 across Corsica. Detailed 15-day itinerary for Europe's most challenging trek through rugged mountain wilderness.",
+            "keywords": [
+                "gr20 corsica",
+                "corsica hiking",
+                "gr20 trail",
+                "europe toughest trek",
+                "corsica mountains"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -866,7 +871,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1031,7 +1036,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1143,5 +1148,567 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "salkantay-trek",
+        "name": "Salkantay Trek",
+        "slug": "salkantay-trek",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.",
+        "duration": {
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 5
+        },
+        "distance_km": 75,
+        "difficulty": "challenging",
+        "max_elevation_m": 4600,
+        "starting_elevation_m": 3350,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
+        "coordinates": {
+            "start": {
+                "lat": -13.3886,
+                "lng": -72.7973,
+                "location": "Mollepata"
+            },
+            "end": {
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Dry Season",
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "description": "Clear mountain views, cold at altitude, stable weather"
+            },
+            {
+                "name": "Shoulder Season",
+                "months": [
+                    "April",
+                    "October",
+                    "November"
+                ],
+                "description": "Variable weather, fewer trekkers, lush landscapes"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Cusco to Soraypampa",
+                "start_location": "Cusco",
+                "end_location": "Soraypampa",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3350,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 500,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping/lodge",
+                    "options": [
+                        "Sky Camp",
+                        "Salkantay Lodge",
+                        "Standard camping"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Humantay Lake option",
+                    "First views of Salkantay",
+                    "Apurimac Valley",
+                    "Acclimatization hike"
+                ],
+                "description": "Drive from Cusco to Mollepata, then to Challacancha. Trek through valleys to Soraypampa with optional afternoon hike to stunning turquoise Humantay Lake."
+            },
+            {
+                "day": 2,
+                "title": "Soraypampa to Chaullay",
+                "start_location": "Soraypampa",
+                "end_location": "Chaullay",
+                "distance_km": 22,
+                "duration_hours": 10,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 2900,
+                "elevation_gain_m": 750,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "camping/lodge",
+                    "options": [
+                        "Chaullay camp",
+                        "Andenes camp",
+                        "Lodge options"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Salkantay Pass (4,600m)",
+                    "Salkantay peak close views",
+                    "Dramatic ecosystem change",
+                    "Descent to cloud forest"
+                ],
+                "description": "The big day! Early start for the challenging climb to Salkantay Pass at 4,600m. Incredible views of sacred Salkantay peak before long descent into warmer cloud forest."
+            },
+            {
+                "day": 3,
+                "title": "Chaullay to Santa Teresa",
+                "start_location": "Chaullay",
+                "end_location": "Santa Teresa",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 2900,
+                "elevation_end_m": 1550,
+                "elevation_gain_m": -1350,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping/lodge",
+                    "options": [
+                        "Santa Teresa camp",
+                        "Local lodges",
+                        "Eco lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Cloud forest biodiversity",
+                    "Coffee plantations",
+                    "Waterfalls",
+                    "Hot springs option"
+                ],
+                "description": "Beautiful day hiking through cloud forest with increasing vegetation and warmth. Pass coffee and fruit plantations. Optional visit to Cocalmayo hot springs in afternoon."
+            },
+            {
+                "day": 4,
+                "title": "Santa Teresa to Aguas Calientes",
+                "start_location": "Santa Teresa",
+                "end_location": "Aguas Calientes",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 1550,
+                "elevation_end_m": 2040,
+                "elevation_gain_m": 490,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Various hotels in Aguas Calientes"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Llactapata ruins",
+                    "First Machu Picchu views",
+                    "Urubamba River",
+                    "Train tracks walk"
+                ],
+                "description": "Optional zipline before hiking to Hidroelectrica. Walk along train tracks to Aguas Calientes or take optional train. First distant views of Machu Picchu from Llactapata."
+            },
+            {
+                "day": 5,
+                "title": "Machu Picchu Visit",
+                "start_location": "Aguas Calientes",
+                "end_location": "Cusco",
+                "distance_km": 0,
+                "duration_hours": 8,
+                "elevation_start_m": 2040,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": 390,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "none",
+                    "options": [
+                        "Return to Cusco"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Machu Picchu sunrise",
+                    "Guided tour of citadel",
+                    "Optional Huayna Picchu",
+                    "Return to Cusco"
+                ],
+                "description": "Early morning bus or hike to Machu Picchu for sunrise. Guided tour of the ancient citadel. Optional climb Huayna Picchu or Machu Picchu Mountain. Afternoon train to Cusco."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Trekking boots",
+                    "description": "Waterproof with ankle support",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-15°C for pass night",
+                    "rental_available": true
+                },
+                {
+                    "item": "Rain gear",
+                    "description": "Quality jacket and pants",
+                    "rental_available": true
+                },
+                {
+                    "item": "Warm clothing",
+                    "description": "Down jacket, fleece, thermals",
+                    "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "30-40L capacity",
+                    "rental_available": true
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning start",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "3L capacity total",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Highly recommended",
+                    "rental_available": true
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "For muddy sections",
+                    "rental_available": false
+                },
+                {
+                    "item": "Swimsuit",
+                    "description": "For hot springs",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sandals",
+                    "description": "For camp and river crossings",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash",
+                    "description": "For tips and extras",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "None for trail",
+                "cost_usd": 0,
+                "notes": "No permits needed for Salkantay route"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Online or through operator",
+                "validity": "Specific date and time"
+            },
+            {
+                "name": "Huayna Picchu (optional)",
+                "cost_usd": 15,
+                "cost_pen": 50,
+                "where_to_obtain": "Book with Machu Picchu ticket",
+                "validity": "Limited to 400/day"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 50,
+            "guide_daily_usd": 30,
+            "porter_daily_usd": 25,
+            "accommodation_daily_usd": 15,
+            "meals_daily_usd": 25,
+            "transportation_usd": 150,
+            "total_budget_range_usd": {
+                "min": 300,
+                "max": 800
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Quechua",
+                "Mestizo"
+            ],
+            "primary_religion": "Catholic with Andean traditions",
+            "languages": [
+                "Spanish",
+                "Quechua",
+                "Basic English"
+            ],
+            "customs_etiquette": [
+                "Respect sacred mountains (Apus)",
+                "Participate in coca leaf ceremonies",
+                "Don't point at mountains with one finger",
+                "Ask before photographing locals",
+                "Support local communities by buying crafts"
+            ],
+            "local_foods": [
+                {
+                    "name": "Pachamanca",
+                    "description": "Earth oven cooked meats and vegetables"
+                },
+                {
+                    "name": "Cuy",
+                    "description": "Guinea pig - traditional delicacy"
+                },
+                {
+                    "name": "Chicha morada",
+                    "description": "Purple corn drink"
+                },
+                {
+                    "name": "Aji de gallina",
+                    "description": "Spicy creamed chicken"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "very high",
+                "prevention": [
+                    "Essential to acclimatize in Cusco",
+                    "Ascend gradually",
+                    "Hydrate constantly",
+                    "Coca tea and leaves",
+                    "Consider Diamox",
+                    "No alcohol before pass day"
+                ],
+                "critical_points": [
+                    "Salkantay Pass day",
+                    "First night at altitude"
+                ]
+            },
+            "medical_facilities": [
+                {
+                    "location": "Trail",
+                    "type": "Basic first aid with guides"
+                },
+                {
+                    "location": "Santa Teresa",
+                    "type": "Basic health post"
+                },
+                {
+                    "location": "Aguas Calientes",
+                    "type": "Medical center"
+                }
+            ],
+            "evacuation": {
+                "method": "Horse to road, then vehicle",
+                "cost_usd": "1000-3000",
+                "insurance_required": true,
+                "response_time": "4-8 hours"
+            }
+        },
+        "weather_patterns": {
+            "dry_season": {
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "-10 to 5",
+                "precipitation": "Rare",
+                "notes": "Very cold at pass, warm in jungle"
+            },
+            "wet_season": {
+                "months": [
+                    "December",
+                    "January",
+                    "February",
+                    "March"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "-5 to 10",
+                "precipitation": "Daily rain likely",
+                "notes": "Muddy trails, cloud forest lush"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Private van",
+                    "from": "Cusco",
+                    "to": "Mollepata/Challacancha",
+                    "duration": "3 hours",
+                    "cost_usd": 30,
+                    "notes": "Usually included in tour"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Train + Bus",
+                    "from": "Aguas Calientes",
+                    "to": "Cusco",
+                    "duration": "4 hours",
+                    "cost_usd": 100,
+                    "notes": "Via Ollantaytambo"
+                }
+            ]
+        },
+        "accommodation": {
+            "type": "Camping and lodges",
+            "description": "Mix of camping and basic lodges",
+            "amenities": [
+                "Camping: tents, dining tent, basic toilets",
+                "Lodges: beds, hot showers, electricity",
+                "Sky Camps: glamping with beds",
+                "Hotels in Aguas Calientes"
+            ],
+            "booking": "Can book independently or with operator",
+            "cost_per_night_usd": {
+                "camping": "included in tour",
+                "basic_lodge": "20-30",
+                "sky_camp": "100+"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "High - long days and extreme altitude",
+            "technical_skills": "None required",
+            "altitude_challenge": "Very significant at pass",
+            "trail_conditions": "Variable - rocky, muddy, steep",
+            "daily_hiking_hours": "6-10 hours",
+            "total_elevation_gain": 3100,
+            "total_elevation_loss": 4150
+        },
+        "alternative_routes": [
+            {
+                "name": "Salkantay + Inca Trail",
+                "variation": "Combine both treks",
+                "extra_days": 3,
+                "highlights": [
+                    "Ultimate experience",
+                    "Enter via Sun Gate",
+                    "More ruins"
+                ]
+            },
+            {
+                "name": "Mollepata Circuit",
+                "variation": "Return different route",
+                "extra_days": 1,
+                "highlights": [
+                    "Less crowds",
+                    "More villages",
+                    "Complete circuit"
+                ]
+            },
+            {
+                "name": "Lodge-to-Lodge",
+                "variation": "Luxury version",
+                "extra_days": 0,
+                "highlights": [
+                    "Mountain lodges",
+                    "Hot showers daily",
+                    "Gourmet meals"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Humantay Lake",
+                "best_time": "Morning",
+                "subjects": [
+                    "Turquoise waters",
+                    "Mountain reflections",
+                    "Ice formations"
+                ]
+            },
+            {
+                "location": "Salkantay Pass",
+                "best_time": "Early morning",
+                "subjects": [
+                    "Sacred peak",
+                    "Prayer flags",
+                    "Achievement shots"
+                ]
+            },
+            {
+                "location": "Cloud forest",
+                "best_time": "Any",
+                "subjects": [
+                    "Biodiversity",
+                    "Waterfalls",
+                    "Atmospheric shots"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Is it as good as the Inca Trail?",
+                "answer": "Different but equally spectacular. More challenging, fewer ruins, but stunning mountain scenery and no permit stress. Many consider it superior for landscapes."
+            },
+            {
+                "question": "Can I do it independently?",
+                "answer": "Yes, unlike the Inca Trail. But guided tours provide logistics, meals, and camping equipment. Solo requires carrying everything."
+            },
+            {
+                "question": "How cold does it get?",
+                "answer": "Very cold at Salkantay Pass - can be -10°C at night. But by day 3 you're in warm cloud forest. Pack for all climates."
+            },
+            {
+                "question": "Is altitude sickness common?",
+                "answer": "Yes, especially on pass day. Crucial to acclimatize in Cusco first. The rapid descent helps recovery."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 94,
+        "seo": {
+            "meta_title": "Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail",
+            "meta_description": "Ultimate guide to the Salkantay Trek to Machu Picchu. Detailed 5-day itinerary, no permits needed, costs, gear list, and expert tips.",
+            "keywords": [
+                "salkantay trek",
+                "machu picchu alternative",
+                "peru trekking",
+                "salkantay pass",
+                "cusco to machu picchu"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

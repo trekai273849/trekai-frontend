@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dolomites Alta Via 1 Complete Guide 2024 | 10-Day Trek Itinerary</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -971,7 +976,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1129,7 +1134,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1241,5 +1246,645 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "dolomites-alta-via-1",
+        "name": "Dolomites Alta Via 1",
+        "slug": "dolomites-alta-via-1",
+        "region": "European Alps",
+        "country": "Italy",
+        "summary": "Classic high route through the dramatic limestone peaks of the Dolomites, staying in traditional rifugios with incredible Italian mountain cuisine.",
+        "duration": {
+            "min_days": 8,
+            "max_days": 12,
+            "recommended_days": 10
+        },
+        "distance_km": 120,
+        "difficulty": "moderate",
+        "max_elevation_m": 2950,
+        "starting_elevation_m": 1530,
+        "airport": "Venice (VCE) or Innsbruck (INN)",
+        "nearest_city": "Cortina d'Ampezzo",
+        "coordinates": {
+            "start": {
+                "lat": 46.658,
+                "lng": 11.779,
+                "location": "Lago di Braies"
+            },
+            "end": {
+                "lat": 46.4373,
+                "lng": 11.7732,
+                "location": "Belluno/Passo Duran"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Summer",
+                "months": [
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "description": "Rifugios open, snow-free passes, stable weather"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Lago di Braies to Rifugio Biella",
+                "start_location": "Lago di Braies",
+                "end_location": "Rifugio Biella",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 1496,
+                "elevation_end_m": 2327,
+                "elevation_gain_m": 850,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Biella"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Lago di Braies (Pragser Wildsee)",
+                    "Croda del Becco views",
+                    "Alpine meadows",
+                    "First rifugio experience"
+                ],
+                "description": "Start at the stunning Lago di Braies, famous for its emerald waters. Climb through forests and meadows to reach the welcoming Rifugio Biella."
+            },
+            {
+                "day": 2,
+                "title": "Rifugio Biella to Rifugio Lavarella",
+                "start_location": "Rifugio Biella",
+                "end_location": "Rifugio Lavarella",
+                "distance_km": 11,
+                "duration_hours": 5,
+                "elevation_start_m": 2327,
+                "elevation_end_m": 2042,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Lavarella",
+                        "Rifugio Fanes"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Alpe di Fanes plateau",
+                    "Limestone pinnacles",
+                    "Marmot sightings",
+                    "Traditional Ladin culture"
+                ],
+                "description": "Traverse the otherworldly Fanes plateau, surrounded by towering limestone peaks. Choose between two excellent rifugios for the night."
+            },
+            {
+                "day": 3,
+                "title": "Rifugio Lavarella to Rifugio Lagazuoi",
+                "start_location": "Rifugio Lavarella",
+                "end_location": "Rifugio Lagazuoi",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 2042,
+                "elevation_end_m": 2752,
+                "elevation_gain_m": 900,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Lagazuoi"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Forcella del Lago",
+                    "WWI tunnels and positions",
+                    "360-degree summit views",
+                    "Cable car option down"
+                ],
+                "description": "Climb to one of the most spectacular rifugios in the Dolomites. Explore WWI history and enjoy incredible views from Lagazuoi summit."
+            },
+            {
+                "day": 4,
+                "title": "Rifugio Lagazuoi to Rifugio Averau",
+                "start_location": "Rifugio Lagazuoi",
+                "end_location": "Rifugio Averau",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 2752,
+                "elevation_end_m": 2413,
+                "elevation_gain_m": 200,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Averau",
+                        "Rifugio Nuvolau"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Cinque Torri rock formations",
+                    "Nuvolau summit option",
+                    "Cortina valley views",
+                    "Easier hiking day"
+                ],
+                "description": "Shorter day with options to explore the famous Cinque Torri climbing area or summit Nuvolau for panoramic views."
+            },
+            {
+                "day": 5,
+                "title": "Rifugio Averau to Rifugio Città di Fiume",
+                "start_location": "Rifugio Averau",
+                "end_location": "Rifugio Città di Fiume",
+                "distance_km": 13,
+                "duration_hours": 5,
+                "elevation_start_m": 2413,
+                "elevation_end_m": 1918,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Città di Fiume",
+                        "Rifugio Croda da Lago"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Lago di Federa",
+                    "Croda da Lago circuit option",
+                    "Forest trails",
+                    "Wildlife viewing"
+                ],
+                "description": "Descend through beautiful forests with optional detour around the scenic Lago di Croda da Lago. More intimate rifugio experience."
+            },
+            {
+                "day": 6,
+                "title": "Rifugio Città di Fiume to Rifugio Tissi",
+                "start_location": "Rifugio Città di Fiume",
+                "end_location": "Rifugio Tissi",
+                "distance_km": 15,
+                "duration_hours": 7,
+                "elevation_start_m": 1918,
+                "elevation_end_m": 2250,
+                "elevation_gain_m": 800,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Tissi"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Remote mountain valleys",
+                    "Pelmo massif views",
+                    "Traditional shepherding areas",
+                    "Quiet trails"
+                ],
+                "description": "Leave the busier routes for a more remote section. Long but rewarding day reaching the small and atmospheric Rifugio Tissi."
+            },
+            {
+                "day": 7,
+                "title": "Rifugio Tissi to Rifugio Vázzoler",
+                "start_location": "Rifugio Tissi",
+                "end_location": "Rifugio Vázzoler",
+                "distance_km": 12,
+                "duration_hours": 6,
+                "elevation_start_m": 2250,
+                "elevation_end_m": 1714,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Vázzoler"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Civetta north face views",
+                    "Alpine botanical variety",
+                    "Historical rifugio",
+                    "Dramatic mountain amphitheater"
+                ],
+                "description": "Spectacular approach to Rifugio Vázzoler beneath the imposing north face of Civetta, one of the Dolomites' most impressive walls."
+            },
+            {
+                "day": 8,
+                "title": "Rifugio Vázzoler to Rifugio Carestiato",
+                "start_location": "Rifugio Vázzoler",
+                "end_location": "Rifugio Carestiato",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 1714,
+                "elevation_end_m": 1834,
+                "elevation_gain_m": 900,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Carestiato"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Forcella Col Negro",
+                    "Moiazza group traverse",
+                    "Remote valleys",
+                    "Sense of accomplishment"
+                ],
+                "description": "Challenging day crossing high passes through the Moiazza group. Remote and wild mountain scenery."
+            },
+            {
+                "day": 9,
+                "title": "Rifugio Carestiato to Rifugio Pian de Fontana",
+                "start_location": "Rifugio Carestiato",
+                "end_location": "Rifugio Pian de Fontana",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 1834,
+                "elevation_end_m": 1632,
+                "elevation_gain_m": 300,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Pian de Fontana"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Easier walking day",
+                    "Forest trails",
+                    "Traditional farming areas",
+                    "Final rifugio night"
+                ],
+                "description": "Gentler day through forests and meadows. Last night in a rifugio before completing the Alta Via 1."
+            },
+            {
+                "day": 10,
+                "title": "Rifugio Pian de Fontana to Passo Duran/Belluno",
+                "start_location": "Rifugio Pian de Fontana",
+                "end_location": "Passo Duran/Belluno",
+                "distance_km": 8,
+                "duration_hours": 3,
+                "elevation_start_m": 1632,
+                "elevation_end_m": 1601,
+                "elevation_gain_m": 100,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel/end",
+                    "options": [
+                        "Bus to Belluno or Agordo"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Alta Via completion",
+                    "Final mountain views",
+                    "Sense of achievement",
+                    "Return to civilization"
+                ],
+                "description": "Final descent to Passo Duran where you can catch a bus to Belluno or Agordo. Celebrate completing one of Italy's classic treks!"
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Mountain boots",
+                    "description": "Good ankle support for rocky terrain",
+                    "rental_available": false
+                },
+                {
+                    "item": "Via ferrata kit",
+                    "description": "For optional protected sections",
+                    "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "25-35L sufficient for rifugio trek",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sleeping bag liner",
+                    "description": "Required in rifugios",
+                    "rental_available": false
+                },
+                {
+                    "item": "Layered clothing",
+                    "description": "Mountain weather changeable",
+                    "rental_available": false
+                },
+                {
+                    "item": "Rain gear",
+                    "description": "Afternoon storms common",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "High altitude sun intense",
+                    "rental_available": false
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Basic supplies",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash (Euros)",
+                    "description": "Many rifugios cash only",
+                    "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Trekking poles",
+                    "description": "Helpful on descents",
+                    "rental_available": true
+                },
+                {
+                    "item": "Hut shoes",
+                    "description": "Crocs or slippers for rifugios",
+                    "rental_available": false
+                },
+                {
+                    "item": "Earplugs",
+                    "description": "For dormitory sleeping",
+                    "rental_available": false
+                },
+                {
+                    "item": "Quick-dry towel",
+                    "description": "Small and lightweight",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "None required",
+                "cost_usd": 0,
+                "notes": "Just rifugio reservations needed"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 0,
+            "guide_daily_usd": 200,
+            "accommodation_daily_usd": 60,
+            "meals_daily_usd": 50,
+            "transportation_usd": 100,
+            "total_budget_range_usd": {
+                "min": 1000,
+                "max": 2000
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Italian",
+                "Ladin (local minority)"
+            ],
+            "primary_religion": "Catholic",
+            "languages": [
+                "Italian",
+                "German",
+                "Ladin",
+                "English in tourist areas"
+            ],
+            "customs_etiquette": [
+                "Greet with 'Buongiorno' or 'Grüß Gott'",
+                "Remove boots when entering rifugios",
+                "Quiet hours 10pm-6am strictly observed",
+                "Share tables at busy times",
+                "Tip not expected but appreciated"
+            ],
+            "local_foods": [
+                {
+                    "name": "Canederli",
+                    "description": "Bread dumplings in broth"
+                },
+                {
+                    "name": "Speck",
+                    "description": "Smoked ham specialty"
+                },
+                {
+                    "name": "Kaiserschmarrn",
+                    "description": "Shredded pancake dessert"
+                },
+                {
+                    "name": "Grappa",
+                    "description": "Traditional digestif"
+                },
+                {
+                    "name": "Strudel",
+                    "description": "Apple strudel is a rifugio staple"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "low",
+                "notes": "Maximum elevation under 3000m"
+            },
+            "main_concerns": {
+                "weather": {
+                    "risk_level": "moderate",
+                    "description": "Afternoon thunderstorms common",
+                    "prevention": [
+                        "Start early",
+                        "Check forecasts",
+                        "Carry waterproofs",
+                        "Know rifugio locations"
+                    ]
+                },
+                "via_ferrata": {
+                    "risk_level": "moderate",
+                    "description": "Some exposed sections",
+                    "prevention": [
+                        "Use proper equipment",
+                        "Check conditions",
+                        "Know your limits",
+                        "Consider guide"
+                    ]
+                }
+            },
+            "evacuation": {
+                "method": "Helicopter",
+                "cost_usd": "2000-4000",
+                "insurance_required": true
+            }
+        },
+        "weather_patterns": {
+            "summer": {
+                "months": [
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Afternoon storms",
+                "notes": "Busiest period"
+            },
+            "early_autumn": {
+                "months": [
+                    "September"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "0 to 8",
+                "precipitation": "More stable",
+                "notes": "Often best weather"
+            }
+        },
+        "accommodation": {
+            "type": "Mountain rifugios",
+            "description": "Traditional mountain huts with meals",
+            "amenities": [
+                "Dormitory rooms (4-20 beds)",
+                "Half-board (dinner and breakfast)",
+                "Hot showers (sometimes paid)",
+                "Bar service",
+                "Packed lunch available",
+                "Blankets provided (bring liner)"
+            ],
+            "booking": "Essential in high season",
+            "cost_per_night_usd": {
+                "half_board": "50-70",
+                "bed_only": "25-35"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Good fitness for long days",
+            "technical_skills": "Some exposed sections",
+            "altitude_challenge": "Minimal",
+            "trail_conditions": "Rocky, well-marked",
+            "daily_hiking_hours": "5-7 hours",
+            "total_elevation_gain": 7000,
+            "total_elevation_loss": 7000
+        },
+        "alternative_routes": [
+            {
+                "name": "Alta Via 2",
+                "variation": "More challenging route",
+                "extra_days": 0,
+                "highlights": [
+                    "More technical",
+                    "Fewer crowds",
+                    "Wilder terrain"
+                ]
+            },
+            {
+                "name": "Alta Via 3-4",
+                "variation": "Eastern Dolomites",
+                "extra_days": "Various",
+                "highlights": [
+                    "Less developed",
+                    "More remote",
+                    "Cultural variety"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Lago di Braies",
+                "best_time": "Early morning",
+                "subjects": [
+                    "Lake reflections",
+                    "Emerald waters",
+                    "Seekofel peak"
+                ]
+            },
+            {
+                "location": "Lagazuoi summit",
+                "best_time": "Sunset",
+                "subjects": [
+                    "360-degree views",
+                    "Marmolada glacier",
+                    "Tofane group"
+                ]
+            },
+            {
+                "location": "Civetta north face",
+                "best_time": "Morning",
+                "subjects": [
+                    "Massive rock wall",
+                    "Alpine glow",
+                    "Climbers on route"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Do I need via ferrata experience?",
+                "answer": "No, the main route avoids technical sections. Optional via ferratas are available but can be bypassed. Basic scrambling comfort helpful."
+            },
+            {
+                "question": "How far ahead should I book rifugios?",
+                "answer": "For July-August, book 2-3 months ahead. September is easier but still book 1 month ahead for weekends."
+            },
+            {
+                "question": "What's the food like in rifugios?",
+                "answer": "Excellent! Expect hearty multi-course dinners with local specialties. Vegetarian options available if requested in advance."
+            },
+            {
+                "question": "Can I do it without speaking Italian?",
+                "answer": "Yes, English is widely spoken in rifugios. Basic Italian phrases are appreciated and enhance the experience."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 90,
+        "seo": {
+            "meta_title": "Dolomites Alta Via 1 Complete Guide 2024 | 10-Day Trek Itinerary",
+            "meta_description": "Ultimate guide to hiking Alta Via 1 through the Italian Dolomites. Detailed itinerary, rifugio bookings, costs, and insider tips for this classic trek.",
+            "keywords": [
+                "alta via 1",
+                "dolomites trek",
+                "italian alps hiking",
+                "rifugio to rifugio",
+                "dolomites alta via"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

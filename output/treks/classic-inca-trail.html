@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -845,7 +850,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1010,7 +1015,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1130,5 +1135,635 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "classic-inca-trail",
+        "name": "Classic Inca Trail",
+        "slug": "classic-inca-trail",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.",
+        "duration": {
+            "min_days": 4,
+            "max_days": 4,
+            "recommended_days": 4
+        },
+        "distance_km": 43,
+        "difficulty": "moderate",
+        "max_elevation_m": 4200,
+        "starting_elevation_m": 2600,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
+        "coordinates": {
+            "start": {
+                "lat": -13.2585,
+                "lng": -72.2636,
+                "location": "Km 82 (Piscacucho)"
+            },
+            "end": {
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Dry Season",
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "description": "Clear skies, cold nights, busiest period"
+            },
+            {
+                "name": "Shoulder Season",
+                "months": [
+                    "April",
+                    "October"
+                ],
+                "description": "Variable weather, fewer crowds, lush vegetation"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Km 82 to Wayllabamba",
+                "start_location": "Km 82",
+                "end_location": "Wayllabamba",
+                "distance_km": 12,
+                "duration_hours": 6,
+                "elevation_start_m": 2600,
+                "elevation_end_m": 3000,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Wayllabamba campsite"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Patallacta ruins",
+                    "Urubamba River views",
+                    "First glimpse of snow peaks",
+                    "Traditional villages"
+                ],
+                "description": "Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp."
+            },
+            {
+                "day": 2,
+                "title": "Wayllabamba to Pacaymayo",
+                "start_location": "Wayllabamba",
+                "end_location": "Pacaymayo",
+                "distance_km": 11,
+                "duration_hours": 7,
+                "elevation_start_m": 3000,
+                "elevation_end_m": 3600,
+                "elevation_gain_m": 1200,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Pacaymayo campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Dead Woman's Pass (4,200m)",
+                    "Cloud forest ecosystem",
+                    "Llamas and alpacas",
+                    "Achievement of highest point"
+                ],
+                "description": "The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass."
+            },
+            {
+                "day": 3,
+                "title": "Pacaymayo to Wiñay Wayna",
+                "start_location": "Pacaymayo",
+                "end_location": "Wiñay Wayna",
+                "distance_km": 16,
+                "duration_hours": 9,
+                "elevation_start_m": 3600,
+                "elevation_end_m": 2650,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Wiñay Wayna campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Runkurakay ruins",
+                    "Sayacmarca ruins",
+                    "Phuyupatamarca ruins",
+                    "Cloud forest descent"
+                ],
+                "description": "Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp."
+            },
+            {
+                "day": 4,
+                "title": "Wiñay Wayna to Machu Picchu",
+                "start_location": "Wiñay Wayna",
+                "end_location": "Machu Picchu",
+                "distance_km": 4,
+                "duration_hours": 2,
+                "elevation_start_m": 2650,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": -220,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Aguas Calientes hotels"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Sun Gate first view",
+                    "Machu Picchu sunrise",
+                    "Guided site tour",
+                    "Optional Huayna Picchu"
+                ],
+                "description": "Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Hiking boots",
+                    "description": "Well broken-in, waterproof",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-10°C rated for cold nights",
+                    "rental_available": true
+                },
+                {
+                    "item": "Rain gear",
+                    "description": "Jacket and pants essential",
+                    "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "Porters carry main gear",
+                    "rental_available": true
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2-3 liters capacity",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "High altitude sun intense",
+                    "rental_available": false
+                },
+                {
+                    "item": "Personal medications",
+                    "description": "Including altitude sickness meds",
+                    "rental_available": false
+                },
+                {
+                    "item": "Warm layers",
+                    "description": "Gets very cold at altitude",
+                    "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Trekking poles",
+                    "description": "Helpful for steep descents",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping pad",
+                    "description": "Extra comfort",
+                    "rental_available": true
+                },
+                {
+                    "item": "Coca leaves",
+                    "description": "Traditional altitude remedy",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash (soles)",
+                    "description": "For tips and snacks",
+                    "rental_available": false
+                }
+            ],
+            "provided_by_operator": [
+                {
+                    "item": "Tents",
+                    "description": "2-person tents"
+                },
+                {
+                    "item": "Dining tent",
+                    "description": "With tables and chairs"
+                },
+                {
+                    "item": "Kitchen equipment",
+                    "description": "All cooking gear"
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Comprehensive kit with guide"
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "Inca Trail Permit",
+                "cost_usd": 80,
+                "cost_pen": 280,
+                "where_to_obtain": "Only through licensed operators",
+                "validity": "Specific date only",
+                "notes": "Limited to 500 people/day including support staff"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Included in trek package",
+                "validity": "Specific time slot"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 130,
+            "guide_daily_usd": "included",
+            "porter_daily_usd": "included",
+            "accommodation_daily_usd": 0,
+            "meals_daily_usd": "included",
+            "trek_package_usd": 650,
+            "transportation_usd": 50,
+            "total_budget_range_usd": {
+                "min": 650,
+                "max": 1200
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Quechua",
+                "Mestizo"
+            ],
+            "primary_religion": "Catholic with Andean traditions",
+            "languages": [
+                "Spanish",
+                "Quechua",
+                "English (guides)"
+            ],
+            "customs_etiquette": [
+                "Ask permission before photographing locals",
+                "Respect sacred sites - no climbing on ruins",
+                "Participate in coca leaf ceremonies if offered",
+                "Tip porters and cooks ($20-30 total)",
+                "Don't touch or move stones at archaeological sites",
+                "Greet with 'Buenos días' or 'Allin p'unchay' (Quechua)"
+            ],
+            "local_foods": [
+                {
+                    "name": "Quinoa soup",
+                    "description": "Traditional high-protein grain soup"
+                },
+                {
+                    "name": "Lomo saltado",
+                    "description": "Stir-fried beef with vegetables"
+                },
+                {
+                    "name": "Coca tea",
+                    "description": "Helps with altitude adjustment"
+                },
+                {
+                    "name": "Chuño",
+                    "description": "Freeze-dried potatoes"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Inti Raymi",
+                    "when": "June 24",
+                    "description": "Festival of the Sun"
+                },
+                {
+                    "name": "Qoyllur Rit'i",
+                    "when": "May/June",
+                    "description": "Snow Star Festival"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "high",
+                "prevention": [
+                    "Acclimatize in Cusco 2-3 days before",
+                    "Climb slowly, rest frequently",
+                    "Stay hydrated (3-4 liters daily)",
+                    "Consider acetazolamide (Diamox)",
+                    "Coca tea and coca leaves help",
+                    "Avoid alcohol before and during trek"
+                ],
+                "symptoms": [
+                    "Headache",
+                    "Nausea",
+                    "Shortness of breath",
+                    "Fatigue",
+                    "Loss of appetite"
+                ],
+                "treatment": "Descend if symptoms worsen, guides carry oxygen"
+            },
+            "medical_facilities": [
+                {
+                    "location": "Trail",
+                    "type": "Basic first aid with guides"
+                },
+                {
+                    "location": "Aguas Calientes",
+                    "type": "Medical post"
+                },
+                {
+                    "location": "Cusco",
+                    "type": "Hospitals and clinics"
+                }
+            ],
+            "evacuation": {
+                "method": "Porter stretcher or helicopter",
+                "cost_usd": "2000-5000",
+                "insurance_required": true,
+                "response_time": "Several hours to days"
+            },
+            "vaccinations_recommended": [
+                "Yellow fever",
+                "Hepatitis A & B",
+                "Typhoid",
+                "Routine vaccinations"
+            ],
+            "other_concerns": [
+                "Sun exposure at altitude",
+                "Hypothermia risk at passes",
+                "Basic hygiene to avoid GI issues"
+            ]
+        },
+        "weather_patterns": {
+            "dry_season": {
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Busy season, cold nights"
+            },
+            "wet_season": {
+                "months": [
+                    "November",
+                    "December",
+                    "January",
+                    "February",
+                    "March"
+                ],
+                "day_temp_c": "13 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily rain likely",
+                "notes": "Trail closed in February"
+            },
+            "shoulder": {
+                "months": [
+                    "April",
+                    "October"
+                ],
+                "day_temp_c": "15 to 18",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Occasional",
+                "notes": "Good compromise, fewer crowds"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Bus/Van",
+                    "from": "Cusco",
+                    "to": "Km 82",
+                    "duration": "2.5 hours",
+                    "cost_usd": "included",
+                    "notes": "Early morning departure"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Train",
+                    "from": "Aguas Calientes",
+                    "to": "Ollantaytambo",
+                    "duration": "1.5 hours",
+                    "cost_usd": 75,
+                    "notes": "Then bus to Cusco"
+                }
+            ]
+        },
+        "accommodation": {
+            "type": "Camping",
+            "description": "Designated campsites only",
+            "amenities": [
+                "Two-person tents provided",
+                "Dining tent with tables",
+                "Portable toilet tent",
+                "No showers on trail",
+                "Basic facilities at campsites"
+            ],
+            "booking": "Must book through licensed operator",
+            "cost_per_night_usd": "Included in package"
+        },
+        "difficulty_details": {
+            "physical_demands": "Good fitness for altitude and long days",
+            "technical_skills": "None required",
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Stone steps, some uneven terrain",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 2200,
+            "total_elevation_loss": 2370
+        },
+        "sustainability": {
+            "environmental_concerns": [
+                "Trail erosion",
+                "Waste management",
+                "Overcrowding"
+            ],
+            "responsible_practices": [
+                "Pack out all trash",
+                "Use designated toilet facilities",
+                "Stay on marked trails",
+                "Support porter welfare initiatives",
+                "Choose operators following sustainability practices"
+            ],
+            "local_initiatives": [
+                "Porter welfare laws",
+                "Trail maintenance programs",
+                "Daily visitor limits"
+            ]
+        },
+        "connectivity": {
+            "mobile_coverage": [
+                {
+                    "location": "Start/End points",
+                    "quality": "Good",
+                    "providers": [
+                        "Claro",
+                        "Movistar"
+                    ]
+                },
+                {
+                    "location": "Trail",
+                    "quality": "None",
+                    "providers": []
+                }
+            ],
+            "internet": {
+                "availability": "No internet on trail",
+                "cost_usd": 0,
+                "speed": "N/A"
+            }
+        },
+        "booking_recommendations": {
+            "advance_booking": "4-6 months essential",
+            "group_size": "Maximum 16 per group",
+            "guide_requirement": "Mandatory - licensed guide only",
+            "porter_recommendation": "Included in all packages",
+            "insurance_essential": true,
+            "fitness_preparation": "3 months cardio and stair training"
+        },
+        "alternative_routes": [
+            {
+                "name": "Salkantay Trek",
+                "variation": "Higher altitude alternative",
+                "extra_days": 1,
+                "highlights": [
+                    "No permit needed",
+                    "Salkantay peak views",
+                    "More challenging"
+                ]
+            },
+            {
+                "name": "Lares Trek",
+                "variation": "Cultural focus",
+                "extra_days": 0,
+                "highlights": [
+                    "Remote villages",
+                    "Hot springs",
+                    "Weaving communities"
+                ]
+            },
+            {
+                "name": "Short Inca Trail",
+                "variation": "2-day version",
+                "fewer_days": 2,
+                "highlights": [
+                    "Less strenuous",
+                    "Still enter via Sun Gate",
+                    "Good for families"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Dead Woman's Pass",
+                "best_time": "Morning",
+                "subjects": [
+                    "Mountain panorama",
+                    "Achievement shots",
+                    "Cloud formations"
+                ]
+            },
+            {
+                "location": "Phuyupatamarca",
+                "best_time": "Sunset",
+                "subjects": [
+                    "Ruins with mountain backdrop",
+                    "Cloud forest",
+                    "Distant peaks"
+                ]
+            },
+            {
+                "location": "Sun Gate",
+                "best_time": "Sunrise",
+                "subjects": [
+                    "First view of Machu Picchu",
+                    "Morning mist",
+                    "Dramatic reveal"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "How fit do I need to be?",
+                "answer": "Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior."
+            },
+            {
+                "question": "Why must I book so far ahead?",
+                "answer": "Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently."
+            },
+            {
+                "question": "What about altitude sickness?",
+                "answer": "Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely."
+            },
+            {
+                "question": "How heavy is my daypack?",
+                "answer": "Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg."
+            },
+            {
+                "question": "Is the trail crowded?",
+                "answer": "Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 99,
+        "seo": {
+            "meta_title": "Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu",
+            "meta_description": "Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.",
+            "keywords": [
+                "inca trail",
+                "machu picchu trek",
+                "peru trekking",
+                "inca trail permits",
+                "cusco hiking"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

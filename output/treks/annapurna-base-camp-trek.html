@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -950,7 +955,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1091,7 +1096,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1203,5 +1208,674 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "annapurna-base-camp-trek",
+        "name": "Annapurna Base Camp Trek",
+        "slug": "annapurna-base-camp-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+        "duration": {
+            "min_days": 7,
+            "max_days": 12,
+            "recommended_days": 10
+        },
+        "distance_km": 110,
+        "difficulty": "moderate",
+        "max_elevation_m": 4130,
+        "starting_elevation_m": 1070,
+        "airport": "Pokhara (PKR)",
+        "nearest_city": "Pokhara",
+        "coordinates": {
+            "start": {
+                "lat": 28.3784,
+                "lng": 83.7284,
+                "location": "Nayapul"
+            },
+            "end": {
+                "lat": 28.53,
+                "lng": 83.8783,
+                "location": "Annapurna Base Camp"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Autumn",
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "description": "Clear views, stable weather, peak season"
+            },
+            {
+                "name": "Spring",
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "description": "Rhododendron blooms, good weather, warmer"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Pokhara to Ghandruk",
+                "start_location": "Pokhara",
+                "end_location": "Ghandruk",
+                "distance_km": 42,
+                "duration_hours": 6,
+                "elevation_start_m": 820,
+                "elevation_end_m": 2012,
+                "elevation_gain_m": 1192,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Himalaya Lodge",
+                        "Gurung Cottage",
+                        "Mountain View Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Drive to Nayapul",
+                    "Gurung village culture",
+                    "Annapurna South views",
+                    "Traditional architecture"
+                ],
+                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
+            },
+            {
+                "day": 2,
+                "title": "Ghandruk to Chhomrong",
+                "start_location": "Ghandruk",
+                "end_location": "Chhomrong",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 2012,
+                "elevation_end_m": 2170,
+                "elevation_gain_m": 500,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Chhomrong Guest House",
+                        "Annapurna Lodge",
+                        "Panorama Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Cross Kimrong Khola",
+                    "Terraced fields",
+                    "Machhapuchhre views",
+                    "Gateway to sanctuary"
+                ],
+                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
+            },
+            {
+                "day": 3,
+                "title": "Chhomrong to Bamboo",
+                "start_location": "Chhomrong",
+                "end_location": "Bamboo",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 2170,
+                "elevation_end_m": 2310,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Bamboo Lodge",
+                        "Forest Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Enter sanctuary",
+                    "Bamboo forests",
+                    "Modi Khola gorge",
+                    "Changing vegetation"
+                ],
+                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
+            },
+            {
+                "day": 4,
+                "title": "Bamboo to Deurali",
+                "start_location": "Bamboo",
+                "end_location": "Deurali",
+                "distance_km": 11,
+                "duration_hours": 6,
+                "elevation_start_m": 2310,
+                "elevation_end_m": 3230,
+                "elevation_gain_m": 920,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Deurali Guest House",
+                        "Himalaya Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Himalaya Hotel",
+                    "Alpine environment",
+                    "Avalanche areas",
+                    "Mountain views emerging"
+                ],
+                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
+            },
+            {
+                "day": 5,
+                "title": "Deurali to Annapurna Base Camp",
+                "start_location": "Deurali",
+                "end_location": "Annapurna Base Camp",
+                "distance_km": 6,
+                "duration_hours": 4,
+                "elevation_start_m": 3230,
+                "elevation_end_m": 4130,
+                "elevation_gain_m": 900,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "ABC Lodge",
+                        "Annapurna Sanctuary Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Machhapuchhre Base Camp",
+                    "360-degree mountain views",
+                    "Annapurna Sanctuary",
+                    "Sunset on peaks"
+                ],
+                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
+            },
+            {
+                "day": 6,
+                "title": "ABC Sunrise and Descend to Bamboo",
+                "start_location": "Annapurna Base Camp",
+                "end_location": "Bamboo",
+                "distance_km": 17,
+                "duration_hours": 7,
+                "elevation_start_m": 4130,
+                "elevation_end_m": 2310,
+                "elevation_gain_m": -1820,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Bamboo Lodge",
+                        "Forest Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Sunrise on Annapurna I",
+                    "Last sanctuary views",
+                    "Rapid descent",
+                    "Return through forests"
+                ],
+                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
+            },
+            {
+                "day": 7,
+                "title": "Bamboo to Jhinu Danda",
+                "start_location": "Bamboo",
+                "end_location": "Jhinu Danda",
+                "distance_km": 13,
+                "duration_hours": 6,
+                "elevation_start_m": 2310,
+                "elevation_end_m": 1780,
+                "elevation_gain_m": 200,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Jhinu Guest House",
+                        "Hot Spring Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Return to Chhomrong",
+                    "Natural hot springs",
+                    "Relaxation",
+                    "Modi Khola riverside"
+                ],
+                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
+            },
+            {
+                "day": 8,
+                "title": "Jhinu to Ghandruk",
+                "start_location": "Jhinu Danda",
+                "end_location": "Ghandruk",
+                "distance_km": 8,
+                "duration_hours": 4,
+                "elevation_start_m": 1780,
+                "elevation_end_m": 2012,
+                "elevation_gain_m": 232,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Himalaya Lodge",
+                        "Gurung Cottage"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Alternative route",
+                    "Village life",
+                    "Cultural immersion",
+                    "Mountain views"
+                ],
+                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
+            },
+            {
+                "day": 9,
+                "title": "Ghandruk to Pokhara",
+                "start_location": "Ghandruk",
+                "end_location": "Pokhara",
+                "distance_km": 20,
+                "duration_hours": 4,
+                "elevation_start_m": 2012,
+                "elevation_end_m": 820,
+                "elevation_gain_m": -1192,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Return to Pokhara hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Final mountain views",
+                    "Descent to Nayapul",
+                    "Drive to Pokhara",
+                    "Trek completion"
+                ],
+                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Trekking boots",
+                    "description": "Comfortable and waterproof",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-10°C rated",
+                    "rental_available": true
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Cold at base camp",
+                    "rental_available": true
+                },
+                {
+                    "item": "Rain gear",
+                    "description": "Essential any season",
+                    "rental_available": true
+                },
+                {
+                    "item": "Layers",
+                    "description": "Temperature varies greatly",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
+                    "rental_available": false
+                },
+                {
+                    "item": "Basic first aid",
+                    "description": "Including blister kit",
+                    "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Trekking poles",
+                    "description": "Very helpful on stairs",
+                    "rental_available": true
+                },
+                {
+                    "item": "Water purification",
+                    "description": "Tablets or SteriPen",
+                    "rental_available": false
+                },
+                {
+                    "item": "Snacks",
+                    "description": "Energy bars, nuts",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "ACAP (Annapurna Conservation)",
+                "cost_usd": 30,
+                "cost_npr": 3000,
+                "where_to_obtain": "Pokhara or Kathmandu",
+                "validity": "Single entry"
+            },
+            {
+                "name": "TIMS Card",
+                "cost_usd": 10,
+                "cost_npr": 1000,
+                "where_to_obtain": "Pokhara or Kathmandu",
+                "validity": "Trek duration"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 40,
+            "guide_daily_usd": 25,
+            "porter_daily_usd": 18,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 30,
+            "total_budget_range_usd": {
+                "min": 400,
+                "max": 1000
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Gurung",
+                "Magar"
+            ],
+            "primary_religion": "Buddhism and Hinduism",
+            "languages": [
+                "Nepali",
+                "Gurung",
+                "English"
+            ],
+            "customs_etiquette": [
+                "Remove shoes when entering homes",
+                "Use right hand for eating/giving",
+                "Walk clockwise around mani walls",
+                "Dress modestly in villages",
+                "Ask permission for photos"
+            ],
+            "local_foods": [
+                {
+                    "name": "Dal bhat",
+                    "description": "Traditional meal available everywhere"
+                },
+                {
+                    "name": "Gurung bread",
+                    "description": "Local specialty"
+                },
+                {
+                    "name": "Raksi",
+                    "description": "Local millet alcohol"
+                },
+                {
+                    "name": "Dhindo",
+                    "description": "Traditional porridge"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent built into itinerary",
+                    "Stay hydrated",
+                    "Rest day can be added",
+                    "Don't rush to ABC"
+                ],
+                "critical_points": [
+                    "Above 3000m",
+                    "Especially approaching ABC"
+                ]
+            },
+            "medical_facilities": [
+                {
+                    "location": "Chhomrong",
+                    "type": "Basic health post"
+                },
+                {
+                    "location": "Pokhara",
+                    "type": "Good hospitals"
+                }
+            ],
+            "evacuation": {
+                "method": "Helicopter from most points",
+                "cost_usd": "3000-5000",
+                "insurance_required": true
+            }
+        },
+        "weather_patterns": {
+            "autumn": {
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Low",
+                "visibility": "Excellent",
+                "notes": "Best views, busy season"
+            },
+            "spring": {
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "0 to 10",
+                "precipitation": "Moderate",
+                "visibility": "Good mornings",
+                "notes": "Rhododendrons bloom"
+            },
+            "winter": {
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "-10 to 0",
+                "precipitation": "Low, possible snow",
+                "visibility": "Excellent",
+                "notes": "Very cold at ABC"
+            },
+            "monsoon": {
+                "months": [
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "5 to 15",
+                "precipitation": "Very high",
+                "visibility": "Poor",
+                "notes": "Not recommended, leeches"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Tourist bus",
+                    "from": "Pokhara",
+                    "to": "Nayapul",
+                    "duration": "1.5 hours",
+                    "cost_usd": 10,
+                    "frequency": "Multiple daily"
+                },
+                {
+                    "method": "Private taxi",
+                    "from": "Pokhara",
+                    "to": "Nayapul",
+                    "duration": "1.5 hours",
+                    "cost_usd": 30,
+                    "frequency": "Any time"
+                }
+            ],
+            "from_end": "Same options in reverse"
+        },
+        "accommodation": {
+            "type": "Teahouses",
+            "description": "Basic but comfortable lodges",
+            "amenities": [
+                "Twin-bed rooms",
+                "Shared bathrooms mostly",
+                "Hot showers (lower elevations)",
+                "Charging for devices (paid)",
+                "WiFi in some lodges (paid)",
+                "Meals available"
+            ],
+            "booking": "Not required except peak season",
+            "cost_per_night_usd": "3-8"
+        },
+        "difficulty_details": {
+            "physical_demands": "Moderate fitness required",
+            "technical_skills": "None needed",
+            "altitude_challenge": "Moderate - max 4,130m",
+            "trail_conditions": "Well-maintained, many stone steps",
+            "daily_hiking_hours": "5-7 hours",
+            "total_elevation_gain": 4500,
+            "total_elevation_loss": 4500
+        },
+        "alternative_routes": [
+            {
+                "name": "ABC via Poon Hill",
+                "variation": "Add Poon Hill sunrise",
+                "extra_days": 2,
+                "highlights": [
+                    "Famous sunrise viewpoint",
+                    "Different villages",
+                    "More variety"
+                ]
+            },
+            {
+                "name": "Mardi Himal addition",
+                "variation": "Combine with Mardi Himal",
+                "extra_days": 4,
+                "highlights": [
+                    "Less crowded ridge trek",
+                    "Different perspective",
+                    "Forest camps"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Annapurna Base Camp",
+                "best_time": "Sunrise",
+                "subjects": [
+                    "360° amphitheater",
+                    "Annapurna I south face",
+                    "Alpenglow"
+                ]
+            },
+            {
+                "location": "Machhapuchhre Base Camp",
+                "best_time": "Sunset",
+                "subjects": [
+                    "Fishtail mountain",
+                    "Sacred peak",
+                    "Evening colors"
+                ]
+            },
+            {
+                "location": "Ghandruk village",
+                "best_time": "Morning",
+                "subjects": [
+                    "Traditional architecture",
+                    "Mountain backdrop",
+                    "Village life"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "ABC or EBC - which is better?",
+                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
+            },
+            {
+                "question": "Can I do it independently?",
+                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
+            },
+            {
+                "question": "How cold is base camp?",
+                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
+            },
+            {
+                "question": "Is altitude a problem?",
+                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 95,
+        "seo": {
+            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
+            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+            "keywords": [
+                "annapurna base camp",
+                "abc trek",
+                "nepal trekking",
+                "annapurna sanctuary",
+                "pokhara trekking"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

@@ -269,7 +269,7 @@
       const authStatusDiv = document.getElementById('auth-status');
       
       if (user) {
-        // User is signed in - MODIFIED to remove the "Signed in as" text
+        // User is signed in
         authStatusDiv.innerHTML = `
           <div class="flex justify-end items-center mb-8">
             <div>
@@ -442,7 +442,7 @@
       `;
     }
 
-    // ✅ FIXED: Function to fetch itineraries with proper response handling
+    // Function to fetch itineraries with proper response handling
     async function fetchItineraries(user) {
       try {
         // First check if the API health endpoint is responding
@@ -476,7 +476,7 @@
           }
         }
         
-        // ✅ FIX: Handle the new response format with pagination
+        // Handle the new response format with pagination
         const responseData = await response.json();
         console.log('Raw response:', responseData); // Debug log
         
@@ -522,22 +522,93 @@
             // Create card for itinerary
             const card = document.createElement('div');
             card.className = 'bg-white rounded-lg shadow-md overflow-hidden itinerary-card';
+            
+            // Check if this is a saved popular trek
+            const isPopularTrek = itinerary.type === 'popular-trek';
+
+            // Determine the view URL based on type
+            let viewUrl;
+            if (isPopularTrek && itinerary.trekId) {
+              // For popular treks, link to the trek page
+              viewUrl = `/output/treks/${itinerary.trekId}.html`;
+            } else {
+              // For custom itineraries, use the regular view page
+              viewUrl = `view-itinerary.html?id=${itinerary._id}`;
+            }
+
             card.innerHTML = `
               ${cardHeader}
               <div class="p-4">
-                <p class="text-gray-600 text-sm mb-3">Created: ${createdDate}</p>
+                ${isPopularTrek ? `
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium flex items-center gap-1">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                      Popular Trek
+                    </span>
+                  </div>
+                ` : ''}
+                
+                <p class="text-gray-600 text-sm mb-3">
+                  ${isPopularTrek ? 'Saved' : 'Created'}: ${createdDate}
+                </p>
+                
+                ${itinerary.trekDetails ? `
+                  <div class="text-sm text-gray-600 mb-3 grid grid-cols-2 gap-2">
+                    ${itinerary.trekDetails.duration ? `
+                      <div class="flex items-center gap-1">
+                        <span>📅</span>
+                        <span>${itinerary.trekDetails.duration} days</span>
+                      </div>
+                    ` : ''}
+                    ${itinerary.trekDetails.distance ? `
+                      <div class="flex items-center gap-1">
+                        <span>🥾</span>
+                        <span>${itinerary.trekDetails.distance}km</span>
+                      </div>
+                    ` : ''}
+                    ${itinerary.trekDetails.maxElevation ? `
+                      <div class="flex items-center gap-1">
+                        <span>🏔️</span>
+                        <span>${itinerary.trekDetails.maxElevation}m</span>
+                      </div>
+                    ` : ''}
+                    ${itinerary.trekDetails.country ? `
+                      <div class="flex items-center gap-1">
+                        <span>📍</span>
+                        <span>${itinerary.trekDetails.country}</span>
+                      </div>
+                    ` : ''}
+                  </div>
+                ` : ''}
+                
                 <div class="flex flex-wrap gap-2 mb-4">
-                  ${itinerary.filters?.difficulty ? `<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">${itinerary.filters.difficulty}</span>` : ''}
-                  ${itinerary.filters?.accommodation ? `<span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">${itinerary.filters.accommodation}</span>` : ''}
-                  ${itinerary.filters?.technical ? `<span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">${itinerary.filters.technical}</span>` : ''}
+                  ${itinerary.filters?.difficulty ? `
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+                      ${itinerary.filters.difficulty}
+                    </span>
+                  ` : ''}
+                  ${!isPopularTrek && itinerary.filters?.accommodation ? `
+                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">
+                      ${itinerary.filters.accommodation}
+                    </span>
+                  ` : ''}
+                  ${!isPopularTrek && itinerary.filters?.technical ? `
+                    <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">
+                      ${itinerary.filters.technical}
+                    </span>
+                  ` : ''}
                 </div>
+                
                 <div class="flex gap-2">
-                  <a href="view-itinerary.html?id=${itinerary._id}" class="flex-1 flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                  <a href="${viewUrl}" 
+                     class="flex-1 flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                     </svg>
-                    View
+                    ${isPopularTrek ? 'View Trek' : 'View Itinerary'}
                   </a>
                   <button class="delete-btn flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 rounded-md transition-colors duration-200" data-id="${itinerary._id}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

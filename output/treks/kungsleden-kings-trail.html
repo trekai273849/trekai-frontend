@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -866,7 +871,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1023,7 +1028,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1135,5 +1140,600 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "kungsleden-kings-trail",
+        "name": "Kungsleden (King's Trail)",
+        "slug": "kungsleden-kings-trail",
+        "region": "Sweden/Scandinavia",
+        "country": "Sweden",
+        "summary": "Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.",
+        "duration": {
+            "min_days": 5,
+            "max_days": 7,
+            "recommended_days": 5
+        },
+        "distance_km": 110,
+        "difficulty": "easy",
+        "max_elevation_m": 1140,
+        "starting_elevation_m": 480,
+        "airport": "Kiruna (KRN)",
+        "nearest_city": "Kiruna/Abisko",
+        "coordinates": {
+            "start": {
+                "lat": 68.3494,
+                "lng": 18.8311,
+                "location": "Abisko"
+            },
+            "end": {
+                "lat": 67.8482,
+                "lng": 18.4161,
+                "location": "Nikkaluokta"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Summer",
+                "months": [
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "description": "Midnight sun, warm weather, full facilities open"
+            },
+            {
+                "name": "Autumn",
+                "months": [
+                    "September"
+                ],
+                "description": "Spectacular fall colors, northern lights begin, fewer mosquitoes"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Abisko to Abiskojaure",
+                "start_location": "Abisko",
+                "end_location": "Abiskojaure",
+                "distance_km": 15,
+                "duration_hours": 4,
+                "elevation_start_m": 480,
+                "elevation_end_m": 490,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "STF hut",
+                    "options": [
+                        "Abiskojaure STF hut",
+                        "Camping"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Abisko National Park",
+                    "Abiskojaure lake",
+                    "First taste of Lapland",
+                    "Mountain views"
+                ],
+                "description": "Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake."
+            },
+            {
+                "day": 2,
+                "title": "Abiskojaure to Alesjaure",
+                "start_location": "Abiskojaure",
+                "end_location": "Alesjaure",
+                "distance_km": 22,
+                "duration_hours": 6,
+                "elevation_start_m": 490,
+                "elevation_end_m": 785,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "STF hut",
+                    "options": [
+                        "Alesjaure STF hut",
+                        "Camping"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Tjäktja Pass views",
+                    "Alesjaure valley",
+                    "Possible reindeer",
+                    "Alpine environment"
+                ],
+                "description": "Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure."
+            },
+            {
+                "day": 3,
+                "title": "Alesjaure to Sälka",
+                "start_location": "Alesjaure",
+                "end_location": "Sälka",
+                "distance_km": 12,
+                "duration_hours": 4,
+                "elevation_start_m": 785,
+                "elevation_end_m": 820,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "STF hut",
+                    "options": [
+                        "Sälka STF hut",
+                        "Camping"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Gentle terrain",
+                    "Mountain streams",
+                    "Wildflowers (summer)",
+                    "Shorter day"
+                ],
+                "description": "Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks."
+            },
+            {
+                "day": 4,
+                "title": "Sälka to Kebnekaise Fjällstation",
+                "start_location": "Sälka",
+                "end_location": "Kebnekaise Fjällstation",
+                "distance_km": 24,
+                "duration_hours": 7,
+                "elevation_start_m": 820,
+                "elevation_end_m": 690,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "STF station",
+                    "options": [
+                        "Kebnekaise Fjällstation",
+                        "Camping"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Tjäktja Pass (1,140m)",
+                    "Highest point on trail",
+                    "Kebnekaise views",
+                    "Laddjuvagge valley"
+                ],
+                "description": "Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station."
+            },
+            {
+                "day": 5,
+                "title": "Kebnekaise to Nikkaluokta",
+                "start_location": "Kebnekaise Fjällstation",
+                "end_location": "Nikkaluokta",
+                "distance_km": 19,
+                "duration_hours": 5,
+                "elevation_start_m": 690,
+                "elevation_end_m": 470,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "end point",
+                    "options": [
+                        "Nikkaluokta Sarri Lodge",
+                        "Return to Kiruna"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Forest return",
+                    "Trail completion",
+                    "Sami culture center",
+                    "Bus to Kiruna"
+                ],
+                "description": "Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Hiking boots",
+                    "description": "Waterproof recommended",
+                    "rental_available": true
+                },
+                {
+                    "item": "Rain gear",
+                    "description": "Top and bottom essential",
+                    "rental_available": true
+                },
+                {
+                    "item": "Warm layers",
+                    "description": "Can be cold even in summer",
+                    "rental_available": false
+                },
+                {
+                    "item": "Mosquito protection",
+                    "description": "Head net, repellent (July)",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "If camping",
+                    "rental_available": true
+                },
+                {
+                    "item": "Backpack",
+                    "description": "40-60L",
+                    "rental_available": true
+                },
+                {
+                    "item": "Map and compass",
+                    "description": "Well-marked but essential",
+                    "rental_available": false
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Include blister treatment",
+                    "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Trekking poles",
+                    "description": "Helpful for river crossings",
+                    "rental_available": true
+                },
+                {
+                    "item": "Gaiters",
+                    "description": "For wet sections",
+                    "rental_available": false
+                },
+                {
+                    "item": "Camp shoes",
+                    "description": "For hut/tent comfort",
+                    "rental_available": false
+                },
+                {
+                    "item": "Dry bags",
+                    "description": "Keep essentials dry",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "None required",
+                "cost_usd": 0,
+                "notes": "Right to roam applies"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 0,
+            "guide_daily_usd": 200,
+            "accommodation_daily_usd": 50,
+            "meals_daily_usd": 40,
+            "transportation_usd": 100,
+            "total_budget_range_usd": {
+                "min": 400,
+                "max": 1200
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Swedish",
+                "Sami (indigenous)"
+            ],
+            "primary_religion": "Lutheran/Secular",
+            "languages": [
+                "Swedish",
+                "Sami",
+                "English common"
+            ],
+            "customs_etiquette": [
+                "Respect Sami reindeer herding areas",
+                "Don't disturb reindeer",
+                "Remove shoes in huts",
+                "Help with hut chores if asked",
+                "Leave no trace strictly followed"
+            ],
+            "local_foods": [
+                {
+                    "name": "Reindeer meat",
+                    "description": "Traditional Sami staple"
+                },
+                {
+                    "name": "Cloudberries",
+                    "description": "Arctic gold berry"
+                },
+                {
+                    "name": "Gáhkku",
+                    "description": "Sami flatbread"
+                },
+                {
+                    "name": "Smoked fish",
+                    "description": "Arctic char and salmon"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Autumn Reindeer Separation",
+                    "when": "September",
+                    "description": "Traditional herding event"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "none",
+                "notes": "Maximum elevation only 1,140m"
+            },
+            "main_concerns": {
+                "river_crossings": {
+                    "risk_level": "moderate",
+                    "description": "Can be high after rain",
+                    "prevention": [
+                        "Check conditions at huts",
+                        "Use bridges where available",
+                        "Trekking poles help",
+                        "Consider waiting if high"
+                    ]
+                },
+                "mosquitoes": {
+                    "risk_level": "high in July",
+                    "description": "Can be overwhelming",
+                    "prevention": [
+                        "Head net essential",
+                        "Long sleeves and pants",
+                        "Strong repellent",
+                        "Keep moving"
+                    ]
+                },
+                "weather": {
+                    "risk_level": "moderate",
+                    "description": "Changes quickly",
+                    "prevention": [
+                        "Layer clothing",
+                        "Always carry rain gear",
+                        "Check forecasts at huts",
+                        "Be flexible with plans"
+                    ]
+                }
+            },
+            "evacuation": {
+                "method": "Helicopter",
+                "cost_usd": "Covered by European health insurance",
+                "insurance_required": true,
+                "response_time": "Few hours to a day"
+            }
+        },
+        "weather_patterns": {
+            "summer": {
+                "months": [
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Frequent rain",
+                "daylight_hours": "24",
+                "notes": "Midnight sun, mosquitoes peak July"
+            },
+            "autumn": {
+                "months": [
+                    "September"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Variable",
+                "daylight_hours": "14",
+                "notes": "Stunning colors, possible snow"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Train",
+                    "from": "Kiruna",
+                    "to": "Abisko",
+                    "duration": "1.5 hours",
+                    "cost_usd": 20,
+                    "frequency": "2-4 daily"
+                },
+                {
+                    "method": "Bus",
+                    "from": "Kiruna Airport",
+                    "to": "Abisko",
+                    "duration": "2 hours",
+                    "cost_usd": 30,
+                    "frequency": "Connects with flights"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Bus",
+                    "from": "Nikkaluokta",
+                    "to": "Kiruna",
+                    "duration": "1.5 hours",
+                    "cost_usd": 25,
+                    "frequency": "2-3 daily in season"
+                }
+            ]
+        },
+        "accommodation": {
+            "type": "STF mountain huts",
+            "description": "Swedish Tourist Association huts",
+            "amenities": [
+                "Bunk beds in dorms",
+                "Self-catering kitchens",
+                "Shop with supplies",
+                "Sauna at most huts",
+                "Camping allowed nearby",
+                "Host provides info"
+            ],
+            "booking": "Not required but recommended",
+            "cost_per_night_usd": {
+                "stf_member": "25-35",
+                "non_member": "50-60",
+                "camping": "15-20"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Moderate fitness sufficient",
+            "technical_skills": "None required",
+            "altitude_challenge": "None",
+            "trail_conditions": "Well-marked, boardwalks in wet areas",
+            "navigation_challenge": "Easy - clear trail",
+            "daily_hiking_hours": "4-7 hours",
+            "total_elevation_gain": 1300,
+            "total_elevation_loss": 1430
+        },
+        "sustainability": {
+            "environmental_concerns": [
+                "Fragile arctic ecosystem",
+                "Reindeer grazing areas",
+                "Erosion in popular sections"
+            ],
+            "responsible_practices": [
+                "Strict leave no trace",
+                "Stay on marked trails",
+                "Respect Sami land use",
+                "Use designated camping",
+                "Pack out all waste"
+            ],
+            "local_initiatives": [
+                "STF conservation work",
+                "Trail maintenance volunteers",
+                "Sustainable hut operations"
+            ]
+        },
+        "connectivity": {
+            "mobile_coverage": [
+                {
+                    "location": "Abisko/Nikkaluokta",
+                    "quality": "Good",
+                    "providers": [
+                        "Telia",
+                        "Telenor"
+                    ]
+                },
+                {
+                    "location": "Trail",
+                    "quality": "Very limited",
+                    "providers": [
+                        "Emergency calls sometimes"
+                    ]
+                }
+            ],
+            "internet": {
+                "availability": "Only at Kebnekaise station",
+                "cost_usd": "5",
+                "speed": "Basic"
+            }
+        },
+        "booking_recommendations": {
+            "advance_booking": "1-2 months for huts in peak season",
+            "group_size": "Any size welcome",
+            "guide_requirement": "Not necessary",
+            "food_planning": "Buy at huts or carry all",
+            "insurance_essential": true,
+            "fitness_preparation": "Basic hiking fitness"
+        },
+        "alternative_routes": [
+            {
+                "name": "Full Kungsleden",
+                "variation": "Abisko to Hemavan",
+                "extra_days": 20,
+                "highlights": [
+                    "440km total",
+                    "Full arctic traverse",
+                    "More solitude south"
+                ]
+            },
+            {
+                "name": "Kebnekaise Extension",
+                "variation": "Climb Sweden's highest",
+                "extra_days": 2,
+                "highlights": [
+                    "2,106m summit",
+                    "Glacier option",
+                    "Achievement"
+                ]
+            },
+            {
+                "name": "Winter Skiing",
+                "variation": "March-April ski tour",
+                "extra_days": 2,
+                "highlights": [
+                    "Northern lights",
+                    "Winter huts open",
+                    "Arctic experience"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Tjäktja Pass",
+                "best_time": "Clear weather",
+                "subjects": [
+                    "Valley views",
+                    "Kebnekaise massif",
+                    "Arctic landscape"
+                ]
+            },
+            {
+                "location": "Abiskojaure",
+                "best_time": "Evening",
+                "subjects": [
+                    "Lake reflections",
+                    "Midnight sun",
+                    "Lapporten gate"
+                ]
+            },
+            {
+                "location": "Autumn tundra",
+                "best_time": "September",
+                "subjects": [
+                    "Fall colors",
+                    "Reindeer",
+                    "Northern lights"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "How bad are the mosquitoes?",
+                "answer": "In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better."
+            },
+            {
+                "question": "Do I need to book huts in advance?",
+                "answer": "Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms."
+            },
+            {
+                "question": "Can beginners do this trek?",
+                "answer": "Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers."
+            },
+            {
+                "question": "What about the northern lights?",
+                "answer": "Best from late August onward. September offers a great combination of autumn colors and aurora possibilities."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 93,
+        "seo": {
+            "meta_title": "Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland",
+            "meta_description": "Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.",
+            "keywords": [
+                "kungsleden",
+                "kings trail sweden",
+                "lapland hiking",
+                "arctic trekking",
+                "sweden hiking trail"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

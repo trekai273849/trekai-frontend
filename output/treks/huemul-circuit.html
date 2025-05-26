@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -845,7 +850,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1003,7 +1008,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1115,5 +1120,347 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "huemul-circuit",
+        "name": "Huemul Circuit",
+        "slug": "huemul-circuit",
+        "region": "Patagonia",
+        "country": "Argentina",
+        "summary": "A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.",
+        "duration": {
+            "min_days": 4,
+            "max_days": 4,
+            "recommended_days": 4
+        },
+        "distance_km": 65,
+        "difficulty": "challenging",
+        "max_elevation_m": 1600,
+        "starting_elevation_m": 400,
+        "airport": "El Calafate (FTE)",
+        "nearest_city": "El Chaltén",
+        "coordinates": {
+            "start": {
+                "lat": -49.3314,
+                "lng": -72.8861,
+                "location": "El Chaltén"
+            },
+            "end": {
+                "lat": -49.3314,
+                "lng": -72.8861,
+                "location": "El Chaltén"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Summer",
+                "months": [
+                    "December",
+                    "January",
+                    "February",
+                    "March"
+                ],
+                "description": "Only viable season due to river crossings and weather"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "El Chaltén to Laguna Toro",
+                "start_location": "El Chaltén",
+                "end_location": "Laguna Toro",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 400,
+                "elevation_end_m": 900,
+                "elevation_gain_m": 500,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Laguna Toro designated campsite"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Laguna Torre views",
+                    "Enter remote backcountry",
+                    "Glacial valley hiking",
+                    "First wilderness camp"
+                ],
+                "description": "Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks."
+            },
+            {
+                "day": 2,
+                "title": "Paso del Viento and Descent",
+                "start_location": "Laguna Toro",
+                "end_location": "Refugio Paso del Viento",
+                "distance_km": 18,
+                "duration_hours": 8,
+                "elevation_start_m": 900,
+                "elevation_end_m": 600,
+                "elevation_gain_m": 700,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "camping/refugio",
+                    "options": [
+                        "Refugio Paso del Viento (basic shelter)"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Paso del Viento crossing",
+                    "Southern Ice Field views",
+                    "Technical descent with ropes",
+                    "Remote wilderness"
+                ],
+                "description": "Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter."
+            },
+            {
+                "day": 3,
+                "title": "Tyrolean Traverse Day",
+                "start_location": "Refugio Paso del Viento",
+                "end_location": "Campamento Loma del Diablo",
+                "distance_km": 20,
+                "duration_hours": 9,
+                "elevation_start_m": 600,
+                "elevation_end_m": 750,
+                "elevation_gain_m": 400,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Loma del Diablo campsite"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Famous tyrolean traverse",
+                    "Multiple river crossings",
+                    "Viedma Glacier views",
+                    "True wilderness experience"
+                ],
+                "description": "Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges."
+            },
+            {
+                "day": 4,
+                "title": "Return to El Chaltén",
+                "start_location": "Campamento Loma del Diablo",
+                "end_location": "El Chaltén",
+                "distance_km": 13,
+                "duration_hours": 5,
+                "elevation_start_m": 750,
+                "elevation_end_m": 400,
+                "elevation_gain_m": -350,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "town",
+                    "options": [
+                        "Return to El Chaltén accommodation"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Final river crossing",
+                    "Return to civilization",
+                    "Completion celebration",
+                    "Hot shower awaits"
+                ],
+                "description": "Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "4-season tent",
+                    "description": "Wind-resistant, must withstand storms",
+                    "rental_available": true
+                },
+                {
+                    "item": "Warm sleeping bag",
+                    "description": "-10°C rated minimum",
+                    "rental_available": true
+                },
+                {
+                    "item": "Full rain gear",
+                    "description": "Jacket and pants, high quality",
+                    "rental_available": true
+                },
+                {
+                    "item": "River crossing shoes",
+                    "description": "Sandals or extra shoes for crossings",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Essential for river crossings",
+                    "rental_available": true
+                },
+                {
+                    "item": "Camping stove and fuel",
+                    "description": "No wood fires allowed",
+                    "rental_available": true
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Comprehensive for remote areas",
+                    "rental_available": false
+                },
+                {
+                    "item": "Emergency shelter",
+                    "description": "Bivy or emergency blanket",
+                    "rental_available": false
+                },
+                {
+                    "item": "GPS device",
+                    "description": "Trail can be hard to follow",
+                    "rental_available": true
+                },
+                {
+                    "item": "Rope",
+                    "description": "30m for river crossings",
+                    "rental_available": true
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "For river crossings and mud",
+                    "rental_available": false
+                },
+                {
+                    "item": "Neoprene socks",
+                    "description": "For cold river crossings",
+                    "rental_available": false
+                },
+                {
+                    "item": "Satellite communicator",
+                    "description": "For emergencies",
+                    "rental_available": true
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "Huemul Circuit Registration",
+                "cost_usd": 0,
+                "cost_ars": 0,
+                "where_to_obtain": "National Park office El Chaltén",
+                "validity": "Specific dates",
+                "notes": "Must show gear list and experience"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 0,
+            "guide_daily_usd": 200,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 0,
+            "meals_daily_usd": 15,
+            "transportation_usd": 80,
+            "total_budget_range_usd": {
+                "min": 200,
+                "max": 1000
+            }
+        },
+        "health_safety": {
+            "main_concerns": {
+                "river_crossings": {
+                    "risk_level": "very high",
+                    "description": "Multiple dangerous crossings",
+                    "prevention": [
+                        "Never cross alone",
+                        "Use poles and rope",
+                        "Cross early morning when water is lower",
+                        "Be prepared to wait if levels are high",
+                        "Know when to turn back"
+                    ]
+                },
+                "weather": {
+                    "risk_level": "very high",
+                    "description": "Extreme conditions possible",
+                    "prevention": [
+                        "Monitor forecasts closely",
+                        "Be prepared for snow any time",
+                        "Carry emergency shelter",
+                        "Know escape routes"
+                    ]
+                },
+                "remoteness": {
+                    "risk_level": "very high",
+                    "description": "No easy evacuation",
+                    "prevention": [
+                        "Travel with experienced partners",
+                        "Carry comprehensive first aid",
+                        "Consider satellite communicator",
+                        "Leave detailed itinerary with rangers"
+                    ]
+                }
+            },
+            "evacuation": {
+                "method": "Helicopter only",
+                "cost_usd": "5000+",
+                "insurance_required": true,
+                "response_time": "24-48 hours weather permitting"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Excellent fitness required",
+            "technical_skills": "Route-finding, river crossing experience",
+            "altitude_challenge": "None",
+            "trail_conditions": "Often unclear, GPS recommended",
+            "weather_challenge": "Extreme - primary hazard",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 2250,
+            "total_elevation_loss": 2250
+        },
+        "special_considerations": {
+            "experience_required": "Previous multi-day trekking essential",
+            "group_size": "Minimum 2, recommended 3-4",
+            "solo_hiking": "Strongly discouraged",
+            "guide_recommendation": "Highly recommended unless very experienced",
+            "season_critical": "December-March only"
+        },
+        "faqs": [
+            {
+                "question": "Is the Huemul Circuit safe?",
+                "answer": "It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides."
+            },
+            {
+                "question": "What about the tyrolean traverse?",
+                "answer": "A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating."
+            },
+            {
+                "question": "Can I do it without camping experience?",
+                "answer": "No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on."
+            },
+            {
+                "question": "What if rivers are too high?",
+                "answer": "You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 78,
+        "seo": {
+            "meta_title": "Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit",
+            "meta_description": "Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.",
+            "keywords": [
+                "huemul circuit",
+                "el chalten circuit",
+                "patagonia challenging trek",
+                "tyrolean traverse",
+                "southern ice field trek"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

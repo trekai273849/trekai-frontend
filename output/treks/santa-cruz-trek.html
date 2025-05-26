@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -845,7 +850,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -979,7 +984,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1083,5 +1088,467 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "santa-cruz-trek",
+        "name": "Santa Cruz Trek",
+        "slug": "santa-cruz-trek",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
+        "duration": {
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 4
+        },
+        "distance_km": 50,
+        "difficulty": "moderate",
+        "max_elevation_m": 4750,
+        "starting_elevation_m": 3900,
+        "airport": "Lima (LIM)",
+        "nearest_city": "Huaraz",
+        "coordinates": {
+            "start": {
+                "lat": -8.9689,
+                "lng": -77.3928,
+                "location": "Cashapampa"
+            },
+            "end": {
+                "lat": -8.8681,
+                "lng": -77.7089,
+                "location": "Vaqueria"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Dry Season",
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "description": "Clear skies, stable weather, cold nights at altitude"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Cashapampa to Llamacorral",
+                "start_location": "Cashapampa",
+                "end_location": "Llamacorral",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3900,
+                "elevation_end_m": 3760,
+                "elevation_gain_m": 100,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Llamacorral campsite"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Santa Cruz valley entrance",
+                    "Alpamayo views",
+                    "River valley hiking",
+                    "Acclimatization day"
+                ],
+                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
+            },
+            {
+                "day": 2,
+                "title": "Llamacorral to Taullipampa",
+                "start_location": "Llamacorral",
+                "end_location": "Taullipampa",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 3760,
+                "elevation_end_m": 4250,
+                "elevation_gain_m": 490,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Taullipampa campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Laguna Jatuncocha",
+                    "Taulliraju views (5,830m)",
+                    "Alpine meadows",
+                    "360-degree mountain panorama"
+                ],
+                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
+            },
+            {
+                "day": 3,
+                "title": "Taullipampa to Paria Valley via Punta Union",
+                "start_location": "Taullipampa",
+                "end_location": "Paria Valley",
+                "distance_km": 15,
+                "duration_hours": 8,
+                "elevation_start_m": 4250,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 500,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Paria campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Punta Union Pass (4,750m)",
+                    "Spectacular 360° views",
+                    "Laguna Morococha",
+                    "Dramatic descent"
+                ],
+                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
+            },
+            {
+                "day": 4,
+                "title": "Paria Valley to Vaqueria",
+                "start_location": "Paria Valley",
+                "end_location": "Vaqueria",
+                "distance_km": 9,
+                "duration_hours": 3,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 3700,
+                "elevation_gain_m": -150,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "end point",
+                    "options": [
+                        "Return to Huaraz"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Gentle valley descent",
+                    "Rural Andean life",
+                    "Trek completion",
+                    "Transport to Huaraz"
+                ],
+                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "4-season tent",
+                    "description": "Wind-resistant for exposed camps",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-15°C rated for cold nights",
+                    "rental_available": true
+                },
+                {
+                    "item": "Waterproof boots",
+                    "description": "Stream crossings common",
+                    "rental_available": true
+                },
+                {
+                    "item": "Layers for all weather",
+                    "description": "Can snow at pass anytime",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Intense at altitude",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water purification",
+                    "description": "Tablets or filter",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Very helpful for pass day",
+                    "rental_available": true
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "For stream crossings",
+                    "rental_available": false
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Cold at camps",
+                    "rental_available": true
+                },
+                {
+                    "item": "Camera with extra batteries",
+                    "description": "Spectacular scenery",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "Huascaran National Park Entry",
+                "cost_usd": 30,
+                "cost_pen": 90,
+                "where_to_obtain": "Park office in Huaraz or entrance",
+                "validity": "Valid for 21 days"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 30,
+            "guide_daily_usd": 50,
+            "cook_daily_usd": 30,
+            "muleteer_daily_usd": 25,
+            "pack_animal_daily_usd": 15,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 60,
+            "total_budget_range_usd": {
+                "min": 200,
+                "max": 600
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Quechua",
+                "Mestizo"
+            ],
+            "primary_religion": "Catholic with Andean traditions",
+            "languages": [
+                "Spanish",
+                "Quechua",
+                "Limited English"
+            ],
+            "customs_etiquette": [
+                "Respect mountain spirits (Apus)",
+                "Ask permission before photographing locals",
+                "Support local economy",
+                "Participate in coca leaf offerings if invited"
+            ],
+            "local_foods": [
+                {
+                    "name": "Pachamanca",
+                    "description": "Earth oven cooked feast"
+                },
+                {
+                    "name": "Cuy",
+                    "description": "Guinea pig delicacy"
+                },
+                {
+                    "name": "Quinoa soup",
+                    "description": "High-altitude superfood"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "high",
+                "prevention": [
+                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
+                    "Consider day hikes first",
+                    "Climb slowly on pass day",
+                    "Stay hydrated",
+                    "Consider Diamox"
+                ],
+                "critical_points": [
+                    "Punta Union Pass day"
+                ]
+            },
+            "medical_facilities": [
+                {
+                    "location": "Trail",
+                    "type": "None - remote area"
+                },
+                {
+                    "location": "Huaraz",
+                    "type": "Good hospitals and clinics"
+                }
+            ],
+            "evacuation": {
+                "method": "Horse/mule to road, then vehicle",
+                "cost_usd": "1000-3000",
+                "insurance_required": true,
+                "response_time": "6-12 hours"
+            }
+        },
+        "weather_patterns": {
+            "dry_season": {
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Can snow at pass anytime"
+            },
+            "wet_season": {
+                "months": [
+                    "October",
+                    "November",
+                    "December",
+                    "January",
+                    "February",
+                    "March",
+                    "April"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily afternoon rain",
+                "notes": "Trail muddy, clouds obscure views"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Private transport",
+                    "from": "Huaraz",
+                    "to": "Cashapampa",
+                    "duration": "3 hours",
+                    "cost_usd": 30,
+                    "notes": "Usually arranged with guide/agency"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Private transport",
+                    "from": "Vaqueria",
+                    "to": "Huaraz",
+                    "duration": "3 hours",
+                    "cost_usd": 30,
+                    "notes": "Pre-arranged pickup essential"
+                }
+            ]
+        },
+        "accommodation": {
+            "type": "Camping only",
+            "description": "Designated camping areas",
+            "amenities": [
+                "Flat tent sites",
+                "Water sources nearby",
+                "Basic toilet facilities at some sites",
+                "No showers on trail",
+                "Pack out all waste"
+            ],
+            "booking": "First come, first served",
+            "cost_per_night_usd": {
+                "camping": "5"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Good fitness for altitude and pass day",
+            "technical_skills": "None required",
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Well-defined path, rocky on pass",
+            "daily_hiking_hours": "5-8 hours",
+            "total_elevation_gain": 1200,
+            "total_elevation_loss": 1350
+        },
+        "alternative_routes": [
+            {
+                "name": "Alpamayo Circuit",
+                "variation": "Extended version via Alpamayo base camp",
+                "extra_days": 3,
+                "highlights": [
+                    "See Alpamayo up close",
+                    "More remote",
+                    "Additional passes"
+                ]
+            },
+            {
+                "name": "Santa Cruz-Llanganuco",
+                "variation": "Exit via Llanganuco",
+                "extra_days": 0,
+                "highlights": [
+                    "Different exit valley",
+                    "Laguna 69 option",
+                    "Transport flexibility"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Taullipampa camp",
+                "best_time": "Sunrise/sunset",
+                "subjects": [
+                    "Taulliraju",
+                    "Alpenglow on peaks",
+                    "Star photography"
+                ]
+            },
+            {
+                "location": "Punta Union Pass",
+                "best_time": "Morning",
+                "subjects": [
+                    "360° panorama",
+                    "Both valleys",
+                    "Achievement shots"
+                ]
+            }
+        ],
+        "faqs": [
+            {
+                "question": "How does this compare to the Inca Trail?",
+                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
+            },
+            {
+                "question": "Can I do it independently?",
+                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
+            },
+            {
+                "question": "Is acclimatization really necessary?",
+                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 85,
+        "seo": {
+            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
+            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
+            "keywords": [
+                "santa cruz trek",
+                "cordillera blanca",
+                "peru trekking",
+                "huaraz hiking",
+                "punta union pass"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

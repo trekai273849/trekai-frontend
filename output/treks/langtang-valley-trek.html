@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Langtang Valley Trek Guide 2024 | 9-Day Itinerary with Kyanjin Ri</title>
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -950,7 +955,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -1075,7 +1080,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1155,5 +1160,534 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "langtang-valley-trek",
+        "name": "Langtang Valley Trek",
+        "slug": "langtang-valley-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "A shorter trek with stunning mountain views, glaciers, and authentic Tamang culture, perfect for those with limited time.",
+        "duration": {
+            "min_days": 7,
+            "max_days": 10,
+            "recommended_days": 9
+        },
+        "distance_km": 77,
+        "difficulty": "moderate",
+        "max_elevation_m": 4984,
+        "starting_elevation_m": 1470,
+        "airport": "Kathmandu (KTM)",
+        "nearest_city": "Kathmandu",
+        "coordinates": {
+            "start": {
+                "lat": 28.2142,
+                "lng": 85.3606,
+                "location": "Syabrubesi"
+            },
+            "end": {
+                "lat": 28.21,
+                "lng": 85.53,
+                "location": "Kyanjin Gompa"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Spring",
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "description": "Rhododendrons in full bloom, clear mornings"
+            },
+            {
+                "name": "Autumn",
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "description": "Crystal clear views, stable weather"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Drive from Kathmandu to Syabrubesi",
+                "start_location": "Kathmandu",
+                "end_location": "Syabrubesi",
+                "distance_km": 117,
+                "duration_hours": 7,
+                "elevation_start_m": 1400,
+                "elevation_end_m": 1470,
+                "elevation_gain_m": 70,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Hotel Langtang View",
+                        "Buddha Guest House",
+                        "Peaceful Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Scenic mountain drive",
+                    "Views of Ganesh Himal",
+                    "Trishuli River valley",
+                    "Traditional villages"
+                ],
+                "description": "Early morning drive through scenic countryside following the Trishuli River north. The road winds through terraced hillsides to Syabrubesi."
+            },
+            {
+                "day": 2,
+                "title": "Trek to Lama Hotel",
+                "start_location": "Syabrubesi",
+                "end_location": "Lama Hotel",
+                "distance_km": 11,
+                "duration_hours": 6,
+                "elevation_start_m": 1470,
+                "elevation_end_m": 2380,
+                "elevation_gain_m": 910,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Lama Hotel",
+                        "Woodland Lodge",
+                        "Himalayan Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Cross Bhote Koshi River",
+                    "Dense forests",
+                    "Wildlife possibilities",
+                    "Hot springs detour option"
+                ],
+                "description": "Begin trekking along the Langtang Khola. The trail climbs gradually through forests where you might spot red pandas, monkeys, and various bird species."
+            },
+            {
+                "day": 3,
+                "title": "Trek to Langtang Village",
+                "start_location": "Lama Hotel",
+                "end_location": "Langtang Village",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 2380,
+                "elevation_end_m": 3430,
+                "elevation_gain_m": 1050,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Moonlight Guest House",
+                        "Himalaya Guest House",
+                        "Yeti Guest House"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Views of Langtang Lirung",
+                    "Traditional Tamang village",
+                    "Prayer wheels and mani walls",
+                    "2015 earthquake memorial"
+                ],
+                "description": "Steady climb through forests opening to views of Langtang Lirung. The village was rebuilt after the devastating 2015 earthquake."
+            },
+            {
+                "day": 4,
+                "title": "Trek to Kyanjin Gompa",
+                "start_location": "Langtang Village",
+                "end_location": "Kyanjin Gompa",
+                "distance_km": 7,
+                "duration_hours": 3,
+                "elevation_start_m": 3430,
+                "elevation_end_m": 3870,
+                "elevation_gain_m": 440,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Yala Peak Hotel",
+                        "Himalaya Lodge",
+                        "Snow Lion Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Ancient Buddhist monastery",
+                    "Yak cheese factory",
+                    "Panoramic mountain views",
+                    "Base for day hikes"
+                ],
+                "description": "Shorter day through yak pastures to Kyanjin Gompa, spiritual center of the valley with its ancient monastery and cheese factory."
+            },
+            {
+                "day": 5,
+                "title": "Acclimatization and Exploration Day",
+                "start_location": "Kyanjin Gompa",
+                "end_location": "Kyanjin Gompa",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 3870,
+                "elevation_end_m": 3870,
+                "elevation_gain_m": 600,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Kyanjin Ri viewpoint (4,773m)",
+                    "Or Tserko Ri (4,984m)",
+                    "360-degree mountain panorama",
+                    "Glacier exploration"
+                ],
+                "description": "Day for altitude acclimatization with options to climb Kyanjin Ri or the more challenging Tserko Ri for spectacular panoramic views."
+            },
+            {
+                "day": 6,
+                "title": "Optional: Langshisa Kharka",
+                "start_location": "Kyanjin Gompa",
+                "end_location": "Kyanjin Gompa",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 3870,
+                "elevation_end_m": 3870,
+                "elevation_gain_m": 330,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Langshisa Glacier",
+                    "Yak herding grounds",
+                    "Moraine landscapes",
+                    "Wildlife spotting"
+                ],
+                "description": "Optional day hike to Langshisa Kharka for close-up glacier views, or rest day in Kyanjin Gompa."
+            },
+            {
+                "day": 7,
+                "title": "Trek to Lama Hotel",
+                "start_location": "Kyanjin Gompa",
+                "end_location": "Lama Hotel",
+                "distance_km": 21,
+                "duration_hours": 7,
+                "elevation_start_m": 3870,
+                "elevation_end_m": 2380,
+                "elevation_gain_m": -1490,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Lama Hotel",
+                        "Woodland Lodge",
+                        "Himalayan Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Rapid descent",
+                    "Different perspective on views",
+                    "Return to forests",
+                    "Easier breathing"
+                ],
+                "description": "Retrace your steps down the valley, enjoying different perspectives of the landscape and easier breathing at lower altitude."
+            },
+            {
+                "day": 8,
+                "title": "Trek to Syabrubesi",
+                "start_location": "Lama Hotel",
+                "end_location": "Syabrubesi",
+                "distance_km": 11,
+                "duration_hours": 5,
+                "elevation_start_m": 2380,
+                "elevation_end_m": 1470,
+                "elevation_gain_m": -910,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Hotel Langtang View",
+                        "Buddha Guest House",
+                        "Peaceful Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Complete the circuit",
+                    "Hot springs option",
+                    "Farewell dinner",
+                    "Prepare for departure"
+                ],
+                "description": "Final day of trekking back to Syabrubesi. Option to visit hot springs at Tatopani before reaching the village."
+            },
+            {
+                "day": 9,
+                "title": "Drive to Kathmandu",
+                "start_location": "Syabrubesi",
+                "end_location": "Kathmandu",
+                "distance_km": 117,
+                "duration_hours": 7,
+                "elevation_start_m": 1470,
+                "elevation_end_m": 1400,
+                "elevation_gain_m": -70,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Return to Kathmandu accommodation"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Return journey",
+                    "Rural Nepal views",
+                    "Arrival in Kathmandu",
+                    "Celebration dinner"
+                ],
+                "description": "Drive back to Kathmandu through the scenic countryside, arriving in the afternoon with time to rest and celebrate."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Trekking boots",
+                    "description": "Comfortable and broken in",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-10°C rated sufficient",
+                    "rental_available": true
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Lightweight warmth layer",
+                    "rental_available": true
+                },
+                {
+                    "item": "Rain gear",
+                    "description": "Jacket and pants/poncho",
+                    "rental_available": true
+                },
+                {
+                    "item": "Warm layers",
+                    "description": "Fleece, thermals",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
+                    "rental_available": false
+                },
+                {
+                    "item": "Basic first aid",
+                    "description": "Personal medications",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2 liters capacity",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "Langtang National Park Entry",
+                "cost_usd": 30,
+                "cost_npr": 3000,
+                "where_to_obtain": "Dhunche checkpoint or Kathmandu",
+                "validity": "Single entry"
+            },
+            {
+                "name": "TIMS Card",
+                "cost_usd": 10,
+                "cost_npr": 1000,
+                "where_to_obtain": "Tourism Board Kathmandu",
+                "validity": "Trek duration"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 40,
+            "guide_daily_usd": 25,
+            "porter_daily_usd": 18,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 40,
+            "total_budget_range_usd": {
+                "min": 500,
+                "max": 1000
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Tamang",
+                "Tibetan"
+            ],
+            "primary_religion": "Tibetan Buddhism",
+            "languages": [
+                "Tamang",
+                "Nepali",
+                "Basic English"
+            ],
+            "customs_etiquette": [
+                "Clockwise around religious sites",
+                "Remove shoes in homes/monasteries",
+                "Right hand for giving/receiving",
+                "Modest dress appreciated"
+            ],
+            "local_foods": [
+                {
+                    "name": "Yak cheese",
+                    "description": "Fresh from Kyanjin factory"
+                },
+                {
+                    "name": "Tibetan bread",
+                    "description": "Fried flatbread"
+                },
+                {
+                    "name": "Tsampa",
+                    "description": "Roasted barley flour"
+                },
+                {
+                    "name": "Local raksi",
+                    "description": "Traditional distilled alcohol"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent built into itinerary",
+                    "Rest day at Kyanjin",
+                    "Stay hydrated",
+                    "Monitor symptoms"
+                ]
+            },
+            "medical_facilities": [
+                {
+                    "location": "Dhunche",
+                    "type": "District hospital"
+                },
+                {
+                    "location": "Kyanjin Gompa",
+                    "type": "Basic health post"
+                }
+            ],
+            "evacuation": {
+                "method": "Helicopter",
+                "cost_usd": "3000-4000",
+                "availability": "Weather dependent"
+            }
+        },
+        "special_considerations": {
+            "earthquake_impact": "The 2015 earthquake severely affected this region. The trail and villages have been rebuilt, but some scars remain visible.",
+            "wildlife": "Part of Langtang National Park - chance to see red pandas, Himalayan black bears, and various bird species.",
+            "closeness_to_kathmandu": "Nearest major trekking area to the capital, making it ideal for shorter trips.",
+            "fewer_crowds": "Less crowded than Everest or Annapurna regions, offering a more peaceful experience."
+        },
+        "alternative_routes": [
+            {
+                "name": "Langtang-Gosainkunda",
+                "variation": "Combine with sacred lakes",
+                "extra_days": 4,
+                "highlights": [
+                    "Sacred lakes",
+                    "High passes",
+                    "Hindu pilgrimage site"
+                ]
+            },
+            {
+                "name": "Langtang-Helambu",
+                "variation": "Connect to Helambu region",
+                "extra_days": 6,
+                "highlights": [
+                    "Cultural diversity",
+                    "Lower elevations",
+                    "Circuit trek"
+                ]
+            },
+            {
+                "name": "Ganja La Pass",
+                "variation": "Technical pass to Helambu",
+                "extra_days": 5,
+                "highlights": [
+                    "5,122m pass",
+                    "Technical challenge",
+                    "Remote trek"
+                ]
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 85,
+        "seo": {
+            "meta_title": "Langtang Valley Trek Guide 2024 | 9-Day Itinerary with Kyanjin Ri",
+            "meta_description": "Complete guide to Langtang Valley Trek - the closest Himalayan trek to Kathmandu. Detailed itinerary, Tamang culture, and glacier views.",
+            "keywords": [
+                "langtang valley trek",
+                "langtang trek",
+                "kyanjin gompa",
+                "nepal short trek",
+                "kathmandu trek"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>

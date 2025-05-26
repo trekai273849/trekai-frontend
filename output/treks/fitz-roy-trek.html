@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitz Roy Trek Guide 2024 | El Chaltén Day Hikes & Multi-Day Options</title>
+    <title>Fitz Roy Trek Guide 2024 | El Chaltén Day Hikes &amp; Multi-Day Options</title>
     <meta name="description" content="Complete guide to trekking around Fitz Roy and Cerro Torre from El Chaltén. Best day hikes, multi-day routes, and expert tips for Argentine Patagonia.">
     <style>
         * {
@@ -612,6 +610,7 @@
             animation: fadeIn 0.5s ease-out;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- Hero Section with Real Image -->
@@ -648,7 +647,7 @@
             <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
             <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
             <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
-            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs &amp; Permits</button>
             <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
         </div>
     </nav>
@@ -702,7 +701,13 @@
                         <span>💾</span>
                         <span>Save to My Trips</span>
                     </button>
-                </div>
+                
+<button data-save-trek="" class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+    <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+    </svg>
+    Save to My Trips
+</button></div>
             </div>
 
             <div class="quick-info-card">
@@ -845,7 +850,7 @@
 
     <!-- Gear Section -->
     <section id="gear" class="content-section">
-        <h2>Essential Gear & Packing List</h2>
+        <h2>Essential Gear &amp; Packing List</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
         </p>
@@ -986,7 +991,7 @@
 
     <!-- Costs Section -->
     <section id="costs" class="content-section">
-        <h2>Costs & Permits</h2>
+        <h2>Costs &amp; Permits</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Understanding the costs helps you budget appropriately for your adventure.
         </p>
@@ -1066,5 +1071,525 @@
             faqItem.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "fitz-roy-trek",
+        "name": "Fitz Roy Trek",
+        "slug": "fitz-roy-trek",
+        "region": "Patagonia",
+        "country": "Argentina",
+        "summary": "Dramatic granite spires and pristine alpine lakes around El Chaltén, Argentina's trekking capital, offering flexible day hikes and multi-day options.",
+        "duration": {
+            "min_days": 3,
+            "max_days": 4,
+            "recommended_days": 4
+        },
+        "distance_km": 40,
+        "difficulty": "moderate",
+        "max_elevation_m": 1200,
+        "starting_elevation_m": 400,
+        "airport": "El Calafate (FTE)",
+        "nearest_city": "El Chaltén",
+        "coordinates": {
+            "start": {
+                "lat": -49.3314,
+                "lng": -72.8861,
+                "location": "El Chaltén"
+            },
+            "end": {
+                "lat": -49.3314,
+                "lng": -72.8861,
+                "location": "El Chaltén"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Summer",
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "description": "Warmest weather, longest days, most services open"
+            },
+            {
+                "name": "Autumn",
+                "months": [
+                    "March",
+                    "April"
+                ],
+                "description": "Spectacular fall colors, fewer crowds, crisp weather"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Laguna de los Tres",
+                "start_location": "El Chaltén",
+                "end_location": "El Chaltén",
+                "distance_km": 20,
+                "duration_hours": 8,
+                "elevation_start_m": 400,
+                "elevation_end_m": 1170,
+                "elevation_gain_m": 770,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "hostel/hotel",
+                    "options": [
+                        "Rancho Grande",
+                        "Aylen-Aike",
+                        "Los Cerros"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Fitz Roy sunrise at Laguna de los Tres",
+                    "Glacial lake with icebergs",
+                    "360-degree granite spire views",
+                    "Rio Blanco base camp"
+                ],
+                "description": "The classic Fitz Roy viewpoint hike. Start before dawn to catch sunrise illuminating the granite spires. Steep final kilometer leads to the glacial lake beneath Fitz Roy's east face."
+            },
+            {
+                "day": 2,
+                "title": "Laguna Torre",
+                "start_location": "El Chaltén",
+                "end_location": "El Chaltén",
+                "distance_km": 18,
+                "duration_hours": 6,
+                "elevation_start_m": 400,
+                "elevation_end_m": 700,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hostel/hotel",
+                    "options": [
+                        "Same as previous"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Cerro Torre views",
+                    "Grande Glacier",
+                    "Laguna Torre with icebergs",
+                    "Forest and valley hiking"
+                ],
+                "description": "Gentler hike to the base of the impossibly steep Cerro Torre. The trail follows the river valley through lenga forests to a stunning glacial lake surrounded by peaks."
+            },
+            {
+                "day": 3,
+                "title": "Pliegue Tumbado",
+                "start_location": "El Chaltén",
+                "end_location": "El Chaltén",
+                "distance_km": 19,
+                "duration_hours": 7,
+                "elevation_start_m": 400,
+                "elevation_end_m": 1490,
+                "elevation_gain_m": 1090,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "hostel/hotel",
+                    "options": [
+                        "Same as previous"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Panoramic views of entire range",
+                    "Southern Patagonian Ice Field views",
+                    "Condor sightings common",
+                    "Less crowded trail"
+                ],
+                "description": "Often overlooked but spectacular viewpoint offering the best panoramic views of the entire Fitz Roy and Torre ranges, plus the Southern Ice Field on clear days."
+            },
+            {
+                "day": 4,
+                "title": "Loma del Pliegue Tumbado or Rest Day",
+                "start_location": "El Chaltén",
+                "end_location": "El Chaltén",
+                "distance_km": 0,
+                "duration_hours": 0,
+                "elevation_start_m": 400,
+                "elevation_end_m": 400,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hostel/hotel",
+                    "options": [
+                        "Same as previous"
+                    ]
+                },
+                "meals_included": [],
+                "highlights": [
+                    "Rest and recovery",
+                    "Explore El Chaltén town",
+                    "Visit Chorrillo del Salto waterfall",
+                    "Gear shopping and restaurants"
+                ],
+                "description": "Optional rest day or shorter hikes like Chorrillo del Salto (4km). Enjoy El Chaltén's cafes, microbreweries, and gear shops. Good weather backup day."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Hiking boots",
+                    "description": "Sturdy with good traction",
+                    "rental_available": true
+                },
+                {
+                    "item": "Wind/rain jacket",
+                    "description": "Essential for Patagonian weather",
+                    "rental_available": true
+                },
+                {
+                    "item": "Layering system",
+                    "description": "Weather changes rapidly",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "High UV exposure",
+                    "rental_available": false
+                },
+                {
+                    "item": "Day pack",
+                    "description": "20-30L capacity",
+                    "rental_available": true
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2L capacity minimum",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Helpful for steep sections",
+                    "rental_available": true
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "For muddy/snowy conditions",
+                    "rental_available": false
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For pre-dawn starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Binoculars",
+                    "description": "Condor and wildlife viewing",
+                    "rental_available": false
+                }
+            ],
+            "optional": [
+                {
+                    "item": "Camping gear",
+                    "description": "For multi-day options",
+                    "rental_available": true
+                },
+                {
+                    "item": "Crampons",
+                    "description": "For early/late season snow",
+                    "rental_available": true
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "National Park Registration",
+                "cost_usd": 0,
+                "cost_ars": 0,
+                "where_to_obtain": "Visitor center in El Chaltén",
+                "validity": "Duration of stay",
+                "notes": "Free but mandatory registration"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 0,
+            "guide_daily_usd": 100,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 30,
+            "meals_daily_usd": 25,
+            "transportation_usd": 80,
+            "total_budget_range_usd": {
+                "min": 300,
+                "max": 800
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Argentine",
+                "International climbing community"
+            ],
+            "primary_religion": "Secular/Catholic",
+            "languages": [
+                "Spanish",
+                "English in tourist areas"
+            ],
+            "customs_etiquette": [
+                "Respect the climbing community culture",
+                "Share trail conditions with others",
+                "Town has relaxed, outdoorsy vibe",
+                "Support local businesses",
+                "Respect private property near trails"
+            ],
+            "local_foods": [
+                {
+                    "name": "Asado",
+                    "description": "Argentine BBQ - beef is king"
+                },
+                {
+                    "name": "Empanadas",
+                    "description": "Meat or cheese-filled pastries"
+                },
+                {
+                    "name": "Craft beer",
+                    "description": "Several microbreweries in town"
+                },
+                {
+                    "name": "Locro",
+                    "description": "Hearty stew perfect after hiking"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "none",
+                "notes": "Maximum elevation only 1,490m"
+            },
+            "main_concerns": {
+                "weather": {
+                    "risk_level": "high",
+                    "description": "Sudden storms, high winds",
+                    "prevention": [
+                        "Check forecasts at visitor center",
+                        "Start hikes early",
+                        "Carry extra layers always",
+                        "Know when to turn back"
+                    ]
+                },
+                "river_crossings": {
+                    "risk_level": "low",
+                    "description": "Most trails have bridges",
+                    "prevention": [
+                        "Use established crossings only"
+                    ]
+                }
+            },
+            "medical_facilities": [
+                {
+                    "location": "El Chaltén",
+                    "type": "Basic medical post"
+                },
+                {
+                    "location": "El Calafate",
+                    "type": "Hospital (3 hours away)"
+                }
+            ],
+            "evacuation": {
+                "method": "Road ambulance or helicopter",
+                "cost_usd": "1000-3000",
+                "insurance_required": true
+            }
+        },
+        "weather_patterns": {
+            "summer": {
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "day_temp_c": "15 to 22",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Low to moderate",
+                "wind": "Moderate to strong",
+                "daylight_hours": "17-18",
+                "notes": "Best weather but most crowded"
+            },
+            "autumn": {
+                "months": [
+                    "March",
+                    "April"
+                ],
+                "day_temp_c": "8 to 15",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Moderate",
+                "wind": "Strong",
+                "daylight_hours": "11-14",
+                "notes": "Beautiful colors, good weather windows"
+            },
+            "winter": {
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "-2 to 8",
+                "night_temp_c": "-10 to 0",
+                "precipitation": "Snow common",
+                "wind": "Very strong",
+                "daylight_hours": "8-10",
+                "notes": "Most services closed, experienced only"
+            },
+            "spring": {
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Variable",
+                "wind": "Very strong",
+                "daylight_hours": "12-16",
+                "notes": "Unpredictable, possible snow"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Bus",
+                    "from": "El Calafate",
+                    "to": "El Chaltén",
+                    "duration": "3 hours",
+                    "cost_usd": 40,
+                    "frequency": "3-4 daily in season",
+                    "notes": "Scenic drive, book ahead in summer"
+                },
+                {
+                    "method": "Rental car",
+                    "from": "El Calafate",
+                    "to": "El Chaltén",
+                    "duration": "3 hours",
+                    "cost_usd": 80,
+                    "notes": "More flexibility, can visit Perito Moreno too"
+                },
+                {
+                    "method": "Fly",
+                    "from": "Buenos Aires",
+                    "to": "El Calafate",
+                    "duration": "3 hours",
+                    "cost_usd": 200,
+                    "frequency": "Multiple daily"
+                }
+            ],
+            "from_end": "Same options in reverse"
+        },
+        "accommodation": {
+            "type": "Town-based",
+            "description": "Range from camping to luxury lodges",
+            "amenities": [
+                "Hot showers",
+                "Kitchens in hostels",
+                "WiFi widely available",
+                "Laundry services",
+                "Gear storage"
+            ],
+            "booking": "Recommended in high season",
+            "cost_per_night_usd": {
+                "camping": "10-15",
+                "hostel_dorm": "20-30",
+                "hostel_private": "50-80",
+                "hotel": "80-200"
+            }
+        },
+        "difficulty_details": {
+            "physical_demands": "Good fitness for long days",
+            "technical_skills": "None required",
+            "altitude_challenge": "None",
+            "trail_conditions": "Well-marked, some steep sections",
+            "daily_hiking_hours": "6-8 hours",
+            "total_elevation_gain": 2160,
+            "total_elevation_loss": 2160
+        },
+        "alternative_routes": [
+            {
+                "name": "Huemul Circuit",
+                "variation": "4-day camping circuit",
+                "extra_days": 0,
+                "highlights": [
+                    "Remote backcountry",
+                    "Southern Ice Field views",
+                    "Challenging terrain"
+                ]
+            },
+            {
+                "name": "Paso del Viento",
+                "variation": "Connect to Chilean side",
+                "extra_days": 2,
+                "highlights": [
+                    "Cross into Chile",
+                    "Remote wilderness",
+                    "Glaciers"
+                ]
+            },
+            {
+                "name": "Multi-day camping",
+                "variation": "Connect all viewpoints",
+                "extra_days": 1,
+                "highlights": [
+                    "Fewer day packs",
+                    "Sunrise/sunset at lakes",
+                    "Backcountry experience"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Laguna de los Tres",
+                "best_time": "Sunrise",
+                "subjects": [
+                    "Fitz Roy alpenglow",
+                    "Reflection in lake",
+                    "Ice formations"
+                ]
+            },
+            {
+                "location": "Mirador del Torre",
+                "best_time": "Late afternoon",
+                "subjects": [
+                    "Cerro Torre",
+                    "Glacier",
+                    "Forest framing"
+                ]
+            },
+            {
+                "location": "Pliegue Tumbado",
+                "best_time": "All day",
+                "subjects": [
+                    "Panoramic range views",
+                    "Condors",
+                    "Ice field"
+                ]
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 92,
+        "seo": {
+            "meta_title": "Fitz Roy Trek Guide 2024 | El Chaltén Day Hikes & Multi-Day Options",
+            "meta_description": "Complete guide to trekking around Fitz Roy and Cerro Torre from El Chaltén. Best day hikes, multi-day routes, and expert tips for Argentine Patagonia.",
+            "keywords": [
+                "fitz roy trek",
+                "el chalten hiking",
+                "cerro torre",
+                "patagonia argentina",
+                "laguna de los tres"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+</body></html>
