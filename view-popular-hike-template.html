@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everest Base Camp Trek - Complete Guide | SmartTrails</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #fafafa;
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        /* Hero Section - Simplified */
+        .hero {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="mountains" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%2334d399"/><stop offset="100%" style="stop-color:%23059669"/></linearGradient></defs><rect fill="url(%23mountains)" width="1200" height="600"/><polygon fill="%23ffffff" opacity="0.1" points="0,400 300,200 600,300 900,150 1200,250 1200,600 0,600"/></svg>') center/cover;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+
+        /* Action Bar - Simplified */
+        .action-bar {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .action-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: none;
+            color: #64748b;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            background: #f1f5f9;
+            color: #334155;
+        }
+
+        .nav-tab.active {
+            background: #10b981;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background: white;
+            color: #475569;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-btn:hover {
+            background: #f8fafb;
+            border-color: #cbd5e1;
+        }
+
+        .action-btn.primary {
+            background: #10b981;
+            color: white;
+            border: none;
+        }
+
+        .action-btn.primary:hover {
+            background: #059669;
+        }
+
+        /* Main Content - Cleaner Layout */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        .content-area {
+            min-width: 0; /* Prevents grid overflow */
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Overview Section - Simplified */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .overview-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .card-subtitle {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+
+        /* Itinerary - Cleaner Design */
+        .itinerary-container {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .itinerary-header {
+            background: #f8fafb;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .itinerary-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .itinerary-subtitle {
+            color: #64748b;
+        }
+
+        .day-item {
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.2s;
+        }
+
+        .day-item:last-child {
+            border-bottom: none;
+        }
+
+        .day-item:hover {
+            background: #fafbfc;
+        }
+
+        .day-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-info {
+            flex: 1;
+        }
+
+        .day-number {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 0.25rem;
+        }
+
+        .day-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .expand-icon {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            transition: transform 0.3s;
+        }
+
+        .day-item.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .day-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .day-item.expanded .day-content {
+            max-height: 1000px;
+        }
+
+        .day-details {
+            padding: 0 1.5rem 1.5rem;
+            border-top: 1px solid #f1f5f9;
+            background: #fafbfc;
+        }
+
+        .day-description {
+            color: #475569;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #475569;
+        }
+
+        /* Sidebar - Simplified */
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .season-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .season {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .season:hover, .season.best {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .season-name {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .season-months {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .best-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        /* Mobile-specific sidebar integration */
+        .mobile-quick-facts {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .sidebar {
+                display: none; /* Hide desktop sidebar on mobile */
+            }
+
+            .mobile-quick-facts {
+                display: block;
+                margin-bottom: 2rem;
+            }
+
+            .action-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-tabs {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .day-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
+        /* Content Sections */
+        .section-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .placeholder-content {
+            text-align: center;
+            padding: 3rem;
+            color: #64748b;
+            background: #f8fafb;
+            border-radius: 0.5rem;
+            border: 2px dashed #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                🏔️ Nepal • Himalayas
+            </div>
+            <h1 class="hero-title">Everest Base Camp Trek</h1>
+            <p class="hero-subtitle">The ultimate bucket-list trek to the base of the world's highest peak through Sherpa villages and Buddhist monasteries</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">14 days</span>
+                    <span class="stat-label">Duration</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">130 km</span>
+                    <span class="stat-label">Distance</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">5,364 m</span>
+                    <span class="stat-label">Max Elevation</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">Moderate</span>
+                    <span class="stat-label">Difficulty</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+        <div class="action-content">
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-section="overview">Overview</button>
+                <button class="nav-tab" data-section="itinerary">Itinerary</button>
+                <button class="nav-tab" data-section="planning">Planning</button>
+                <button class="nav-tab" data-section="culture">Culture</button>
+            </nav>
+            <div class="action-buttons">
+                <button class="action-btn">
+                    📥 Download PDF
+                </button>
+                <button class="action-btn primary">
+                    ✏️ Customize Trek
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-area">
+            <!-- Overview Section -->
+            <section class="content-section active" id="overview">
+                <!-- Mobile Quick Facts - only show on mobile -->
+                <div class="mobile-quick-facts">
+                    <div class="section-content" style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            📊 Quick Facts
+                        </h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.875rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #64748b;">Country</span>
+                                <span style="font-weight: 600;">Nepal</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #64748b;">Airport</span>
+                                <span style="font-weight: 600;">Lukla</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #64748b;">Highest Point</span>
+                                <span style="font-weight: 600;">5,545m</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #64748b;">Guide Required</span>
+                                <span style="font-weight: 600;">Recommended</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="card-title">
+                            ✈️ Starting Point
+                        </div>
+                        <div class="card-value">Lukla Airport</div>
+                        <div class="card-subtitle">Fly from Kathmandu (30-45 min)</div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-title">
+                            📅 Best Time
+                        </div>
+                        <div class="card-value">Mar-May, Sep-Nov</div>
+                        <div class="card-subtitle">Spring & Autumn seasons</div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-title">
+                            💰 Budget Range
+                        </div>
+                        <div class="card-value">$1,500 - $3,000</div>
+                        <div class="card-subtitle">All inclusive</div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-title">
+                            🏔️ Highest Point
+                        </div>
+                        <div class="card-value">Kala Patthar</div>
+                        <div class="card-subtitle">5,545m viewpoint</div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <h2 class="section-title">
+                        🌟 Why This Trek?
+                    </h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; color: #475569;">
+                        The Everest Base Camp trek is more than just a walk to the foot of the world's highest mountain. 
+                        It's a journey through the heart of Sherpa culture, past ancient Buddhist monasteries, and through 
+                        some of the most spectacular mountain scenery on Earth. You'll trek through the UNESCO World Heritage-listed 
+                        Sagarmatha National Park, cross high suspension bridges adorned with prayer flags, and experience the 
+                        legendary hospitality of the Sherpa people.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Itinerary Section -->
+            <section class="content-section" id="itinerary">
+                <div class="itinerary-container">
+                    <div class="itinerary-header">
+                        <h2 class="itinerary-title">14-Day Detailed Itinerary</h2>
+                        <p class="itinerary-subtitle">Click any day to see detailed information</p>
+                    </div>
+
+                    <!-- Day 1 -->
+                    <div class="day-item">
+                        <div class="day-header">
+                            <div class="day-info">
+                                <div class="day-number">Day 1</div>
+                                <div class="day-title">Fly to Lukla, Trek to Phakding</div>
+                                <div class="day-meta">
+                                    <div class="meta-item">
+                                        <span>🥾</span>
+                                        <span>8 km</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span>⏱️</span>
+                                        <span>3 hours</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span>📈</span>
+                                        <span>2,860m → 2,610m</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-details">
+                                <p class="day-description">
+                                    After an exciting mountain flight to Lukla, begin your trek with an easy walk down to Phakding. 
+                                    The trail descends through pine forests and small Sherpa settlements, crossing several suspension 
+                                    bridges adorned with prayer flags.
+                                </p>
+                                <div class="highlights">
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>Thrilling flight to Lukla airport</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>First views of Kusum Kanguru</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>Cross suspension bridges</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>Prayer wheels and mani stones</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="day-item">
+                        <div class="day-header">
+                            <div class="day-info">
+                                <div class="day-number">Day 2</div>
+                                <div class="day-title">Trek to Namche Bazaar</div>
+                                <div class="day-meta">
+                                    <div class="meta-item">
+                                        <span>🥾</span>
+                                        <span>11 km</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span>⏱️</span>
+                                        <span>6 hours</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span>📈</span>
+                                        <span>2,610m → 3,440m</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-details">
+                                <p class="day-description">
+                                    Today's trek involves a steady climb to Namche Bazaar. After entering Sagarmatha National Park 
+                                    at Monjo, the trail climbs steeply through pine forests. If the weather is clear, catch your 
+                                    first glimpse of Everest!
+                                </p>
+                                <div class="highlights">
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>First view of Everest (if clear)</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>Hillary Suspension Bridge</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>Enter Sagarmatha National Park</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <span style="color: #10b981;">✓</span>
+                                        <span>Namche Bazaar - Sherpa capital</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More days would follow... -->
+                    <div class="placeholder-content">
+                        <p>Additional days 3-14 would be displayed here with the same format</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planning Section -->
+            <section class="content-section" id="planning">
+                <div class="section-content">
+                    <h2 class="section-title">
+                        📋 Planning Your Trek
+                    </h2>
+                    
+                    <!-- Mobile Cost & Timing Info -->
+                    <div class="mobile-quick-facts" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                        <!-- Cost Breakdown -->
+                        <div style="background: #f8fafb; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                💰 Estimated Costs
+                            </h3>
+                            <div>
+                                <div class="cost-item">
+                                    <span>Permits</span>
+                                    <span>$50</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Flights</span>
+                                    <span>$360</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Guide & Porter</span>
+                                    <span>$700</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Accommodation</span>
+                                    <span>$70</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Meals</span>
+                                    <span>$350</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span>Total Estimate</span>
+                                    <span>$1,530+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Best Time -->
+                        <div style="background: #f8fafb; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                🌤️ Best Time to Trek
+                            </h3>
+                            <div class="season-grid">
+                                <div class="season best">
+                                    <div class="season-name">Spring</div>
+                                    <div class="season-months">Mar - May</div>
+                                    <div class="best-badge">BEST</div>
+                                </div>
+                                <div class="season">
+                                    <div class="season-name">Summer</div>
+                                    <div class="season-months">Jun - Aug</div>
+                                </div>
+                                <div class="season best">
+                                    <div class="season-name">Autumn</div>
+                                    <div class="season-months">Sep - Nov</div>
+                                    <div class="best-badge">BEST</div>
+                                </div>
+                                <div class="season">
+                                    <div class="season-name">Winter</div>
+                                    <div class="season-months">Dec - Feb</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="placeholder-content">
+                        <p>Permits, gear lists, and additional practical information would be displayed here</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Culture Section -->
+            <section class="content-section" id="culture">
+                <div class="section-content">
+                    <h2 class="section-title">
+                        🏔️ Culture & Safety
+                    </h2>
+                    <div class="placeholder-content">
+                        <p>Cultural information and safety guidelines would be displayed here</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Quick Facts -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">
+                    📊 Quick Facts
+                </h3>
+                <div style="space-y: 12px; font-size: 14px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #64748b;">Country</span>
+                        <span style="font-weight: 600;">Nepal</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #64748b;">Airport</span>
+                        <span style="font-weight: 600;">Lukla (LUA)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #64748b;">Highest Point</span>
+                        <span style="font-weight: 600;">Kala Patthar (5,545m)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: #64748b;">Guide Required</span>
+                        <span style="font-weight: 600;">Recommended</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost Breakdown -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">
+                    💰 Estimated Costs
+                </h3>
+                <div>
+                    <div class="cost-item">
+                        <span>Permits</span>
+                        <span>$50</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Flights</span>
+                        <span>$360</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Guide & Porter</span>
+                        <span>$700</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Accommodation</span>
+                        <span>$70</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Meals</span>
+                        <span>$350</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Total Estimate</span>
+                        <span>$1,530+</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Time -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">
+                    🌤️ Best Time to Trek
+                </h3>
+                <div class="season-grid">
+                    <div class="season best">
+                        <div class="season-name">Spring</div>
+                        <div class="season-months">Mar - May</div>
+                        <div class="best-badge">BEST</div>
+                    </div>
+                    <div class="season">
+                        <div class="season-name">Summer</div>
+                        <div class="season-months">Jun - Aug</div>
+                    </div>
+                    <div class="season best">
+                        <div class="season-name">Autumn</div>
+                        <div class="season-months">Sep - Nov</div>
+                        <div class="best-badge">BEST</div>
+                    </div>
+                    <div class="season">
+                        <div class="season-name">Winter</div>
+                        <div class="season-months">Dec - Feb</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        // Tab navigation
+        const tabs = document.querySelectorAll('.nav-tab');
+        const sections = document.querySelectorAll('.content-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetSection = tab.getAttribute('data-section');
+                
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active section
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Expandable itinerary days
+        const dayItems = document.querySelectorAll('.day-item');
+        
+        dayItems.forEach(day => {
+            const header = day.querySelector('.day-header');
+            
+            header.addEventListener('click', () => {
+                day.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
