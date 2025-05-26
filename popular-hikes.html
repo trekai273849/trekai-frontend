@@ -832,15 +832,19 @@
             return features.slice(0, 3);
         }
 
-        // Render trek card with new Option 1 design
+        // Updated createTrekCard function with direct links
         function createTrekCard(trek) {
             const features = getTrekFeatures(trek);
             const countryFlag = getCountryFlag(trek.country);
             const difficultyDots = getDifficultyDots(trek.difficulty);
-            const displayCountry = trek.country.split('/')[0]; // Show first country for multi-country treks
+            const displayCountry = trek.country.split('/')[0];
+            
+            // Determine the correct path based on your file structure
+            // Adjust this path based on where your files are located
+            const trekPagePath = `output/treks/${trek._id}.html`;
             
             return `
-                <div class="trek-card" onclick="viewTrekDetails('${trek._id}')">
+                <div class="trek-card" style="cursor: pointer;" onclick="window.location.href='${trekPagePath}'">
                     <div class="image-section">
                         <div class="country-badge">
                             <span class="emoji-icon">${countryFlag}</span>
@@ -874,7 +878,7 @@
                             ${features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
                         </div>
                         <div class="bottom-section">
-                            <a href="#" class="explore-btn" onclick="event.stopPropagation(); viewTrekDetails('${trek._id}')">Explore This Trek</a>
+                            <a href="${trekPagePath}" class="explore-btn" onclick="event.stopPropagation();">Explore This Trek</a>
                         </div>
                     </div>
                 </div>
@@ -1061,11 +1065,9 @@
             renderTreks();
         }
 
-        // View trek details (placeholder)
+        // View trek details function (simplified since we're using direct links)
         function viewTrekDetails(trekId) {
-            console.log('View trek:', trekId);
-            // In a real app, this would navigate to the trek detail page
-            alert(`Trek details page for: ${trekId}`);
+            window.location.href = `output/treks/${trekId}.html`;
         }
 
         // Initialize event listeners
