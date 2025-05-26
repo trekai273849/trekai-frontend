@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Hikes - SmartTrails.pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafb;
+            color: #1a1a1a;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn:hover {
+            border-color: #10b981;
+            color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .hikes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .hike-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hike-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .hike-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #7dd3fc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hike-image::before {
+            content: '🏔️';
+            position: absolute;
+            font-size: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+        }
+
+        .region-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #059669;
+            backdrop-filter: blur(8px);
+        }
+
+        .difficulty-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .difficulty-moderate {
+            background: #fbbf24;
+            color: #78350f;
+        }
+
+        .difficulty-challenging {
+            background: #ef4444;
+            color: white;
+        }
+
+        .difficulty-easy {
+            background: #34d399;
+            color: white;
+        }
+
+        .hike-content {
+            padding: 24px;
+        }
+
+        .hike-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .hike-details {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .detail-icon {
+            font-size: 16px;
+        }
+
+        .hike-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .view-itinerary-btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .view-itinerary-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .popular-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .hikes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">Explore our most popular hikes</h2>
+            <p class="section-subtitle">Discover breathtaking trails from the world's most iconic trekking destinations. Filter by region to find your next adventure.</p>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterHikes('all')">All Regions</button>
+            <button class="filter-btn" onclick="filterHikes('nepal')">Nepal/Himalayas</button>
+            <button class="filter-btn" onclick="filterHikes('patagonia')">Patagonia</button>
+            <button class="filter-btn" onclick="filterHikes('peru')">Peru/Andes</button>
+            <button class="filter-btn" onclick="filterHikes('alps')">European Alps</button>
+            <button class="filter-btn" onclick="filterHikes('new-zealand')">New Zealand</button>
+            <button class="filter-btn" onclick="filterHikes('rockies')">US/Canada Rockies</button>
+            <button class="filter-btn" onclick="filterHikes('norway')">Norway/Scandinavia</button>
+            <button class="filter-btn" onclick="filterHikes('africa')">Africa</button>
+        </div>
+
+        <div class="hikes-grid" id="hikesGrid">
+            <!-- Nepal/Himalayas -->
+            <div class="hike-card" data-region="nepal">
+                <div class="hike-image">
+                    <span class="region-badge">Nepal/Himalayas</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <div class="popular-badge">🔥 Most Popular</div>
+                    <h3 class="hike-title">Everest Base Camp Trek</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 12-14 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 130km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 5,364m max
+                        </span>
+                    </div>
+                    <p class="hike-description">The ultimate bucket-list trek to the base of the world's highest peak, through Sherpa villages and Buddhist monasteries.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="nepal">
+                <div class="hike-image">
+                    <span class="region-badge">Nepal/Himalayas</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Annapurna Circuit</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 15-21 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 230km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 5,416m max
+                        </span>
+                    </div>
+                    <p class="hike-description">A diverse journey through varied landscapes, from tropical forests to high-altitude deserts, crossing Thorong La Pass.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="nepal">
+                <div class="hike-image">
+                    <span class="region-badge">Nepal/Himalayas</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Langtang Valley Trek</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 7-10 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 77km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 4,984m max
+                        </span>
+                    </div>
+                    <p class="hike-description">A shorter trek with stunning mountain views, glaciers, and authentic Tamang culture, perfect for limited time.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Patagonia -->
+            <div class="hike-card" data-region="patagonia">
+                <div class="hike-image">
+                    <span class="region-badge">Patagonia</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <div class="popular-badge">🔥 Most Popular</div>
+                    <h3 class="hike-title">Torres del Paine "W" Circuit</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 4-5 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 80km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,200m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="patagonia">
+                <div class="hike-image">
+                    <span class="region-badge">Patagonia</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Fitz Roy Trek</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 3-4 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 40km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,200m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Dramatic granite spires and pristine lakes around El Chaltén, Argentina's trekking capital.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="patagonia">
+                <div class="hike-image">
+                    <span class="region-badge">Patagonia</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Huemul Circuit</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 4 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 65km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,600m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Remote wilderness adventure with Southern Patagonian Ice Field views and challenging river crossings.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Peru/Andes -->
+            <div class="hike-card" data-region="peru">
+                <div class="hike-image">
+                    <span class="region-badge">Peru/Andes</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <div class="popular-badge">🔥 Most Popular</div>
+                    <h3 class="hike-title">Classic Inca Trail</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 4 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 43km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 4,200m max
+                        </span>
+                    </div>
+                    <p class="hike-description">The legendary trek to Machu Picchu through cloud forests, ancient ruins, and high mountain passes.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="peru">
+                <div class="hike-image">
+                    <span class="region-badge">Peru/Andes</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Salkantay Trek</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 5 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 75km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 4,600m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Alternative route to Machu Picchu featuring diverse ecosystems and the stunning Salkantay Pass.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="peru">
+                <div class="hike-image">
+                    <span class="region-badge">Peru/Andes</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Huayhuash Circuit</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 8-12 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 130km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 5,000m max
+                        </span>
+                    </div>
+                    <p class="hike-description">One of the world's most spectacular high-altitude treks through pristine wilderness and turquoise lakes.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- European Alps -->
+            <div class="hike-card" data-region="alps">
+                <div class="hike-image">
+                    <span class="region-badge">European Alps</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <div class="popular-badge">🔥 Most Popular</div>
+                    <h3 class="hike-title">Tour du Mont Blanc</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 11 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 170km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 2,665m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Classic circuit through three countries around Western Europe's highest peak, with alpine meadows and glaciers.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="alps">
+                <div class="hike-image">
+                    <span class="region-badge">European Alps</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Haute Route</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 12 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 180km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 3,000m max
+                        </span>
+                    </div>
+                    <p class="hike-description">The high-level route from Chamonix to Zermatt, crossing glaciers and high passes with spectacular views.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="alps">
+                <div class="hike-image">
+                    <span class="region-badge">European Alps</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Dolomites Alta Via 1</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 10 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 120km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 2,950m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Traverse through Italy's dramatic limestone peaks, staying in mountain huts with incredible cuisine.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Zealand -->
+            <div class="hike-card" data-region="new-zealand">
+                <div class="hike-image">
+                    <span class="region-badge">New Zealand</span>
+                    <span class="difficulty-badge difficulty-easy">Easy</span>
+                </div>
+                <div class="hike-content">
+                    <div class="popular-badge">🔥 Most Popular</div>
+                    <h3 class="hike-title">Milford Track</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 4 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 53km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,154m max
+                        </span>
+                    </div>
+                    <p class="hike-description">"The finest walk in the world" through Fiordland's rainforests, alpine passes, and dramatic waterfalls.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="new-zealand">
+                <div class="hike-image">
+                    <span class="region-badge">New Zealand</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Routeburn Track</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 3 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 32km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,255m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Alpine crossing linking Mt Aspiring and Fiordland parks with stunning mountain and valley views.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="new-zealand">
+                <div class="hike-image">
+                    <span class="region-badge">New Zealand</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Tongariro Alpine Crossing</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 1 day
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 19.4km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,886m max
+                        </span>
+                    </div>
+                    <p class="hike-description">New Zealand's best day hike through volcanic terrain, emerald lakes, and active geothermal areas.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- US/Canada Rockies -->
+            <div class="hike-card" data-region="rockies">
+                <div class="hike-image">
+                    <span class="region-badge">US/Canada Rockies</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">John Muir Trail</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 21 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 340km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 4,421m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Epic Sierra Nevada traverse from Yosemite to Mt. Whitney through pristine wilderness and granite peaks.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="rockies">
+                <div class="hike-image">
+                    <span class="region-badge">US/Canada Rockies</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Wonderland Trail</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 10 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 150km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 2,000m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Complete circuit around Mount Rainier through wildflower meadows, ancient forests, and glacial valleys.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="rockies">
+                <div class="hike-image">
+                    <span class="region-badge">US/Canada Rockies</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">West Coast Trail</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 7 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 75km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 200m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Rugged coastal wilderness trek on Vancouver Island with beaches, rainforests, and challenging terrain.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Norway/Scandinavia -->
+            <div class="hike-card" data-region="norway">
+                <div class="hike-image">
+                    <span class="region-badge">Norway/Scandinavia</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Lofoten Islands Trek</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 5-7 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 60km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,029m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Arctic island hopping with dramatic peaks rising from the sea, midnight sun, and traditional fishing villages.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="norway">
+                <div class="hike-image">
+                    <span class="region-badge">Norway/Scandinavia</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Jotunheimen Traverse</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 5-6 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 55km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 2,469m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Journey through Norway's highest peaks including Galdhøpiggen and Glittertind with glaciers and alpine lakes.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="norway">
+                <div class="hike-image">
+                    <span class="region-badge">Norway/Scandinavia</span>
+                    <span class="difficulty-badge difficulty-easy">Easy</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Kungsleden (King's Trail)</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 3-7 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 110km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 1,200m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Swedish Lapland's iconic trail through Arctic wilderness, reindeer herds, and under the northern lights.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Africa -->
+            <div class="hike-card" data-region="africa">
+                <div class="hike-image">
+                    <span class="region-badge">Africa</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <div class="popular-badge">🔥 Most Popular</div>
+                    <h3 class="hike-title">Mount Kilimanjaro</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 5-8 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 65km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 5,895m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Africa's highest peak, trekking through five climate zones from rainforest to arctic summit glaciers.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="africa">
+                <div class="hike-image">
+                    <span class="region-badge">Africa</span>
+                    <span class="difficulty-badge difficulty-challenging">Challenging</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Drakensberg Grand Traverse</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 5 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 65km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 3,482m max
+                        </span>
+                    </div>
+                    <p class="hike-description">South Africa's dramatic escarpment with ancient San rock art, basalt cliffs, and mountain wilderness.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hike-card" data-region="africa">
+                <div class="hike-image">
+                    <span class="region-badge">Africa</span>
+                    <span class="difficulty-badge difficulty-moderate">Moderate</span>
+                </div>
+                <div class="hike-content">
+                    <h3 class="hike-title">Mount Kenya Circuit</h3>
+                    <div class="hike-details">
+                        <span class="detail-item">
+                            <span class="detail-icon">📅</span> 4-5 days
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">📏</span> 60km
+                        </span>
+                        <span class="detail-item">
+                            <span class="detail-icon">⛰️</span> 4,985m max
+                        </span>
+                    </div>
+                    <p class="hike-description">Technical trek around Kenya's second-highest peak with glaciers, alpine lakes, and unique afro-alpine flora.</p>
+                    <button class="view-itinerary-btn">
+                        View Itinerary <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function filterHikes(region) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.hike-card');
+            
+            // Update active button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes('All') && region === 'all' || 
+                    btn.onclick.toString().includes(`'${region}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (region === 'all' || card.dataset.region === region) {
+                    card.style.display = 'block';
+                    // Add fade-in animation
+                    card.style.animation = 'none';
+                    setTimeout(() => {
+                        card.style.animation = 'fadeIn 0.5s ease-in';
+                    }, 10);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add click handlers to cards
+        document.querySelectorAll('.hike-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // If clicking the button, don't trigger card click
+                if (e.target.closest('.view-itinerary-btn')) return;
+                
+                // Otherwise, trigger the button click
+                this.querySelector('.view-itinerary-btn').click();
+            });
+        });
+
+        // Simulate button clicks
+        document.querySelectorAll('.view-itinerary-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // In a real implementation, this would navigate to the itinerary
+                alert('This would navigate to the AI-generated itinerary for this trek on smarttrails.pro');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Trails | AI Trek Planner, Gear & Insurance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tech-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        .blue-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .gear-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        .insurance-gradient {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        .service-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #d1d5db;
+        }
+        .floating-badge {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .service-icon {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Ensure footer always displays */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <main>
+
+    <!-- Hero Section with updated subtitle -->
+    <section class="bg-cover bg-center h-screen text-white flex flex-col justify-center items-center px-4 text-center relative" style="background-image: url('images/trekkingheader.jpg');">
+      <div class="absolute top-4 right-4 flex gap-3">
+        <span class="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-semibold floating-badge">
+          <i class="fas fa-backpack mr-2"></i>Gear Shop
+        </span>
+        <span class="bg-emerald-500 text-white px-4 py-2 rounded-full text-sm font-semibold floating-badge" style="animation-delay: 0.5s;">
+          <i class="fas fa-shield-alt mr-2"></i>Trek Insurance
+        </span>
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Complete Trek Solutions</h1>
+      <p class="text-lg md:text-xl mb-2">AI-Powered Itineraries • Premium Gear • Trek Insurance</p>
+      <p class="text-base md:text-lg mb-6 opacity-90">Everything you need for your perfect adventure, all in one place</p>
+      
+      <form id="itinerary-form" class="w-full max-w-2xl mx-auto">
+        <div class="flex items-stretch sm:flex-row flex-col gap-3">
+          <input 
+            type="text" 
+            id="user-input" 
+            placeholder="e.g. 5-day trek in the Alps, moderate difficulty" 
+            class="flex-1 px-4 py-3 rounded-lg text-gray-900 border border-gray-300 focus:border-blue-500 focus:outline-none shadow-sm text-base min-h-[56px]"
+          />
+          <button 
+            type="submit" 
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium whitespace-nowrap shadow-sm transition-colors text-base min-h-[56px] sm:w-auto w-full flex-shrink-0"
+          >
+            Start Planning
+          </button>
+        </div>
+      </form>
+      <div id="itinerary-output" class="mt-4"></div>
+    </section>
+
+    <!-- New Services Section -->
+    <section class="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-4">
+                From Planning to Summit
+            </h2>
+            <p class="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+                We don't just plan your trek - we equip and protect you every step of the way
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Gear Shop Card -->
+                <div class="service-card rounded-2xl p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 gear-gradient opacity-10 rounded-full blur-3xl"></div>
+                    
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-backpack text-2xl text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">Smart Trails Gear</h3>
+                            <span class="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">
+                                Exclusive Brand
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Get a personalized gear list based on your exact trek. Our AI analyzes your route, weather conditions, 
+                        and difficulty level to recommend precisely what you need from our premium collection.
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-amber-600"></i>
+                            <span class="text-gray-700">Curated gear for your specific trek conditions</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-amber-600"></i>
+                            <span class="text-gray-700">Premium quality at direct-to-consumer prices</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-amber-600"></i>
+                            <span class="text-gray-700">One-click purchase of your complete gear list</span>
+                        </div>
+                    </div>
+
+                    <button class="w-full gear-gradient text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]">
+                        <i class="fas fa-shopping-bag mr-2"></i>
+                        Explore Smart Trails Gear
+                    </button>
+                </div>
+
+                <!-- Insurance Card -->
+                <div class="service-card rounded-2xl p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 insurance-gradient opacity-10 rounded-full blur-3xl"></div>
+                    
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-2xl text-emerald-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">Trek Protection</h3>
+                            <span class="inline-block bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-medium">
+                                Instant Coverage
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Get comprehensive trek insurance in seconds. We already know your route, duration, and difficulty - 
+                        so we can offer instant, tailored coverage with no lengthy forms.
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-emerald-600"></i>
+                            <span class="text-gray-700">Pre-filled application using your trek data</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-emerald-600"></i>
+                            <span class="text-gray-700">Altitude coverage, evacuation & medical</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-emerald-600"></i>
+                            <span class="text-gray-700">Instant approval and competitive rates</span>
+                        </div>
+                    </div>
+
+                    <button class="w-full insurance-gradient text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]">
+                        <i class="fas fa-file-contract mr-2"></i>
+                        Get Instant Quote
+                    </button>
+                </div>
+            </div>
+
+            <!-- Value Proposition -->
+            <div class="mt-12 text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+                <h4 class="text-xl font-semibold text-gray-900 mb-4">The Smart Trails Advantage</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">30%</div>
+                        <p class="text-gray-600">Average savings on gear bundles</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">2 min</div>
+                        <p class="text-gray-600">From trek plan to insurance coverage</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-600 mb-2">100%</div>
+                        <p class="text-gray-600">Trek-specific recommendations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+                Powered by Cutting-Edge Tech
+            </h2>
+            <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+                We analyze your preferences and generate fully customized itineraries.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="tech-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-cog text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">AI-Personalized Everything</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        From routes to gear to insurance - everything is tailored to your specific adventure.
+                    </p>
+                </div>
+
+                <div class="tech-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mountain text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">Trail Intelligence</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        We combine verified trail data, elevation stats, and route tips to guide you accurately.
+                    </p>
+                </div>
+
+                <div class="tech-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-link text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">Seamless Integration</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Your trek data flows seamlessly from planning to gear to insurance - no repetition.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4 gradient-text">Elite Planning for Serious Hikers</h2>
+            <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+                Unlock advanced features designed for passionate adventurers
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-infinity text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Unlimited Itineraries</h3>
+                    <p class="text-gray-600 leading-relaxed">Create unlimited itineraries and save them all with our Pro subscription.</p>
+                </div>
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-sliders-h text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Advanced Planning</h3>
+                    <p class="text-gray-600 leading-relaxed">Use advanced filters, preferences, and regenerate itineraries with feedback.</p>
+                </div>
+                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Premium Features</h3>
+                    <p class="text-gray-600 leading-relaxed">Access conversational planning and get early access to new features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Your Journey in 4 Simple Steps</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Plan Your Trek</h3>
+                    <p class="text-gray-600">Tell us where and when, we'll create your perfect itinerary</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-amber-600">2</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Get Your Gear List</h3>
+                    <p class="text-gray-600">AI-curated equipment specific to your trek conditions</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-emerald-600">3</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Secure Coverage</h3>
+                    <p class="text-gray-600">Instant insurance quotes based on your trek details</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-purple-600">4</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Hit the Trail</h3>
+                    <p class="text-gray-600">Fully prepared with the right plan, gear, and protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="blue-gradient py-20">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Your Complete Trek Solution Awaits
+            </h2>
+            <p class="text-xl text-blue-100 mb-10">
+                Join thousands of trekkers who plan, gear up, and protect their adventures with Smart Trails
+            </p>
+            <button id="join-community-btn" class="bg-white text-blue-600 px-10 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+                Start Your Adventure
+            </button>
+        </div>
+    </section>
+
+    <!-- Community Modal -->
+    <div id="community-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 shadow-2xl transform transition-all">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 mb-6">
+                    <svg class="h-10 w-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Join Smart Trails Pro!</h3>
+                
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Unlock unlimited itineraries, exclusive gear discounts, and priority insurance rates.
+                </p>
+                
+                <div class="text-left bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-4 mb-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">Pro Benefits:</h4>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Unlimited trek planning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 20% off all Smart Trails gear</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Priority insurance rates</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Expert guide connections</li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="notify-me-btn" class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:from-blue-700 hover:to-purple-700 transition-all">
+                        Get Started
+                    </button>
+                    <button id="close-modal-btn" class="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-200 transition-colors">
+                        Maybe Later
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Footer Container - This is where the footer will be inserted -->
+    <div id="footer-container"></div>
+
+    <!-- Load ONLY the original navbar.js -->
+    <script src="js/components/navbar.js" type="module"></script>
+
+    <!-- Add the Footer Component Script -->
+    <script src="js/components/footer.js" type="module"></script>
+
+    <!-- Main functionality -->
+    <script>
+        // Form submission handler
+        document.getElementById("itinerary-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const location = document.getElementById("user-input").value;
+            localStorage.setItem("userLocation", location);
+            window.location.href = "customize.html";
+        });
+
+        // Community modal handlers
+        const joinCommunityBtn = document.getElementById('join-community-btn');
+        const communityModal = document.getElementById('community-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const notifyMeBtn = document.getElementById('notify-me-btn');
+
+        joinCommunityBtn.addEventListener('click', () => {
+            communityModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeModal = () => {
+            communityModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        communityModal.addEventListener('click', (e) => {
+            if (e.target === communityModal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !communityModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        notifyMeBtn.addEventListener('click', () => {
+            window.location.href = 'sign-up.html';
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>

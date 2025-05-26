@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everest Base Camp Trek - Complete Guide | SmartTrails</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Hero Header */
+        .hero-header {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%234a90e2"/><stop offset="100%" style="stop-color:%237bb8f1"/></linearGradient></defs><rect fill="url(%23sky)" width="1200" height="400"/><polygon fill="%23ffffff" points="0,250 400,150 800,200 1200,120 1200,400 0,400"/><polygon fill="%23e8e8e8" points="200,300 600,180 1000,250 1200,200 1200,400 0,400"/></svg>') center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Quick Actions Bar */
+        .quick-actions {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .quick-actions-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            background: #f8fafb;
+            border-color: #cbd5e1;
+        }
+
+        .action-btn.primary {
+            background: #10b981;
+            color: white;
+            border: none;
+        }
+
+        .action-btn.primary:hover {
+            background: #059669;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-tab {
+            padding: 8px 20px;
+            border: none;
+            background: none;
+            color: #64748b;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-radius: 8px;
+        }
+
+        .nav-tab:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .nav-tab.active {
+            background: #10b981;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-icon {
+            font-size: 32px;
+        }
+
+        /* Overview Cards */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .overview-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .overview-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .overview-card-content {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .overview-card-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        /* Itinerary Days */
+        .itinerary-day {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .itinerary-day:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .day-header {
+            background: #f8fafb;
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .day-header:hover {
+            background: #f1f5f9;
+        }
+
+        .day-header-left {
+            flex: 1;
+        }
+
+        .day-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: #10b981;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .day-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .day-stats {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .day-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .expand-icon {
+            font-size: 20px;
+            color: #94a3b8;
+            transition: transform 0.3s;
+        }
+
+        .itinerary-day.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .day-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .itinerary-day.expanded .day-content {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .day-content-inner {
+            padding: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .day-description {
+            margin-bottom: 20px;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        .day-highlights {
+            margin-bottom: 20px;
+        }
+
+        .highlights-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1e293b;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+            color: #475569;
+        }
+
+        .highlight-icon {
+            color: #10b981;
+        }
+
+        .accommodation-info {
+            background: #f8fafb;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .accommodation-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        .accommodation-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .accommodation-option {
+            background: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Gear List */
+        .gear-section {
+            margin-bottom: 32px;
+        }
+
+        .gear-category-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gear-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .gear-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            transition: all 0.2s;
+        }
+
+        .gear-item:hover {
+            border-color: #10b981;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+        }
+
+        .gear-item-info {
+            flex: 1;
+        }
+
+        .gear-item-name {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .gear-item-description {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .rental-badge {
+            background: #10b981;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .cost-breakdown {
+            space-y: 12px;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 12px;
+            padding-top: 16px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .weather-season {
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .weather-season:hover {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .weather-season.best {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .season-name {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .season-months {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .best-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Cultural Section */
+        .cultural-card {
+            background: #f8fafb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .cultural-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .etiquette-list {
+            list-style: none;
+        }
+
+        .etiquette-item {
+            display: flex;
+            align-items: start;
+            gap: 8px;
+            padding: 8px 0;
+            color: #475569;
+        }
+
+        .etiquette-icon {
+            color: #10b981;
+            margin-top: 2px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .quick-actions-content {
+                justify-content: center;
+            }
+
+            .nav-tabs {
+                width: 100%;
+                justify-content: start;
+            }
+        }
+
+        /* Utilities */
+        .difficulty-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .difficulty-moderate {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .elevation-chart {
+            background: #f8fafb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Header -->
+    <header class="hero-header">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🏔️</span>
+                <span>Nepal / Himalayas</span>
+            </div>
+            <h1 class="hero-title">Everest Base Camp Trek</h1>
+            <p class="hero-subtitle">The ultimate bucket-list trek to the base of the world's highest peak</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">14 days</div>
+                    <div class="stat-label">Duration</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">130 km</div>
+                    <div class="stat-label">Distance</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5,364 m</div>
+                    <div class="stat-label">Max Elevation</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value difficulty-badge difficulty-moderate">Moderate</div>
+                    <div class="stat-label">Difficulty</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Actions Bar -->
+    <div class="quick-actions">
+        <div class="quick-actions-content">
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-section="overview">Overview</button>
+                <button class="nav-tab" data-section="itinerary">Itinerary</button>
+                <button class="nav-tab" data-section="gear">Gear List</button>
+                <button class="nav-tab" data-section="permits">Permits & Costs</button>
+                <button class="nav-tab" data-section="culture">Culture & Safety</button>
+            </nav>
+            <div class="action-buttons">
+                <button class="action-btn">
+                    <span>📥</span>
+                    <span>Download PDF</span>
+                </button>
+                <button class="action-btn">
+                    <span>🔖</span>
+                    <span>Save</span>
+                </button>
+                <button class="action-btn primary">
+                    <span>✏️</span>
+                    <span>Customize</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-area">
+            <!-- Overview Section -->
+            <section class="content-section active" id="overview">
+                <h2 class="section-title">
+                    <span class="section-icon">🏔️</span>
+                    <span>Trek Overview</span>
+                </h2>
+
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="overview-card-title">
+                            <span>✈️</span>
+                            <span>Starting Point</span>
+                        </div>
+                        <div class="overview-card-content">Lukla Airport</div>
+                        <div class="overview-card-subtitle">Fly from Kathmandu (30-45 min)</div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="overview-card-title">
+                            <span>📅</span>
+                            <span>Best Seasons</span>
+                        </div>
+                        <div class="overview-card-content">Mar-May, Sep-Nov</div>
+                        <div class="overview-card-subtitle">Spring & Autumn</div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="overview-card-title">
+                            <span>💰</span>
+                            <span>Budget Range</span>
+                        </div>
+                        <div class="overview-card-content">$1,500 - $3,000</div>
+                        <div class="overview-card-subtitle">Including permits & flights</div>
+                    </div>
+                </div>
+
+                <div class="elevation-chart">
+                    <div>📊 Interactive Elevation Profile Chart Would Display Here</div>
+                </div>
+
+                <div style="margin-top: 32px;">
+                    <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px;">About This Trek</h3>
+                    <p style="color: #475569; line-height: 1.8;">
+                        The Everest Base Camp trek is more than just a walk to the foot of the world's highest mountain. 
+                        It's a journey through the heart of Sherpa culture, past ancient Buddhist monasteries, and through 
+                        some of the most spectacular mountain scenery on Earth. You'll trek through the UNESCO World Heritage-listed 
+                        Sagarmatha National Park, cross high suspension bridges adorned with prayer flags, and experience the 
+                        legendary hospitality of the Sherpa people.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Itinerary Section -->
+            <section class="content-section" id="itinerary">
+                <h2 class="section-title">
+                    <span class="section-icon">📅</span>
+                    <span>Day-by-Day Itinerary</span>
+                </h2>
+
+                <!-- Day 1 -->
+                <div class="itinerary-day">
+                    <div class="day-header">
+                        <div class="day-header-left">
+                            <div class="day-number">Day 1</div>
+                            <div class="day-title">Fly to Lukla, Trek to Phakding</div>
+                            <div class="day-stats">
+                                <div class="day-stat">
+                                    <span>🥾</span>
+                                    <span>8 km</span>
+                                </div>
+                                <div class="day-stat">
+                                    <span>⏱️</span>
+                                    <span>3 hours</span>
+                                </div>
+                                <div class="day-stat">
+                                    <span>📈</span>
+                                    <span>2,860m → 2,610m</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="day-content-inner">
+                            <p class="day-description">
+                                After an exciting mountain flight to Lukla, begin your trek with an easy walk down to Phakding. 
+                                The trail descends through pine forests and small Sherpa settlements, crossing several suspension 
+                                bridges adorned with prayer flags.
+                            </p>
+                            <div class="day-highlights">
+                                <h4 class="highlights-title">Highlights</h4>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>Thrilling flight to Lukla airport</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>First views of Kusum Kanguru</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>Cross suspension bridges over Dudh Koshi</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>Prayer wheels and mani stones</span>
+                                </div>
+                            </div>
+                            <div class="accommodation-info">
+                                <div class="accommodation-title">Accommodation Options</div>
+                                <div class="accommodation-options">
+                                    <div class="accommodation-option">Sherpa Guide Lodge</div>
+                                    <div class="accommodation-option">Phakding Resort</div>
+                                    <div class="accommodation-option">Buddha Lodge</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="itinerary-day">
+                    <div class="day-header">
+                        <div class="day-header-left">
+                            <div class="day-number">Day 2</div>
+                            <div class="day-title">Trek to Namche Bazaar</div>
+                            <div class="day-stats">
+                                <div class="day-stat">
+                                    <span>🥾</span>
+                                    <span>11 km</span>
+                                </div>
+                                <div class="day-stat">
+                                    <span>⏱️</span>
+                                    <span>6 hours</span>
+                                </div>
+                                <div class="day-stat">
+                                    <span>📈</span>
+                                    <span>2,610m → 3,440m</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="day-content-inner">
+                            <p class="day-description">
+                                Today's trek involves a steady climb to Namche Bazaar. After entering Sagarmatha National Park 
+                                at Monjo, the trail climbs steeply through pine forests. If the weather is clear, catch your 
+                                first glimpse of Everest!
+                            </p>
+                            <div class="day-highlights">
+                                <h4 class="highlights-title">Highlights</h4>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>First view of Everest (if clear)</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>Hillary Suspension Bridge</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>Enter Sagarmatha National Park</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">✓</span>
+                                    <span>Namche Bazaar - Sherpa capital</span>
+                                </div>
+                            </div>
+                            <div class="accommodation-info">
+                                <div class="accommodation-title">Accommodation Options</div>
+                                <div class="accommodation-options">
+                                    <div class="accommodation-option">Hotel Everest View</div>
+                                    <div class="accommodation-option">Khumbu Lodge</div>
+                                    <div class="accommodation-option">Namche Hotel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More days would follow the same pattern... -->
+                <div style="text-align: center; padding: 40px; background: #f8fafb; border-radius: 8px; margin-top: 20px;">
+                    <p style="color: #64748b;">Complete 14-day itinerary with all details would be displayed here</p>
+                </div>
+            </section>
+
+            <!-- Gear List Section -->
+            <section class="content-section" id="gear">
+                <h2 class="section-title">
+                    <span class="section-icon">🎒</span>
+                    <span>Complete Gear List</span>
+                </h2>
+
+                <div class="gear-section">
+                    <h3 class="gear-category-title">
+                        <span>⚡</span>
+                        <span>Essential Items</span>
+                    </h3>
+                    <div class="gear-grid">
+                        <div class="gear-item">
+                            <div class="gear-item-info">
+                                <div class="gear-item-name">Trekking Boots</div>
+                                <div class="gear-item-description">Waterproof, broken in, ankle support</div>
+                            </div>
+                            <span class="rental-badge">Rental Available</span>
+                        </div>
+                        <div class="gear-item">
+                            <div class="gear-item-info">
+                                <div class="gear-item-name">Sleeping Bag</div>
+                                <div class="gear-item-description">-15°C rated for shoulder seasons</div>
+                            </div>
+                            <span class="rental-badge">Rental Available</span>
+                        </div>
+                        <div class="gear-item">
+                            <div class="gear-item-info">
+                                <div class="gear-item-name">Down Jacket</div>
+                                <div class="gear-item-description">Lightweight but warm, compressible</div>
+                            </div>
+                            <span class="rental-badge">Rental Available</span>
+                        </div>
+                        <div class="gear-item">
+                            <div class="gear-item-info">
+                                <div class="gear-item-name">Base Layers</div>
+                                <div class="gear-item-description">Merino wool or synthetic, 2-3 sets</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gear-section">
+                    <h3 class="gear-category-title">
+                        <span>👍</span>
+                        <span>Recommended Items</span>
+                    </h3>
+                    <div class="gear-grid">
+                        <div class="gear-item">
+                            <div class="gear-item-info">
+                                <div class="gear-item-name">Trekking Poles</div>
+                                <div class="gear-item-description">Reduce knee strain on descents</div>
+                            </div>
+                            <span class="rental-badge">Rental Available</span>
+                        </div>
+                        <div class="gear-item">
+                            <div class="gear-item-info">
+                                <div class="gear-item-name">Gaiters</div>
+                                <div class="gear-item-description">Keep snow and debris out</div>
+                            </div>
+                            <span class="rental-badge">Rental Available</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Permits & Costs Section -->
+            <section class="content-section" id="permits">
+                <h2 class="section-title">
+                    <span class="section-icon">📋</span>
+                    <span>Permits & Costs</span>
+                </h2>
+
+                <div class="cultural-card">
+                    <h3 class="cultural-card-title">Required Permits</h3>
+                    <div style="space-y: 16px;">
+                        <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 16px;">
+                            <div style="font-weight: 600; margin-bottom: 4px;">Sagarmatha National Park Entry Permit</div>
+                            <div style="color: #64748b; font-size: 14px;">
+                                <div>Cost: $30 USD / NPR 3,000</div>
+                                <div>Where: Monjo entrance gate or Kathmandu</div>
+                                <div>Validity: Single entry</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 4px;">Khumbu Pasang Lhamu Rural Municipality Permit</div>
+                            <div style="color: #64748b; font-size: 14px;">
+                                <div>Cost: $20 USD / NPR 2,000</div>
+                                <div>Where: Lukla or Monjo</div>
+                                <div>Validity: Duration of trek</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Culture & Safety Section -->
+            <section class="content-section" id="culture">
+                <h2 class="section-title">
+                    <span class="section-icon">🏔️</span>
+                    <span>Culture & Safety</span>
+                </h2>
+
+                <div class="cultural-card">
+                    <h3 class="cultural-card-title">Cultural Etiquette</h3>
+                    <ul class="etiquette-list">
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">•</span>
+                            <span>Always walk clockwise around mani stones and stupas</span>
+                        </li>
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">•</span>
+                            <span>Remove shoes before entering monasteries</span>
+                        </li>
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">•</span>
+                            <span>Don't touch religious artifacts or paintings</span>
+                        </li>
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">•</span>
+                            <span>Ask permission before photographing people</span>
+                        </li>
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">•</span>
+                            <span>Use right hand for giving and receiving</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cultural-card">
+                    <h3 class="cultural-card-title">Altitude Sickness Prevention</h3>
+                    <ul class="etiquette-list">
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">⚠️</span>
+                            <span>Ascend slowly, no more than 300-500m per day above 3000m</span>
+                        </li>
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">⚠️</span>
+                            <span>Stay hydrated, drink 3-4 liters daily</span>
+                        </li>
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">⚠️</span>
+                            <span>Avoid alcohol and sleeping pills</span>
+                        </li>
+                        <li class="etiquette-item">
+                            <span class="etiquette-icon">⚠️</span>
+                            <span>Follow acclimatization days in itinerary</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Cost Breakdown -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">💰 Cost Breakdown</h3>
+                <div class="cost-breakdown">
+                    <div class="cost-item">
+                        <span>Permits</span>
+                        <span>$50</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Lukla Flights</span>
+                        <span>$360</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Guide (14 days)</span>
+                        <span>$420</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Porter (14 days)</span>
+                        <span>$280</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Accommodation</span>
+                        <span>$70</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Meals</span>
+                        <span>$350</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Total Estimate</span>
+                        <span>$1,530+</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Time to Trek -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">🌤️ Best Time to Trek</h3>
+                <div class="weather-grid">
+                    <div class="weather-season best">
+                        <div class="season-name">Spring</div>
+                        <div class="season-months">Mar - May</div>
+                        <div class="best-badge">BEST</div>
+                    </div>
+                    <div class="weather-season">
+                        <div class="season-name">Summer</div>
+                        <div class="season-months">Jun - Aug</div>
+                    </div>
+                    <div class="weather-season best">
+                        <div class="season-name">Autumn</div>
+                        <div class="season-months">Sep - Nov</div>
+                        <div class="best-badge">BEST</div>
+                    </div>
+                    <div class="weather-season">
+                        <div class="season-name">Winter</div>
+                        <div class="season-months">Dec - Feb</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Facts -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">📍 Quick Facts</h3>
+                <div style="space-y: 12px; font-size: 14px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #64748b;">Region</span>
+                        <span style="font-weight: 600;">Khumbu, Nepal</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #64748b;">Airport</span>
+                        <span style="font-weight: 600;">Lukla (LUA)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #64748b;">Highest Point</span>
+                        <span style="font-weight: 600;">Kala Patthar (5,545m)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #64748b;">Accommodation</span>
+                        <span style="font-weight: 600;">Teahouses</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #64748b;">Guide Required</span>
+                        <span style="font-weight: 600;">Recommended</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        // Tab navigation
+        const tabs = document.querySelectorAll('.nav-tab');
+        const sections = document.querySelectorAll('.content-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetSection = tab.getAttribute('data-section');
+                
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active section
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Expandable itinerary days
+        const itineraryDays = document.querySelectorAll('.itinerary-day');
+        
+        itineraryDays.forEach(day => {
+            const header = day.querySelector('.day-header');
+            
+            header.addEventListener('click', () => {
+                day.classList.toggle('expanded');
+            });
+        });
+
+        // Smooth scroll behavior for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

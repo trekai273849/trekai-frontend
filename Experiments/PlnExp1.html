@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Itinerary Design Concepts</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom animations */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        
+        /* Gradient overlays */
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
+        }
+        
+        /* Custom progress line */
+        .progress-line {
+            background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+            width: 3px;
+            position: absolute;
+            left: 23px;
+            top: 45px;
+            bottom: -20px;
+            z-index: 0;
+        }
+        
+        /* Elevation chart styling */
+        .elevation-chart {
+            background: linear-gradient(to top, rgba(79, 172, 254, 0.2), transparent);
+            clip-path: polygon(0 100%, 10% 85%, 25% 70%, 40% 60%, 55% 45%, 70% 55%, 85% 40%, 100% 30%, 100% 100%);
+        }
+        
+        /* Icon backgrounds */
+        .icon-gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .icon-gradient-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .icon-gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .icon-gradient-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        
+        /* Smooth accordion transitions */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 1000px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        /* Hover effects */
+        .day-card {
+            transition: all 0.3s ease;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Badge styling */
+        .difficulty-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .difficulty-easy {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        
+        .difficulty-moderate {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .difficulty-challenging {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto space-y-12">
+        
+        <!-- Design Concept 1: Modern Card-Based Layout with Progress Indicators -->
+        <div>
+            <h2 class="text-2xl font-bold mb-6">Design 1: Modern Cards with Progress Timeline</h2>
+            
+            <!-- Quick Stats Summary -->
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                <h3 class="text-lg font-semibold mb-4">Trek Overview</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600">3</div>
+                        <div class="text-sm text-gray-600">Days</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-600">32km</div>
+                        <div class="text-sm text-gray-600">Total Distance</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-600">2,180m</div>
+                        <div class="text-sm text-gray-600">Elevation Gain</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-600">Moderate</div>
+                        <div class="text-sm text-gray-600">Difficulty</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day Cards with Timeline -->
+            <div class="relative">
+                <!-- Day 1 -->
+                <div class="relative mb-8">
+                    <div class="progress-line"></div>
+                    <div class="day-card bg-white rounded-xl shadow-sm overflow-hidden relative z-10">
+                        <!-- Day Header -->
+                        <div class="gradient-overlay p-6 cursor-pointer" onclick="toggleAccordion(this)">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full icon-gradient-1 flex items-center justify-center text-white font-bold">
+                                        1
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold">Conquering Passo Tonale</h3>
+                                        <div class="flex items-center gap-3 mt-1 text-sm text-gray-600">
+                                            <span class="flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                </svg>
+                                                10km
+                                            </span>
+                                            <span class="flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                                </svg>
+                                                +626m
+                                            </span>
+                                            <span class="difficulty-badge difficulty-moderate">
+                                                Moderate
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- Day Content -->
+                        <div class="accordion-content px-6">
+                            <div class="border-t pt-4">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-semibold mb-2 text-gray-700">Route Details</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><span class="font-medium">Start:</span> Ponte di Legno (1257m)</li>
+                                            <li><span class="font-medium">End:</span> Passo Tonale (1883m)</li>
+                                            <li><span class="font-medium">Terrain:</span> Rocky paths with forested sections</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-2 text-gray-700">Highlights</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li class="flex items-start gap-2">
+                                                <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Views of Adamello mountain range
+                                            </li>
+                                            <li class="flex items-start gap-2">
+                                                <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Historic Passo Tonale crossing
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mini elevation profile -->
+                                <div class="mt-4 bg-gray-50 rounded-lg p-4">
+                                    <h4 class="text-sm font-medium text-gray-700 mb-2">Elevation Profile</h4>
+                                    <div class="h-20 elevation-chart rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 -->
+                <div class="relative mb-8">
+                    <div class="day-card bg-white rounded-xl shadow-sm overflow-hidden relative z-10">
+                        <div class="gradient-overlay p-6 cursor-pointer" onclick="toggleAccordion(this)">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full icon-gradient-2 flex items-center justify-center text-white font-bold">
+                                        2
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold">Lake Paradise at Lago Serodoli</h3>
+                                        <div class="flex items-center gap-3 mt-1 text-sm text-gray-600">
+                                            <span class="flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                </svg>
+                                                12km
+                                            </span>
+                                            <span class="flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                                </svg>
+                                                +800m / -300m
+                                            </span>
+                                            <span class="difficulty-badge difficulty-challenging">
+                                                Challenging
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="accordion-content px-6">
+                            <div class="border-t pt-4">
+                                <!-- Content similar to Day 1 -->
+                                <p class="text-gray-600">Detailed day 2 information would go here...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Design Concept 2: Visual Timeline with Images -->
+        <div>
+            <h2 class="text-2xl font-bold mb-6">Design 2: Visual Timeline with Photo Cards</h2>
+            
+            <div class="space-y-6">
+                <!-- Day 1 Card with Image -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="md:flex">
+                        <!-- Image Section -->
+                        <div class="md:w-1/3 h-48 md:h-auto bg-gradient-to-br from-blue-400 to-purple-600 relative">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <div class="text-4xl mb-2">🏔️</div>
+                                    <div class="text-xl font-bold">Day 1</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Content Section -->
+                        <div class="md:w-2/3 p-6">
+                            <h3 class="text-xl font-bold mb-3">Conquering Passo Tonale</h3>
+                            
+                            <!-- Quick Stats Grid -->
+                            <div class="grid grid-cols-3 gap-4 mb-4">
+                                <div class="text-center p-3 bg-blue-50 rounded-lg">
+                                    <div class="text-2xl">🚶</div>
+                                    <div class="text-sm font-medium">10km</div>
+                                </div>
+                                <div class="text-center p-3 bg-green-50 rounded-lg">
+                                    <div class="text-2xl">⬆️</div>
+                                    <div class="text-sm font-medium">+626m</div>
+                                </div>
+                                <div class="text-center p-3 bg-orange-50 rounded-lg">
+                                    <div class="text-2xl">⏱️</div>
+                                    <div class="text-sm font-medium">5-6 hrs</div>
+                                </div>
+                            </div>
+                            
+                            <button class="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center gap-2">
+                                View Details
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Design Concept 3: Minimalist with Focus on Information -->
+        <div>
+            <h2 class="text-2xl font-bold mb-6">Design 3: Clean Minimalist Design</h2>
+            
+            <div class="bg-white rounded-xl p-8">
+                <!-- Trek Header -->
+                <div class="border-b pb-6 mb-6">
+                    <h3 class="text-2xl font-bold mb-2">3-Day Italian Alps Adventure</h3>
+                    <p class="text-gray-600">Experience breathtaking mountain passes, pristine alpine lakes, and charming villages</p>
+                </div>
+                
+                <!-- Days List -->
+                <div class="space-y-4">
+                    <div class="group cursor-pointer">
+                        <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-gray-200 group-hover:bg-blue-500 transition-colors flex items-center justify-center">
+                                    <span class="text-sm font-bold text-gray-700 group-hover:text-white transition-colors">1</span>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h4 class="font-semibold group-hover:text-blue-600 transition-colors">Ponte di Legno → Passo Tonale</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Rocky paths through forested sections with stunning mountain views</p>
+                                        <div class="flex items-center gap-4 mt-2 text-xs text-gray-500">
+                                            <span>10km</span>
+                                            <span>•</span>
+                                            <span>↑ 626m</span>
+                                            <span>•</span>
+                                            <span>5-6 hours</span>
+                                            <span>•</span>
+                                            <span class="text-orange-600">Moderate</span>
+                                        </div>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Sections Enhancement -->
+        <div>
+            <h2 class="text-2xl font-bold mb-6">Enhanced Additional Information Cards</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Packing List Card -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold">Packing List</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">Essential gear for your trek</p>
+                    <button class="text-green-700 hover:text-green-800 font-medium text-sm flex items-center gap-2">
+                        View Checklist
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Local Insights Card -->
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold">Local Insights</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">Culture, cuisine & customs</p>
+                    <button class="text-orange-700 hover:text-orange-800 font-medium text-sm flex items-center gap-2">
+                        Explore Tips
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Practical Info Card -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold">Practical Info</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">Permits, weather & logistics</p>
+                    <button class="text-blue-700 hover:text-blue-800 font-medium text-sm flex items-center gap-2">
+                        Learn More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('svg:last-child');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>

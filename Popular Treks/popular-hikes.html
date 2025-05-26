@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Our Most Popular Hikes | Find Your Next Adventure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D5016;
+            --primary-light: #4A7C28;
+            --accent: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.9), rgba(74, 124, 40, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0"/><path fill="%23e0e0e0" d="M0 400L50 350L100 450L150 300L200 400L250 250L300 350L350 200L400 300L450 150L500 250L550 100L600 200L650 50L700 150L750 0L800 100L850 50L900 150L950 100L1000 200L1050 150L1100 250L1150 200L1200 300L1200 600L0 600Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Filter Section */
+        .filters-section {
+            background: white;
+            padding: 30px 0;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--text-dark);
+        }
+
+        .filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-pill {
+            padding: 8px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95em;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .filter-pill:hover {
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .filter-pill.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .filter-pill .count {
+            opacity: 0.6;
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 30px;
+            font-size: 1em;
+            transition: var(--transition);
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+
+        /* Results Section */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0 30px;
+        }
+
+        .results-count {
+            font-size: 1.1em;
+            color: var(--text-light);
+        }
+
+        .sort-dropdown {
+            padding: 10px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 25px;
+            background: white;
+            font-size: 0.95em;
+            cursor: pointer;
+        }
+
+        /* Trek Cards Grid */
+        .treks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Trek Card - Updated with Option 1 Design */
+        .trek-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .trek-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .image-section {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        .country-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.95);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .difficulty-indicator {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .difficulty-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .difficulty-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .difficulty-dot.filled {
+            background: #F39C12;
+        }
+
+        .trek-content {
+            padding: 24px;
+        }
+
+        .trek-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2C3E50;
+            margin-bottom: 8px;
+        }
+
+        .quick-info {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+            color: #7F8C8D;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .trek-description {
+            color: #5D6D7E;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .key-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feature-tag {
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .bottom-section {
+            display: flex;
+            justify-content: center;
+            padding-top: 16px;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .explore-btn {
+            background: #2D5016;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            display: inline-block;
+        }
+
+        .explore-btn:hover {
+            background: #4A7C28;
+        }
+
+        /* Country flag mapping */
+        .emoji-icon {
+            font-size: 1.1em;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px;
+            font-size: 1.2em;
+            color: var(--text-light);
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .no-results h3 {
+            font-size: 1.8em;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .no-results p {
+            color: var(--text-light);
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .reset-filters-btn {
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .reset-filters-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .treks-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .quick-info {
+                gap: 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .trek-card {
+            animation: fadeIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .trek-card:nth-child(1) { animation-delay: 0.1s; }
+        .trek-card:nth-child(2) { animation-delay: 0.2s; }
+        .trek-card:nth-child(3) { animation-delay: 0.3s; }
+        .trek-card:nth-child(4) { animation-delay: 0.4s; }
+        .trek-card:nth-child(5) { animation-delay: 0.5s; }
+        .trek-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Find Your Perfect Adventure</h1>
+            <p>From gentle valley walks to epic mountain crossings, discover treks that will take your breath away</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-bar" id="searchBar" placeholder="🔍 Search treks by name, location or interests...">
+            </div>
+
+            <!-- Difficulty Filter -->
+            <div class="filter-group">
+                <label class="filter-label">How challenging do you want to go?</label>
+                <div class="filter-pills" id="difficultyFilters">
+                    <button class="filter-pill active" data-filter="all">
+                        All Levels <span class="count">(20)</span>
+                    </button>
+                    <button class="filter-pill" data-filter="easy">
+                        Easy <span class="count">(1)</span>
+                    </button>
+                    <button class="filter-pill" data-filter="moderate">
+                        Moderate <span class="count">(10)</span>
+                    </button>
+                    <button class="filter-pill" data-filter="challenging">
+                        Challenging <span class="count">(6)</span>
+                    </button>
+                    <button class="filter-pill" data-filter="very challenging">
+                        Very Challenging <span class="count">(3)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Region Filter -->
+            <div class="filter-group">
+                <label class="filter-label">Where do you want to explore?</label>
+                <div class="filter-pills" id="regionFilters">
+                    <button class="filter-pill active" data-filter="all">
+                        All Regions <span class="count">(20)</span>
+                    </button>
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Duration Filter -->
+            <div class="filter-group">
+                <label class="filter-label">How much time do you have?</label>
+                <div class="filter-pills" id="durationFilters">
+                    <button class="filter-pill active" data-filter="all">
+                        Any Duration <span class="count">(20)</span>
+                    </button>
+                    <button class="filter-pill" data-filter="short">
+                        Under 7 days <span class="count"></span>
+                    </button>
+                    <button class="filter-pill" data-filter="medium">
+                        7-10 days <span class="count"></span>
+                    </button>
+                    <button class="filter-pill" data-filter="long">
+                        Over 10 days <span class="count"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="container">
+        <div class="results-header">
+            <h2 class="results-count">Showing <span id="resultsCount">20</span> adventures</h2>
+            <select class="sort-dropdown" id="sortDropdown">
+                <option value="popularity">Most Popular</option>
+                <option value="name">Name (A-Z)</option>
+                <option value="duration">Duration (Short to Long)</option>
+                <option value="difficulty">Difficulty (Easy to Hard)</option>
+            </select>
+        </div>
+
+        <!-- Trek Cards Grid -->
+        <div class="treks-grid" id="treksGrid">
+            <!-- Cards will be populated by JavaScript -->
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>No treks match your criteria</h3>
+            <p>Try adjusting your filters to discover more adventures</p>
+            <button class="reset-filters-btn" onclick="resetAllFilters()">Reset All Filters</button>
+        </div>
+    </section>
+
+    <script>
+        // Trek data (in real app, this would come from your JSON file)
+        const treksData = [
+            {
+                "_id": "everest-base-camp-trek",
+                "name": "Everest Base Camp Trek",
+                "region": "Himalayas",
+                "country": "Nepal",
+                "summary": "The ultimate bucket-list trek to the base of the world's highest peak, through Sherpa villages and Buddhist monasteries.",
+                "duration": { "recommended_days": 14 },
+                "difficulty": "moderate",
+                "max_elevation_m": 5364,
+                "distance_km": 130,
+                "popularity_score": 98,
+                "best_seasons": [{"name": "Spring"}, {"name": "Autumn"}]
+            },
+            {
+                "_id": "torres-del-paine-w-circuit",
+                "name": "Torres del Paine 'W' Circuit",
+                "region": "Patagonia",
+                "country": "Chile",
+                "summary": "Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.",
+                "duration": { "recommended_days": 5 },
+                "difficulty": "moderate",
+                "max_elevation_m": 1200,
+                "distance_km": 80,
+                "popularity_score": 96
+            },
+            {
+                "_id": "inca-trail",
+                "name": "Classic Inca Trail",
+                "region": "Peru/Andes",
+                "country": "Peru",
+                "summary": "The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.",
+                "duration": { "recommended_days": 4 },
+                "difficulty": "moderate",
+                "max_elevation_m": 4200,
+                "distance_km": 43,
+                "popularity_score": 99
+            },
+            {
+                "_id": "tour-du-mont-blanc",
+                "name": "Tour du Mont Blanc",
+                "region": "European Alps",
+                "country": "France/Italy/Switzerland",
+                "summary": "The classic Alpine circuit around Western Europe's highest peak, passing through three countries with spectacular mountain scenery and charming villages.",
+                "duration": { "recommended_days": 11 },
+                "difficulty": "moderate",
+                "max_elevation_m": 2665,
+                "distance_km": 170,
+                "popularity_score": 97
+            },
+            {
+                "_id": "lofoten-islands-trek",
+                "name": "Lofoten Islands Trek",
+                "region": "Norway/Scandinavia",
+                "country": "Norway",
+                "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+                "duration": { "recommended_days": 6 },
+                "difficulty": "moderate",
+                "max_elevation_m": 1029,
+                "distance_km": 60,
+                "popularity_score": 91
+            },
+            {
+                "_id": "annapurna-circuit-trek",
+                "name": "Annapurna Circuit Trek",
+                "region": "Nepal/Himalayas",
+                "country": "Nepal",
+                "summary": "A diverse journey through varied landscapes, from tropical forests to high-altitude deserts, crossing the challenging Thorong La Pass at 5,416m.",
+                "duration": { "recommended_days": 18 },
+                "difficulty": "challenging",
+                "max_elevation_m": 5416,
+                "distance_km": 230,
+                "popularity_score": 95
+            },
+            {
+                "_id": "kungsleden-kings-trail",
+                "name": "Kungsleden (King's Trail)",
+                "region": "Sweden/Scandinavia",
+                "country": "Sweden",
+                "summary": "Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.",
+                "duration": { "recommended_days": 5 },
+                "difficulty": "easy",
+                "max_elevation_m": 1140,
+                "distance_km": 110,
+                "popularity_score": 93
+            },
+            {
+                "_id": "gr20-corsica",
+                "name": "GR20",
+                "region": "European Alps",
+                "country": "France",
+                "summary": "Europe's toughest long-distance trail, crossing Corsica from north to south through rugged mountains, offering spectacular scenery and a true wilderness challenge.",
+                "duration": { "recommended_days": 15 },
+                "difficulty": "very challenging",
+                "max_elevation_m": 2706,
+                "distance_km": 180,
+                "popularity_score": 89
+            },
+            {
+                "_id": "dolomites-alta-via-1",
+                "name": "Dolomites Alta Via 1",
+                "region": "European Alps",
+                "country": "Italy",
+                "summary": "Classic high route through the dramatic limestone peaks of the Dolomites, staying in traditional rifugios with incredible Italian mountain cuisine.",
+                "duration": { "recommended_days": 10 },
+                "difficulty": "moderate",
+                "max_elevation_m": 2950,
+                "distance_km": 120,
+                "popularity_score": 90
+            },
+            {
+                "_id": "salkantay-trek",
+                "name": "Salkantay Trek",
+                "region": "Peru/Andes",
+                "country": "Peru",
+                "summary": "The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.",
+                "duration": { "recommended_days": 5 },
+                "difficulty": "challenging",
+                "max_elevation_m": 4600,
+                "distance_km": 75,
+                "popularity_score": 94
+            },
+            {
+                "_id": "fitz-roy-trek",
+                "name": "Fitz Roy Trek",
+                "region": "Patagonia",
+                "country": "Argentina",
+                "summary": "Dramatic granite spires and pristine alpine lakes around El Chaltén, Argentina's trekking capital, offering flexible day hikes and multi-day options.",
+                "duration": { "recommended_days": 4 },
+                "difficulty": "moderate",
+                "max_elevation_m": 1200,
+                "distance_km": 40,
+                "popularity_score": 92
+            },
+            {
+                "_id": "haute-route-chamonix-zermatt",
+                "name": "Walker's Haute Route",
+                "region": "European Alps",
+                "country": "France/Switzerland",
+                "summary": "The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.",
+                "duration": { "recommended_days": 12 },
+                "difficulty": "challenging",
+                "max_elevation_m": 3000,
+                "distance_km": 180,
+                "popularity_score": 88
+            },
+            {
+                "_id": "gokyo-lakes-trek",
+                "name": "Gokyo Lakes Trek",
+                "region": "Nepal/Himalayas",
+                "country": "Nepal",
+                "summary": "A stunning alternative to Everest Base Camp, featuring turquoise glacial lakes, the challenging Gokyo Ri viewpoint, and incredible views of four 8,000m peaks.",
+                "duration": { "recommended_days": 12 },
+                "difficulty": "moderate",
+                "max_elevation_m": 5357,
+                "distance_km": 90,
+                "popularity_score": 88
+            },
+            {
+                "_id": "langtang-valley-trek",
+                "name": "Langtang Valley Trek",
+                "region": "Nepal/Himalayas",
+                "country": "Nepal",
+                "summary": "A shorter trek with stunning mountain views, glaciers, and authentic Tamang culture, perfect for those with limited time.",
+                "duration": { "recommended_days": 9 },
+                "difficulty": "moderate",
+                "max_elevation_m": 4984,
+                "distance_km": 77,
+                "popularity_score": 85
+            },
+            {
+                "_id": "santa-cruz-trek",
+                "name": "Santa Cruz Trek",
+                "region": "Peru/Andes",
+                "country": "Peru",
+                "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass.",
+                "duration": { "recommended_days": 4 },
+                "difficulty": "moderate",
+                "max_elevation_m": 4750,
+                "distance_km": 50,
+                "popularity_score": 85
+            },
+            {
+                "_id": "upper-mustang-trek",
+                "name": "Upper Mustang Trek",
+                "region": "Nepal/Himalayas",
+                "country": "Nepal",
+                "summary": "Journey to the ancient forbidden kingdom of Lo, a hidden Tibetan culture preserved behind the Himalayas with desert landscapes, cave monasteries, and medieval walled cities.",
+                "duration": { "recommended_days": 12 },
+                "difficulty": "moderate",
+                "max_elevation_m": 4230,
+                "distance_km": 160,
+                "popularity_score": 82
+            },
+            {
+                "_id": "annapurna-base-camp-trek",
+                "name": "Annapurna Base Camp Trek",
+                "region": "Nepal/Himalayas",
+                "country": "Nepal",
+                "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+                "duration": { "recommended_days": 10 },
+                "difficulty": "moderate",
+                "max_elevation_m": 4130,
+                "distance_km": 110,
+                "popularity_score": 95
+            },
+            {
+                "_id": "jotunheimen-traverse",
+                "name": "Jotunheimen Traverse",
+                "region": "Norway/Scandinavia",
+                "country": "Norway",
+                "summary": "Journey through Norway's highest mountain range, home of the giants, crossing glaciers and summiting Northern Europe's highest peaks.",
+                "duration": { "recommended_days": 6 },
+                "difficulty": "challenging",
+                "max_elevation_m": 2469,
+                "distance_km": 55,
+                "popularity_score": 87
+            },
+            {
+                "_id": "huayhuash-circuit",
+                "name": "Huayhuash Circuit",
+                "region": "Peru/Andes",
+                "country": "Peru",
+                "summary": "One of the world's most spectacular high-altitude treks, circling the dramatic Huayhuash range with pristine alpine lakes, glaciers, and multiple 5000m passes.",
+                "duration": { "recommended_days": 10 },
+                "difficulty": "challenging",
+                "max_elevation_m": 5000,
+                "distance_km": 130,
+                "popularity_score": 86
+            },
+            {
+                "_id": "huemul-circuit",
+                "name": "Huemul Circuit",
+                "region": "Patagonia",
+                "country": "Argentina",
+                "summary": "A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.",
+                "duration": { "recommended_days": 4 },
+                "difficulty": "challenging",
+                "max_elevation_m": 1600,
+                "distance_km": 65,
+                "popularity_score": 78
+            }
+        ];
+
+        // Initialize filters
+        let activeFilters = {
+            difficulty: 'all',
+            region: 'all',
+            duration: 'all',
+            search: ''
+        };
+
+        // Country flag mapping
+        const countryFlags = {
+            'Nepal': '🇳🇵',
+            'Chile': '🇨🇱',
+            'Peru': '🇵🇪',
+            'France': '🇫🇷',
+            'Italy': '🇮🇹',
+            'Switzerland': '🇨🇭',
+            'Norway': '🇳🇴',
+            'Sweden': '🇸🇪',
+            'Argentina': '🇦🇷',
+            'France/Italy/Switzerland': '🇪🇺',
+            'France/Switzerland': '🇪🇺'
+        };
+
+        // Helper function to get country flag
+        function getCountryFlag(country) {
+            // For multi-country treks, take the first one
+            const mainCountry = country.split('/')[0];
+            return countryFlags[mainCountry] || countryFlags[country] || '🌍';
+        }
+
+        // Helper function to get difficulty dots
+        function getDifficultyDots(difficulty) {
+            const levels = {
+                'easy': 1,
+                'moderate': 2,
+                'challenging': 3,
+                'very challenging': 4
+            };
+            const level = levels[difficulty] || 2;
+            let dots = '';
+            for (let i = 1; i <= 4; i++) {
+                dots += `<span class="difficulty-dot ${i <= level ? 'filled' : ''}"></span>`;
+            }
+            return dots;
+        }
+
+        // Helper function to format elevation
+        function formatElevation(meters) {
+            if (meters >= 1000) {
+                return (meters / 1000).toFixed(1) + 'k m';
+            }
+            return meters + ' m';
+        }
+
+        // Helper function to get trek highlights/features
+        function getTrekFeatures(trek) {
+            const features = [];
+            
+            if (trek.max_elevation_m >= 5000) {
+                features.push('5000m+ Peak');
+            } else if (trek.max_elevation_m >= 4000) {
+                features.push('High Altitude');
+            }
+            
+            if (trek.distance_km >= 150) {
+                features.push('Epic Journey');
+            }
+            
+            if (trek.difficulty === 'easy') {
+                features.push('Beginner Friendly');
+            }
+            
+            if (trek.region.includes('Himalayas')) {
+                features.push('Himalayan');
+            } else if (trek.region.includes('Patagonia')) {
+                features.push('Patagonian');
+            } else if (trek.region.includes('Alps')) {
+                features.push('Alpine');
+            } else if (trek.region.includes('Scandinavia')) {
+                features.push('Nordic');
+            } else if (trek.region.includes('Andes')) {
+                features.push('Andean');
+            }
+
+            // Add some variety based on trek characteristics
+            if (trek.name.toLowerCase().includes('circuit')) {
+                features.push('Circuit Trek');
+            }
+            if (trek.summary.toLowerCase().includes('culture') || trek.summary.toLowerCase().includes('cultural')) {
+                features.push('Cultural');
+            }
+            if (trek.summary.toLowerCase().includes('wilderness')) {
+                features.push('Wilderness');
+            }
+            
+            return features.slice(0, 3);
+        }
+
+        // Render trek card with new Option 1 design
+        function createTrekCard(trek) {
+            const features = getTrekFeatures(trek);
+            const countryFlag = getCountryFlag(trek.country);
+            const difficultyDots = getDifficultyDots(trek.difficulty);
+            const displayCountry = trek.country.split('/')[0]; // Show first country for multi-country treks
+            
+            return `
+                <div class="trek-card" onclick="viewTrekDetails('${trek._id}')">
+                    <div class="image-section">
+                        <div class="country-badge">
+                            <span class="emoji-icon">${countryFlag}</span>
+                            <span>${displayCountry}</span>
+                        </div>
+                        <div class="difficulty-indicator">
+                            <span class="difficulty-dots">
+                                ${difficultyDots}
+                            </span>
+                            <span>${trek.difficulty.charAt(0).toUpperCase() + trek.difficulty.slice(1)}</span>
+                        </div>
+                    </div>
+                    <div class="trek-content">
+                        <h3 class="trek-title">${trek.name}</h3>
+                        <div class="quick-info">
+                            <div class="info-item">
+                                <span>📅</span>
+                                <span>${trek.duration.recommended_days} days</span>
+                            </div>
+                            <div class="info-item">
+                                <span>🏔️</span>
+                                <span>${formatElevation(trek.max_elevation_m)}</span>
+                            </div>
+                            <div class="info-item">
+                                <span>🥾</span>
+                                <span>${trek.distance_km}km</span>
+                            </div>
+                        </div>
+                        <p class="trek-description">${trek.summary}</p>
+                        <div class="key-features">
+                            ${features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
+                        </div>
+                        <div class="bottom-section">
+                            <a href="#" class="explore-btn" onclick="event.stopPropagation(); viewTrekDetails('${trek._id}')">Explore This Trek</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Filter treks based on active filters
+        function filterTreks() {
+            let filtered = [...treksData];
+            
+            // Search filter
+            if (activeFilters.search) {
+                const searchLower = activeFilters.search.toLowerCase();
+                filtered = filtered.filter(trek => 
+                    trek.name.toLowerCase().includes(searchLower) ||
+                    trek.country.toLowerCase().includes(searchLower) ||
+                    trek.region.toLowerCase().includes(searchLower) ||
+                    trek.summary.toLowerCase().includes(searchLower) ||
+                    trek.difficulty.toLowerCase().includes(searchLower)
+                );
+            }
+            
+            // Difficulty filter
+            if (activeFilters.difficulty !== 'all') {
+                filtered = filtered.filter(trek => trek.difficulty === activeFilters.difficulty);
+            }
+            
+            // Region filter
+            if (activeFilters.region !== 'all') {
+                filtered = filtered.filter(trek => trek.region === activeFilters.region);
+            }
+            
+            // Duration filter
+            if (activeFilters.duration !== 'all') {
+                filtered = filtered.filter(trek => {
+                    const days = trek.duration.recommended_days;
+                    if (activeFilters.duration === 'short') return days < 7;
+                    if (activeFilters.duration === 'medium') return days >= 7 && days <= 10;
+                    if (activeFilters.duration === 'long') return days > 10;
+                    return true;
+                });
+            }
+            
+            return filtered;
+        }
+
+        // Sort treks
+        function sortTreks(treks, sortBy) {
+            const sorted = [...treks];
+            
+            switch(sortBy) {
+                case 'name':
+                    sorted.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'duration':
+                    sorted.sort((a, b) => a.duration.recommended_days - b.duration.recommended_days);
+                    break;
+                case 'difficulty':
+                    const difficultyOrder = { 'easy': 1, 'moderate': 2, 'challenging': 3, 'very challenging': 4 };
+                    sorted.sort((a, b) => difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty]);
+                    break;
+                case 'popularity':
+                default:
+                    sorted.sort((a, b) => b.popularity_score - a.popularity_score);
+            }
+            
+            return sorted;
+        }
+
+        // Render trek grid
+        function renderTreks() {
+            const filtered = filterTreks();
+            const sortBy = document.getElementById('sortDropdown').value;
+            const sorted = sortTreks(filtered, sortBy);
+            
+            const grid = document.getElementById('treksGrid');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResults = document.getElementById('noResults');
+            
+            resultsCount.textContent = sorted.length;
+            
+            if (sorted.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+            } else {
+                grid.style.display = 'grid';
+                noResults.style.display = 'none';
+                grid.innerHTML = sorted.map(trek => createTrekCard(trek)).join('');
+            }
+        }
+
+        // Initialize region filters
+        function initializeRegionFilters() {
+            const regions = [...new Set(treksData.map(t => t.region))].sort();
+            const container = document.getElementById('regionFilters');
+            
+            regions.forEach(region => {
+                const count = treksData.filter(t => t.region === region).length;
+                const button = document.createElement('button');
+                button.className = 'filter-pill';
+                button.setAttribute('data-filter', region);
+                button.innerHTML = `${region} <span class="count">(${count})</span>`;
+                button.addEventListener('click', handleRegionFilter);
+                container.appendChild(button);
+            });
+        }
+
+        // Update duration filter counts
+        function updateDurationCounts() {
+            const filters = document.querySelectorAll('#durationFilters .filter-pill');
+            filters.forEach(filter => {
+                const type = filter.getAttribute('data-filter');
+                if (type !== 'all') {
+                    const count = treksData.filter(trek => {
+                        const days = trek.duration.recommended_days;
+                        if (type === 'short') return days < 7;
+                        if (type === 'medium') return days >= 7 && days <= 10;
+                        if (type === 'long') return days > 10;
+                        return false;
+                    }).length;
+                    filter.querySelector('.count').textContent = `(${count})`;
+                }
+            });
+        }
+
+        // Filter handlers
+        function handleDifficultyFilter(e) {
+            document.querySelectorAll('#difficultyFilters .filter-pill').forEach(pill => 
+                pill.classList.remove('active')
+            );
+            e.target.classList.add('active');
+            activeFilters.difficulty = e.target.getAttribute('data-filter');
+            renderTreks();
+        }
+
+        function handleRegionFilter(e) {
+            document.querySelectorAll('#regionFilters .filter-pill').forEach(pill => 
+                pill.classList.remove('active')
+            );
+            e.target.classList.add('active');
+            activeFilters.region = e.target.getAttribute('data-filter');
+            renderTreks();
+        }
+
+        function handleDurationFilter(e) {
+            document.querySelectorAll('#durationFilters .filter-pill').forEach(pill => 
+                pill.classList.remove('active')
+            );
+            e.target.classList.add('active');
+            activeFilters.duration = e.target.getAttribute('data-filter');
+            renderTreks();
+        }
+
+        // Search handler
+        function handleSearch(e) {
+            activeFilters.search = e.target.value;
+            renderTreks();
+        }
+
+        // Sort handler
+        function handleSort(e) {
+            renderTreks();
+        }
+
+        // Reset filters
+        function resetAllFilters() {
+            activeFilters = {
+                difficulty: 'all',
+                region: 'all',
+                duration: 'all',
+                search: ''
+            };
+            
+            document.querySelectorAll('.filter-pill').forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.getAttribute('data-filter') === 'all') {
+                    pill.classList.add('active');
+                }
+            });
+            
+            document.getElementById('searchBar').value = '';
+            document.getElementById('sortDropdown').value = 'popularity';
+            
+            renderTreks();
+        }
+
+        // View trek details (placeholder)
+        function viewTrekDetails(trekId) {
+            console.log('View trek:', trekId);
+            // In a real app, this would navigate to the trek detail page
+            alert(`Trek details page for: ${trekId}`);
+        }
+
+        // Initialize event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Difficulty filters
+            document.querySelectorAll('#difficultyFilters .filter-pill').forEach(pill => {
+                pill.addEventListener('click', handleDifficultyFilter);
+            });
+            
+            // Duration filters
+            document.querySelectorAll('#durationFilters .filter-pill').forEach(pill => {
+                pill.addEventListener('click', handleDurationFilter);
+            });
+            
+            // Search
+            document.getElementById('searchBar').addEventListener('input', handleSearch);
+            
+            // Sort
+            document.getElementById('sortDropdown').addEventListener('change', handleSort);
+            
+            // Initialize
+            initializeRegionFilters();
+            updateDurationCounts();
+            renderTreks();
+        });
+    </script>
+</body>
+</html>
