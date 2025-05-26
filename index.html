@@ -180,144 +180,311 @@
         </div>
     </section>
 
-    <!-- Popular Treks Section -->
-<section id="popular-treks" class="py-20 px-4 bg-gradient-to-br from-gray-50 to-green-50">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
-                Explore World-Class Treks
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                From iconic mountain trails to hidden wilderness gems, discover curated adventures that match your ambition
-            </p>
+<!-- Popular Treks Section with Horizontal Scrolling -->
+<section id="popular-treks" class="py-20 bg-gradient-to-br from-gray-50 to-green-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
+                    Explore World-Class Treks
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl">
+                    Swipe through our curated collection of unforgettable adventures
+                </p>
+            </div>
+            <a href="popular-hikes.html" class="hidden md:flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold group">
+                View All
+                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
         </div>
 
-        <!-- Trek Preview Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <!-- Everest Base Camp Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group">
-                <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2">
-                        <span>🇳🇵</span> Nepal
-                    </div>
-                    <div class="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-lg text-sm font-semibold">
-                        14 days
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Everest Base Camp Trek</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-2">
-                        The ultimate bucket-list trek to the base of the world's highest peak, through Sherpa villages and Buddhist monasteries.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex gap-1">
-                            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
-                            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
-                            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                        </div>
-                        <span class="text-sm text-gray-500">Moderate</span>
-                    </div>
-                </div>
-            </div>
+        <!-- Scrolling Container -->
+        <div class="relative">
+            <!-- Left Scroll Button -->
+            <button id="scroll-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-all hidden md:block">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
 
-            <!-- Torres del Paine Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group">
-                <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2">
-                        <span>🇨🇱</span> Chile
-                    </div>
-                    <div class="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-lg text-sm font-semibold">
-                        5 days
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Torres del Paine 'W' Circuit</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-2">
-                        Chile's premier trek featuring iconic granite towers, turquoise lakes, and massive glaciers in spectacular Patagonia.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex gap-1">
-                            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
-                            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
-                            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                        </div>
-                        <span class="text-sm text-gray-500">Moderate</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Right Scroll Button -->
+            <button id="scroll-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm shadow-lg rounded-full p-3 hover:bg-white transition-all hidden md:block">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
 
-            <!-- Tour du Mont Blanc Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group">
-                <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2">
-                        <span>🇪🇺</span> Alps
-                    </div>
-                    <div class="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-lg text-sm font-semibold">
-                        11 days
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Tour du Mont Blanc</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-2">
-                        The classic Alpine circuit around Western Europe's highest peak, passing through three countries with spectacular scenery.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex gap-1">
-                            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
-                            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
-                            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            <!-- Trek Cards Container -->
+            <div id="trek-carousel" class="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4">
+                
+                <!-- Everest Base Camp -->
+                <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                            <span>🇳🇵</span> Nepal
                         </div>
-                        <span class="text-sm text-gray-500">Moderate</span>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Duration</span>
+                                <p class="font-bold">14 days</p>
+                            </div>
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Altitude</span>
+                                <p class="font-bold">5,364m</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                            Everest Base Camp Trek
+                        </h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            The ultimate bucket-list trek to the base of the world's highest peak, through Sherpa villages and Buddhist monasteries.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="flex gap-1">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                </div>
+                                <span class="text-sm text-gray-500">Moderate</span>
+                            </div>
+                            <span class="text-sm font-semibold text-green-600">130km</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Torres del Paine -->
+                <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                            <span>🇨🇱</span> Chile
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Duration</span>
+                                <p class="font-bold">5 days</p>
+                            </div>
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Altitude</span>
+                                <p class="font-bold">1,200m</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                            Torres del Paine 'W' Circuit
+                        </h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            Chile's premier trek featuring iconic granite towers, turquoise lakes, and massive glaciers in spectacular Patagonia.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="flex gap-1">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                </div>
+                                <span class="text-sm text-gray-500">Moderate</span>
+                            </div>
+                            <span class="text-sm font-semibold text-green-600">80km</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inca Trail -->
+                <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                            <span>🇵🇪</span> Peru
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Duration</span>
+                                <p class="font-bold">4 days</p>
+                            </div>
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Altitude</span>
+                                <p class="font-bold">4,200m</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                            Classic Inca Trail
+                        </h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            The legendary trek to Machu Picchu following ancient Inca paths through cloud forests and numerous archaeological sites.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="flex gap-1">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                </div>
+                                <span class="text-sm text-gray-500">Moderate</span>
+                            </div>
+                            <span class="text-sm font-semibold text-green-600">43km</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour du Mont Blanc -->
+                <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                            <span>🇪🇺</span> Alps
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Duration</span>
+                                <p class="font-bold">11 days</p>
+                            </div>
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Altitude</span>
+                                <p class="font-bold">2,665m</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                            Tour du Mont Blanc
+                        </h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            The classic Alpine circuit around Western Europe's highest peak, passing through three countries with spectacular scenery.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="flex gap-1">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                </div>
+                                <span class="text-sm text-gray-500">Moderate</span>
+                            </div>
+                            <span class="text-sm font-semibold text-green-600">170km</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GR20 Corsica -->
+                <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                            <span>🇫🇷</span> France
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Duration</span>
+                                <p class="font-bold">15 days</p>
+                            </div>
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Altitude</span>
+                                <p class="font-bold">2,706m</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                            GR20 Corsica
+                        </h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            Europe's toughest long-distance trail, crossing Corsica through rugged mountains with spectacular scenery.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="flex gap-1">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                </div>
+                                <span class="text-sm text-gray-500">Very Challenging</span>
+                            </div>
+                            <span class="text-sm font-semibold text-green-600">180km</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annapurna Circuit -->
+                <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                            <span>🇳🇵</span> Nepal
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Duration</span>
+                                <p class="font-bold">18 days</p>
+                            </div>
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                                <span class="text-xs text-gray-600">Altitude</span>
+                                <p class="font-bold">5,416m</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                            Annapurna Circuit Trek
+                        </h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            A diverse journey through varied landscapes, crossing the challenging Thorong La Pass at 5,416m.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="flex gap-1">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                                </div>
+                                <span class="text-sm text-gray-500">Challenging</span>
+                            </div>
+                            <span class="text-sm font-semibold text-green-600">230km</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- Stats Bar -->
-        <div class="bg-white rounded-2xl shadow-md p-8 mb-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-3xl font-bold text-green-600 mb-2">20+</div>
-                    <div class="text-gray-600">Curated Treks</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-blue-600 mb-2">7</div>
-                    <div class="text-gray-600">Continents</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-purple-600 mb-2">4-18</div>
-                    <div class="text-gray-600">Day Adventures</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-orange-600 mb-2">All</div>
-                    <div class="text-gray-600">Skill Levels</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="text-center">
-            <a href="popular-hikes.html" class="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
-                Explore All Treks
+        <!-- Mobile View All Button -->
+        <div class="mt-8 text-center md:hidden">
+            <a href="popular-hikes.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg">
+                View All Treks
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
             </a>
-            <p class="mt-4 text-gray-600">
-                Browse our complete collection of world-class trekking adventures
-            </p>
         </div>
     </div>
 </section>
 
 <!-- Add this CSS to your existing styles -->
 <style>
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    
     .line-clamp-2 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -325,19 +492,118 @@
         overflow: hidden;
     }
     
-    .card-hover {
+    .trek-card {
         transition: all 0.3s ease;
     }
     
-    .card-hover:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    .trek-card:hover {
+        transform: translateY(-4px);
+    }
+
+    /* Fade edges effect */
+    #trek-carousel {
+        position: relative;
     }
     
-    .group:hover .group-hover\:scale-110 {
-        transform: scale(1.1);
+    #trek-carousel::before,
+    #trek-carousel::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    #trek-carousel::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(249, 250, 251, 1), transparent);
+    }
+    
+    #trek-carousel::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(249, 250, 251, 1), transparent);
+    }
+
+    @media (max-width: 768px) {
+        #trek-carousel::before,
+        #trek-carousel::after {
+            display: none;
+        }
     }
 </style>
+
+<!-- Add this JavaScript for scroll functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('trek-carousel');
+        const scrollLeftBtn = document.getElementById('scroll-left');
+        const scrollRightBtn = document.getElementById('scroll-right');
+        const trekCards = document.querySelectorAll('.trek-card');
+        
+        // Scroll amount (width of one card plus gap)
+        const scrollAmount = 320 + 24; // card width + gap
+        
+        // Scroll functions
+        scrollLeftBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        scrollRightBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+        
+        // Update button visibility based on scroll position
+        function updateScrollButtons() {
+            const isAtStart = carousel.scrollLeft <= 0;
+            const isAtEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10;
+            
+            scrollLeftBtn.style.opacity = isAtStart ? '0.3' : '1';
+            scrollLeftBtn.style.cursor = isAtStart ? 'default' : 'pointer';
+            
+            scrollRightBtn.style.opacity = isAtEnd ? '0.3' : '1';
+            scrollRightBtn.style.cursor = isAtEnd ? 'default' : 'pointer';
+        }
+        
+        carousel.addEventListener('scroll', updateScrollButtons);
+        updateScrollButtons(); // Initial check
+        
+        // Add click handlers to trek cards
+        trekCards.forEach(card => {
+            card.addEventListener('click', () => {
+                window.location.href = 'popular-hikes.html';
+            });
+        });
+        
+        // Touch/swipe support for mobile
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+        
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+        
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    });
+</script>
 
     <!-- Call to Action -->
     <section class="blue-gradient py-20">
