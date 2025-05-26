@@ -445,24 +445,6 @@
         // No image specified, use gradient
         return Promise.resolve(createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek));
       }
-    };
-          
-          img.onerror = () => {
-            // Image failed to load, use gradient fallback
-            resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
-          };
-          
-          // If neither success nor error events fire after a timeout, use gradient
-          setTimeout(() => {
-            if (!img.complete) {
-              resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
-            }
-          }, 1000);
-        });
-      } else {
-        // No image specified, use gradient
-        return Promise.resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
-      }
     }
     
     // Function to create a gradient header when no image is available
