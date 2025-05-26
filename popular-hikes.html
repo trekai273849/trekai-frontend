@@ -164,7 +164,7 @@
             margin-bottom: 60px;
         }
 
-        /* Trek Card - Updated with Option 1 Design */
+        /* Trek Card - Updated with Real Image Support */
         .trek-card {
             background: white;
             border-radius: 16px;
@@ -181,8 +181,20 @@
 
         .image-section {
             height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
+            background-size: cover;
+            background-position: center;
+            background-color: #e5e7eb;
+        }
+
+        /* Gradient overlay for better text readability */
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(0,0,0,0.1) 50%, 
+                rgba(0,0,0,0.4) 100%);
         }
 
         .country-badge {
@@ -197,6 +209,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            z-index: 1;
         }
 
         .difficulty-indicator {
@@ -211,6 +224,7 @@
             gap: 8px;
             font-weight: 600;
             font-size: 0.9em;
+            z-index: 1;
         }
 
         .difficulty-dots {
@@ -832,20 +846,21 @@
             return features.slice(0, 3);
         }
 
-        // Updated createTrekCard function with direct links
+        // Updated createTrekCard function with real images
         function createTrekCard(trek) {
             const features = getTrekFeatures(trek);
             const countryFlag = getCountryFlag(trek.country);
             const difficultyDots = getDifficultyDots(trek.difficulty);
             const displayCountry = trek.country.split('/')[0];
             
-            // Determine the correct path based on your file structure
-            // Adjust this path based on where your files are located
+            // Use local image path
+            const coverImage = `images/treks/covers/${trek._id}.jpg`;
             const trekPagePath = `output/treks/${trek._id}.html`;
             
             return `
                 <div class="trek-card" style="cursor: pointer;" onclick="window.location.href='${trekPagePath}'">
-                    <div class="image-section">
+                    <div class="image-section" style="background-image: url('${coverImage}');">
+                        <div class="image-overlay"></div>
                         <div class="country-badge">
                             <span class="emoji-icon">${countryFlag}</span>
                             <span>${displayCountry}</span>
@@ -1063,11 +1078,6 @@
             document.getElementById('sortDropdown').value = 'popularity';
             
             renderTreks();
-        }
-
-        // View trek details function (simplified since we're using direct links)
-        function viewTrekDetails(trekId) {
-            window.location.href = `output/treks/${trekId}.html`;
         }
 
         // Initialize event listeners

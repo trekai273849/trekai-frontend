@@ -48,6 +48,12 @@ function generateTrekHTML(trek, template) {
   // Summary and description
   html = html.replace(/{{summary}}/g, trek.summary);
   
+  // Image handling
+  const coverImage = `/images/treks/covers/${trek.slug}.jpg`;
+  const imageAlt = `${trek.name} trek in ${trek.country}`;
+  html = html.replace(/{{cover_image}}/g, coverImage);
+  html = html.replace(/{{image_alt}}/g, imageAlt);
+  
   // Best seasons - with defensive check
   const seasonsHTML = (trek.best_seasons || []).map(season => `
     <div class="season-card">
@@ -152,19 +158,9 @@ function generateTrekHTML(trek, template) {
   `).join('');
   html = html.replace(/{{faqs}}/g, faqsHTML);
   
-  // Photography highlights - with defensive checks
-  const photoHTML = trek.photography_highlights && trek.photography_highlights.length > 0 ? 
-    trek.photography_highlights.slice(0, 4).map(photo => `
-      <div class="photo-card">
-        <div class="photo-placeholder">📸</div>
-        <div class="photo-info">
-          <h4 class="photo-location">${photo.location || ''}</h4>
-          <p class="photo-time">Best at: ${photo.best_time || ''}</p>
-          <p>${(photo.subjects || []).join(', ')}</p>
-        </div>
-      </div>
-    `).join('') : '';
-  html = html.replace(/{{photography_highlights}}/g, photoHTML);
+  // NOTE: Photography highlights section has been removed as it's no longer in the template
+  // If you need to clean up any remaining {{photography_highlights}} placeholders:
+  html = html.replace(/{{photography_highlights}}/g, '');
   
   // Quick facts - with defensive checks
   const duration = trek.duration || {};
