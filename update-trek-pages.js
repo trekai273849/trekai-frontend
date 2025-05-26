@@ -1,24 +1,57 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to process a single HTML file - removes buttons AND adds navbar/footer
+// Function to clean up the CTA section in trek pages
 function updateTrekPage(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let changes = [];
     
-    // 1. Remove the "Customize This Trek with AI" button
-    const customizeButtonRegex = /<button\s+class="bg-green-700[^"]*"[^>]*>\s*🤖\s*Customize This Trek with AI\s*<\/button>/gi;
-    if (content.match(customizeButtonRegex)) {
-      content = content.replace(customizeButtonRegex, '');
-      changes.push('Removed AI customize button');
+    // 1. Remove the entire CTA section that contains multiple buttons and replace with single save button
+    const ctaSectionRegex = /<div class="cta-section">[\s\S]*?<button data-save-trek[^>]*>[\s\S]*?<\/button>\s*<\/div>/gi;
+    
+    if (content.match(ctaSectionRegex)) {
+      const replacementButton = `                <div class="flex justify-center mb-8">
+                    <button data-save-trek class="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-300">
+                        <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                        </svg>
+                        Save to My Trips
+                    </button>
+                </div>`;
+      
+      content = content.replace(ctaSectionRegex, replacementButton);
+      changes.push('Replaced CTA section with single save button');
     }
     
-    // 2. Update flex container to center the remaining button
-    const flexContainerRegex = /<div class="flex flex-col sm:flex-row gap-4 mb-8">/g;
-    if (content.match(flexContainerRegex)) {
-      content = content.replace(flexContainerRegex, '<div class="flex justify-center mb-8">');
-      changes.push('Centered save button');
+    // 2. Fallback: If the above didn't work, try to remove individual buttons
+    // Remove the "Customize This Trek with AI" button (with different possible class patterns)
+    const customizeButtonPatterns = [
+      /<button class="btn btn-primary">\s*<span>🤖<\/span>\s*<span>Customize This Trek with AI<\/span>\s*<\/button>/gi,
+      /<button[^>]*>\s*<span>🤖<\/span>\s*<span>Customize This Trek with AI<\/span>\s*<\/button>/gi,
+      /<button[^>]*🤖[^>]*Customize This Trek with AI[^>]*<\/button>/gi
+    ];
+    
+    for (const pattern of customizeButtonPatterns) {
+      if (content.match(pattern)) {
+        content = content.replace(pattern, '');
+        changes.push('Removed AI customize button (fallback)');
+        break;
+      }
+    }
+    
+    // Remove the original "Save to My Trips" button (btn-secondary style)
+    const saveButtonPatterns = [
+      /<button class="btn btn-secondary">\s*<span>💾<\/span>\s*<span>Save to My Trips<\/span>\s*<\/button>/gi,
+      /<button[^>]*>\s*<span>💾<\/span>\s*<span>Save to My Trips<\/span>\s*<\/button>/gi
+    ];
+    
+    for (const pattern of saveButtonPatterns) {
+      if (content.match(pattern)) {
+        content = content.replace(pattern, '');
+        changes.push('Removed original save button (fallback)');
+        break;
+      }
     }
     
     // 3. Add navbar if not present
@@ -108,7 +141,7 @@ function updateTemplate() {
     let changes = [];
     
     // Remove customize button from template
-    const customizeButtonRegex = /<button\s+class="bg-green-700[^"]*"[^>]*>\s*🤖\s*Customize This Trek with AI\s*<\/button>/gi;
+    const customizeButtonRegex = /<button[^>]*>\s*🤖\s*Customize This Trek with AI\s*<\/button>/gi;
     if (content.match(customizeButtonRegex)) {
       content = content.replace(customizeButtonRegex, '');
       changes.push('Removed AI customize button');
@@ -171,7 +204,7 @@ function verifyRequiredFiles() {
 }
 
 // Main execution
-console.log('🚀 Starting complete trek pages update...\n');
+console.log('🚀 Starting trek pages cleanup...\n');
 
 // Verify required files exist
 const filesExist = verifyRequiredFiles();
@@ -182,17 +215,22 @@ updateAllTrekPages();
 // Update template file
 updateTemplate();
 
-console.log('\n📝 Complete Update Summary:');
-console.log('✂️  Removed "Customize This Trek with AI" buttons');
-console.log('📍 Centered "Save to My Trips" buttons');
-console.log('🧭 Added navbar to all trek pages');
-console.log('🦶 Added footer to all trek pages');
+console.log('\n📝 Cleanup Summary:');
+console.log('✂️  Removed extra buttons from CTA sections');
+console.log('📍 Kept only the "Save to My Trips" button');
+console.log('🧭 Ensured navbar is present on all trek pages');
+console.log('🦶 Ensured footer is present on all trek pages');
 console.log('🛠️  Updated template file');
 
 if (filesExist) {
   console.log('\n🎉 All updates completed successfully!');
-  console.log('Your trek pages now have clean navigation and consistent styling.');
+  console.log('Your trek pages now have clean navigation and single save buttons.');
 } else {
   console.log('\n⚠️  Updates completed but some required files are missing.');
   console.log('Make sure to create the missing navbar.js and footer.js files.');
 }
+
+console.log('\n💡 After running this script:');
+console.log('1. Check one of your trek pages to verify the buttons are fixed');
+console.log('2. If the navbar/footer don\'t show, check the browser console for errors');
+console.log('3. Make sure your js/components/ folder has the navbar.js and footer.js files');
