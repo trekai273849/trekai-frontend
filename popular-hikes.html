@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Our Most Popular Hikes | Find Your Next Adventure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
             margin: 0;
@@ -12,8 +13,9 @@
         }
 
         :root {
-            --primary: #2D5016;
-            --primary-light: #4A7C28;
+            --primary: #3B82F6;
+            --primary-light: #60A5FA;
+            --primary-dark: #2563EB;
             --accent: #F39C12;
             --text-dark: #2C3E50;
             --text-light: #5D6D7E;
@@ -32,13 +34,14 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(45, 80, 22, 0.9), rgba(74, 124, 40, 0.8)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0"/><path fill="%23e0e0e0" d="M0 400L50 350L100 450L150 300L200 400L250 250L300 350L350 200L400 300L450 150L500 250L550 100L600 200L650 50L700 150L750 0L800 100L850 50L900 150L950 100L1000 200L1050 150L1100 250L1150 200L1200 300L1200 600L0 600Z"/></svg>');
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(96, 165, 250, 0.8)), 
+                        url('images/brekky.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 80px 0;
             text-align: center;
+            margin-top: 0; /* Navbar is positioned before this section */
         }
 
         .hero h1 {
@@ -283,8 +286,8 @@
         }
 
         .feature-tag {
-            background: #E8F5E9;
-            color: #2E7D32;
+            background: #E0F2FE;
+            color: #0369A1;
             padding: 6px 12px;
             border-radius: 16px;
             font-size: 0.85em;
@@ -299,7 +302,7 @@
         }
 
         .explore-btn {
-            background: #2D5016;
+            background: #3B82F6;
             color: white;
             padding: 10px 24px;
             border-radius: 25px;
@@ -310,7 +313,7 @@
         }
 
         .explore-btn:hover {
-            background: #4A7C28;
+            background: #2563EB;
         }
 
         /* Country flag mapping */
@@ -407,6 +410,9 @@
     </style>
 </head>
 <body>
+    <!-- Navbar will be injected here by navbar.js -->
+    <script type="module" src="js/components/navbar.js"></script>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -501,6 +507,10 @@
             <button class="reset-filters-btn" onclick="resetAllFilters()">Reset All Filters</button>
         </div>
     </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <script src="js/components/footer.js"></script>
 
     <script>
         // Trek data (in real app, this would come from your JSON file)
