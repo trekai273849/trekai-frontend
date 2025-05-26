@@ -392,9 +392,19 @@
     
     // Function to create a header for an itinerary card
     function createCardHeader(itinerary) {
-      const locationInfo = getLocationData(itinerary.location);
-      // Apply title case formatting to the location
-      const formattedLocation = toTitleCase(itinerary.location);
+      const isPopularTrek = itinerary.type === 'popular-trek';
+      
+      // For popular treks, use the title (trek name); for custom itineraries, use location
+      const displayTitle = isPopularTrek ? 
+        (itinerary.title || 'Popular Trek') : 
+        toTitleCase(itinerary.location || 'Custom Itinerary');
+      
+      // For location info (for gradient/image matching), use the region or location
+      const locationForStyling = isPopularTrek ? 
+        (itinerary.trekDetails?.region || itinerary.location) : 
+        itinerary.location;
+      
+      const locationInfo = getLocationData(locationForStyling);
       
       // Check if the image exists
       if (locationInfo.image) {
@@ -406,12 +416,36 @@
           img.onload = () => {
             // Image loaded successfully, use it
             resolve(`
-              <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center" 
+              <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
                    style="background-image: url('${locationInfo.image}')">
-                <h3 class="text-xl font-bold p-4 bg-black bg-opacity-50 text-white rounded">${formattedLocation}</h3>
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="relative z-10 text-center">
+                  <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
+                  ${isPopularTrek && itinerary.trekDetails?.region ? `
+                    <p class="text-sm text-gray-200 opacity-90">${toTitleCase(itinerary.trekDetails.region)}</p>
+                  ` : ''}
+                </div>
               </div>
             `);
           };
+          
+          img.onerror = () => {
+            // Image failed to load, use gradient fallback
+            resolve(createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek));
+          };
+          
+          // If neither success nor error events fire after a timeout, use gradient
+          setTimeout(() => {
+            if (!img.complete) {
+              resolve(createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek));
+            }
+          }, 1000);
+        });
+      } else {
+        // No image specified, use gradient
+        return Promise.resolve(createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek));
+      }
+    };
           
           img.onerror = () => {
             // Image failed to load, use gradient fallback
@@ -432,12 +466,17 @@
     }
     
     // Function to create a gradient header when no image is available
-    function createGradientHeader(itinerary, locationInfo, formattedLocation) {
+    function createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek) {
       return `
         <div class="h-32 flex items-center justify-center text-white relative overflow-hidden"
              style="background: ${locationInfo.gradient}">
           <div class="absolute right-3 bottom-3 text-4xl opacity-30">${locationInfo.icon}</div>
-          <h3 class="text-xl font-bold p-4 bg-black bg-opacity-30 rounded z-10">${formattedLocation}</h3>
+          <div class="z-10 text-center">
+            <h3 class="text-xl font-bold mb-1">${displayTitle}</h3>
+            ${isPopularTrek && itinerary.trekDetails?.region ? `
+              <p class="text-sm opacity-90">${toTitleCase(itinerary.trekDetails.region)}</p>
+            ` : ''}
+          </div>
         </div>
       `;
     }
