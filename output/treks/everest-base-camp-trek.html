@@ -1680,6 +1680,132 @@
     
     
 
+
+    <script>
+        // Enhanced tab navigation with mobile centering and proper scroll positioning
+        function showSection(sectionId, clickedElement) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Add active class to clicked tab
+            if (clickedElement) {
+                clickedElement.classList.add('active');
+                // Center the clicked tab on mobile
+                centerTabWithNextVisible(clickedElement);
+            }
+            
+            // Scroll to the top of the new section content
+            scrollToSectionTop();
+        }
+
+        function scrollToSectionTop() {
+            setTimeout(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                if (navTabs) {
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 50);
+        }
+
+        function centerTabWithNextVisible(clickedTab) {
+            const tabContainer = document.querySelector('.nav-tabs-container');
+            const allTabs = Array.from(document.querySelectorAll('.nav-tab'));
+            const clickedIndex = allTabs.indexOf(clickedTab);
+            
+            if (clickedIndex === -1 || !tabContainer) return;
+            
+            const containerWidth = tabContainer.offsetWidth;
+            const tabWidth = clickedTab.offsetWidth;
+            const tabOffsetLeft = clickedTab.offsetLeft;
+            
+            // Calculate scroll position to show clicked tab + part of next tab
+            let targetScroll;
+            
+            if (clickedIndex === allTabs.length - 1) {
+                // Last tab - center it
+                targetScroll = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+            } else {
+                // Show clicked tab with next tab partially visible
+                const nextTab = allTabs[clickedIndex + 1];
+                const nextTabWidth = nextTab.offsetWidth;
+                const totalWidthNeeded = tabWidth + (nextTabWidth * 0.6); // Show 60% of next tab
+                
+                if (totalWidthNeeded <= containerWidth) {
+                    // Both tabs can fit, position them optimally
+                    targetScroll = tabOffsetLeft - (containerWidth - totalWidthNeeded) / 2;
+                } else {
+                    // Position clicked tab with as much of next tab as possible
+                    targetScroll = tabOffsetLeft - (containerWidth - tabWidth) * 0.3;
+                }
+            }
+            
+            // Ensure we don't scroll past the container bounds
+            const maxScroll = tabContainer.scrollWidth - containerWidth;
+            targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+            
+            tabContainer.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add touch-friendly scrolling for mobile
+            const tabContainer = document.querySelector('.nav-tabs-container');
+            if (tabContainer) {
+                // Improve scrolling momentum on iOS
+                tabContainer.style.webkitOverflowScrolling = 'touch';
+            }
+
+            // Add click event listeners to all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    if (sectionId) {
+                        showSection(sectionId, this);
+                    }
+                });
+            });
+            
+            // Ensure Overview tab is active by default
+            const overviewTab = document.querySelector('.nav-tab[data-section="overview"]');
+            const overviewSection = document.getElementById('overview');
+            if (overviewTab && overviewSection) {
+                overviewTab.classList.add('active');
+                overviewSection.classList.add('active');
+            }
+        });
+    </script>
+
+
 <!-- Trek Data for Save Functionality -->
 <script type="module">
     // Trek data for save functionality
