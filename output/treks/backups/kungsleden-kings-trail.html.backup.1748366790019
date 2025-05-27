@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland</title>
+    <meta name="description" content="Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/kungsleden-kings-trail.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,24 +734,24 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+        <div class="hero-content">
+            <h1>Kungsleden (King's Trail)</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">5</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">1,140m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">110km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">moderate</span>
+                    <span class="hero-stat-value">easy</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to Sweden/Scandinavia</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.
                 </p>
                 
                 <div class="highlights-list">
@@ -1045,16 +828,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">110 km / 68 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">1,140m (3,740ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">moderate</span>
+                        <span class="difficulty-badge">easy</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -1063,7 +846,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Kiruna/Abisko</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +855,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$400 - $1,200</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>5-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through Sweden/Scandinavia with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Abisko to Abiskojaure</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 490m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Abisko National Park</span><span class="day-highlight">Abiskojaure lake</span><span class="day-highlight">First taste of Lapland</span><span class="day-highlight">Mountain views</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Abiskojaure to Alesjaure</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📏 22km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 785m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Tjäktja Pass views</span><span class="day-highlight">Alesjaure valley</span><span class="day-highlight">Possible reindeer</span><span class="day-highlight">Alpine environment</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">Alesjaure to Sälka</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>📏 12km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 820m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">Gentle terrain</span><span class="day-highlight">Mountain streams</span><span class="day-highlight">Wildflowers (summer)</span><span class="day-highlight">Shorter day</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Sälka to Kebnekaise Fjällstation</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
+            <span>📏 24km</span>
             <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📈 +300m</span>
+            <span>🏔️ 690m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
+          <span class="day-highlight">Tjäktja Pass (1,140m)</span><span class="day-highlight">Highest point on trail</span><span class="day-highlight">Kebnekaise views</span><span class="day-highlight">Laddjuvagge valley</span>
         </div>
       
     </div>
@@ -1176,40 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
+          <h3 class="day-title">Kebnekaise to Nikkaluokta</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
+            <span>📏 19km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
+            <span>📈 0m</span>
+            <span>🏔️ 470m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
+      <p class="day-description">Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
-          <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Forest return</span><span class="day-highlight">Trail completion</span><span class="day-highlight">Sami culture center</span><span class="day-highlight">Bus to Kiruna</span>
         </div>
       
     </div>
@@ -1234,16 +996,16 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
+          <div class="gear-name">Hiking boots</div>
+          <div class="gear-description">Waterproof recommended</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Top and bottom essential</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1251,55 +1013,47 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
+          <div class="gear-description">Can be cold even in summer</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Mosquito protection</div>
+          <div class="gear-description">Head net, repellent (July)</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">If camping</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-name">Backpack</div>
+          <div class="gear-description">40-60L</div>
         </div>
         <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
-        </div>
-        
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
+          <div class="gear-description">Well-marked but essential</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">First aid kit</div>
+          <div class="gear-description">Include blister treatment</div>
         </div>
         
       </li>
@@ -1317,31 +1071,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
+          <div class="gear-description">Helpful for river crossings</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Incredible photo opportunities</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For wet sections</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
+          <div class="gear-name">Camp shoes</div>
+          <div class="gear-description">For hut/tent comfort</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
+          <div class="gear-name">Dry bags</div>
+          <div class="gear-description">Keep essentials dry</div>
         </div>
         
       </li>
@@ -1363,15 +1117,15 @@
     <div class="season-card">
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
+      <p class="season-months">June, July, August, September</p>
+      <p>Midnight sun, warm weather, full facilities open</p>
     </div>
   
     <div class="season-card">
       <div class="season-icon">🍂</div>
       <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <p class="season-months">September</p>
+      <p>Spectacular fall colors, northern lights begin, fewer mosquitoes</p>
     </div>
   
         </div>
@@ -1402,19 +1156,19 @@
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$100</span>
-    </div>
-    <div class="cost-item">
-      <span>Meals (per day)</span>
       <span>$50</span>
     </div>
     <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$40</span>
+    </div>
+    <div class="cost-item">
       <span>Transportation</span>
-      <span>$200</span>
+      <span>$100</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$400 - $1,200</span>
     </div>
   
         </div>
@@ -1436,34 +1190,34 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
+        <span>How bad are the mosquitoes?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
+      <div class="faq-answer">In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
+        <span>Do I need to book huts in advance?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
+      <div class="faq-answer">Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
+        <span>Can beginners do this trek?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
+      <div class="faq-answer">Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
+        <span>What about the northern lights?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
+      <div class="faq-answer">Best from late August onward. September offers a great combination of autumn colors and aurora possibilities.</div>
     </div>
   
         </div>
@@ -1504,22 +1258,33 @@
             scrollToSectionTop();
         }
 
-                                            function scrollToSectionTop() {
-            // Simple approach: scroll the navigation into view, then add offset
-            const navTabs = document.querySelector('.nav-tabs');
-            if (navTabs) {
-                // Scroll nav to top of viewport
-                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
                 
-                // Add small delay then scroll down by nav height + padding
-                setTimeout(() => {
-                    const navHeight = navTabs.offsetHeight;
-                    window.scrollBy({
-                        top: navHeight + 20,
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
                         behavior: 'smooth'
                     });
-                }, 100);
-            }
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1604,33 +1369,33 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "kungsleden-kings-trail",
+        "name": "Kungsleden (King's Trail)",
+        "slug": "kungsleden-kings-trail",
+        "region": "Sweden/Scandinavia",
+        "country": "Sweden",
+        "summary": "Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.",
         "duration": {
             "min_days": 5,
             "max_days": 7,
-            "recommended_days": 6
+            "recommended_days": 5
         },
-        "distance_km": 60,
-        "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "distance_km": 110,
+        "difficulty": "easy",
+        "max_elevation_m": 1140,
+        "starting_elevation_m": 480,
+        "airport": "Kiruna (KRN)",
+        "nearest_city": "Kiruna/Abisko",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": 68.3494,
+                "lng": 18.8311,
+                "location": "Abisko"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": 67.8482,
+                "lng": 18.4161,
+                "location": "Nikkaluokta"
             }
         },
         "best_seasons": [
@@ -1639,284 +1404,219 @@
                 "months": [
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
+                "description": "Midnight sun, warm weather, full facilities open"
             },
             {
                 "name": "Autumn",
                 "months": [
-                    "September",
-                    "October"
+                    "September"
                 ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Spectacular fall colors, northern lights begin, fewer mosquitoes"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
-                "difficulty": "moderate",
+                "title": "Abisko to Abiskojaure",
+                "start_location": "Abisko",
+                "end_location": "Abiskojaure",
+                "distance_km": 15,
+                "duration_hours": 4,
+                "elevation_start_m": 480,
+                "elevation_end_m": 490,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "hotel/hostel",
+                    "type": "STF hut",
                     "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
+                        "Abiskojaure STF hut",
+                        "Camping"
                     ]
                 },
                 "meals_included": [],
                 "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
+                    "Abisko National Park",
+                    "Abiskojaure lake",
+                    "First taste of Lapland",
+                    "Mountain views"
                 ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
+                "description": "Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake."
             },
             {
                 "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
-                "distance_km": 8,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
+                "title": "Abiskojaure to Alesjaure",
+                "start_location": "Abiskojaure",
+                "end_location": "Alesjaure",
+                "distance_km": 22,
+                "duration_hours": 6,
+                "elevation_start_m": 490,
+                "elevation_end_m": 785,
+                "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "STF hut",
                     "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
+                        "Alesjaure STF hut",
+                        "Camping"
                     ]
                 },
-                "meals_included": [
-                    "breakfast"
-                ],
+                "meals_included": [],
                 "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
+                    "Tjäktja Pass views",
+                    "Alesjaure valley",
+                    "Possible reindeer",
+                    "Alpine environment"
                 ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
+                "description": "Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure."
             },
             {
                 "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
+                "title": "Alesjaure to Sälka",
+                "start_location": "Alesjaure",
+                "end_location": "Sälka",
+                "distance_km": 12,
+                "duration_hours": 4,
+                "elevation_start_m": 785,
+                "elevation_end_m": 820,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "historic rorbu",
+                    "type": "STF hut",
                     "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Sälka STF hut",
+                        "Camping"
                     ]
                 },
-                "meals_included": [
-                    "breakfast",
-                    "dinner"
-                ],
+                "meals_included": [],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Gentle terrain",
+                    "Mountain streams",
+                    "Wildflowers (summer)",
+                    "Shorter day"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks."
             },
             {
                 "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
+                "title": "Sälka to Kebnekaise Fjällstation",
+                "start_location": "Sälka",
+                "end_location": "Kebnekaise Fjällstation",
+                "distance_km": 24,
                 "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
-                "elevation_gain_m": 400,
+                "elevation_start_m": 820,
+                "elevation_end_m": 690,
+                "elevation_gain_m": 300,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "STF station",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Kebnekaise Fjällstation",
+                        "Camping"
                     ]
                 },
-                "meals_included": [
-                    "breakfast"
-                ],
+                "meals_included": [],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Tjäktja Pass (1,140m)",
+                    "Highest point on trail",
+                    "Kebnekaise views",
+                    "Laddjuvagge valley"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
+                "description": "Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station."
             },
             {
                 "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
+                "title": "Kebnekaise to Nikkaluokta",
+                "start_location": "Kebnekaise Fjällstation",
+                "end_location": "Nikkaluokta",
+                "distance_km": 19,
                 "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
-                "difficulty": "challenging",
+                "elevation_start_m": 690,
+                "elevation_end_m": 470,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "end point",
                     "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
+                        "Nikkaluokta Sarri Lodge",
+                        "Return to Kiruna"
                     ]
                 },
-                "meals_included": [
-                    "breakfast"
-                ],
+                "meals_included": [],
                 "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
+                    "Forest return",
+                    "Trail completion",
+                    "Sami culture center",
+                    "Bus to Kiruna"
                 ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
-            },
-            {
-                "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hostel/rorbu",
-                    "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
-                ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
+                    "item": "Hiking boots",
+                    "description": "Waterproof recommended",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
+                    "item": "Rain gear",
+                    "description": "Top and bottom essential",
                     "rental_available": true
                 },
                 {
                     "item": "Warm layers",
-                    "description": "Even summer is cool",
+                    "description": "Can be cold even in summer",
                     "rental_available": false
                 },
                 {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Mosquito protection",
+                    "description": "Head net, repellent (July)",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "If camping",
                     "rental_available": true
                 },
                 {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
-                    "rental_available": false
-                },
-                {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
-                    "rental_available": false
-                },
-                {
-                    "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "item": "Backpack",
+                    "description": "40-60L",
                     "rental_available": true
-                },
-                {
-                    "item": "Water bottles",
-                    "description": "Streams safe to drink",
-                    "rental_available": false
                 },
                 {
                     "item": "Map and compass",
-                    "description": "GPS backup recommended",
+                    "description": "Well-marked but essential",
+                    "rental_available": false
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Include blister treatment",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
+                    "description": "Helpful for river crossings",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera gear",
-                    "description": "Incredible photo opportunities",
+                    "item": "Gaiters",
+                    "description": "For wet sections",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
+                    "item": "Camp shoes",
+                    "description": "For hut/tent comfort",
                     "rental_available": false
                 },
                 {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
+                    "item": "Dry bags",
+                    "description": "Keep essentials dry",
                     "rental_available": false
-                }
-            ],
-            "optional": [
-                {
-                    "item": "Camping gear",
-                    "description": "For wild camping option",
-                    "rental_available": true
-                },
-                {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
-                },
-                {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
                 }
             ]
         },
@@ -1924,128 +1624,106 @@
             {
                 "name": "None required",
                 "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "notes": "Right to roam applies"
             }
         ],
         "costs": {
             "permit_total_usd": 0,
             "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
-            "meals_daily_usd": 50,
-            "transportation_usd": 200,
+            "accommodation_daily_usd": 50,
+            "meals_daily_usd": 40,
+            "transportation_usd": 100,
             "total_budget_range_usd": {
-                "min": 800,
-                "max": 2000
+                "min": 400,
+                "max": 1200
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
+                "Swedish",
+                "Sami (indigenous)"
             ],
             "primary_religion": "Lutheran/Secular",
             "languages": [
-                "Norwegian",
-                "English widely spoken"
+                "Swedish",
+                "Sami",
+                "English common"
             ],
             "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
+                "Respect Sami reindeer herding areas",
+                "Don't disturb reindeer",
+                "Remove shoes in huts",
+                "Help with hut chores if asked",
+                "Leave no trace strictly followed"
             ],
             "local_foods": [
                 {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
-                },
-                {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
-                },
-                {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
+                    "name": "Reindeer meat",
+                    "description": "Traditional Sami staple"
                 },
                 {
                     "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
+                    "description": "Arctic gold berry"
                 },
                 {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
+                    "name": "Gáhkku",
+                    "description": "Sami flatbread"
+                },
+                {
+                    "name": "Smoked fish",
+                    "description": "Arctic char and salmon"
                 }
             ],
             "festivals": [
                 {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
-                },
-                {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
+                    "name": "Autumn Reindeer Separation",
+                    "when": "September",
+                    "description": "Traditional herding event"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
                 "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
+                "notes": "Maximum elevation only 1,140m"
             },
             "main_concerns": {
-                "weather": {
-                    "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
-                    "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
-                    ]
-                },
-                "exposure": {
+                "river_crossings": {
                     "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
+                    "description": "Can be high after rain",
                     "prevention": [
-                        "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
+                        "Check conditions at huts",
+                        "Use bridges where available",
+                        "Trekking poles help",
+                        "Consider waiting if high"
                     ]
                 },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
+                "mosquitoes": {
+                    "risk_level": "high in July",
+                    "description": "Can be overwhelming",
                     "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
+                        "Head net essential",
+                        "Long sleeves and pants",
+                        "Strong repellent",
+                        "Keep moving"
+                    ]
+                },
+                "weather": {
+                    "risk_level": "moderate",
+                    "description": "Changes quickly",
+                    "prevention": [
+                        "Layer clothing",
+                        "Always carry rain gear",
+                        "Check forecasts at huts",
+                        "Be flexible with plans"
                     ]
                 }
             },
-            "medical_facilities": [
-                {
-                    "location": "Svolvær",
-                    "type": "Hospital"
-                },
-                {
-                    "location": "Leknes",
-                    "type": "Hospital"
-                },
-                {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
-                }
-            ],
             "evacuation": {
                 "method": "Helicopter",
-                "cost_usd": "Free with insurance",
+                "cost_usd": "Covered by European health insurance",
                 "insurance_required": true,
-                "response_time": "Usually within 2 hours"
+                "response_time": "Few hours to a day"
             }
         },
         "weather_patterns": {
@@ -2055,262 +1733,224 @@
                     "July",
                     "August"
                 ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Frequent rain",
                 "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
+                "notes": "Midnight sun, mosquitoes peak July"
             },
             "autumn": {
                 "months": [
-                    "September",
-                    "October"
+                    "September"
                 ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
-                "months": [
-                    "November",
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "2 to 10",
-                "night_temp_c": "-2 to 5",
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "0 to 5",
                 "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "daylight_hours": "14",
+                "notes": "Stunning colors, possible snow"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
+                    "method": "Train",
+                    "from": "Kiruna",
+                    "to": "Abisko",
+                    "duration": "1.5 hours",
+                    "cost_usd": 20,
                     "frequency": "2-4 daily"
                 },
                 {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
-                    "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
+                    "method": "Bus",
+                    "from": "Kiruna Airport",
+                    "to": "Abisko",
+                    "duration": "2 hours",
+                    "cost_usd": 30,
+                    "frequency": "Connects with flights"
                 }
             ],
-            "during_trek": [
+            "from_end": [
                 {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
+                    "method": "Bus",
+                    "from": "Nikkaluokta",
+                    "to": "Kiruna",
+                    "duration": "1.5 hours",
+                    "cost_usd": 25,
+                    "frequency": "2-3 daily in season"
                 }
             ]
         },
         "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
+            "type": "STF mountain huts",
+            "description": "Swedish Tourist Association huts",
+            "amenities": [
+                "Bunk beds in dorms",
+                "Self-catering kitchens",
+                "Shop with supplies",
+                "Sauna at most huts",
+                "Camping allowed nearby",
+                "Host provides info"
             ],
-            "booking": "Essential in summer",
+            "booking": "Not required but recommended",
             "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
+                "stf_member": "25-35",
+                "non_member": "50-60",
+                "camping": "15-20"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
+            "physical_demands": "Moderate fitness sufficient",
+            "technical_skills": "None required",
             "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
+            "trail_conditions": "Well-marked, boardwalks in wet areas",
+            "navigation_challenge": "Easy - clear trail",
+            "daily_hiking_hours": "4-7 hours",
+            "total_elevation_gain": 1300,
+            "total_elevation_loss": 1430
         },
         "sustainability": {
             "environmental_concerns": [
                 "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
+                "Reindeer grazing areas",
+                "Erosion in popular sections"
             ],
             "responsible_practices": [
                 "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
+                "Stay on marked trails",
+                "Respect Sami land use",
+                "Use designated camping",
+                "Pack out all waste"
             ],
             "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
+                "STF conservation work",
+                "Trail maintenance volunteers",
+                "Sustainable hut operations"
             ]
         },
         "connectivity": {
             "mobile_coverage": [
                 {
-                    "location": "Villages",
-                    "quality": "Excellent",
+                    "location": "Abisko/Nikkaluokta",
+                    "quality": "Good",
                     "providers": [
-                        "Telenor",
-                        "Telia"
+                        "Telia",
+                        "Telenor"
                     ]
                 },
                 {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
+                    "location": "Trail",
+                    "quality": "Very limited",
                     "providers": [
-                        "Emergency calls usually possible"
+                        "Emergency calls sometimes"
                     ]
                 }
             ],
             "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
+                "availability": "Only at Kebnekaise station",
+                "cost_usd": "5",
+                "speed": "Basic"
             }
         },
         "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
+            "advance_booking": "1-2 months for huts in peak season",
+            "group_size": "Any size welcome",
+            "guide_requirement": "Not necessary",
+            "food_planning": "Buy at huts or carry all",
             "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "fitness_preparation": "Basic hiking fitness"
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
-                "extra_days": 3,
+                "name": "Full Kungsleden",
+                "variation": "Abisko to Hemavan",
+                "extra_days": 20,
                 "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
+                    "440km total",
+                    "Full arctic traverse",
+                    "More solitude south"
                 ]
             },
             {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
-                "extra_days": 0,
-                "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
-                ]
-            },
-            {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
+                "name": "Kebnekaise Extension",
+                "variation": "Climb Sweden's highest",
                 "extra_days": 2,
                 "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "2,106m summit",
+                    "Glacier option",
+                    "Achievement"
+                ]
+            },
+            {
+                "name": "Winter Skiing",
+                "variation": "March-April ski tour",
+                "extra_days": 2,
+                "highlights": [
+                    "Northern lights",
+                    "Winter huts open",
+                    "Arctic experience"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
+                "location": "Tjäktja Pass",
+                "best_time": "Clear weather",
                 "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
+                    "Valley views",
+                    "Kebnekaise massif",
+                    "Arctic landscape"
                 ]
             },
             {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
+                "location": "Abiskojaure",
+                "best_time": "Evening",
                 "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
+                    "Lake reflections",
+                    "Midnight sun",
+                    "Lapporten gate"
                 ]
             },
             {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
+                "location": "Autumn tundra",
+                "best_time": "September",
                 "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
+                    "Fall colors",
+                    "Reindeer",
                     "Northern lights"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
+                "question": "How bad are the mosquitoes?",
+                "answer": "In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better."
             },
             {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
+                "question": "Do I need to book huts in advance?",
+                "answer": "Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms."
             },
             {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
+                "question": "Can beginners do this trek?",
+                "answer": "Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers."
             },
             {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
+                "question": "What about the northern lights?",
+                "answer": "Best from late August onward. September offers a great combination of autumn colors and aurora possibilities."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 93,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland",
+            "meta_description": "Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "kungsleden",
+                "kings trail sweden",
+                "lapland hiking",
+                "arctic trekking",
+                "sweden hiking trail"
             ]
         }
     };

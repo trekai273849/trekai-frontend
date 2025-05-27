@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Gokyo Lakes Trek Guide 2024 | Nepal's Turquoise Lake Trek</title>
+    <meta name="description" content="Complete guide to the Gokyo Lakes Trek in Nepal. 12-day itinerary to turquoise lakes, Gokyo Ri viewpoint, and spectacular Everest region scenery.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/gokyo-lakes-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,19 +952,19 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+            <h1>Gokyo Lakes Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">12</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">5,357m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">90km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +991,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to Nepal/Himalayas</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    A stunning alternative to Everest Base Camp, featuring turquoise glacial lakes, the challenging Gokyo Ri viewpoint, and incredible views of four 8,000m peaks.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +1041,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">12-14 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">90 km / 56 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">5,357m (17,575ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +1063,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Kathmandu</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$1,200 - $2,500</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +1081,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>12-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Fly to Lukla, Trek to Phakding</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
+            <span>📏 8km</span>
             <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📈 -250m</span>
+            <span>🏔️ 2,610m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">Fly to Lukla early morning. Easy descent through villages along the Dudh Koshi river to Phakding.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Thrilling Lukla flight</span><span class="day-highlight">Dudh Koshi valley</span><span class="day-highlight">Prayer wheels and mani walls</span><span class="day-highlight">Gentle introduction</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Phakding to Namche Bazaar</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +830m</span>
+            <span>🏔️ 3,440m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">Cross several suspension bridges before steep climb to Namche. First glimpses of Everest if weather permits.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Hillary Bridge crossing</span><span class="day-highlight">First Everest views</span><span class="day-highlight">Enter Sagarmatha National Park</span><span class="day-highlight">Namche Bazaar</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">Acclimatization Day in Namche</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 0 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 3,440m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">Important acclimatization day. Options include hiking to Everest View Hotel or exploring Khumjung village.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">Hike to Everest View Hotel</span><span class="day-highlight">Visit Sherpa Museum</span><span class="day-highlight">Explore markets</span><span class="day-highlight">Acclimatization walks</span>
         </div>
       
     </div>
@@ -1155,19 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Namche to Dole</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📏 10km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +760m</span>
+            <span>🏔️ 4,200m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Climb steeply out of Namche to Mongla pass, then traverse to Dole. Much quieter than main EBC route.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
+          <span class="day-highlight">Leave main EBC trail</span><span class="day-highlight">Quieter paths</span><span class="day-highlight">Mongla pass views</span><span class="day-highlight">Rhododendron forests</span>
         </div>
       
     </div>
@@ -1176,19 +1176,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
+          <h3 class="day-title">Dole to Machhermo</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
+            <span>📏 8km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
+            <span>📈 +270m</span>
+            <span>🏔️ 4,470m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
+      <p class="day-description">Steady climb through beautiful alpine terrain. Machhermo has a health post with altitude talks.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
+          <span class="day-highlight">Alpine scenery</span><span class="day-highlight">Yak pastures</span><span class="day-highlight">Mountain views expanding</span><span class="day-highlight">HRA health post</span>
         </div>
       
     </div>
@@ -1197,19 +1197,145 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
+          <h3 class="day-title">Machhermo to Gokyo</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
+            <span>📏 7km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +330m</span>
+            <span>🏔️ 4,800m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
+      <p class="day-description">Pass the first two Gokyo lakes before reaching Gokyo village on the shore of the third lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">First Gokyo lake</span><span class="day-highlight">Ngozumpa Glacier</span><span class="day-highlight">Arrival at Gokyo</span><span class="day-highlight">Turquoise lakes</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Gokyo Ri Climb</h3>
+          <div class="day-stats">
+            <span>📏 4km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +557m</span>
+            <span>🏔️ 5,357m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Pre-dawn start to climb Gokyo Ri for sunrise. Spectacular 360° views including Everest, Lhotse, Makalu, and Cho Oyu.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Gokyo Ri summit</span><span class="day-highlight">Four 8000m peaks visible</span><span class="day-highlight">Everest views</span><span class="day-highlight">Sunrise option</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Explore 4th and 5th Lakes</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 5,000m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Optional day hike to the upper lakes. The 5th lake offers incredible views of Cho Oyu and the glacier.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">4th and 5th Gokyo lakes</span><span class="day-highlight">Cho Oyu base camp views</span><span class="day-highlight">Ngozumpa Glacier</span><span class="day-highlight">Remote scenery</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">Gokyo to Dole</h3>
+          <div class="day-stats">
+            <span>📏 15km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -600m</span>
+            <span>🏔️ 4,200m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Retrace steps down valley, enjoying easier breathing at lower altitude. Long but mostly downhill day.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Rapid descent</span><span class="day-highlight">Retracing steps</span><span class="day-highlight">Easier breathing</span><span class="day-highlight">Familiar terrain</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Dole to Namche Bazaar</h3>
+          <div class="day-stats">
+            <span>📏 10km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -760m</span>
+            <span>🏔️ 3,440m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend through forests back to bustling Namche Bazaar. Celebrate with good food and comfort.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Return to civilization</span><span class="day-highlight">Hot showers</span><span class="day-highlight">Bakeries and cafes</span><span class="day-highlight">Internet access</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 11</div>
+          <h3 class="day-title">Namche to Lukla</h3>
+          <div class="day-stats">
+            <span>📏 19km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 -580m</span>
+            <span>🏔️ 2,860m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Long final day retracing steps to Lukla. Traditional celebration with trekking crew in evening.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Final trekking day</span><span class="day-highlight">Cross Hillary Bridge</span><span class="day-highlight">Celebration in Lukla</span><span class="day-highlight">Trek completion</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 12</div>
+          <h3 class="day-title">Fly to Kathmandu</h3>
+          <div class="day-stats">
+            <span>📏 0km</span>
+            <span>⏱️ 0.5 hours</span>
+            <span>📈 -1460m</span>
+            <span>🏔️ 1,400m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Morning flight back to Kathmandu, weather permitting. Rest of day free to relax and celebrate.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Mountain flight</span><span class="day-highlight">Return to Kathmandu</span><span class="day-highlight">Hot shower</span><span class="day-highlight">Celebration dinner</span>
         </div>
       
     </div>
@@ -1234,72 +1360,72 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Waterproof with good ankle support</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-15°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Essential for mornings/evenings</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
+          <div class="gear-name">Base layers</div>
+          <div class="gear-description">Thermal underwear sets</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
+          <div class="gear-name">Waterproof jacket/pants</div>
+          <div class="gear-description">Weather can change quickly</div>
         </div>
-        
+        <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-description">25-35 liters</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
+          <div class="gear-name">Water bottles/hydration</div>
+          <div class="gear-description">3 liter capacity</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning starts</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen</div>
         </div>
         
       </li>
@@ -1317,31 +1443,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
+          <div class="gear-description">Very helpful for descents</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera gear</div>
+          <div class="gear-name">Buff/neck warmer</div>
+          <div class="gear-description">Versatile protection</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Camera</div>
           <div class="gear-description">Incredible photo opportunities</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
         </div>
         
       </li>
@@ -1361,17 +1479,17 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Autumn</h3>
+      <p class="season-months">September, October, November</p>
+      <p>Clear skies, best mountain views, stable weather</p>
     </div>
   
     <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <div class="season-icon">🌸</div>
+      <h3 class="season-name">Spring</h3>
+      <p class="season-months">March, April, May</p>
+      <p>Rhododendrons bloom, good weather, busier trails</p>
     </div>
   
         </div>
@@ -1394,27 +1512,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
-    </div>
-    <div class="cost-item">
-      <span>Guide (per day)</span>
-      <span>$200</span>
-    </div>
-    <div class="cost-item">
-      <span>Accommodation (per night)</span>
-      <span>$100</span>
-    </div>
-    <div class="cost-item">
-      <span>Meals (per day)</span>
       <span>$50</span>
     </div>
     <div class="cost-item">
+      <span>Guide (per day)</span>
+      <span>$25</span>
+    </div>
+    <div class="cost-item">
+      <span>Accommodation (per night)</span>
+      <span>$5</span>
+    </div>
+    <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$25</span>
+    </div>
+    <div class="cost-item">
       <span>Transportation</span>
-      <span>$200</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$1,200 - $2,500</span>
     </div>
   
         </div>
@@ -1436,34 +1554,26 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
+        <span>How does this compare to EBC trek?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
+      <div class="faq-answer">Less crowded, arguably better views from Gokyo Ri, sees multiple lakes instead of base camp. Similar difficulty but different highlights.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
+        <span>Can I combine with EBC?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
+      <div class="faq-answer">Yes, via Cho La Pass (5,420m). Adds 3-4 days and requires good weather and fitness. Technical but rewarding.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
+        <span>Are the lakes always turquoise?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
+      <div class="faq-answer">Best color in autumn when skies are clear. Can appear more grey in cloudy weather. Still beautiful regardless.</div>
     </div>
   
         </div>
@@ -1504,22 +1614,33 @@
             scrollToSectionTop();
         }
 
-                                            function scrollToSectionTop() {
-            // Simple approach: scroll the navigation into view, then add offset
-            const navTabs = document.querySelector('.nav-tabs');
-            if (navTabs) {
-                // Scroll nav to top of viewport
-                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
                 
-                // Add small delay then scroll down by nav height + padding
-                setTimeout(() => {
-                    const navHeight = navTabs.offsetHeight;
-                    window.scrollBy({
-                        top: navHeight + 20,
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
                         behavior: 'smooth'
                     });
-                }, 100);
-            }
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1604,486 +1725,605 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "gokyo-lakes-trek",
+        "name": "Gokyo Lakes Trek",
+        "slug": "gokyo-lakes-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "A stunning alternative to Everest Base Camp, featuring turquoise glacial lakes, the challenging Gokyo Ri viewpoint, and incredible views of four 8,000m peaks.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 6
+            "min_days": 12,
+            "max_days": 14,
+            "recommended_days": 12
         },
-        "distance_km": 60,
+        "distance_km": 90,
         "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "max_elevation_m": 5357,
+        "starting_elevation_m": 2860,
+        "airport": "Lukla (LUA)",
+        "nearest_city": "Kathmandu",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": 27.687,
+                "lng": 86.7319,
+                "location": "Lukla"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": 27.9538,
+                "lng": 86.6936,
+                "location": "Gokyo"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
-                "months": [
-                    "June",
-                    "July",
-                    "August"
-                ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
-            },
-            {
                 "name": "Autumn",
                 "months": [
                     "September",
-                    "October"
+                    "October",
+                    "November"
                 ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Clear skies, best mountain views, stable weather"
+            },
+            {
+                "name": "Spring",
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "description": "Rhododendrons bloom, good weather, busier trails"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hotel/hostel",
-                    "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
-                ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
-            },
-            {
-                "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
+                "title": "Fly to Lukla, Trek to Phakding",
+                "start_location": "Kathmandu",
+                "end_location": "Phakding",
                 "distance_km": 8,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
-                "difficulty": "moderate",
+                "duration_hours": 3,
+                "elevation_start_m": 2860,
+                "elevation_end_m": 2610,
+                "elevation_gain_m": -250,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "teahouse",
                     "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
+                        "Sherpa Guide Lodge",
+                        "Buddha Lodge",
+                        "Himalaya Lodge"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
+                    "Thrilling Lukla flight",
+                    "Dudh Koshi valley",
+                    "Prayer wheels and mani walls",
+                    "Gentle introduction"
                 ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
+                "description": "Fly to Lukla early morning. Easy descent through villages along the Dudh Koshi river to Phakding."
             },
             {
-                "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
+                "day": 2,
+                "title": "Phakding to Namche Bazaar",
+                "start_location": "Phakding",
+                "end_location": "Namche Bazaar",
+                "distance_km": 11,
                 "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
-                "elevation_gain_m": 400,
+                "elevation_start_m": 2610,
+                "elevation_end_m": 3440,
+                "elevation_gain_m": 830,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "historic rorbu",
+                    "type": "teahouse",
                     "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Khumbu Lodge",
+                        "Namche Hotel",
+                        "Himalaya Lodge"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
+                    "lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Hillary Bridge crossing",
+                    "First Everest views",
+                    "Enter Sagarmatha National Park",
+                    "Namche Bazaar"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "Cross several suspension bridges before steep climb to Namche. First glimpses of Everest if weather permits."
+            },
+            {
+                "day": 3,
+                "title": "Acclimatization Day in Namche",
+                "start_location": "Namche Bazaar",
+                "end_location": "Namche Bazaar",
+                "distance_km": 0,
+                "duration_hours": 0,
+                "elevation_start_m": 3440,
+                "elevation_end_m": 3440,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Hike to Everest View Hotel",
+                    "Visit Sherpa Museum",
+                    "Explore markets",
+                    "Acclimatization walks"
+                ],
+                "description": "Important acclimatization day. Options include hiking to Everest View Hotel or exploring Khumjung village."
             },
             {
                 "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
-                "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
-                "elevation_gain_m": 400,
+                "title": "Namche to Dole",
+                "start_location": "Namche Bazaar",
+                "end_location": "Dole",
+                "distance_km": 10,
+                "duration_hours": 6,
+                "elevation_start_m": 3440,
+                "elevation_end_m": 4200,
+                "elevation_gain_m": 760,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "teahouse",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Dole Guest House",
+                        "Himalaya Lodge",
+                        "Basic lodges"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Leave main EBC trail",
+                    "Quieter paths",
+                    "Mongla pass views",
+                    "Rhododendron forests"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
+                "description": "Climb steeply out of Namche to Mongla pass, then traverse to Dole. Much quieter than main EBC route."
             },
             {
                 "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
+                "title": "Dole to Machhermo",
+                "start_location": "Dole",
+                "end_location": "Machhermo",
+                "distance_km": 8,
                 "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
-                "difficulty": "challenging",
+                "elevation_start_m": 4200,
+                "elevation_end_m": 4470,
+                "elevation_gain_m": 270,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "teahouse",
                     "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
+                        "Machhermo Guest House",
+                        "Himalaya Lodge"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
+                    "Alpine scenery",
+                    "Yak pastures",
+                    "Mountain views expanding",
+                    "HRA health post"
                 ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
+                "description": "Steady climb through beautiful alpine terrain. Machhermo has a health post with altitude talks."
             },
             {
                 "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
+                "title": "Machhermo to Gokyo",
+                "start_location": "Machhermo",
+                "end_location": "Gokyo",
+                "distance_km": 7,
+                "duration_hours": 4,
+                "elevation_start_m": 4470,
+                "elevation_end_m": 4800,
+                "elevation_gain_m": 330,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "hostel/rorbu",
+                    "type": "teahouse",
                     "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
+                        "Gokyo Resort",
+                        "Namaste Lodge",
+                        "Cho Oyu Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "First Gokyo lake",
+                    "Ngozumpa Glacier",
+                    "Arrival at Gokyo",
+                    "Turquoise lakes"
+                ],
+                "description": "Pass the first two Gokyo lakes before reaching Gokyo village on the shore of the third lake."
+            },
+            {
+                "day": 7,
+                "title": "Gokyo Ri Climb",
+                "start_location": "Gokyo",
+                "end_location": "Gokyo",
+                "distance_km": 4,
+                "duration_hours": 5,
+                "elevation_start_m": 4800,
+                "elevation_end_m": 5357,
+                "elevation_gain_m": 557,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Gokyo Ri summit",
+                    "Four 8000m peaks visible",
+                    "Everest views",
+                    "Sunrise option"
+                ],
+                "description": "Pre-dawn start to climb Gokyo Ri for sunrise. Spectacular 360° views including Everest, Lhotse, Makalu, and Cho Oyu."
+            },
+            {
+                "day": 8,
+                "title": "Explore 4th and 5th Lakes",
+                "start_location": "Gokyo",
+                "end_location": "Gokyo",
+                "distance_km": 12,
+                "duration_hours": 6,
+                "elevation_start_m": 4800,
+                "elevation_end_m": 5000,
+                "elevation_gain_m": 200,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "4th and 5th Gokyo lakes",
+                    "Cho Oyu base camp views",
+                    "Ngozumpa Glacier",
+                    "Remote scenery"
+                ],
+                "description": "Optional day hike to the upper lakes. The 5th lake offers incredible views of Cho Oyu and the glacier."
+            },
+            {
+                "day": 9,
+                "title": "Gokyo to Dole",
+                "start_location": "Gokyo",
+                "end_location": "Dole",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 4800,
+                "elevation_end_m": 4200,
+                "elevation_gain_m": -600,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Dole Guest House",
+                        "Himalaya Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Rapid descent",
+                    "Retracing steps",
+                    "Easier breathing",
+                    "Familiar terrain"
+                ],
+                "description": "Retrace steps down valley, enjoying easier breathing at lower altitude. Long but mostly downhill day."
+            },
+            {
+                "day": 10,
+                "title": "Dole to Namche Bazaar",
+                "start_location": "Dole",
+                "end_location": "Namche Bazaar",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 4200,
+                "elevation_end_m": 3440,
+                "elevation_gain_m": -760,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Khumbu Lodge",
+                        "Namche Hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Return to civilization",
+                    "Hot showers",
+                    "Bakeries and cafes",
+                    "Internet access"
+                ],
+                "description": "Descend through forests back to bustling Namche Bazaar. Celebrate with good food and comfort."
+            },
+            {
+                "day": 11,
+                "title": "Namche to Lukla",
+                "start_location": "Namche Bazaar",
+                "end_location": "Lukla",
+                "distance_km": 19,
+                "duration_hours": 7,
+                "elevation_start_m": 3440,
+                "elevation_end_m": 2860,
+                "elevation_gain_m": -580,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Numbur Lodge",
+                        "Buddha Lodge",
+                        "Lukla Resort"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Final trekking day",
+                    "Cross Hillary Bridge",
+                    "Celebration in Lukla",
+                    "Trek completion"
+                ],
+                "description": "Long final day retracing steps to Lukla. Traditional celebration with trekking crew in evening."
+            },
+            {
+                "day": 12,
+                "title": "Fly to Kathmandu",
+                "start_location": "Lukla",
+                "end_location": "Kathmandu",
+                "distance_km": 0,
+                "duration_hours": 0.5,
+                "elevation_start_m": 2860,
+                "elevation_end_m": 1400,
+                "elevation_gain_m": -1460,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Return to Kathmandu hotel"
                     ]
                 },
                 "meals_included": [
                     "breakfast"
                 ],
                 "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
+                    "Mountain flight",
+                    "Return to Kathmandu",
+                    "Hot shower",
+                    "Celebration dinner"
                 ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Morning flight back to Kathmandu, weather permitting. Rest of day free to relax and celebrate."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
+                    "item": "Trekking boots",
+                    "description": "Waterproof with good ankle support",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
+                    "item": "Sleeping bag",
+                    "description": "-15°C rated for cold nights",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm layers",
-                    "description": "Even summer is cool",
-                    "rental_available": false
-                },
-                {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Down jacket",
+                    "description": "Essential for mornings/evenings",
                     "rental_available": true
                 },
                 {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
+                    "item": "Base layers",
+                    "description": "Thermal underwear sets",
                     "rental_available": false
                 },
                 {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
-                    "rental_available": false
+                    "item": "Waterproof jacket/pants",
+                    "description": "Weather can change quickly",
+                    "rental_available": true
                 },
                 {
                     "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "description": "25-35 liters",
                     "rental_available": true
                 },
                 {
-                    "item": "Water bottles",
-                    "description": "Streams safe to drink",
+                    "item": "Water bottles/hydration",
+                    "description": "3 liter capacity",
                     "rental_available": false
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "GPS backup recommended",
+                    "item": "Headlamp",
+                    "description": "For early morning starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
+                    "description": "Very helpful for descents",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera gear",
+                    "item": "Buff/neck warmer",
+                    "description": "Versatile protection",
+                    "rental_available": false
+                },
+                {
+                    "item": "Camera",
                     "description": "Incredible photo opportunities",
                     "rental_available": false
-                },
-                {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
-                    "rental_available": false
-                },
-                {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
-                    "rental_available": false
-                }
-            ],
-            "optional": [
-                {
-                    "item": "Camping gear",
-                    "description": "For wild camping option",
-                    "rental_available": true
-                },
-                {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
-                },
-                {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
-                "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "name": "Sagarmatha National Park Permit",
+                "cost_usd": 30,
+                "cost_npr": 3000,
+                "where_to_obtain": "Monjo entrance or Kathmandu",
+                "validity": "Single entry"
+            },
+            {
+                "name": "Khumbu Local Area Permit",
+                "cost_usd": 20,
+                "cost_npr": 2000,
+                "where_to_obtain": "Lukla",
+                "validity": "Duration of trek"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
-            "meals_daily_usd": 50,
-            "transportation_usd": 200,
+            "permit_total_usd": 50,
+            "guide_daily_usd": 25,
+            "porter_daily_usd": 18,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 25,
+            "flight_lukla_usd": 360,
             "total_budget_range_usd": {
-                "min": 800,
-                "max": 2000
+                "min": 1200,
+                "max": 2500
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
+                "Sherpa"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Tibetan Buddhism",
             "languages": [
-                "Norwegian",
-                "English widely spoken"
+                "Sherpa",
+                "Nepali",
+                "English"
             ],
             "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
+                "Walk clockwise around religious sites",
+                "Remove shoes in monasteries",
+                "Don't touch religious artifacts",
+                "Respect local customs",
+                "No public displays of affection"
             ],
             "local_foods": [
                 {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
+                    "name": "Sherpa stew",
+                    "description": "Hearty potato-based stew"
                 },
                 {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
+                    "name": "Tsampa porridge",
+                    "description": "Roasted barley flour breakfast"
                 },
                 {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
+                    "name": "Yak cheese",
+                    "description": "Local delicacy"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
-                },
-                {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
-                },
-                {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
+                    "name": "Dal bhat",
+                    "description": "Traditional Nepali meal"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
-            },
-            "main_concerns": {
-                "weather": {
-                    "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
-                    "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
-                    ]
-                },
-                "exposure": {
-                    "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
-                    "prevention": [
-                        "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
-                    ]
-                },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
-                    "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
-                    ]
-                }
+                "risk_level": "high",
+                "prevention": [
+                    "Acclimatization day in Namche mandatory",
+                    "Ascend slowly above 3000m",
+                    "Stay hydrated",
+                    "Consider Diamox",
+                    "Listen to your body"
+                ],
+                "critical_points": [
+                    "Above Namche",
+                    "Gokyo Ri day"
+                ]
             },
             "medical_facilities": [
                 {
-                    "location": "Svolvær",
-                    "type": "Hospital"
+                    "location": "Namche Bazaar",
+                    "type": "Hospital with altitude chamber"
                 },
                 {
-                    "location": "Leknes",
-                    "type": "Hospital"
+                    "location": "Machhermo",
+                    "type": "HRA aid post"
                 },
                 {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
+                    "location": "Gokyo",
+                    "type": "Basic first aid"
                 }
             ],
             "evacuation": {
                 "method": "Helicopter",
-                "cost_usd": "Free with insurance",
+                "cost_usd": "4000-6000",
                 "insurance_required": true,
-                "response_time": "Usually within 2 hours"
+                "response_time": "Weather dependent"
             }
         },
         "weather_patterns": {
-            "summer": {
-                "months": [
-                    "June",
-                    "July",
-                    "August"
-                ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
-            },
             "autumn": {
                 "months": [
                     "September",
-                    "October"
+                    "October",
+                    "November"
                 ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
-                "months": [
-                    "November",
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
+                "day_temp_c": "10 to 15",
+                "night_temp_c": "-10 to 0",
+                "precipitation": "Very low",
+                "visibility": "Excellent",
+                "notes": "Best season, cold nights"
             },
             "spring": {
                 "months": [
@@ -2091,226 +2331,142 @@
                     "April",
                     "May"
                 ],
-                "day_temp_c": "2 to 10",
-                "night_temp_c": "-2 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "day_temp_c": "10 to 15",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Low to moderate",
+                "visibility": "Good, some clouds",
+                "notes": "Rhododendrons bloom"
+            },
+            "winter": {
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "day_temp_c": "0 to 8",
+                "night_temp_c": "-20 to -10",
+                "precipitation": "Low, some snow",
+                "visibility": "Excellent when clear",
+                "notes": "Very cold, some lodges closed"
+            },
+            "monsoon": {
+                "months": [
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "0 to 10",
+                "precipitation": "High",
+                "visibility": "Poor",
+                "notes": "Not recommended"
             }
         },
         "transportation": {
             "to_start": [
                 {
                     "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
-                    "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
+                    "from": "Kathmandu",
+                    "to": "Lukla",
+                    "duration": "30 minutes",
+                    "cost_usd": 180,
+                    "frequency": "Multiple daily (weather dependent)"
                 }
             ],
-            "during_trek": [
-                {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
-                }
-            ]
+            "from_end": "Same as to start"
         },
         "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
+            "type": "Teahouses",
+            "description": "Basic mountain lodges",
+            "amenities": [
+                "Twin-bed rooms",
+                "Shared bathrooms",
+                "Dining room with stove",
+                "Basic meals available",
+                "Charging for devices (paid)",
+                "Hot showers (paid, not always available)"
             ],
-            "booking": "Essential in summer",
-            "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
-            }
+            "booking": "Not required except peak season",
+            "cost_per_night_usd": "3-8"
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
-            "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
-        },
-        "sustainability": {
-            "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
-            ],
-            "responsible_practices": [
-                "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
-            ],
-            "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
-            ]
-        },
-        "connectivity": {
-            "mobile_coverage": [
-                {
-                    "location": "Villages",
-                    "quality": "Excellent",
-                    "providers": [
-                        "Telenor",
-                        "Telia"
-                    ]
-                },
-                {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
-                    "providers": [
-                        "Emergency calls usually possible"
-                    ]
-                }
-            ],
-            "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
-            }
-        },
-        "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
-            "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "physical_demands": "Good fitness for consecutive days",
+            "technical_skills": "None required",
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Well-marked, some steep sections",
+            "daily_hiking_hours": "4-7 hours",
+            "total_elevation_gain": 3400,
+            "total_elevation_loss": 3400
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
+                "name": "Gokyo via Cho La Pass",
+                "variation": "Connect to EBC",
                 "extra_days": 3,
                 "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
+                    "Technical pass crossing",
+                    "Visit both Gokyo and EBC",
+                    "More challenging"
                 ]
             },
             {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
-                "extra_days": 0,
+                "name": "Renjo La Pass",
+                "variation": "Alternative exit route",
+                "extra_days": 1,
                 "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
-                ]
-            },
-            {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
-                "extra_days": 2,
-                "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "Additional high pass",
+                    "Great views",
+                    "Complete circuit"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
+                "location": "Gokyo Ri",
+                "best_time": "Sunrise",
                 "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
+                    "Four 8000m peaks",
+                    "Ngozumpa Glacier",
+                    "Gokyo Lakes from above"
                 ]
             },
             {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
+                "location": "5th Lake",
+                "best_time": "Morning",
                 "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
-                ]
-            },
-            {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
-                "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
-                    "Northern lights"
+                    "Cho Oyu reflection",
+                    "Turquoise waters",
+                    "Glacier views"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
+                "question": "How does this compare to EBC trek?",
+                "answer": "Less crowded, arguably better views from Gokyo Ri, sees multiple lakes instead of base camp. Similar difficulty but different highlights."
             },
             {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
+                "question": "Can I combine with EBC?",
+                "answer": "Yes, via Cho La Pass (5,420m). Adds 3-4 days and requires good weather and fitness. Technical but rewarding."
             },
             {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
-            },
-            {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
+                "question": "Are the lakes always turquoise?",
+                "answer": "Best color in autumn when skies are clear. Can appear more grey in cloudy weather. Still beautiful regardless."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 88,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Gokyo Lakes Trek Guide 2024 | Nepal's Turquoise Lake Trek",
+            "meta_description": "Complete guide to the Gokyo Lakes Trek in Nepal. 12-day itinerary to turquoise lakes, Gokyo Ri viewpoint, and spectacular Everest region scenery.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "gokyo lakes trek",
+                "gokyo ri",
+                "nepal trekking",
+                "everest region",
+                "turquoise lakes nepal"
             ]
         }
     };

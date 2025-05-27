@@ -1364,33 +1364,22 @@
             scrollToSectionTop();
         }
 
-                                    function scrollToSectionTop() {
-            requestAnimationFrame(() => {
-                const navTabs = document.querySelector('.nav-tabs');
+                                            function scrollToSectionTop() {
+            // Simple approach: scroll the navigation into view, then add offset
+            const navTabs = document.querySelector('.nav-tabs');
+            if (navTabs) {
+                // Scroll nav to top of viewport
+                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                    
-                    window.scrollTo({
-                        top: Math.max(0, targetScroll),
+                // Add small delay then scroll down by nav height + padding
+                setTimeout(() => {
+                    const navHeight = navTabs.offsetHeight;
+                    window.scrollBy({
+                        top: navHeight + 20,
                         behavior: 'smooth'
                     });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+                }, 100);
+            }
         }
 
         function centerTabWithNextVisible(clickedTab) {

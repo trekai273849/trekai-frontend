@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu</title>
+    <meta name="description" content="Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/classic-inca-trail.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,20 +734,20 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+        <div class="hero-content">
+            <h1>Classic Inca Trail</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">4</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">4,200m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">43km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">4-4 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">43 km / 27 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">4,200m (13,780ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +846,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Cusco</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$650 - $1,200</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>4-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Km 82 to Wayllabamba</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📏 12km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 3,000m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Patallacta ruins</span><span class="day-highlight">Urubamba River views</span><span class="day-highlight">First glimpse of snow peaks</span><span class="day-highlight">Traditional villages</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Wayllabamba to Pacaymayo</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1200m</span>
+            <span>🏔️ 3,600m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Dead Woman's Pass (4,200m)</span><span class="day-highlight">Cloud forest ecosystem</span><span class="day-highlight">Llamas and alpacas</span><span class="day-highlight">Achievement of highest point</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">Pacaymayo to Wiñay Wayna</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
+            <span>📏 16km</span>
+            <span>⏱️ 9 hours</span>
             <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>🏔️ 2,650m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">Runkurakay ruins</span><span class="day-highlight">Sayacmarca ruins</span><span class="day-highlight">Phuyupatamarca ruins</span><span class="day-highlight">Cloud forest descent</span>
         </div>
       
     </div>
@@ -1155,61 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Wiñay Wayna to Machu Picchu</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📏 4km</span>
+            <span>⏱️ 2 hours</span>
+            <span>📈 -220m</span>
+            <span>🏔️ 2,430m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
-          <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
-          <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Sun Gate first view</span><span class="day-highlight">Machu Picchu sunrise</span><span class="day-highlight">Guided site tour</span><span class="day-highlight">Optional Huayna Picchu</span>
         </div>
       
     </div>
@@ -1234,72 +975,72 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
+          <div class="gear-name">Hiking boots</div>
+          <div class="gear-description">Well broken-in, waterproof</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-10°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Jacket and pants essential</div>
         </div>
         <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
-        </div>
-        
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-description">Porters carry main gear</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning starts</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2-3 liters capacity</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">High altitude sun intense</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Personal medications</div>
+          <div class="gear-description">Including altitude sickness meds</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Warm layers</div>
+          <div class="gear-description">Gets very cold at altitude</div>
         </div>
         
       </li>
@@ -1317,31 +1058,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
+          <div class="gear-description">Helpful for steep descents</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Incredible photo opportunities</div>
+          <div class="gear-name">Sleeping pad</div>
+          <div class="gear-description">Extra comfort</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Coca leaves</div>
+          <div class="gear-description">Traditional altitude remedy</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
+          <div class="gear-name">Cash (soles)</div>
+          <div class="gear-description">For tips and snacks</div>
         </div>
         
       </li>
@@ -1362,16 +1103,16 @@
             
     <div class="season-card">
       <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear skies, cold nights, busiest period</p>
     </div>
   
     <div class="season-card">
       <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">April, October</p>
+      <p>Variable weather, fewer crowds, lush vegetation</p>
     </div>
   
         </div>
@@ -1394,27 +1135,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$130</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$100</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$50</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$200</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$650 - $1,200</span>
     </div>
   
         </div>
@@ -1436,34 +1177,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
+        <span>How fit do I need to be?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
+      <div class="faq-answer">Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
+        <span>Why must I book so far ahead?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
+      <div class="faq-answer">Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
+        <span>What about altitude sickness?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
+      <div class="faq-answer">Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
+        <span>How heavy is my daypack?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
+      <div class="faq-answer">Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is the trail crowded?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others.</div>
     </div>
   
         </div>
@@ -1504,22 +1253,33 @@
             scrollToSectionTop();
         }
 
-                                            function scrollToSectionTop() {
-            // Simple approach: scroll the navigation into view, then add offset
-            const navTabs = document.querySelector('.nav-tabs');
-            if (navTabs) {
-                // Scroll nav to top of viewport
-                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
                 
-                // Add small delay then scroll down by nav height + padding
-                setTimeout(() => {
-                    const navHeight = navTabs.offsetHeight;
-                    window.scrollBy({
-                        top: navHeight + 20,
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
                         behavior: 'smooth'
                     });
-                }, 100);
-            }
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1604,713 +1364,623 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "classic-inca-trail",
+        "name": "Classic Inca Trail",
+        "slug": "classic-inca-trail",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 6
+            "min_days": 4,
+            "max_days": 4,
+            "recommended_days": 4
         },
-        "distance_km": 60,
+        "distance_km": 43,
         "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "max_elevation_m": 4200,
+        "starting_elevation_m": 2600,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": -13.2585,
+                "lng": -72.2636,
+                "location": "Km 82 (Piscacucho)"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
+                "name": "Dry Season",
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
+                "description": "Clear skies, cold nights, busiest period"
             },
             {
-                "name": "Autumn",
+                "name": "Shoulder Season",
                 "months": [
-                    "September",
+                    "April",
                     "October"
                 ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Variable weather, fewer crowds, lush vegetation"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hotel/hostel",
-                    "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
-                ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
-            },
-            {
-                "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
-                "distance_km": 8,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "rorbu/hotel",
-                    "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
-                ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
-            },
-            {
-                "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
+                "title": "Km 82 to Wayllabamba",
+                "start_location": "Km 82",
+                "end_location": "Wayllabamba",
+                "distance_km": 12,
                 "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
+                "elevation_start_m": 2600,
+                "elevation_end_m": 3000,
                 "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "historic rorbu",
+                    "type": "camping",
                     "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Wayllabamba campsite"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Patallacta ruins",
+                    "Urubamba River views",
+                    "First glimpse of snow peaks",
+                    "Traditional villages"
+                ],
+                "description": "Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp."
+            },
+            {
+                "day": 2,
+                "title": "Wayllabamba to Pacaymayo",
+                "start_location": "Wayllabamba",
+                "end_location": "Pacaymayo",
+                "distance_km": 11,
+                "duration_hours": 7,
+                "elevation_start_m": 3000,
+                "elevation_end_m": 3600,
+                "elevation_gain_m": 1200,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Pacaymayo campsite"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
+                    "lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Dead Woman's Pass (4,200m)",
+                    "Cloud forest ecosystem",
+                    "Llamas and alpacas",
+                    "Achievement of highest point"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass."
             },
             {
-                "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
-                "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
+                "day": 3,
+                "title": "Pacaymayo to Wiñay Wayna",
+                "start_location": "Pacaymayo",
+                "end_location": "Wiñay Wayna",
+                "distance_km": 16,
+                "duration_hours": 9,
+                "elevation_start_m": 3600,
+                "elevation_end_m": 2650,
                 "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "camping",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Wiñay Wayna campsite"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Runkurakay ruins",
+                    "Sayacmarca ruins",
+                    "Phuyupatamarca ruins",
+                    "Cloud forest descent"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
+                "description": "Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp."
             },
             {
-                "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
-                "difficulty": "challenging",
+                "day": 4,
+                "title": "Wiñay Wayna to Machu Picchu",
+                "start_location": "Wiñay Wayna",
+                "end_location": "Machu Picchu",
+                "distance_km": 4,
+                "duration_hours": 2,
+                "elevation_start_m": 2650,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": -220,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "hotel",
                     "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
+                        "Aguas Calientes hotels"
                     ]
                 },
                 "meals_included": [
                     "breakfast"
                 ],
                 "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
+                    "Sun Gate first view",
+                    "Machu Picchu sunrise",
+                    "Guided site tour",
+                    "Optional Huayna Picchu"
                 ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
-            },
-            {
-                "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hostel/rorbu",
-                    "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
-                ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
+                    "item": "Hiking boots",
+                    "description": "Well broken-in, waterproof",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
+                    "item": "Sleeping bag",
+                    "description": "-10°C rated for cold nights",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm layers",
-                    "description": "Even summer is cool",
-                    "rental_available": false
-                },
-                {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Rain gear",
+                    "description": "Jacket and pants essential",
                     "rental_available": true
-                },
-                {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
-                    "rental_available": false
-                },
-                {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
-                    "rental_available": false
                 },
                 {
                     "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "description": "Porters carry main gear",
                     "rental_available": true
                 },
                 {
-                    "item": "Water bottles",
-                    "description": "Streams safe to drink",
+                    "item": "Headlamp",
+                    "description": "For early morning starts",
                     "rental_available": false
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "GPS backup recommended",
+                    "item": "Water bottles",
+                    "description": "2-3 liters capacity",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "High altitude sun intense",
+                    "rental_available": false
+                },
+                {
+                    "item": "Personal medications",
+                    "description": "Including altitude sickness meds",
+                    "rental_available": false
+                },
+                {
+                    "item": "Warm layers",
+                    "description": "Gets very cold at altitude",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
+                    "description": "Helpful for steep descents",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera gear",
-                    "description": "Incredible photo opportunities",
+                    "item": "Sleeping pad",
+                    "description": "Extra comfort",
+                    "rental_available": true
+                },
+                {
+                    "item": "Coca leaves",
+                    "description": "Traditional altitude remedy",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
-                    "rental_available": false
-                },
-                {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
+                    "item": "Cash (soles)",
+                    "description": "For tips and snacks",
                     "rental_available": false
                 }
             ],
-            "optional": [
+            "provided_by_operator": [
                 {
-                    "item": "Camping gear",
-                    "description": "For wild camping option",
-                    "rental_available": true
+                    "item": "Tents",
+                    "description": "2-person tents"
                 },
                 {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
+                    "item": "Dining tent",
+                    "description": "With tables and chairs"
                 },
                 {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
+                    "item": "Kitchen equipment",
+                    "description": "All cooking gear"
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Comprehensive kit with guide"
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
-                "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "name": "Inca Trail Permit",
+                "cost_usd": 80,
+                "cost_pen": 280,
+                "where_to_obtain": "Only through licensed operators",
+                "validity": "Specific date only",
+                "notes": "Limited to 500 people/day including support staff"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Included in trek package",
+                "validity": "Specific time slot"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
-            "meals_daily_usd": 50,
-            "transportation_usd": 200,
+            "permit_total_usd": 130,
+            "guide_daily_usd": "included",
+            "porter_daily_usd": "included",
+            "accommodation_daily_usd": 0,
+            "meals_daily_usd": "included",
+            "trek_package_usd": 650,
+            "transportation_usd": 50,
             "total_budget_range_usd": {
-                "min": 800,
-                "max": 2000
+                "min": 650,
+                "max": 1200
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
+                "Quechua",
+                "Mestizo"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Catholic with Andean traditions",
             "languages": [
-                "Norwegian",
-                "English widely spoken"
+                "Spanish",
+                "Quechua",
+                "English (guides)"
             ],
             "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
+                "Ask permission before photographing locals",
+                "Respect sacred sites - no climbing on ruins",
+                "Participate in coca leaf ceremonies if offered",
+                "Tip porters and cooks ($20-30 total)",
+                "Don't touch or move stones at archaeological sites",
+                "Greet with 'Buenos días' or 'Allin p'unchay' (Quechua)"
             ],
             "local_foods": [
                 {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
+                    "name": "Quinoa soup",
+                    "description": "Traditional high-protein grain soup"
                 },
                 {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
+                    "name": "Lomo saltado",
+                    "description": "Stir-fried beef with vegetables"
                 },
                 {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
+                    "name": "Coca tea",
+                    "description": "Helps with altitude adjustment"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
-                },
-                {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
+                    "name": "Chuño",
+                    "description": "Freeze-dried potatoes"
                 }
             ],
             "festivals": [
                 {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
+                    "name": "Inti Raymi",
+                    "when": "June 24",
+                    "description": "Festival of the Sun"
                 },
                 {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
+                    "name": "Qoyllur Rit'i",
+                    "when": "May/June",
+                    "description": "Snow Star Festival"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
-            },
-            "main_concerns": {
-                "weather": {
-                    "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
-                    "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
-                    ]
-                },
-                "exposure": {
-                    "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
-                    "prevention": [
-                        "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
-                    ]
-                },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
-                    "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
-                    ]
-                }
+                "risk_level": "high",
+                "prevention": [
+                    "Acclimatize in Cusco 2-3 days before",
+                    "Climb slowly, rest frequently",
+                    "Stay hydrated (3-4 liters daily)",
+                    "Consider acetazolamide (Diamox)",
+                    "Coca tea and coca leaves help",
+                    "Avoid alcohol before and during trek"
+                ],
+                "symptoms": [
+                    "Headache",
+                    "Nausea",
+                    "Shortness of breath",
+                    "Fatigue",
+                    "Loss of appetite"
+                ],
+                "treatment": "Descend if symptoms worsen, guides carry oxygen"
             },
             "medical_facilities": [
                 {
-                    "location": "Svolvær",
-                    "type": "Hospital"
+                    "location": "Trail",
+                    "type": "Basic first aid with guides"
                 },
                 {
-                    "location": "Leknes",
-                    "type": "Hospital"
+                    "location": "Aguas Calientes",
+                    "type": "Medical post"
                 },
                 {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
+                    "location": "Cusco",
+                    "type": "Hospitals and clinics"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Free with insurance",
+                "method": "Porter stretcher or helicopter",
+                "cost_usd": "2000-5000",
                 "insurance_required": true,
-                "response_time": "Usually within 2 hours"
-            }
+                "response_time": "Several hours to days"
+            },
+            "vaccinations_recommended": [
+                "Yellow fever",
+                "Hepatitis A & B",
+                "Typhoid",
+                "Routine vaccinations"
+            ],
+            "other_concerns": [
+                "Sun exposure at altitude",
+                "Hypothermia risk at passes",
+                "Basic hygiene to avoid GI issues"
+            ]
         },
         "weather_patterns": {
-            "summer": {
+            "dry_season": {
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Busy season, cold nights"
             },
-            "autumn": {
-                "months": [
-                    "September",
-                    "October"
-                ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
+            "wet_season": {
                 "months": [
                     "November",
                     "December",
                     "January",
-                    "February"
+                    "February",
+                    "March"
                 ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
+                "day_temp_c": "13 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily rain likely",
+                "notes": "Trail closed in February"
             },
-            "spring": {
+            "shoulder": {
                 "months": [
-                    "March",
                     "April",
-                    "May"
+                    "October"
                 ],
-                "day_temp_c": "2 to 10",
-                "night_temp_c": "-2 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "day_temp_c": "15 to 18",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Occasional",
+                "notes": "Good compromise, fewer crowds"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
-                    "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
+                    "method": "Bus/Van",
+                    "from": "Cusco",
+                    "to": "Km 82",
+                    "duration": "2.5 hours",
+                    "cost_usd": "included",
+                    "notes": "Early morning departure"
                 }
             ],
-            "during_trek": [
+            "from_end": [
                 {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
+                    "method": "Train",
+                    "from": "Aguas Calientes",
+                    "to": "Ollantaytambo",
+                    "duration": "1.5 hours",
+                    "cost_usd": 75,
+                    "notes": "Then bus to Cusco"
                 }
             ]
         },
         "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
+            "type": "Camping",
+            "description": "Designated campsites only",
+            "amenities": [
+                "Two-person tents provided",
+                "Dining tent with tables",
+                "Portable toilet tent",
+                "No showers on trail",
+                "Basic facilities at campsites"
             ],
-            "booking": "Essential in summer",
-            "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
-            }
+            "booking": "Must book through licensed operator",
+            "cost_per_night_usd": "Included in package"
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
-            "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
+            "physical_demands": "Good fitness for altitude and long days",
+            "technical_skills": "None required",
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Stone steps, some uneven terrain",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 2200,
+            "total_elevation_loss": 2370
         },
         "sustainability": {
             "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
+                "Trail erosion",
+                "Waste management",
+                "Overcrowding"
             ],
             "responsible_practices": [
-                "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
+                "Pack out all trash",
+                "Use designated toilet facilities",
+                "Stay on marked trails",
+                "Support porter welfare initiatives",
+                "Choose operators following sustainability practices"
             ],
             "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
+                "Porter welfare laws",
+                "Trail maintenance programs",
+                "Daily visitor limits"
             ]
         },
         "connectivity": {
             "mobile_coverage": [
                 {
-                    "location": "Villages",
-                    "quality": "Excellent",
+                    "location": "Start/End points",
+                    "quality": "Good",
                     "providers": [
-                        "Telenor",
-                        "Telia"
+                        "Claro",
+                        "Movistar"
                     ]
                 },
                 {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
-                    "providers": [
-                        "Emergency calls usually possible"
-                    ]
+                    "location": "Trail",
+                    "quality": "None",
+                    "providers": []
                 }
             ],
             "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
+                "availability": "No internet on trail",
+                "cost_usd": 0,
+                "speed": "N/A"
             }
         },
         "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
+            "advance_booking": "4-6 months essential",
+            "group_size": "Maximum 16 per group",
+            "guide_requirement": "Mandatory - licensed guide only",
+            "porter_recommendation": "Included in all packages",
             "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "fitness_preparation": "3 months cardio and stair training"
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
-                "extra_days": 3,
+                "name": "Salkantay Trek",
+                "variation": "Higher altitude alternative",
+                "extra_days": 1,
                 "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
+                    "No permit needed",
+                    "Salkantay peak views",
+                    "More challenging"
                 ]
             },
             {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
+                "name": "Lares Trek",
+                "variation": "Cultural focus",
                 "extra_days": 0,
                 "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
+                    "Remote villages",
+                    "Hot springs",
+                    "Weaving communities"
                 ]
             },
             {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
-                "extra_days": 2,
+                "name": "Short Inca Trail",
+                "variation": "2-day version",
+                "fewer_days": 2,
                 "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "Less strenuous",
+                    "Still enter via Sun Gate",
+                    "Good for families"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
+                "location": "Dead Woman's Pass",
+                "best_time": "Morning",
                 "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
+                    "Mountain panorama",
+                    "Achievement shots",
+                    "Cloud formations"
                 ]
             },
             {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
+                "location": "Phuyupatamarca",
+                "best_time": "Sunset",
                 "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
+                    "Ruins with mountain backdrop",
+                    "Cloud forest",
+                    "Distant peaks"
                 ]
             },
             {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
+                "location": "Sun Gate",
+                "best_time": "Sunrise",
                 "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
-                    "Northern lights"
+                    "First view of Machu Picchu",
+                    "Morning mist",
+                    "Dramatic reveal"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
+                "question": "How fit do I need to be?",
+                "answer": "Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior."
             },
             {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
+                "question": "Why must I book so far ahead?",
+                "answer": "Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently."
             },
             {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
+                "question": "What about altitude sickness?",
+                "answer": "Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely."
             },
             {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
+                "question": "How heavy is my daypack?",
+                "answer": "Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg."
+            },
+            {
+                "question": "Is the trail crowded?",
+                "answer": "Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 99,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu",
+            "meta_description": "Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "inca trail",
+                "machu picchu trek",
+                "peru trekking",
+                "inca trail permits",
+                "cusco hiking"
             ]
         }
     };

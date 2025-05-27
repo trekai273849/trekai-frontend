@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Walker's Haute Route Guide 2024 | Chamonix to Zermatt Trek</title>
+    <meta name="description" content="Complete guide to hiking the Haute Route from Chamonix to Zermatt. 12-day alpine trek itinerary, costs, gear list, and expert tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/haute-route-chamonix-zermatt.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,24 +734,24 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+        <div class="hero-content">
+            <h1>Walker's Haute Route</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">12</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">3,000m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">180km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">moderate</span>
+                    <span class="hero-stat-value">challenging</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to European Alps</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,20 +824,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">10-14 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">180 km / 112 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">3,000m (9,843ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">moderate</span>
+                        <span class="difficulty-badge">challenging</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -1063,7 +846,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Chamonix/Zermatt</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +855,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$1,500 - $3,500</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>12-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through European Alps with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Chamonix to Argentière</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +700m</span>
+            <span>🏔️ 1,252m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">Gentle start along the Petit Balcon Sud with views across to the Mont Blanc massif. Good acclimatization day before the challenging days ahead.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Warm-up day</span><span class="day-highlight">Petit Balcon Sud trail</span><span class="day-highlight">Mont Blanc views</span><span class="day-highlight">Argentière glacier</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Argentière to Trient</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 1,279m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">Cross into Switzerland via Col de Balme. Beautiful ridge walking with panoramic views before descending to the remote Trient valley.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Col de Balme crossing</span><span class="day-highlight">Enter Switzerland</span><span class="day-highlight">Trient Glacier views</span><span class="day-highlight">Alpine meadows</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">Trient to Champex</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
+            <span>📏 16km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 1,466m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">Choose between the spectacular but challenging Fenêtre d'Arpette or the easier Bovine route. Both lead to charming Champex-Lac.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">Fenêtre d'Arpette option</span><span class="day-highlight">Bovine alternative route</span><span class="day-highlight">Champex lake</span><span class="day-highlight">Swiss villages</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Champex to Le Châble</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 821m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Easier day descending through forests and pastures to Le Châble. Option to take cable car to Verbier for supplies and comfort.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
+          <span class="day-highlight">Val de Bagnes descent</span><span class="day-highlight">Traditional villages</span><span class="day-highlight">Verbier option</span><span class="day-highlight">Rest day possibility</span>
         </div>
       
     </div>
@@ -1176,19 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
+          <h3 class="day-title">Le Châble to Cabane du Mont Fort</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1636m</span>
+            <span>🏔️ 2,457m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
+      <p class="day-description">Big climbing day to reach the spectacularly positioned Cabane du Mont Fort. The effort is rewarded with incredible sunset views.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
+          <span class="day-highlight">Major ascent day</span><span class="day-highlight">Spectacular hut location</span><span class="day-highlight">Sunset views</span><span class="day-highlight">Grand Combin views</span>
         </div>
       
     </div>
@@ -1197,19 +980,145 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
+          <h3 class="day-title">Cabane du Mont Fort to Cabane de Prafleuri</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
+            <span>📏 17km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 2,662m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
+      <p class="day-description">Remote and spectacular high mountain day crossing three cols. This is the heart of the Haute Route with incredible mountain scenery.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Remote high mountain day</span><span class="day-highlight">Three cols crossing</span><span class="day-highlight">Rosablanche views</span><span class="day-highlight">Wild alpine terrain</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Cabane de Prafleuri to Arolla</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 1,998m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend from the high mountains to the traditional mountain village of Arolla. Good place for rest or resupply.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Descent to civilization</span><span class="day-highlight">Arolla valley</span><span class="day-highlight">Glacier views</span><span class="day-highlight">Traditional mountain village</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Arolla to La Sage</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 1,667m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Cross the Pas de Chèvres with optional ladder section. Descend through traditional Valaisan villages to La Sage.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Pas de Chèvres</span><span class="day-highlight">Traditional villages</span><span class="day-highlight">Val d'Hérens culture</span><span class="day-highlight">Mountain views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">La Sage to Cabane de Moiry</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1400m</span>
+            <span>🏔️ 2,825m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Another big day climbing to Col du Tsaté then traversing to the spectacular Cabane de Moiry beside the glacier.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Col du Tsaté crossing</span><span class="day-highlight">Moiry Glacier</span><span class="day-highlight">Spectacular hut location</span><span class="day-highlight">High mountain environment</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Cabane de Moiry to Zinal</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 1,675m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend alongside the Moiry Glacier to reach the beautiful Zinal valley, surrounded by 4000m peaks.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Glacier descent</span><span class="day-highlight">Zinal valley</span><span class="day-highlight">4000m peaks views</span><span class="day-highlight">Traditional village</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 11</div>
+          <h3 class="day-title">Zinal to Gruben</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +1300m</span>
+            <span>🏔️ 1,822m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">One of the toughest days crossing the high Forcletta Pass into the German-speaking Turtmanntal. Remote and spectacular.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Forcletta Pass (2,874m)</span><span class="day-highlight">Enter German-speaking region</span><span class="day-highlight">Remote Turtmanntal</span><span class="day-highlight">Cultural transition</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 12</div>
+          <h3 class="day-title">Gruben to Zermatt</h3>
+          <div class="day-stats">
+            <span>📏 18km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +1000m</span>
+            <span>🏔️ 1,608m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final challenging day over Augstbord Pass. The first views of the Matterhorn signal journey's end as you descend to Zermatt.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Augstbord Pass (2,894m)</span><span class="day-highlight">First Matterhorn views</span><span class="day-highlight">Arrival in Zermatt</span><span class="day-highlight">Journey complete</span>
         </div>
       
     </div>
@@ -1234,72 +1143,64 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
+          <div class="gear-name">Mountain boots</div>
+          <div class="gear-description">Sturdy with good ankle support</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Crampons</div>
+          <div class="gear-description">Light crampons for snow patches</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-name">Ice axe</div>
+          <div class="gear-description">For glacier sections (optional)</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
+          <div class="gear-name">Backpack</div>
+          <div class="gear-description">40-50L capacity</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">4-season clothing</div>
+          <div class="gear-description">Including warm layers</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
+          <div class="gear-name">Waterproofs</div>
+          <div class="gear-description">High quality essential</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Navigation tools</div>
+          <div class="gear-description">Map, compass, GPS</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Emergency shelter</div>
+          <div class="gear-description">Bivy or group shelter</div>
         </div>
         
       </li>
@@ -1317,31 +1218,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
+          <div class="gear-description">Essential for stability</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Incredible photo opportunities</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For snow and scree</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
+          <div class="gear-name">Glacier glasses</div>
+          <div class="gear-description">Category 4 protection</div>
         </div>
         
       </li>
@@ -1363,15 +1256,8 @@
     <div class="season-card">
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
-    </div>
-  
-    <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <p class="season-months">July, August, early September</p>
+      <p>Snow-free passes, all routes open, stable weather</p>
     </div>
   
         </div>
@@ -1398,15 +1284,15 @@
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$300</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$100</span>
+      <span>$80</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$50</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
@@ -1414,7 +1300,7 @@
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$1,500 - $3,500</span>
     </div>
   
         </div>
@@ -1434,38 +1320,6 @@
 
         <div class="faq-list">
             
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
-    </div>
-  
         </div>
     </section>
 
@@ -1504,22 +1358,33 @@
             scrollToSectionTop();
         }
 
-                                            function scrollToSectionTop() {
-            // Simple approach: scroll the navigation into view, then add offset
-            const navTabs = document.querySelector('.nav-tabs');
-            if (navTabs) {
-                // Scroll nav to top of viewport
-                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
                 
-                // Add small delay then scroll down by nav height + padding
-                setTimeout(() => {
-                    const navHeight = navTabs.offsetHeight;
-                    window.scrollBy({
-                        top: navHeight + 20,
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
                         behavior: 'smooth'
                     });
-                }, 100);
-            }
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1604,319 +1469,462 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "haute-route-chamonix-zermatt",
+        "name": "Walker's Haute Route",
+        "slug": "haute-route-chamonix-zermatt",
+        "region": "European Alps",
+        "country": "France/Switzerland",
+        "summary": "The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 6
+            "min_days": 10,
+            "max_days": 14,
+            "recommended_days": 12
         },
-        "distance_km": 60,
-        "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "distance_km": 180,
+        "difficulty": "challenging",
+        "max_elevation_m": 3000,
+        "starting_elevation_m": 1035,
+        "airport": "Geneva (GVA)",
+        "nearest_city": "Chamonix/Zermatt",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": 45.9237,
+                "lng": 6.8694,
+                "location": "Chamonix"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": 46.0207,
+                "lng": 7.7491,
+                "location": "Zermatt"
             }
         },
         "best_seasons": [
             {
                 "name": "Summer",
                 "months": [
-                    "June",
                     "July",
-                    "August"
+                    "August",
+                    "early September"
                 ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
-            },
-            {
-                "name": "Autumn",
-                "months": [
-                    "September",
-                    "October"
-                ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Snow-free passes, all routes open, stable weather"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
-                "difficulty": "moderate",
+                "title": "Chamonix to Argentière",
+                "start_location": "Chamonix",
+                "end_location": "Argentière",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 1035,
+                "elevation_end_m": 1252,
+                "elevation_gain_m": 700,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "hotel/hostel",
+                    "type": "hotel/gite",
                     "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
+                        "Hotel Montana",
+                        "Gîte Le Belvedere",
+                        "Hotel La Couronne"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
                 ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
+                "highlights": [
+                    "Warm-up day",
+                    "Petit Balcon Sud trail",
+                    "Mont Blanc views",
+                    "Argentière glacier"
+                ],
+                "description": "Gentle start along the Petit Balcon Sud with views across to the Mont Blanc massif. Good acclimatization day before the challenging days ahead."
             },
             {
                 "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
-                "distance_km": 8,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
+                "title": "Argentière to Trient",
+                "start_location": "Argentière",
+                "end_location": "Trient",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 1252,
+                "elevation_end_m": 1279,
+                "elevation_gain_m": 900,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "refuge/auberge",
                     "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
+                        "Refuge du Peuty",
+                        "Auberge du Mont-Blanc",
+                        "Hotel du Glacier"
                     ]
                 },
                 "meals_included": [
+                    "dinner",
                     "breakfast"
                 ],
                 "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
+                    "Col de Balme crossing",
+                    "Enter Switzerland",
+                    "Trient Glacier views",
+                    "Alpine meadows"
                 ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
+                "description": "Cross into Switzerland via Col de Balme. Beautiful ridge walking with panoramic views before descending to the remote Trient valley."
             },
             {
                 "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
+                "title": "Trient to Champex",
+                "start_location": "Trient",
+                "end_location": "Champex",
+                "distance_km": 16,
                 "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
-                "elevation_gain_m": 400,
+                "elevation_start_m": 1279,
+                "elevation_end_m": 1466,
+                "elevation_gain_m": 800,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "historic rorbu",
+                    "type": "hotel/b&b",
                     "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Hotel du Glacier",
+                        "Au Club Alpin",
+                        "Pension en Plein Air"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "dinner"
+                    "breakfast"
                 ],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Fenêtre d'Arpette option",
+                    "Bovine alternative route",
+                    "Champex lake",
+                    "Swiss villages"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "Choose between the spectacular but challenging Fenêtre d'Arpette or the easier Bovine route. Both lead to charming Champex-Lac."
             },
             {
                 "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
-                "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
+                "title": "Champex to Le Châble",
+                "start_location": "Champex",
+                "end_location": "Le Châble",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 1466,
+                "elevation_end_m": 821,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "hotel",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Hotel de la Poste",
+                        "Hotel Gietroz",
+                        "B&B options"
                     ]
                 },
                 "meals_included": [
                     "breakfast"
                 ],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Val de Bagnes descent",
+                    "Traditional villages",
+                    "Verbier option",
+                    "Rest day possibility"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
+                "description": "Easier day descending through forests and pastures to Le Châble. Option to take cable car to Verbier for supplies and comfort."
             },
             {
                 "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
+                "title": "Le Châble to Cabane du Mont Fort",
+                "start_location": "Le Châble",
+                "end_location": "Cabane du Mont Fort",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 821,
+                "elevation_end_m": 2457,
+                "elevation_gain_m": 1636,
                 "difficulty": "challenging",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "mountain hut",
                     "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
+                        "Cabane du Mont Fort"
                     ]
                 },
                 "meals_included": [
+                    "dinner",
                     "breakfast"
                 ],
                 "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
+                    "Major ascent day",
+                    "Spectacular hut location",
+                    "Sunset views",
+                    "Grand Combin views"
                 ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
+                "description": "Big climbing day to reach the spectacularly positioned Cabane du Mont Fort. The effort is rewarded with incredible sunset views."
             },
             {
                 "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
+                "title": "Cabane du Mont Fort to Cabane de Prafleuri",
+                "start_location": "Cabane du Mont Fort",
+                "end_location": "Cabane de Prafleuri",
+                "distance_km": 17,
+                "duration_hours": 7,
+                "elevation_start_m": 2457,
+                "elevation_end_m": 2662,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane de Prafleuri"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Remote high mountain day",
+                    "Three cols crossing",
+                    "Rosablanche views",
+                    "Wild alpine terrain"
+                ],
+                "description": "Remote and spectacular high mountain day crossing three cols. This is the heart of the Haute Route with incredible mountain scenery."
+            },
+            {
+                "day": 7,
+                "title": "Cabane de Prafleuri to Arolla",
+                "start_location": "Cabane de Prafleuri",
+                "end_location": "Arolla",
+                "distance_km": 16,
                 "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
+                "elevation_start_m": 2662,
+                "elevation_end_m": 1998,
+                "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "hostel/rorbu",
+                    "type": "hotel",
                     "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
+                        "Hotel Kurhaus",
+                        "Hotel du Pigne",
+                        "Hotel du Glacier"
                     ]
                 },
                 "meals_included": [
                     "breakfast"
                 ],
                 "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
+                    "Descent to civilization",
+                    "Arolla valley",
+                    "Glacier views",
+                    "Traditional mountain village"
                 ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Descend from the high mountains to the traditional mountain village of Arolla. Good place for rest or resupply."
+            },
+            {
+                "day": 8,
+                "title": "Arolla to La Sage",
+                "start_location": "Arolla",
+                "end_location": "La Sage",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 1998,
+                "elevation_end_m": 1667,
+                "elevation_gain_m": 500,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel/gite",
+                    "options": [
+                        "Hotel de la Sage",
+                        "Gîte de la Sage"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Pas de Chèvres",
+                    "Traditional villages",
+                    "Val d'Hérens culture",
+                    "Mountain views"
+                ],
+                "description": "Cross the Pas de Chèvres with optional ladder section. Descend through traditional Valaisan villages to La Sage."
+            },
+            {
+                "day": 9,
+                "title": "La Sage to Cabane de Moiry",
+                "start_location": "La Sage",
+                "end_location": "Cabane de Moiry",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 1667,
+                "elevation_end_m": 2825,
+                "elevation_gain_m": 1400,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane de Moiry"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Col du Tsaté crossing",
+                    "Moiry Glacier",
+                    "Spectacular hut location",
+                    "High mountain environment"
+                ],
+                "description": "Another big day climbing to Col du Tsaté then traversing to the spectacular Cabane de Moiry beside the glacier."
+            },
+            {
+                "day": 10,
+                "title": "Cabane de Moiry to Zinal",
+                "start_location": "Cabane de Moiry",
+                "end_location": "Zinal",
+                "distance_km": 14,
+                "duration_hours": 5,
+                "elevation_start_m": 2825,
+                "elevation_end_m": 1675,
+                "elevation_gain_m": 0,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel le Besso",
+                        "Hotel Pointe de Zinal",
+                        "Hotel Europe"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Glacier descent",
+                    "Zinal valley",
+                    "4000m peaks views",
+                    "Traditional village"
+                ],
+                "description": "Descend alongside the Moiry Glacier to reach the beautiful Zinal valley, surrounded by 4000m peaks."
+            },
+            {
+                "day": 11,
+                "title": "Zinal to Gruben",
+                "start_location": "Zinal",
+                "end_location": "Gruben",
+                "distance_km": 17,
+                "duration_hours": 9,
+                "elevation_start_m": 1675,
+                "elevation_end_m": 1822,
+                "elevation_gain_m": 1300,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel Schwarzhorn"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Forcletta Pass (2,874m)",
+                    "Enter German-speaking region",
+                    "Remote Turtmanntal",
+                    "Cultural transition"
+                ],
+                "description": "One of the toughest days crossing the high Forcletta Pass into the German-speaking Turtmanntal. Remote and spectacular."
+            },
+            {
+                "day": 12,
+                "title": "Gruben to Zermatt",
+                "start_location": "Gruben",
+                "end_location": "Zermatt",
+                "distance_km": 18,
+                "duration_hours": 8,
+                "elevation_start_m": 1822,
+                "elevation_end_m": 1608,
+                "elevation_gain_m": 1000,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotels in Zermatt"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Augstbord Pass (2,894m)",
+                    "First Matterhorn views",
+                    "Arrival in Zermatt",
+                    "Journey complete"
+                ],
+                "description": "Final challenging day over Augstbord Pass. The first views of the Matterhorn signal journey's end as you descend to Zermatt."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
-                    "rental_available": true
-                },
-                {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
-                    "rental_available": true
-                },
-                {
-                    "item": "Warm layers",
-                    "description": "Even summer is cool",
+                    "item": "Mountain boots",
+                    "description": "Sturdy with good ankle support",
                     "rental_available": false
                 },
                 {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Crampons",
+                    "description": "Light crampons for snow patches",
                     "rental_available": true
                 },
                 {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
-                    "rental_available": false
-                },
-                {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
-                    "rental_available": false
-                },
-                {
-                    "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "item": "Ice axe",
+                    "description": "For glacier sections (optional)",
                     "rental_available": true
                 },
                 {
-                    "item": "Water bottles",
-                    "description": "Streams safe to drink",
+                    "item": "Backpack",
+                    "description": "40-50L capacity",
+                    "rental_available": true
+                },
+                {
+                    "item": "4-season clothing",
+                    "description": "Including warm layers",
                     "rental_available": false
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "GPS backup recommended",
+                    "item": "Waterproofs",
+                    "description": "High quality essential",
+                    "rental_available": false
+                },
+                {
+                    "item": "Navigation tools",
+                    "description": "Map, compass, GPS",
+                    "rental_available": false
+                },
+                {
+                    "item": "Emergency shelter",
+                    "description": "Bivy or group shelter",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
+                    "description": "Essential for stability",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera gear",
-                    "description": "Incredible photo opportunities",
+                    "item": "Gaiters",
+                    "description": "For snow and scree",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
+                    "item": "Glacier glasses",
+                    "description": "Category 4 protection",
                     "rental_available": false
-                },
-                {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
-                    "rental_available": false
-                }
-            ],
-            "optional": [
-                {
-                    "item": "Camping gear",
-                    "description": "For wild camping option",
-                    "rental_available": true
-                },
-                {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
-                },
-                {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
                 }
             ]
         },
@@ -1924,393 +1932,135 @@
             {
                 "name": "None required",
                 "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "notes": "But hut reservations essential"
             }
         ],
         "costs": {
             "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
-            "meals_daily_usd": 50,
+            "guide_daily_usd": 300,
+            "accommodation_daily_usd": 80,
+            "meals_daily_usd": 60,
             "transportation_usd": 200,
             "total_budget_range_usd": {
-                "min": 800,
-                "max": 2000
+                "min": 1500,
+                "max": 3500
             }
-        },
-        "cultural_information": {
-            "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
-            ],
-            "primary_religion": "Lutheran/Secular",
-            "languages": [
-                "Norwegian",
-                "English widely spoken"
-            ],
-            "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
-            ],
-            "local_foods": [
-                {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
-                },
-                {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
-                },
-                {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
-                },
-                {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
-                },
-                {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
-                },
-                {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
-                }
-            ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent profile",
+                    "Stay hydrated",
+                    "Consider acetazolamide",
+                    "Know symptoms"
+                ]
             },
             "main_concerns": {
                 "weather": {
                     "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
+                    "description": "Rapid changes, snow possible",
                     "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
-                    ]
-                },
-                "exposure": {
-                    "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
-                    "prevention": [
+                        "Check forecasts daily",
                         "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
+                        "Carry emergency gear",
+                        "Know escape routes"
                     ]
                 },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
+                "glacier_travel": {
+                    "risk_level": "moderate",
+                    "description": "Some routes cross glaciers",
                     "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
+                        "Consider guide for glacier days",
+                        "Rope up if necessary",
+                        "Know crevasse rescue",
+                        "Check conditions"
                     ]
                 }
             },
-            "medical_facilities": [
-                {
-                    "location": "Svolvær",
-                    "type": "Hospital"
-                },
-                {
-                    "location": "Leknes",
-                    "type": "Hospital"
-                },
-                {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
-                }
-            ],
             "evacuation": {
                 "method": "Helicopter",
-                "cost_usd": "Free with insurance",
-                "insurance_required": true,
-                "response_time": "Usually within 2 hours"
+                "cost_usd": "3000-5000",
+                "insurance_required": true
             }
         },
         "weather_patterns": {
             "summer": {
                 "months": [
-                    "June",
                     "July",
                     "August"
                 ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
-            },
-            "autumn": {
-                "months": [
-                    "September",
-                    "October"
-                ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
-                "months": [
-                    "November",
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "2 to 10",
-                "night_temp_c": "-2 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "0 to 10",
+                "precipitation": "Afternoon storms possible",
+                "snow_level": "Above 3000m usually",
+                "notes": "Most stable period"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
-                    "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
+                    "method": "Train/Bus",
+                    "from": "Geneva",
+                    "to": "Chamonix",
+                    "duration": "2.5 hours",
+                    "cost_usd": 35
                 }
             ],
-            "during_trek": [
+            "from_end": [
                 {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
+                    "method": "Train",
+                    "from": "Zermatt",
+                    "to": "Geneva",
+                    "duration": "4 hours",
+                    "cost_usd": 80
                 }
             ]
-        },
-        "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
-            ],
-            "booking": "Essential in summer",
-            "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
-            }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
-            "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
-        },
-        "sustainability": {
-            "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
-            ],
-            "responsible_practices": [
-                "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
-            ],
-            "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
-            ]
-        },
-        "connectivity": {
-            "mobile_coverage": [
-                {
-                    "location": "Villages",
-                    "quality": "Excellent",
-                    "providers": [
-                        "Telenor",
-                        "Telia"
-                    ]
-                },
-                {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
-                    "providers": [
-                        "Emergency calls usually possible"
-                    ]
-                }
-            ],
-            "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
-            }
-        },
-        "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
-            "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "physical_demands": "Excellent fitness required",
+            "technical_skills": "Basic mountaineering helpful",
+            "altitude_challenge": "Moderate, max 3000m",
+            "trail_conditions": "Variable, some route-finding",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 12000,
+            "total_elevation_loss": 12000
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
-                "extra_days": 3,
-                "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
-                ]
-            },
-            {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
+                "name": "Classic Glacier Route",
+                "variation": "Original high glacier route",
                 "extra_days": 0,
                 "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
+                    "More glaciers",
+                    "Requires mountaineering skills",
+                    "More remote"
                 ]
             },
             {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
-                "extra_days": 2,
+                "name": "Valley Route",
+                "variation": "Lower altitude alternative",
+                "extra_days": -2,
                 "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "Easier",
+                    "More villages",
+                    "Less weather dependent"
                 ]
-            }
-        ],
-        "photography_highlights": [
-            {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
-                "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
-                ]
-            },
-            {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
-                "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
-                ]
-            },
-            {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
-                "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
-                    "Northern lights"
-                ]
-            }
-        ],
-        "faqs": [
-            {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
-            },
-            {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
-            },
-            {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
-            },
-            {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 88,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Walker's Haute Route Guide 2024 | Chamonix to Zermatt Trek",
+            "meta_description": "Complete guide to hiking the Haute Route from Chamonix to Zermatt. 12-day alpine trek itinerary, costs, gear list, and expert tips.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "haute route",
+                "chamonix to zermatt",
+                "walkers haute route",
+                "alpine traverse",
+                "haute route trek"
             ]
         }
     };

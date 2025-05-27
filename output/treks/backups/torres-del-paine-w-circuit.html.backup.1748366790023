@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Torres del Paine W Circuit Trek Guide 2024 | Complete 5-Day Itinerary</title>
+    <meta name="description" content="Complete guide to hiking the W Circuit in Torres del Paine. Detailed itinerary, booking tips, gear list, and insider advice for Patagonia's most iconic trek.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/torres-del-paine-w-circuit.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,20 +734,20 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+        <div class="hero-content">
+            <h1>Torres del Paine 'W' Circuit</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">5</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">1,200m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">80km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to Patagonia</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">80 km / 50 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">1,200m (3,937ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +846,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Puerto Natales</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$600 - $1,500</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>5-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through Patagonia with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Las Torres Base Trek</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📏 22km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 900m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">The classic day hike to the base of the famous Torres. Start early for the steep climb through lenga forest, across mountain streams, and up the final boulder field to reach the stunning viewpoint of the three granite spires reflected in the turquoise lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Iconic three granite towers</span><span class="day-highlight">Turquoise glacial lake at base</span><span class="day-highlight">Ascenso Valley views</span><span class="day-highlight">Beech forest hiking</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Cuernos del Paine</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
+            <span>📏 11km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📈 +250m</span>
+            <span>🏔️ 350m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">Scenic traverse along the turquoise waters of Nordenskjöld Lake with constantly changing views of the distinctive Cuernos (Horns) del Paine. The trail winds through diverse landscapes from grasslands to forests.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Views of Cuernos del Paine horns</span><span class="day-highlight">Nordenskjöld Lake shoreline</span><span class="day-highlight">Varied terrain and ecosystems</span><span class="day-highlight">Potential condor sightings</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">French Valley</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>📏 25km</span>
+            <span>⏱️ 10 hours</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 550m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">The longest day includes a detour into the spectacular French Valley. Hike up the valley surrounded by granite spires and hanging glaciers, with the option to reach Británico viewpoint for panoramic views, before continuing to Paine Grande.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">French Valley hanging glaciers</span><span class="day-highlight">360-degree mountain amphitheater</span><span class="day-highlight">Avalanche sounds from glaciers</span><span class="day-highlight">Británico viewpoint option</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Grey Glacier Viewpoint</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 300m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Trek along Grey Lake's shoreline through burned and regenerating forest areas. Cross suspension bridges with views of floating icebergs and the massive Grey Glacier flowing from the Southern Patagonian Ice Field.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
+          <span class="day-highlight">Grey Glacier views</span><span class="day-highlight">Icebergs in Grey Lake</span><span class="day-highlight">Suspension bridges</span><span class="day-highlight">Southern Ice Field connection</span>
         </div>
       
     </div>
@@ -1176,40 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
+          <h3 class="day-title">Return via Catamaran</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 -280m</span>
+            <span>🏔️ 20m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
+      <p class="day-description">Morning catamaran ride across Grey Lake among the icebergs, followed by bus transfer back to Puerto Natales. Alternatively, hike back to Paine Grande and take catamaran across Pehoé Lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
-          <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Catamaran across Grey Lake</span><span class="day-highlight">Close views of icebergs</span><span class="day-highlight">Glacier perspectives from water</span><span class="day-highlight">Return to civilization</span>
         </div>
       
     </div>
@@ -1234,56 +996,64 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
+          <div class="gear-name">Hiking boots</div>
+          <div class="gear-description">Waterproof with ankle support for varied terrain</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
+          <div class="gear-name">Windproof/waterproof jacket</div>
+          <div class="gear-description">Patagonia winds can exceed 100km/h</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Windproof pants</div>
+          <div class="gear-description">Essential for exposed sections</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">0°C rated if camping</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Backpack</div>
+          <div class="gear-description">40-60L with rain cover</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Layering system</div>
+          <div class="gear-description">Base layer, insulating layer, shell</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Sunglasses, hat, SPF 50+ sunscreen</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Helpful for river crossings and wind</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1291,15 +1061,15 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
+          <div class="gear-description">2L capacity, water is drinkable from streams</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early starts and refugio use</div>
         </div>
         
       </li>
@@ -1316,32 +1086,40 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For muddy sections and stream crossings</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Incredible photo opportunities</div>
+          <div class="gear-name">Buff or balaclava</div>
+          <div class="gear-description">Wind and sun protection</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
+          <div class="gear-name">Camera rain cover</div>
+          <div class="gear-description">Weather changes quickly</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
+          <div class="gear-name">Dry bags</div>
+          <div class="gear-description">Keep essentials dry</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Blister kit</div>
+          <div class="gear-description">Long days require foot care</div>
         </div>
         
       </li>
@@ -1363,15 +1141,15 @@
     <div class="season-card">
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
+      <p class="season-months">December, January, February</p>
+      <p>Warmest weather, longest days, but most crowded</p>
     </div>
   
     <div class="season-card">
       <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">October, November, March, April</p>
+      <p>Fewer crowds, variable weather, stunning autumn colors in March-April</p>
     </div>
   
         </div>
@@ -1394,27 +1172,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$35</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$150</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$100</span>
+      <span>$80</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$50</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$200</span>
+      <span>$100</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$600 - $1,500</span>
     </div>
   
         </div>
@@ -1436,34 +1214,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
+        <span>How far in advance should I book?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
+      <div class="faq-answer">For December-February, book refugios/campsites 5-6 months ahead. Shoulder seasons 2-3 months. The park has strict capacity limits.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
+        <span>Can I trek independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
+      <div class="faq-answer">Yes, the trails are well-marked and guides aren't required. However, weather can change rapidly, so experience with multi-day treks is recommended.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
+        <span>Camping or refugios?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
+      <div class="faq-answer">Refugios offer comfort and meals but are expensive. Camping is cheaper but means carrying more gear in challenging weather. Many do a mix.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
+        <span>What about the wind?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
+      <div class="faq-answer">Patagonian wind is legendary. Gusts can exceed 100km/h. Bring proper windproof gear and trekking poles for stability. Be prepared to wait out extreme conditions.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is water safe to drink?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, water from streams and lakes is generally safe to drink without treatment, though some prefer to purify as a precaution.</div>
     </div>
   
         </div>
@@ -1504,22 +1290,33 @@
             scrollToSectionTop();
         }
 
-                                            function scrollToSectionTop() {
-            // Simple approach: scroll the navigation into view, then add offset
-            const navTabs = document.querySelector('.nav-tabs');
-            if (navTabs) {
-                // Scroll nav to top of viewport
-                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
                 
-                // Add small delay then scroll down by nav height + padding
-                setTimeout(() => {
-                    const navHeight = navTabs.offsetHeight;
-                    window.scrollBy({
-                        top: navHeight + 20,
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
                         behavior: 'smooth'
                     });
-                }, 100);
-            }
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1604,713 +1401,714 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "torres-del-paine-w-circuit",
+        "name": "Torres del Paine 'W' Circuit",
+        "slug": "torres-del-paine-w-circuit",
+        "region": "Patagonia",
+        "country": "Chile",
+        "summary": "Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 6
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 5
         },
-        "distance_km": 60,
+        "distance_km": 80,
         "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "max_elevation_m": 1200,
+        "starting_elevation_m": 100,
+        "airport": "Punta Arenas (PUQ)",
+        "nearest_city": "Puerto Natales",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": -50.9423,
+                "lng": -73.4068,
+                "location": "Las Torres Hotel"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": -50.9811,
+                "lng": -73.0765,
+                "location": "Grey Glacier"
             }
         },
         "best_seasons": [
             {
                 "name": "Summer",
                 "months": [
-                    "June",
-                    "July",
-                    "August"
+                    "December",
+                    "January",
+                    "February"
                 ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
+                "description": "Warmest weather, longest days, but most crowded"
             },
             {
-                "name": "Autumn",
+                "name": "Shoulder Season",
                 "months": [
-                    "September",
-                    "October"
+                    "October",
+                    "November",
+                    "March",
+                    "April"
                 ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Fewer crowds, variable weather, stunning autumn colors in March-April"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
-                "difficulty": "moderate",
+                "title": "Las Torres Base Trek",
+                "start_location": "Las Torres Hotel",
+                "end_location": "Las Torres Hotel/Chileno",
+                "distance_km": 22,
+                "duration_hours": 8,
+                "elevation_start_m": 100,
+                "elevation_end_m": 900,
+                "elevation_gain_m": 800,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "hotel/hostel",
+                    "type": "refugio/camping",
                     "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
-                ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
-            },
-            {
-                "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
-                "distance_km": 8,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "rorbu/hotel",
-                    "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
-                ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
-            },
-            {
-                "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "historic rorbu",
-                    "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Refugio Chileno",
+                        "Camping Chileno",
+                        "Return to Las Torres"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
+                    "box lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Iconic three granite towers",
+                    "Turquoise glacial lake at base",
+                    "Ascenso Valley views",
+                    "Beech forest hiking"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "The classic day hike to the base of the famous Torres. Start early for the steep climb through lenga forest, across mountain streams, and up the final boulder field to reach the stunning viewpoint of the three granite spires reflected in the turquoise lake."
+            },
+            {
+                "day": 2,
+                "title": "Cuernos del Paine",
+                "start_location": "Las Torres/Chileno",
+                "end_location": "Refugio Cuernos",
+                "distance_km": 11,
+                "duration_hours": 5,
+                "elevation_start_m": 100,
+                "elevation_end_m": 350,
+                "elevation_gain_m": 250,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refugio/camping",
+                    "options": [
+                        "Refugio Cuernos",
+                        "Camping Cuernos"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "box lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Views of Cuernos del Paine horns",
+                    "Nordenskjöld Lake shoreline",
+                    "Varied terrain and ecosystems",
+                    "Potential condor sightings"
+                ],
+                "description": "Scenic traverse along the turquoise waters of Nordenskjöld Lake with constantly changing views of the distinctive Cuernos (Horns) del Paine. The trail winds through diverse landscapes from grasslands to forests."
+            },
+            {
+                "day": 3,
+                "title": "French Valley",
+                "start_location": "Refugio Cuernos",
+                "end_location": "Refugio Paine Grande",
+                "distance_km": 25,
+                "duration_hours": 10,
+                "elevation_start_m": 350,
+                "elevation_end_m": 550,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "refugio/camping",
+                    "options": [
+                        "Refugio Paine Grande",
+                        "Camping Paine Grande"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "box lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "French Valley hanging glaciers",
+                    "360-degree mountain amphitheater",
+                    "Avalanche sounds from glaciers",
+                    "Británico viewpoint option"
+                ],
+                "description": "The longest day includes a detour into the spectacular French Valley. Hike up the valley surrounded by granite spires and hanging glaciers, with the option to reach Británico viewpoint for panoramic views, before continuing to Paine Grande."
             },
             {
                 "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
-                "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
-                "elevation_gain_m": 400,
+                "title": "Grey Glacier Viewpoint",
+                "start_location": "Refugio Paine Grande",
+                "end_location": "Refugio Grey",
+                "distance_km": 11,
+                "duration_hours": 4,
+                "elevation_start_m": 550,
+                "elevation_end_m": 300,
+                "elevation_gain_m": 200,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "refugio/camping",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Refugio Grey",
+                        "Camping Grey"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "breakfast",
+                    "box lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Grey Glacier views",
+                    "Icebergs in Grey Lake",
+                    "Suspension bridges",
+                    "Southern Ice Field connection"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
+                "description": "Trek along Grey Lake's shoreline through burned and regenerating forest areas. Cross suspension bridges with views of floating icebergs and the massive Grey Glacier flowing from the Southern Patagonian Ice Field."
             },
             {
                 "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
-                "difficulty": "challenging",
+                "title": "Return via Catamaran",
+                "start_location": "Refugio Grey",
+                "end_location": "Puerto Natales",
+                "distance_km": 0,
+                "duration_hours": 3,
+                "elevation_start_m": 300,
+                "elevation_end_m": 20,
+                "elevation_gain_m": -280,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "hotel",
                     "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
+                        "Hotel in Puerto Natales"
                     ]
                 },
                 "meals_included": [
                     "breakfast"
                 ],
                 "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
+                    "Catamaran across Grey Lake",
+                    "Close views of icebergs",
+                    "Glacier perspectives from water",
+                    "Return to civilization"
                 ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
-            },
-            {
-                "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hostel/rorbu",
-                    "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
-                ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Morning catamaran ride across Grey Lake among the icebergs, followed by bus transfer back to Puerto Natales. Alternatively, hike back to Paine Grande and take catamaran across Pehoé Lake."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
+                    "item": "Hiking boots",
+                    "description": "Waterproof with ankle support for varied terrain",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
+                    "item": "Windproof/waterproof jacket",
+                    "description": "Patagonia winds can exceed 100km/h",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm layers",
-                    "description": "Even summer is cool",
-                    "rental_available": false
-                },
-                {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Windproof pants",
+                    "description": "Essential for exposed sections",
                     "rental_available": true
                 },
                 {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
+                    "item": "Sleeping bag",
+                    "description": "0°C rated if camping",
+                    "rental_available": true
+                },
+                {
+                    "item": "Backpack",
+                    "description": "40-60L with rain cover",
+                    "rental_available": true
+                },
+                {
+                    "item": "Layering system",
+                    "description": "Base layer, insulating layer, shell",
                     "rental_available": false
                 },
                 {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
+                    "item": "Sun protection",
+                    "description": "Sunglasses, hat, SPF 50+ sunscreen",
                     "rental_available": false
                 },
                 {
-                    "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "item": "Trekking poles",
+                    "description": "Helpful for river crossings and wind",
                     "rental_available": true
                 },
                 {
                     "item": "Water bottles",
-                    "description": "Streams safe to drink",
+                    "description": "2L capacity, water is drinkable from streams",
                     "rental_available": false
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "GPS backup recommended",
+                    "item": "Headlamp",
+                    "description": "For early starts and refugio use",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
+                    "item": "Gaiters",
+                    "description": "For muddy sections and stream crossings",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera gear",
-                    "description": "Incredible photo opportunities",
+                    "item": "Buff or balaclava",
+                    "description": "Wind and sun protection",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
+                    "item": "Camera rain cover",
+                    "description": "Weather changes quickly",
                     "rental_available": false
                 },
                 {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
+                    "item": "Dry bags",
+                    "description": "Keep essentials dry",
+                    "rental_available": false
+                },
+                {
+                    "item": "Blister kit",
+                    "description": "Long days require foot care",
                     "rental_available": false
                 }
             ],
             "optional": [
                 {
                     "item": "Camping gear",
-                    "description": "For wild camping option",
+                    "description": "Tent, mat, stove if not using refugios",
                     "rental_available": true
                 },
                 {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
+                    "item": "Binoculars",
+                    "description": "For wildlife viewing",
+                    "rental_available": false
                 },
                 {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
+                    "item": "Portable charger",
+                    "description": "Limited electricity in refugios",
+                    "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
+                "name": "Park Entry Fee",
+                "cost_usd": 35,
+                "cost_clp": 28000,
+                "where_to_obtain": "Park entrance or online",
+                "validity": "3 consecutive days"
+            },
+            {
+                "name": "Camping/Refugio Reservations",
                 "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "cost_clp": 0,
+                "where_to_obtain": "Must book in advance through Vertice or Fantastico Sur",
+                "validity": "Specific dates only",
+                "notes": "Booking required far in advance, especially Dec-Feb"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
-            "meals_daily_usd": 50,
-            "transportation_usd": 200,
+            "permit_total_usd": 35,
+            "guide_daily_usd": 150,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 80,
+            "meals_daily_usd": 60,
+            "transportation_usd": 100,
+            "catamaran_usd": 35,
             "total_budget_range_usd": {
-                "min": 800,
-                "max": 2000
+                "min": 600,
+                "max": 1500
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
+                "Chilean",
+                "Argentine",
+                "Indigenous Tehuelche/Aonikenk heritage"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Secular/Catholic",
             "languages": [
-                "Norwegian",
-                "English widely spoken"
+                "Spanish",
+                "English widely spoken in tourism"
             ],
             "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
+                "Pack out all trash - leave no trace",
+                "Respect refugio quiet hours (10pm-7am)",
+                "Share trail information with other hikers",
+                "Don't feed wildlife (especially foxes)",
+                "Stay on marked trails to prevent erosion",
+                "Respect private estancia property boundaries"
             ],
             "local_foods": [
                 {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
+                    "name": "Cordero al Palo",
+                    "description": "Patagonian lamb roasted over open fire"
                 },
                 {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
+                    "name": "Calafate berry",
+                    "description": "Local berry - legend says you'll return to Patagonia"
                 },
                 {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
+                    "name": "King Crab (Centolla)",
+                    "description": "Fresh from the Magellan Strait"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
-                },
-                {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
+                    "name": "Mate",
+                    "description": "Traditional herbal tea drunk throughout the day"
                 }
             ],
             "festivals": [
                 {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
-                },
-                {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
+                    "name": "Festival de la Esquila",
+                    "when": "January",
+                    "description": "Sheep shearing festival"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
                 "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
+                "notes": "Maximum elevation only 1,200m"
             },
             "main_concerns": {
                 "weather": {
                     "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
+                    "description": "Extreme winds, rapid weather changes",
                     "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
+                        "Check weather forecasts daily",
+                        "Be prepared to wait out storms",
+                        "Carry emergency shelter/bivy",
+                        "Know escape routes"
                     ]
                 },
-                "exposure": {
+                "river_crossings": {
                     "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
+                    "description": "Streams can rise rapidly after rain",
                     "prevention": [
-                        "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
+                        "Use trekking poles for stability",
+                        "Unbuckle pack waist belt",
+                        "Cross early in the day when water is lower"
                     ]
                 },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
+                "sun_exposure": {
+                    "risk_level": "high",
+                    "description": "Intense UV due to ozone hole",
                     "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
+                        "Apply sunscreen every 2 hours",
+                        "Wear protective clothing",
+                        "Use quality sunglasses"
                     ]
                 }
             },
             "medical_facilities": [
                 {
-                    "location": "Svolvær",
-                    "type": "Hospital"
+                    "location": "Park ranger stations",
+                    "type": "Basic first aid"
                 },
                 {
-                    "location": "Leknes",
-                    "type": "Hospital"
+                    "location": "Puerto Natales",
+                    "type": "Hospital with emergency services"
                 },
                 {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
+                    "location": "Punta Arenas",
+                    "type": "Regional hospital (3 hours away)"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Free with insurance",
+                "method": "Helicopter or horseback",
+                "cost_usd": "2000-5000",
                 "insurance_required": true,
-                "response_time": "Usually within 2 hours"
-            }
+                "response_time": "Weather dependent, can be days"
+            },
+            "vaccinations_recommended": [
+                "Routine vaccinations up to date",
+                "Hepatitis A",
+                "Typhoid"
+            ]
         },
         "weather_patterns": {
             "summer": {
                 "months": [
-                    "June",
-                    "July",
-                    "August"
-                ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
-            },
-            "autumn": {
-                "months": [
-                    "September",
-                    "October"
-                ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
-                "months": [
-                    "November",
                     "December",
                     "January",
                     "February"
                 ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "2 to 8",
+                "precipitation": "Moderate, expect rain",
+                "wind": "Strong, 50-100 km/h common",
+                "daylight_hours": "17-18",
+                "notes": "Peak season, book far in advance"
             },
-            "spring": {
+            "autumn": {
                 "months": [
                     "March",
                     "April",
                     "May"
                 ],
-                "day_temp_c": "2 to 10",
+                "day_temp_c": "5 to 15",
                 "night_temp_c": "-2 to 5",
+                "precipitation": "Increasing, possible snow",
+                "wind": "Very strong",
+                "daylight_hours": "10-14",
+                "notes": "Beautiful fall colors, fewer crowds"
+            },
+            "winter": {
+                "months": [
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "0 to 8",
+                "night_temp_c": "-5 to 0",
+                "precipitation": "Snow likely",
+                "wind": "Extreme",
+                "daylight_hours": "8-9",
+                "notes": "Many facilities closed, experienced hikers only"
+            },
+            "spring": {
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "0 to 5",
                 "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "wind": "Strong to extreme",
+                "daylight_hours": "11-16",
+                "notes": "Wildflowers bloom, weather improving"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
+                    "method": "Fly + Bus",
+                    "from": "Santiago",
+                    "to": "Punta Arenas + Puerto Natales",
+                    "duration": "5-6 hours total",
+                    "cost_usd": 200,
+                    "frequency": "Multiple daily flights",
+                    "notes": "3-hour flight + 3-hour bus"
+                },
+                {
+                    "method": "Bus",
+                    "from": "Puerto Natales",
+                    "to": "Torres del Paine",
+                    "duration": "2 hours",
+                    "cost_usd": 15,
+                    "frequency": "2-3 daily in season"
+                },
+                {
+                    "method": "Transfer service",
+                    "from": "Puerto Natales",
+                    "to": "Torres del Paine",
+                    "duration": "2 hours",
+                    "cost_usd": 30,
                     "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
-                    "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
                 }
             ],
-            "during_trek": [
-                {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
-                }
-            ]
+            "from_end": "Similar options in reverse"
         },
         "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
+            "type": "Refugios and camping",
+            "description": "Mountain huts with beds or camping platforms",
+            "refugio_amenities": [
+                "Bunk beds with bedding (bring sleep sheet)",
+                "Hot meals available for purchase",
+                "Hot showers (sometimes paid)",
+                "Electricity for charging (limited hours)",
+                "Small shops with basic supplies",
+                "Drying rooms"
             ],
-            "booking": "Essential in summer",
+            "camping_amenities": [
+                "Designated platforms or areas",
+                "Cooking shelters at some sites",
+                "Bathroom facilities",
+                "Cold water only at most sites"
+            ],
+            "booking": "Essential to book months in advance",
             "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
+                "refugio_bed": "60-80",
+                "refugio_full_board": "140-160",
+                "camping": "8-15"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
+            "physical_demands": "Moderate fitness required, long days",
+            "technical_skills": "None required",
             "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
+            "trail_conditions": "Well-marked but can be muddy, rocky",
+            "weather_challenge": "Primary difficulty - extreme winds",
+            "daily_hiking_hours": "4-10 hours",
+            "total_elevation_gain": 2850,
+            "total_elevation_loss": 2850
         },
         "sustainability": {
             "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
+                "Trail erosion from high traffic",
+                "Waste management",
+                "Wildlife disturbance"
             ],
             "responsible_practices": [
-                "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
+                "Strict leave no trace principles",
+                "Stay on designated trails",
+                "Use established campsites only",
+                "Pack out all waste",
+                "Respect wildlife viewing distances"
             ],
             "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
+                "Trail maintenance programs",
+                "Visitor limits being considered",
+                "Ranger education programs"
             ]
         },
         "connectivity": {
             "mobile_coverage": [
                 {
-                    "location": "Villages",
-                    "quality": "Excellent",
+                    "location": "Refugios",
+                    "quality": "Limited to none",
                     "providers": [
-                        "Telenor",
-                        "Telia"
+                        "Entel",
+                        "Movistar"
                     ]
                 },
                 {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
-                    "providers": [
-                        "Emergency calls usually possible"
-                    ]
+                    "location": "Trail",
+                    "quality": "None",
+                    "providers": []
                 }
             ],
             "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
+                "availability": "Some refugios have paid WiFi",
+                "cost_usd": "5-10 per day",
+                "speed": "Very slow, weather dependent"
             }
         },
         "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
+            "advance_booking": "3-6 months for high season",
+            "group_size": "Individual bookings easier than groups",
+            "guide_requirement": "Not required but helpful",
+            "porter_recommendation": "Not available/necessary",
             "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "fitness_preparation": "3 months cardio and hiking training"
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
+                "name": "O Circuit",
+                "variation": "Complete circuit including backside",
                 "extra_days": 3,
                 "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
+                    "More solitude",
+                    "John Gardner Pass",
+                    "Complete park experience"
                 ]
             },
             {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
+                "name": "Day trips from refugios",
+                "variation": "Base yourself and day hike",
                 "extra_days": 0,
                 "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
+                    "Lighter pack",
+                    "More flexibility",
+                    "Same highlights"
                 ]
             },
             {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
-                "extra_days": 2,
+                "name": "Q Circuit",
+                "variation": "Extended O with Pingo Valley",
+                "extra_days": 5,
                 "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "Ultimate Torres experience",
+                    "Remote valleys",
+                    "Wildlife"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
+                "location": "Base Torres",
+                "best_time": "Sunrise",
                 "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
+                    "Tower reflections",
+                    "Alpenglow on granite"
                 ]
             },
             {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
+                "location": "Mirador Británico",
+                "best_time": "Midday",
                 "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
+                    "360-degree amphitheater",
+                    "Hanging glaciers"
                 ]
             },
             {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
+                "location": "Grey Glacier viewpoint",
+                "best_time": "Evening",
                 "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
-                    "Northern lights"
+                    "Blue ice",
+                    "Icebergs",
+                    "Sunset colors"
+                ]
+            },
+            {
+                "location": "Nordenskjöld Lake",
+                "best_time": "Morning",
+                "subjects": [
+                    "Turquoise water",
+                    "Cuernos reflection"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
+                "question": "How far in advance should I book?",
+                "answer": "For December-February, book refugios/campsites 5-6 months ahead. Shoulder seasons 2-3 months. The park has strict capacity limits."
             },
             {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
+                "question": "Can I trek independently?",
+                "answer": "Yes, the trails are well-marked and guides aren't required. However, weather can change rapidly, so experience with multi-day treks is recommended."
             },
             {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
+                "question": "Camping or refugios?",
+                "answer": "Refugios offer comfort and meals but are expensive. Camping is cheaper but means carrying more gear in challenging weather. Many do a mix."
             },
             {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
+                "question": "What about the wind?",
+                "answer": "Patagonian wind is legendary. Gusts can exceed 100km/h. Bring proper windproof gear and trekking poles for stability. Be prepared to wait out extreme conditions."
+            },
+            {
+                "question": "Is water safe to drink?",
+                "answer": "Yes, water from streams and lakes is generally safe to drink without treatment, though some prefer to purify as a precaution."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 96,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Torres del Paine W Circuit Trek Guide 2024 | Complete 5-Day Itinerary",
+            "meta_description": "Complete guide to hiking the W Circuit in Torres del Paine. Detailed itinerary, booking tips, gear list, and insider advice for Patagonia's most iconic trek.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "torres del paine",
+                "w circuit",
+                "patagonia trek",
+                "chile hiking",
+                "torres del paine itinerary"
             ]
         }
     };
