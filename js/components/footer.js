@@ -1,5 +1,12 @@
 // js/components/footer.js
 export function createFooter() {
+  // Detect if we're in a subdirectory and set appropriate path prefix
+  const isInSubdirectory = window.location.pathname.includes('/treks/') || 
+                          window.location.pathname.includes('/output/');
+  
+  // Set path prefix based on location
+  const pathPrefix = isInSubdirectory ? '../../' : '';
+
   return `
     <footer class="bg-gray-800 text-white py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 text-center">
@@ -7,8 +14,8 @@ export function createFooter() {
         <!-- Main Footer Line -->
         <div class="text-sm text-gray-300 mb-4">
           © 2025 Smart Trails. All rights reserved. 
-          <a href="terms-of-service.html" class="text-gray-300 hover:text-white underline ml-2">Terms</a>. 
-          <a href="privacy-policy.html" class="text-gray-300 hover:text-white underline">Privacy</a>.
+          <a href="${pathPrefix}terms-of-service.html" class="text-gray-300 hover:text-white underline ml-2">Terms</a>. 
+          <a href="${pathPrefix}privacy-policy.html" class="text-gray-300 hover:text-white underline">Privacy</a>.
         </div>
         
         <!-- Safety Notice -->
