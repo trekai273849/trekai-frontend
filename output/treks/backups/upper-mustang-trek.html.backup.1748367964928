@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
-    <meta name="description" content="Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.">
+    <title>Upper Mustang Trek Guide 2024 | Nepal's Forbidden Kingdom</title>
+    <meta name="description" content="Complete guide to trekking Upper Mustang, the former forbidden kingdom. 12-day journey through Tibetan culture, desert landscapes, and ancient monasteries.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/santa-cruz-trek.jpg');
+            background-image: url('/images/treks/covers/upper-mustang-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,19 +952,19 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Santa Cruz Trek</h1>
+            <h1>Upper Mustang Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4</span>
+                    <span class="hero-stat-value">12</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,750m</span>
+                    <span class="hero-stat-value">4,230m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">50km</span>
+                    <span class="hero-stat-value">160km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +991,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Peru/Andes</h2>
+                <h2>Journey to Nepal/Himalayas</h2>
                 <p class="overview-description">
-                    The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.
+                    Journey to the ancient forbidden kingdom of Lo, a hidden Tibetan culture preserved behind the Himalayas with desert landscapes, cave monasteries, and medieval walled cities.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +1041,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">4-5 days</span>
+                    <span class="info-value">10-14 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">50 km / 31 mi</span>
+                    <span class="info-value">160 km / 99 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,750m (15,584ft)</span>
+                    <span class="info-value">4,230m (13,878ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +1063,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Huaraz</span>
+                    <span class="info-value">Pokhara</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$200 - $600</span>
+                        <span class="price-range">$1,500 - $3,000</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +1081,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>4-Day Detailed Itinerary</h2>
+        <h2>12-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Peru/Andes with proper acclimatization and rest days
+            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Cashapampa to Llamacorral</h3>
+          <h3 class="day-title">Fly Pokhara to Jomsom, Trek to Kagbeni</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +100m</span>
-            <span>🏔️ 3,760m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 +138m</span>
+            <span>🏔️ 2,858m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo.</p>
+      <p class="day-description">Spectacular 20-minute flight between Dhaulagiri and Annapurna. Walk along the Kali Gandaki riverbed to ancient Kagbeni, the gateway to Upper Mustang.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Santa Cruz valley entrance</span><span class="day-highlight">Alpamayo views</span><span class="day-highlight">River valley hiking</span><span class="day-highlight">Acclimatization day</span>
+          <span class="day-highlight">Mountain flight</span><span class="day-highlight">Kali Gandaki valley</span><span class="day-highlight">Medieval Kagbeni village</span><span class="day-highlight">Gateway to Mustang</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Llamacorral to Taullipampa</h3>
+          <h3 class="day-title">Kagbeni to Chele</h3>
           <div class="day-stats">
             <span>📏 14km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +490m</span>
-            <span>🏔️ 4,250m</span>
+            <span>📈 +350m</span>
+            <span>🏔️ 3,050m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks.</p>
+      <p class="day-description">Check permits and enter Upper Mustang. The landscape transforms into high desert with red cliffs and eroded canyons.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Laguna Jatuncocha</span><span class="day-highlight">Taulliraju views (5,830m)</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">360-degree mountain panorama</span>
+          <span class="day-highlight">Enter restricted area</span><span class="day-highlight">Tangbe village</span><span class="day-highlight">Desert landscapes begin</span><span class="day-highlight">Ancient chortens</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Taullipampa to Paria Valley via Punta Union</h3>
+          <h3 class="day-title">Chele to Syangboche</h3>
           <div class="day-stats">
-            <span>📏 15km</span>
-            <span>⏱️ 8 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 3,850m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +850m</span>
+            <span>🏔️ 3,475m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley.</p>
+      <p class="day-description">Cross several passes with stunning views. Optional visit to Ramchung cave monastery with ancient Buddhist art.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Punta Union Pass (4,750m)</span><span class="day-highlight">Spectacular 360° views</span><span class="day-highlight">Laguna Morococha</span><span class="day-highlight">Dramatic descent</span>
+          <span class="day-highlight">Multiple pass crossings</span><span class="day-highlight">Ramchung cave monastery</span><span class="day-highlight">Painted cliffs</span><span class="day-highlight">Remote valleys</span>
         </div>
       
     </div>
@@ -1155,19 +1155,187 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Paria Valley to Vaqueria</h3>
+          <h3 class="day-title">Syangboche to Ghami</h3>
           <div class="day-stats">
-            <span>📏 9km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 -150m</span>
-            <span>🏔️ 3,700m</span>
+            <span>📏 13km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 3,520m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon.</p>
+      <p class="day-description">Pass through Dhakmar with its dramatic red cliffs. Ghami has one of the longest mani walls in Nepal.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle valley descent</span><span class="day-highlight">Rural Andean life</span><span class="day-highlight">Trek completion</span><span class="day-highlight">Transport to Huaraz</span>
+          <span class="day-highlight">Nyi La pass (4,010m)</span><span class="day-highlight">Ghami village</span><span class="day-highlight">Longest mani wall</span><span class="day-highlight">Red cliffs of Dhakmar</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Ghami to Charang</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +300m</span>
+            <span>🏔️ 3,500m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Visit the impressive Tsarang monastery and fortress. The architecture becomes more Tibetan as you near the capital.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Tsarang monastery</span><span class="day-highlight">Medieval fortress</span><span class="day-highlight">Traditional architecture</span><span class="day-highlight">Approaching Lo Manthang</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 6</div>
+          <h3 class="day-title">Charang to Lo Manthang</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +340m</span>
+            <span>🏔️ 3,840m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Exciting arrival at the walled city of Lo Manthang, capital of the former Kingdom of Lo. Explore the medieval streets.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Lo La pass (3,950m)</span><span class="day-highlight">First view of Lo Manthang</span><span class="day-highlight">Walled city entrance</span><span class="day-highlight">Medieval atmosphere</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Explore Lo Manthang</h3>
+          <div class="day-stats">
+            <span>📏 0km</span>
+            <span>⏱️ 0 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 3,840m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Full day exploring Lo Manthang's monasteries, palace, and unique culture. Visit Jampa, Thubchen, and Chodey monasteries.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Royal palace</span><span class="day-highlight">Three main monasteries</span><span class="day-highlight">Amchi museum</span><span class="day-highlight">Local culture</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Day Trip to Chhoser</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 3,840m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Optional day trip to Chhoser village with its remarkable cave monastery and ancient sky caves carved into cliffs.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Chhoser cave monastery</span><span class="day-highlight">Ancient sky caves</span><span class="day-highlight">Garphu monastery</span><span class="day-highlight">Remote landscapes</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">Lo Manthang to Yara</h3>
+          <div class="day-stats">
+            <span>📏 18km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 3,650m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Take alternative route back through remote areas. Yara is a small village with unique geological formations.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Different return route</span><span class="day-highlight">Remote villages</span><span class="day-highlight">Spectacular erosion</span><span class="day-highlight">Authentic experience</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Yara to Tangge</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 3,240m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Continue through remote terrain to Tangge, one of the most isolated villages in Mustang.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Remote trail</span><span class="day-highlight">Desert canyon</span><span class="day-highlight">Traditional village</span><span class="day-highlight">Few tourists</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 11</div>
+          <h3 class="day-title">Tangge to Chhusang</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +300m</span>
+            <span>🏔️ 2,980m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Cross high pass before descending to rejoin the main trail at Chhusang. Long but rewarding day.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Pa pass (4,200m)</span><span class="day-highlight">Rejoin main trail</span><span class="day-highlight">Spectacular views</span><span class="day-highlight">Nearly complete</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 12</div>
+          <h3 class="day-title">Chhusang to Jomsom</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -260m</span>
+            <span>🏔️ 2,720m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final walk back through Kagbeni to Jomsom. Celebrate completing the journey to the forbidden kingdom.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Return to Kagbeni</span><span class="day-highlight">Complete circuit</span><span class="day-highlight">Jomsom facilities</span><span class="day-highlight">Trek completion</span>
         </div>
       
     </div>
@@ -1192,56 +1360,48 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">4-season tent</div>
-          <div class="gear-description">Wind-resistant for exposed camps</div>
+          <div class="gear-name">Wind-proof jacket</div>
+          <div class="gear-description">Strong winds common</div>
         </div>
         <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-15°C rated for cold nights</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Waterproof boots</div>
-          <div class="gear-description">Stream crossings common</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Layers for all weather</div>
-          <div class="gear-description">Can snow at pass anytime</div>
-        </div>
-        
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Intense at altitude</div>
+          <div class="gear-description">Intense high-altitude sun</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or filter</div>
+          <div class="gear-name">Dust mask/buff</div>
+          <div class="gear-description">For windy, dusty conditions</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful for pass day</div>
+          <div class="gear-name">Warm layers</div>
+          <div class="gear-description">Cold nights despite lower altitude</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Good hiking boots</div>
+          <div class="gear-description">Rocky, dusty terrain</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Daypack</div>
+          <div class="gear-description">20-30L sufficient</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1258,24 +1418,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For stream crossings</div>
+          <div class="gear-name">Lip balm with SPF</div>
+          <div class="gear-description">Very dry conditions</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at camps</div>
+          <div class="gear-name">Moisturizer</div>
+          <div class="gear-description">Combat dry air</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera with extra batteries</div>
-          <div class="gear-description">Spectacular scenery</div>
+          <div class="gear-name">Camera gear</div>
+          <div class="gear-description">Unique landscapes</div>
         </div>
         
       </li>
@@ -1295,10 +1455,24 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">☀️</div>
-      <h3 class="season-name">Dry Season</h3>
-      <p class="season-months">May, June, July, August, September</p>
-      <p>Clear skies, stable weather, cold nights at altitude</p>
+      <div class="season-icon">🌸</div>
+      <h3 class="season-name">Spring</h3>
+      <p class="season-months">March, April, May</p>
+      <p>Clear skies, moderate temperatures, some wind</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Autumn</h3>
+      <p class="season-months">September, October, November</p>
+      <p>Best weather, clear mountain views, harvest season</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🌧️</div>
+      <h3 class="season-name">Monsoon</h3>
+      <p class="season-months">June, July, August</p>
+      <p>Possible due to rain shadow, but some rain occurs</p>
     </div>
   
         </div>
@@ -1321,27 +1495,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$30</span>
+      <span>$530</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$50</span>
+      <span>$30</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$15</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
+      <span>$25</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$60</span>
+      <span>$300</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$200 - $600</span>
+      <span>$1,500 - $3,000</span>
     </div>
   
         </div>
@@ -1363,26 +1537,26 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How does this compare to the Inca Trail?</span>
+        <span>Why is the permit so expensive?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded.</div>
+      <div class="faq-answer">Upper Mustang was closed until 1992 and remains restricted to preserve its unique Tibetan culture. The high permit fee limits visitors and funds conservation.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
+        <span>Can I trek independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude.</div>
+      <div class="faq-answer">No, you must be with a registered guide due to restricted area regulations. This helps preserve the culture and ensures proper permits.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is acclimatization really necessary?</span>
+        <span>Is it worth the cost?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69.</div>
+      <div class="faq-answer">For those interested in Tibetan culture, unique landscapes, and off-beaten paths, absolutely. It's unlike anywhere else in Nepal.</div>
     </div>
   
         </div>
@@ -1425,26 +1599,19 @@
             }
         }
 
-                                                                    function scrollToSectionTop() {
-            setTimeout(() => {
-                const navTabs = document.querySelector('.nav-tabs');
-                if (navTabs) {
-                    // Get nav height to account for sticky positioning
-                    const navHeight = navTabs.offsetHeight;
-                    // Get the currently active section
-                    const activeSection = document.querySelector('.content-section.active');
-                    if (activeSection) {
-                        // Get the position of the active section
-                        const sectionTop = activeSection.offsetTop;
-                        // Scroll to section minus nav height to show content at top
-                        const targetPosition = sectionTop - navHeight - 10;
-                        window.scrollTo({
-                            top: Math.max(0, targetPosition),
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            }, 100);
+                                                            function scrollToSectionTop() {
+            // Get navigation height first
+            const navTabs = document.querySelector('.nav-tabs');
+            if (!navTabs) return;
+            
+            const navHeight = navTabs.offsetHeight;
+            const targetPosition = navTabs.offsetTop + navHeight + 20;
+            
+            // INSTANT scroll to target position (no animation during tab switch)
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'instant'  // Key change: instant, not smooth
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1529,64 +1696,82 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "santa-cruz-trek",
-        "name": "Santa Cruz Trek",
-        "slug": "santa-cruz-trek",
-        "region": "Peru/Andes",
-        "country": "Peru",
-        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
+        "_id": "upper-mustang-trek",
+        "name": "Upper Mustang Trek",
+        "slug": "upper-mustang-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "Journey to the ancient forbidden kingdom of Lo, a hidden Tibetan culture preserved behind the Himalayas with desert landscapes, cave monasteries, and medieval walled cities.",
         "duration": {
-            "min_days": 4,
-            "max_days": 5,
-            "recommended_days": 4
+            "min_days": 10,
+            "max_days": 14,
+            "recommended_days": 12
         },
-        "distance_km": 50,
+        "distance_km": 160,
         "difficulty": "moderate",
-        "max_elevation_m": 4750,
-        "starting_elevation_m": 3900,
-        "airport": "Lima (LIM)",
-        "nearest_city": "Huaraz",
+        "max_elevation_m": 4230,
+        "starting_elevation_m": 2720,
+        "airport": "Jomsom (JMO) or Pokhara (PKR)",
+        "nearest_city": "Pokhara",
         "coordinates": {
             "start": {
-                "lat": -8.9689,
-                "lng": -77.3928,
-                "location": "Cashapampa"
+                "lat": 28.7816,
+                "lng": 83.7274,
+                "location": "Jomsom"
             },
             "end": {
-                "lat": -8.8681,
-                "lng": -77.7089,
-                "location": "Vaqueria"
+                "lat": 29.1778,
+                "lng": 83.9542,
+                "location": "Lo Manthang"
             }
         },
         "best_seasons": [
             {
-                "name": "Dry Season",
+                "name": "Spring",
                 "months": [
-                    "May",
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "description": "Clear skies, moderate temperatures, some wind"
+            },
+            {
+                "name": "Autumn",
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "description": "Best weather, clear mountain views, harvest season"
+            },
+            {
+                "name": "Monsoon",
+                "months": [
                     "June",
                     "July",
-                    "August",
-                    "September"
+                    "August"
                 ],
-                "description": "Clear skies, stable weather, cold nights at altitude"
+                "description": "Possible due to rain shadow, but some rain occurs"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Cashapampa to Llamacorral",
-                "start_location": "Cashapampa",
-                "end_location": "Llamacorral",
-                "distance_km": 12,
-                "duration_hours": 5,
-                "elevation_start_m": 3900,
-                "elevation_end_m": 3760,
-                "elevation_gain_m": 100,
+                "title": "Fly Pokhara to Jomsom, Trek to Kagbeni",
+                "start_location": "Pokhara",
+                "end_location": "Kagbeni",
+                "distance_km": 11,
+                "duration_hours": 3,
+                "elevation_start_m": 2720,
+                "elevation_end_m": 2858,
+                "elevation_gain_m": 138,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "lodge",
                     "options": [
-                        "Llamacorral campsite"
+                        "Red House Lodge",
+                        "Hotel YacDonalds",
+                        "Nilgiri View"
                     ]
                 },
                 "meals_included": [
@@ -1594,28 +1779,29 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Santa Cruz valley entrance",
-                    "Alpamayo views",
-                    "River valley hiking",
-                    "Acclimatization day"
+                    "Mountain flight",
+                    "Kali Gandaki valley",
+                    "Medieval Kagbeni village",
+                    "Gateway to Mustang"
                 ],
-                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
+                "description": "Spectacular 20-minute flight between Dhaulagiri and Annapurna. Walk along the Kali Gandaki riverbed to ancient Kagbeni, the gateway to Upper Mustang."
             },
             {
                 "day": 2,
-                "title": "Llamacorral to Taullipampa",
-                "start_location": "Llamacorral",
-                "end_location": "Taullipampa",
+                "title": "Kagbeni to Chele",
+                "start_location": "Kagbeni",
+                "end_location": "Chele",
                 "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 3760,
-                "elevation_end_m": 4250,
-                "elevation_gain_m": 490,
+                "elevation_start_m": 2858,
+                "elevation_end_m": 3050,
+                "elevation_gain_m": 350,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "lodge",
                     "options": [
-                        "Taullipampa campsite"
+                        "Himalaya Lodge",
+                        "Local guesthouses"
                     ]
                 },
                 "meals_included": [
@@ -1624,28 +1810,29 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Laguna Jatuncocha",
-                    "Taulliraju views (5,830m)",
-                    "Alpine meadows",
-                    "360-degree mountain panorama"
+                    "Enter restricted area",
+                    "Tangbe village",
+                    "Desert landscapes begin",
+                    "Ancient chortens"
                 ],
-                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
+                "description": "Check permits and enter Upper Mustang. The landscape transforms into high desert with red cliffs and eroded canyons."
             },
             {
                 "day": 3,
-                "title": "Taullipampa to Paria Valley via Punta Union",
-                "start_location": "Taullipampa",
-                "end_location": "Paria Valley",
-                "distance_km": 15,
-                "duration_hours": 8,
-                "elevation_start_m": 4250,
-                "elevation_end_m": 3850,
-                "elevation_gain_m": 500,
+                "title": "Chele to Syangboche",
+                "start_location": "Chele",
+                "end_location": "Syangboche",
+                "distance_km": 16,
+                "duration_hours": 7,
+                "elevation_start_m": 3050,
+                "elevation_end_m": 3475,
+                "elevation_gain_m": 850,
                 "difficulty": "challenging",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "lodge",
                     "options": [
-                        "Paria campsite"
+                        "Local lodges",
+                        "Basic teahouses"
                     ]
                 },
                 "meals_included": [
@@ -1654,330 +1841,616 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Punta Union Pass (4,750m)",
-                    "Spectacular 360° views",
-                    "Laguna Morococha",
-                    "Dramatic descent"
+                    "Multiple pass crossings",
+                    "Ramchung cave monastery",
+                    "Painted cliffs",
+                    "Remote valleys"
                 ],
-                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
+                "description": "Cross several passes with stunning views. Optional visit to Ramchung cave monastery with ancient Buddhist art."
             },
             {
                 "day": 4,
-                "title": "Paria Valley to Vaqueria",
-                "start_location": "Paria Valley",
-                "end_location": "Vaqueria",
-                "distance_km": 9,
-                "duration_hours": 3,
-                "elevation_start_m": 3850,
-                "elevation_end_m": 3700,
-                "elevation_gain_m": -150,
-                "difficulty": "easy",
+                "title": "Syangboche to Ghami",
+                "start_location": "Syangboche",
+                "end_location": "Ghami",
+                "distance_km": 13,
+                "duration_hours": 6,
+                "elevation_start_m": 3475,
+                "elevation_end_m": 3520,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "end point",
+                    "type": "lodge",
                     "options": [
-                        "Return to Huaraz"
+                        "Dhakmar Lodge",
+                        "Local guesthouses"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
-                    "lunch"
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Gentle valley descent",
-                    "Rural Andean life",
-                    "Trek completion",
-                    "Transport to Huaraz"
+                    "Nyi La pass (4,010m)",
+                    "Ghami village",
+                    "Longest mani wall",
+                    "Red cliffs of Dhakmar"
                 ],
-                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
+                "description": "Pass through Dhakmar with its dramatic red cliffs. Ghami has one of the longest mani walls in Nepal."
+            },
+            {
+                "day": 5,
+                "title": "Ghami to Charang",
+                "start_location": "Ghami",
+                "end_location": "Charang",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3520,
+                "elevation_end_m": 3500,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Charang Lodge",
+                        "Local homestays"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Tsarang monastery",
+                    "Medieval fortress",
+                    "Traditional architecture",
+                    "Approaching Lo Manthang"
+                ],
+                "description": "Visit the impressive Tsarang monastery and fortress. The architecture becomes more Tibetan as you near the capital."
+            },
+            {
+                "day": 6,
+                "title": "Charang to Lo Manthang",
+                "start_location": "Charang",
+                "end_location": "Lo Manthang",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3500,
+                "elevation_end_m": 3840,
+                "elevation_gain_m": 340,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Lotus Holiday Inn",
+                        "Royal Mustang Resort",
+                        "Local lodges"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Lo La pass (3,950m)",
+                    "First view of Lo Manthang",
+                    "Walled city entrance",
+                    "Medieval atmosphere"
+                ],
+                "description": "Exciting arrival at the walled city of Lo Manthang, capital of the former Kingdom of Lo. Explore the medieval streets."
+            },
+            {
+                "day": 7,
+                "title": "Explore Lo Manthang",
+                "start_location": "Lo Manthang",
+                "end_location": "Lo Manthang",
+                "distance_km": 0,
+                "duration_hours": 0,
+                "elevation_start_m": 3840,
+                "elevation_end_m": 3840,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Royal palace",
+                    "Three main monasteries",
+                    "Amchi museum",
+                    "Local culture"
+                ],
+                "description": "Full day exploring Lo Manthang's monasteries, palace, and unique culture. Visit Jampa, Thubchen, and Chodey monasteries."
+            },
+            {
+                "day": 8,
+                "title": "Day Trip to Chhoser",
+                "start_location": "Lo Manthang",
+                "end_location": "Lo Manthang",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 3840,
+                "elevation_end_m": 3840,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Chhoser cave monastery",
+                    "Ancient sky caves",
+                    "Garphu monastery",
+                    "Remote landscapes"
+                ],
+                "description": "Optional day trip to Chhoser village with its remarkable cave monastery and ancient sky caves carved into cliffs."
+            },
+            {
+                "day": 9,
+                "title": "Lo Manthang to Yara",
+                "start_location": "Lo Manthang",
+                "end_location": "Yara",
+                "distance_km": 18,
+                "duration_hours": 7,
+                "elevation_start_m": 3840,
+                "elevation_end_m": 3650,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "basic lodge",
+                    "options": [
+                        "Local homestay",
+                        "Basic lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Different return route",
+                    "Remote villages",
+                    "Spectacular erosion",
+                    "Authentic experience"
+                ],
+                "description": "Take alternative route back through remote areas. Yara is a small village with unique geological formations."
+            },
+            {
+                "day": 10,
+                "title": "Yara to Tangge",
+                "start_location": "Yara",
+                "end_location": "Tangge",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 3650,
+                "elevation_end_m": 3240,
+                "elevation_gain_m": 200,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "basic lodge",
+                    "options": [
+                        "Village homestay",
+                        "Basic lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Remote trail",
+                    "Desert canyon",
+                    "Traditional village",
+                    "Few tourists"
+                ],
+                "description": "Continue through remote terrain to Tangge, one of the most isolated villages in Mustang."
+            },
+            {
+                "day": 11,
+                "title": "Tangge to Chhusang",
+                "start_location": "Tangge",
+                "end_location": "Chhusang",
+                "distance_km": 16,
+                "duration_hours": 7,
+                "elevation_start_m": 3240,
+                "elevation_end_m": 2980,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Hotel Nilgiri",
+                        "Local lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Pa pass (4,200m)",
+                    "Rejoin main trail",
+                    "Spectacular views",
+                    "Nearly complete"
+                ],
+                "description": "Cross high pass before descending to rejoin the main trail at Chhusang. Long but rewarding day."
+            },
+            {
+                "day": 12,
+                "title": "Chhusang to Jomsom",
+                "start_location": "Chhusang",
+                "end_location": "Jomsom",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 2980,
+                "elevation_end_m": 2720,
+                "elevation_gain_m": -260,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Om's Home",
+                        "Hotel Majesty",
+                        "Marco Polo"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Return to Kagbeni",
+                    "Complete circuit",
+                    "Jomsom facilities",
+                    "Trek completion"
+                ],
+                "description": "Final walk back through Kagbeni to Jomsom. Celebrate completing the journey to the forbidden kingdom."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "4-season tent",
-                    "description": "Wind-resistant for exposed camps",
+                    "item": "Wind-proof jacket",
+                    "description": "Strong winds common",
                     "rental_available": true
-                },
-                {
-                    "item": "Sleeping bag",
-                    "description": "-15°C rated for cold nights",
-                    "rental_available": true
-                },
-                {
-                    "item": "Waterproof boots",
-                    "description": "Stream crossings common",
-                    "rental_available": true
-                },
-                {
-                    "item": "Layers for all weather",
-                    "description": "Can snow at pass anytime",
-                    "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Intense at altitude",
+                    "description": "Intense high-altitude sun",
                     "rental_available": false
                 },
                 {
-                    "item": "Water purification",
-                    "description": "Tablets or filter",
+                    "item": "Dust mask/buff",
+                    "description": "For windy, dusty conditions",
                     "rental_available": false
                 },
                 {
-                    "item": "Trekking poles",
-                    "description": "Very helpful for pass day",
+                    "item": "Warm layers",
+                    "description": "Cold nights despite lower altitude",
+                    "rental_available": false
+                },
+                {
+                    "item": "Good hiking boots",
+                    "description": "Rocky, dusty terrain",
+                    "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "20-30L sufficient",
                     "rental_available": true
                 }
             ],
             "recommended": [
                 {
-                    "item": "Gaiters",
-                    "description": "For stream crossings",
+                    "item": "Lip balm with SPF",
+                    "description": "Very dry conditions",
                     "rental_available": false
                 },
                 {
-                    "item": "Down jacket",
-                    "description": "Cold at camps",
-                    "rental_available": true
+                    "item": "Moisturizer",
+                    "description": "Combat dry air",
+                    "rental_available": false
                 },
                 {
-                    "item": "Camera with extra batteries",
-                    "description": "Spectacular scenery",
+                    "item": "Camera gear",
+                    "description": "Unique landscapes",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Huascaran National Park Entry",
+                "name": "Restricted Area Permit",
+                "cost_usd": 500,
+                "cost_npr": 50000,
+                "where_to_obtain": "Only through registered agency in Kathmandu",
+                "validity": "10 days",
+                "notes": "Additional days $50/day"
+            },
+            {
+                "name": "Annapurna Conservation Area Permit",
                 "cost_usd": 30,
-                "cost_pen": 90,
-                "where_to_obtain": "Park office in Huaraz or entrance",
-                "validity": "Valid for 21 days"
+                "cost_npr": 3000,
+                "where_to_obtain": "Kathmandu or Pokhara",
+                "validity": "Duration of trek"
             }
         ],
         "costs": {
-            "permit_total_usd": 30,
-            "guide_daily_usd": 50,
-            "cook_daily_usd": 30,
-            "muleteer_daily_usd": 25,
-            "pack_animal_daily_usd": 15,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 60,
+            "permit_total_usd": 530,
+            "guide_daily_usd": 30,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 15,
+            "meals_daily_usd": 25,
+            "transportation_usd": 300,
             "total_budget_range_usd": {
-                "min": 200,
-                "max": 600
+                "min": 1500,
+                "max": 3000
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Quechua",
-                "Mestizo"
+                "Loba (Tibetan origin)"
             ],
-            "primary_religion": "Catholic with Andean traditions",
+            "primary_religion": "Tibetan Buddhism",
             "languages": [
-                "Spanish",
-                "Quechua",
-                "Limited English"
+                "Loba",
+                "Tibetan",
+                "Nepali"
             ],
             "customs_etiquette": [
-                "Respect mountain spirits (Apus)",
-                "Ask permission before photographing locals",
-                "Support local economy",
-                "Participate in coca leaf offerings if invited"
+                "Photography restrictions in monasteries",
+                "Respect the former king if met",
+                "Conservative dress required",
+                "Remove shoes when entering homes",
+                "Walk clockwise around religious sites",
+                "Don't touch religious artifacts"
             ],
             "local_foods": [
                 {
-                    "name": "Pachamanca",
-                    "description": "Earth oven cooked feast"
+                    "name": "Tsampa",
+                    "description": "Roasted barley flour staple"
                 },
                 {
-                    "name": "Cuy",
-                    "description": "Guinea pig delicacy"
+                    "name": "Butter tea",
+                    "description": "Traditional Tibetan tea"
                 },
                 {
-                    "name": "Quinoa soup",
-                    "description": "High-altitude superfood"
+                    "name": "Tingmo",
+                    "description": "Steamed Tibetan bread"
+                },
+                {
+                    "name": "Local apple brandy",
+                    "description": "Mustang specialty"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Tiji Festival",
+                    "when": "May",
+                    "description": "Three-day festival in Lo Manthang"
+                },
+                {
+                    "name": "Yartung Festival",
+                    "when": "August",
+                    "description": "Horse racing and celebrations"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "high",
+                "risk_level": "moderate",
                 "prevention": [
-                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
-                    "Consider day hikes first",
-                    "Climb slowly on pass day",
-                    "Stay hydrated",
-                    "Consider Diamox"
-                ],
-                "critical_points": [
-                    "Punta Union Pass day"
+                    "Gradual ascent built in",
+                    "Maximum altitude only 4,230m",
+                    "Stay hydrated in dry climate",
+                    "Rest days in Lo Manthang"
                 ]
+            },
+            "main_concerns": {
+                "wind_and_dust": {
+                    "risk_level": "high",
+                    "description": "Strong afternoon winds",
+                    "prevention": [
+                        "Start trekking early",
+                        "Protect eyes and face",
+                        "Stay hydrated",
+                        "Use lip balm"
+                    ]
+                },
+                "dehydration": {
+                    "risk_level": "high",
+                    "description": "Very dry climate",
+                    "prevention": [
+                        "Drink 4-5 liters daily",
+                        "Avoid alcohol",
+                        "Use moisturizer",
+                        "Monitor urine color"
+                    ]
+                }
             },
             "medical_facilities": [
                 {
-                    "location": "Trail",
-                    "type": "None - remote area"
+                    "location": "Jomsom",
+                    "type": "Basic health post"
                 },
                 {
-                    "location": "Huaraz",
-                    "type": "Good hospitals and clinics"
+                    "location": "Lo Manthang",
+                    "type": "Amchi traditional medicine"
                 }
-            ],
-            "evacuation": {
-                "method": "Horse/mule to road, then vehicle",
-                "cost_usd": "1000-3000",
-                "insurance_required": true,
-                "response_time": "6-12 hours"
-            }
+            ]
         },
         "weather_patterns": {
-            "dry_season": {
+            "spring": {
                 "months": [
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September"
+                    "March",
+                    "April",
+                    "May"
                 ],
-                "day_temp_c": "15 to 20",
+                "day_temp_c": "10 to 20",
                 "night_temp_c": "-5 to 5",
                 "precipitation": "Minimal",
-                "notes": "Can snow at pass anytime"
+                "wind": "Strong afternoon winds",
+                "notes": "Can be dusty"
             },
-            "wet_season": {
+            "monsoon": {
                 "months": [
+                    "June",
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Some rain (rain shadow)",
+                "wind": "Less wind",
+                "notes": "Possible to trek"
+            },
+            "autumn": {
+                "months": [
+                    "September",
                     "October",
-                    "November",
-                    "December",
-                    "January",
-                    "February",
-                    "March",
-                    "April"
+                    "November"
                 ],
                 "day_temp_c": "10 to 18",
-                "night_temp_c": "0 to 8",
-                "precipitation": "Daily afternoon rain",
-                "notes": "Trail muddy, clouds obscure views"
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Very low",
+                "wind": "Moderate",
+                "notes": "Best season"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Private transport",
-                    "from": "Huaraz",
-                    "to": "Cashapampa",
-                    "duration": "3 hours",
-                    "cost_usd": 30,
-                    "notes": "Usually arranged with guide/agency"
+                    "method": "Flight",
+                    "from": "Pokhara",
+                    "to": "Jomsom",
+                    "duration": "20 minutes",
+                    "cost_usd": 120,
+                    "frequency": "Morning flights only"
+                },
+                {
+                    "method": "Drive + Trek",
+                    "from": "Pokhara",
+                    "to": "Jomsom",
+                    "duration": "2 days",
+                    "cost_usd": 50,
+                    "notes": "Via Beni and Ghasa"
                 }
             ],
-            "from_end": [
-                {
-                    "method": "Private transport",
-                    "from": "Vaqueria",
-                    "to": "Huaraz",
-                    "duration": "3 hours",
-                    "cost_usd": 30,
-                    "notes": "Pre-arranged pickup essential"
-                }
-            ]
+            "from_end": "Same options in reverse"
         },
         "accommodation": {
-            "type": "Camping only",
-            "description": "Designated camping areas",
+            "type": "Basic lodges",
+            "description": "Simple but adequate",
             "amenities": [
-                "Flat tent sites",
-                "Water sources nearby",
-                "Basic toilet facilities at some sites",
-                "No showers on trail",
-                "Pack out all waste"
+                "Basic rooms",
+                "Shared bathrooms mostly",
+                "Solar hot water (limited)",
+                "Charging available",
+                "Basic meals",
+                "No WiFi in most places"
             ],
-            "booking": "First come, first served",
-            "cost_per_night_usd": {
-                "camping": "5"
-            }
+            "booking": "Not required but limited options",
+            "cost_per_night_usd": "10-20"
         },
         "difficulty_details": {
-            "physical_demands": "Good fitness for altitude and pass day",
+            "physical_demands": "Moderate fitness sufficient",
             "technical_skills": "None required",
-            "altitude_challenge": "Significant - proper acclimatization essential",
-            "trail_conditions": "Well-defined path, rocky on pass",
-            "daily_hiking_hours": "5-8 hours",
-            "total_elevation_gain": 1200,
-            "total_elevation_loss": 1350
+            "altitude_challenge": "Moderate",
+            "trail_conditions": "Dusty, rocky, well-defined",
+            "daily_hiking_hours": "5-7 hours",
+            "total_elevation_gain": 5000,
+            "total_elevation_loss": 5000
         },
         "alternative_routes": [
             {
-                "name": "Alpamayo Circuit",
-                "variation": "Extended version via Alpamayo base camp",
-                "extra_days": 3,
+                "name": "Eastern Mustang",
+                "variation": "Via Luri Gompa",
+                "extra_days": 2,
                 "highlights": [
-                    "See Alpamayo up close",
-                    "More remote",
-                    "Additional passes"
+                    "Remote monasteries",
+                    "Fewer tourists",
+                    "Challenging terrain"
                 ]
             },
             {
-                "name": "Santa Cruz-Llanganuco",
-                "variation": "Exit via Llanganuco",
-                "extra_days": 0,
+                "name": "Teri La Pass",
+                "variation": "High route option",
+                "extra_days": 1,
                 "highlights": [
-                    "Different exit valley",
-                    "Laguna 69 option",
-                    "Transport flexibility"
+                    "5,595m pass",
+                    "Connects to Nar Phu",
+                    "Technical"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Taullipampa camp",
+                "location": "Lo Manthang walls",
                 "best_time": "Sunrise/sunset",
                 "subjects": [
-                    "Taulliraju",
-                    "Alpenglow on peaks",
-                    "Star photography"
+                    "Medieval architecture",
+                    "Mountain backdrop",
+                    "Daily life"
                 ]
             },
             {
-                "location": "Punta Union Pass",
-                "best_time": "Morning",
+                "location": "Red cliffs of Dhakmar",
+                "best_time": "Late afternoon",
                 "subjects": [
-                    "360° panorama",
-                    "Both valleys",
-                    "Achievement shots"
+                    "Eroded landscapes",
+                    "Color contrasts",
+                    "Geological formations"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How does this compare to the Inca Trail?",
-                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
+                "question": "Why is the permit so expensive?",
+                "answer": "Upper Mustang was closed until 1992 and remains restricted to preserve its unique Tibetan culture. The high permit fee limits visitors and funds conservation."
             },
             {
-                "question": "Can I do it independently?",
-                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
+                "question": "Can I trek independently?",
+                "answer": "No, you must be with a registered guide due to restricted area regulations. This helps preserve the culture and ensures proper permits."
             },
             {
-                "question": "Is acclimatization really necessary?",
-                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
+                "question": "Is it worth the cost?",
+                "answer": "For those interested in Tibetan culture, unique landscapes, and off-beaten paths, absolutely. It's unlike anywhere else in Nepal."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 85,
+        "popularity_score": 82,
         "seo": {
-            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
-            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
+            "meta_title": "Upper Mustang Trek Guide 2024 | Nepal's Forbidden Kingdom",
+            "meta_description": "Complete guide to trekking Upper Mustang, the former forbidden kingdom. 12-day journey through Tibetan culture, desert landscapes, and ancient monasteries.",
             "keywords": [
-                "santa cruz trek",
-                "cordillera blanca",
-                "peru trekking",
-                "huaraz hiking",
-                "punta union pass"
+                "upper mustang trek",
+                "forbidden kingdom",
+                "lo manthang",
+                "nepal restricted area",
+                "tibetan culture trek"
             ]
         }
     };

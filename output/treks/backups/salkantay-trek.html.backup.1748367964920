@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
-    <meta name="description" content="Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.">
+    <title>Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail</title>
+    <meta name="description" content="Ultimate guide to the Salkantay Trek to Machu Picchu. Detailed 5-day itinerary, no permits needed, costs, gear list, and expert tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/santa-cruz-trek.jpg');
+            background-image: url('/images/treks/covers/salkantay-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,23 +952,23 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Santa Cruz Trek</h1>
+            <h1>Salkantay Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4</span>
+                    <span class="hero-stat-value">5</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,750m</span>
+                    <span class="hero-stat-value">4,600m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">50km</span>
+                    <span class="hero-stat-value">75km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">moderate</span>
+                    <span class="hero-stat-value">challenging</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -993,7 +993,7 @@
             <div class="overview-main">
                 <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.
+                    The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.
                 </p>
                 
                 <div class="highlights-list">
@@ -1045,16 +1045,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">50 km / 31 mi</span>
+                    <span class="info-value">75 km / 47 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,750m (15,584ft)</span>
+                    <span class="info-value">4,600m (15,092ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">moderate</span>
+                        <span class="difficulty-badge">challenging</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -1063,16 +1063,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Huaraz</span>
+                    <span class="info-value">Cusco</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">3 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$200 - $600</span>
+                        <span class="price-range">$300 - $800</span>
                     </span>
                 </div>
             </div>
@@ -1081,7 +1081,7 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>4-Day Detailed Itinerary</h2>
+        <h2>5-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Cashapampa to Llamacorral</h3>
+          <h3 class="day-title">Cusco to Soraypampa</h3>
           <div class="day-stats">
             <span>📏 12km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 +100m</span>
-            <span>🏔️ 3,760m</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 3,850m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo.</p>
+      <p class="day-description">Drive from Cusco to Mollepata, then to Challacancha. Trek through valleys to Soraypampa with optional afternoon hike to stunning turquoise Humantay Lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Santa Cruz valley entrance</span><span class="day-highlight">Alpamayo views</span><span class="day-highlight">River valley hiking</span><span class="day-highlight">Acclimatization day</span>
+          <span class="day-highlight">Humantay Lake option</span><span class="day-highlight">First views of Salkantay</span><span class="day-highlight">Apurimac Valley</span><span class="day-highlight">Acclimatization hike</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Llamacorral to Taullipampa</h3>
+          <h3 class="day-title">Soraypampa to Chaullay</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +490m</span>
-            <span>🏔️ 4,250m</span>
+            <span>📏 22km</span>
+            <span>⏱️ 10 hours</span>
+            <span>📈 +750m</span>
+            <span>🏔️ 2,900m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks.</p>
+      <p class="day-description">The big day! Early start for the challenging climb to Salkantay Pass at 4,600m. Incredible views of sacred Salkantay peak before long descent into warmer cloud forest.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Laguna Jatuncocha</span><span class="day-highlight">Taulliraju views (5,830m)</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">360-degree mountain panorama</span>
+          <span class="day-highlight">Salkantay Pass (4,600m)</span><span class="day-highlight">Salkantay peak close views</span><span class="day-highlight">Dramatic ecosystem change</span><span class="day-highlight">Descent to cloud forest</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Taullipampa to Paria Valley via Punta Union</h3>
+          <h3 class="day-title">Chaullay to Santa Teresa</h3>
           <div class="day-stats">
             <span>📏 15km</span>
-            <span>⏱️ 8 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 3,850m</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -1350m</span>
+            <span>🏔️ 1,550m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley.</p>
+      <p class="day-description">Beautiful day hiking through cloud forest with increasing vegetation and warmth. Pass coffee and fruit plantations. Optional visit to Cocalmayo hot springs in afternoon.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Punta Union Pass (4,750m)</span><span class="day-highlight">Spectacular 360° views</span><span class="day-highlight">Laguna Morococha</span><span class="day-highlight">Dramatic descent</span>
+          <span class="day-highlight">Cloud forest biodiversity</span><span class="day-highlight">Coffee plantations</span><span class="day-highlight">Waterfalls</span><span class="day-highlight">Hot springs option</span>
         </div>
       
     </div>
@@ -1155,19 +1155,40 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Paria Valley to Vaqueria</h3>
+          <h3 class="day-title">Santa Teresa to Aguas Calientes</h3>
           <div class="day-stats">
-            <span>📏 9km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 -150m</span>
-            <span>🏔️ 3,700m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 2,040m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon.</p>
+      <p class="day-description">Optional zipline before hiking to Hidroelectrica. Walk along train tracks to Aguas Calientes or take optional train. First distant views of Machu Picchu from Llactapata.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle valley descent</span><span class="day-highlight">Rural Andean life</span><span class="day-highlight">Trek completion</span><span class="day-highlight">Transport to Huaraz</span>
+          <span class="day-highlight">Llactapata ruins</span><span class="day-highlight">First Machu Picchu views</span><span class="day-highlight">Urubamba River</span><span class="day-highlight">Train tracks walk</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Machu Picchu Visit</h3>
+          <div class="day-stats">
+            <span>📏 0km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +390m</span>
+            <span>🏔️ 2,430m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Early morning bus or hike to Machu Picchu for sunrise. Guided tour of the ancient citadel. Optional climb Huayna Picchu or Machu Picchu Mountain. Afternoon train to Cusco.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Machu Picchu sunrise</span><span class="day-highlight">Guided tour of citadel</span><span class="day-highlight">Optional Huayna Picchu</span><span class="day-highlight">Return to Cusco</span>
         </div>
       
     </div>
@@ -1192,8 +1213,8 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">4-season tent</div>
-          <div class="gear-description">Wind-resistant for exposed camps</div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Waterproof with ankle support</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1201,23 +1222,39 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-15°C rated for cold nights</div>
+          <div class="gear-description">-15°C for pass night</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof boots</div>
-          <div class="gear-description">Stream crossings common</div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Quality jacket and pants</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Layers for all weather</div>
-          <div class="gear-description">Can snow at pass anytime</div>
+          <div class="gear-name">Warm clothing</div>
+          <div class="gear-description">Down jacket, fleece, thermals</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Daypack</div>
+          <div class="gear-description">30-40L capacity</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning start</div>
         </div>
         
       </li>
@@ -1225,15 +1262,15 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Intense at altitude</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or filter</div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">3L capacity total</div>
         </div>
         
       </li>
@@ -1241,7 +1278,7 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful for pass day</div>
+          <div class="gear-description">Highly recommended</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1259,23 +1296,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For stream crossings</div>
+          <div class="gear-description">For muddy sections</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at camps</div>
+          <div class="gear-name">Swimsuit</div>
+          <div class="gear-description">For hot springs</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera with extra batteries</div>
-          <div class="gear-description">Spectacular scenery</div>
+          <div class="gear-name">Sandals</div>
+          <div class="gear-description">For camp and river crossings</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Cash</div>
+          <div class="gear-description">For tips and extras</div>
         </div>
         
       </li>
@@ -1298,7 +1343,14 @@
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Dry Season</h3>
       <p class="season-months">May, June, July, August, September</p>
-      <p>Clear skies, stable weather, cold nights at altitude</p>
+      <p>Clear mountain views, cold at altitude, stable weather</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">April, October, November</p>
+      <p>Variable weather, fewer trekkers, lush landscapes</p>
     </div>
   
         </div>
@@ -1321,27 +1373,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$30</span>
-    </div>
-    <div class="cost-item">
-      <span>Guide (per day)</span>
       <span>$50</span>
     </div>
     <div class="cost-item">
+      <span>Guide (per day)</span>
+      <span>$30</span>
+    </div>
+    <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$15</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
+      <span>$25</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$60</span>
+      <span>$150</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$200 - $600</span>
+      <span>$300 - $800</span>
     </div>
   
         </div>
@@ -1363,10 +1415,10 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How does this compare to the Inca Trail?</span>
+        <span>Is it as good as the Inca Trail?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded.</div>
+      <div class="faq-answer">Different but equally spectacular. More challenging, fewer ruins, but stunning mountain scenery and no permit stress. Many consider it superior for landscapes.</div>
     </div>
   
     <div class="faq-item">
@@ -1374,15 +1426,23 @@
         <span>Can I do it independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude.</div>
+      <div class="faq-answer">Yes, unlike the Inca Trail. But guided tours provide logistics, meals, and camping equipment. Solo requires carrying everything.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is acclimatization really necessary?</span>
+        <span>How cold does it get?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69.</div>
+      <div class="faq-answer">Very cold at Salkantay Pass - can be -10°C at night. But by day 3 you're in warm cloud forest. Pack for all climates.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is altitude sickness common?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, especially on pass day. Crucial to acclimatize in Cusco first. The rapid descent helps recovery.</div>
     </div>
   
         </div>
@@ -1425,26 +1485,19 @@
             }
         }
 
-                                                                    function scrollToSectionTop() {
-            setTimeout(() => {
-                const navTabs = document.querySelector('.nav-tabs');
-                if (navTabs) {
-                    // Get nav height to account for sticky positioning
-                    const navHeight = navTabs.offsetHeight;
-                    // Get the currently active section
-                    const activeSection = document.querySelector('.content-section.active');
-                    if (activeSection) {
-                        // Get the position of the active section
-                        const sectionTop = activeSection.offsetTop;
-                        // Scroll to section minus nav height to show content at top
-                        const targetPosition = sectionTop - navHeight - 10;
-                        window.scrollTo({
-                            top: Math.max(0, targetPosition),
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            }, 100);
+                                                            function scrollToSectionTop() {
+            // Get navigation height first
+            const navTabs = document.querySelector('.nav-tabs');
+            if (!navTabs) return;
+            
+            const navHeight = navTabs.offsetHeight;
+            const targetPosition = navTabs.offsetTop + navHeight + 20;
+            
+            // INSTANT scroll to target position (no animation during tab switch)
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'instant'  // Key change: instant, not smooth
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1529,33 +1582,33 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "santa-cruz-trek",
-        "name": "Santa Cruz Trek",
-        "slug": "santa-cruz-trek",
+        "_id": "salkantay-trek",
+        "name": "Salkantay Trek",
+        "slug": "salkantay-trek",
         "region": "Peru/Andes",
         "country": "Peru",
-        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
+        "summary": "The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.",
         "duration": {
             "min_days": 4,
             "max_days": 5,
-            "recommended_days": 4
+            "recommended_days": 5
         },
-        "distance_km": 50,
-        "difficulty": "moderate",
-        "max_elevation_m": 4750,
-        "starting_elevation_m": 3900,
-        "airport": "Lima (LIM)",
-        "nearest_city": "Huaraz",
+        "distance_km": 75,
+        "difficulty": "challenging",
+        "max_elevation_m": 4600,
+        "starting_elevation_m": 3350,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
         "coordinates": {
             "start": {
-                "lat": -8.9689,
-                "lng": -77.3928,
-                "location": "Cashapampa"
+                "lat": -13.3886,
+                "lng": -72.7973,
+                "location": "Mollepata"
             },
             "end": {
-                "lat": -8.8681,
-                "lng": -77.7089,
-                "location": "Vaqueria"
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
             }
         },
         "best_seasons": [
@@ -1568,25 +1621,36 @@
                     "August",
                     "September"
                 ],
-                "description": "Clear skies, stable weather, cold nights at altitude"
+                "description": "Clear mountain views, cold at altitude, stable weather"
+            },
+            {
+                "name": "Shoulder Season",
+                "months": [
+                    "April",
+                    "October",
+                    "November"
+                ],
+                "description": "Variable weather, fewer trekkers, lush landscapes"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Cashapampa to Llamacorral",
-                "start_location": "Cashapampa",
-                "end_location": "Llamacorral",
+                "title": "Cusco to Soraypampa",
+                "start_location": "Cusco",
+                "end_location": "Soraypampa",
                 "distance_km": 12,
                 "duration_hours": 5,
-                "elevation_start_m": 3900,
-                "elevation_end_m": 3760,
-                "elevation_gain_m": 100,
-                "difficulty": "easy",
+                "elevation_start_m": 3350,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 500,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "camping/lodge",
                     "options": [
-                        "Llamacorral campsite"
+                        "Sky Camp",
+                        "Salkantay Lodge",
+                        "Standard camping"
                     ]
                 },
                 "meals_included": [
@@ -1594,28 +1658,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Santa Cruz valley entrance",
-                    "Alpamayo views",
-                    "River valley hiking",
-                    "Acclimatization day"
+                    "Humantay Lake option",
+                    "First views of Salkantay",
+                    "Apurimac Valley",
+                    "Acclimatization hike"
                 ],
-                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
+                "description": "Drive from Cusco to Mollepata, then to Challacancha. Trek through valleys to Soraypampa with optional afternoon hike to stunning turquoise Humantay Lake."
             },
             {
                 "day": 2,
-                "title": "Llamacorral to Taullipampa",
-                "start_location": "Llamacorral",
-                "end_location": "Taullipampa",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 3760,
-                "elevation_end_m": 4250,
-                "elevation_gain_m": 490,
-                "difficulty": "moderate",
+                "title": "Soraypampa to Chaullay",
+                "start_location": "Soraypampa",
+                "end_location": "Chaullay",
+                "distance_km": 22,
+                "duration_hours": 10,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 2900,
+                "elevation_gain_m": 750,
+                "difficulty": "very challenging",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "camping/lodge",
                     "options": [
-                        "Taullipampa campsite"
+                        "Chaullay camp",
+                        "Andenes camp",
+                        "Lodge options"
                     ]
                 },
                 "meals_included": [
@@ -1624,28 +1690,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Laguna Jatuncocha",
-                    "Taulliraju views (5,830m)",
-                    "Alpine meadows",
-                    "360-degree mountain panorama"
+                    "Salkantay Pass (4,600m)",
+                    "Salkantay peak close views",
+                    "Dramatic ecosystem change",
+                    "Descent to cloud forest"
                 ],
-                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
+                "description": "The big day! Early start for the challenging climb to Salkantay Pass at 4,600m. Incredible views of sacred Salkantay peak before long descent into warmer cloud forest."
             },
             {
                 "day": 3,
-                "title": "Taullipampa to Paria Valley via Punta Union",
-                "start_location": "Taullipampa",
-                "end_location": "Paria Valley",
+                "title": "Chaullay to Santa Teresa",
+                "start_location": "Chaullay",
+                "end_location": "Santa Teresa",
                 "distance_km": 15,
-                "duration_hours": 8,
-                "elevation_start_m": 4250,
-                "elevation_end_m": 3850,
-                "elevation_gain_m": 500,
-                "difficulty": "challenging",
+                "duration_hours": 6,
+                "elevation_start_m": 2900,
+                "elevation_end_m": 1550,
+                "elevation_gain_m": -1350,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "camping/lodge",
                     "options": [
-                        "Paria campsite"
+                        "Santa Teresa camp",
+                        "Local lodges",
+                        "Eco lodge"
                     ]
                 },
                 "meals_included": [
@@ -1654,28 +1722,28 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Punta Union Pass (4,750m)",
-                    "Spectacular 360° views",
-                    "Laguna Morococha",
-                    "Dramatic descent"
+                    "Cloud forest biodiversity",
+                    "Coffee plantations",
+                    "Waterfalls",
+                    "Hot springs option"
                 ],
-                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
+                "description": "Beautiful day hiking through cloud forest with increasing vegetation and warmth. Pass coffee and fruit plantations. Optional visit to Cocalmayo hot springs in afternoon."
             },
             {
                 "day": 4,
-                "title": "Paria Valley to Vaqueria",
-                "start_location": "Paria Valley",
-                "end_location": "Vaqueria",
-                "distance_km": 9,
-                "duration_hours": 3,
-                "elevation_start_m": 3850,
-                "elevation_end_m": 3700,
-                "elevation_gain_m": -150,
-                "difficulty": "easy",
+                "title": "Santa Teresa to Aguas Calientes",
+                "start_location": "Santa Teresa",
+                "end_location": "Aguas Calientes",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 1550,
+                "elevation_end_m": 2040,
+                "elevation_gain_m": 490,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "end point",
+                    "type": "hotel",
                     "options": [
-                        "Return to Huaraz"
+                        "Various hotels in Aguas Calientes"
                     ]
                 },
                 "meals_included": [
@@ -1683,91 +1751,144 @@
                     "lunch"
                 ],
                 "highlights": [
-                    "Gentle valley descent",
-                    "Rural Andean life",
-                    "Trek completion",
-                    "Transport to Huaraz"
+                    "Llactapata ruins",
+                    "First Machu Picchu views",
+                    "Urubamba River",
+                    "Train tracks walk"
                 ],
-                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
+                "description": "Optional zipline before hiking to Hidroelectrica. Walk along train tracks to Aguas Calientes or take optional train. First distant views of Machu Picchu from Llactapata."
+            },
+            {
+                "day": 5,
+                "title": "Machu Picchu Visit",
+                "start_location": "Aguas Calientes",
+                "end_location": "Cusco",
+                "distance_km": 0,
+                "duration_hours": 8,
+                "elevation_start_m": 2040,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": 390,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "none",
+                    "options": [
+                        "Return to Cusco"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Machu Picchu sunrise",
+                    "Guided tour of citadel",
+                    "Optional Huayna Picchu",
+                    "Return to Cusco"
+                ],
+                "description": "Early morning bus or hike to Machu Picchu for sunrise. Guided tour of the ancient citadel. Optional climb Huayna Picchu or Machu Picchu Mountain. Afternoon train to Cusco."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "4-season tent",
-                    "description": "Wind-resistant for exposed camps",
+                    "item": "Trekking boots",
+                    "description": "Waterproof with ankle support",
                     "rental_available": true
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "-15°C rated for cold nights",
+                    "description": "-15°C for pass night",
                     "rental_available": true
                 },
                 {
-                    "item": "Waterproof boots",
-                    "description": "Stream crossings common",
+                    "item": "Rain gear",
+                    "description": "Quality jacket and pants",
                     "rental_available": true
                 },
                 {
-                    "item": "Layers for all weather",
-                    "description": "Can snow at pass anytime",
+                    "item": "Warm clothing",
+                    "description": "Down jacket, fleece, thermals",
+                    "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "30-40L capacity",
+                    "rental_available": true
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning start",
                     "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Intense at altitude",
+                    "description": "Hat, sunglasses, sunscreen",
                     "rental_available": false
                 },
                 {
-                    "item": "Water purification",
-                    "description": "Tablets or filter",
+                    "item": "Water bottles",
+                    "description": "3L capacity total",
                     "rental_available": false
                 },
                 {
                     "item": "Trekking poles",
-                    "description": "Very helpful for pass day",
+                    "description": "Highly recommended",
                     "rental_available": true
                 }
             ],
             "recommended": [
                 {
                     "item": "Gaiters",
-                    "description": "For stream crossings",
+                    "description": "For muddy sections",
                     "rental_available": false
                 },
                 {
-                    "item": "Down jacket",
-                    "description": "Cold at camps",
-                    "rental_available": true
+                    "item": "Swimsuit",
+                    "description": "For hot springs",
+                    "rental_available": false
                 },
                 {
-                    "item": "Camera with extra batteries",
-                    "description": "Spectacular scenery",
+                    "item": "Sandals",
+                    "description": "For camp and river crossings",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash",
+                    "description": "For tips and extras",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Huascaran National Park Entry",
-                "cost_usd": 30,
-                "cost_pen": 90,
-                "where_to_obtain": "Park office in Huaraz or entrance",
-                "validity": "Valid for 21 days"
+                "name": "None for trail",
+                "cost_usd": 0,
+                "notes": "No permits needed for Salkantay route"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Online or through operator",
+                "validity": "Specific date and time"
+            },
+            {
+                "name": "Huayna Picchu (optional)",
+                "cost_usd": 15,
+                "cost_pen": 50,
+                "where_to_obtain": "Book with Machu Picchu ticket",
+                "validity": "Limited to 400/day"
             }
         ],
         "costs": {
-            "permit_total_usd": 30,
-            "guide_daily_usd": 50,
-            "cook_daily_usd": 30,
-            "muleteer_daily_usd": 25,
-            "pack_animal_daily_usd": 15,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 60,
+            "permit_total_usd": 50,
+            "guide_daily_usd": 30,
+            "porter_daily_usd": 25,
+            "accommodation_daily_usd": 15,
+            "meals_daily_usd": 25,
+            "transportation_usd": 150,
             "total_budget_range_usd": {
-                "min": 200,
-                "max": 600
+                "min": 300,
+                "max": 800
             }
         },
         "cultural_information": {
@@ -1779,58 +1900,69 @@
             "languages": [
                 "Spanish",
                 "Quechua",
-                "Limited English"
+                "Basic English"
             ],
             "customs_etiquette": [
-                "Respect mountain spirits (Apus)",
-                "Ask permission before photographing locals",
-                "Support local economy",
-                "Participate in coca leaf offerings if invited"
+                "Respect sacred mountains (Apus)",
+                "Participate in coca leaf ceremonies",
+                "Don't point at mountains with one finger",
+                "Ask before photographing locals",
+                "Support local communities by buying crafts"
             ],
             "local_foods": [
                 {
                     "name": "Pachamanca",
-                    "description": "Earth oven cooked feast"
+                    "description": "Earth oven cooked meats and vegetables"
                 },
                 {
                     "name": "Cuy",
-                    "description": "Guinea pig delicacy"
+                    "description": "Guinea pig - traditional delicacy"
                 },
                 {
-                    "name": "Quinoa soup",
-                    "description": "High-altitude superfood"
+                    "name": "Chicha morada",
+                    "description": "Purple corn drink"
+                },
+                {
+                    "name": "Aji de gallina",
+                    "description": "Spicy creamed chicken"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "high",
+                "risk_level": "very high",
                 "prevention": [
-                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
-                    "Consider day hikes first",
-                    "Climb slowly on pass day",
-                    "Stay hydrated",
-                    "Consider Diamox"
+                    "Essential to acclimatize in Cusco",
+                    "Ascend gradually",
+                    "Hydrate constantly",
+                    "Coca tea and leaves",
+                    "Consider Diamox",
+                    "No alcohol before pass day"
                 ],
                 "critical_points": [
-                    "Punta Union Pass day"
+                    "Salkantay Pass day",
+                    "First night at altitude"
                 ]
             },
             "medical_facilities": [
                 {
                     "location": "Trail",
-                    "type": "None - remote area"
+                    "type": "Basic first aid with guides"
                 },
                 {
-                    "location": "Huaraz",
-                    "type": "Good hospitals and clinics"
+                    "location": "Santa Teresa",
+                    "type": "Basic health post"
+                },
+                {
+                    "location": "Aguas Calientes",
+                    "type": "Medical center"
                 }
             ],
             "evacuation": {
-                "method": "Horse/mule to road, then vehicle",
+                "method": "Horse to road, then vehicle",
                 "cost_usd": "1000-3000",
                 "insurance_required": true,
-                "response_time": "6-12 hours"
+                "response_time": "4-8 hours"
             }
         },
         "weather_patterns": {
@@ -1842,142 +1974,163 @@
                     "August",
                     "September"
                 ],
-                "day_temp_c": "15 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Minimal",
-                "notes": "Can snow at pass anytime"
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "-10 to 5",
+                "precipitation": "Rare",
+                "notes": "Very cold at pass, warm in jungle"
             },
             "wet_season": {
                 "months": [
-                    "October",
-                    "November",
                     "December",
                     "January",
                     "February",
-                    "March",
-                    "April"
+                    "March"
                 ],
-                "day_temp_c": "10 to 18",
-                "night_temp_c": "0 to 8",
-                "precipitation": "Daily afternoon rain",
-                "notes": "Trail muddy, clouds obscure views"
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "-5 to 10",
+                "precipitation": "Daily rain likely",
+                "notes": "Muddy trails, cloud forest lush"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Private transport",
-                    "from": "Huaraz",
-                    "to": "Cashapampa",
+                    "method": "Private van",
+                    "from": "Cusco",
+                    "to": "Mollepata/Challacancha",
                     "duration": "3 hours",
                     "cost_usd": 30,
-                    "notes": "Usually arranged with guide/agency"
+                    "notes": "Usually included in tour"
                 }
             ],
             "from_end": [
                 {
-                    "method": "Private transport",
-                    "from": "Vaqueria",
-                    "to": "Huaraz",
-                    "duration": "3 hours",
-                    "cost_usd": 30,
-                    "notes": "Pre-arranged pickup essential"
+                    "method": "Train + Bus",
+                    "from": "Aguas Calientes",
+                    "to": "Cusco",
+                    "duration": "4 hours",
+                    "cost_usd": 100,
+                    "notes": "Via Ollantaytambo"
                 }
             ]
         },
         "accommodation": {
-            "type": "Camping only",
-            "description": "Designated camping areas",
+            "type": "Camping and lodges",
+            "description": "Mix of camping and basic lodges",
             "amenities": [
-                "Flat tent sites",
-                "Water sources nearby",
-                "Basic toilet facilities at some sites",
-                "No showers on trail",
-                "Pack out all waste"
+                "Camping: tents, dining tent, basic toilets",
+                "Lodges: beds, hot showers, electricity",
+                "Sky Camps: glamping with beds",
+                "Hotels in Aguas Calientes"
             ],
-            "booking": "First come, first served",
+            "booking": "Can book independently or with operator",
             "cost_per_night_usd": {
-                "camping": "5"
+                "camping": "included in tour",
+                "basic_lodge": "20-30",
+                "sky_camp": "100+"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Good fitness for altitude and pass day",
+            "physical_demands": "High - long days and extreme altitude",
             "technical_skills": "None required",
-            "altitude_challenge": "Significant - proper acclimatization essential",
-            "trail_conditions": "Well-defined path, rocky on pass",
-            "daily_hiking_hours": "5-8 hours",
-            "total_elevation_gain": 1200,
-            "total_elevation_loss": 1350
+            "altitude_challenge": "Very significant at pass",
+            "trail_conditions": "Variable - rocky, muddy, steep",
+            "daily_hiking_hours": "6-10 hours",
+            "total_elevation_gain": 3100,
+            "total_elevation_loss": 4150
         },
         "alternative_routes": [
             {
-                "name": "Alpamayo Circuit",
-                "variation": "Extended version via Alpamayo base camp",
+                "name": "Salkantay + Inca Trail",
+                "variation": "Combine both treks",
                 "extra_days": 3,
                 "highlights": [
-                    "See Alpamayo up close",
-                    "More remote",
-                    "Additional passes"
+                    "Ultimate experience",
+                    "Enter via Sun Gate",
+                    "More ruins"
                 ]
             },
             {
-                "name": "Santa Cruz-Llanganuco",
-                "variation": "Exit via Llanganuco",
+                "name": "Mollepata Circuit",
+                "variation": "Return different route",
+                "extra_days": 1,
+                "highlights": [
+                    "Less crowds",
+                    "More villages",
+                    "Complete circuit"
+                ]
+            },
+            {
+                "name": "Lodge-to-Lodge",
+                "variation": "Luxury version",
                 "extra_days": 0,
                 "highlights": [
-                    "Different exit valley",
-                    "Laguna 69 option",
-                    "Transport flexibility"
+                    "Mountain lodges",
+                    "Hot showers daily",
+                    "Gourmet meals"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Taullipampa camp",
-                "best_time": "Sunrise/sunset",
+                "location": "Humantay Lake",
+                "best_time": "Morning",
                 "subjects": [
-                    "Taulliraju",
-                    "Alpenglow on peaks",
-                    "Star photography"
+                    "Turquoise waters",
+                    "Mountain reflections",
+                    "Ice formations"
                 ]
             },
             {
-                "location": "Punta Union Pass",
-                "best_time": "Morning",
+                "location": "Salkantay Pass",
+                "best_time": "Early morning",
                 "subjects": [
-                    "360° panorama",
-                    "Both valleys",
+                    "Sacred peak",
+                    "Prayer flags",
                     "Achievement shots"
+                ]
+            },
+            {
+                "location": "Cloud forest",
+                "best_time": "Any",
+                "subjects": [
+                    "Biodiversity",
+                    "Waterfalls",
+                    "Atmospheric shots"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How does this compare to the Inca Trail?",
-                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
+                "question": "Is it as good as the Inca Trail?",
+                "answer": "Different but equally spectacular. More challenging, fewer ruins, but stunning mountain scenery and no permit stress. Many consider it superior for landscapes."
             },
             {
                 "question": "Can I do it independently?",
-                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
+                "answer": "Yes, unlike the Inca Trail. But guided tours provide logistics, meals, and camping equipment. Solo requires carrying everything."
             },
             {
-                "question": "Is acclimatization really necessary?",
-                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
+                "question": "How cold does it get?",
+                "answer": "Very cold at Salkantay Pass - can be -10°C at night. But by day 3 you're in warm cloud forest. Pack for all climates."
+            },
+            {
+                "question": "Is altitude sickness common?",
+                "answer": "Yes, especially on pass day. Crucial to acclimatize in Cusco first. The rapid descent helps recovery."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 85,
+        "popularity_score": 94,
         "seo": {
-            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
-            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
+            "meta_title": "Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail",
+            "meta_description": "Ultimate guide to the Salkantay Trek to Machu Picchu. Detailed 5-day itinerary, no permits needed, costs, gear list, and expert tips.",
             "keywords": [
-                "santa cruz trek",
-                "cordillera blanca",
+                "salkantay trek",
+                "machu picchu alternative",
                 "peru trekking",
-                "huaraz hiking",
-                "punta union pass"
+                "salkantay pass",
+                "cusco to machu picchu"
             ]
         }
     };

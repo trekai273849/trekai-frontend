@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
-    <meta name="description" content="Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.">
+    <title>Jotunheimen Traverse Guide 2024 | Norway's Highest Peaks Trek</title>
+    <meta name="description" content="Complete guide to hiking Jotunheimen including Galdhøpiggen and Glittertind. 6-day traverse through Norway's highest mountains with glaciers and epic views.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/santa-cruz-trek.jpg');
+            background-image: url('/images/treks/covers/jotunheimen-traverse.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,24 +734,24 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Santa Cruz Trek</h1>
+        <div class="hero-content">
+            <h1>Jotunheimen Traverse</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4</span>
+                    <span class="hero-stat-value">6</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,750m</span>
+                    <span class="hero-stat-value">2,469m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">50km</span>
+                    <span class="hero-stat-value">55km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">moderate</span>
+                    <span class="hero-stat-value">challenging</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Peru/Andes</h2>
+                <h2>Journey to Norway/Scandinavia</h2>
                 <p class="overview-description">
-                    The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.
+                    Journey through Norway's highest mountain range, home of the giants, crossing glaciers and summiting Northern Europe's highest peaks.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,20 +824,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">4-5 days</span>
+                    <span class="info-value">5-7 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">50 km / 31 mi</span>
+                    <span class="info-value">55 km / 34 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,750m (15,584ft)</span>
+                    <span class="info-value">2,469m (8,100ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">moderate</span>
+                        <span class="difficulty-badge">challenging</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -1063,7 +846,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Huaraz</span>
+                    <span class="info-value">Lom</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +855,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$200 - $600</span>
+                        <span class="price-range">$600 - $1,800</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>4-Day Detailed Itinerary</h2>
+        <h2>6-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Peru/Andes with proper acclimatization and rest days
+            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Cashapampa to Llamacorral</h3>
+          <h3 class="day-title">Besseggen Ridge</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +100m</span>
-            <span>🏔️ 3,760m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +750m</span>
+            <span>🏔️ 1,008m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo.</p>
+      <p class="day-description">Start with Norway's most famous day hike. Take morning boat to Memurubu, then traverse the spectacular Besseggen ridge with its famous view of green and blue lakes side by side.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Santa Cruz valley entrance</span><span class="day-highlight">Alpamayo views</span><span class="day-highlight">River valley hiking</span><span class="day-highlight">Acclimatization day</span>
+          <span class="day-highlight">Famous Besseggen ridge</span><span class="day-highlight">Lake Gjende views</span><span class="day-highlight">Dramatic ridge traverse</span><span class="day-highlight">Classic Norwegian hike</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Llamacorral to Taullipampa</h3>
+          <h3 class="day-title">Memurubu to Gjendebu</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +490m</span>
-            <span>🏔️ 4,250m</span>
+            <span>📏 18km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 990m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks.</p>
+      <p class="day-description">Beautiful valley hike with option to climb Bukkelægret for panoramic views. Follow the shores of Lake Gjende to reach historic Gjendebu lodge.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Laguna Jatuncocha</span><span class="day-highlight">Taulliraju views (5,830m)</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">360-degree mountain panorama</span>
+          <span class="day-highlight">Bukkelægret viewpoint</span><span class="day-highlight">Lake Gjende shoreline</span><span class="day-highlight">Remote valleys</span><span class="day-highlight">Historic DNT hut</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Taullipampa to Paria Valley via Punta Union</h3>
+          <h3 class="day-title">Gjendebu to Glitterheim</h3>
           <div class="day-stats">
-            <span>📏 15km</span>
+            <span>📏 7km</span>
             <span>⏱️ 8 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 3,850m</span>
+            <span>📈 +1200m</span>
+            <span>🏔️ 1,553m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley.</p>
+      <p class="day-description">Big day summiting Glittertind, Norway's second highest peak. Cross the summit glacier (crampons may be needed) for incredible views of the entire Jotunheimen range.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Punta Union Pass (4,750m)</span><span class="day-highlight">Spectacular 360° views</span><span class="day-highlight">Laguna Morococha</span><span class="day-highlight">Dramatic descent</span>
+          <span class="day-highlight">Glittertind summit (2,464m)</span><span class="day-highlight">Norway's second highest peak</span><span class="day-highlight">Glacier crossing</span><span class="day-highlight">360-degree views</span>
         </div>
       
     </div>
@@ -1155,19 +938,61 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Paria Valley to Vaqueria</h3>
+          <h3 class="day-title">Glitterheim to Spiterstulen</h3>
           <div class="day-stats">
-            <span>📏 9km</span>
+            <span>📏 7km</span>
             <span>⏱️ 3 hours</span>
-            <span>📈 -150m</span>
-            <span>🏔️ 3,700m</span>
+            <span>📈 -449m</span>
+            <span>🏔️ 1,104m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon.</p>
+      <p class="day-description">Short valley walk to Spiterstulen. Rest and prepare for tomorrow's summit attempt, or use extra time for side hikes in the area.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle valley descent</span><span class="day-highlight">Rural Andean life</span><span class="day-highlight">Trek completion</span><span class="day-highlight">Transport to Huaraz</span>
+          <span class="day-highlight">Rest day option</span><span class="day-highlight">Visdalen valley</span><span class="day-highlight">Prepare for Galdhøpiggen</span><span class="day-highlight">Mountain environment</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Galdhøpiggen Summit</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +1365m</span>
+            <span>🏔️ 1,400m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Summit Northern Europe's highest peak! Guided glacier crossing usually required. Incredible achievement and views before descending to Leirvassbu.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Galdhøpiggen summit (2,469m)</span><span class="day-highlight">Northern Europe's highest peak</span><span class="day-highlight">Glacier traverse</span><span class="day-highlight">Achievement of highest point</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 6</div>
+          <h3 class="day-title">Leirvassbu to Turtagrø</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -516m</span>
+            <span>🏔️ 884m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final descent through beautiful valleys to Turtagrø, historic base for Norwegian mountaineering. Celebrate completing the traverse of Norway's mightiest mountains.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Descent through valleys</span><span class="day-highlight">Hurrungane peaks views</span><span class="day-highlight">Complete traverse</span><span class="day-highlight">Historic climbers' hotel</span>
         </div>
       
     </div>
@@ -1192,56 +1017,64 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">4-season tent</div>
-          <div class="gear-description">Wind-resistant for exposed camps</div>
+          <div class="gear-name">Mountain boots</div>
+          <div class="gear-description">Sturdy, waterproof, crampon compatible</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-15°C rated for cold nights</div>
+          <div class="gear-name">Crampons</div>
+          <div class="gear-description">For glacier crossings</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof boots</div>
-          <div class="gear-description">Stream crossings common</div>
+          <div class="gear-name">Ice axe</div>
+          <div class="gear-description">For glacier safety</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Layers for all weather</div>
-          <div class="gear-description">Can snow at pass anytime</div>
+          <div class="gear-name">Harness and rope</div>
+          <div class="gear-description">If unguided on glaciers</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">4-season clothing</div>
+          <div class="gear-description">Can snow anytime</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Intense at altitude</div>
+          <div class="gear-name">Waterproofs</div>
+          <div class="gear-description">High quality essential</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Map and compass</div>
+          <div class="gear-description">GPS backup recommended</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or filter</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful for pass day</div>
+          <div class="gear-name">Warm sleeping bag</div>
+          <div class="gear-description">If camping option</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1258,24 +1091,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For stream crossings</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at camps</div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Very helpful on terrain</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera with extra batteries</div>
-          <div class="gear-description">Spectacular scenery</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For snow and streams</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Glacier glasses</div>
+          <div class="gear-description">High UV protection</div>
         </div>
         
       </li>
@@ -1296,9 +1129,16 @@
             
     <div class="season-card">
       <div class="season-icon">☀️</div>
-      <h3 class="season-name">Dry Season</h3>
-      <p class="season-months">May, June, July, August, September</p>
-      <p>Clear skies, stable weather, cold nights at altitude</p>
+      <h3 class="season-name">Summer</h3>
+      <p class="season-months">July, August</p>
+      <p>Snow-free passes, all routes open, midnight sun</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🌄</div>
+      <h3 class="season-name">Early Autumn</h3>
+      <p class="season-months">September</p>
+      <p>Stable weather, autumn colors, fewer people</p>
     </div>
   
         </div>
@@ -1321,27 +1161,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$30</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$50</span>
+      <span>$250</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$70</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
-    </div>
-    <div class="cost-item">
-      <span>Transportation</span>
       <span>$60</span>
     </div>
     <div class="cost-item">
+      <span>Transportation</span>
+      <span>$100</span>
+    </div>
+    <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$200 - $600</span>
+      <span>$600 - $1,800</span>
     </div>
   
         </div>
@@ -1363,26 +1203,26 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How does this compare to the Inca Trail?</span>
+        <span>Do I need glacier experience?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded.</div>
+      <div class="faq-answer">For independent travel, yes. Most people hire guides for Galdhøpiggen (about $150). Glittertind's glacier is easier but still requires caution.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
+        <span>What's DNT membership?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude.</div>
+      <div class="faq-answer">Norwegian Trekking Association membership ($90/year) gives huge discounts on huts and priority booking. Worth it for trips over 5 days.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is acclimatization really necessary?</span>
+        <span>Can I do this in winter?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69.</div>
+      <div class="faq-answer">Yes, but it becomes a serious ski mountaineering expedition requiring extensive experience, avalanche training, and winter equipment.</div>
     </div>
   
         </div>
@@ -1425,26 +1265,19 @@
             }
         }
 
-                                                                    function scrollToSectionTop() {
-            setTimeout(() => {
-                const navTabs = document.querySelector('.nav-tabs');
-                if (navTabs) {
-                    // Get nav height to account for sticky positioning
-                    const navHeight = navTabs.offsetHeight;
-                    // Get the currently active section
-                    const activeSection = document.querySelector('.content-section.active');
-                    if (activeSection) {
-                        // Get the position of the active section
-                        const sectionTop = activeSection.offsetTop;
-                        // Scroll to section minus nav height to show content at top
-                        const targetPosition = sectionTop - navHeight - 10;
-                        window.scrollTo({
-                            top: Math.max(0, targetPosition),
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            }, 100);
+                                                            function scrollToSectionTop() {
+            // Get navigation height first
+            const navTabs = document.querySelector('.nav-tabs');
+            if (!navTabs) return;
+            
+            const navHeight = navTabs.offsetHeight;
+            const targetPosition = navTabs.offsetTop + navHeight + 20;
+            
+            // INSTANT scroll to target position (no animation during tab switch)
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'instant'  // Key change: instant, not smooth
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1529,455 +1362,517 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "santa-cruz-trek",
-        "name": "Santa Cruz Trek",
-        "slug": "santa-cruz-trek",
-        "region": "Peru/Andes",
-        "country": "Peru",
-        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
+        "_id": "jotunheimen-traverse",
+        "name": "Jotunheimen Traverse",
+        "slug": "jotunheimen-traverse",
+        "region": "Norway/Scandinavia",
+        "country": "Norway",
+        "summary": "Journey through Norway's highest mountain range, home of the giants, crossing glaciers and summiting Northern Europe's highest peaks.",
         "duration": {
-            "min_days": 4,
-            "max_days": 5,
-            "recommended_days": 4
+            "min_days": 5,
+            "max_days": 7,
+            "recommended_days": 6
         },
-        "distance_km": 50,
-        "difficulty": "moderate",
-        "max_elevation_m": 4750,
-        "starting_elevation_m": 3900,
-        "airport": "Lima (LIM)",
-        "nearest_city": "Huaraz",
+        "distance_km": 55,
+        "difficulty": "challenging",
+        "max_elevation_m": 2469,
+        "starting_elevation_m": 1400,
+        "airport": "Oslo (OSL)",
+        "nearest_city": "Lom",
         "coordinates": {
             "start": {
-                "lat": -8.9689,
-                "lng": -77.3928,
-                "location": "Cashapampa"
+                "lat": 61.5736,
+                "lng": 8.3126,
+                "location": "Gjendesheim"
             },
             "end": {
-                "lat": -8.8681,
-                "lng": -77.7089,
-                "location": "Vaqueria"
+                "lat": 61.6766,
+                "lng": 7.9737,
+                "location": "Turtagrø"
             }
         },
         "best_seasons": [
             {
-                "name": "Dry Season",
+                "name": "Summer",
                 "months": [
-                    "May",
-                    "June",
                     "July",
-                    "August",
+                    "August"
+                ],
+                "description": "Snow-free passes, all routes open, midnight sun"
+            },
+            {
+                "name": "Early Autumn",
+                "months": [
                     "September"
                 ],
-                "description": "Clear skies, stable weather, cold nights at altitude"
+                "description": "Stable weather, autumn colors, fewer people"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Cashapampa to Llamacorral",
-                "start_location": "Cashapampa",
-                "end_location": "Llamacorral",
-                "distance_km": 12,
-                "duration_hours": 5,
-                "elevation_start_m": 3900,
-                "elevation_end_m": 3760,
-                "elevation_gain_m": 100,
-                "difficulty": "easy",
+                "title": "Besseggen Ridge",
+                "start_location": "Gjendesheim",
+                "end_location": "Memurubu",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 984,
+                "elevation_end_m": 1008,
+                "elevation_gain_m": 750,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "DNT lodge",
                     "options": [
-                        "Llamacorral campsite"
+                        "Memurubu Lodge"
                     ]
                 },
                 "meals_included": [
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Santa Cruz valley entrance",
-                    "Alpamayo views",
-                    "River valley hiking",
-                    "Acclimatization day"
+                    "Famous Besseggen ridge",
+                    "Lake Gjende views",
+                    "Dramatic ridge traverse",
+                    "Classic Norwegian hike"
                 ],
-                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
+                "description": "Start with Norway's most famous day hike. Take morning boat to Memurubu, then traverse the spectacular Besseggen ridge with its famous view of green and blue lakes side by side."
             },
             {
                 "day": 2,
-                "title": "Llamacorral to Taullipampa",
-                "start_location": "Llamacorral",
-                "end_location": "Taullipampa",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 3760,
-                "elevation_end_m": 4250,
-                "elevation_gain_m": 490,
+                "title": "Memurubu to Gjendebu",
+                "start_location": "Memurubu",
+                "end_location": "Gjendebu",
+                "distance_km": 18,
+                "duration_hours": 7,
+                "elevation_start_m": 1008,
+                "elevation_end_m": 990,
+                "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "DNT lodge",
                     "options": [
-                        "Taullipampa campsite"
+                        "Gjendebu Lodge"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Laguna Jatuncocha",
-                    "Taulliraju views (5,830m)",
-                    "Alpine meadows",
-                    "360-degree mountain panorama"
+                    "Bukkelægret viewpoint",
+                    "Lake Gjende shoreline",
+                    "Remote valleys",
+                    "Historic DNT hut"
                 ],
-                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
+                "description": "Beautiful valley hike with option to climb Bukkelægret for panoramic views. Follow the shores of Lake Gjende to reach historic Gjendebu lodge."
             },
             {
                 "day": 3,
-                "title": "Taullipampa to Paria Valley via Punta Union",
-                "start_location": "Taullipampa",
-                "end_location": "Paria Valley",
-                "distance_km": 15,
+                "title": "Gjendebu to Glitterheim",
+                "start_location": "Gjendebu",
+                "end_location": "Glitterheim",
+                "distance_km": 7,
                 "duration_hours": 8,
-                "elevation_start_m": 4250,
-                "elevation_end_m": 3850,
-                "elevation_gain_m": 500,
-                "difficulty": "challenging",
+                "elevation_start_m": 990,
+                "elevation_end_m": 1553,
+                "elevation_gain_m": 1200,
+                "difficulty": "very challenging",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "DNT lodge",
                     "options": [
-                        "Paria campsite"
+                        "Glitterheim Lodge"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Punta Union Pass (4,750m)",
-                    "Spectacular 360° views",
-                    "Laguna Morococha",
-                    "Dramatic descent"
+                    "Glittertind summit (2,464m)",
+                    "Norway's second highest peak",
+                    "Glacier crossing",
+                    "360-degree views"
                 ],
-                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
+                "description": "Big day summiting Glittertind, Norway's second highest peak. Cross the summit glacier (crampons may be needed) for incredible views of the entire Jotunheimen range."
             },
             {
                 "day": 4,
-                "title": "Paria Valley to Vaqueria",
-                "start_location": "Paria Valley",
-                "end_location": "Vaqueria",
-                "distance_km": 9,
+                "title": "Glitterheim to Spiterstulen",
+                "start_location": "Glitterheim",
+                "end_location": "Spiterstulen",
+                "distance_km": 7,
                 "duration_hours": 3,
-                "elevation_start_m": 3850,
-                "elevation_end_m": 3700,
-                "elevation_gain_m": -150,
+                "elevation_start_m": 1553,
+                "elevation_end_m": 1104,
+                "elevation_gain_m": -449,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "end point",
+                    "type": "DNT lodge",
                     "options": [
-                        "Return to Huaraz"
+                        "Spiterstulen Lodge"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Gentle valley descent",
-                    "Rural Andean life",
-                    "Trek completion",
-                    "Transport to Huaraz"
+                    "Rest day option",
+                    "Visdalen valley",
+                    "Prepare for Galdhøpiggen",
+                    "Mountain environment"
                 ],
-                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
+                "description": "Short valley walk to Spiterstulen. Rest and prepare for tomorrow's summit attempt, or use extra time for side hikes in the area."
+            },
+            {
+                "day": 5,
+                "title": "Galdhøpiggen Summit",
+                "start_location": "Spiterstulen",
+                "end_location": "Leirvassbu",
+                "distance_km": 12,
+                "duration_hours": 9,
+                "elevation_start_m": 1104,
+                "elevation_end_m": 1400,
+                "elevation_gain_m": 1365,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "DNT lodge",
+                    "options": [
+                        "Leirvassbu Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Galdhøpiggen summit (2,469m)",
+                    "Northern Europe's highest peak",
+                    "Glacier traverse",
+                    "Achievement of highest point"
+                ],
+                "description": "Summit Northern Europe's highest peak! Guided glacier crossing usually required. Incredible achievement and views before descending to Leirvassbu."
+            },
+            {
+                "day": 6,
+                "title": "Leirvassbu to Turtagrø",
+                "start_location": "Leirvassbu",
+                "end_location": "Turtagrø",
+                "distance_km": 14,
+                "duration_hours": 5,
+                "elevation_start_m": 1400,
+                "elevation_end_m": 884,
+                "elevation_gain_m": -516,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Turtagrø Hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Descent through valleys",
+                    "Hurrungane peaks views",
+                    "Complete traverse",
+                    "Historic climbers' hotel"
+                ],
+                "description": "Final descent through beautiful valleys to Turtagrø, historic base for Norwegian mountaineering. Celebrate completing the traverse of Norway's mightiest mountains."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "4-season tent",
-                    "description": "Wind-resistant for exposed camps",
+                    "item": "Mountain boots",
+                    "description": "Sturdy, waterproof, crampon compatible",
                     "rental_available": true
                 },
                 {
-                    "item": "Sleeping bag",
-                    "description": "-15°C rated for cold nights",
+                    "item": "Crampons",
+                    "description": "For glacier crossings",
                     "rental_available": true
                 },
                 {
-                    "item": "Waterproof boots",
-                    "description": "Stream crossings common",
+                    "item": "Ice axe",
+                    "description": "For glacier safety",
                     "rental_available": true
                 },
                 {
-                    "item": "Layers for all weather",
-                    "description": "Can snow at pass anytime",
+                    "item": "Harness and rope",
+                    "description": "If unguided on glaciers",
+                    "rental_available": true
+                },
+                {
+                    "item": "4-season clothing",
+                    "description": "Can snow anytime",
                     "rental_available": false
                 },
                 {
-                    "item": "Sun protection",
-                    "description": "Intense at altitude",
+                    "item": "Waterproofs",
+                    "description": "High quality essential",
+                    "rental_available": true
+                },
+                {
+                    "item": "Map and compass",
+                    "description": "GPS backup recommended",
                     "rental_available": false
                 },
                 {
-                    "item": "Water purification",
-                    "description": "Tablets or filter",
-                    "rental_available": false
-                },
-                {
-                    "item": "Trekking poles",
-                    "description": "Very helpful for pass day",
+                    "item": "Warm sleeping bag",
+                    "description": "If camping option",
                     "rental_available": true
                 }
             ],
             "recommended": [
                 {
-                    "item": "Gaiters",
-                    "description": "For stream crossings",
-                    "rental_available": false
-                },
-                {
-                    "item": "Down jacket",
-                    "description": "Cold at camps",
+                    "item": "Trekking poles",
+                    "description": "Very helpful on terrain",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera with extra batteries",
-                    "description": "Spectacular scenery",
+                    "item": "Gaiters",
+                    "description": "For snow and streams",
+                    "rental_available": false
+                },
+                {
+                    "item": "Glacier glasses",
+                    "description": "High UV protection",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Huascaran National Park Entry",
-                "cost_usd": 30,
-                "cost_pen": 90,
-                "where_to_obtain": "Park office in Huaraz or entrance",
-                "validity": "Valid for 21 days"
+                "name": "None required",
+                "cost_usd": 0,
+                "notes": "DNT membership recommended for lodge discounts"
             }
         ],
         "costs": {
-            "permit_total_usd": 30,
-            "guide_daily_usd": 50,
-            "cook_daily_usd": 30,
-            "muleteer_daily_usd": 25,
-            "pack_animal_daily_usd": 15,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 60,
+            "permit_total_usd": 0,
+            "guide_daily_usd": 250,
+            "accommodation_daily_usd": 70,
+            "meals_daily_usd": 60,
+            "transportation_usd": 100,
+            "glacier_guide_usd": 150,
             "total_budget_range_usd": {
-                "min": 200,
-                "max": 600
+                "min": 600,
+                "max": 1800
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Quechua",
-                "Mestizo"
+                "Norwegian"
             ],
-            "primary_religion": "Catholic with Andean traditions",
+            "primary_religion": "Lutheran/Secular",
             "languages": [
-                "Spanish",
-                "Quechua",
-                "Limited English"
+                "Norwegian",
+                "English widely spoken"
             ],
             "customs_etiquette": [
-                "Respect mountain spirits (Apus)",
-                "Ask permission before photographing locals",
-                "Support local economy",
-                "Participate in coca leaf offerings if invited"
+                "DNT hut etiquette important",
+                "Remove boots at entrance",
+                "Help with communal tasks",
+                "Respect quiet hours",
+                "Leave huts cleaner than found"
             ],
             "local_foods": [
                 {
-                    "name": "Pachamanca",
-                    "description": "Earth oven cooked feast"
+                    "name": "Fårikål",
+                    "description": "Lamb and cabbage stew"
                 },
                 {
-                    "name": "Cuy",
-                    "description": "Guinea pig delicacy"
+                    "name": "Rømmegrøt",
+                    "description": "Sour cream porridge"
                 },
                 {
-                    "name": "Quinoa soup",
-                    "description": "High-altitude superfood"
+                    "name": "Lefse",
+                    "description": "Traditional flatbread"
+                },
+                {
+                    "name": "Brunost",
+                    "description": "Brown cheese"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "high",
-                "prevention": [
-                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
-                    "Consider day hikes first",
-                    "Climb slowly on pass day",
-                    "Stay hydrated",
-                    "Consider Diamox"
-                ],
-                "critical_points": [
-                    "Punta Union Pass day"
-                ]
+                "risk_level": "low",
+                "notes": "Maximum 2,469m rarely causes issues"
             },
-            "medical_facilities": [
-                {
-                    "location": "Trail",
-                    "type": "None - remote area"
+            "main_concerns": {
+                "glaciers": {
+                    "risk_level": "high",
+                    "description": "Crevasse danger",
+                    "prevention": [
+                        "Use certified guide",
+                        "Proper equipment",
+                        "Rope up always",
+                        "Know rescue techniques"
+                    ]
                 },
-                {
-                    "location": "Huaraz",
-                    "type": "Good hospitals and clinics"
+                "weather": {
+                    "risk_level": "high",
+                    "description": "Rapid changes, whiteouts",
+                    "prevention": [
+                        "Check forecasts",
+                        "Start early",
+                        "Know escape routes",
+                        "Carry emergency gear"
+                    ]
+                },
+                "navigation": {
+                    "risk_level": "moderate",
+                    "description": "Fog common",
+                    "prevention": [
+                        "GPS essential",
+                        "Map and compass backup",
+                        "Stay on marked routes",
+                        "Consider guide"
+                    ]
                 }
-            ],
+            },
             "evacuation": {
-                "method": "Horse/mule to road, then vehicle",
-                "cost_usd": "1000-3000",
-                "insurance_required": true,
-                "response_time": "6-12 hours"
+                "method": "Helicopter",
+                "cost_usd": "Free with insurance",
+                "insurance_required": true
             }
         },
         "weather_patterns": {
-            "dry_season": {
+            "summer": {
                 "months": [
-                    "May",
-                    "June",
                     "July",
-                    "August",
-                    "September"
-                ],
-                "day_temp_c": "15 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Minimal",
-                "notes": "Can snow at pass anytime"
-            },
-            "wet_season": {
-                "months": [
-                    "October",
-                    "November",
-                    "December",
-                    "January",
-                    "February",
-                    "March",
-                    "April"
+                    "August"
                 ],
                 "day_temp_c": "10 to 18",
-                "night_temp_c": "0 to 8",
-                "precipitation": "Daily afternoon rain",
-                "notes": "Trail muddy, clouds obscure views"
+                "night_temp_c": "2 to 10",
+                "precipitation": "Frequent",
+                "snow_level": "Above 2000m possible",
+                "notes": "Most stable period"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Private transport",
-                    "from": "Huaraz",
-                    "to": "Cashapampa",
-                    "duration": "3 hours",
-                    "cost_usd": 30,
-                    "notes": "Usually arranged with guide/agency"
+                    "method": "Bus",
+                    "from": "Oslo",
+                    "to": "Gjendesheim",
+                    "duration": "5 hours",
+                    "cost_usd": 60,
+                    "frequency": "2-3 daily summer"
                 }
             ],
             "from_end": [
                 {
-                    "method": "Private transport",
-                    "from": "Vaqueria",
-                    "to": "Huaraz",
-                    "duration": "3 hours",
-                    "cost_usd": 30,
-                    "notes": "Pre-arranged pickup essential"
+                    "method": "Bus",
+                    "from": "Turtagrø",
+                    "to": "Oslo",
+                    "duration": "6 hours",
+                    "cost_usd": 70,
+                    "frequency": "Daily"
                 }
             ]
         },
         "accommodation": {
-            "type": "Camping only",
-            "description": "Designated camping areas",
+            "type": "DNT mountain lodges",
+            "description": "Norwegian Trekking Association huts",
             "amenities": [
-                "Flat tent sites",
-                "Water sources nearby",
-                "Basic toilet facilities at some sites",
-                "No showers on trail",
-                "Pack out all waste"
+                "Staffed lodges with meals",
+                "Self-service huts available",
+                "Bedding provided",
+                "Hot meals at staffed lodges",
+                "Sauna at some lodges",
+                "Drying rooms"
             ],
-            "booking": "First come, first served",
+            "booking": "Recommended for staffed lodges",
             "cost_per_night_usd": {
-                "camping": "5"
+                "dnt_member": "35-50",
+                "non_member": "60-80",
+                "includes": "Bed and breakfast"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Good fitness for altitude and pass day",
-            "technical_skills": "None required",
-            "altitude_challenge": "Significant - proper acclimatization essential",
-            "trail_conditions": "Well-defined path, rocky on pass",
-            "daily_hiking_hours": "5-8 hours",
-            "total_elevation_gain": 1200,
-            "total_elevation_loss": 1350
+            "physical_demands": "Excellent fitness for long days",
+            "technical_skills": "Glacier travel experience helpful",
+            "altitude_challenge": "Minimal",
+            "trail_conditions": "Rocky, glaciated sections",
+            "navigation_challenge": "Moderate to difficult",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 4600,
+            "total_elevation_loss": 4100
         },
         "alternative_routes": [
             {
-                "name": "Alpamayo Circuit",
-                "variation": "Extended version via Alpamayo base camp",
-                "extra_days": 3,
+                "name": "Hut to Hut Classic",
+                "variation": "Without summit days",
+                "fewer_days": 2,
                 "highlights": [
-                    "See Alpamayo up close",
-                    "More remote",
-                    "Additional passes"
+                    "Easier version",
+                    "Skip glaciers",
+                    "Still spectacular"
                 ]
             },
             {
-                "name": "Santa Cruz-Llanganuco",
-                "variation": "Exit via Llanganuco",
-                "extra_days": 0,
+                "name": "Extended Traverse",
+                "variation": "Add Hurrungane",
+                "extra_days": 3,
                 "highlights": [
-                    "Different exit valley",
-                    "Laguna 69 option",
-                    "Transport flexibility"
+                    "Technical peaks",
+                    "Alpine climbing",
+                    "Full experience"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Taullipampa camp",
-                "best_time": "Sunrise/sunset",
+                "location": "Besseggen Ridge",
+                "best_time": "Morning",
                 "subjects": [
-                    "Taulliraju",
-                    "Alpenglow on peaks",
-                    "Star photography"
+                    "Two-colored lakes",
+                    "Ridge traverse",
+                    "Classic view"
                 ]
             },
             {
-                "location": "Punta Union Pass",
-                "best_time": "Morning",
+                "location": "Galdhøpiggen summit",
+                "best_time": "Clear days",
                 "subjects": [
-                    "360° panorama",
-                    "Both valleys",
-                    "Achievement shots"
+                    "Highest point",
+                    "Glacier views",
+                    "Summit achievements"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How does this compare to the Inca Trail?",
-                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
+                "question": "Do I need glacier experience?",
+                "answer": "For independent travel, yes. Most people hire guides for Galdhøpiggen (about $150). Glittertind's glacier is easier but still requires caution."
             },
             {
-                "question": "Can I do it independently?",
-                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
+                "question": "What's DNT membership?",
+                "answer": "Norwegian Trekking Association membership ($90/year) gives huge discounts on huts and priority booking. Worth it for trips over 5 days."
             },
             {
-                "question": "Is acclimatization really necessary?",
-                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
+                "question": "Can I do this in winter?",
+                "answer": "Yes, but it becomes a serious ski mountaineering expedition requiring extensive experience, avalanche training, and winter equipment."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 85,
+        "popularity_score": 87,
         "seo": {
-            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
-            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
+            "meta_title": "Jotunheimen Traverse Guide 2024 | Norway's Highest Peaks Trek",
+            "meta_description": "Complete guide to hiking Jotunheimen including Galdhøpiggen and Glittertind. 6-day traverse through Norway's highest mountains with glaciers and epic views.",
             "keywords": [
-                "santa cruz trek",
-                "cordillera blanca",
-                "peru trekking",
-                "huaraz hiking",
-                "punta union pass"
+                "jotunheimen traverse",
+                "galdhøpiggen hike",
+                "norway hiking",
+                "glittertind",
+                "besseggen ridge"
             ]
         }
     };

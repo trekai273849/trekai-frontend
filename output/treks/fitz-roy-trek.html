@@ -1408,19 +1408,26 @@
             }
         }
 
-                                                            function scrollToSectionTop() {
-            // Get navigation height first
-            const navTabs = document.querySelector('.nav-tabs');
-            if (!navTabs) return;
-            
-            const navHeight = navTabs.offsetHeight;
-            const targetPosition = navTabs.offsetTop + navHeight + 20;
-            
-            // INSTANT scroll to target position (no animation during tab switch)
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'instant'  // Key change: instant, not smooth
-            });
+                                                                    function scrollToSectionTop() {
+            setTimeout(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                if (navTabs) {
+                    // Get nav height to account for sticky positioning
+                    const navHeight = navTabs.offsetHeight;
+                    // Get the currently active section
+                    const activeSection = document.querySelector('.content-section.active');
+                    if (activeSection) {
+                        // Get the position of the active section
+                        const sectionTop = activeSection.offsetTop;
+                        // Scroll to section minus nav height to show content at top
+                        const targetPosition = sectionTop - navHeight - 10;
+                        window.scrollTo({
+                            top: Math.max(0, targetPosition),
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }, 100);
         }
 
         function centerTabWithNextVisible(clickedTab) {

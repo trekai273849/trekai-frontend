@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
-    <meta name="description" content="Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.">
+    <title>Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu</title>
+    <meta name="description" content="Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/santa-cruz-trek.jpg');
+            background-image: url('/images/treks/covers/classic-inca-trail.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,8 +734,8 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Santa Cruz Trek</h1>
+        <div class="hero-content">
+            <h1>Classic Inca Trail</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -960,11 +743,11 @@
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,750m</span>
+                    <span class="hero-stat-value">4,200m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">50km</span>
+                    <span class="hero-stat-value">43km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -993,7 +776,7 @@
             <div class="overview-main">
                 <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.
+                    The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">4-5 days</span>
+                    <span class="info-value">4-4 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">50 km / 31 mi</span>
+                    <span class="info-value">43 km / 27 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,750m (15,584ft)</span>
+                    <span class="info-value">4,200m (13,780ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +846,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Huaraz</span>
+                    <span class="info-value">Cusco</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$200 - $600</span>
+                        <span class="price-range">$650 - $1,200</span>
                     </span>
                 </div>
             </div>
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Cashapampa to Llamacorral</h3>
+          <h3 class="day-title">Km 82 to Wayllabamba</h3>
           <div class="day-stats">
             <span>📏 12km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +100m</span>
-            <span>🏔️ 3,760m</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 3,000m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo.</p>
+      <p class="day-description">Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Santa Cruz valley entrance</span><span class="day-highlight">Alpamayo views</span><span class="day-highlight">River valley hiking</span><span class="day-highlight">Acclimatization day</span>
+          <span class="day-highlight">Patallacta ruins</span><span class="day-highlight">Urubamba River views</span><span class="day-highlight">First glimpse of snow peaks</span><span class="day-highlight">Traditional villages</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Llamacorral to Taullipampa</h3>
+          <h3 class="day-title">Wayllabamba to Pacaymayo</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +490m</span>
-            <span>🏔️ 4,250m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1200m</span>
+            <span>🏔️ 3,600m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks.</p>
+      <p class="day-description">The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Laguna Jatuncocha</span><span class="day-highlight">Taulliraju views (5,830m)</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">360-degree mountain panorama</span>
+          <span class="day-highlight">Dead Woman's Pass (4,200m)</span><span class="day-highlight">Cloud forest ecosystem</span><span class="day-highlight">Llamas and alpacas</span><span class="day-highlight">Achievement of highest point</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Taullipampa to Paria Valley via Punta Union</h3>
+          <h3 class="day-title">Pacaymayo to Wiñay Wayna</h3>
           <div class="day-stats">
-            <span>📏 15km</span>
-            <span>⏱️ 8 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 3,850m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 2,650m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley.</p>
+      <p class="day-description">Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Punta Union Pass (4,750m)</span><span class="day-highlight">Spectacular 360° views</span><span class="day-highlight">Laguna Morococha</span><span class="day-highlight">Dramatic descent</span>
+          <span class="day-highlight">Runkurakay ruins</span><span class="day-highlight">Sayacmarca ruins</span><span class="day-highlight">Phuyupatamarca ruins</span><span class="day-highlight">Cloud forest descent</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Paria Valley to Vaqueria</h3>
+          <h3 class="day-title">Wiñay Wayna to Machu Picchu</h3>
           <div class="day-stats">
-            <span>📏 9km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 -150m</span>
-            <span>🏔️ 3,700m</span>
+            <span>📏 4km</span>
+            <span>⏱️ 2 hours</span>
+            <span>📈 -220m</span>
+            <span>🏔️ 2,430m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon.</p>
+      <p class="day-description">Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle valley descent</span><span class="day-highlight">Rural Andean life</span><span class="day-highlight">Trek completion</span><span class="day-highlight">Transport to Huaraz</span>
+          <span class="day-highlight">Sun Gate first view</span><span class="day-highlight">Machu Picchu sunrise</span><span class="day-highlight">Guided site tour</span><span class="day-highlight">Optional Huayna Picchu</span>
         </div>
       
     </div>
@@ -1192,8 +975,8 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">4-season tent</div>
-          <div class="gear-description">Wind-resistant for exposed camps</div>
+          <div class="gear-name">Hiking boots</div>
+          <div class="gear-description">Well broken-in, waterproof</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1201,23 +984,39 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-15°C rated for cold nights</div>
+          <div class="gear-description">-10°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof boots</div>
-          <div class="gear-description">Stream crossings common</div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Jacket and pants essential</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Layers for all weather</div>
-          <div class="gear-description">Can snow at pass anytime</div>
+          <div class="gear-name">Daypack</div>
+          <div class="gear-description">Porters carry main gear</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning starts</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2-3 liters capacity</div>
         </div>
         
       </li>
@@ -1225,25 +1024,25 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Intense at altitude</div>
+          <div class="gear-description">High altitude sun intense</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or filter</div>
+          <div class="gear-name">Personal medications</div>
+          <div class="gear-description">Including altitude sickness meds</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful for pass day</div>
+          <div class="gear-name">Warm layers</div>
+          <div class="gear-description">Gets very cold at altitude</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
       </li>
     
                 </ul>
@@ -1258,24 +1057,32 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For stream crossings</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at camps</div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Helpful for steep descents</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera with extra batteries</div>
-          <div class="gear-description">Spectacular scenery</div>
+          <div class="gear-name">Sleeping pad</div>
+          <div class="gear-description">Extra comfort</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Coca leaves</div>
+          <div class="gear-description">Traditional altitude remedy</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Cash (soles)</div>
+          <div class="gear-description">For tips and snacks</div>
         </div>
         
       </li>
@@ -1298,7 +1105,14 @@
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Dry Season</h3>
       <p class="season-months">May, June, July, August, September</p>
-      <p>Clear skies, stable weather, cold nights at altitude</p>
+      <p>Clear skies, cold nights, busiest period</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">April, October</p>
+      <p>Variable weather, fewer crowds, lush vegetation</p>
     </div>
   
         </div>
@@ -1321,27 +1135,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$30</span>
+      <span>$130</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$50</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$60</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$200 - $600</span>
+      <span>$650 - $1,200</span>
     </div>
   
         </div>
@@ -1363,26 +1177,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How does this compare to the Inca Trail?</span>
+        <span>How fit do I need to be?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded.</div>
+      <div class="faq-answer">Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
+        <span>Why must I book so far ahead?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude.</div>
+      <div class="faq-answer">Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is acclimatization really necessary?</span>
+        <span>What about altitude sickness?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69.</div>
+      <div class="faq-answer">Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>How heavy is my daypack?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is the trail crowded?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others.</div>
     </div>
   
         </div>
@@ -1425,26 +1255,19 @@
             }
         }
 
-                                                                    function scrollToSectionTop() {
-            setTimeout(() => {
-                const navTabs = document.querySelector('.nav-tabs');
-                if (navTabs) {
-                    // Get nav height to account for sticky positioning
-                    const navHeight = navTabs.offsetHeight;
-                    // Get the currently active section
-                    const activeSection = document.querySelector('.content-section.active');
-                    if (activeSection) {
-                        // Get the position of the active section
-                        const sectionTop = activeSection.offsetTop;
-                        // Scroll to section minus nav height to show content at top
-                        const targetPosition = sectionTop - navHeight - 10;
-                        window.scrollTo({
-                            top: Math.max(0, targetPosition),
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            }, 100);
+                                                            function scrollToSectionTop() {
+            // Get navigation height first
+            const navTabs = document.querySelector('.nav-tabs');
+            if (!navTabs) return;
+            
+            const navHeight = navTabs.offsetHeight;
+            const targetPosition = navTabs.offsetTop + navHeight + 20;
+            
+            // INSTANT scroll to target position (no animation during tab switch)
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'instant'  // Key change: instant, not smooth
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1529,33 +1352,33 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "santa-cruz-trek",
-        "name": "Santa Cruz Trek",
-        "slug": "santa-cruz-trek",
+        "_id": "classic-inca-trail",
+        "name": "Classic Inca Trail",
+        "slug": "classic-inca-trail",
         "region": "Peru/Andes",
         "country": "Peru",
-        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
+        "summary": "The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.",
         "duration": {
             "min_days": 4,
-            "max_days": 5,
+            "max_days": 4,
             "recommended_days": 4
         },
-        "distance_km": 50,
+        "distance_km": 43,
         "difficulty": "moderate",
-        "max_elevation_m": 4750,
-        "starting_elevation_m": 3900,
-        "airport": "Lima (LIM)",
-        "nearest_city": "Huaraz",
+        "max_elevation_m": 4200,
+        "starting_elevation_m": 2600,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
         "coordinates": {
             "start": {
-                "lat": -8.9689,
-                "lng": -77.3928,
-                "location": "Cashapampa"
+                "lat": -13.2585,
+                "lng": -72.2636,
+                "location": "Km 82 (Piscacucho)"
             },
             "end": {
-                "lat": -8.8681,
-                "lng": -77.7089,
-                "location": "Vaqueria"
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
             }
         },
         "best_seasons": [
@@ -1568,84 +1391,62 @@
                     "August",
                     "September"
                 ],
-                "description": "Clear skies, stable weather, cold nights at altitude"
+                "description": "Clear skies, cold nights, busiest period"
+            },
+            {
+                "name": "Shoulder Season",
+                "months": [
+                    "April",
+                    "October"
+                ],
+                "description": "Variable weather, fewer crowds, lush vegetation"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Cashapampa to Llamacorral",
-                "start_location": "Cashapampa",
-                "end_location": "Llamacorral",
+                "title": "Km 82 to Wayllabamba",
+                "start_location": "Km 82",
+                "end_location": "Wayllabamba",
                 "distance_km": 12,
-                "duration_hours": 5,
-                "elevation_start_m": 3900,
-                "elevation_end_m": 3760,
-                "elevation_gain_m": 100,
-                "difficulty": "easy",
-                "accommodation": {
-                    "type": "camping",
-                    "options": [
-                        "Llamacorral campsite"
-                    ]
-                },
-                "meals_included": [
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Santa Cruz valley entrance",
-                    "Alpamayo views",
-                    "River valley hiking",
-                    "Acclimatization day"
-                ],
-                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
-            },
-            {
-                "day": 2,
-                "title": "Llamacorral to Taullipampa",
-                "start_location": "Llamacorral",
-                "end_location": "Taullipampa",
-                "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 3760,
-                "elevation_end_m": 4250,
-                "elevation_gain_m": 490,
+                "elevation_start_m": 2600,
+                "elevation_end_m": 3000,
+                "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
                     "type": "camping",
                     "options": [
-                        "Taullipampa campsite"
+                        "Wayllabamba campsite"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
                     "lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "Laguna Jatuncocha",
-                    "Taulliraju views (5,830m)",
-                    "Alpine meadows",
-                    "360-degree mountain panorama"
+                    "Patallacta ruins",
+                    "Urubamba River views",
+                    "First glimpse of snow peaks",
+                    "Traditional villages"
                 ],
-                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
+                "description": "Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp."
             },
             {
-                "day": 3,
-                "title": "Taullipampa to Paria Valley via Punta Union",
-                "start_location": "Taullipampa",
-                "end_location": "Paria Valley",
-                "distance_km": 15,
-                "duration_hours": 8,
-                "elevation_start_m": 4250,
-                "elevation_end_m": 3850,
-                "elevation_gain_m": 500,
+                "day": 2,
+                "title": "Wayllabamba to Pacaymayo",
+                "start_location": "Wayllabamba",
+                "end_location": "Pacaymayo",
+                "distance_km": 11,
+                "duration_hours": 7,
+                "elevation_start_m": 3000,
+                "elevation_end_m": 3600,
+                "elevation_gain_m": 1200,
                 "difficulty": "challenging",
                 "accommodation": {
                     "type": "camping",
                     "options": [
-                        "Paria campsite"
+                        "Pacaymayo campsite"
                     ]
                 },
                 "meals_included": [
@@ -1654,120 +1455,189 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Punta Union Pass (4,750m)",
-                    "Spectacular 360° views",
-                    "Laguna Morococha",
-                    "Dramatic descent"
+                    "Dead Woman's Pass (4,200m)",
+                    "Cloud forest ecosystem",
+                    "Llamas and alpacas",
+                    "Achievement of highest point"
                 ],
-                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
+                "description": "The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass."
             },
             {
-                "day": 4,
-                "title": "Paria Valley to Vaqueria",
-                "start_location": "Paria Valley",
-                "end_location": "Vaqueria",
-                "distance_km": 9,
-                "duration_hours": 3,
-                "elevation_start_m": 3850,
-                "elevation_end_m": 3700,
-                "elevation_gain_m": -150,
-                "difficulty": "easy",
+                "day": 3,
+                "title": "Pacaymayo to Wiñay Wayna",
+                "start_location": "Pacaymayo",
+                "end_location": "Wiñay Wayna",
+                "distance_km": 16,
+                "duration_hours": 9,
+                "elevation_start_m": 3600,
+                "elevation_end_m": 2650,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "end point",
+                    "type": "camping",
                     "options": [
-                        "Return to Huaraz"
+                        "Wiñay Wayna campsite"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
-                    "lunch"
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Gentle valley descent",
-                    "Rural Andean life",
-                    "Trek completion",
-                    "Transport to Huaraz"
+                    "Runkurakay ruins",
+                    "Sayacmarca ruins",
+                    "Phuyupatamarca ruins",
+                    "Cloud forest descent"
                 ],
-                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
+                "description": "Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp."
+            },
+            {
+                "day": 4,
+                "title": "Wiñay Wayna to Machu Picchu",
+                "start_location": "Wiñay Wayna",
+                "end_location": "Machu Picchu",
+                "distance_km": 4,
+                "duration_hours": 2,
+                "elevation_start_m": 2650,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": -220,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Aguas Calientes hotels"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Sun Gate first view",
+                    "Machu Picchu sunrise",
+                    "Guided site tour",
+                    "Optional Huayna Picchu"
+                ],
+                "description": "Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "4-season tent",
-                    "description": "Wind-resistant for exposed camps",
+                    "item": "Hiking boots",
+                    "description": "Well broken-in, waterproof",
                     "rental_available": true
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "-15°C rated for cold nights",
+                    "description": "-10°C rated for cold nights",
                     "rental_available": true
                 },
                 {
-                    "item": "Waterproof boots",
-                    "description": "Stream crossings common",
+                    "item": "Rain gear",
+                    "description": "Jacket and pants essential",
                     "rental_available": true
                 },
                 {
-                    "item": "Layers for all weather",
-                    "description": "Can snow at pass anytime",
+                    "item": "Daypack",
+                    "description": "Porters carry main gear",
+                    "rental_available": true
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2-3 liters capacity",
                     "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Intense at altitude",
+                    "description": "High altitude sun intense",
                     "rental_available": false
                 },
                 {
-                    "item": "Water purification",
-                    "description": "Tablets or filter",
+                    "item": "Personal medications",
+                    "description": "Including altitude sickness meds",
                     "rental_available": false
                 },
                 {
-                    "item": "Trekking poles",
-                    "description": "Very helpful for pass day",
-                    "rental_available": true
+                    "item": "Warm layers",
+                    "description": "Gets very cold at altitude",
+                    "rental_available": false
                 }
             ],
             "recommended": [
                 {
-                    "item": "Gaiters",
-                    "description": "For stream crossings",
-                    "rental_available": false
-                },
-                {
-                    "item": "Down jacket",
-                    "description": "Cold at camps",
+                    "item": "Trekking poles",
+                    "description": "Helpful for steep descents",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera with extra batteries",
-                    "description": "Spectacular scenery",
+                    "item": "Sleeping pad",
+                    "description": "Extra comfort",
+                    "rental_available": true
+                },
+                {
+                    "item": "Coca leaves",
+                    "description": "Traditional altitude remedy",
                     "rental_available": false
+                },
+                {
+                    "item": "Cash (soles)",
+                    "description": "For tips and snacks",
+                    "rental_available": false
+                }
+            ],
+            "provided_by_operator": [
+                {
+                    "item": "Tents",
+                    "description": "2-person tents"
+                },
+                {
+                    "item": "Dining tent",
+                    "description": "With tables and chairs"
+                },
+                {
+                    "item": "Kitchen equipment",
+                    "description": "All cooking gear"
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Comprehensive kit with guide"
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Huascaran National Park Entry",
-                "cost_usd": 30,
-                "cost_pen": 90,
-                "where_to_obtain": "Park office in Huaraz or entrance",
-                "validity": "Valid for 21 days"
+                "name": "Inca Trail Permit",
+                "cost_usd": 80,
+                "cost_pen": 280,
+                "where_to_obtain": "Only through licensed operators",
+                "validity": "Specific date only",
+                "notes": "Limited to 500 people/day including support staff"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Included in trek package",
+                "validity": "Specific time slot"
             }
         ],
         "costs": {
-            "permit_total_usd": 30,
-            "guide_daily_usd": 50,
-            "cook_daily_usd": 30,
-            "muleteer_daily_usd": 25,
-            "pack_animal_daily_usd": 15,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 60,
+            "permit_total_usd": 130,
+            "guide_daily_usd": "included",
+            "porter_daily_usd": "included",
+            "accommodation_daily_usd": 0,
+            "meals_daily_usd": "included",
+            "trek_package_usd": 650,
+            "transportation_usd": 50,
             "total_budget_range_usd": {
-                "min": 200,
-                "max": 600
+                "min": 650,
+                "max": 1200
             }
         },
         "cultural_information": {
@@ -1779,26 +1649,44 @@
             "languages": [
                 "Spanish",
                 "Quechua",
-                "Limited English"
+                "English (guides)"
             ],
             "customs_etiquette": [
-                "Respect mountain spirits (Apus)",
                 "Ask permission before photographing locals",
-                "Support local economy",
-                "Participate in coca leaf offerings if invited"
+                "Respect sacred sites - no climbing on ruins",
+                "Participate in coca leaf ceremonies if offered",
+                "Tip porters and cooks ($20-30 total)",
+                "Don't touch or move stones at archaeological sites",
+                "Greet with 'Buenos días' or 'Allin p'unchay' (Quechua)"
             ],
             "local_foods": [
                 {
-                    "name": "Pachamanca",
-                    "description": "Earth oven cooked feast"
-                },
-                {
-                    "name": "Cuy",
-                    "description": "Guinea pig delicacy"
-                },
-                {
                     "name": "Quinoa soup",
-                    "description": "High-altitude superfood"
+                    "description": "Traditional high-protein grain soup"
+                },
+                {
+                    "name": "Lomo saltado",
+                    "description": "Stir-fried beef with vegetables"
+                },
+                {
+                    "name": "Coca tea",
+                    "description": "Helps with altitude adjustment"
+                },
+                {
+                    "name": "Chuño",
+                    "description": "Freeze-dried potatoes"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Inti Raymi",
+                    "when": "June 24",
+                    "description": "Festival of the Sun"
+                },
+                {
+                    "name": "Qoyllur Rit'i",
+                    "when": "May/June",
+                    "description": "Snow Star Festival"
                 }
             ]
         },
@@ -1806,32 +1694,53 @@
             "altitude_sickness": {
                 "risk_level": "high",
                 "prevention": [
-                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
-                    "Consider day hikes first",
-                    "Climb slowly on pass day",
-                    "Stay hydrated",
-                    "Consider Diamox"
+                    "Acclimatize in Cusco 2-3 days before",
+                    "Climb slowly, rest frequently",
+                    "Stay hydrated (3-4 liters daily)",
+                    "Consider acetazolamide (Diamox)",
+                    "Coca tea and coca leaves help",
+                    "Avoid alcohol before and during trek"
                 ],
-                "critical_points": [
-                    "Punta Union Pass day"
-                ]
+                "symptoms": [
+                    "Headache",
+                    "Nausea",
+                    "Shortness of breath",
+                    "Fatigue",
+                    "Loss of appetite"
+                ],
+                "treatment": "Descend if symptoms worsen, guides carry oxygen"
             },
             "medical_facilities": [
                 {
                     "location": "Trail",
-                    "type": "None - remote area"
+                    "type": "Basic first aid with guides"
                 },
                 {
-                    "location": "Huaraz",
-                    "type": "Good hospitals and clinics"
+                    "location": "Aguas Calientes",
+                    "type": "Medical post"
+                },
+                {
+                    "location": "Cusco",
+                    "type": "Hospitals and clinics"
                 }
             ],
             "evacuation": {
-                "method": "Horse/mule to road, then vehicle",
-                "cost_usd": "1000-3000",
+                "method": "Porter stretcher or helicopter",
+                "cost_usd": "2000-5000",
                 "insurance_required": true,
-                "response_time": "6-12 hours"
-            }
+                "response_time": "Several hours to days"
+            },
+            "vaccinations_recommended": [
+                "Yellow fever",
+                "Hepatitis A & B",
+                "Typhoid",
+                "Routine vaccinations"
+            ],
+            "other_concerns": [
+                "Sun exposure at altitude",
+                "Hypothermia risk at passes",
+                "Basic hygiene to avoid GI issues"
+            ]
         },
         "weather_patterns": {
             "dry_season": {
@@ -1845,139 +1754,221 @@
                 "day_temp_c": "15 to 20",
                 "night_temp_c": "-5 to 5",
                 "precipitation": "Minimal",
-                "notes": "Can snow at pass anytime"
+                "notes": "Busy season, cold nights"
             },
             "wet_season": {
                 "months": [
-                    "October",
                     "November",
                     "December",
                     "January",
                     "February",
-                    "March",
-                    "April"
+                    "March"
                 ],
-                "day_temp_c": "10 to 18",
+                "day_temp_c": "13 to 18",
                 "night_temp_c": "0 to 8",
-                "precipitation": "Daily afternoon rain",
-                "notes": "Trail muddy, clouds obscure views"
+                "precipitation": "Daily rain likely",
+                "notes": "Trail closed in February"
+            },
+            "shoulder": {
+                "months": [
+                    "April",
+                    "October"
+                ],
+                "day_temp_c": "15 to 18",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Occasional",
+                "notes": "Good compromise, fewer crowds"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Private transport",
-                    "from": "Huaraz",
-                    "to": "Cashapampa",
-                    "duration": "3 hours",
-                    "cost_usd": 30,
-                    "notes": "Usually arranged with guide/agency"
+                    "method": "Bus/Van",
+                    "from": "Cusco",
+                    "to": "Km 82",
+                    "duration": "2.5 hours",
+                    "cost_usd": "included",
+                    "notes": "Early morning departure"
                 }
             ],
             "from_end": [
                 {
-                    "method": "Private transport",
-                    "from": "Vaqueria",
-                    "to": "Huaraz",
-                    "duration": "3 hours",
-                    "cost_usd": 30,
-                    "notes": "Pre-arranged pickup essential"
+                    "method": "Train",
+                    "from": "Aguas Calientes",
+                    "to": "Ollantaytambo",
+                    "duration": "1.5 hours",
+                    "cost_usd": 75,
+                    "notes": "Then bus to Cusco"
                 }
             ]
         },
         "accommodation": {
-            "type": "Camping only",
-            "description": "Designated camping areas",
+            "type": "Camping",
+            "description": "Designated campsites only",
             "amenities": [
-                "Flat tent sites",
-                "Water sources nearby",
-                "Basic toilet facilities at some sites",
+                "Two-person tents provided",
+                "Dining tent with tables",
+                "Portable toilet tent",
                 "No showers on trail",
-                "Pack out all waste"
+                "Basic facilities at campsites"
             ],
-            "booking": "First come, first served",
-            "cost_per_night_usd": {
-                "camping": "5"
-            }
+            "booking": "Must book through licensed operator",
+            "cost_per_night_usd": "Included in package"
         },
         "difficulty_details": {
-            "physical_demands": "Good fitness for altitude and pass day",
+            "physical_demands": "Good fitness for altitude and long days",
             "technical_skills": "None required",
             "altitude_challenge": "Significant - proper acclimatization essential",
-            "trail_conditions": "Well-defined path, rocky on pass",
-            "daily_hiking_hours": "5-8 hours",
-            "total_elevation_gain": 1200,
-            "total_elevation_loss": 1350
+            "trail_conditions": "Stone steps, some uneven terrain",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 2200,
+            "total_elevation_loss": 2370
+        },
+        "sustainability": {
+            "environmental_concerns": [
+                "Trail erosion",
+                "Waste management",
+                "Overcrowding"
+            ],
+            "responsible_practices": [
+                "Pack out all trash",
+                "Use designated toilet facilities",
+                "Stay on marked trails",
+                "Support porter welfare initiatives",
+                "Choose operators following sustainability practices"
+            ],
+            "local_initiatives": [
+                "Porter welfare laws",
+                "Trail maintenance programs",
+                "Daily visitor limits"
+            ]
+        },
+        "connectivity": {
+            "mobile_coverage": [
+                {
+                    "location": "Start/End points",
+                    "quality": "Good",
+                    "providers": [
+                        "Claro",
+                        "Movistar"
+                    ]
+                },
+                {
+                    "location": "Trail",
+                    "quality": "None",
+                    "providers": []
+                }
+            ],
+            "internet": {
+                "availability": "No internet on trail",
+                "cost_usd": 0,
+                "speed": "N/A"
+            }
+        },
+        "booking_recommendations": {
+            "advance_booking": "4-6 months essential",
+            "group_size": "Maximum 16 per group",
+            "guide_requirement": "Mandatory - licensed guide only",
+            "porter_recommendation": "Included in all packages",
+            "insurance_essential": true,
+            "fitness_preparation": "3 months cardio and stair training"
         },
         "alternative_routes": [
             {
-                "name": "Alpamayo Circuit",
-                "variation": "Extended version via Alpamayo base camp",
-                "extra_days": 3,
+                "name": "Salkantay Trek",
+                "variation": "Higher altitude alternative",
+                "extra_days": 1,
                 "highlights": [
-                    "See Alpamayo up close",
-                    "More remote",
-                    "Additional passes"
+                    "No permit needed",
+                    "Salkantay peak views",
+                    "More challenging"
                 ]
             },
             {
-                "name": "Santa Cruz-Llanganuco",
-                "variation": "Exit via Llanganuco",
+                "name": "Lares Trek",
+                "variation": "Cultural focus",
                 "extra_days": 0,
                 "highlights": [
-                    "Different exit valley",
-                    "Laguna 69 option",
-                    "Transport flexibility"
+                    "Remote villages",
+                    "Hot springs",
+                    "Weaving communities"
+                ]
+            },
+            {
+                "name": "Short Inca Trail",
+                "variation": "2-day version",
+                "fewer_days": 2,
+                "highlights": [
+                    "Less strenuous",
+                    "Still enter via Sun Gate",
+                    "Good for families"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Taullipampa camp",
-                "best_time": "Sunrise/sunset",
+                "location": "Dead Woman's Pass",
+                "best_time": "Morning",
                 "subjects": [
-                    "Taulliraju",
-                    "Alpenglow on peaks",
-                    "Star photography"
+                    "Mountain panorama",
+                    "Achievement shots",
+                    "Cloud formations"
                 ]
             },
             {
-                "location": "Punta Union Pass",
-                "best_time": "Morning",
+                "location": "Phuyupatamarca",
+                "best_time": "Sunset",
                 "subjects": [
-                    "360° panorama",
-                    "Both valleys",
-                    "Achievement shots"
+                    "Ruins with mountain backdrop",
+                    "Cloud forest",
+                    "Distant peaks"
+                ]
+            },
+            {
+                "location": "Sun Gate",
+                "best_time": "Sunrise",
+                "subjects": [
+                    "First view of Machu Picchu",
+                    "Morning mist",
+                    "Dramatic reveal"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How does this compare to the Inca Trail?",
-                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
+                "question": "How fit do I need to be?",
+                "answer": "Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior."
             },
             {
-                "question": "Can I do it independently?",
-                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
+                "question": "Why must I book so far ahead?",
+                "answer": "Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently."
             },
             {
-                "question": "Is acclimatization really necessary?",
-                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
+                "question": "What about altitude sickness?",
+                "answer": "Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely."
+            },
+            {
+                "question": "How heavy is my daypack?",
+                "answer": "Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg."
+            },
+            {
+                "question": "Is the trail crowded?",
+                "answer": "Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 85,
+        "popularity_score": 99,
         "seo": {
-            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
-            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
+            "meta_title": "Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu",
+            "meta_description": "Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.",
             "keywords": [
-                "santa cruz trek",
-                "cordillera blanca",
+                "inca trail",
+                "machu picchu trek",
                 "peru trekking",
-                "huaraz hiking",
-                "punta union pass"
+                "inca trail permits",
+                "cusco hiking"
             ]
         }
     };
