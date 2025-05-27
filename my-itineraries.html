@@ -590,24 +590,69 @@
         }
         
         if (trekMeta.trekImage) {
-          // Use the trek's specific image
-          return Promise.resolve(`
-            <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
-                 style="background-image: url('${trekMeta.trekImage}')">
-              <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-              <div class="relative z-10 text-center">
-                <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
-                <p class="text-sm text-gray-200 opacity-90">${toTitleCase(itinerary.location)}</p>
-              </div>
-            </div>
-          `);
+          // Try to load the trek image to verify it exists
+          const img = new Image();
+          img.src = trekMeta.trekImage;
+          
+          return new Promise((resolve) => {
+            img.onload = () => {
+              // Trek image loaded successfully, use it
+              resolve(`
+                <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
+                     style="background-image: url('${trekMeta.trekImage}')">
+                  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                  <div class="relative z-10 text-center">
+                    <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
+                    <p class="text-sm text-gray-200 opacity-90">${toTitleCase(itinerary.location)}</p>
+                  </div>
+                </div>
+              `);
+            };
+            
+            img.onerror = () => {
+              // Trek image failed to load, fall back to location-based image/gradient
+              const locationInfo = getLocationData(itinerary.location);
+              if (locationInfo.image) {
+                // Try location image
+                const locImg = new Image();
+                locImg.src = locationInfo.image;
+                
+                locImg.onload = () => {
+                  resolve(`
+                    <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
+                         style="background-image: url('${locationInfo.image}')">
+                      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                      <div class="relative z-10 text-center">
+                        <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
+                        <p class="text-sm text-gray-200 opacity-90">${toTitleCase(itinerary.location)}</p>
+                      </div>
+                    </div>
+                  `);
+                };
+                
+                locImg.onerror = () => {
+                  resolve(createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek));
+                };
+              } else {
+                resolve(createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek));
+              }
+            };
+            
+            // Timeout fallback
+            setTimeout(() => {
+              if (!img.complete) {
+                const locationInfo = getLocationData(itinerary.location);
+                resolve(createGradientHeader(itinerary, locationInfo, displayTitle, isPopularTrek));
+              }
+            }, 1000);
+          });
         }
       }
       
-      // For location info (for gradient/image matching)
+      // For non-popular treks, use location-based images
       const locationInfo = getLocationData(itinerary.location);
       
-      // Check if the image exists
+      // Check if the location image exists
       if (locationInfo.image) {
         // Try to load the image first to check if it exists
         const img = new Image();
