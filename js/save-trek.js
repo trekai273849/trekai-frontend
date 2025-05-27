@@ -31,40 +31,18 @@ async function saveTrek(user) {
         // Get the trek image
         const trekImage = getTrekImage();
         
-        // Prepare the itinerary data - matching the expected API format
+        // Prepare the itinerary data - matching the EXACT backend structure
         const itineraryData = {
-            type: 'popular-trek',
-            trekId: window.trekData._id || window.trekData.slug,
             title: window.trekData.name,
-            trekName: window.trekData.name, // Include as backup
-            trekImage: trekImage, // Include the trek image
             location: window.trekData.region || window.trekData.country || 'Unknown',
-            days: window.trekData.duration?.recommended_days || window.trekData.duration?.min_days || 1,
-            startDate: new Date().toISOString(), // Add a default start date
-            endDate: new Date(Date.now() + (window.trekData.duration?.recommended_days || 10) * 24 * 60 * 60 * 1000).toISOString(), // Calculate end date
+            content: `# ${window.trekData.name}\n\n${window.trekData.summary || ''}\n\n## Trek Details\n- **Duration:** ${window.trekData.duration?.recommended_days || 'N/A'} days\n- **Distance:** ${window.trekData.distance_km || 'N/A'} km\n- **Max Elevation:** ${window.trekData.max_elevation_m || 'N/A'} m\n- **Difficulty:** ${window.trekData.difficulty || 'N/A'}\n\n*This is a saved popular trek. View the trek page for the complete itinerary.*`,
             filters: {
+                accommodation: 'teahouse',
                 difficulty: window.trekData.difficulty || 'moderate',
-                accommodation: 'teahouse', // Default for popular treks
-                technical: 'no' // Default for popular treks
+                altitude: window.trekData.max_elevation_m > 4000 ? 'high' : (window.trekData.max_elevation_m > 3000 ? 'moderate' : 'low'),
+                technical: 'no'
             },
-            trekDetails: {
-                duration: window.trekData.duration?.recommended_days || window.trekData.duration?.min_days,
-                distance: window.trekData.distance_km,
-                maxElevation: window.trekData.max_elevation_m,
-                country: window.trekData.country,
-                region: window.trekData.region,
-                summary: window.trekData.summary
-            },
-            // Add a basic itinerary array - this might be required by the API
-            itinerary: [{
-                day: 1,
-                title: 'View full trek details',
-                activities: [`See complete ${window.trekData.name} itinerary`],
-                accommodation: 'As per trek details',
-                meals: ['As per trek details'],
-                distance: 'See trek details',
-                duration: 'See trek details'
-            }]
+            comments: `Popular trek saved from: ${window.trekData.name}. Trek ID: ${window.trekData._id || window.trekData.slug}. Image: ${trekImage || 'none'}`
         };
         
         // Log the data being sent for debugging

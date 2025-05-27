@@ -390,38 +390,56 @@
       return defaultLocationData;
     }
     
+    // Function to parse trek metadata from comments
+    function parseTrekMetadata(comments) {
+      if (!comments) return {};
+      
+      const metadata = {};
+      
+      // Extract trek ID
+      const trekIdMatch = comments.match(/Trek ID: ([^.]+)/);
+      if (trekIdMatch) metadata.trekId = trekIdMatch[1].trim();
+      
+      // Extract image URL
+      const imageMatch = comments.match(/Image: ([^.]+|none)/);
+      if (imageMatch && imageMatch[1] !== 'none') metadata.trekImage = imageMatch[1].trim();
+      
+      // Check if it's a popular trek
+      if (comments.includes('Popular trek saved from:')) {
+        metadata.isPopularTrek = true;
+        const nameMatch = comments.match(/Popular trek saved from: ([^.]+)/);
+        if (nameMatch) metadata.trekName = nameMatch[1].trim();
+      }
+      
+      return metadata;
+    }
+    
     // Function to create a header for an itinerary card
     function createCardHeader(itinerary) {
-      const isPopularTrek = itinerary.type === 'popular-trek';
+      // Parse trek metadata from comments
+      const trekMeta = parseTrekMetadata(itinerary.comments);
+      const isPopularTrek = trekMeta.isPopularTrek || false;
       
-      // For popular treks, use the title (trek name); for custom itineraries, use location
-      const displayTitle = isPopularTrek ? 
-        (itinerary.title || itinerary.trekName || 'Popular Trek') : 
-        toTitleCase(itinerary.location || 'Custom Itinerary');
+      // Use title for display (which will be the trek name for popular treks)
+      const displayTitle = itinerary.title || 'Custom Itinerary';
       
       // Check if this is a popular trek with its own image
-      if (isPopularTrek && itinerary.trekImage) {
+      if (isPopularTrek && trekMeta.trekImage) {
         // Use the trek's specific image
         return Promise.resolve(`
           <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
-               style="background-image: url('${itinerary.trekImage}')">
+               style="background-image: url('${trekMeta.trekImage}')">
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
             <div class="relative z-10 text-center">
               <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
-              ${itinerary.trekDetails?.region ? `
-                <p class="text-sm text-gray-200 opacity-90">${toTitleCase(itinerary.trekDetails.region)}</p>
-              ` : ''}
+              <p class="text-sm text-gray-200 opacity-90">${toTitleCase(itinerary.location)}</p>
             </div>
           </div>
         `);
       }
       
-      // For location info (for gradient/image matching), use the region or location
-      const locationForStyling = isPopularTrek ? 
-        (itinerary.trekDetails?.region || itinerary.location) : 
-        itinerary.location;
-      
-      const locationInfo = getLocationData(locationForStyling);
+      // For location info (for gradient/image matching)
+      const locationInfo = getLocationData(itinerary.location);
       
       // Check if the image exists
       if (locationInfo.image) {
@@ -472,8 +490,8 @@
           <div class="absolute right-3 bottom-3 text-4xl opacity-30">${locationInfo.icon}</div>
           <div class="z-10 text-center">
             <h3 class="text-xl font-bold mb-1">${displayTitle}</h3>
-            ${isPopularTrek && itinerary.trekDetails?.region ? `
-              <p class="text-sm opacity-90">${toTitleCase(itinerary.trekDetails.region)}</p>
+            ${itinerary.location ? `
+              <p class="text-sm opacity-90">${toTitleCase(itinerary.location)}</p>
             ` : ''}
           </div>
         </div>
@@ -561,17 +579,30 @@
             const card = document.createElement('div');
             card.className = 'bg-white rounded-lg shadow-md overflow-hidden itinerary-card';
             
-            // Check if this is a saved popular trek
-            const isPopularTrek = itinerary.type === 'popular-trek';
+            // Parse trek metadata from comments
+            const trekMeta = parseTrekMetadata(itinerary.comments);
+            const isPopularTrek = trekMeta.isPopularTrek || false;
 
             // Determine the view URL based on type
             let viewUrl;
-            if (isPopularTrek && itinerary.trekId) {
+            if (isPopularTrek && trekMeta.trekId) {
               // For popular treks, link to the trek page
-              viewUrl = `/output/treks/${itinerary.trekId}.html`;
+              viewUrl = `/output/treks/${trekMeta.trekId}.html`;
             } else {
               // For custom itineraries, use the regular view page
               viewUrl = `view-itinerary.html?id=${itinerary._id}`;
+            }
+
+            // Parse trek details from content if available
+            let trekDetails = {};
+            if (itinerary.content) {
+              const durationMatch = itinerary.content.match(/Duration:\*\* (\d+)/);
+              const distanceMatch = itinerary.content.match(/Distance:\*\* (\d+)/);
+              const elevationMatch = itinerary.content.match(/Max Elevation:\*\* (\d+)/);
+              
+              if (durationMatch) trekDetails.duration = durationMatch[1];
+              if (distanceMatch) trekDetails.distance = distanceMatch[1];
+              if (elevationMatch) trekDetails.maxElevation = elevationMatch[1];
             }
 
             card.innerHTML = `
@@ -592,30 +623,30 @@
                   ${isPopularTrek ? 'Saved' : 'Created'}: ${createdDate}
                 </p>
                 
-                ${itinerary.trekDetails ? `
+                ${Object.keys(trekDetails).length > 0 ? `
                   <div class="text-sm text-gray-600 mb-3 grid grid-cols-2 gap-2">
-                    ${itinerary.trekDetails.duration ? `
+                    ${trekDetails.duration ? `
                       <div class="flex items-center gap-1">
                         <span>📅</span>
-                        <span>${itinerary.trekDetails.duration} days</span>
+                        <span>${trekDetails.duration} days</span>
                       </div>
                     ` : ''}
-                    ${itinerary.trekDetails.distance ? `
+                    ${trekDetails.distance ? `
                       <div class="flex items-center gap-1">
                         <span>🥾</span>
-                        <span>${itinerary.trekDetails.distance}km</span>
+                        <span>${trekDetails.distance}km</span>
                       </div>
                     ` : ''}
-                    ${itinerary.trekDetails.maxElevation ? `
+                    ${trekDetails.maxElevation ? `
                       <div class="flex items-center gap-1">
                         <span>🏔️</span>
-                        <span>${itinerary.trekDetails.maxElevation}m</span>
+                        <span>${trekDetails.maxElevation}m</span>
                       </div>
                     ` : ''}
-                    ${itinerary.trekDetails.country ? `
+                    ${itinerary.location ? `
                       <div class="flex items-center gap-1">
                         <span>📍</span>
-                        <span>${itinerary.trekDetails.country}</span>
+                        <span>${toTitleCase(itinerary.location)}</span>
                       </div>
                     ` : ''}
                   </div>
