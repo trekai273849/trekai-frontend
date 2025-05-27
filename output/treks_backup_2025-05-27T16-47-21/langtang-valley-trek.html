@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit</title>
-    <meta name="description" content="Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.">
+    <title>Langtang Valley Trek Guide 2024 | 9-Day Itinerary with Kyanjin Ri</title>
+    <meta name="description" content="Complete guide to Langtang Valley Trek - the closest Himalayan trek to Kathmandu. Detailed itinerary, Tamang culture, and glacier views.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/huemul-circuit.jpg');
+            background-image: url('/images/treks/covers/langtang-valley-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,12 +75,6 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-tagline {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.95;
         }
 
         .hero-stats {
@@ -561,18 +555,32 @@
         }
 
         /* Mobile Responsive */
-        @media (max-width: 768px) {
-    @media (max-width: 768px) {
+        
+/* Mobile Header Fixes */
+
+/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
+@media (max-width: 768px) {
+    /* FORCE HERO STATS INTO 2x2 GRID */
+    
+    /* ENHANCED 2x2 GRID FIX */
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
+        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
+        padding: 0 !important;
         justify-content: center !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        /* Remove conflicting flex properties */
+        flex-direction: unset !important;
+        flex-wrap: unset !important;
     }
     
+    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -587,56 +595,265 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
+        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.8rem 0.5rem !important;
+        background: rgba(0,0,0,0.4) !important;
+        border-radius: 8px !important;
+        backdrop-filter: blur(3px) !important;
+        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
+        margin-bottom: 0.2rem !important;
         color: white !important;
-        margin-bottom: 0.3rem !important;
+        display: block !important;
     }
     
     .hero-stat-label {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
         color: white !important;
+        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        opacity: 0.95 !important;
+        letter-spacing: 0.05em !important;
+        display: block !important;
+    }
+    
+    /* FIX HERO CONTAINER */
+    .hero {
+        height: 60vh !important;
+        min-height: 400px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+    
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .hero h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        line-height: 1.2 !important;
+        max-width: 90% !important;
+    }
+    
+    /* FIX MAIN CONTENT LAYOUT */
+    .content-section {
+        padding: 2rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    .overview-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .overview-main {
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .overview-main h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    
+    /* FIX SIDEBAR */
+    .quick-info-card {
+        width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        padding: 1.5rem !important;
+        box-sizing: border-box !important;
+        order: -1 !important;
+    }
+    
+    /* FIX NAVIGATION */
+    .nav-tabs-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        padding: 0 1rem !important;
+    }
+    
+    .nav-tab {
+        white-space: nowrap !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* PREVENT HORIZONTAL SCROLL */
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    .max-w-7xl {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* FIX HIGHLIGHTS */
+    .highlights-list {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .highlight-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .highlight-text {
+        flex: 1 !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* FIX BUTTONS */
+    .cta-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .btn {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem 2rem !important;
+    }
+    
+    /* TAILWIND STYLE FIXES */
+    .hero-image {
+        height: 350px !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-image .absolute {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 1.5rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
     }
 }
-            .hero {
-                height: 60vh;
-                min-height: 400px;
-            }
 
-            .hero h1 {
-                font-size: 2.5em;
-            }
+@media (max-width: 480px) {
+    .hero-stats {
+        max-width: 240px !important;
+        gap: 0.6rem !important;
+    }
+    
+    .hero-stat {
+        min-height: 50px !important;
+        padding: 0.6rem 0.4rem !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.65rem !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.5rem !important;
+    }
+}
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh !important;
+        min-height: 350px !important;
+    }
 
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
+    .hero h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
 
-            .nav-tabs-container {
-                justify-content: start;
-            }
+    .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+        max-width: 200px !important;
+    }
 
-            .cta-section {
-                flex-direction: column;
-            }
+    .hero-stat-value {
+        font-size: 1.6rem !important;
+    }
 
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+    .hero-stat-label {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-image {
+        height: 300px !important;
+    }
+
+    .hero-image h1 {
+        font-size: 1.6rem !important;
+    }
+}
 
         /* Animations */
         @keyframes fadeIn {
@@ -734,24 +951,24 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Huemul Circuit</h1>
+        <div class="hero-content mobile-fixed">
+            <h1>Langtang Valley Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4</span>
+                    <span class="hero-stat-value">9</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,600m</span>
+                    <span class="hero-stat-value">4,984m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">65km</span>
+                    <span class="hero-stat-value">77km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">challenging</span>
+                    <span class="hero-stat-value">moderate</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -767,9 +984,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Patagonia</h2>
+                <h2>Journey to Nepal/Himalayas</h2>
                 <p class="overview-description">
-                    A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.
+                    A shorter trek with stunning mountain views, glaciers, and authentic Tamang culture, perfect for those with limited time.
                 </p>
                 
                 <div class="highlights-list">
@@ -817,20 +1034,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">4-4 days</span>
+                    <span class="info-value">7-10 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">65 km / 40 mi</span>
+                    <span class="info-value">77 km / 48 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,600m (5,249ft)</span>
+                    <span class="info-value">4,984m (16,352ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">challenging</span>
+                        <span class="difficulty-badge">moderate</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -839,16 +1056,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">El Chaltén</span>
+                    <span class="info-value">Kathmandu</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$200 - $1,000</span>
+                        <span class="price-range">$500 - $1,000</span>
                     </span>
                 </div>
             </div>
@@ -857,9 +1074,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>4-Day Detailed Itinerary</h2>
+        <h2>9-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Patagonia with proper acclimatization and rest days
+            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -868,19 +1085,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">El Chaltén to Laguna Toro</h3>
+          <h3 class="day-title">Drive from Kathmandu to Syabrubesi</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 900m</span>
+            <span>📏 117km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +70m</span>
+            <span>🏔️ 1,470m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks.</p>
+      <p class="day-description">Early morning drive through scenic countryside following the Trishuli River north. The road winds through terraced hillsides to Syabrubesi.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Laguna Torre views</span><span class="day-highlight">Enter remote backcountry</span><span class="day-highlight">Glacial valley hiking</span><span class="day-highlight">First wilderness camp</span>
+          <span class="day-highlight">Scenic mountain drive</span><span class="day-highlight">Views of Ganesh Himal</span><span class="day-highlight">Trishuli River valley</span><span class="day-highlight">Traditional villages</span>
         </div>
       
     </div>
@@ -889,19 +1106,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Paso del Viento and Descent</h3>
+          <h3 class="day-title">Trek to Lama Hotel</h3>
           <div class="day-stats">
-            <span>📏 18km</span>
-            <span>⏱️ 8 hours</span>
-            <span>📈 +700m</span>
-            <span>🏔️ 600m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +910m</span>
+            <span>🏔️ 2,380m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter.</p>
+      <p class="day-description">Begin trekking along the Langtang Khola. The trail climbs gradually through forests where you might spot red pandas, monkeys, and various bird species.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Paso del Viento crossing</span><span class="day-highlight">Southern Ice Field views</span><span class="day-highlight">Technical descent with ropes</span><span class="day-highlight">Remote wilderness</span>
+          <span class="day-highlight">Cross Bhote Koshi River</span><span class="day-highlight">Dense forests</span><span class="day-highlight">Wildlife possibilities</span><span class="day-highlight">Hot springs detour option</span>
         </div>
       
     </div>
@@ -910,19 +1127,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Tyrolean Traverse Day</h3>
+          <h3 class="day-title">Trek to Langtang Village</h3>
           <div class="day-stats">
-            <span>📏 20km</span>
-            <span>⏱️ 9 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 750m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +1050m</span>
+            <span>🏔️ 3,430m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges.</p>
+      <p class="day-description">Steady climb through forests opening to views of Langtang Lirung. The village was rebuilt after the devastating 2015 earthquake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Famous tyrolean traverse</span><span class="day-highlight">Multiple river crossings</span><span class="day-highlight">Viedma Glacier views</span><span class="day-highlight">True wilderness experience</span>
+          <span class="day-highlight">Views of Langtang Lirung</span><span class="day-highlight">Traditional Tamang village</span><span class="day-highlight">Prayer wheels and mani walls</span><span class="day-highlight">2015 earthquake memorial</span>
         </div>
       
     </div>
@@ -931,19 +1148,124 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Return to El Chaltén</h3>
+          <h3 class="day-title">Trek to Kyanjin Gompa</h3>
           <div class="day-stats">
-            <span>📏 13km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 -350m</span>
-            <span>🏔️ 400m</span>
+            <span>📏 7km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 +440m</span>
+            <span>🏔️ 3,870m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits.</p>
+      <p class="day-description">Shorter day through yak pastures to Kyanjin Gompa, spiritual center of the valley with its ancient monastery and cheese factory.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Final river crossing</span><span class="day-highlight">Return to civilization</span><span class="day-highlight">Completion celebration</span><span class="day-highlight">Hot shower awaits</span>
+          <span class="day-highlight">Ancient Buddhist monastery</span><span class="day-highlight">Yak cheese factory</span><span class="day-highlight">Panoramic mountain views</span><span class="day-highlight">Base for day hikes</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Acclimatization and Exploration Day</h3>
+          <div class="day-stats">
+            <span>📏 10km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 3,870m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Day for altitude acclimatization with options to climb Kyanjin Ri or the more challenging Tserko Ri for spectacular panoramic views.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Kyanjin Ri viewpoint (4,773m)</span><span class="day-highlight">Or Tserko Ri (4,984m)</span><span class="day-highlight">360-degree mountain panorama</span><span class="day-highlight">Glacier exploration</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 6</div>
+          <h3 class="day-title">Optional: Langshisa Kharka</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +330m</span>
+            <span>🏔️ 3,870m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Optional day hike to Langshisa Kharka for close-up glacier views, or rest day in Kyanjin Gompa.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Langshisa Glacier</span><span class="day-highlight">Yak herding grounds</span><span class="day-highlight">Moraine landscapes</span><span class="day-highlight">Wildlife spotting</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Trek to Lama Hotel</h3>
+          <div class="day-stats">
+            <span>📏 21km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 -1490m</span>
+            <span>🏔️ 2,380m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Retrace your steps down the valley, enjoying different perspectives of the landscape and easier breathing at lower altitude.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Rapid descent</span><span class="day-highlight">Different perspective on views</span><span class="day-highlight">Return to forests</span><span class="day-highlight">Easier breathing</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Trek to Syabrubesi</h3>
+          <div class="day-stats">
+            <span>📏 11km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -910m</span>
+            <span>🏔️ 1,470m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final day of trekking back to Syabrubesi. Option to visit hot springs at Tatopani before reaching the village.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Complete the circuit</span><span class="day-highlight">Hot springs option</span><span class="day-highlight">Farewell dinner</span><span class="day-highlight">Prepare for departure</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">Drive to Kathmandu</h3>
+          <div class="day-stats">
+            <span>📏 117km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 -70m</span>
+            <span>🏔️ 1,400m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Drive back to Kathmandu through the scenic countryside, arriving in the afternoon with time to rest and celebrate.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Return journey</span><span class="day-highlight">Rural Nepal views</span><span class="day-highlight">Arrival in Kathmandu</span><span class="day-highlight">Celebration dinner</span>
         </div>
       
     </div>
@@ -968,82 +1290,66 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">4-season tent</div>
-          <div class="gear-description">Wind-resistant, must withstand storms</div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Comfortable and broken in</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm sleeping bag</div>
-          <div class="gear-description">-10°C rated minimum</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-10°C rated sufficient</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Full rain gear</div>
-          <div class="gear-description">Jacket and pants, high quality</div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Lightweight warmth layer</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">River crossing shoes</div>
-          <div class="gear-description">Sandals or extra shoes for crossings</div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Jacket and pants/poncho</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Warm layers</div>
+          <div class="gear-description">Fleece, thermals</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Essential for river crossings</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Camping stove and fuel</div>
-          <div class="gear-description">No wood fires allowed</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">First aid kit</div>
-          <div class="gear-description">Comprehensive for remote areas</div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Emergency shelter</div>
-          <div class="gear-description">Bivy or emergency blanket</div>
+          <div class="gear-name">Basic first aid</div>
+          <div class="gear-description">Personal medications</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">GPS device</div>
-          <div class="gear-description">Trail can be hard to follow</div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2 liters capacity</div>
         </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Rope</div>
-          <div class="gear-description">30m for river crossings</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
+        
       </li>
     
                 </ul>
@@ -1056,30 +1362,6 @@
                 </h3>
                 <ul class="gear-list">
                     
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For river crossings and mud</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Neoprene socks</div>
-          <div class="gear-description">For cold river crossings</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Satellite communicator</div>
-          <div class="gear-description">For emergencies</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
                 </ul>
             </div>
         </div>
@@ -1095,10 +1377,17 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">December, January, February, March</p>
-      <p>Only viable season due to river crossings and weather</p>
+      <div class="season-icon">🌸</div>
+      <h3 class="season-name">Spring</h3>
+      <p class="season-months">March, April, May</p>
+      <p>Rhododendrons in full bloom, clear mornings</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Autumn</h3>
+      <p class="season-months">September, October, November</p>
+      <p>Crystal clear views, stable weather</p>
     </div>
   
         </div>
@@ -1121,27 +1410,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$40</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$25</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$0</span>
+      <span>$5</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$15</span>
+      <span>$20</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$80</span>
+      <span>$40</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$200 - $1,000</span>
+      <span>$500 - $1,000</span>
     </div>
   
         </div>
@@ -1161,38 +1450,6 @@
 
         <div class="faq-list">
             
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is the Huemul Circuit safe?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What about the tyrolean traverse?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it without camping experience?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What if rivers are too high?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important.</div>
-    </div>
-  
         </div>
     </section>
 
@@ -1330,335 +1587,522 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "huemul-circuit",
-        "name": "Huemul Circuit",
-        "slug": "huemul-circuit",
-        "region": "Patagonia",
-        "country": "Argentina",
-        "summary": "A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.",
+        "_id": "langtang-valley-trek",
+        "name": "Langtang Valley Trek",
+        "slug": "langtang-valley-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "A shorter trek with stunning mountain views, glaciers, and authentic Tamang culture, perfect for those with limited time.",
         "duration": {
-            "min_days": 4,
-            "max_days": 4,
-            "recommended_days": 4
+            "min_days": 7,
+            "max_days": 10,
+            "recommended_days": 9
         },
-        "distance_km": 65,
-        "difficulty": "challenging",
-        "max_elevation_m": 1600,
-        "starting_elevation_m": 400,
-        "airport": "El Calafate (FTE)",
-        "nearest_city": "El Chaltén",
+        "distance_km": 77,
+        "difficulty": "moderate",
+        "max_elevation_m": 4984,
+        "starting_elevation_m": 1470,
+        "airport": "Kathmandu (KTM)",
+        "nearest_city": "Kathmandu",
         "coordinates": {
             "start": {
-                "lat": -49.3314,
-                "lng": -72.8861,
-                "location": "El Chaltén"
+                "lat": 28.2142,
+                "lng": 85.3606,
+                "location": "Syabrubesi"
             },
             "end": {
-                "lat": -49.3314,
-                "lng": -72.8861,
-                "location": "El Chaltén"
+                "lat": 28.21,
+                "lng": 85.53,
+                "location": "Kyanjin Gompa"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
+                "name": "Spring",
                 "months": [
-                    "December",
-                    "January",
-                    "February",
-                    "March"
+                    "March",
+                    "April",
+                    "May"
                 ],
-                "description": "Only viable season due to river crossings and weather"
+                "description": "Rhododendrons in full bloom, clear mornings"
+            },
+            {
+                "name": "Autumn",
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "description": "Crystal clear views, stable weather"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "El Chaltén to Laguna Toro",
-                "start_location": "El Chaltén",
-                "end_location": "Laguna Toro",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 400,
-                "elevation_end_m": 900,
-                "elevation_gain_m": 500,
-                "difficulty": "moderate",
+                "title": "Drive from Kathmandu to Syabrubesi",
+                "start_location": "Kathmandu",
+                "end_location": "Syabrubesi",
+                "distance_km": 117,
+                "duration_hours": 7,
+                "elevation_start_m": 1400,
+                "elevation_end_m": 1470,
+                "elevation_gain_m": 70,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "lodge",
                     "options": [
-                        "Laguna Toro designated campsite"
+                        "Hotel Langtang View",
+                        "Buddha Guest House",
+                        "Peaceful Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Laguna Torre views",
-                    "Enter remote backcountry",
-                    "Glacial valley hiking",
-                    "First wilderness camp"
+                "meals_included": [
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks."
+                "highlights": [
+                    "Scenic mountain drive",
+                    "Views of Ganesh Himal",
+                    "Trishuli River valley",
+                    "Traditional villages"
+                ],
+                "description": "Early morning drive through scenic countryside following the Trishuli River north. The road winds through terraced hillsides to Syabrubesi."
             },
             {
                 "day": 2,
-                "title": "Paso del Viento and Descent",
-                "start_location": "Laguna Toro",
-                "end_location": "Refugio Paso del Viento",
-                "distance_km": 18,
-                "duration_hours": 8,
-                "elevation_start_m": 900,
-                "elevation_end_m": 600,
-                "elevation_gain_m": 700,
-                "difficulty": "very challenging",
+                "title": "Trek to Lama Hotel",
+                "start_location": "Syabrubesi",
+                "end_location": "Lama Hotel",
+                "distance_km": 11,
+                "duration_hours": 6,
+                "elevation_start_m": 1470,
+                "elevation_end_m": 2380,
+                "elevation_gain_m": 910,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/refugio",
+                    "type": "teahouse",
                     "options": [
-                        "Refugio Paso del Viento (basic shelter)"
+                        "Lama Hotel",
+                        "Woodland Lodge",
+                        "Himalayan Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Paso del Viento crossing",
-                    "Southern Ice Field views",
-                    "Technical descent with ropes",
-                    "Remote wilderness"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter."
+                "highlights": [
+                    "Cross Bhote Koshi River",
+                    "Dense forests",
+                    "Wildlife possibilities",
+                    "Hot springs detour option"
+                ],
+                "description": "Begin trekking along the Langtang Khola. The trail climbs gradually through forests where you might spot red pandas, monkeys, and various bird species."
             },
             {
                 "day": 3,
-                "title": "Tyrolean Traverse Day",
-                "start_location": "Refugio Paso del Viento",
-                "end_location": "Campamento Loma del Diablo",
-                "distance_km": 20,
-                "duration_hours": 9,
-                "elevation_start_m": 600,
-                "elevation_end_m": 750,
-                "elevation_gain_m": 400,
-                "difficulty": "challenging",
+                "title": "Trek to Langtang Village",
+                "start_location": "Lama Hotel",
+                "end_location": "Langtang Village",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 2380,
+                "elevation_end_m": 3430,
+                "elevation_gain_m": 1050,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "teahouse",
                     "options": [
-                        "Loma del Diablo campsite"
+                        "Moonlight Guest House",
+                        "Himalaya Guest House",
+                        "Yeti Guest House"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Famous tyrolean traverse",
-                    "Multiple river crossings",
-                    "Viedma Glacier views",
-                    "True wilderness experience"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges."
+                "highlights": [
+                    "Views of Langtang Lirung",
+                    "Traditional Tamang village",
+                    "Prayer wheels and mani walls",
+                    "2015 earthquake memorial"
+                ],
+                "description": "Steady climb through forests opening to views of Langtang Lirung. The village was rebuilt after the devastating 2015 earthquake."
             },
             {
                 "day": 4,
-                "title": "Return to El Chaltén",
-                "start_location": "Campamento Loma del Diablo",
-                "end_location": "El Chaltén",
-                "distance_km": 13,
-                "duration_hours": 5,
-                "elevation_start_m": 750,
-                "elevation_end_m": 400,
-                "elevation_gain_m": -350,
-                "difficulty": "moderate",
+                "title": "Trek to Kyanjin Gompa",
+                "start_location": "Langtang Village",
+                "end_location": "Kyanjin Gompa",
+                "distance_km": 7,
+                "duration_hours": 3,
+                "elevation_start_m": 3430,
+                "elevation_end_m": 3870,
+                "elevation_gain_m": 440,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "town",
+                    "type": "teahouse",
                     "options": [
-                        "Return to El Chaltén accommodation"
+                        "Yala Peak Hotel",
+                        "Himalaya Lodge",
+                        "Snow Lion Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Final river crossing",
-                    "Return to civilization",
-                    "Completion celebration",
-                    "Hot shower awaits"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits."
+                "highlights": [
+                    "Ancient Buddhist monastery",
+                    "Yak cheese factory",
+                    "Panoramic mountain views",
+                    "Base for day hikes"
+                ],
+                "description": "Shorter day through yak pastures to Kyanjin Gompa, spiritual center of the valley with its ancient monastery and cheese factory."
+            },
+            {
+                "day": 5,
+                "title": "Acclimatization and Exploration Day",
+                "start_location": "Kyanjin Gompa",
+                "end_location": "Kyanjin Gompa",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 3870,
+                "elevation_end_m": 3870,
+                "elevation_gain_m": 600,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Kyanjin Ri viewpoint (4,773m)",
+                    "Or Tserko Ri (4,984m)",
+                    "360-degree mountain panorama",
+                    "Glacier exploration"
+                ],
+                "description": "Day for altitude acclimatization with options to climb Kyanjin Ri or the more challenging Tserko Ri for spectacular panoramic views."
+            },
+            {
+                "day": 6,
+                "title": "Optional: Langshisa Kharka",
+                "start_location": "Kyanjin Gompa",
+                "end_location": "Kyanjin Gompa",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 3870,
+                "elevation_end_m": 3870,
+                "elevation_gain_m": 330,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Langshisa Glacier",
+                    "Yak herding grounds",
+                    "Moraine landscapes",
+                    "Wildlife spotting"
+                ],
+                "description": "Optional day hike to Langshisa Kharka for close-up glacier views, or rest day in Kyanjin Gompa."
+            },
+            {
+                "day": 7,
+                "title": "Trek to Lama Hotel",
+                "start_location": "Kyanjin Gompa",
+                "end_location": "Lama Hotel",
+                "distance_km": 21,
+                "duration_hours": 7,
+                "elevation_start_m": 3870,
+                "elevation_end_m": 2380,
+                "elevation_gain_m": -1490,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Lama Hotel",
+                        "Woodland Lodge",
+                        "Himalayan Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Rapid descent",
+                    "Different perspective on views",
+                    "Return to forests",
+                    "Easier breathing"
+                ],
+                "description": "Retrace your steps down the valley, enjoying different perspectives of the landscape and easier breathing at lower altitude."
+            },
+            {
+                "day": 8,
+                "title": "Trek to Syabrubesi",
+                "start_location": "Lama Hotel",
+                "end_location": "Syabrubesi",
+                "distance_km": 11,
+                "duration_hours": 5,
+                "elevation_start_m": 2380,
+                "elevation_end_m": 1470,
+                "elevation_gain_m": -910,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Hotel Langtang View",
+                        "Buddha Guest House",
+                        "Peaceful Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Complete the circuit",
+                    "Hot springs option",
+                    "Farewell dinner",
+                    "Prepare for departure"
+                ],
+                "description": "Final day of trekking back to Syabrubesi. Option to visit hot springs at Tatopani before reaching the village."
+            },
+            {
+                "day": 9,
+                "title": "Drive to Kathmandu",
+                "start_location": "Syabrubesi",
+                "end_location": "Kathmandu",
+                "distance_km": 117,
+                "duration_hours": 7,
+                "elevation_start_m": 1470,
+                "elevation_end_m": 1400,
+                "elevation_gain_m": -70,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Return to Kathmandu accommodation"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Return journey",
+                    "Rural Nepal views",
+                    "Arrival in Kathmandu",
+                    "Celebration dinner"
+                ],
+                "description": "Drive back to Kathmandu through the scenic countryside, arriving in the afternoon with time to rest and celebrate."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "4-season tent",
-                    "description": "Wind-resistant, must withstand storms",
+                    "item": "Trekking boots",
+                    "description": "Comfortable and broken in",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm sleeping bag",
-                    "description": "-10°C rated minimum",
+                    "item": "Sleeping bag",
+                    "description": "-10°C rated sufficient",
                     "rental_available": true
                 },
                 {
-                    "item": "Full rain gear",
-                    "description": "Jacket and pants, high quality",
+                    "item": "Down jacket",
+                    "description": "Lightweight warmth layer",
                     "rental_available": true
                 },
                 {
-                    "item": "River crossing shoes",
-                    "description": "Sandals or extra shoes for crossings",
+                    "item": "Rain gear",
+                    "description": "Jacket and pants/poncho",
+                    "rental_available": true
+                },
+                {
+                    "item": "Warm layers",
+                    "description": "Fleece, thermals",
                     "rental_available": false
                 },
                 {
-                    "item": "Trekking poles",
-                    "description": "Essential for river crossings",
-                    "rental_available": true
-                },
-                {
-                    "item": "Camping stove and fuel",
-                    "description": "No wood fires allowed",
-                    "rental_available": true
-                },
-                {
-                    "item": "First aid kit",
-                    "description": "Comprehensive for remote areas",
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
                     "rental_available": false
                 },
                 {
-                    "item": "Emergency shelter",
-                    "description": "Bivy or emergency blanket",
+                    "item": "Basic first aid",
+                    "description": "Personal medications",
                     "rental_available": false
                 },
                 {
-                    "item": "GPS device",
-                    "description": "Trail can be hard to follow",
-                    "rental_available": true
-                },
-                {
-                    "item": "Rope",
-                    "description": "30m for river crossings",
-                    "rental_available": true
-                }
-            ],
-            "recommended": [
-                {
-                    "item": "Gaiters",
-                    "description": "For river crossings and mud",
+                    "item": "Water bottles",
+                    "description": "2 liters capacity",
                     "rental_available": false
-                },
-                {
-                    "item": "Neoprene socks",
-                    "description": "For cold river crossings",
-                    "rental_available": false
-                },
-                {
-                    "item": "Satellite communicator",
-                    "description": "For emergencies",
-                    "rental_available": true
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Huemul Circuit Registration",
-                "cost_usd": 0,
-                "cost_ars": 0,
-                "where_to_obtain": "National Park office El Chaltén",
-                "validity": "Specific dates",
-                "notes": "Must show gear list and experience"
+                "name": "Langtang National Park Entry",
+                "cost_usd": 30,
+                "cost_npr": 3000,
+                "where_to_obtain": "Dhunche checkpoint or Kathmandu",
+                "validity": "Single entry"
+            },
+            {
+                "name": "TIMS Card",
+                "cost_usd": 10,
+                "cost_npr": 1000,
+                "where_to_obtain": "Tourism Board Kathmandu",
+                "validity": "Trek duration"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "porter_daily_usd": 0,
-            "accommodation_daily_usd": 0,
-            "meals_daily_usd": 15,
-            "transportation_usd": 80,
+            "permit_total_usd": 40,
+            "guide_daily_usd": 25,
+            "porter_daily_usd": 18,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 40,
             "total_budget_range_usd": {
-                "min": 200,
+                "min": 500,
                 "max": 1000
             }
         },
-        "health_safety": {
-            "main_concerns": {
-                "river_crossings": {
-                    "risk_level": "very high",
-                    "description": "Multiple dangerous crossings",
-                    "prevention": [
-                        "Never cross alone",
-                        "Use poles and rope",
-                        "Cross early morning when water is lower",
-                        "Be prepared to wait if levels are high",
-                        "Know when to turn back"
-                    ]
+        "cultural_information": {
+            "ethnic_groups": [
+                "Tamang",
+                "Tibetan"
+            ],
+            "primary_religion": "Tibetan Buddhism",
+            "languages": [
+                "Tamang",
+                "Nepali",
+                "Basic English"
+            ],
+            "customs_etiquette": [
+                "Clockwise around religious sites",
+                "Remove shoes in homes/monasteries",
+                "Right hand for giving/receiving",
+                "Modest dress appreciated"
+            ],
+            "local_foods": [
+                {
+                    "name": "Yak cheese",
+                    "description": "Fresh from Kyanjin factory"
                 },
-                "weather": {
-                    "risk_level": "very high",
-                    "description": "Extreme conditions possible",
-                    "prevention": [
-                        "Monitor forecasts closely",
-                        "Be prepared for snow any time",
-                        "Carry emergency shelter",
-                        "Know escape routes"
-                    ]
+                {
+                    "name": "Tibetan bread",
+                    "description": "Fried flatbread"
                 },
-                "remoteness": {
-                    "risk_level": "very high",
-                    "description": "No easy evacuation",
-                    "prevention": [
-                        "Travel with experienced partners",
-                        "Carry comprehensive first aid",
-                        "Consider satellite communicator",
-                        "Leave detailed itinerary with rangers"
-                    ]
+                {
+                    "name": "Tsampa",
+                    "description": "Roasted barley flour"
+                },
+                {
+                    "name": "Local raksi",
+                    "description": "Traditional distilled alcohol"
                 }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent built into itinerary",
+                    "Rest day at Kyanjin",
+                    "Stay hydrated",
+                    "Monitor symptoms"
+                ]
             },
+            "medical_facilities": [
+                {
+                    "location": "Dhunche",
+                    "type": "District hospital"
+                },
+                {
+                    "location": "Kyanjin Gompa",
+                    "type": "Basic health post"
+                }
+            ],
             "evacuation": {
-                "method": "Helicopter only",
-                "cost_usd": "5000+",
-                "insurance_required": true,
-                "response_time": "24-48 hours weather permitting"
+                "method": "Helicopter",
+                "cost_usd": "3000-4000",
+                "availability": "Weather dependent"
             }
         },
-        "difficulty_details": {
-            "physical_demands": "Excellent fitness required",
-            "technical_skills": "Route-finding, river crossing experience",
-            "altitude_challenge": "None",
-            "trail_conditions": "Often unclear, GPS recommended",
-            "weather_challenge": "Extreme - primary hazard",
-            "daily_hiking_hours": "6-9 hours",
-            "total_elevation_gain": 2250,
-            "total_elevation_loss": 2250
-        },
         "special_considerations": {
-            "experience_required": "Previous multi-day trekking essential",
-            "group_size": "Minimum 2, recommended 3-4",
-            "solo_hiking": "Strongly discouraged",
-            "guide_recommendation": "Highly recommended unless very experienced",
-            "season_critical": "December-March only"
+            "earthquake_impact": "The 2015 earthquake severely affected this region. The trail and villages have been rebuilt, but some scars remain visible.",
+            "wildlife": "Part of Langtang National Park - chance to see red pandas, Himalayan black bears, and various bird species.",
+            "closeness_to_kathmandu": "Nearest major trekking area to the capital, making it ideal for shorter trips.",
+            "fewer_crowds": "Less crowded than Everest or Annapurna regions, offering a more peaceful experience."
         },
-        "faqs": [
+        "alternative_routes": [
             {
-                "question": "Is the Huemul Circuit safe?",
-                "answer": "It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides."
+                "name": "Langtang-Gosainkunda",
+                "variation": "Combine with sacred lakes",
+                "extra_days": 4,
+                "highlights": [
+                    "Sacred lakes",
+                    "High passes",
+                    "Hindu pilgrimage site"
+                ]
             },
             {
-                "question": "What about the tyrolean traverse?",
-                "answer": "A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating."
+                "name": "Langtang-Helambu",
+                "variation": "Connect to Helambu region",
+                "extra_days": 6,
+                "highlights": [
+                    "Cultural diversity",
+                    "Lower elevations",
+                    "Circuit trek"
+                ]
             },
             {
-                "question": "Can I do it without camping experience?",
-                "answer": "No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on."
-            },
-            {
-                "question": "What if rivers are too high?",
-                "answer": "You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important."
+                "name": "Ganja La Pass",
+                "variation": "Technical pass to Helambu",
+                "extra_days": 5,
+                "highlights": [
+                    "5,122m pass",
+                    "Technical challenge",
+                    "Remote trek"
+                ]
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 78,
+        "popularity_score": 85,
         "seo": {
-            "meta_title": "Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit",
-            "meta_description": "Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.",
+            "meta_title": "Langtang Valley Trek Guide 2024 | 9-Day Itinerary with Kyanjin Ri",
+            "meta_description": "Complete guide to Langtang Valley Trek - the closest Himalayan trek to Kathmandu. Detailed itinerary, Tamang culture, and glacier views.",
             "keywords": [
-                "huemul circuit",
-                "el chalten circuit",
-                "patagonia challenging trek",
-                "tyrolean traverse",
-                "southern ice field trek"
+                "langtang valley trek",
+                "langtang trek",
+                "kyanjin gompa",
+                "nepal short trek",
+                "kathmandu trek"
             ]
         }
     };
@@ -1670,6 +2114,6 @@
   
   <!-- Footer -->
   <div id="footer-container"></div>
-  <script src="/js/components/footer.js" type="module"></script>
+  <script src="../js/components/footer.js" type="module"></script>
   
 </body></html>

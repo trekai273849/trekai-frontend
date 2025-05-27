@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit</title>
-    <meta name="description" content="Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.">
+    <title>Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail</title>
+    <meta name="description" content="Ultimate guide to the Salkantay Trek to Machu Picchu. Detailed 5-day itinerary, no permits needed, costs, gear list, and expert tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/huemul-circuit.jpg');
+            background-image: url('/images/treks/covers/salkantay-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,12 +75,6 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-tagline {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.95;
         }
 
         .hero-stats {
@@ -561,18 +555,32 @@
         }
 
         /* Mobile Responsive */
-        @media (max-width: 768px) {
-    @media (max-width: 768px) {
+        
+/* Mobile Header Fixes */
+
+/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
+@media (max-width: 768px) {
+    /* FORCE HERO STATS INTO 2x2 GRID */
+    
+    /* ENHANCED 2x2 GRID FIX */
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
+        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
+        padding: 0 !important;
         justify-content: center !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        /* Remove conflicting flex properties */
+        flex-direction: unset !important;
+        flex-wrap: unset !important;
     }
     
+    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -587,56 +595,265 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
+        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.8rem 0.5rem !important;
+        background: rgba(0,0,0,0.4) !important;
+        border-radius: 8px !important;
+        backdrop-filter: blur(3px) !important;
+        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
+        margin-bottom: 0.2rem !important;
         color: white !important;
-        margin-bottom: 0.3rem !important;
+        display: block !important;
     }
     
     .hero-stat-label {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
         color: white !important;
+        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        opacity: 0.95 !important;
+        letter-spacing: 0.05em !important;
+        display: block !important;
+    }
+    
+    /* FIX HERO CONTAINER */
+    .hero {
+        height: 60vh !important;
+        min-height: 400px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+    
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .hero h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        line-height: 1.2 !important;
+        max-width: 90% !important;
+    }
+    
+    /* FIX MAIN CONTENT LAYOUT */
+    .content-section {
+        padding: 2rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    .overview-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .overview-main {
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .overview-main h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    
+    /* FIX SIDEBAR */
+    .quick-info-card {
+        width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        padding: 1.5rem !important;
+        box-sizing: border-box !important;
+        order: -1 !important;
+    }
+    
+    /* FIX NAVIGATION */
+    .nav-tabs-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        padding: 0 1rem !important;
+    }
+    
+    .nav-tab {
+        white-space: nowrap !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* PREVENT HORIZONTAL SCROLL */
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    .max-w-7xl {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* FIX HIGHLIGHTS */
+    .highlights-list {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .highlight-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .highlight-text {
+        flex: 1 !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* FIX BUTTONS */
+    .cta-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .btn {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem 2rem !important;
+    }
+    
+    /* TAILWIND STYLE FIXES */
+    .hero-image {
+        height: 350px !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-image .absolute {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 1.5rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
     }
 }
-            .hero {
-                height: 60vh;
-                min-height: 400px;
-            }
 
-            .hero h1 {
-                font-size: 2.5em;
-            }
+@media (max-width: 480px) {
+    .hero-stats {
+        max-width: 240px !important;
+        gap: 0.6rem !important;
+    }
+    
+    .hero-stat {
+        min-height: 50px !important;
+        padding: 0.6rem 0.4rem !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.65rem !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.5rem !important;
+    }
+}
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh !important;
+        min-height: 350px !important;
+    }
 
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
+    .hero h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
 
-            .nav-tabs-container {
-                justify-content: start;
-            }
+    .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+        max-width: 200px !important;
+    }
 
-            .cta-section {
-                flex-direction: column;
-            }
+    .hero-stat-value {
+        font-size: 1.6rem !important;
+    }
 
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+    .hero-stat-label {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-image {
+        height: 300px !important;
+    }
+
+    .hero-image h1 {
+        font-size: 1.6rem !important;
+    }
+}
 
         /* Animations */
         @keyframes fadeIn {
@@ -734,20 +951,20 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Huemul Circuit</h1>
+        <div class="hero-content mobile-fixed">
+            <h1>Salkantay Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4</span>
+                    <span class="hero-stat-value">5</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,600m</span>
+                    <span class="hero-stat-value">4,600m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">65km</span>
+                    <span class="hero-stat-value">75km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -767,9 +984,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Patagonia</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.
+                    The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.
                 </p>
                 
                 <div class="highlights-list">
@@ -817,15 +1034,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">4-4 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">65 km / 40 mi</span>
+                    <span class="info-value">75 km / 47 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,600m (5,249ft)</span>
+                    <span class="info-value">4,600m (15,092ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -839,16 +1056,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">El Chaltén</span>
+                    <span class="info-value">Cusco</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">3 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$200 - $1,000</span>
+                        <span class="price-range">$300 - $800</span>
                     </span>
                 </div>
             </div>
@@ -857,9 +1074,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>4-Day Detailed Itinerary</h2>
+        <h2>5-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Patagonia with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -868,19 +1085,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">El Chaltén to Laguna Toro</h3>
+          <h3 class="day-title">Cusco to Soraypampa</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
             <span>📈 +500m</span>
-            <span>🏔️ 900m</span>
+            <span>🏔️ 3,850m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks.</p>
+      <p class="day-description">Drive from Cusco to Mollepata, then to Challacancha. Trek through valleys to Soraypampa with optional afternoon hike to stunning turquoise Humantay Lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Laguna Torre views</span><span class="day-highlight">Enter remote backcountry</span><span class="day-highlight">Glacial valley hiking</span><span class="day-highlight">First wilderness camp</span>
+          <span class="day-highlight">Humantay Lake option</span><span class="day-highlight">First views of Salkantay</span><span class="day-highlight">Apurimac Valley</span><span class="day-highlight">Acclimatization hike</span>
         </div>
       
     </div>
@@ -889,19 +1106,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Paso del Viento and Descent</h3>
+          <h3 class="day-title">Soraypampa to Chaullay</h3>
           <div class="day-stats">
-            <span>📏 18km</span>
-            <span>⏱️ 8 hours</span>
-            <span>📈 +700m</span>
-            <span>🏔️ 600m</span>
+            <span>📏 22km</span>
+            <span>⏱️ 10 hours</span>
+            <span>📈 +750m</span>
+            <span>🏔️ 2,900m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter.</p>
+      <p class="day-description">The big day! Early start for the challenging climb to Salkantay Pass at 4,600m. Incredible views of sacred Salkantay peak before long descent into warmer cloud forest.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Paso del Viento crossing</span><span class="day-highlight">Southern Ice Field views</span><span class="day-highlight">Technical descent with ropes</span><span class="day-highlight">Remote wilderness</span>
+          <span class="day-highlight">Salkantay Pass (4,600m)</span><span class="day-highlight">Salkantay peak close views</span><span class="day-highlight">Dramatic ecosystem change</span><span class="day-highlight">Descent to cloud forest</span>
         </div>
       
     </div>
@@ -910,19 +1127,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Tyrolean Traverse Day</h3>
+          <h3 class="day-title">Chaullay to Santa Teresa</h3>
           <div class="day-stats">
-            <span>📏 20km</span>
-            <span>⏱️ 9 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 750m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -1350m</span>
+            <span>🏔️ 1,550m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges.</p>
+      <p class="day-description">Beautiful day hiking through cloud forest with increasing vegetation and warmth. Pass coffee and fruit plantations. Optional visit to Cocalmayo hot springs in afternoon.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Famous tyrolean traverse</span><span class="day-highlight">Multiple river crossings</span><span class="day-highlight">Viedma Glacier views</span><span class="day-highlight">True wilderness experience</span>
+          <span class="day-highlight">Cloud forest biodiversity</span><span class="day-highlight">Coffee plantations</span><span class="day-highlight">Waterfalls</span><span class="day-highlight">Hot springs option</span>
         </div>
       
     </div>
@@ -931,19 +1148,40 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Return to El Chaltén</h3>
+          <h3 class="day-title">Santa Teresa to Aguas Calientes</h3>
           <div class="day-stats">
-            <span>📏 13km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 -350m</span>
-            <span>🏔️ 400m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 2,040m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits.</p>
+      <p class="day-description">Optional zipline before hiking to Hidroelectrica. Walk along train tracks to Aguas Calientes or take optional train. First distant views of Machu Picchu from Llactapata.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Final river crossing</span><span class="day-highlight">Return to civilization</span><span class="day-highlight">Completion celebration</span><span class="day-highlight">Hot shower awaits</span>
+          <span class="day-highlight">Llactapata ruins</span><span class="day-highlight">First Machu Picchu views</span><span class="day-highlight">Urubamba River</span><span class="day-highlight">Train tracks walk</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Machu Picchu Visit</h3>
+          <div class="day-stats">
+            <span>📏 0km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +390m</span>
+            <span>🏔️ 2,430m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Early morning bus or hike to Machu Picchu for sunrise. Guided tour of the ancient citadel. Optional climb Huayna Picchu or Machu Picchu Mountain. Afternoon train to Cusco.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Machu Picchu sunrise</span><span class="day-highlight">Guided tour of citadel</span><span class="day-highlight">Optional Huayna Picchu</span><span class="day-highlight">Return to Cusco</span>
         </div>
       
     </div>
@@ -968,32 +1206,64 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">4-season tent</div>
-          <div class="gear-description">Wind-resistant, must withstand storms</div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Waterproof with ankle support</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm sleeping bag</div>
-          <div class="gear-description">-10°C rated minimum</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-15°C for pass night</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Full rain gear</div>
-          <div class="gear-description">Jacket and pants, high quality</div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Quality jacket and pants</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">River crossing shoes</div>
-          <div class="gear-description">Sandals or extra shoes for crossings</div>
+          <div class="gear-name">Warm clothing</div>
+          <div class="gear-description">Down jacket, fleece, thermals</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Daypack</div>
+          <div class="gear-description">30-40L capacity</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning start</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">3L capacity total</div>
         </div>
         
       </li>
@@ -1001,47 +1271,7 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Essential for river crossings</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Camping stove and fuel</div>
-          <div class="gear-description">No wood fires allowed</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">First aid kit</div>
-          <div class="gear-description">Comprehensive for remote areas</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Emergency shelter</div>
-          <div class="gear-description">Bivy or emergency blanket</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">GPS device</div>
-          <div class="gear-description">Trail can be hard to follow</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Rope</div>
-          <div class="gear-description">30m for river crossings</div>
+          <div class="gear-description">Highly recommended</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1059,25 +1289,33 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For river crossings and mud</div>
+          <div class="gear-description">For muddy sections</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Neoprene socks</div>
-          <div class="gear-description">For cold river crossings</div>
+          <div class="gear-name">Swimsuit</div>
+          <div class="gear-description">For hot springs</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Satellite communicator</div>
-          <div class="gear-description">For emergencies</div>
+          <div class="gear-name">Sandals</div>
+          <div class="gear-description">For camp and river crossings</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Cash</div>
+          <div class="gear-description">For tips and extras</div>
+        </div>
+        
       </li>
     
                 </ul>
@@ -1096,9 +1334,16 @@
             
     <div class="season-card">
       <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">December, January, February, March</p>
-      <p>Only viable season due to river crossings and weather</p>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear mountain views, cold at altitude, stable weather</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">April, October, November</p>
+      <p>Variable weather, fewer trekkers, lush landscapes</p>
     </div>
   
         </div>
@@ -1121,27 +1366,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$30</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$0</span>
-    </div>
-    <div class="cost-item">
-      <span>Meals (per day)</span>
       <span>$15</span>
     </div>
     <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$25</span>
+    </div>
+    <div class="cost-item">
       <span>Transportation</span>
-      <span>$80</span>
+      <span>$150</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$200 - $1,000</span>
+      <span>$300 - $800</span>
     </div>
   
         </div>
@@ -1163,34 +1408,34 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is the Huemul Circuit safe?</span>
+        <span>Is it as good as the Inca Trail?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides.</div>
+      <div class="faq-answer">Different but equally spectacular. More challenging, fewer ruins, but stunning mountain scenery and no permit stress. Many consider it superior for landscapes.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What about the tyrolean traverse?</span>
+        <span>Can I do it independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating.</div>
+      <div class="faq-answer">Yes, unlike the Inca Trail. But guided tours provide logistics, meals, and camping equipment. Solo requires carrying everything.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it without camping experience?</span>
+        <span>How cold does it get?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on.</div>
+      <div class="faq-answer">Very cold at Salkantay Pass - can be -10°C at night. But by day 3 you're in warm cloud forest. Pack for all climates.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What if rivers are too high?</span>
+        <span>Is altitude sickness common?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important.</div>
+      <div class="faq-answer">Yes, especially on pass day. Crucial to acclimatize in Cusco first. The rapid descent helps recovery.</div>
     </div>
   
         </div>
@@ -1330,335 +1575,555 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "huemul-circuit",
-        "name": "Huemul Circuit",
-        "slug": "huemul-circuit",
-        "region": "Patagonia",
-        "country": "Argentina",
-        "summary": "A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.",
+        "_id": "salkantay-trek",
+        "name": "Salkantay Trek",
+        "slug": "salkantay-trek",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.",
         "duration": {
             "min_days": 4,
-            "max_days": 4,
-            "recommended_days": 4
+            "max_days": 5,
+            "recommended_days": 5
         },
-        "distance_km": 65,
+        "distance_km": 75,
         "difficulty": "challenging",
-        "max_elevation_m": 1600,
-        "starting_elevation_m": 400,
-        "airport": "El Calafate (FTE)",
-        "nearest_city": "El Chaltén",
+        "max_elevation_m": 4600,
+        "starting_elevation_m": 3350,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
         "coordinates": {
             "start": {
-                "lat": -49.3314,
-                "lng": -72.8861,
-                "location": "El Chaltén"
+                "lat": -13.3886,
+                "lng": -72.7973,
+                "location": "Mollepata"
             },
             "end": {
-                "lat": -49.3314,
-                "lng": -72.8861,
-                "location": "El Chaltén"
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
+                "name": "Dry Season",
                 "months": [
-                    "December",
-                    "January",
-                    "February",
-                    "March"
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
                 ],
-                "description": "Only viable season due to river crossings and weather"
+                "description": "Clear mountain views, cold at altitude, stable weather"
+            },
+            {
+                "name": "Shoulder Season",
+                "months": [
+                    "April",
+                    "October",
+                    "November"
+                ],
+                "description": "Variable weather, fewer trekkers, lush landscapes"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "El Chaltén to Laguna Toro",
-                "start_location": "El Chaltén",
-                "end_location": "Laguna Toro",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 400,
-                "elevation_end_m": 900,
+                "title": "Cusco to Soraypampa",
+                "start_location": "Cusco",
+                "end_location": "Soraypampa",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3350,
+                "elevation_end_m": 3850,
                 "elevation_gain_m": 500,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "camping/lodge",
                     "options": [
-                        "Laguna Toro designated campsite"
+                        "Sky Camp",
+                        "Salkantay Lodge",
+                        "Standard camping"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Laguna Torre views",
-                    "Enter remote backcountry",
-                    "Glacial valley hiking",
-                    "First wilderness camp"
+                "meals_included": [
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks."
+                "highlights": [
+                    "Humantay Lake option",
+                    "First views of Salkantay",
+                    "Apurimac Valley",
+                    "Acclimatization hike"
+                ],
+                "description": "Drive from Cusco to Mollepata, then to Challacancha. Trek through valleys to Soraypampa with optional afternoon hike to stunning turquoise Humantay Lake."
             },
             {
                 "day": 2,
-                "title": "Paso del Viento and Descent",
-                "start_location": "Laguna Toro",
-                "end_location": "Refugio Paso del Viento",
-                "distance_km": 18,
-                "duration_hours": 8,
-                "elevation_start_m": 900,
-                "elevation_end_m": 600,
-                "elevation_gain_m": 700,
+                "title": "Soraypampa to Chaullay",
+                "start_location": "Soraypampa",
+                "end_location": "Chaullay",
+                "distance_km": 22,
+                "duration_hours": 10,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 2900,
+                "elevation_gain_m": 750,
                 "difficulty": "very challenging",
                 "accommodation": {
-                    "type": "camping/refugio",
+                    "type": "camping/lodge",
                     "options": [
-                        "Refugio Paso del Viento (basic shelter)"
+                        "Chaullay camp",
+                        "Andenes camp",
+                        "Lodge options"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Paso del Viento crossing",
-                    "Southern Ice Field views",
-                    "Technical descent with ropes",
-                    "Remote wilderness"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter."
+                "highlights": [
+                    "Salkantay Pass (4,600m)",
+                    "Salkantay peak close views",
+                    "Dramatic ecosystem change",
+                    "Descent to cloud forest"
+                ],
+                "description": "The big day! Early start for the challenging climb to Salkantay Pass at 4,600m. Incredible views of sacred Salkantay peak before long descent into warmer cloud forest."
             },
             {
                 "day": 3,
-                "title": "Tyrolean Traverse Day",
-                "start_location": "Refugio Paso del Viento",
-                "end_location": "Campamento Loma del Diablo",
-                "distance_km": 20,
-                "duration_hours": 9,
-                "elevation_start_m": 600,
-                "elevation_end_m": 750,
-                "elevation_gain_m": 400,
-                "difficulty": "challenging",
+                "title": "Chaullay to Santa Teresa",
+                "start_location": "Chaullay",
+                "end_location": "Santa Teresa",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 2900,
+                "elevation_end_m": 1550,
+                "elevation_gain_m": -1350,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "camping/lodge",
                     "options": [
-                        "Loma del Diablo campsite"
+                        "Santa Teresa camp",
+                        "Local lodges",
+                        "Eco lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Famous tyrolean traverse",
-                    "Multiple river crossings",
-                    "Viedma Glacier views",
-                    "True wilderness experience"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges."
+                "highlights": [
+                    "Cloud forest biodiversity",
+                    "Coffee plantations",
+                    "Waterfalls",
+                    "Hot springs option"
+                ],
+                "description": "Beautiful day hiking through cloud forest with increasing vegetation and warmth. Pass coffee and fruit plantations. Optional visit to Cocalmayo hot springs in afternoon."
             },
             {
                 "day": 4,
-                "title": "Return to El Chaltén",
-                "start_location": "Campamento Loma del Diablo",
-                "end_location": "El Chaltén",
-                "distance_km": 13,
-                "duration_hours": 5,
-                "elevation_start_m": 750,
-                "elevation_end_m": 400,
-                "elevation_gain_m": -350,
+                "title": "Santa Teresa to Aguas Calientes",
+                "start_location": "Santa Teresa",
+                "end_location": "Aguas Calientes",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 1550,
+                "elevation_end_m": 2040,
+                "elevation_gain_m": 490,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "town",
+                    "type": "hotel",
                     "options": [
-                        "Return to El Chaltén accommodation"
+                        "Various hotels in Aguas Calientes"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Final river crossing",
-                    "Return to civilization",
-                    "Completion celebration",
-                    "Hot shower awaits"
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
                 ],
-                "description": "Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits."
+                "highlights": [
+                    "Llactapata ruins",
+                    "First Machu Picchu views",
+                    "Urubamba River",
+                    "Train tracks walk"
+                ],
+                "description": "Optional zipline before hiking to Hidroelectrica. Walk along train tracks to Aguas Calientes or take optional train. First distant views of Machu Picchu from Llactapata."
+            },
+            {
+                "day": 5,
+                "title": "Machu Picchu Visit",
+                "start_location": "Aguas Calientes",
+                "end_location": "Cusco",
+                "distance_km": 0,
+                "duration_hours": 8,
+                "elevation_start_m": 2040,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": 390,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "none",
+                    "options": [
+                        "Return to Cusco"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Machu Picchu sunrise",
+                    "Guided tour of citadel",
+                    "Optional Huayna Picchu",
+                    "Return to Cusco"
+                ],
+                "description": "Early morning bus or hike to Machu Picchu for sunrise. Guided tour of the ancient citadel. Optional climb Huayna Picchu or Machu Picchu Mountain. Afternoon train to Cusco."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "4-season tent",
-                    "description": "Wind-resistant, must withstand storms",
+                    "item": "Trekking boots",
+                    "description": "Waterproof with ankle support",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm sleeping bag",
-                    "description": "-10°C rated minimum",
+                    "item": "Sleeping bag",
+                    "description": "-15°C for pass night",
                     "rental_available": true
                 },
                 {
-                    "item": "Full rain gear",
-                    "description": "Jacket and pants, high quality",
+                    "item": "Rain gear",
+                    "description": "Quality jacket and pants",
                     "rental_available": true
                 },
                 {
-                    "item": "River crossing shoes",
-                    "description": "Sandals or extra shoes for crossings",
+                    "item": "Warm clothing",
+                    "description": "Down jacket, fleece, thermals",
+                    "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "30-40L capacity",
+                    "rental_available": true
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning start",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "3L capacity total",
                     "rental_available": false
                 },
                 {
                     "item": "Trekking poles",
-                    "description": "Essential for river crossings",
-                    "rental_available": true
-                },
-                {
-                    "item": "Camping stove and fuel",
-                    "description": "No wood fires allowed",
-                    "rental_available": true
-                },
-                {
-                    "item": "First aid kit",
-                    "description": "Comprehensive for remote areas",
-                    "rental_available": false
-                },
-                {
-                    "item": "Emergency shelter",
-                    "description": "Bivy or emergency blanket",
-                    "rental_available": false
-                },
-                {
-                    "item": "GPS device",
-                    "description": "Trail can be hard to follow",
-                    "rental_available": true
-                },
-                {
-                    "item": "Rope",
-                    "description": "30m for river crossings",
+                    "description": "Highly recommended",
                     "rental_available": true
                 }
             ],
             "recommended": [
                 {
                     "item": "Gaiters",
-                    "description": "For river crossings and mud",
+                    "description": "For muddy sections",
                     "rental_available": false
                 },
                 {
-                    "item": "Neoprene socks",
-                    "description": "For cold river crossings",
+                    "item": "Swimsuit",
+                    "description": "For hot springs",
                     "rental_available": false
                 },
                 {
-                    "item": "Satellite communicator",
-                    "description": "For emergencies",
-                    "rental_available": true
+                    "item": "Sandals",
+                    "description": "For camp and river crossings",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash",
+                    "description": "For tips and extras",
+                    "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Huemul Circuit Registration",
+                "name": "None for trail",
                 "cost_usd": 0,
-                "cost_ars": 0,
-                "where_to_obtain": "National Park office El Chaltén",
-                "validity": "Specific dates",
-                "notes": "Must show gear list and experience"
+                "notes": "No permits needed for Salkantay route"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Online or through operator",
+                "validity": "Specific date and time"
+            },
+            {
+                "name": "Huayna Picchu (optional)",
+                "cost_usd": 15,
+                "cost_pen": 50,
+                "where_to_obtain": "Book with Machu Picchu ticket",
+                "validity": "Limited to 400/day"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "porter_daily_usd": 0,
-            "accommodation_daily_usd": 0,
-            "meals_daily_usd": 15,
-            "transportation_usd": 80,
+            "permit_total_usd": 50,
+            "guide_daily_usd": 30,
+            "porter_daily_usd": 25,
+            "accommodation_daily_usd": 15,
+            "meals_daily_usd": 25,
+            "transportation_usd": 150,
             "total_budget_range_usd": {
-                "min": 200,
-                "max": 1000
+                "min": 300,
+                "max": 800
             }
         },
-        "health_safety": {
-            "main_concerns": {
-                "river_crossings": {
-                    "risk_level": "very high",
-                    "description": "Multiple dangerous crossings",
-                    "prevention": [
-                        "Never cross alone",
-                        "Use poles and rope",
-                        "Cross early morning when water is lower",
-                        "Be prepared to wait if levels are high",
-                        "Know when to turn back"
-                    ]
+        "cultural_information": {
+            "ethnic_groups": [
+                "Quechua",
+                "Mestizo"
+            ],
+            "primary_religion": "Catholic with Andean traditions",
+            "languages": [
+                "Spanish",
+                "Quechua",
+                "Basic English"
+            ],
+            "customs_etiquette": [
+                "Respect sacred mountains (Apus)",
+                "Participate in coca leaf ceremonies",
+                "Don't point at mountains with one finger",
+                "Ask before photographing locals",
+                "Support local communities by buying crafts"
+            ],
+            "local_foods": [
+                {
+                    "name": "Pachamanca",
+                    "description": "Earth oven cooked meats and vegetables"
                 },
-                "weather": {
-                    "risk_level": "very high",
-                    "description": "Extreme conditions possible",
-                    "prevention": [
-                        "Monitor forecasts closely",
-                        "Be prepared for snow any time",
-                        "Carry emergency shelter",
-                        "Know escape routes"
-                    ]
+                {
+                    "name": "Cuy",
+                    "description": "Guinea pig - traditional delicacy"
                 },
-                "remoteness": {
-                    "risk_level": "very high",
-                    "description": "No easy evacuation",
-                    "prevention": [
-                        "Travel with experienced partners",
-                        "Carry comprehensive first aid",
-                        "Consider satellite communicator",
-                        "Leave detailed itinerary with rangers"
-                    ]
+                {
+                    "name": "Chicha morada",
+                    "description": "Purple corn drink"
+                },
+                {
+                    "name": "Aji de gallina",
+                    "description": "Spicy creamed chicken"
                 }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "very high",
+                "prevention": [
+                    "Essential to acclimatize in Cusco",
+                    "Ascend gradually",
+                    "Hydrate constantly",
+                    "Coca tea and leaves",
+                    "Consider Diamox",
+                    "No alcohol before pass day"
+                ],
+                "critical_points": [
+                    "Salkantay Pass day",
+                    "First night at altitude"
+                ]
             },
+            "medical_facilities": [
+                {
+                    "location": "Trail",
+                    "type": "Basic first aid with guides"
+                },
+                {
+                    "location": "Santa Teresa",
+                    "type": "Basic health post"
+                },
+                {
+                    "location": "Aguas Calientes",
+                    "type": "Medical center"
+                }
+            ],
             "evacuation": {
-                "method": "Helicopter only",
-                "cost_usd": "5000+",
+                "method": "Horse to road, then vehicle",
+                "cost_usd": "1000-3000",
                 "insurance_required": true,
-                "response_time": "24-48 hours weather permitting"
+                "response_time": "4-8 hours"
+            }
+        },
+        "weather_patterns": {
+            "dry_season": {
+                "months": [
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "-10 to 5",
+                "precipitation": "Rare",
+                "notes": "Very cold at pass, warm in jungle"
+            },
+            "wet_season": {
+                "months": [
+                    "December",
+                    "January",
+                    "February",
+                    "March"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "-5 to 10",
+                "precipitation": "Daily rain likely",
+                "notes": "Muddy trails, cloud forest lush"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Private van",
+                    "from": "Cusco",
+                    "to": "Mollepata/Challacancha",
+                    "duration": "3 hours",
+                    "cost_usd": 30,
+                    "notes": "Usually included in tour"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Train + Bus",
+                    "from": "Aguas Calientes",
+                    "to": "Cusco",
+                    "duration": "4 hours",
+                    "cost_usd": 100,
+                    "notes": "Via Ollantaytambo"
+                }
+            ]
+        },
+        "accommodation": {
+            "type": "Camping and lodges",
+            "description": "Mix of camping and basic lodges",
+            "amenities": [
+                "Camping: tents, dining tent, basic toilets",
+                "Lodges: beds, hot showers, electricity",
+                "Sky Camps: glamping with beds",
+                "Hotels in Aguas Calientes"
+            ],
+            "booking": "Can book independently or with operator",
+            "cost_per_night_usd": {
+                "camping": "included in tour",
+                "basic_lodge": "20-30",
+                "sky_camp": "100+"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Excellent fitness required",
-            "technical_skills": "Route-finding, river crossing experience",
-            "altitude_challenge": "None",
-            "trail_conditions": "Often unclear, GPS recommended",
-            "weather_challenge": "Extreme - primary hazard",
-            "daily_hiking_hours": "6-9 hours",
-            "total_elevation_gain": 2250,
-            "total_elevation_loss": 2250
+            "physical_demands": "High - long days and extreme altitude",
+            "technical_skills": "None required",
+            "altitude_challenge": "Very significant at pass",
+            "trail_conditions": "Variable - rocky, muddy, steep",
+            "daily_hiking_hours": "6-10 hours",
+            "total_elevation_gain": 3100,
+            "total_elevation_loss": 4150
         },
-        "special_considerations": {
-            "experience_required": "Previous multi-day trekking essential",
-            "group_size": "Minimum 2, recommended 3-4",
-            "solo_hiking": "Strongly discouraged",
-            "guide_recommendation": "Highly recommended unless very experienced",
-            "season_critical": "December-March only"
-        },
+        "alternative_routes": [
+            {
+                "name": "Salkantay + Inca Trail",
+                "variation": "Combine both treks",
+                "extra_days": 3,
+                "highlights": [
+                    "Ultimate experience",
+                    "Enter via Sun Gate",
+                    "More ruins"
+                ]
+            },
+            {
+                "name": "Mollepata Circuit",
+                "variation": "Return different route",
+                "extra_days": 1,
+                "highlights": [
+                    "Less crowds",
+                    "More villages",
+                    "Complete circuit"
+                ]
+            },
+            {
+                "name": "Lodge-to-Lodge",
+                "variation": "Luxury version",
+                "extra_days": 0,
+                "highlights": [
+                    "Mountain lodges",
+                    "Hot showers daily",
+                    "Gourmet meals"
+                ]
+            }
+        ],
+        "photography_highlights": [
+            {
+                "location": "Humantay Lake",
+                "best_time": "Morning",
+                "subjects": [
+                    "Turquoise waters",
+                    "Mountain reflections",
+                    "Ice formations"
+                ]
+            },
+            {
+                "location": "Salkantay Pass",
+                "best_time": "Early morning",
+                "subjects": [
+                    "Sacred peak",
+                    "Prayer flags",
+                    "Achievement shots"
+                ]
+            },
+            {
+                "location": "Cloud forest",
+                "best_time": "Any",
+                "subjects": [
+                    "Biodiversity",
+                    "Waterfalls",
+                    "Atmospheric shots"
+                ]
+            }
+        ],
         "faqs": [
             {
-                "question": "Is the Huemul Circuit safe?",
-                "answer": "It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides."
+                "question": "Is it as good as the Inca Trail?",
+                "answer": "Different but equally spectacular. More challenging, fewer ruins, but stunning mountain scenery and no permit stress. Many consider it superior for landscapes."
             },
             {
-                "question": "What about the tyrolean traverse?",
-                "answer": "A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating."
+                "question": "Can I do it independently?",
+                "answer": "Yes, unlike the Inca Trail. But guided tours provide logistics, meals, and camping equipment. Solo requires carrying everything."
             },
             {
-                "question": "Can I do it without camping experience?",
-                "answer": "No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on."
+                "question": "How cold does it get?",
+                "answer": "Very cold at Salkantay Pass - can be -10°C at night. But by day 3 you're in warm cloud forest. Pack for all climates."
             },
             {
-                "question": "What if rivers are too high?",
-                "answer": "You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important."
+                "question": "Is altitude sickness common?",
+                "answer": "Yes, especially on pass day. Crucial to acclimatize in Cusco first. The rapid descent helps recovery."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 78,
+        "popularity_score": 94,
         "seo": {
-            "meta_title": "Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit",
-            "meta_description": "Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.",
+            "meta_title": "Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail",
+            "meta_description": "Ultimate guide to the Salkantay Trek to Machu Picchu. Detailed 5-day itinerary, no permits needed, costs, gear list, and expert tips.",
             "keywords": [
-                "huemul circuit",
-                "el chalten circuit",
-                "patagonia challenging trek",
-                "tyrolean traverse",
-                "southern ice field trek"
+                "salkantay trek",
+                "machu picchu alternative",
+                "peru trekking",
+                "salkantay pass",
+                "cusco to machu picchu"
             ]
         }
     };
@@ -1670,6 +2135,6 @@
   
   <!-- Footer -->
   <div id="footer-container"></div>
-  <script src="/js/components/footer.js" type="module"></script>
+  <script src="../js/components/footer.js" type="module"></script>
   
 </body></html>

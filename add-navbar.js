@@ -73,6 +73,18 @@ function addNavbarToFile(filePath) {
             }
         }
 
+        // Fix footer script paths too
+        if (content.includes('../js/components/footer.js')) {
+            content = content.replace('../js/components/footer.js', '/js/components/footer.js');
+            modified = true;
+            changes.push('Updated footer path to absolute');
+        } else if (content.includes('js/components/footer.js') && !content.includes('/js/components/footer.js')) {
+            content = content.replace(/(?<!\/)"js\/components\/footer\.js"/g, '"/js/components/footer.js"');
+            content = content.replace(/(?<!\/)'js\/components\/footer\.js'/g, "'/js/components/footer.js'");
+            modified = true;
+            changes.push('Updated footer path to absolute');
+        }
+
         // Write the file back if it was modified
         if (modified) {
             fs.writeFileSync(filePath, content, 'utf8');
