@@ -41,8 +41,12 @@ function addNavbarToFile(filePath) {
             }
         }
 
-        // Check if navbar script is already present
-        if (!content.includes('/js/components/navbar.js')) {
+        // Check if navbar script is already present (handle both relative and absolute paths)
+        const hasNavbarScript = content.includes('/js/components/navbar.js') || 
+                               content.includes('../js/components/navbar.js') || 
+                               content.includes('js/components/navbar.js');
+
+        if (!hasNavbarScript) {
             // Find the opening <body> tag
             const bodyOpenMatch = content.match(/<body[^>]*>/);
             if (bodyOpenMatch) {
@@ -54,6 +58,18 @@ function addNavbarToFile(filePath) {
                          content.slice(bodyOpenEnd);
                 modified = true;
                 changes.push('Added navbar script');
+            }
+        } else {
+            // Check if we need to update the path to use absolute path
+            if (content.includes('../js/components/navbar.js')) {
+                content = content.replace('../js/components/navbar.js', '/js/components/navbar.js');
+                modified = true;
+                changes.push('Updated navbar path to absolute');
+            } else if (content.includes('js/components/navbar.js') && !content.includes('/js/components/navbar.js')) {
+                content = content.replace(/(?<!\/)"js\/components\/navbar\.js"/g, '"/js/components/navbar.js"');
+                content = content.replace(/(?<!\/)'js\/components\/navbar\.js'/g, "'/js/components/navbar.js'");
+                modified = true;
+                changes.push('Updated navbar path to absolute');
             }
         }
 
