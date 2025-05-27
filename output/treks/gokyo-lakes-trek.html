@@ -561,17 +561,45 @@
 /* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
 @media (max-width: 768px) {
     /* FORCE HERO STATS INTO 2x2 GRID */
+    
+    /* ENHANCED 2x2 GRID FIX */
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
         width: 100% !important;
-        max-width: 280px !important;
-        margin: 1rem auto 0 auto !important;
+        max-width: 300px !important;
+        margin: 1.5rem auto 0 !important;
+        padding: 0 !important;
         justify-content: center !important;
         align-items: stretch !important;
+        box-sizing: border-box !important;
+        /* Remove conflicting flex properties */
         flex-direction: unset !important;
+        flex-wrap: unset !important;
+    }
+    
+    /* Explicit grid positioning */
+    .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
+    .hero-stats .hero-stat:nth-child(4) { grid-column: 2; grid-row: 2; }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 1rem 0.8rem !important;
+        background: rgba(0,0,0,0.6) !important;
+        border-radius: 12px !important;
+        backdrop-filter: blur(5px) !important;
+        min-height: 70px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
     }
     
     .hero-stat {
