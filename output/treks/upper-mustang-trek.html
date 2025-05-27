@@ -1592,18 +1592,23 @@
         }
 
         function scrollToSectionTop(sectionId) {
-            // Get the nav-tabs element to calculate offset
-            const navTabs = document.querySelector('.nav-tabs');
-            const navTabsHeight = navTabs ? navTabs.offsetHeight : 0;
-            
-            // Calculate the scroll position (nav-tabs height + small padding)
-            const scrollPosition = navTabs ? navTabs.offsetTop + navTabsHeight + 10 : 0;
-            
-            // Smooth scroll to just below the sticky navigation
-            window.scrollTo({ 
-                top: scrollPosition, 
-                behavior: 'smooth' 
-            });
+            setTimeout(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                if (navTabs) {
+                    // Get the actual current position of the sticky nav
+                    const rect = navTabs.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Calculate position just below the nav
+                    const targetPosition = rect.bottom + scrollTop + 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        });
         }
 
         function centerTabWithNextVisible(clickedTab) {
