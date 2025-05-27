@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit</title>
-    <meta name="description" content="Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.">
+    <title>Walker's Haute Route Guide 2024 | Chamonix to Zermatt Trek</title>
+    <meta name="description" content="Complete guide to hiking the Haute Route from Chamonix to Zermatt. 12-day alpine trek itinerary, costs, gear list, and expert tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/huemul-circuit.jpg');
+            background-image: url('/images/treks/covers/haute-route-chamonix-zermatt.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -735,19 +735,19 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Huemul Circuit</h1>
+            <h1>Walker's Haute Route</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4</span>
+                    <span class="hero-stat-value">12</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,600m</span>
+                    <span class="hero-stat-value">3,000m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">65km</span>
+                    <span class="hero-stat-value">180km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -774,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Patagonia</h2>
+                <h2>Journey to European Alps</h2>
                 <p class="overview-description">
-                    A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.
+                    The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.
                 </p>
                 
                 <div class="highlights-list">
@@ -824,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">4-4 days</span>
+                    <span class="info-value">10-14 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">65 km / 40 mi</span>
+                    <span class="info-value">180 km / 112 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,600m (5,249ft)</span>
+                    <span class="info-value">3,000m (9,843ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -846,7 +846,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">El Chaltén</span>
+                    <span class="info-value">Chamonix/Zermatt</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -855,7 +855,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$200 - $1,000</span>
+                        <span class="price-range">$1,500 - $3,500</span>
                     </span>
                 </div>
             </div>
@@ -864,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>4-Day Detailed Itinerary</h2>
+        <h2>12-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Patagonia with proper acclimatization and rest days
+            Follow the route through European Alps with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -875,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">El Chaltén to Laguna Toro</h3>
+          <h3 class="day-title">Chamonix to Argentière</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 900m</span>
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +700m</span>
+            <span>🏔️ 1,252m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks.</p>
+      <p class="day-description">Gentle start along the Petit Balcon Sud with views across to the Mont Blanc massif. Good acclimatization day before the challenging days ahead.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Laguna Torre views</span><span class="day-highlight">Enter remote backcountry</span><span class="day-highlight">Glacial valley hiking</span><span class="day-highlight">First wilderness camp</span>
+          <span class="day-highlight">Warm-up day</span><span class="day-highlight">Petit Balcon Sud trail</span><span class="day-highlight">Mont Blanc views</span><span class="day-highlight">Argentière glacier</span>
         </div>
       
     </div>
@@ -896,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Paso del Viento and Descent</h3>
+          <h3 class="day-title">Argentière to Trient</h3>
           <div class="day-stats">
-            <span>📏 18km</span>
-            <span>⏱️ 8 hours</span>
-            <span>📈 +700m</span>
-            <span>🏔️ 600m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 1,279m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter.</p>
+      <p class="day-description">Cross into Switzerland via Col de Balme. Beautiful ridge walking with panoramic views before descending to the remote Trient valley.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Paso del Viento crossing</span><span class="day-highlight">Southern Ice Field views</span><span class="day-highlight">Technical descent with ropes</span><span class="day-highlight">Remote wilderness</span>
+          <span class="day-highlight">Col de Balme crossing</span><span class="day-highlight">Enter Switzerland</span><span class="day-highlight">Trient Glacier views</span><span class="day-highlight">Alpine meadows</span>
         </div>
       
     </div>
@@ -917,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Tyrolean Traverse Day</h3>
+          <h3 class="day-title">Trient to Champex</h3>
           <div class="day-stats">
-            <span>📏 20km</span>
-            <span>⏱️ 9 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 750m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 1,466m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges.</p>
+      <p class="day-description">Choose between the spectacular but challenging Fenêtre d'Arpette or the easier Bovine route. Both lead to charming Champex-Lac.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Famous tyrolean traverse</span><span class="day-highlight">Multiple river crossings</span><span class="day-highlight">Viedma Glacier views</span><span class="day-highlight">True wilderness experience</span>
+          <span class="day-highlight">Fenêtre d'Arpette option</span><span class="day-highlight">Bovine alternative route</span><span class="day-highlight">Champex lake</span><span class="day-highlight">Swiss villages</span>
         </div>
       
     </div>
@@ -938,19 +938,187 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Return to El Chaltén</h3>
+          <h3 class="day-title">Champex to Le Châble</h3>
           <div class="day-stats">
-            <span>📏 13km</span>
+            <span>📏 16km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 -350m</span>
-            <span>🏔️ 400m</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 821m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits.</p>
+      <p class="day-description">Easier day descending through forests and pastures to Le Châble. Option to take cable car to Verbier for supplies and comfort.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Final river crossing</span><span class="day-highlight">Return to civilization</span><span class="day-highlight">Completion celebration</span><span class="day-highlight">Hot shower awaits</span>
+          <span class="day-highlight">Val de Bagnes descent</span><span class="day-highlight">Traditional villages</span><span class="day-highlight">Verbier option</span><span class="day-highlight">Rest day possibility</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Le Châble to Cabane du Mont Fort</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1636m</span>
+            <span>🏔️ 2,457m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Big climbing day to reach the spectacularly positioned Cabane du Mont Fort. The effort is rewarded with incredible sunset views.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Major ascent day</span><span class="day-highlight">Spectacular hut location</span><span class="day-highlight">Sunset views</span><span class="day-highlight">Grand Combin views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 6</div>
+          <h3 class="day-title">Cabane du Mont Fort to Cabane de Prafleuri</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 2,662m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Remote and spectacular high mountain day crossing three cols. This is the heart of the Haute Route with incredible mountain scenery.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Remote high mountain day</span><span class="day-highlight">Three cols crossing</span><span class="day-highlight">Rosablanche views</span><span class="day-highlight">Wild alpine terrain</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Cabane de Prafleuri to Arolla</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 1,998m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend from the high mountains to the traditional mountain village of Arolla. Good place for rest or resupply.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Descent to civilization</span><span class="day-highlight">Arolla valley</span><span class="day-highlight">Glacier views</span><span class="day-highlight">Traditional mountain village</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Arolla to La Sage</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 1,667m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Cross the Pas de Chèvres with optional ladder section. Descend through traditional Valaisan villages to La Sage.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Pas de Chèvres</span><span class="day-highlight">Traditional villages</span><span class="day-highlight">Val d'Hérens culture</span><span class="day-highlight">Mountain views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">La Sage to Cabane de Moiry</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1400m</span>
+            <span>🏔️ 2,825m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Another big day climbing to Col du Tsaté then traversing to the spectacular Cabane de Moiry beside the glacier.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Col du Tsaté crossing</span><span class="day-highlight">Moiry Glacier</span><span class="day-highlight">Spectacular hut location</span><span class="day-highlight">High mountain environment</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Cabane de Moiry to Zinal</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 1,675m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend alongside the Moiry Glacier to reach the beautiful Zinal valley, surrounded by 4000m peaks.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Glacier descent</span><span class="day-highlight">Zinal valley</span><span class="day-highlight">4000m peaks views</span><span class="day-highlight">Traditional village</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 11</div>
+          <h3 class="day-title">Zinal to Gruben</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +1300m</span>
+            <span>🏔️ 1,822m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">One of the toughest days crossing the high Forcletta Pass into the German-speaking Turtmanntal. Remote and spectacular.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Forcletta Pass (2,874m)</span><span class="day-highlight">Enter German-speaking region</span><span class="day-highlight">Remote Turtmanntal</span><span class="day-highlight">Cultural transition</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 12</div>
+          <h3 class="day-title">Gruben to Zermatt</h3>
+          <div class="day-stats">
+            <span>📏 18km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +1000m</span>
+            <span>🏔️ 1,608m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final challenging day over Augstbord Pass. The first views of the Matterhorn signal journey's end as you descend to Zermatt.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Augstbord Pass (2,894m)</span><span class="day-highlight">First Matterhorn views</span><span class="day-highlight">Arrival in Zermatt</span><span class="day-highlight">Journey complete</span>
         </div>
       
     </div>
@@ -975,56 +1143,56 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">4-season tent</div>
-          <div class="gear-description">Wind-resistant, must withstand storms</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Warm sleeping bag</div>
-          <div class="gear-description">-10°C rated minimum</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Full rain gear</div>
-          <div class="gear-description">Jacket and pants, high quality</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">River crossing shoes</div>
-          <div class="gear-description">Sandals or extra shoes for crossings</div>
+          <div class="gear-name">Mountain boots</div>
+          <div class="gear-description">Sturdy with good ankle support</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Essential for river crossings</div>
+          <div class="gear-name">Crampons</div>
+          <div class="gear-description">Light crampons for snow patches</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camping stove and fuel</div>
-          <div class="gear-description">No wood fires allowed</div>
+          <div class="gear-name">Ice axe</div>
+          <div class="gear-description">For glacier sections (optional)</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">First aid kit</div>
-          <div class="gear-description">Comprehensive for remote areas</div>
+          <div class="gear-name">Backpack</div>
+          <div class="gear-description">40-50L capacity</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">4-season clothing</div>
+          <div class="gear-description">Including warm layers</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Waterproofs</div>
+          <div class="gear-description">High quality essential</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Navigation tools</div>
+          <div class="gear-description">Map, compass, GPS</div>
         </div>
         
       </li>
@@ -1032,25 +1200,9 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Emergency shelter</div>
-          <div class="gear-description">Bivy or emergency blanket</div>
+          <div class="gear-description">Bivy or group shelter</div>
         </div>
         
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">GPS device</div>
-          <div class="gear-description">Trail can be hard to follow</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Rope</div>
-          <div class="gear-description">30m for river crossings</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
       </li>
     
                 </ul>
@@ -1065,26 +1217,26 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For river crossings and mud</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Neoprene socks</div>
-          <div class="gear-description">For cold river crossings</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Satellite communicator</div>
-          <div class="gear-description">For emergencies</div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Essential for stability</div>
         </div>
         <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For snow and scree</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Glacier glasses</div>
+          <div class="gear-description">Category 4 protection</div>
+        </div>
+        
       </li>
     
                 </ul>
@@ -1104,8 +1256,8 @@
     <div class="season-card">
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Summer</h3>
-      <p class="season-months">December, January, February, March</p>
-      <p>Only viable season due to river crossings and weather</p>
+      <p class="season-months">July, August, early September</p>
+      <p>Snow-free passes, all routes open, stable weather</p>
     </div>
   
         </div>
@@ -1132,23 +1284,23 @@
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$300</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$0</span>
-    </div>
-    <div class="cost-item">
-      <span>Meals (per day)</span>
-      <span>$15</span>
-    </div>
-    <div class="cost-item">
-      <span>Transportation</span>
       <span>$80</span>
     </div>
     <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$60</span>
+    </div>
+    <div class="cost-item">
+      <span>Transportation</span>
+      <span>$200</span>
+    </div>
+    <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$200 - $1,000</span>
+      <span>$1,500 - $3,500</span>
     </div>
   
         </div>
@@ -1168,38 +1320,6 @@
 
         <div class="faq-list">
             
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is the Huemul Circuit safe?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What about the tyrolean traverse?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it without camping experience?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What if rivers are too high?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important.</div>
-    </div>
-  
         </div>
     </section>
 
@@ -1210,12 +1330,7 @@
 
     <script>
         // Enhanced tab navigation with mobile centering and proper scroll positioning
-                // Enhanced tab navigation with instant scroll positioning
         function showSection(sectionId, clickedElement) {
-            // FIRST: Scroll to correct position immediately
-            scrollToSectionTop();
-            
-            // THEN: Change the content (this prevents the "jump" effect)
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
@@ -1238,21 +1353,34 @@
                 // Center the clicked tab on mobile
                 centerTabWithNextVisible(clickedElement);
             }
+            
+            // Scroll to the top of the new section content
+            scrollToSectionTop();
         }
 
-                                                            function scrollToSectionTop() {
-            // Get navigation height first
-            const navTabs = document.querySelector('.nav-tabs');
-            if (!navTabs) return;
+                                                    function scrollToSectionTop() {
+            // Get the currently active content section
+            const activeSection = document.querySelector('.content-section.active');
             
-            const navHeight = navTabs.offsetHeight;
-            const targetPosition = navTabs.offsetTop + navHeight + 20;
-            
-            // INSTANT scroll to target position (no animation during tab switch)
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'instant'  // Key change: instant, not smooth
-            });
+            if (activeSection) {
+                // Scroll to the top of the active section content
+                activeSection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+                
+                // Small delay then adjust for sticky nav
+                setTimeout(() => {
+                    const navTabs = document.querySelector('.nav-tabs');
+                    if (navTabs) {
+                        const navHeight = navTabs.offsetHeight;
+                        window.scrollBy({
+                            top: -(navHeight + 10), // Negative to go UP
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 50);
+            }
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1337,335 +1465,598 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "huemul-circuit",
-        "name": "Huemul Circuit",
-        "slug": "huemul-circuit",
-        "region": "Patagonia",
-        "country": "Argentina",
-        "summary": "A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.",
+        "_id": "haute-route-chamonix-zermatt",
+        "name": "Walker's Haute Route",
+        "slug": "haute-route-chamonix-zermatt",
+        "region": "European Alps",
+        "country": "France/Switzerland",
+        "summary": "The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.",
         "duration": {
-            "min_days": 4,
-            "max_days": 4,
-            "recommended_days": 4
+            "min_days": 10,
+            "max_days": 14,
+            "recommended_days": 12
         },
-        "distance_km": 65,
+        "distance_km": 180,
         "difficulty": "challenging",
-        "max_elevation_m": 1600,
-        "starting_elevation_m": 400,
-        "airport": "El Calafate (FTE)",
-        "nearest_city": "El Chaltén",
+        "max_elevation_m": 3000,
+        "starting_elevation_m": 1035,
+        "airport": "Geneva (GVA)",
+        "nearest_city": "Chamonix/Zermatt",
         "coordinates": {
             "start": {
-                "lat": -49.3314,
-                "lng": -72.8861,
-                "location": "El Chaltén"
+                "lat": 45.9237,
+                "lng": 6.8694,
+                "location": "Chamonix"
             },
             "end": {
-                "lat": -49.3314,
-                "lng": -72.8861,
-                "location": "El Chaltén"
+                "lat": 46.0207,
+                "lng": 7.7491,
+                "location": "Zermatt"
             }
         },
         "best_seasons": [
             {
                 "name": "Summer",
                 "months": [
-                    "December",
-                    "January",
-                    "February",
-                    "March"
+                    "July",
+                    "August",
+                    "early September"
                 ],
-                "description": "Only viable season due to river crossings and weather"
+                "description": "Snow-free passes, all routes open, stable weather"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "El Chaltén to Laguna Toro",
-                "start_location": "El Chaltén",
-                "end_location": "Laguna Toro",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 400,
-                "elevation_end_m": 900,
-                "elevation_gain_m": 500,
-                "difficulty": "moderate",
+                "title": "Chamonix to Argentière",
+                "start_location": "Chamonix",
+                "end_location": "Argentière",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 1035,
+                "elevation_end_m": 1252,
+                "elevation_gain_m": 700,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "hotel/gite",
                     "options": [
-                        "Laguna Toro designated campsite"
+                        "Hotel Montana",
+                        "Gîte Le Belvedere",
+                        "Hotel La Couronne"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Laguna Torre views",
-                    "Enter remote backcountry",
-                    "Glacial valley hiking",
-                    "First wilderness camp"
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
                 ],
-                "description": "Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks."
+                "highlights": [
+                    "Warm-up day",
+                    "Petit Balcon Sud trail",
+                    "Mont Blanc views",
+                    "Argentière glacier"
+                ],
+                "description": "Gentle start along the Petit Balcon Sud with views across to the Mont Blanc massif. Good acclimatization day before the challenging days ahead."
             },
             {
                 "day": 2,
-                "title": "Paso del Viento and Descent",
-                "start_location": "Laguna Toro",
-                "end_location": "Refugio Paso del Viento",
-                "distance_km": 18,
-                "duration_hours": 8,
-                "elevation_start_m": 900,
-                "elevation_end_m": 600,
-                "elevation_gain_m": 700,
-                "difficulty": "very challenging",
+                "title": "Argentière to Trient",
+                "start_location": "Argentière",
+                "end_location": "Trient",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 1252,
+                "elevation_end_m": 1279,
+                "elevation_gain_m": 900,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/refugio",
+                    "type": "refuge/auberge",
                     "options": [
-                        "Refugio Paso del Viento (basic shelter)"
+                        "Refuge du Peuty",
+                        "Auberge du Mont-Blanc",
+                        "Hotel du Glacier"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Paso del Viento crossing",
-                    "Southern Ice Field views",
-                    "Technical descent with ropes",
-                    "Remote wilderness"
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
                 ],
-                "description": "Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter."
+                "highlights": [
+                    "Col de Balme crossing",
+                    "Enter Switzerland",
+                    "Trient Glacier views",
+                    "Alpine meadows"
+                ],
+                "description": "Cross into Switzerland via Col de Balme. Beautiful ridge walking with panoramic views before descending to the remote Trient valley."
             },
             {
                 "day": 3,
-                "title": "Tyrolean Traverse Day",
-                "start_location": "Refugio Paso del Viento",
-                "end_location": "Campamento Loma del Diablo",
-                "distance_km": 20,
-                "duration_hours": 9,
-                "elevation_start_m": 600,
-                "elevation_end_m": 750,
-                "elevation_gain_m": 400,
-                "difficulty": "challenging",
+                "title": "Trient to Champex",
+                "start_location": "Trient",
+                "end_location": "Champex",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 1279,
+                "elevation_end_m": 1466,
+                "elevation_gain_m": 800,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping",
+                    "type": "hotel/b&b",
                     "options": [
-                        "Loma del Diablo campsite"
+                        "Hotel du Glacier",
+                        "Au Club Alpin",
+                        "Pension en Plein Air"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Famous tyrolean traverse",
-                    "Multiple river crossings",
-                    "Viedma Glacier views",
-                    "True wilderness experience"
+                "meals_included": [
+                    "breakfast"
                 ],
-                "description": "Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges."
+                "highlights": [
+                    "Fenêtre d'Arpette option",
+                    "Bovine alternative route",
+                    "Champex lake",
+                    "Swiss villages"
+                ],
+                "description": "Choose between the spectacular but challenging Fenêtre d'Arpette or the easier Bovine route. Both lead to charming Champex-Lac."
             },
             {
                 "day": 4,
-                "title": "Return to El Chaltén",
-                "start_location": "Campamento Loma del Diablo",
-                "end_location": "El Chaltén",
-                "distance_km": 13,
+                "title": "Champex to Le Châble",
+                "start_location": "Champex",
+                "end_location": "Le Châble",
+                "distance_km": 16,
                 "duration_hours": 5,
-                "elevation_start_m": 750,
-                "elevation_end_m": 400,
-                "elevation_gain_m": -350,
-                "difficulty": "moderate",
+                "elevation_start_m": 1466,
+                "elevation_end_m": 821,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "town",
+                    "type": "hotel",
                     "options": [
-                        "Return to El Chaltén accommodation"
+                        "Hotel de la Poste",
+                        "Hotel Gietroz",
+                        "B&B options"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Final river crossing",
-                    "Return to civilization",
-                    "Completion celebration",
-                    "Hot shower awaits"
+                "meals_included": [
+                    "breakfast"
                 ],
-                "description": "Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits."
+                "highlights": [
+                    "Val de Bagnes descent",
+                    "Traditional villages",
+                    "Verbier option",
+                    "Rest day possibility"
+                ],
+                "description": "Easier day descending through forests and pastures to Le Châble. Option to take cable car to Verbier for supplies and comfort."
+            },
+            {
+                "day": 5,
+                "title": "Le Châble to Cabane du Mont Fort",
+                "start_location": "Le Châble",
+                "end_location": "Cabane du Mont Fort",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 821,
+                "elevation_end_m": 2457,
+                "elevation_gain_m": 1636,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane du Mont Fort"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Major ascent day",
+                    "Spectacular hut location",
+                    "Sunset views",
+                    "Grand Combin views"
+                ],
+                "description": "Big climbing day to reach the spectacularly positioned Cabane du Mont Fort. The effort is rewarded with incredible sunset views."
+            },
+            {
+                "day": 6,
+                "title": "Cabane du Mont Fort to Cabane de Prafleuri",
+                "start_location": "Cabane du Mont Fort",
+                "end_location": "Cabane de Prafleuri",
+                "distance_km": 17,
+                "duration_hours": 7,
+                "elevation_start_m": 2457,
+                "elevation_end_m": 2662,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane de Prafleuri"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Remote high mountain day",
+                    "Three cols crossing",
+                    "Rosablanche views",
+                    "Wild alpine terrain"
+                ],
+                "description": "Remote and spectacular high mountain day crossing three cols. This is the heart of the Haute Route with incredible mountain scenery."
+            },
+            {
+                "day": 7,
+                "title": "Cabane de Prafleuri to Arolla",
+                "start_location": "Cabane de Prafleuri",
+                "end_location": "Arolla",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 2662,
+                "elevation_end_m": 1998,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel Kurhaus",
+                        "Hotel du Pigne",
+                        "Hotel du Glacier"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Descent to civilization",
+                    "Arolla valley",
+                    "Glacier views",
+                    "Traditional mountain village"
+                ],
+                "description": "Descend from the high mountains to the traditional mountain village of Arolla. Good place for rest or resupply."
+            },
+            {
+                "day": 8,
+                "title": "Arolla to La Sage",
+                "start_location": "Arolla",
+                "end_location": "La Sage",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 1998,
+                "elevation_end_m": 1667,
+                "elevation_gain_m": 500,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel/gite",
+                    "options": [
+                        "Hotel de la Sage",
+                        "Gîte de la Sage"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Pas de Chèvres",
+                    "Traditional villages",
+                    "Val d'Hérens culture",
+                    "Mountain views"
+                ],
+                "description": "Cross the Pas de Chèvres with optional ladder section. Descend through traditional Valaisan villages to La Sage."
+            },
+            {
+                "day": 9,
+                "title": "La Sage to Cabane de Moiry",
+                "start_location": "La Sage",
+                "end_location": "Cabane de Moiry",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 1667,
+                "elevation_end_m": 2825,
+                "elevation_gain_m": 1400,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane de Moiry"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Col du Tsaté crossing",
+                    "Moiry Glacier",
+                    "Spectacular hut location",
+                    "High mountain environment"
+                ],
+                "description": "Another big day climbing to Col du Tsaté then traversing to the spectacular Cabane de Moiry beside the glacier."
+            },
+            {
+                "day": 10,
+                "title": "Cabane de Moiry to Zinal",
+                "start_location": "Cabane de Moiry",
+                "end_location": "Zinal",
+                "distance_km": 14,
+                "duration_hours": 5,
+                "elevation_start_m": 2825,
+                "elevation_end_m": 1675,
+                "elevation_gain_m": 0,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel le Besso",
+                        "Hotel Pointe de Zinal",
+                        "Hotel Europe"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Glacier descent",
+                    "Zinal valley",
+                    "4000m peaks views",
+                    "Traditional village"
+                ],
+                "description": "Descend alongside the Moiry Glacier to reach the beautiful Zinal valley, surrounded by 4000m peaks."
+            },
+            {
+                "day": 11,
+                "title": "Zinal to Gruben",
+                "start_location": "Zinal",
+                "end_location": "Gruben",
+                "distance_km": 17,
+                "duration_hours": 9,
+                "elevation_start_m": 1675,
+                "elevation_end_m": 1822,
+                "elevation_gain_m": 1300,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel Schwarzhorn"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Forcletta Pass (2,874m)",
+                    "Enter German-speaking region",
+                    "Remote Turtmanntal",
+                    "Cultural transition"
+                ],
+                "description": "One of the toughest days crossing the high Forcletta Pass into the German-speaking Turtmanntal. Remote and spectacular."
+            },
+            {
+                "day": 12,
+                "title": "Gruben to Zermatt",
+                "start_location": "Gruben",
+                "end_location": "Zermatt",
+                "distance_km": 18,
+                "duration_hours": 8,
+                "elevation_start_m": 1822,
+                "elevation_end_m": 1608,
+                "elevation_gain_m": 1000,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotels in Zermatt"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Augstbord Pass (2,894m)",
+                    "First Matterhorn views",
+                    "Arrival in Zermatt",
+                    "Journey complete"
+                ],
+                "description": "Final challenging day over Augstbord Pass. The first views of the Matterhorn signal journey's end as you descend to Zermatt."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "4-season tent",
-                    "description": "Wind-resistant, must withstand storms",
-                    "rental_available": true
-                },
-                {
-                    "item": "Warm sleeping bag",
-                    "description": "-10°C rated minimum",
-                    "rental_available": true
-                },
-                {
-                    "item": "Full rain gear",
-                    "description": "Jacket and pants, high quality",
-                    "rental_available": true
-                },
-                {
-                    "item": "River crossing shoes",
-                    "description": "Sandals or extra shoes for crossings",
+                    "item": "Mountain boots",
+                    "description": "Sturdy with good ankle support",
                     "rental_available": false
                 },
                 {
-                    "item": "Trekking poles",
-                    "description": "Essential for river crossings",
+                    "item": "Crampons",
+                    "description": "Light crampons for snow patches",
                     "rental_available": true
                 },
                 {
-                    "item": "Camping stove and fuel",
-                    "description": "No wood fires allowed",
+                    "item": "Ice axe",
+                    "description": "For glacier sections (optional)",
                     "rental_available": true
                 },
                 {
-                    "item": "First aid kit",
-                    "description": "Comprehensive for remote areas",
+                    "item": "Backpack",
+                    "description": "40-50L capacity",
+                    "rental_available": true
+                },
+                {
+                    "item": "4-season clothing",
+                    "description": "Including warm layers",
+                    "rental_available": false
+                },
+                {
+                    "item": "Waterproofs",
+                    "description": "High quality essential",
+                    "rental_available": false
+                },
+                {
+                    "item": "Navigation tools",
+                    "description": "Map, compass, GPS",
                     "rental_available": false
                 },
                 {
                     "item": "Emergency shelter",
-                    "description": "Bivy or emergency blanket",
+                    "description": "Bivy or group shelter",
                     "rental_available": false
-                },
-                {
-                    "item": "GPS device",
-                    "description": "Trail can be hard to follow",
-                    "rental_available": true
-                },
-                {
-                    "item": "Rope",
-                    "description": "30m for river crossings",
-                    "rental_available": true
                 }
             ],
             "recommended": [
                 {
-                    "item": "Gaiters",
-                    "description": "For river crossings and mud",
-                    "rental_available": false
-                },
-                {
-                    "item": "Neoprene socks",
-                    "description": "For cold river crossings",
-                    "rental_available": false
-                },
-                {
-                    "item": "Satellite communicator",
-                    "description": "For emergencies",
+                    "item": "Trekking poles",
+                    "description": "Essential for stability",
                     "rental_available": true
+                },
+                {
+                    "item": "Gaiters",
+                    "description": "For snow and scree",
+                    "rental_available": false
+                },
+                {
+                    "item": "Glacier glasses",
+                    "description": "Category 4 protection",
+                    "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Huemul Circuit Registration",
+                "name": "None required",
                 "cost_usd": 0,
-                "cost_ars": 0,
-                "where_to_obtain": "National Park office El Chaltén",
-                "validity": "Specific dates",
-                "notes": "Must show gear list and experience"
+                "notes": "But hut reservations essential"
             }
         ],
         "costs": {
             "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "porter_daily_usd": 0,
-            "accommodation_daily_usd": 0,
-            "meals_daily_usd": 15,
-            "transportation_usd": 80,
+            "guide_daily_usd": 300,
+            "accommodation_daily_usd": 80,
+            "meals_daily_usd": 60,
+            "transportation_usd": 200,
             "total_budget_range_usd": {
-                "min": 200,
-                "max": 1000
+                "min": 1500,
+                "max": 3500
             }
         },
         "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent profile",
+                    "Stay hydrated",
+                    "Consider acetazolamide",
+                    "Know symptoms"
+                ]
+            },
             "main_concerns": {
-                "river_crossings": {
-                    "risk_level": "very high",
-                    "description": "Multiple dangerous crossings",
-                    "prevention": [
-                        "Never cross alone",
-                        "Use poles and rope",
-                        "Cross early morning when water is lower",
-                        "Be prepared to wait if levels are high",
-                        "Know when to turn back"
-                    ]
-                },
                 "weather": {
-                    "risk_level": "very high",
-                    "description": "Extreme conditions possible",
+                    "risk_level": "high",
+                    "description": "Rapid changes, snow possible",
                     "prevention": [
-                        "Monitor forecasts closely",
-                        "Be prepared for snow any time",
-                        "Carry emergency shelter",
+                        "Check forecasts daily",
+                        "Start early",
+                        "Carry emergency gear",
                         "Know escape routes"
                     ]
                 },
-                "remoteness": {
-                    "risk_level": "very high",
-                    "description": "No easy evacuation",
+                "glacier_travel": {
+                    "risk_level": "moderate",
+                    "description": "Some routes cross glaciers",
                     "prevention": [
-                        "Travel with experienced partners",
-                        "Carry comprehensive first aid",
-                        "Consider satellite communicator",
-                        "Leave detailed itinerary with rangers"
+                        "Consider guide for glacier days",
+                        "Rope up if necessary",
+                        "Know crevasse rescue",
+                        "Check conditions"
                     ]
                 }
             },
             "evacuation": {
-                "method": "Helicopter only",
-                "cost_usd": "5000+",
-                "insurance_required": true,
-                "response_time": "24-48 hours weather permitting"
+                "method": "Helicopter",
+                "cost_usd": "3000-5000",
+                "insurance_required": true
             }
+        },
+        "weather_patterns": {
+            "summer": {
+                "months": [
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "0 to 10",
+                "precipitation": "Afternoon storms possible",
+                "snow_level": "Above 3000m usually",
+                "notes": "Most stable period"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Train/Bus",
+                    "from": "Geneva",
+                    "to": "Chamonix",
+                    "duration": "2.5 hours",
+                    "cost_usd": 35
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Train",
+                    "from": "Zermatt",
+                    "to": "Geneva",
+                    "duration": "4 hours",
+                    "cost_usd": 80
+                }
+            ]
         },
         "difficulty_details": {
             "physical_demands": "Excellent fitness required",
-            "technical_skills": "Route-finding, river crossing experience",
-            "altitude_challenge": "None",
-            "trail_conditions": "Often unclear, GPS recommended",
-            "weather_challenge": "Extreme - primary hazard",
+            "technical_skills": "Basic mountaineering helpful",
+            "altitude_challenge": "Moderate, max 3000m",
+            "trail_conditions": "Variable, some route-finding",
             "daily_hiking_hours": "6-9 hours",
-            "total_elevation_gain": 2250,
-            "total_elevation_loss": 2250
+            "total_elevation_gain": 12000,
+            "total_elevation_loss": 12000
         },
-        "special_considerations": {
-            "experience_required": "Previous multi-day trekking essential",
-            "group_size": "Minimum 2, recommended 3-4",
-            "solo_hiking": "Strongly discouraged",
-            "guide_recommendation": "Highly recommended unless very experienced",
-            "season_critical": "December-March only"
-        },
-        "faqs": [
+        "alternative_routes": [
             {
-                "question": "Is the Huemul Circuit safe?",
-                "answer": "It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides."
+                "name": "Classic Glacier Route",
+                "variation": "Original high glacier route",
+                "extra_days": 0,
+                "highlights": [
+                    "More glaciers",
+                    "Requires mountaineering skills",
+                    "More remote"
+                ]
             },
             {
-                "question": "What about the tyrolean traverse?",
-                "answer": "A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating."
-            },
-            {
-                "question": "Can I do it without camping experience?",
-                "answer": "No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on."
-            },
-            {
-                "question": "What if rivers are too high?",
-                "answer": "You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important."
+                "name": "Valley Route",
+                "variation": "Lower altitude alternative",
+                "extra_days": -2,
+                "highlights": [
+                    "Easier",
+                    "More villages",
+                    "Less weather dependent"
+                ]
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 78,
+        "popularity_score": 88,
         "seo": {
-            "meta_title": "Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit",
-            "meta_description": "Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.",
+            "meta_title": "Walker's Haute Route Guide 2024 | Chamonix to Zermatt Trek",
+            "meta_description": "Complete guide to hiking the Haute Route from Chamonix to Zermatt. 12-day alpine trek itinerary, costs, gear list, and expert tips.",
             "keywords": [
-                "huemul circuit",
-                "el chalten circuit",
-                "patagonia challenging trek",
-                "tyrolean traverse",
-                "southern ice field trek"
+                "haute route",
+                "chamonix to zermatt",
+                "walkers haute route",
+                "alpine traverse",
+                "haute route trek"
             ]
         }
     };

@@ -1336,7 +1336,12 @@
 
     <script>
         // Enhanced tab navigation with mobile centering and proper scroll positioning
+                // Enhanced tab navigation with instant scroll positioning
         function showSection(sectionId, clickedElement) {
+            // FIRST: Scroll to correct position immediately
+            scrollToSectionTop();
+            
+            // THEN: Change the content (this prevents the "jump" effect)
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
@@ -1359,34 +1364,21 @@
                 // Center the clicked tab on mobile
                 centerTabWithNextVisible(clickedElement);
             }
-            
-            // Scroll to the top of the new section content
-            scrollToSectionTop();
         }
 
-                                                    function scrollToSectionTop() {
-            // Get the currently active content section
-            const activeSection = document.querySelector('.content-section.active');
+                                                            function scrollToSectionTop() {
+            // Get navigation height first
+            const navTabs = document.querySelector('.nav-tabs');
+            if (!navTabs) return;
             
-            if (activeSection) {
-                // Scroll to the top of the active section content
-                activeSection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
-                
-                // Small delay then adjust for sticky nav
-                setTimeout(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
-                    if (navTabs) {
-                        const navHeight = navTabs.offsetHeight;
-                        window.scrollBy({
-                            top: -(navHeight + 10), // Negative to go UP
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 50);
-            }
+            const navHeight = navTabs.offsetHeight;
+            const targetPosition = navTabs.offsetTop + navHeight + 20;
+            
+            // INSTANT scroll to target position (no animation during tab switch)
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'instant'  // Key change: instant, not smooth
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
