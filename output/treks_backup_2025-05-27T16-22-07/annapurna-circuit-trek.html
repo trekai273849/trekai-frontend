@@ -1,0 +1,2727 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annapurna Circuit Trek Guide 2024 | Complete 18-Day Itinerary</title>
+    <meta name="description" content="Complete guide to the Annapurna Circuit Trek including Thorong La Pass. Detailed itinerary, gear list, cultural insights, and expert tips.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D5016;
+            --primary-light: #4A7C28;
+            --accent: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #27AE60;
+            --warning: #E74C3C;
+            --info: #3498DB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Updated Hero Section with real image support */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('/images/treks/covers/annapurna-circuit-trek.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #374151; /* Fallback color */
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.2) 0%, 
+                rgba(0,0,0,0.4) 50%, 
+                rgba(0,0,0,0.6) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: white;
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-tab {
+            padding: 20px 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-tab:hover {
+            color: var(--primary);
+        }
+
+        .nav-tab.active {
+            color: var(--primary);
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .overview-main h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .overview-description {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .highlights-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .highlight-icon {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+
+        .highlight-text {
+            flex: 1;
+        }
+
+        .highlight-text h4 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .highlight-text p {
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+
+        /* Quick Info Card */
+        .quick-info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .quick-info-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .info-value {
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            background: var(--accent);
+            color: white;
+        }
+
+        .price-range {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* CTA Buttons */
+        .cta-section {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Itinerary Section */
+        .itinerary-timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #E0E0E0;
+        }
+
+        .itinerary-day {
+            position: relative;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .itinerary-day::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #E0E0E0;
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .day-number {
+            font-size: 0.9em;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .day-title {
+            font-size: 1.3em;
+            margin: 5px 0;
+            color: var(--text-dark);
+        }
+
+        .day-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        .day-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .day-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .day-highlight {
+            background: var(--bg-light);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: var(--text-dark);
+        }
+
+        /* Gear Section */
+        .gear-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gear-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .gear-category h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gear-list {
+            list-style: none;
+        }
+
+        .gear-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #F0F0F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gear-item:last-child {
+            border-bottom: none;
+        }
+
+        .gear-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .gear-description {
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+
+        .rental-badge {
+            background: var(--success);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        /* Season & Weather */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .season-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+            text-align: center;
+        }
+
+        .season-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .season-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .season-months {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Cost Breakdown */
+        .cost-breakdown {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: var(--primary);
+            padding-top: 20px;
+        }
+
+        /* FAQs */
+        .faq-list {
+            max-width: 800px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-toggle {
+            font-size: 1.5em;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: var(--text-light);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Mobile Responsive */
+        
+/* Mobile Header Fixes */
+
+/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
+@media (max-width: 768px) {
+    /* FORCE HERO STATS INTO 2x2 GRID */
+    
+    /* ENHANCED 2x2 GRID FIX */
+    .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 0.8rem !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 1.5rem auto 0 !important;
+        padding: 0 !important;
+        justify-content: center !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        /* Remove conflicting flex properties */
+        flex-direction: unset !important;
+        flex-wrap: unset !important;
+    }
+    
+    /* Explicit grid positioning */
+    .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
+    .hero-stats .hero-stat:nth-child(4) { grid-column: 2; grid-row: 2; }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 1rem 0.8rem !important;
+        background: rgba(0,0,0,0.6) !important;
+        border-radius: 12px !important;
+        backdrop-filter: blur(5px) !important;
+        min-height: 70px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.8rem 0.5rem !important;
+        background: rgba(0,0,0,0.4) !important;
+        border-radius: 8px !important;
+        backdrop-filter: blur(3px) !important;
+        min-height: 60px !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 0.2rem !important;
+        color: white !important;
+        display: block !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.7rem !important;
+        color: white !important;
+        opacity: 0.9 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        display: block !important;
+    }
+    
+    /* FIX HERO CONTAINER */
+    .hero {
+        height: 60vh !important;
+        min-height: 400px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+    
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .hero h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        line-height: 1.2 !important;
+        max-width: 90% !important;
+    }
+    
+    /* FIX MAIN CONTENT LAYOUT */
+    .content-section {
+        padding: 2rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    .overview-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .overview-main {
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .overview-main h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    
+    /* FIX SIDEBAR */
+    .quick-info-card {
+        width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        padding: 1.5rem !important;
+        box-sizing: border-box !important;
+        order: -1 !important;
+    }
+    
+    /* FIX NAVIGATION */
+    .nav-tabs-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        padding: 0 1rem !important;
+    }
+    
+    .nav-tab {
+        white-space: nowrap !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* PREVENT HORIZONTAL SCROLL */
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    .max-w-7xl {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* FIX HIGHLIGHTS */
+    .highlights-list {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .highlight-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .highlight-text {
+        flex: 1 !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* FIX BUTTONS */
+    .cta-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .btn {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem 2rem !important;
+    }
+    
+    /* TAILWIND STYLE FIXES */
+    .hero-image {
+        height: 350px !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-image .absolute {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 1.5rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        max-width: 240px !important;
+        gap: 0.6rem !important;
+    }
+    
+    .hero-stat {
+        min-height: 50px !important;
+        padding: 0.6rem 0.4rem !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.65rem !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh !important;
+        min-height: 350px !important;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+        max-width: 200px !important;
+    }
+
+    .hero-stat-value {
+        font-size: 1.6rem !important;
+    }
+
+    .hero-stat-label {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-image {
+        height: 300px !important;
+    }
+
+    .hero-image h1 {
+        font-size: 1.6rem !important;
+    }
+}
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section.active > * {
+            animation: fadeIn 0.5s ease-out;
+        }
+    
+        /* Enhanced Section Headers Styling */
+        .content-section h2 {
+            font-size: 2.8em !important;
+            font-weight: 800 !important;
+            color: var(--text-dark) !important;
+            margin-bottom: 30px !important;
+            margin-top: 20px !important;
+            padding-bottom: 20px !important;
+            position: relative !important;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            border-bottom: 2px solid #E0E0E0 !important;
+        }
+
+        .content-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        /* Subtitle styling enhancement */
+        .content-section h2 + p {
+            font-size: 1.2em !important;
+            color: var(--text-light) !important;
+            margin-bottom: 50px !important;
+            font-weight: 500 !important;
+            line-height: 1.6 !important;
+        }
+
+        @media (max-width: 768px) {
+            .content-section h2 {
+                font-size: 2.2em !important;
+                margin-bottom: 25px !important;
+                padding-bottom: 15px !important;
+            }
+            
+            .content-section h2 + p {
+                font-size: 1.1em !important;
+                margin-bottom: 40px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section h2 {
+                font-size: 1.9em !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .content-section h2 + p {
+                font-size: 1em !important;
+                margin-bottom: 35px !important;
+            }
+        }
+        </style>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <!-- Navbar will be injected here -->
+  <script type="module" src="../js/components/navbar.js"></script>
+    <!-- Hero Section with Real Image -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content mobile-fixed">
+            <h1>Annapurna Circuit Trek</h1>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value">18</span>
+                    <span class="hero-stat-label">Days</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">5,416m</span>
+                    <span class="hero-stat-label">Max Elevation</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">230km</span>
+                    <span class="hero-stat-label">Total Distance</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">challenging</span>
+                    <span class="hero-stat-label">Difficulty</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    
+    <!-- Navigation Tabs -->
+    
+
+    <!-- Overview Section -->
+    <section id="overview" class="content-section active">
+        <div class="overview-grid">
+            <div class="overview-main">
+                <h2>Journey to Nepal/Himalayas</h2>
+                <p class="overview-description">
+                    A diverse journey through varied landscapes, from tropical forests to high-altitude deserts, crossing the challenging Thorong La Pass at 5,416m.
+                </p>
+                
+                <div class="highlights-list">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏔️</span>
+                        <div class="highlight-text">
+                            <h4>Epic Views</h4>
+                            <p>Spectacular mountain scenery throughout</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏛️</span>
+                        <div class="highlight-text">
+                            <h4>Cultural Experience</h4>
+                            <p>Authentic local culture and traditions</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🌅</span>
+                        <div class="highlight-text">
+                            <h4>Sunrise Views</h4>
+                            <p>Unforgettable dawn experiences</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">👥</span>
+                        <div class="highlight-text">
+                            <h4>Local Communities</h4>
+                            <p>Experience authentic mountain hospitality</p>
+                        </div>
+                    </div>
+                </div>
+
+                                                <div class="flex justify-center mt-12 mb-12">
+                    <button data-save-trek class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-gray-300 hover:border-green-600 hover:text-green-700 hover:bg-green-50 transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg group">
+                        <svg class="w-5 h-5 mr-3 text-gray-500 group-hover:text-green-600 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                        </svg>
+                        <span class="text-lg">Save to My Trips</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quick-info-card">
+                <h3>Quick Facts</h3>
+                <div class="info-row">
+                    <span class="info-label">Duration</span>
+                    <span class="info-value">15-21 days</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Distance</span>
+                    <span class="info-value">230 km / 143 mi</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Max Altitude</span>
+                    <span class="info-value">5,416m (17,769ft)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Difficulty</span>
+                    <span class="info-value">
+                        <span class="difficulty-badge">challenging</span>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Best Seasons</span>
+                    <span class="info-value">See below</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Starting Point</span>
+                    <span class="info-value">Kathmandu/Pokhara</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Permits Required</span>
+                    <span class="info-value">2 permits</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Estimated Cost</span>
+                    <span class="info-value">
+                        <span class="price-range">$800 - $2,000</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="content-section">
+        <h2>18-Day Detailed Itinerary</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
+        </p>
+
+        <div class="itinerary-timeline">
+            
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 1</div>
+          <h3 class="day-title">Drive from Kathmandu to Besisahar</h3>
+          <div class="day-stats">
+            <span>📏 175km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -640m</span>
+            <span>🏔️ 760m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Early morning departure from Kathmandu for a scenic drive to Besisahar. The journey follows the Prithvi Highway before turning north along the Marsyangdi River valley.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Scenic drive through rural Nepal</span><span class="day-highlight">Views of Ganesh Himal</span><span class="day-highlight">Cross Trishuli River</span><span class="day-highlight">Traditional villages</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 2</div>
+          <h3 class="day-title">Trek to Bahundanda</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +550m</span>
+            <span>🏔️ 1,310m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Begin trekking along the Marsyangdi River through subtropical forests and terraced fields. Pass through several Gurung and Brahmin villages.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">First day of trekking</span><span class="day-highlight">Marsyangdi River valley</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Mixed Hindu and Buddhist villages</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 3</div>
+          <h3 class="day-title">Trek to Chamje</h3>
+          <div class="day-stats">
+            <span>📏 15km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +100m</span>
+            <span>🏔️ 1,410m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Trek through narrow gorge sections with the trail carved into cliff faces. Cross several suspension bridges and enjoy views of cascading waterfalls.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Dramatic gorge sections</span><span class="day-highlight">Suspension bridges</span><span class="day-highlight">Waterfalls</span><span class="day-highlight">Changing vegetation</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 4</div>
+          <h3 class="day-title">Trek to Dharapani</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +550m</span>
+            <span>🏔️ 1,960m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Steady climb through bamboo and rhododendron forests. Enter the Manang district at Koto, where Tibetan cultural influence becomes apparent.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Enter Manang district</span><span class="day-highlight">Views of Annapurna II</span><span class="day-highlight">Pine forests</span><span class="day-highlight">Tibetan influenced architecture</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Trek to Chame</h3>
+          <div class="day-stats">
+            <span>📏 15km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +750m</span>
+            <span>🏔️ 2,710m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Trek through dense forests with occasional clearings offering stunning views of Annapurna II. Chame is the administrative center of Manang district.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Annapurna II close-up views</span><span class="day-highlight">Hot springs at Koto</span><span class="day-highlight">Chame - district headquarters</span><span class="day-highlight">Apple orchards</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 6</div>
+          <h3 class="day-title">Trek to Pisang</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +590m</span>
+            <span>🏔️ 3,300m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Spectacular day walking through deep forests with the massive Paungda Danda rock face rising 1,500m above. Choose between Upper or Lower Pisang routes.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Paungda Danda rock face</span><span class="day-highlight">First views of Annapurna III</span><span class="day-highlight">Upper and Lower Pisang</span><span class="day-highlight">Traditional Buddhist monastery</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Trek to Manang</h3>
+          <div class="day-stats">
+            <span>📏 19km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +219m</span>
+            <span>🏔️ 3,519m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Choose between the upper route through Ghyaru and Ngawal (highly recommended for views) or the lower valley route. Both converge at Manang.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Upper route via Ghyaru</span><span class="day-highlight">360-degree mountain panorama</span><span class="day-highlight">Tibetan Buddhist culture</span><span class="day-highlight">Manang village exploration</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Acclimatization Day in Manang</h3>
+          <div class="day-stats">
+            <span>📏 0km</span>
+            <span>⏱️ 0 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 3,519m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Essential acclimatization day. Options include hiking to Gangapurna Lake, visiting the monastery, or climbing to viewpoints above the village.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Hike to Gangapurna Lake</span><span class="day-highlight">Visit 500-year-old monastery</span><span class="day-highlight">HRA health post lecture</span><span class="day-highlight">Explore Manang village</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">Trek to Yak Kharka</h3>
+          <div class="day-stats">
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +591m</span>
+            <span>🏔️ 4,110m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Leave the last major village behind as you enter high alpine terrain. The landscape becomes more barren with scattered juniper bushes.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Alpine terrain begins</span><span class="day-highlight">Yak pastures</span><span class="day-highlight">Stunning mountain views</span><span class="day-highlight">Shorter day for acclimatization</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Trek to Thorong Phedi</h3>
+          <div class="day-stats">
+            <span>📏 7km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 4,600m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Short but steady climb to the base of Thorong La Pass. Rest early as tomorrow requires a very early start for the pass crossing.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Base of Thorong La Pass</span><span class="day-highlight">Dramatic mountain amphitheater</span><span class="day-highlight">Final preparations for pass crossing</span><span class="day-highlight">Early rest for summit day</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 11</div>
+          <h3 class="day-title">Cross Thorong La Pass to Muktinath</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +816m</span>
+            <span>🏔️ 3,800m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">The big day! Start at 3-4 AM for the challenging climb to Thorong La Pass. Celebrate at the top before the long descent to Muktinath.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Thorong La Pass at 5,416m</span><span class="day-highlight">Sunrise over the Himalayas</span><span class="day-highlight">Achievement of highest point</span><span class="day-highlight">Descent to Muktinath temple</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 12</div>
+          <h3 class="day-title">Trek to Kagbeni</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -990m</span>
+            <span>🏔️ 2,810m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Morning visit to the sacred Muktinath temple before descending through the dramatic landscape to the ancient village of Kagbeni.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Visit Muktinath temple</span><span class="day-highlight">Enter Mustang region</span><span class="day-highlight">Medieval village of Kagbeni</span><span class="day-highlight">Kali Gandaki valley views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 13</div>
+          <h3 class="day-title">Trek to Marpha</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -140m</span>
+            <span>🏔️ 2,670m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Follow the Kali Gandaki River through the world's deepest gorge between Dhaulagiri and Annapurna. Marpha is famous for its apples.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Walk through world's deepest gorge</span><span class="day-highlight">Apple orchards of Marpha</span><span class="day-highlight">Traditional whitewashed village</span><span class="day-highlight">Apple products and brandy</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 14</div>
+          <h3 class="day-title">Trek to Kalopani</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -140m</span>
+            <span>🏔️ 2,530m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Continue down the valley passing through traditional Thakali villages. The landscape transitions back to pine forests as you descend.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Pass through Tukuche</span><span class="day-highlight">Views of Dhaulagiri</span><span class="day-highlight">Traditional Thakali villages</span><span class="day-highlight">Pine forests return</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 15</div>
+          <h3 class="day-title">Trek to Tatopani</h3>
+          <div class="day-stats">
+            <span>📏 18km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -1340m</span>
+            <span>🏔️ 1,190m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Long descent through changing vegetation zones. Tatopani means 'hot water' - enjoy the natural hot springs to soothe tired muscles.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Dramatic descent</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Subtropical vegetation</span><span class="day-highlight">Relax sore muscles</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 16</div>
+          <h3 class="day-title">Trek to Ghorepani</h3>
+          <div class="day-stats">
+            <span>📏 15km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1670m</span>
+            <span>🏔️ 2,860m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Challenging climb up stone steps through terraced fields and rhododendron forests to reach Ghorepani, gateway to Poon Hill.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Steep climb through villages</span><span class="day-highlight">Rhododendron forests</span><span class="day-highlight">Magar and Gurung culture</span><span class="day-highlight">Prepare for Poon Hill sunrise</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 17</div>
+          <h3 class="day-title">Poon Hill Sunrise, Trek to Nayapul, Drive to Pokhara</h3>
+          <div class="day-stats">
+            <span>📏 20km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 -2038m</span>
+            <span>🏔️ 822m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Pre-dawn hike to Poon Hill for spectacular sunrise over the Himalayas. Descend to Nayapul and drive to Pokhara to complete the circuit.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Sunrise from Poon Hill (3,210m)</span><span class="day-highlight">Panoramic mountain views</span><span class="day-highlight">Final descent to road</span><span class="day-highlight">Arrive in Pokhara</span>
+        </div>
+      
+    </div>
+  
+        </div>
+    </section>
+
+    <!-- Gear Section -->
+    <section id="gear" class="content-section">
+        <h2>Essential Gear &amp; Packing List</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
+        </p>
+
+        <div class="gear-categories">
+            <div class="gear-category">
+                <h3>
+                    <span>🎒</span>
+                    <span>Essential Items</span>
+                </h3>
+                <ul class="gear-list">
+                    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Waterproof with good ankle support</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-20°C rated for Thorong La Pass</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Essential for pass crossing</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Thermal layers</div>
+          <div class="gear-description">Top and bottom, 2 sets minimum</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Waterproof jacket and pants</div>
+          <div class="gear-description">Good quality rain gear</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Highly recommended for pass day</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Warm gloves</div>
+          <div class="gear-description">Insulated for high altitude</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen SPF 50+</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">First aid kit</div>
+          <div class="gear-description">Including altitude medication</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water purification</div>
+          <div class="gear-description">Tablets or SteriPen</div>
+        </div>
+        
+      </li>
+    
+                </ul>
+            </div>
+
+            <div class="gear-category">
+                <h3>
+                    <span>👍</span>
+                    <span>Recommended Items</span>
+                </h3>
+                <ul class="gear-list">
+                    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For potential snow on pass</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Down pants</div>
+          <div class="gear-description">For extreme cold on pass day</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Buff/neck warmer</div>
+          <div class="gear-description">Wind protection</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">Essential for pass day start</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Crampons</div>
+          <div class="gear-description">If crossing in winter/spring</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasons Section -->
+    <section id="seasons" class="content-section">
+        <h2>Best Time to Trek</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Weather plays a crucial role in your trekking experience. Choose your season wisely.
+        </p>
+
+        <div class="seasons-grid">
+            
+    <div class="season-card">
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Autumn</h3>
+      <p class="season-months">October, November</p>
+      <p>Clear skies, stable weather, best mountain views</p>
+    </div>
+  
+    <div class="season-card">
+      <div class="season-icon">🌸</div>
+      <h3 class="season-name">Spring</h3>
+      <p class="season-months">March, April</p>
+      <p>Rhododendrons bloom, warmer temperatures, occasional clouds</p>
+    </div>
+  
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 2px 10px var(--shadow);">
+            <h3 style="margin-bottom: 20px;">Weather Overview</h3>
+            <p>Weather conditions vary significantly by season. Check detailed weather patterns for your chosen dates.</p>
+        </div>
+    </section>
+
+    <!-- Costs Section -->
+    <section id="costs" class="content-section">
+        <h2>Costs &amp; Permits</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Understanding the costs helps you budget appropriately for your adventure.
+        </p>
+
+        <div class="cost-breakdown">
+            <h3 style="margin-bottom: 20px;">Typical Cost Breakdown (per person)</h3>
+            
+    <div class="cost-item">
+      <span>Permits</span>
+      <span>$40</span>
+    </div>
+    <div class="cost-item">
+      <span>Guide (per day)</span>
+      <span>$25</span>
+    </div>
+    <div class="cost-item">
+      <span>Accommodation (per night)</span>
+      <span>$5</span>
+    </div>
+    <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$20</span>
+    </div>
+    <div class="cost-item">
+      <span>Transportation</span>
+      <span>$50</span>
+    </div>
+    <div class="cost-item">
+      <span>Total Budget Range</span>
+      <span>$800 - $2,000</span>
+    </div>
+  
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h3>Required Permits</h3>
+            <p style="margin-top: 20px;">Check current permit requirements and costs as they may change.</p>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Get answers to the most common questions about this trek.
+        </p>
+
+        <div class="faq-list">
+            
+        </div>
+    </section>
+
+    
+    
+    
+
+
+    <script>
+        // Enhanced tab navigation with mobile centering and proper scroll positioning
+        function showSection(sectionId, clickedElement) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Add active class to clicked tab
+            if (clickedElement) {
+                clickedElement.classList.add('active');
+                // Center the clicked tab on mobile
+                centerTabWithNextVisible(clickedElement);
+            }
+            
+            // Scroll to the top of the new section content
+            scrollToSectionTop();
+        }
+
+        function scrollToSectionTop() {
+            setTimeout(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                if (navTabs) {
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 50);
+        }
+
+        function centerTabWithNextVisible(clickedTab) {
+            const tabContainer = document.querySelector('.nav-tabs-container');
+            const allTabs = Array.from(document.querySelectorAll('.nav-tab'));
+            const clickedIndex = allTabs.indexOf(clickedTab);
+            
+            if (clickedIndex === -1 || !tabContainer) return;
+            
+            const containerWidth = tabContainer.offsetWidth;
+            const tabWidth = clickedTab.offsetWidth;
+            const tabOffsetLeft = clickedTab.offsetLeft;
+            
+            // Calculate scroll position to show clicked tab + part of next tab
+            let targetScroll;
+            
+            if (clickedIndex === allTabs.length - 1) {
+                // Last tab - center it
+                targetScroll = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+            } else {
+                // Show clicked tab with next tab partially visible
+                const nextTab = allTabs[clickedIndex + 1];
+                const nextTabWidth = nextTab.offsetWidth;
+                const totalWidthNeeded = tabWidth + (nextTabWidth * 0.6); // Show 60% of next tab
+                
+                if (totalWidthNeeded <= containerWidth) {
+                    // Both tabs can fit, position them optimally
+                    targetScroll = tabOffsetLeft - (containerWidth - totalWidthNeeded) / 2;
+                } else {
+                    // Position clicked tab with as much of next tab as possible
+                    targetScroll = tabOffsetLeft - (containerWidth - tabWidth) * 0.3;
+                }
+            }
+            
+            // Ensure we don't scroll past the container bounds
+            const maxScroll = tabContainer.scrollWidth - containerWidth;
+            targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+            
+            tabContainer.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add touch-friendly scrolling for mobile
+            const tabContainer = document.querySelector('.nav-tabs-container');
+            if (tabContainer) {
+                // Improve scrolling momentum on iOS
+                tabContainer.style.webkitOverflowScrolling = 'touch';
+            }
+
+            // Add click event listeners to all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    if (sectionId) {
+                        showSection(sectionId, this);
+                    }
+                });
+            });
+            
+            // Ensure Overview tab is active by default
+            const overviewTab = document.querySelector('.nav-tab[data-section="overview"]');
+            const overviewSection = document.getElementById('overview');
+            if (overviewTab && overviewSection) {
+                overviewTab.classList.add('active');
+                overviewSection.classList.add('active');
+            }
+        });
+    </script>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "annapurna-circuit-trek",
+        "name": "Annapurna Circuit Trek",
+        "slug": "annapurna-circuit-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "A diverse journey through varied landscapes, from tropical forests to high-altitude deserts, crossing the challenging Thorong La Pass at 5,416m.",
+        "duration": {
+            "min_days": 15,
+            "max_days": 21,
+            "recommended_days": 18
+        },
+        "distance_km": 230,
+        "difficulty": "challenging",
+        "max_elevation_m": 5416,
+        "starting_elevation_m": 760,
+        "airport": "Kathmandu (KTM)",
+        "nearest_city": "Kathmandu/Pokhara",
+        "coordinates": {
+            "start": {
+                "lat": 28.4222,
+                "lng": 84.4291,
+                "location": "Besisahar"
+            },
+            "end": {
+                "lat": 28.5167,
+                "lng": 83.8,
+                "location": "Nayapul"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Autumn",
+                "months": [
+                    "October",
+                    "November"
+                ],
+                "description": "Clear skies, stable weather, best mountain views"
+            },
+            {
+                "name": "Spring",
+                "months": [
+                    "March",
+                    "April"
+                ],
+                "description": "Rhododendrons bloom, warmer temperatures, occasional clouds"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Drive from Kathmandu to Besisahar",
+                "start_location": "Kathmandu",
+                "end_location": "Besisahar",
+                "distance_km": 175,
+                "duration_hours": 6,
+                "elevation_start_m": 1400,
+                "elevation_end_m": 760,
+                "elevation_gain_m": -640,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "lodge",
+                    "options": [
+                        "Hotel Besisahar",
+                        "Trekkers Lodge",
+                        "Mountain View Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Scenic drive through rural Nepal",
+                    "Views of Ganesh Himal",
+                    "Cross Trishuli River",
+                    "Traditional villages"
+                ],
+                "description": "Early morning departure from Kathmandu for a scenic drive to Besisahar. The journey follows the Prithvi Highway before turning north along the Marsyangdi River valley."
+            },
+            {
+                "day": 2,
+                "title": "Trek to Bahundanda",
+                "start_location": "Besisahar",
+                "end_location": "Bahundanda",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 760,
+                "elevation_end_m": 1310,
+                "elevation_gain_m": 550,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Himalaya Lodge",
+                        "Rainbow Lodge",
+                        "Peaceful Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "First day of trekking",
+                    "Marsyangdi River valley",
+                    "Terraced fields",
+                    "Mixed Hindu and Buddhist villages"
+                ],
+                "description": "Begin trekking along the Marsyangdi River through subtropical forests and terraced fields. Pass through several Gurung and Brahmin villages."
+            },
+            {
+                "day": 3,
+                "title": "Trek to Chamje",
+                "start_location": "Bahundanda",
+                "end_location": "Chamje",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 1310,
+                "elevation_end_m": 1410,
+                "elevation_gain_m": 100,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Tashi Delek Lodge",
+                        "River View Lodge",
+                        "Namaste Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Dramatic gorge sections",
+                    "Suspension bridges",
+                    "Waterfalls",
+                    "Changing vegetation"
+                ],
+                "description": "Trek through narrow gorge sections with the trail carved into cliff faces. Cross several suspension bridges and enjoy views of cascading waterfalls."
+            },
+            {
+                "day": 4,
+                "title": "Trek to Dharapani",
+                "start_location": "Chamje",
+                "end_location": "Dharapani",
+                "distance_km": 16,
+                "duration_hours": 7,
+                "elevation_start_m": 1410,
+                "elevation_end_m": 1960,
+                "elevation_gain_m": 550,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Tibet Lodge",
+                        "Mountain Lodge",
+                        "Eagle Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Enter Manang district",
+                    "Views of Annapurna II",
+                    "Pine forests",
+                    "Tibetan influenced architecture"
+                ],
+                "description": "Steady climb through bamboo and rhododendron forests. Enter the Manang district at Koto, where Tibetan cultural influence becomes apparent."
+            },
+            {
+                "day": 5,
+                "title": "Trek to Chame",
+                "start_location": "Dharapani",
+                "end_location": "Chame",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 1960,
+                "elevation_end_m": 2710,
+                "elevation_gain_m": 750,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "New Tibet Lodge",
+                        "Marshyangdi Hotel",
+                        "Karma Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Annapurna II close-up views",
+                    "Hot springs at Koto",
+                    "Chame - district headquarters",
+                    "Apple orchards"
+                ],
+                "description": "Trek through dense forests with occasional clearings offering stunning views of Annapurna II. Chame is the administrative center of Manang district."
+            },
+            {
+                "day": 6,
+                "title": "Trek to Pisang",
+                "start_location": "Chame",
+                "end_location": "Pisang",
+                "distance_km": 14,
+                "duration_hours": 5,
+                "elevation_start_m": 2710,
+                "elevation_end_m": 3300,
+                "elevation_gain_m": 590,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Pisang Peak",
+                        "Mountain View Lodge",
+                        "Annapurna Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Paungda Danda rock face",
+                    "First views of Annapurna III",
+                    "Upper and Lower Pisang",
+                    "Traditional Buddhist monastery"
+                ],
+                "description": "Spectacular day walking through deep forests with the massive Paungda Danda rock face rising 1,500m above. Choose between Upper or Lower Pisang routes."
+            },
+            {
+                "day": 7,
+                "title": "Trek to Manang",
+                "start_location": "Pisang",
+                "end_location": "Manang",
+                "distance_km": 19,
+                "duration_hours": 7,
+                "elevation_start_m": 3300,
+                "elevation_end_m": 3519,
+                "elevation_gain_m": 219,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Yak Hotel",
+                        "Himalaya Lodge",
+                        "Tilicho Hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Upper route via Ghyaru",
+                    "360-degree mountain panorama",
+                    "Tibetan Buddhist culture",
+                    "Manang village exploration"
+                ],
+                "description": "Choose between the upper route through Ghyaru and Ngawal (highly recommended for views) or the lower valley route. Both converge at Manang."
+            },
+            {
+                "day": 8,
+                "title": "Acclimatization Day in Manang",
+                "start_location": "Manang",
+                "end_location": "Manang",
+                "distance_km": 0,
+                "duration_hours": 0,
+                "elevation_start_m": 3519,
+                "elevation_end_m": 3519,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Hike to Gangapurna Lake",
+                    "Visit 500-year-old monastery",
+                    "HRA health post lecture",
+                    "Explore Manang village"
+                ],
+                "description": "Essential acclimatization day. Options include hiking to Gangapurna Lake, visiting the monastery, or climbing to viewpoints above the village."
+            },
+            {
+                "day": 9,
+                "title": "Trek to Yak Kharka",
+                "start_location": "Manang",
+                "end_location": "Yak Kharka",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 3519,
+                "elevation_end_m": 4110,
+                "elevation_gain_m": 591,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Yak Kharka Lodge",
+                        "Himalayan Lodge",
+                        "Sun Rise Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Alpine terrain begins",
+                    "Yak pastures",
+                    "Stunning mountain views",
+                    "Shorter day for acclimatization"
+                ],
+                "description": "Leave the last major village behind as you enter high alpine terrain. The landscape becomes more barren with scattered juniper bushes."
+            },
+            {
+                "day": 10,
+                "title": "Trek to Thorong Phedi",
+                "start_location": "Yak Kharka",
+                "end_location": "Thorong Phedi",
+                "distance_km": 7,
+                "duration_hours": 4,
+                "elevation_start_m": 4110,
+                "elevation_end_m": 4600,
+                "elevation_gain_m": 490,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Thorong Base Camp Lodge",
+                        "Thorong Phedi Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Base of Thorong La Pass",
+                    "Dramatic mountain amphitheater",
+                    "Final preparations for pass crossing",
+                    "Early rest for summit day"
+                ],
+                "description": "Short but steady climb to the base of Thorong La Pass. Rest early as tomorrow requires a very early start for the pass crossing."
+            },
+            {
+                "day": 11,
+                "title": "Cross Thorong La Pass to Muktinath",
+                "start_location": "Thorong Phedi",
+                "end_location": "Muktinath",
+                "distance_km": 16,
+                "duration_hours": 9,
+                "elevation_start_m": 4600,
+                "elevation_end_m": 3800,
+                "elevation_gain_m": 816,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Bob Marley",
+                        "Hotel North Pole",
+                        "New Plaza Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Thorong La Pass at 5,416m",
+                    "Sunrise over the Himalayas",
+                    "Achievement of highest point",
+                    "Descent to Muktinath temple"
+                ],
+                "description": "The big day! Start at 3-4 AM for the challenging climb to Thorong La Pass. Celebrate at the top before the long descent to Muktinath."
+            },
+            {
+                "day": 12,
+                "title": "Trek to Kagbeni",
+                "start_location": "Muktinath",
+                "end_location": "Kagbeni",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 3800,
+                "elevation_end_m": 2810,
+                "elevation_gain_m": -990,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Red House Lodge",
+                        "Hotel Nilgiri View",
+                        "YacDonalds"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Visit Muktinath temple",
+                    "Enter Mustang region",
+                    "Medieval village of Kagbeni",
+                    "Kali Gandaki valley views"
+                ],
+                "description": "Morning visit to the sacred Muktinath temple before descending through the dramatic landscape to the ancient village of Kagbeni."
+            },
+            {
+                "day": 13,
+                "title": "Trek to Marpha",
+                "start_location": "Kagbeni",
+                "end_location": "Marpha",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 2810,
+                "elevation_end_m": 2670,
+                "elevation_gain_m": -140,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Paradise",
+                        "Dhaulagiri Lodge",
+                        "Hotel Marpha Palace"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Walk through world's deepest gorge",
+                    "Apple orchards of Marpha",
+                    "Traditional whitewashed village",
+                    "Apple products and brandy"
+                ],
+                "description": "Follow the Kali Gandaki River through the world's deepest gorge between Dhaulagiri and Annapurna. Marpha is famous for its apples."
+            },
+            {
+                "day": 14,
+                "title": "Trek to Kalopani",
+                "start_location": "Marpha",
+                "end_location": "Kalopani",
+                "distance_km": 17,
+                "duration_hours": 6,
+                "elevation_start_m": 2670,
+                "elevation_end_m": 2530,
+                "elevation_gain_m": -140,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "See You Lodge",
+                        "Annapurna Lodge",
+                        "Green Forest Hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Pass through Tukuche",
+                    "Views of Dhaulagiri",
+                    "Traditional Thakali villages",
+                    "Pine forests return"
+                ],
+                "description": "Continue down the valley passing through traditional Thakali villages. The landscape transitions back to pine forests as you descend."
+            },
+            {
+                "day": 15,
+                "title": "Trek to Tatopani",
+                "start_location": "Kalopani",
+                "end_location": "Tatopani",
+                "distance_km": 18,
+                "duration_hours": 6,
+                "elevation_start_m": 2530,
+                "elevation_end_m": 1190,
+                "elevation_gain_m": -1340,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Tatopani",
+                        "Dhaulagiri Lodge",
+                        "Hot Spring Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Dramatic descent",
+                    "Natural hot springs",
+                    "Subtropical vegetation",
+                    "Relax sore muscles"
+                ],
+                "description": "Long descent through changing vegetation zones. Tatopani means 'hot water' - enjoy the natural hot springs to soothe tired muscles."
+            },
+            {
+                "day": 16,
+                "title": "Trek to Ghorepani",
+                "start_location": "Tatopani",
+                "end_location": "Ghorepani",
+                "distance_km": 15,
+                "duration_hours": 7,
+                "elevation_start_m": 1190,
+                "elevation_end_m": 2860,
+                "elevation_gain_m": 1670,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Sunny",
+                        "Fishtail Lodge",
+                        "Super View Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Steep climb through villages",
+                    "Rhododendron forests",
+                    "Magar and Gurung culture",
+                    "Prepare for Poon Hill sunrise"
+                ],
+                "description": "Challenging climb up stone steps through terraced fields and rhododendron forests to reach Ghorepani, gateway to Poon Hill."
+            },
+            {
+                "day": 17,
+                "title": "Poon Hill Sunrise, Trek to Nayapul, Drive to Pokhara",
+                "start_location": "Ghorepani",
+                "end_location": "Pokhara",
+                "distance_km": 20,
+                "duration_hours": 8,
+                "elevation_start_m": 2860,
+                "elevation_end_m": 822,
+                "elevation_gain_m": -2038,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel in Pokhara"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Sunrise from Poon Hill (3,210m)",
+                    "Panoramic mountain views",
+                    "Final descent to road",
+                    "Arrive in Pokhara"
+                ],
+                "description": "Pre-dawn hike to Poon Hill for spectacular sunrise over the Himalayas. Descend to Nayapul and drive to Pokhara to complete the circuit."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Trekking boots",
+                    "description": "Waterproof with good ankle support",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-20°C rated for Thorong La Pass",
+                    "rental_available": true
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Essential for pass crossing",
+                    "rental_available": true
+                },
+                {
+                    "item": "Thermal layers",
+                    "description": "Top and bottom, 2 sets minimum",
+                    "rental_available": false
+                },
+                {
+                    "item": "Waterproof jacket and pants",
+                    "description": "Good quality rain gear",
+                    "rental_available": true
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Highly recommended for pass day",
+                    "rental_available": true
+                },
+                {
+                    "item": "Warm gloves",
+                    "description": "Insulated for high altitude",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen SPF 50+",
+                    "rental_available": false
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Including altitude medication",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water purification",
+                    "description": "Tablets or SteriPen",
+                    "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "For potential snow on pass",
+                    "rental_available": true
+                },
+                {
+                    "item": "Down pants",
+                    "description": "For extreme cold on pass day",
+                    "rental_available": true
+                },
+                {
+                    "item": "Buff/neck warmer",
+                    "description": "Wind protection",
+                    "rental_available": false
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "Essential for pass day start",
+                    "rental_available": false
+                },
+                {
+                    "item": "Crampons",
+                    "description": "If crossing in winter/spring",
+                    "rental_available": true
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "Annapurna Conservation Area Permit (ACAP)",
+                "cost_usd": 30,
+                "cost_npr": 3000,
+                "where_to_obtain": "ACAP office in Kathmandu or Pokhara",
+                "validity": "Single entry"
+            },
+            {
+                "name": "Trekkers' Information Management System (TIMS)",
+                "cost_usd": 10,
+                "cost_npr": 1000,
+                "where_to_obtain": "Tourism Board offices",
+                "validity": "Duration of trek"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 40,
+            "guide_daily_usd": 25,
+            "porter_daily_usd": 18,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 50,
+            "miscellaneous_daily_usd": 5,
+            "total_budget_range_usd": {
+                "min": 800,
+                "max": 2000
+            }
+        },
+        "cultural_information": {
+            "ethnic_groups": [
+                "Gurung",
+                "Thakali",
+                "Manangi",
+                "Tibetan"
+            ],
+            "primary_religion": "Buddhism and Hinduism",
+            "languages": [
+                "Nepali",
+                "Gurung",
+                "Tibetan dialects",
+                "English"
+            ],
+            "customs_etiquette": [
+                "Walk clockwise around mani walls and stupas",
+                "Remove shoes in monasteries and homes",
+                "Don't eat beef in Hindu areas",
+                "Respect local dress codes",
+                "Ask permission before photographing"
+            ],
+            "local_foods": [
+                {
+                    "name": "Thakali Thali",
+                    "description": "Traditional set meal from the Thakali people"
+                },
+                {
+                    "name": "Yak cheese",
+                    "description": "Local specialty in higher regions"
+                },
+                {
+                    "name": "Apple products",
+                    "description": "From Marpha - pie, brandy, cider"
+                },
+                {
+                    "name": "Buckwheat pancakes",
+                    "description": "Traditional in Manang region"
+                }
+            ]
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "very high",
+                "prevention": [
+                    "Mandatory acclimatization day in Manang",
+                    "Consider additional day if needed",
+                    "Hydrate constantly",
+                    "Avoid alcohol before pass crossing",
+                    "Consider Diamox prescription"
+                ],
+                "critical_points": [
+                    "Manang",
+                    "Thorong Phedi",
+                    "Pass day"
+                ]
+            },
+            "medical_facilities": [
+                {
+                    "location": "Chame",
+                    "type": "Health post"
+                },
+                {
+                    "location": "Manang",
+                    "type": "HRA clinic with daily lectures"
+                },
+                {
+                    "location": "Jomsom",
+                    "type": "Hospital with basic facilities"
+                }
+            ],
+            "evacuation": {
+                "method": "Helicopter from most points",
+                "cost_usd": "3000-5000",
+                "challenging_areas": "Thorong La Pass area"
+            }
+        },
+        "weather_patterns": {
+            "pre_monsoon": {
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "pass_conditions": "May have snow, crampons possibly needed",
+                "temperatures": "Moderate days, cold nights",
+                "notes": "Rhododendrons bloom, dustier conditions"
+            },
+            "monsoon": {
+                "months": [
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "pass_conditions": "Not recommended",
+                "temperatures": "Warm and wet",
+                "notes": "Trails muddy, leeches in lower sections"
+            },
+            "post_monsoon": {
+                "months": [
+                    "October",
+                    "November"
+                ],
+                "pass_conditions": "Best conditions, usually snow-free",
+                "temperatures": "Clear days, very cold nights",
+                "notes": "Peak season, clearest mountain views"
+            },
+            "winter": {
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "pass_conditions": "Often blocked by snow",
+                "temperatures": "Very cold, especially at altitude",
+                "notes": "Many lodges closed, experienced trekkers only"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Public bus",
+                    "from": "Kathmandu",
+                    "to": "Besisahar",
+                    "duration": "6-7 hours",
+                    "cost_usd": 10,
+                    "comfort": "Basic"
+                },
+                {
+                    "method": "Private jeep",
+                    "from": "Kathmandu",
+                    "to": "Besisahar",
+                    "duration": "5-6 hours",
+                    "cost_usd": 150,
+                    "comfort": "Comfortable"
+                },
+                {
+                    "method": "Local jeep",
+                    "from": "Besisahar",
+                    "to": "Chame/Manang",
+                    "duration": "Variable",
+                    "cost_usd": 50,
+                    "notes": "Can skip lower section if short on time"
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Bus",
+                    "from": "Pokhara",
+                    "to": "Kathmandu",
+                    "duration": "6-7 hours",
+                    "cost_usd": 10
+                },
+                {
+                    "method": "Flight",
+                    "from": "Pokhara",
+                    "to": "Kathmandu",
+                    "duration": "25 minutes",
+                    "cost_usd": 100
+                }
+            ]
+        },
+        "alternative_routes": [
+            {
+                "name": "Annapurna Circuit with Tilicho Lake",
+                "variation": "Add side trip to Tilicho Lake",
+                "extra_days": 2,
+                "highlights": [
+                    "World's highest lake",
+                    "Additional acclimatization"
+                ]
+            },
+            {
+                "name": "Circuit via Nar Phu Valley",
+                "variation": "Include restricted Nar Phu Valley",
+                "extra_days": 4,
+                "highlights": [
+                    "Remote Tibetan villages",
+                    "Requires special permit"
+                ]
+            },
+            {
+                "name": "Shorter Circuit",
+                "variation": "Drive to Manang, skip lower section",
+                "fewer_days": 4,
+                "highlights": [
+                    "Focus on high altitude sections",
+                    "Good for time-limited"
+                ]
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 95,
+        "seo": {
+            "meta_title": "Annapurna Circuit Trek Guide 2024 | Complete 18-Day Itinerary",
+            "meta_description": "Complete guide to the Annapurna Circuit Trek including Thorong La Pass. Detailed itinerary, gear list, cultural insights, and expert tips.",
+            "keywords": [
+                "annapurna circuit",
+                "thorong la pass",
+                "nepal trekking",
+                "annapurna trek",
+                "himalaya circuit trek"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+  
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script src="../js/components/footer.js" type="module"></script>
+  
+</body></html>

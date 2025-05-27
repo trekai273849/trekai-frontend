@@ -1,0 +1,2058 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walker's Haute Route Guide 2024 | Chamonix to Zermatt Trek</title>
+    <meta name="description" content="Complete guide to hiking the Haute Route from Chamonix to Zermatt. 12-day alpine trek itinerary, costs, gear list, and expert tips.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D5016;
+            --primary-light: #4A7C28;
+            --accent: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #27AE60;
+            --warning: #E74C3C;
+            --info: #3498DB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Updated Hero Section with real image support */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('/images/treks/covers/haute-route-chamonix-zermatt.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #374151; /* Fallback color */
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.2) 0%, 
+                rgba(0,0,0,0.4) 50%, 
+                rgba(0,0,0,0.6) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: white;
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-tab {
+            padding: 20px 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-tab:hover {
+            color: var(--primary);
+        }
+
+        .nav-tab.active {
+            color: var(--primary);
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .overview-main h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .overview-description {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .highlights-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .highlight-icon {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+
+        .highlight-text {
+            flex: 1;
+        }
+
+        .highlight-text h4 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .highlight-text p {
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+
+        /* Quick Info Card */
+        .quick-info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .quick-info-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .info-value {
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            background: var(--accent);
+            color: white;
+        }
+
+        .price-range {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* CTA Buttons */
+        .cta-section {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Itinerary Section */
+        .itinerary-timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #E0E0E0;
+        }
+
+        .itinerary-day {
+            position: relative;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .itinerary-day::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #E0E0E0;
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .day-number {
+            font-size: 0.9em;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .day-title {
+            font-size: 1.3em;
+            margin: 5px 0;
+            color: var(--text-dark);
+        }
+
+        .day-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        .day-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .day-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .day-highlight {
+            background: var(--bg-light);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: var(--text-dark);
+        }
+
+        /* Gear Section */
+        .gear-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gear-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .gear-category h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gear-list {
+            list-style: none;
+        }
+
+        .gear-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #F0F0F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gear-item:last-child {
+            border-bottom: none;
+        }
+
+        .gear-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .gear-description {
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+
+        .rental-badge {
+            background: var(--success);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        /* Season & Weather */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .season-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+            text-align: center;
+        }
+
+        .season-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .season-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .season-months {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Cost Breakdown */
+        .cost-breakdown {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: var(--primary);
+            padding-top: 20px;
+        }
+
+        /* FAQs */
+        .faq-list {
+            max-width: 800px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-toggle {
+            font-size: 1.5em;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: var(--text-light);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
+    .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 0.8rem !important;
+        max-width: 300px !important;
+        margin: 1.5rem auto 0 !important;
+        justify-content: center !important;
+    }
+    
+    .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
+    .hero-stats .hero-stat:nth-child(4) { grid-column: 2; grid-row: 2; }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 1rem 0.8rem !important;
+        background: rgba(0,0,0,0.6) !important;
+        border-radius: 12px !important;
+        min-height: 70px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        color: white !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.75rem !important;
+        color: white !important;
+        text-transform: uppercase !important;
+        opacity: 0.95 !important;
+    }
+}
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs-container {
+                justify-content: start;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section.active > * {
+            animation: fadeIn 0.5s ease-out;
+        }
+    
+        /* Enhanced Section Headers Styling */
+        .content-section h2 {
+            font-size: 2.8em !important;
+            font-weight: 800 !important;
+            color: var(--text-dark) !important;
+            margin-bottom: 30px !important;
+            margin-top: 20px !important;
+            padding-bottom: 20px !important;
+            position: relative !important;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            border-bottom: 2px solid #E0E0E0 !important;
+        }
+
+        .content-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        /* Subtitle styling enhancement */
+        .content-section h2 + p {
+            font-size: 1.2em !important;
+            color: var(--text-light) !important;
+            margin-bottom: 50px !important;
+            font-weight: 500 !important;
+            line-height: 1.6 !important;
+        }
+
+        @media (max-width: 768px) {
+            .content-section h2 {
+                font-size: 2.2em !important;
+                margin-bottom: 25px !important;
+                padding-bottom: 15px !important;
+            }
+            
+            .content-section h2 + p {
+                font-size: 1.1em !important;
+                margin-bottom: 40px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section h2 {
+                font-size: 1.9em !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .content-section h2 + p {
+                font-size: 1em !important;
+                margin-bottom: 35px !important;
+            }
+        }
+        </style>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <!-- Navbar will be injected here -->
+  <script type="module" src="../js/components/navbar.js"></script>
+    <!-- Hero Section with Real Image -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Walker's Haute Route</h1>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value">12</span>
+                    <span class="hero-stat-label">Days</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">3,000m</span>
+                    <span class="hero-stat-label">Max Elevation</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">180km</span>
+                    <span class="hero-stat-label">Total Distance</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">challenging</span>
+                    <span class="hero-stat-label">Difficulty</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    
+    <!-- Navigation Tabs -->
+    
+
+    <!-- Overview Section -->
+    <section id="overview" class="content-section active">
+        <div class="overview-grid">
+            <div class="overview-main">
+                <h2>Journey to European Alps</h2>
+                <p class="overview-description">
+                    The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.
+                </p>
+                
+                <div class="highlights-list">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏔️</span>
+                        <div class="highlight-text">
+                            <h4>Epic Views</h4>
+                            <p>Spectacular mountain scenery throughout</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏛️</span>
+                        <div class="highlight-text">
+                            <h4>Cultural Experience</h4>
+                            <p>Authentic local culture and traditions</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🌅</span>
+                        <div class="highlight-text">
+                            <h4>Sunrise Views</h4>
+                            <p>Unforgettable dawn experiences</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">👥</span>
+                        <div class="highlight-text">
+                            <h4>Local Communities</h4>
+                            <p>Experience authentic mountain hospitality</p>
+                        </div>
+                    </div>
+                </div>
+
+                                                <div class="flex justify-center mt-12 mb-12">
+                    <button data-save-trek class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-gray-300 hover:border-green-600 hover:text-green-700 hover:bg-green-50 transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg group">
+                        <svg class="w-5 h-5 mr-3 text-gray-500 group-hover:text-green-600 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                        </svg>
+                        <span class="text-lg">Save to My Trips</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quick-info-card">
+                <h3>Quick Facts</h3>
+                <div class="info-row">
+                    <span class="info-label">Duration</span>
+                    <span class="info-value">10-14 days</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Distance</span>
+                    <span class="info-value">180 km / 112 mi</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Max Altitude</span>
+                    <span class="info-value">3,000m (9,843ft)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Difficulty</span>
+                    <span class="info-value">
+                        <span class="difficulty-badge">challenging</span>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Best Seasons</span>
+                    <span class="info-value">See below</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Starting Point</span>
+                    <span class="info-value">Chamonix/Zermatt</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Permits Required</span>
+                    <span class="info-value">1 permits</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Estimated Cost</span>
+                    <span class="info-value">
+                        <span class="price-range">$1,500 - $3,500</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="content-section">
+        <h2>12-Day Detailed Itinerary</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Follow the route through European Alps with proper acclimatization and rest days
+        </p>
+
+        <div class="itinerary-timeline">
+            
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 1</div>
+          <h3 class="day-title">Chamonix to Argentière</h3>
+          <div class="day-stats">
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +700m</span>
+            <span>🏔️ 1,252m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Gentle start along the Petit Balcon Sud with views across to the Mont Blanc massif. Good acclimatization day before the challenging days ahead.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Warm-up day</span><span class="day-highlight">Petit Balcon Sud trail</span><span class="day-highlight">Mont Blanc views</span><span class="day-highlight">Argentière glacier</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 2</div>
+          <h3 class="day-title">Argentière to Trient</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 1,279m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Cross into Switzerland via Col de Balme. Beautiful ridge walking with panoramic views before descending to the remote Trient valley.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Col de Balme crossing</span><span class="day-highlight">Enter Switzerland</span><span class="day-highlight">Trient Glacier views</span><span class="day-highlight">Alpine meadows</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 3</div>
+          <h3 class="day-title">Trient to Champex</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 1,466m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Choose between the spectacular but challenging Fenêtre d'Arpette or the easier Bovine route. Both lead to charming Champex-Lac.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Fenêtre d'Arpette option</span><span class="day-highlight">Bovine alternative route</span><span class="day-highlight">Champex lake</span><span class="day-highlight">Swiss villages</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 4</div>
+          <h3 class="day-title">Champex to Le Châble</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 821m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Easier day descending through forests and pastures to Le Châble. Option to take cable car to Verbier for supplies and comfort.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Val de Bagnes descent</span><span class="day-highlight">Traditional villages</span><span class="day-highlight">Verbier option</span><span class="day-highlight">Rest day possibility</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 5</div>
+          <h3 class="day-title">Le Châble to Cabane du Mont Fort</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1636m</span>
+            <span>🏔️ 2,457m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Big climbing day to reach the spectacularly positioned Cabane du Mont Fort. The effort is rewarded with incredible sunset views.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Major ascent day</span><span class="day-highlight">Spectacular hut location</span><span class="day-highlight">Sunset views</span><span class="day-highlight">Grand Combin views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 6</div>
+          <h3 class="day-title">Cabane du Mont Fort to Cabane de Prafleuri</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 2,662m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Remote and spectacular high mountain day crossing three cols. This is the heart of the Haute Route with incredible mountain scenery.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Remote high mountain day</span><span class="day-highlight">Three cols crossing</span><span class="day-highlight">Rosablanche views</span><span class="day-highlight">Wild alpine terrain</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Cabane de Prafleuri to Arolla</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 1,998m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend from the high mountains to the traditional mountain village of Arolla. Good place for rest or resupply.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Descent to civilization</span><span class="day-highlight">Arolla valley</span><span class="day-highlight">Glacier views</span><span class="day-highlight">Traditional mountain village</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Arolla to La Sage</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 1,667m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Cross the Pas de Chèvres with optional ladder section. Descend through traditional Valaisan villages to La Sage.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Pas de Chèvres</span><span class="day-highlight">Traditional villages</span><span class="day-highlight">Val d'Hérens culture</span><span class="day-highlight">Mountain views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">La Sage to Cabane de Moiry</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1400m</span>
+            <span>🏔️ 2,825m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Another big day climbing to Col du Tsaté then traversing to the spectacular Cabane de Moiry beside the glacier.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Col du Tsaté crossing</span><span class="day-highlight">Moiry Glacier</span><span class="day-highlight">Spectacular hut location</span><span class="day-highlight">High mountain environment</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Cabane de Moiry to Zinal</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 1,675m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend alongside the Moiry Glacier to reach the beautiful Zinal valley, surrounded by 4000m peaks.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Glacier descent</span><span class="day-highlight">Zinal valley</span><span class="day-highlight">4000m peaks views</span><span class="day-highlight">Traditional village</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 11</div>
+          <h3 class="day-title">Zinal to Gruben</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +1300m</span>
+            <span>🏔️ 1,822m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">One of the toughest days crossing the high Forcletta Pass into the German-speaking Turtmanntal. Remote and spectacular.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Forcletta Pass (2,874m)</span><span class="day-highlight">Enter German-speaking region</span><span class="day-highlight">Remote Turtmanntal</span><span class="day-highlight">Cultural transition</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 12</div>
+          <h3 class="day-title">Gruben to Zermatt</h3>
+          <div class="day-stats">
+            <span>📏 18km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +1000m</span>
+            <span>🏔️ 1,608m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final challenging day over Augstbord Pass. The first views of the Matterhorn signal journey's end as you descend to Zermatt.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Augstbord Pass (2,894m)</span><span class="day-highlight">First Matterhorn views</span><span class="day-highlight">Arrival in Zermatt</span><span class="day-highlight">Journey complete</span>
+        </div>
+      
+    </div>
+  
+        </div>
+    </section>
+
+    <!-- Gear Section -->
+    <section id="gear" class="content-section">
+        <h2>Essential Gear &amp; Packing List</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Proper gear is crucial for a safe and comfortable trek. Many items can be rented locally.
+        </p>
+
+        <div class="gear-categories">
+            <div class="gear-category">
+                <h3>
+                    <span>🎒</span>
+                    <span>Essential Items</span>
+                </h3>
+                <ul class="gear-list">
+                    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Mountain boots</div>
+          <div class="gear-description">Sturdy with good ankle support</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Crampons</div>
+          <div class="gear-description">Light crampons for snow patches</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Ice axe</div>
+          <div class="gear-description">For glacier sections (optional)</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Backpack</div>
+          <div class="gear-description">40-50L capacity</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">4-season clothing</div>
+          <div class="gear-description">Including warm layers</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Waterproofs</div>
+          <div class="gear-description">High quality essential</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Navigation tools</div>
+          <div class="gear-description">Map, compass, GPS</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Emergency shelter</div>
+          <div class="gear-description">Bivy or group shelter</div>
+        </div>
+        
+      </li>
+    
+                </ul>
+            </div>
+
+            <div class="gear-category">
+                <h3>
+                    <span>👍</span>
+                    <span>Recommended Items</span>
+                </h3>
+                <ul class="gear-list">
+                    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Essential for stability</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For snow and scree</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Glacier glasses</div>
+          <div class="gear-description">Category 4 protection</div>
+        </div>
+        
+      </li>
+    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasons Section -->
+    <section id="seasons" class="content-section">
+        <h2>Best Time to Trek</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Weather plays a crucial role in your trekking experience. Choose your season wisely.
+        </p>
+
+        <div class="seasons-grid">
+            
+    <div class="season-card">
+      <div class="season-icon">☀️</div>
+      <h3 class="season-name">Summer</h3>
+      <p class="season-months">July, August, early September</p>
+      <p>Snow-free passes, all routes open, stable weather</p>
+    </div>
+  
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 2px 10px var(--shadow);">
+            <h3 style="margin-bottom: 20px;">Weather Overview</h3>
+            <p>Weather conditions vary significantly by season. Check detailed weather patterns for your chosen dates.</p>
+        </div>
+    </section>
+
+    <!-- Costs Section -->
+    <section id="costs" class="content-section">
+        <h2>Costs &amp; Permits</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Understanding the costs helps you budget appropriately for your adventure.
+        </p>
+
+        <div class="cost-breakdown">
+            <h3 style="margin-bottom: 20px;">Typical Cost Breakdown (per person)</h3>
+            
+    <div class="cost-item">
+      <span>Permits</span>
+      <span>$0</span>
+    </div>
+    <div class="cost-item">
+      <span>Guide (per day)</span>
+      <span>$300</span>
+    </div>
+    <div class="cost-item">
+      <span>Accommodation (per night)</span>
+      <span>$80</span>
+    </div>
+    <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$60</span>
+    </div>
+    <div class="cost-item">
+      <span>Transportation</span>
+      <span>$200</span>
+    </div>
+    <div class="cost-item">
+      <span>Total Budget Range</span>
+      <span>$1,500 - $3,500</span>
+    </div>
+  
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h3>Required Permits</h3>
+            <p style="margin-top: 20px;">Check current permit requirements and costs as they may change.</p>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Get answers to the most common questions about this trek.
+        </p>
+
+        <div class="faq-list">
+            
+        </div>
+    </section>
+
+    
+    
+    
+
+
+    <script>
+        // Enhanced tab navigation with mobile centering and proper scroll positioning
+        function showSection(sectionId, clickedElement) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Add active class to clicked tab
+            if (clickedElement) {
+                clickedElement.classList.add('active');
+                // Center the clicked tab on mobile
+                centerTabWithNextVisible(clickedElement);
+            }
+            
+            // Scroll to the top of the new section content
+            scrollToSectionTop();
+        }
+
+        function scrollToSectionTop() {
+            setTimeout(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                if (navTabs) {
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 50);
+        }
+
+        function centerTabWithNextVisible(clickedTab) {
+            const tabContainer = document.querySelector('.nav-tabs-container');
+            const allTabs = Array.from(document.querySelectorAll('.nav-tab'));
+            const clickedIndex = allTabs.indexOf(clickedTab);
+            
+            if (clickedIndex === -1 || !tabContainer) return;
+            
+            const containerWidth = tabContainer.offsetWidth;
+            const tabWidth = clickedTab.offsetWidth;
+            const tabOffsetLeft = clickedTab.offsetLeft;
+            
+            // Calculate scroll position to show clicked tab + part of next tab
+            let targetScroll;
+            
+            if (clickedIndex === allTabs.length - 1) {
+                // Last tab - center it
+                targetScroll = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+            } else {
+                // Show clicked tab with next tab partially visible
+                const nextTab = allTabs[clickedIndex + 1];
+                const nextTabWidth = nextTab.offsetWidth;
+                const totalWidthNeeded = tabWidth + (nextTabWidth * 0.6); // Show 60% of next tab
+                
+                if (totalWidthNeeded <= containerWidth) {
+                    // Both tabs can fit, position them optimally
+                    targetScroll = tabOffsetLeft - (containerWidth - totalWidthNeeded) / 2;
+                } else {
+                    // Position clicked tab with as much of next tab as possible
+                    targetScroll = tabOffsetLeft - (containerWidth - tabWidth) * 0.3;
+                }
+            }
+            
+            // Ensure we don't scroll past the container bounds
+            const maxScroll = tabContainer.scrollWidth - containerWidth;
+            targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+            
+            tabContainer.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add touch-friendly scrolling for mobile
+            const tabContainer = document.querySelector('.nav-tabs-container');
+            if (tabContainer) {
+                // Improve scrolling momentum on iOS
+                tabContainer.style.webkitOverflowScrolling = 'touch';
+            }
+
+            // Add click event listeners to all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    if (sectionId) {
+                        showSection(sectionId, this);
+                    }
+                });
+            });
+            
+            // Ensure Overview tab is active by default
+            const overviewTab = document.querySelector('.nav-tab[data-section="overview"]');
+            const overviewSection = document.getElementById('overview');
+            if (overviewTab && overviewSection) {
+                overviewTab.classList.add('active');
+                overviewSection.classList.add('active');
+            }
+        });
+    </script>
+
+
+<!-- Trek Data for Save Functionality -->
+<script type="module">
+    // Trek data for save functionality
+    window.trekData = {
+        "_id": "haute-route-chamonix-zermatt",
+        "name": "Walker's Haute Route",
+        "slug": "haute-route-chamonix-zermatt",
+        "region": "European Alps",
+        "country": "France/Switzerland",
+        "summary": "The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.",
+        "duration": {
+            "min_days": 10,
+            "max_days": 14,
+            "recommended_days": 12
+        },
+        "distance_km": 180,
+        "difficulty": "challenging",
+        "max_elevation_m": 3000,
+        "starting_elevation_m": 1035,
+        "airport": "Geneva (GVA)",
+        "nearest_city": "Chamonix/Zermatt",
+        "coordinates": {
+            "start": {
+                "lat": 45.9237,
+                "lng": 6.8694,
+                "location": "Chamonix"
+            },
+            "end": {
+                "lat": 46.0207,
+                "lng": 7.7491,
+                "location": "Zermatt"
+            }
+        },
+        "best_seasons": [
+            {
+                "name": "Summer",
+                "months": [
+                    "July",
+                    "August",
+                    "early September"
+                ],
+                "description": "Snow-free passes, all routes open, stable weather"
+            }
+        ],
+        "detailed_itinerary": [
+            {
+                "day": 1,
+                "title": "Chamonix to Argentière",
+                "start_location": "Chamonix",
+                "end_location": "Argentière",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 1035,
+                "elevation_end_m": 1252,
+                "elevation_gain_m": 700,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel/gite",
+                    "options": [
+                        "Hotel Montana",
+                        "Gîte Le Belvedere",
+                        "Hotel La Couronne"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Warm-up day",
+                    "Petit Balcon Sud trail",
+                    "Mont Blanc views",
+                    "Argentière glacier"
+                ],
+                "description": "Gentle start along the Petit Balcon Sud with views across to the Mont Blanc massif. Good acclimatization day before the challenging days ahead."
+            },
+            {
+                "day": 2,
+                "title": "Argentière to Trient",
+                "start_location": "Argentière",
+                "end_location": "Trient",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 1252,
+                "elevation_end_m": 1279,
+                "elevation_gain_m": 900,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge/auberge",
+                    "options": [
+                        "Refuge du Peuty",
+                        "Auberge du Mont-Blanc",
+                        "Hotel du Glacier"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Col de Balme crossing",
+                    "Enter Switzerland",
+                    "Trient Glacier views",
+                    "Alpine meadows"
+                ],
+                "description": "Cross into Switzerland via Col de Balme. Beautiful ridge walking with panoramic views before descending to the remote Trient valley."
+            },
+            {
+                "day": 3,
+                "title": "Trient to Champex",
+                "start_location": "Trient",
+                "end_location": "Champex",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 1279,
+                "elevation_end_m": 1466,
+                "elevation_gain_m": 800,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel/b&b",
+                    "options": [
+                        "Hotel du Glacier",
+                        "Au Club Alpin",
+                        "Pension en Plein Air"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Fenêtre d'Arpette option",
+                    "Bovine alternative route",
+                    "Champex lake",
+                    "Swiss villages"
+                ],
+                "description": "Choose between the spectacular but challenging Fenêtre d'Arpette or the easier Bovine route. Both lead to charming Champex-Lac."
+            },
+            {
+                "day": 4,
+                "title": "Champex to Le Châble",
+                "start_location": "Champex",
+                "end_location": "Le Châble",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 1466,
+                "elevation_end_m": 821,
+                "elevation_gain_m": 200,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel de la Poste",
+                        "Hotel Gietroz",
+                        "B&B options"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Val de Bagnes descent",
+                    "Traditional villages",
+                    "Verbier option",
+                    "Rest day possibility"
+                ],
+                "description": "Easier day descending through forests and pastures to Le Châble. Option to take cable car to Verbier for supplies and comfort."
+            },
+            {
+                "day": 5,
+                "title": "Le Châble to Cabane du Mont Fort",
+                "start_location": "Le Châble",
+                "end_location": "Cabane du Mont Fort",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 821,
+                "elevation_end_m": 2457,
+                "elevation_gain_m": 1636,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane du Mont Fort"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Major ascent day",
+                    "Spectacular hut location",
+                    "Sunset views",
+                    "Grand Combin views"
+                ],
+                "description": "Big climbing day to reach the spectacularly positioned Cabane du Mont Fort. The effort is rewarded with incredible sunset views."
+            },
+            {
+                "day": 6,
+                "title": "Cabane du Mont Fort to Cabane de Prafleuri",
+                "start_location": "Cabane du Mont Fort",
+                "end_location": "Cabane de Prafleuri",
+                "distance_km": 17,
+                "duration_hours": 7,
+                "elevation_start_m": 2457,
+                "elevation_end_m": 2662,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane de Prafleuri"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Remote high mountain day",
+                    "Three cols crossing",
+                    "Rosablanche views",
+                    "Wild alpine terrain"
+                ],
+                "description": "Remote and spectacular high mountain day crossing three cols. This is the heart of the Haute Route with incredible mountain scenery."
+            },
+            {
+                "day": 7,
+                "title": "Cabane de Prafleuri to Arolla",
+                "start_location": "Cabane de Prafleuri",
+                "end_location": "Arolla",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 2662,
+                "elevation_end_m": 1998,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel Kurhaus",
+                        "Hotel du Pigne",
+                        "Hotel du Glacier"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Descent to civilization",
+                    "Arolla valley",
+                    "Glacier views",
+                    "Traditional mountain village"
+                ],
+                "description": "Descend from the high mountains to the traditional mountain village of Arolla. Good place for rest or resupply."
+            },
+            {
+                "day": 8,
+                "title": "Arolla to La Sage",
+                "start_location": "Arolla",
+                "end_location": "La Sage",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 1998,
+                "elevation_end_m": 1667,
+                "elevation_gain_m": 500,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel/gite",
+                    "options": [
+                        "Hotel de la Sage",
+                        "Gîte de la Sage"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Pas de Chèvres",
+                    "Traditional villages",
+                    "Val d'Hérens culture",
+                    "Mountain views"
+                ],
+                "description": "Cross the Pas de Chèvres with optional ladder section. Descend through traditional Valaisan villages to La Sage."
+            },
+            {
+                "day": 9,
+                "title": "La Sage to Cabane de Moiry",
+                "start_location": "La Sage",
+                "end_location": "Cabane de Moiry",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 1667,
+                "elevation_end_m": 2825,
+                "elevation_gain_m": 1400,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "mountain hut",
+                    "options": [
+                        "Cabane de Moiry"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Col du Tsaté crossing",
+                    "Moiry Glacier",
+                    "Spectacular hut location",
+                    "High mountain environment"
+                ],
+                "description": "Another big day climbing to Col du Tsaté then traversing to the spectacular Cabane de Moiry beside the glacier."
+            },
+            {
+                "day": 10,
+                "title": "Cabane de Moiry to Zinal",
+                "start_location": "Cabane de Moiry",
+                "end_location": "Zinal",
+                "distance_km": 14,
+                "duration_hours": 5,
+                "elevation_start_m": 2825,
+                "elevation_end_m": 1675,
+                "elevation_gain_m": 0,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel le Besso",
+                        "Hotel Pointe de Zinal",
+                        "Hotel Europe"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Glacier descent",
+                    "Zinal valley",
+                    "4000m peaks views",
+                    "Traditional village"
+                ],
+                "description": "Descend alongside the Moiry Glacier to reach the beautiful Zinal valley, surrounded by 4000m peaks."
+            },
+            {
+                "day": 11,
+                "title": "Zinal to Gruben",
+                "start_location": "Zinal",
+                "end_location": "Gruben",
+                "distance_km": 17,
+                "duration_hours": 9,
+                "elevation_start_m": 1675,
+                "elevation_end_m": 1822,
+                "elevation_gain_m": 1300,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotel Schwarzhorn"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Forcletta Pass (2,874m)",
+                    "Enter German-speaking region",
+                    "Remote Turtmanntal",
+                    "Cultural transition"
+                ],
+                "description": "One of the toughest days crossing the high Forcletta Pass into the German-speaking Turtmanntal. Remote and spectacular."
+            },
+            {
+                "day": 12,
+                "title": "Gruben to Zermatt",
+                "start_location": "Gruben",
+                "end_location": "Zermatt",
+                "distance_km": 18,
+                "duration_hours": 8,
+                "elevation_start_m": 1822,
+                "elevation_end_m": 1608,
+                "elevation_gain_m": 1000,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Hotels in Zermatt"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Augstbord Pass (2,894m)",
+                    "First Matterhorn views",
+                    "Arrival in Zermatt",
+                    "Journey complete"
+                ],
+                "description": "Final challenging day over Augstbord Pass. The first views of the Matterhorn signal journey's end as you descend to Zermatt."
+            }
+        ],
+        "gear_list": {
+            "essential": [
+                {
+                    "item": "Mountain boots",
+                    "description": "Sturdy with good ankle support",
+                    "rental_available": false
+                },
+                {
+                    "item": "Crampons",
+                    "description": "Light crampons for snow patches",
+                    "rental_available": true
+                },
+                {
+                    "item": "Ice axe",
+                    "description": "For glacier sections (optional)",
+                    "rental_available": true
+                },
+                {
+                    "item": "Backpack",
+                    "description": "40-50L capacity",
+                    "rental_available": true
+                },
+                {
+                    "item": "4-season clothing",
+                    "description": "Including warm layers",
+                    "rental_available": false
+                },
+                {
+                    "item": "Waterproofs",
+                    "description": "High quality essential",
+                    "rental_available": false
+                },
+                {
+                    "item": "Navigation tools",
+                    "description": "Map, compass, GPS",
+                    "rental_available": false
+                },
+                {
+                    "item": "Emergency shelter",
+                    "description": "Bivy or group shelter",
+                    "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Trekking poles",
+                    "description": "Essential for stability",
+                    "rental_available": true
+                },
+                {
+                    "item": "Gaiters",
+                    "description": "For snow and scree",
+                    "rental_available": false
+                },
+                {
+                    "item": "Glacier glasses",
+                    "description": "Category 4 protection",
+                    "rental_available": false
+                }
+            ]
+        },
+        "permits_required": [
+            {
+                "name": "None required",
+                "cost_usd": 0,
+                "notes": "But hut reservations essential"
+            }
+        ],
+        "costs": {
+            "permit_total_usd": 0,
+            "guide_daily_usd": 300,
+            "accommodation_daily_usd": 80,
+            "meals_daily_usd": 60,
+            "transportation_usd": 200,
+            "total_budget_range_usd": {
+                "min": 1500,
+                "max": 3500
+            }
+        },
+        "health_safety": {
+            "altitude_sickness": {
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent profile",
+                    "Stay hydrated",
+                    "Consider acetazolamide",
+                    "Know symptoms"
+                ]
+            },
+            "main_concerns": {
+                "weather": {
+                    "risk_level": "high",
+                    "description": "Rapid changes, snow possible",
+                    "prevention": [
+                        "Check forecasts daily",
+                        "Start early",
+                        "Carry emergency gear",
+                        "Know escape routes"
+                    ]
+                },
+                "glacier_travel": {
+                    "risk_level": "moderate",
+                    "description": "Some routes cross glaciers",
+                    "prevention": [
+                        "Consider guide for glacier days",
+                        "Rope up if necessary",
+                        "Know crevasse rescue",
+                        "Check conditions"
+                    ]
+                }
+            },
+            "evacuation": {
+                "method": "Helicopter",
+                "cost_usd": "3000-5000",
+                "insurance_required": true
+            }
+        },
+        "weather_patterns": {
+            "summer": {
+                "months": [
+                    "July",
+                    "August"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "0 to 10",
+                "precipitation": "Afternoon storms possible",
+                "snow_level": "Above 3000m usually",
+                "notes": "Most stable period"
+            }
+        },
+        "transportation": {
+            "to_start": [
+                {
+                    "method": "Train/Bus",
+                    "from": "Geneva",
+                    "to": "Chamonix",
+                    "duration": "2.5 hours",
+                    "cost_usd": 35
+                }
+            ],
+            "from_end": [
+                {
+                    "method": "Train",
+                    "from": "Zermatt",
+                    "to": "Geneva",
+                    "duration": "4 hours",
+                    "cost_usd": 80
+                }
+            ]
+        },
+        "difficulty_details": {
+            "physical_demands": "Excellent fitness required",
+            "technical_skills": "Basic mountaineering helpful",
+            "altitude_challenge": "Moderate, max 3000m",
+            "trail_conditions": "Variable, some route-finding",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 12000,
+            "total_elevation_loss": 12000
+        },
+        "alternative_routes": [
+            {
+                "name": "Classic Glacier Route",
+                "variation": "Original high glacier route",
+                "extra_days": 0,
+                "highlights": [
+                    "More glaciers",
+                    "Requires mountaineering skills",
+                    "More remote"
+                ]
+            },
+            {
+                "name": "Valley Route",
+                "variation": "Lower altitude alternative",
+                "extra_days": -2,
+                "highlights": [
+                    "Easier",
+                    "More villages",
+                    "Less weather dependent"
+                ]
+            }
+        ],
+        "created_at": "2024-01-15T10:00:00Z",
+        "updated_at": "2024-01-15T10:00:00Z",
+        "status": "active",
+        "popularity_score": 88,
+        "seo": {
+            "meta_title": "Walker's Haute Route Guide 2024 | Chamonix to Zermatt Trek",
+            "meta_description": "Complete guide to hiking the Haute Route from Chamonix to Zermatt. 12-day alpine trek itinerary, costs, gear list, and expert tips.",
+            "keywords": [
+                "haute route",
+                "chamonix to zermatt",
+                "walkers haute route",
+                "alpine traverse",
+                "haute route trek"
+            ]
+        }
+    };
+</script>
+<!-- Import save trek functionality -->
+<script type="module" src="/js/save-trek.js"></script>
+<!-- Import Firebase auth for checking user status -->
+<script type="module" src="/js/auth/firebase.js"></script>
+  
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script src="../js/components/footer.js" type="module"></script>
+  
+</body></html>
