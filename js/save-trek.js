@@ -31,27 +31,44 @@ async function saveTrek(user) {
         // Get the trek image
         const trekImage = getTrekImage();
         
-        // Prepare the itinerary data
+        // Prepare the itinerary data - matching the expected API format
         const itineraryData = {
             type: 'popular-trek',
             trekId: window.trekData._id || window.trekData.slug,
             title: window.trekData.name,
             trekName: window.trekData.name, // Include as backup
             trekImage: trekImage, // Include the trek image
-            location: window.trekData.region,
+            location: window.trekData.region || window.trekData.country || 'Unknown',
+            days: window.trekData.duration?.recommended_days || window.trekData.duration?.min_days || 1,
+            startDate: new Date().toISOString(), // Add a default start date
+            endDate: new Date(Date.now() + (window.trekData.duration?.recommended_days || 10) * 24 * 60 * 60 * 1000).toISOString(), // Calculate end date
             filters: {
-                difficulty: window.trekData.difficulty
+                difficulty: window.trekData.difficulty || 'moderate',
+                accommodation: 'teahouse', // Default for popular treks
+                technical: 'no' // Default for popular treks
             },
             trekDetails: {
-                duration: window.trekData.duration.recommended_days,
+                duration: window.trekData.duration?.recommended_days || window.trekData.duration?.min_days,
                 distance: window.trekData.distance_km,
                 maxElevation: window.trekData.max_elevation_m,
                 country: window.trekData.country,
                 region: window.trekData.region,
                 summary: window.trekData.summary
             },
-            trekData: window.trekData // Store complete trek data
+            // Add a basic itinerary array - this might be required by the API
+            itinerary: [{
+                day: 1,
+                title: 'View full trek details',
+                activities: [`See complete ${window.trekData.name} itinerary`],
+                accommodation: 'As per trek details',
+                meals: ['As per trek details'],
+                distance: 'See trek details',
+                duration: 'See trek details'
+            }]
         };
+        
+        // Log the data being sent for debugging
+        console.log('Sending itinerary data:', itineraryData);
         
         const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
             method: 'POST',
@@ -63,7 +80,16 @@ async function saveTrek(user) {
         });
         
         if (!response.ok) {
-            throw new Error('Failed to save trek');
+            // Try to get error details from response
+            let errorMessage = 'Failed to save trek';
+            try {
+                const errorData = await response.json();
+                errorMessage = errorData.message || errorData.error || errorMessage;
+                console.error('API Error:', errorData);
+            } catch (e) {
+                console.error('Failed to parse error response');
+            }
+            throw new Error(errorMessage);
         }
         
         return true;
