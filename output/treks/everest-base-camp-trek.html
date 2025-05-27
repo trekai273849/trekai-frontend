@@ -1718,34 +1718,34 @@
             scrollToSectionTop();
         }
 
-                            function scrollToSectionTop() {
-                requestAnimationFrame(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
+                                    function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    if (navTabs) {
-                        // Get the nav's current position in the viewport
-                        const navRect = navTabs.getBoundingClientRect();
-                        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // Calculate where the nav actually is on the page
-                        const navTopPosition = currentScrollY + navRect.top;
-                        
-                        // Scroll to just below the nav
-                        const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                        
-                        window.scrollTo({
-                            top: Math.max(0, targetScroll),
-                            behavior: 'smooth'
-                        );
-                    } else {
-                        // Fallback: scroll to top if nav not found
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        );
-                    }
-                );
-            }
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
 
         function centerTabWithNextVisible(clickedTab) {
             const tabContainer = document.querySelector('.nav-tabs-container');
