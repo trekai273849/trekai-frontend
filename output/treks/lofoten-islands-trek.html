@@ -1470,8 +1470,9 @@
     </section>
 
     
+    
     <script>
-        // Enhanced tab navigation with mobile centering
+        // Enhanced tab navigation with mobile centering and proper scroll positioning
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
@@ -1493,8 +1494,23 @@
             // Center the clicked tab on mobile
             centerTabWithNextVisible(clickedTab);
             
-            // Scroll to top of content
-            window.scrollTo({ top: document.querySelector('.nav-tabs').offsetTop - 20, behavior: 'smooth' });
+            // Scroll to the top of the new section content
+            scrollToSectionTop(sectionId);
+        }
+
+        function scrollToSectionTop(sectionId) {
+            // Get the nav-tabs element to calculate offset
+            const navTabs = document.querySelector('.nav-tabs');
+            const navTabsHeight = navTabs ? navTabs.offsetHeight : 0;
+            
+            // Calculate the scroll position (nav-tabs height + small padding)
+            const scrollPosition = navTabs ? navTabs.offsetTop + navTabsHeight + 10 : 0;
+            
+            // Smooth scroll to just below the sticky navigation
+            window.scrollTo({ 
+                top: scrollPosition, 
+                behavior: 'smooth' 
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {
