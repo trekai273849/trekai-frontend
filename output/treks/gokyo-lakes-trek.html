@@ -1579,6 +1579,7 @@
         </div>
     </section>
 
+    
     <script>
         // Enhanced tab navigation with mobile centering
         function showSection(sectionId) {
@@ -1600,33 +1601,12 @@
             clickedTab.classList.add('active');
             
             // Center the clicked tab on mobile
-            centerTabOnMobile(clickedTab);
+            centerTabWithNextVisible(clickedTab);
             
             // Scroll to top of content
             window.scrollTo({ top: document.querySelector('.nav-tabs').offsetTop - 20, behavior: 'smooth' });
         }
 
-        function centerTabOnMobile(clickedTab) {
-            const tabContainer = document.querySelector('.nav-tabs-container');
-            const containerWidth = tabContainer.offsetWidth;
-            const tabWidth = clickedTab.offsetWidth;
-            const tabOffsetLeft = clickedTab.offsetLeft;
-            
-            // Calculate the scroll position to center the tab
-            // We want the tab to be slightly left of center so the next tab is visible
-            const centerPosition = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
-            
-            // Adjust to show more of the next tab (shift left by 1/4 of container width)
-            const adjustedPosition = centerPosition + (containerWidth / 4);
-            
-            // Smooth scroll to the calculated position
-            tabContainer.scrollTo({
-                left: Math.max(0, adjustedPosition),
-                behavior: 'smooth'
-            });
-        }
-
-        // Alternative function for more precise control
         function centerTabWithNextVisible(clickedTab) {
             const tabContainer = document.querySelector('.nav-tabs-container');
             const allTabs = Array.from(document.querySelectorAll('.nav-tab'));
@@ -1669,6 +1649,11 @@
             });
         }
 
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             // Add touch-friendly scrolling for mobile
@@ -1676,128 +1661,8 @@
             if (tabContainer) {
                 // Improve scrolling momentum on iOS
                 tabContainer.style.webkitOverflowScrolling = 'touch';
-                
-                // Add scroll indicators for better UX
-                addScrollIndicators();
             }
         });
-
-        function addScrollIndicators() {
-            const tabContainer = document.querySelector('.nav-tabs-container');
-            const navTabs = document.querySelector('.nav-tabs');
-            
-            // Create scroll indicator elements
-            const leftIndicator = document.createElement('div');
-            leftIndicator.className = 'scroll-indicator scroll-indicator-left';
-            leftIndicator.innerHTML = '‹';
-            
-            const rightIndicator = document.createElement('div');
-            rightIndicator.className = 'scroll-indicator scroll-indicator-right';
-            rightIndicator.innerHTML = '›';
-            
-            // Add CSS for indicators
-            const indicatorStyles = `
-                .scroll-indicator {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    background: rgba(255, 255, 255, 0.9);
-                    color: var(--primary);
-                    width: 30px;
-                    height: 30px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 18px;
-                    font-weight: bold;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    z-index: 10;
-                    opacity: 0;
-                    pointer-events: none;
-                }
-                
-                .scroll-indicator.visible {
-                    opacity: 1;
-                    pointer-events: auto;
-                }
-                
-                .scroll-indicator-left {
-                    left: 10px;
-                }
-                
-                .scroll-indicator-right {
-                    right: 10px;
-                }
-                
-                .scroll-indicator:hover {
-                    background: white;
-                    transform: translateY(-50%) scale(1.1);
-                }
-                
-                @media (max-width: 768px) {
-                    .nav-tabs {
-                        position: relative;
-                    }
-                }
-            `;
-            
-            // Add styles to head
-            const styleElement = document.createElement('style');
-            styleElement.textContent = indicatorStyles;
-            document.head.appendChild(styleElement);
-            
-            // Add indicators to nav
-            navTabs.style.position = 'relative';
-            navTabs.appendChild(leftIndicator);
-            navTabs.appendChild(rightIndicator);
-            
-            // Handle indicator clicks
-            leftIndicator.addEventListener('click', () => {
-                tabContainer.scrollBy({ left: -150, behavior: 'smooth' });
-            });
-            
-            rightIndicator.addEventListener('click', () => {
-                tabContainer.scrollBy({ left: 150, behavior: 'smooth' });
-            });
-            
-            // Update indicator visibility based on scroll position
-            function updateIndicators() {
-                const { scrollLeft, scrollWidth, clientWidth } = tabContainer;
-                
-                leftIndicator.classList.toggle('visible', scrollLeft > 10);
-                rightIndicator.classList.toggle('visible', scrollLeft < scrollWidth - clientWidth - 10);
-            }
-            
-            // Update indicators on scroll and resize
-            tabContainer.addEventListener('scroll', updateIndicators);
-            window.addEventListener('resize', updateIndicators);
-            
-            // Initial update
-            setTimeout(updateIndicators, 100);
-        });
-            
-            // Remove active class from all tabs
-            document.querySelectorAll('.nav-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked tab
-            event.target.classList.add('active');
-            
-            // Scroll to top of content
-            window.scrollTo({ top: document.querySelector('.nav-tabs').offsetTop - 20, behavior: 'smooth' });
-        }
-
-        function toggleFaq(element) {
-            const faqItem = element.parentElement;
-            faqItem.classList.toggle('active');
-        }
     </script>
 
 <!-- Trek Data for Save Functionality -->
