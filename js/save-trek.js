@@ -11,13 +11,22 @@ function getTrekImage() {
         // Extract URL from background-image CSS property
         const match = bgImage.match(/url\(['"]?(.+?)['"]?\)/);
         if (match && match[1]) {
-            return match[1];
+            // Ensure we have the full path
+            let imagePath = match[1];
+            // If it's a relative path, make sure it starts with /
+            if (!imagePath.startsWith('http') && !imagePath.startsWith('/')) {
+                imagePath = '/' + imagePath;
+            }
+            return imagePath;
         }
     }
     
-    // Fallback: try to construct based on trek slug if available
-    if (window.trekData && window.trekData.slug) {
-        return `/images/treks/covers/${window.trekData.slug}.jpg`;
+    // Fallback: construct based on trek ID
+    if (window.trekData) {
+        const trekId = window.trekData._id || window.trekData.slug;
+        if (trekId) {
+            return `/images/treks/covers/${trekId}.jpg`;
+        }
     }
     
     return null;
@@ -30,6 +39,7 @@ async function saveTrek(user) {
         
         // Get the trek image
         const trekImage = getTrekImage();
+        const trekId = window.trekData._id || window.trekData.slug || 'unknown';
         
         // Prepare the itinerary data - matching the EXACT backend structure
         const itineraryData = {
@@ -42,11 +52,22 @@ async function saveTrek(user) {
                 altitude: window.trekData.max_elevation_m > 4000 ? 'high' : (window.trekData.max_elevation_m > 3000 ? 'moderate' : 'low'),
                 technical: 'no'
             },
-            comments: `Popular trek saved from: ${window.trekData.name}. Trek ID: ${window.trekData._id || window.trekData.slug}. Image: ${trekImage || 'none'}`
+            comments: `Popular trek saved from: ${window.trekData.name}. Trek ID: ${trekId}. Image: ${trekImage || `/images/treks/covers/${trekId}.jpg`}.`,
+            // Add type to help with identification
+            type: 'popular-trek',
+            trekId: trekId,
+            // Include trek details for easier display in my-itineraries
+            trekDetails: {
+                region: window.trekData.region,
+                duration: window.trekData.duration?.recommended_days,
+                distance: window.trekData.distance_km,
+                maxElevation: window.trekData.max_elevation_m
+            }
         };
         
         // Log the data being sent for debugging
         console.log('Sending itinerary data:', itineraryData);
+        console.log('Trek image path:', trekImage);
         
         const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
             method: 'POST',
@@ -90,7 +111,8 @@ function updateButtonState(button, isSaved, isLoading = false) {
     } else if (isSaved) {
         button.innerHTML = `
             <svg class="w-5 h-5 mr-3 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
             </svg>
             <span class="text-lg">Saved to My Trips</span>
         `;
@@ -123,10 +145,16 @@ async function checkIfTrekSaved(user, trekId) {
         const data = await response.json();
         const itineraries = data.itineraries || data;
         
-        return itineraries.some(itinerary => 
-            itinerary.type === 'popular-trek' && 
-            (itinerary.trekId === trekId || itinerary.trekId === window.trekData?._id)
-        );
+        // Check if this trek is already saved by looking at the comments field
+        return itineraries.some(itinerary => {
+            // Check if comments contain the trek ID
+            if (itinerary.comments && itinerary.comments.includes(`Trek ID: ${trekId}`)) {
+                return true;
+            }
+            // Also check type and trekId fields if they exist
+            return itinerary.type === 'popular-trek' && 
+                   (itinerary.trekId === trekId || itinerary.trekId === window.trekData?._id);
+        });
     } catch (error) {
         console.error('Error checking saved status:', error);
         return false;
@@ -136,7 +164,10 @@ async function checkIfTrekSaved(user, trekId) {
 // Initialize save functionality
 document.addEventListener('DOMContentLoaded', function() {
     const saveButton = document.querySelector('[data-save-trek]');
-    if (!saveButton || !window.trekData) return;
+    if (!saveButton || !window.trekData) {
+        console.log('Save button or trek data not found');
+        return;
+    }
     
     let currentUser = null;
     
@@ -146,7 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (user && window.trekData) {
             // Check if already saved
-            const isSaved = await checkIfTrekSaved(user, window.trekData._id || window.trekData.slug);
+            const trekId = window.trekData._id || window.trekData.slug;
+            const isSaved = await checkIfTrekSaved(user, trekId);
             updateButtonState(saveButton, isSaved);
         }
     });
@@ -156,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         if (!currentUser) {
-            // Redirect to sign-in page
+            // Redirect to sign-in page with return URL
             window.location.href = '/sign-up.html?redirect=' + encodeURIComponent(window.location.pathname);
             return;
         }
@@ -169,8 +201,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show success message
             const successMsg = document.createElement('div');
-            successMsg.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-0';
-            successMsg.textContent = 'Trek saved successfully!';
+            successMsg.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-0 z-50';
+            successMsg.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Trek saved successfully!
+                </div>
+            `;
             document.body.appendChild(successMsg);
             
             setTimeout(() => {
@@ -183,11 +222,25 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show error message
             const errorMsg = document.createElement('div');
-            errorMsg.className = 'fixed bottom-4 right-4 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg';
-            errorMsg.textContent = 'Failed to save trek. Please try again.';
+            errorMsg.className = 'fixed bottom-4 right-4 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            errorMsg.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.293 7.293z" clip-rule="evenodd"/>
+                    </svg>
+                    Failed to save trek. Please try again.
+                </div>
+            `;
             document.body.appendChild(errorMsg);
             
             setTimeout(() => errorMsg.remove(), 3000);
         }
     });
 });
+
+// Debug function to check current trek data and image
+window.debugTrekSave = function() {
+    console.log('Trek Data:', window.trekData);
+    console.log('Trek Image:', getTrekImage());
+    console.log('Trek ID:', window.trekData?._id || window.trekData?.slug);
+};
