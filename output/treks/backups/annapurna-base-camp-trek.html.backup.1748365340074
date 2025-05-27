@@ -1543,33 +1543,21 @@
             scrollToSectionTop();
         }
 
-                function scrollToSectionTop() {
-            requestAnimationFrame(() => {
+        function scrollToSectionTop() {
+            setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
-                
                 if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
                     
                     window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-            });
+            }, 50);
         }
 
         function centerTabWithNextVisible(clickedTab) {

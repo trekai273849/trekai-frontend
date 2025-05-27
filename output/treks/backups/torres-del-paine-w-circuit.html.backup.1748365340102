@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
-    <meta name="description" content="Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.">
+    <title>Torres del Paine W Circuit Trek Guide 2024 | Complete 5-Day Itinerary</title>
+    <meta name="description" content="Complete guide to hiking the W Circuit in Torres del Paine. Detailed itinerary, booking tips, gear list, and insider advice for Patagonia's most iconic trek.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/annapurna-base-camp-trek.jpg');
+            background-image: url('/images/treks/covers/torres-del-paine-w-circuit.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,20 +734,20 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Annapurna Base Camp Trek</h1>
+        <div class="hero-content">
+            <h1>Torres del Paine 'W' Circuit</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">10</span>
+                    <span class="hero-stat-value">5</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,130m</span>
+                    <span class="hero-stat-value">1,200m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">80km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Nepal/Himalayas</h2>
+                <h2>Journey to Patagonia</h2>
                 <p class="overview-description">
-                    Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.
+                    Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">7-12 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">80 km / 50 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,130m (13,550ft)</span>
+                    <span class="info-value">1,200m (3,937ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,7 +846,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Pokhara</span>
+                    <span class="info-value">Puerto Natales</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +855,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,000</span>
+                        <span class="price-range">$600 - $1,500</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>10-Day Detailed Itinerary</h2>
+        <h2>5-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
+            Follow the route through Patagonia with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Pokhara to Ghandruk</h3>
+          <h3 class="day-title">Las Torres Base Trek</h3>
           <div class="day-stats">
-            <span>📏 42km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +1192m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📏 22km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 900m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views.</p>
+      <p class="day-description">The classic day hike to the base of the famous Torres. Start early for the steep climb through lenga forest, across mountain streams, and up the final boulder field to reach the stunning viewpoint of the three granite spires reflected in the turquoise lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Drive to Nayapul</span><span class="day-highlight">Gurung village culture</span><span class="day-highlight">Annapurna South views</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Iconic three granite towers</span><span class="day-highlight">Turquoise glacial lake at base</span><span class="day-highlight">Ascenso Valley views</span><span class="day-highlight">Beech forest hiking</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Ghandruk to Chhomrong</h3>
+          <h3 class="day-title">Cuernos del Paine</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 2,170m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +250m</span>
+            <span>🏔️ 350m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary.</p>
+      <p class="day-description">Scenic traverse along the turquoise waters of Nordenskjöld Lake with constantly changing views of the distinctive Cuernos (Horns) del Paine. The trail winds through diverse landscapes from grasslands to forests.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Cross Kimrong Khola</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Machhapuchhre views</span><span class="day-highlight">Gateway to sanctuary</span>
+          <span class="day-highlight">Views of Cuernos del Paine horns</span><span class="day-highlight">Nordenskjöld Lake shoreline</span><span class="day-highlight">Varied terrain and ecosystems</span><span class="day-highlight">Potential condor sightings</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Chhomrong to Bamboo</h3>
+          <h3 class="day-title">French Valley</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📏 25km</span>
+            <span>⏱️ 10 hours</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 550m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests.</p>
+      <p class="day-description">The longest day includes a detour into the spectacular French Valley. Hike up the valley surrounded by granite spires and hanging glaciers, with the option to reach Británico viewpoint for panoramic views, before continuing to Paine Grande.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Enter sanctuary</span><span class="day-highlight">Bamboo forests</span><span class="day-highlight">Modi Khola gorge</span><span class="day-highlight">Changing vegetation</span>
+          <span class="day-highlight">French Valley hanging glaciers</span><span class="day-highlight">360-degree mountain amphitheater</span><span class="day-highlight">Avalanche sounds from glaciers</span><span class="day-highlight">Británico viewpoint option</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Bamboo to Deurali</h3>
+          <h3 class="day-title">Grey Glacier Viewpoint</h3>
           <div class="day-stats">
             <span>📏 11km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +920m</span>
-            <span>🏔️ 3,230m</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 300m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up.</p>
+      <p class="day-description">Trek along Grey Lake's shoreline through burned and regenerating forest areas. Cross suspension bridges with views of floating icebergs and the massive Grey Glacier flowing from the Southern Patagonian Ice Field.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Himalaya Hotel</span><span class="day-highlight">Alpine environment</span><span class="day-highlight">Avalanche areas</span><span class="day-highlight">Mountain views emerging</span>
+          <span class="day-highlight">Grey Glacier views</span><span class="day-highlight">Icebergs in Grey Lake</span><span class="day-highlight">Suspension bridges</span><span class="day-highlight">Southern Ice Field connection</span>
         </div>
       
     </div>
@@ -1176,103 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Deurali to Annapurna Base Camp</h3>
+          <h3 class="day-title">Return via Catamaran</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +900m</span>
-            <span>🏔️ 4,130m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 -280m</span>
+            <span>🏔️ 20m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks.</p>
+      <p class="day-description">Morning catamaran ride across Grey Lake among the icebergs, followed by bus transfer back to Puerto Natales. Alternatively, hike back to Paine Grande and take catamaran across Pehoé Lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Machhapuchhre Base Camp</span><span class="day-highlight">360-degree mountain views</span><span class="day-highlight">Annapurna Sanctuary</span><span class="day-highlight">Sunset on peaks</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">ABC Sunrise and Descend to Bamboo</h3>
-          <div class="day-stats">
-            <span>📏 17km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 -1820m</span>
-            <span>🏔️ 2,310m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Sunrise on Annapurna I</span><span class="day-highlight">Last sanctuary views</span><span class="day-highlight">Rapid descent</span><span class="day-highlight">Return through forests</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 7</div>
-          <h3 class="day-title">Bamboo to Jhinu Danda</h3>
-          <div class="day-stats">
-            <span>📏 13km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 1,780m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Return to Chhomrong</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Relaxation</span><span class="day-highlight">Modi Khola riverside</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 8</div>
-          <h3 class="day-title">Jhinu to Ghandruk</h3>
-          <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +232m</span>
-            <span>🏔️ 2,012m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Take alternative route back to Ghandruk through villages and terraced fields.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Alternative route</span><span class="day-highlight">Village life</span><span class="day-highlight">Cultural immersion</span><span class="day-highlight">Mountain views</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 9</div>
-          <h3 class="day-title">Ghandruk to Pokhara</h3>
-          <div class="day-stats">
-            <span>📏 20km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 -1192m</span>
-            <span>🏔️ 820m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Final mountain views</span><span class="day-highlight">Descent to Nayapul</span><span class="day-highlight">Drive to Pokhara</span><span class="day-highlight">Trek completion</span>
+          <span class="day-highlight">Catamaran across Grey Lake</span><span class="day-highlight">Close views of icebergs</span><span class="day-highlight">Glacier perspectives from water</span><span class="day-highlight">Return to civilization</span>
         </div>
       
     </div>
@@ -1297,8 +996,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking boots</div>
-          <div class="gear-description">Comfortable and waterproof</div>
+          <div class="gear-name">Hiking boots</div>
+          <div class="gear-description">Waterproof with ankle support for varied terrain</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Windproof/waterproof jacket</div>
+          <div class="gear-description">Patagonia winds can exceed 100km/h</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Windproof pants</div>
+          <div class="gear-description">Essential for exposed sections</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1306,31 +1021,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-10°C rated</div>
+          <div class="gear-description">0°C rated if camping</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at base camp</div>
+          <div class="gear-name">Backpack</div>
+          <div class="gear-description">40-60L with rain cover</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Essential any season</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Layers</div>
-          <div class="gear-description">Temperature varies greatly</div>
+          <div class="gear-name">Layering system</div>
+          <div class="gear-description">Base layer, insulating layer, shell</div>
         </div>
         
       </li>
@@ -1338,15 +1045,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Hat, sunglasses, sunscreen</div>
+          <div class="gear-description">Sunglasses, hat, SPF 50+ sunscreen</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Basic first aid</div>
-          <div class="gear-description">Including blister kit</div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Helpful for river crossings and wind</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2L capacity, water is drinkable from streams</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early starts and refugio use</div>
         </div>
         
       </li>
@@ -1363,24 +1086,40 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful on stairs</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For muddy sections and stream crossings</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or SteriPen</div>
+          <div class="gear-name">Buff or balaclava</div>
+          <div class="gear-description">Wind and sun protection</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Snacks</div>
-          <div class="gear-description">Energy bars, nuts</div>
+          <div class="gear-name">Camera rain cover</div>
+          <div class="gear-description">Weather changes quickly</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Dry bags</div>
+          <div class="gear-description">Keep essentials dry</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Blister kit</div>
+          <div class="gear-description">Long days require foot care</div>
         </div>
         
       </li>
@@ -1400,17 +1139,17 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October, November</p>
-      <p>Clear views, stable weather, peak season</p>
+      <div class="season-icon">☀️</div>
+      <h3 class="season-name">Summer</h3>
+      <p class="season-months">December, January, February</p>
+      <p>Warmest weather, longest days, but most crowded</p>
     </div>
   
     <div class="season-card">
-      <div class="season-icon">🌸</div>
-      <h3 class="season-name">Spring</h3>
-      <p class="season-months">March, April, May</p>
-      <p>Rhododendron blooms, good weather, warmer</p>
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">October, November, March, April</p>
+      <p>Fewer crowds, variable weather, stunning autumn colors in March-April</p>
     </div>
   
         </div>
@@ -1433,27 +1172,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$40</span>
+      <span>$35</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$25</span>
+      <span>$150</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$80</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$30</span>
+      <span>$100</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,000</span>
+      <span>$600 - $1,500</span>
     </div>
   
         </div>
@@ -1475,34 +1214,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>ABC or EBC - which is better?</span>
+        <span>How far in advance should I book?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible.</div>
+      <div class="faq-answer">For December-February, book refugios/campsites 5-6 months ahead. Shoulder seasons 2-3 months. The park has strict capacity limits.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
+        <span>Can I trek independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety.</div>
+      <div class="faq-answer">Yes, the trails are well-marked and guides aren't required. However, weather can change rapidly, so experience with multi-day treks is recommended.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How cold is base camp?</span>
+        <span>Camping or refugios?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag.</div>
+      <div class="faq-answer">Refugios offer comfort and meals but are expensive. Camping is cheaper but means carrying more gear in challenging weather. Many do a mix.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is altitude a problem?</span>
+        <span>What about the wind?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps.</div>
+      <div class="faq-answer">Patagonian wind is legendary. Gusts can exceed 100km/h. Bring proper windproof gear and trekking poles for stability. Be prepared to wait out extreme conditions.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is water safe to drink?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, water from streams and lakes is generally safe to drink without treatment, though some prefer to purify as a precaution.</div>
     </div>
   
         </div>
@@ -1543,33 +1290,21 @@
             scrollToSectionTop();
         }
 
-                function scrollToSectionTop() {
-            requestAnimationFrame(() => {
+        function scrollToSectionTop() {
+            setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
-                
                 if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
                     
                     window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-            });
+            }, 50);
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1654,662 +1389,714 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "annapurna-base-camp-trek",
-        "name": "Annapurna Base Camp Trek",
-        "slug": "annapurna-base-camp-trek",
-        "region": "Nepal/Himalayas",
-        "country": "Nepal",
-        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+        "_id": "torres-del-paine-w-circuit",
+        "name": "Torres del Paine 'W' Circuit",
+        "slug": "torres-del-paine-w-circuit",
+        "region": "Patagonia",
+        "country": "Chile",
+        "summary": "Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.",
         "duration": {
-            "min_days": 7,
-            "max_days": 12,
-            "recommended_days": 10
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 5
         },
-        "distance_km": 110,
+        "distance_km": 80,
         "difficulty": "moderate",
-        "max_elevation_m": 4130,
-        "starting_elevation_m": 1070,
-        "airport": "Pokhara (PKR)",
-        "nearest_city": "Pokhara",
+        "max_elevation_m": 1200,
+        "starting_elevation_m": 100,
+        "airport": "Punta Arenas (PUQ)",
+        "nearest_city": "Puerto Natales",
         "coordinates": {
             "start": {
-                "lat": 28.3784,
-                "lng": 83.7284,
-                "location": "Nayapul"
+                "lat": -50.9423,
+                "lng": -73.4068,
+                "location": "Las Torres Hotel"
             },
             "end": {
-                "lat": 28.53,
-                "lng": 83.8783,
-                "location": "Annapurna Base Camp"
+                "lat": -50.9811,
+                "lng": -73.0765,
+                "location": "Grey Glacier"
             }
         },
         "best_seasons": [
             {
-                "name": "Autumn",
+                "name": "Summer",
                 "months": [
-                    "September",
-                    "October",
-                    "November"
+                    "December",
+                    "January",
+                    "February"
                 ],
-                "description": "Clear views, stable weather, peak season"
+                "description": "Warmest weather, longest days, but most crowded"
             },
             {
-                "name": "Spring",
+                "name": "Shoulder Season",
                 "months": [
+                    "October",
+                    "November",
                     "March",
-                    "April",
-                    "May"
+                    "April"
                 ],
-                "description": "Rhododendron blooms, good weather, warmer"
+                "description": "Fewer crowds, variable weather, stunning autumn colors in March-April"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Pokhara to Ghandruk",
-                "start_location": "Pokhara",
-                "end_location": "Ghandruk",
-                "distance_km": 42,
-                "duration_hours": 6,
-                "elevation_start_m": 820,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 1192,
-                "difficulty": "moderate",
+                "title": "Las Torres Base Trek",
+                "start_location": "Las Torres Hotel",
+                "end_location": "Las Torres Hotel/Chileno",
+                "distance_km": 22,
+                "duration_hours": 8,
+                "elevation_start_m": 100,
+                "elevation_end_m": 900,
+                "elevation_gain_m": 800,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "refugio/camping",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage",
-                        "Mountain View Lodge"
+                        "Refugio Chileno",
+                        "Camping Chileno",
+                        "Return to Las Torres"
                     ]
                 },
                 "meals_included": [
-                    "lunch",
+                    "breakfast",
+                    "box lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "Drive to Nayapul",
-                    "Gurung village culture",
-                    "Annapurna South views",
-                    "Traditional architecture"
+                    "Iconic three granite towers",
+                    "Turquoise glacial lake at base",
+                    "Ascenso Valley views",
+                    "Beech forest hiking"
                 ],
-                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
+                "description": "The classic day hike to the base of the famous Torres. Start early for the steep climb through lenga forest, across mountain streams, and up the final boulder field to reach the stunning viewpoint of the three granite spires reflected in the turquoise lake."
             },
             {
                 "day": 2,
-                "title": "Ghandruk to Chhomrong",
-                "start_location": "Ghandruk",
-                "end_location": "Chhomrong",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 2170,
-                "elevation_gain_m": 500,
+                "title": "Cuernos del Paine",
+                "start_location": "Las Torres/Chileno",
+                "end_location": "Refugio Cuernos",
+                "distance_km": 11,
+                "duration_hours": 5,
+                "elevation_start_m": 100,
+                "elevation_end_m": 350,
+                "elevation_gain_m": 250,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "refugio/camping",
                     "options": [
-                        "Chhomrong Guest House",
-                        "Annapurna Lodge",
-                        "Panorama Lodge"
+                        "Refugio Cuernos",
+                        "Camping Cuernos"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
-                    "lunch",
+                    "box lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "Cross Kimrong Khola",
-                    "Terraced fields",
-                    "Machhapuchhre views",
-                    "Gateway to sanctuary"
+                    "Views of Cuernos del Paine horns",
+                    "Nordenskjöld Lake shoreline",
+                    "Varied terrain and ecosystems",
+                    "Potential condor sightings"
                 ],
-                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
+                "description": "Scenic traverse along the turquoise waters of Nordenskjöld Lake with constantly changing views of the distinctive Cuernos (Horns) del Paine. The trail winds through diverse landscapes from grasslands to forests."
             },
             {
                 "day": 3,
-                "title": "Chhomrong to Bamboo",
-                "start_location": "Chhomrong",
-                "end_location": "Bamboo",
-                "distance_km": 10,
-                "duration_hours": 5,
-                "elevation_start_m": 2170,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
+                "title": "French Valley",
+                "start_location": "Refugio Cuernos",
+                "end_location": "Refugio Paine Grande",
+                "distance_km": 25,
+                "duration_hours": 10,
+                "elevation_start_m": 350,
+                "elevation_end_m": 550,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "refugio/camping",
                     "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
+                        "Refugio Paine Grande",
+                        "Camping Paine Grande"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
-                    "lunch",
+                    "box lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "Enter sanctuary",
-                    "Bamboo forests",
-                    "Modi Khola gorge",
-                    "Changing vegetation"
+                    "French Valley hanging glaciers",
+                    "360-degree mountain amphitheater",
+                    "Avalanche sounds from glaciers",
+                    "Británico viewpoint option"
                 ],
-                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
+                "description": "The longest day includes a detour into the spectacular French Valley. Hike up the valley surrounded by granite spires and hanging glaciers, with the option to reach Británico viewpoint for panoramic views, before continuing to Paine Grande."
             },
             {
                 "day": 4,
-                "title": "Bamboo to Deurali",
-                "start_location": "Bamboo",
-                "end_location": "Deurali",
+                "title": "Grey Glacier Viewpoint",
+                "start_location": "Refugio Paine Grande",
+                "end_location": "Refugio Grey",
                 "distance_km": 11,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 3230,
-                "elevation_gain_m": 920,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Deurali Guest House",
-                        "Himalaya Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Himalaya Hotel",
-                    "Alpine environment",
-                    "Avalanche areas",
-                    "Mountain views emerging"
-                ],
-                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
-            },
-            {
-                "day": 5,
-                "title": "Deurali to Annapurna Base Camp",
-                "start_location": "Deurali",
-                "end_location": "Annapurna Base Camp",
-                "distance_km": 6,
                 "duration_hours": 4,
-                "elevation_start_m": 3230,
-                "elevation_end_m": 4130,
-                "elevation_gain_m": 900,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "ABC Lodge",
-                        "Annapurna Sanctuary Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Machhapuchhre Base Camp",
-                    "360-degree mountain views",
-                    "Annapurna Sanctuary",
-                    "Sunset on peaks"
-                ],
-                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
-            },
-            {
-                "day": 6,
-                "title": "ABC Sunrise and Descend to Bamboo",
-                "start_location": "Annapurna Base Camp",
-                "end_location": "Bamboo",
-                "distance_km": 17,
-                "duration_hours": 7,
-                "elevation_start_m": 4130,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": -1820,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Sunrise on Annapurna I",
-                    "Last sanctuary views",
-                    "Rapid descent",
-                    "Return through forests"
-                ],
-                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
-            },
-            {
-                "day": 7,
-                "title": "Bamboo to Jhinu Danda",
-                "start_location": "Bamboo",
-                "end_location": "Jhinu Danda",
-                "distance_km": 13,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 1780,
+                "elevation_start_m": 550,
+                "elevation_end_m": 300,
                 "elevation_gain_m": 200,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "refugio/camping",
                     "options": [
-                        "Jhinu Guest House",
-                        "Hot Spring Lodge"
+                        "Refugio Grey",
+                        "Camping Grey"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
-                    "lunch",
+                    "box lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "Return to Chhomrong",
-                    "Natural hot springs",
-                    "Relaxation",
-                    "Modi Khola riverside"
+                    "Grey Glacier views",
+                    "Icebergs in Grey Lake",
+                    "Suspension bridges",
+                    "Southern Ice Field connection"
                 ],
-                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
+                "description": "Trek along Grey Lake's shoreline through burned and regenerating forest areas. Cross suspension bridges with views of floating icebergs and the massive Grey Glacier flowing from the Southern Patagonian Ice Field."
             },
             {
-                "day": 8,
-                "title": "Jhinu to Ghandruk",
-                "start_location": "Jhinu Danda",
-                "end_location": "Ghandruk",
-                "distance_km": 8,
-                "duration_hours": 4,
-                "elevation_start_m": 1780,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 232,
-                "difficulty": "easy",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Alternative route",
-                    "Village life",
-                    "Cultural immersion",
-                    "Mountain views"
-                ],
-                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
-            },
-            {
-                "day": 9,
-                "title": "Ghandruk to Pokhara",
-                "start_location": "Ghandruk",
-                "end_location": "Pokhara",
-                "distance_km": 20,
-                "duration_hours": 4,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 820,
-                "elevation_gain_m": -1192,
+                "day": 5,
+                "title": "Return via Catamaran",
+                "start_location": "Refugio Grey",
+                "end_location": "Puerto Natales",
+                "distance_km": 0,
+                "duration_hours": 3,
+                "elevation_start_m": 300,
+                "elevation_end_m": 20,
+                "elevation_gain_m": -280,
                 "difficulty": "easy",
                 "accommodation": {
                     "type": "hotel",
                     "options": [
-                        "Return to Pokhara hotel"
+                        "Hotel in Puerto Natales"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch"
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Final mountain views",
-                    "Descent to Nayapul",
-                    "Drive to Pokhara",
-                    "Trek completion"
+                    "Catamaran across Grey Lake",
+                    "Close views of icebergs",
+                    "Glacier perspectives from water",
+                    "Return to civilization"
                 ],
-                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+                "description": "Morning catamaran ride across Grey Lake among the icebergs, followed by bus transfer back to Puerto Natales. Alternatively, hike back to Paine Grande and take catamaran across Pehoé Lake."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Trekking boots",
-                    "description": "Comfortable and waterproof",
+                    "item": "Hiking boots",
+                    "description": "Waterproof with ankle support for varied terrain",
+                    "rental_available": true
+                },
+                {
+                    "item": "Windproof/waterproof jacket",
+                    "description": "Patagonia winds can exceed 100km/h",
+                    "rental_available": true
+                },
+                {
+                    "item": "Windproof pants",
+                    "description": "Essential for exposed sections",
                     "rental_available": true
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "-10°C rated",
+                    "description": "0°C rated if camping",
                     "rental_available": true
                 },
                 {
-                    "item": "Down jacket",
-                    "description": "Cold at base camp",
+                    "item": "Backpack",
+                    "description": "40-60L with rain cover",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain gear",
-                    "description": "Essential any season",
-                    "rental_available": true
-                },
-                {
-                    "item": "Layers",
-                    "description": "Temperature varies greatly",
+                    "item": "Layering system",
+                    "description": "Base layer, insulating layer, shell",
                     "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Hat, sunglasses, sunscreen",
+                    "description": "Sunglasses, hat, SPF 50+ sunscreen",
                     "rental_available": false
                 },
                 {
-                    "item": "Basic first aid",
-                    "description": "Including blister kit",
+                    "item": "Trekking poles",
+                    "description": "Helpful for river crossings and wind",
+                    "rental_available": true
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2L capacity, water is drinkable from streams",
+                    "rental_available": false
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early starts and refugio use",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Very helpful on stairs",
+                    "item": "Gaiters",
+                    "description": "For muddy sections and stream crossings",
                     "rental_available": true
                 },
                 {
-                    "item": "Water purification",
-                    "description": "Tablets or SteriPen",
+                    "item": "Buff or balaclava",
+                    "description": "Wind and sun protection",
                     "rental_available": false
                 },
                 {
-                    "item": "Snacks",
-                    "description": "Energy bars, nuts",
+                    "item": "Camera rain cover",
+                    "description": "Weather changes quickly",
+                    "rental_available": false
+                },
+                {
+                    "item": "Dry bags",
+                    "description": "Keep essentials dry",
+                    "rental_available": false
+                },
+                {
+                    "item": "Blister kit",
+                    "description": "Long days require foot care",
+                    "rental_available": false
+                }
+            ],
+            "optional": [
+                {
+                    "item": "Camping gear",
+                    "description": "Tent, mat, stove if not using refugios",
+                    "rental_available": true
+                },
+                {
+                    "item": "Binoculars",
+                    "description": "For wildlife viewing",
+                    "rental_available": false
+                },
+                {
+                    "item": "Portable charger",
+                    "description": "Limited electricity in refugios",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "ACAP (Annapurna Conservation)",
-                "cost_usd": 30,
-                "cost_npr": 3000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Single entry"
+                "name": "Park Entry Fee",
+                "cost_usd": 35,
+                "cost_clp": 28000,
+                "where_to_obtain": "Park entrance or online",
+                "validity": "3 consecutive days"
             },
             {
-                "name": "TIMS Card",
-                "cost_usd": 10,
-                "cost_npr": 1000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Trek duration"
+                "name": "Camping/Refugio Reservations",
+                "cost_usd": 0,
+                "cost_clp": 0,
+                "where_to_obtain": "Must book in advance through Vertice or Fantastico Sur",
+                "validity": "Specific dates only",
+                "notes": "Booking required far in advance, especially Dec-Feb"
             }
         ],
         "costs": {
-            "permit_total_usd": 40,
-            "guide_daily_usd": 25,
-            "porter_daily_usd": 18,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 30,
+            "permit_total_usd": 35,
+            "guide_daily_usd": 150,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 80,
+            "meals_daily_usd": 60,
+            "transportation_usd": 100,
+            "catamaran_usd": 35,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1000
+                "min": 600,
+                "max": 1500
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Gurung",
-                "Magar"
+                "Chilean",
+                "Argentine",
+                "Indigenous Tehuelche/Aonikenk heritage"
             ],
-            "primary_religion": "Buddhism and Hinduism",
+            "primary_religion": "Secular/Catholic",
             "languages": [
-                "Nepali",
-                "Gurung",
-                "English"
+                "Spanish",
+                "English widely spoken in tourism"
             ],
             "customs_etiquette": [
-                "Remove shoes when entering homes",
-                "Use right hand for eating/giving",
-                "Walk clockwise around mani walls",
-                "Dress modestly in villages",
-                "Ask permission for photos"
+                "Pack out all trash - leave no trace",
+                "Respect refugio quiet hours (10pm-7am)",
+                "Share trail information with other hikers",
+                "Don't feed wildlife (especially foxes)",
+                "Stay on marked trails to prevent erosion",
+                "Respect private estancia property boundaries"
             ],
             "local_foods": [
                 {
-                    "name": "Dal bhat",
-                    "description": "Traditional meal available everywhere"
+                    "name": "Cordero al Palo",
+                    "description": "Patagonian lamb roasted over open fire"
                 },
                 {
-                    "name": "Gurung bread",
-                    "description": "Local specialty"
+                    "name": "Calafate berry",
+                    "description": "Local berry - legend says you'll return to Patagonia"
                 },
                 {
-                    "name": "Raksi",
-                    "description": "Local millet alcohol"
+                    "name": "King Crab (Centolla)",
+                    "description": "Fresh from the Magellan Strait"
                 },
                 {
-                    "name": "Dhindo",
-                    "description": "Traditional porridge"
+                    "name": "Mate",
+                    "description": "Traditional herbal tea drunk throughout the day"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Festival de la Esquila",
+                    "when": "January",
+                    "description": "Sheep shearing festival"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "moderate",
-                "prevention": [
-                    "Gradual ascent built into itinerary",
-                    "Stay hydrated",
-                    "Rest day can be added",
-                    "Don't rush to ABC"
-                ],
-                "critical_points": [
-                    "Above 3000m",
-                    "Especially approaching ABC"
-                ]
+                "risk_level": "none",
+                "notes": "Maximum elevation only 1,200m"
+            },
+            "main_concerns": {
+                "weather": {
+                    "risk_level": "high",
+                    "description": "Extreme winds, rapid weather changes",
+                    "prevention": [
+                        "Check weather forecasts daily",
+                        "Be prepared to wait out storms",
+                        "Carry emergency shelter/bivy",
+                        "Know escape routes"
+                    ]
+                },
+                "river_crossings": {
+                    "risk_level": "moderate",
+                    "description": "Streams can rise rapidly after rain",
+                    "prevention": [
+                        "Use trekking poles for stability",
+                        "Unbuckle pack waist belt",
+                        "Cross early in the day when water is lower"
+                    ]
+                },
+                "sun_exposure": {
+                    "risk_level": "high",
+                    "description": "Intense UV due to ozone hole",
+                    "prevention": [
+                        "Apply sunscreen every 2 hours",
+                        "Wear protective clothing",
+                        "Use quality sunglasses"
+                    ]
+                }
             },
             "medical_facilities": [
                 {
-                    "location": "Chhomrong",
-                    "type": "Basic health post"
+                    "location": "Park ranger stations",
+                    "type": "Basic first aid"
                 },
                 {
-                    "location": "Pokhara",
-                    "type": "Good hospitals"
+                    "location": "Puerto Natales",
+                    "type": "Hospital with emergency services"
+                },
+                {
+                    "location": "Punta Arenas",
+                    "type": "Regional hospital (3 hours away)"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter from most points",
-                "cost_usd": "3000-5000",
-                "insurance_required": true
-            }
+                "method": "Helicopter or horseback",
+                "cost_usd": "2000-5000",
+                "insurance_required": true,
+                "response_time": "Weather dependent, can be days"
+            },
+            "vaccinations_recommended": [
+                "Routine vaccinations up to date",
+                "Hepatitis A",
+                "Typhoid"
+            ]
         },
         "weather_patterns": {
-            "autumn": {
-                "months": [
-                    "September",
-                    "October",
-                    "November"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Low",
-                "visibility": "Excellent",
-                "notes": "Best views, busy season"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "15 to 25",
-                "night_temp_c": "0 to 10",
-                "precipitation": "Moderate",
-                "visibility": "Good mornings",
-                "notes": "Rhododendrons bloom"
-            },
-            "winter": {
+            "summer": {
                 "months": [
                     "December",
                     "January",
                     "February"
                 ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "-10 to 0",
-                "precipitation": "Low, possible snow",
-                "visibility": "Excellent",
-                "notes": "Very cold at ABC"
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "2 to 8",
+                "precipitation": "Moderate, expect rain",
+                "wind": "Strong, 50-100 km/h common",
+                "daylight_hours": "17-18",
+                "notes": "Peak season, book far in advance"
             },
-            "monsoon": {
+            "autumn": {
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "-2 to 5",
+                "precipitation": "Increasing, possible snow",
+                "wind": "Very strong",
+                "daylight_hours": "10-14",
+                "notes": "Beautiful fall colors, fewer crowds"
+            },
+            "winter": {
                 "months": [
                     "June",
                     "July",
                     "August"
                 ],
-                "day_temp_c": "15 to 20",
-                "night_temp_c": "5 to 15",
-                "precipitation": "Very high",
-                "visibility": "Poor",
-                "notes": "Not recommended, leeches"
+                "day_temp_c": "0 to 8",
+                "night_temp_c": "-5 to 0",
+                "precipitation": "Snow likely",
+                "wind": "Extreme",
+                "daylight_hours": "8-9",
+                "notes": "Many facilities closed, experienced hikers only"
+            },
+            "spring": {
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Variable",
+                "wind": "Strong to extreme",
+                "daylight_hours": "11-16",
+                "notes": "Wildflowers bloom, weather improving"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Tourist bus",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 10,
-                    "frequency": "Multiple daily"
+                    "method": "Fly + Bus",
+                    "from": "Santiago",
+                    "to": "Punta Arenas + Puerto Natales",
+                    "duration": "5-6 hours total",
+                    "cost_usd": 200,
+                    "frequency": "Multiple daily flights",
+                    "notes": "3-hour flight + 3-hour bus"
                 },
                 {
-                    "method": "Private taxi",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
+                    "method": "Bus",
+                    "from": "Puerto Natales",
+                    "to": "Torres del Paine",
+                    "duration": "2 hours",
+                    "cost_usd": 15,
+                    "frequency": "2-3 daily in season"
+                },
+                {
+                    "method": "Transfer service",
+                    "from": "Puerto Natales",
+                    "to": "Torres del Paine",
+                    "duration": "2 hours",
                     "cost_usd": 30,
-                    "frequency": "Any time"
+                    "frequency": "Multiple daily"
                 }
             ],
-            "from_end": "Same options in reverse"
+            "from_end": "Similar options in reverse"
         },
         "accommodation": {
-            "type": "Teahouses",
-            "description": "Basic but comfortable lodges",
-            "amenities": [
-                "Twin-bed rooms",
-                "Shared bathrooms mostly",
-                "Hot showers (lower elevations)",
-                "Charging for devices (paid)",
-                "WiFi in some lodges (paid)",
-                "Meals available"
+            "type": "Refugios and camping",
+            "description": "Mountain huts with beds or camping platforms",
+            "refugio_amenities": [
+                "Bunk beds with bedding (bring sleep sheet)",
+                "Hot meals available for purchase",
+                "Hot showers (sometimes paid)",
+                "Electricity for charging (limited hours)",
+                "Small shops with basic supplies",
+                "Drying rooms"
             ],
-            "booking": "Not required except peak season",
-            "cost_per_night_usd": "3-8"
+            "camping_amenities": [
+                "Designated platforms or areas",
+                "Cooking shelters at some sites",
+                "Bathroom facilities",
+                "Cold water only at most sites"
+            ],
+            "booking": "Essential to book months in advance",
+            "cost_per_night_usd": {
+                "refugio_bed": "60-80",
+                "refugio_full_board": "140-160",
+                "camping": "8-15"
+            }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness required",
-            "technical_skills": "None needed",
-            "altitude_challenge": "Moderate - max 4,130m",
-            "trail_conditions": "Well-maintained, many stone steps",
-            "daily_hiking_hours": "5-7 hours",
-            "total_elevation_gain": 4500,
-            "total_elevation_loss": 4500
+            "physical_demands": "Moderate fitness required, long days",
+            "technical_skills": "None required",
+            "altitude_challenge": "None",
+            "trail_conditions": "Well-marked but can be muddy, rocky",
+            "weather_challenge": "Primary difficulty - extreme winds",
+            "daily_hiking_hours": "4-10 hours",
+            "total_elevation_gain": 2850,
+            "total_elevation_loss": 2850
+        },
+        "sustainability": {
+            "environmental_concerns": [
+                "Trail erosion from high traffic",
+                "Waste management",
+                "Wildlife disturbance"
+            ],
+            "responsible_practices": [
+                "Strict leave no trace principles",
+                "Stay on designated trails",
+                "Use established campsites only",
+                "Pack out all waste",
+                "Respect wildlife viewing distances"
+            ],
+            "local_initiatives": [
+                "Trail maintenance programs",
+                "Visitor limits being considered",
+                "Ranger education programs"
+            ]
+        },
+        "connectivity": {
+            "mobile_coverage": [
+                {
+                    "location": "Refugios",
+                    "quality": "Limited to none",
+                    "providers": [
+                        "Entel",
+                        "Movistar"
+                    ]
+                },
+                {
+                    "location": "Trail",
+                    "quality": "None",
+                    "providers": []
+                }
+            ],
+            "internet": {
+                "availability": "Some refugios have paid WiFi",
+                "cost_usd": "5-10 per day",
+                "speed": "Very slow, weather dependent"
+            }
+        },
+        "booking_recommendations": {
+            "advance_booking": "3-6 months for high season",
+            "group_size": "Individual bookings easier than groups",
+            "guide_requirement": "Not required but helpful",
+            "porter_recommendation": "Not available/necessary",
+            "insurance_essential": true,
+            "fitness_preparation": "3 months cardio and hiking training"
         },
         "alternative_routes": [
             {
-                "name": "ABC via Poon Hill",
-                "variation": "Add Poon Hill sunrise",
-                "extra_days": 2,
+                "name": "O Circuit",
+                "variation": "Complete circuit including backside",
+                "extra_days": 3,
                 "highlights": [
-                    "Famous sunrise viewpoint",
-                    "Different villages",
-                    "More variety"
+                    "More solitude",
+                    "John Gardner Pass",
+                    "Complete park experience"
                 ]
             },
             {
-                "name": "Mardi Himal addition",
-                "variation": "Combine with Mardi Himal",
-                "extra_days": 4,
+                "name": "Day trips from refugios",
+                "variation": "Base yourself and day hike",
+                "extra_days": 0,
                 "highlights": [
-                    "Less crowded ridge trek",
-                    "Different perspective",
-                    "Forest camps"
+                    "Lighter pack",
+                    "More flexibility",
+                    "Same highlights"
+                ]
+            },
+            {
+                "name": "Q Circuit",
+                "variation": "Extended O with Pingo Valley",
+                "extra_days": 5,
+                "highlights": [
+                    "Ultimate Torres experience",
+                    "Remote valleys",
+                    "Wildlife"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Annapurna Base Camp",
+                "location": "Base Torres",
                 "best_time": "Sunrise",
                 "subjects": [
-                    "360° amphitheater",
-                    "Annapurna I south face",
-                    "Alpenglow"
+                    "Tower reflections",
+                    "Alpenglow on granite"
                 ]
             },
             {
-                "location": "Machhapuchhre Base Camp",
-                "best_time": "Sunset",
+                "location": "Mirador Británico",
+                "best_time": "Midday",
                 "subjects": [
-                    "Fishtail mountain",
-                    "Sacred peak",
-                    "Evening colors"
+                    "360-degree amphitheater",
+                    "Hanging glaciers"
                 ]
             },
             {
-                "location": "Ghandruk village",
+                "location": "Grey Glacier viewpoint",
+                "best_time": "Evening",
+                "subjects": [
+                    "Blue ice",
+                    "Icebergs",
+                    "Sunset colors"
+                ]
+            },
+            {
+                "location": "Nordenskjöld Lake",
                 "best_time": "Morning",
                 "subjects": [
-                    "Traditional architecture",
-                    "Mountain backdrop",
-                    "Village life"
+                    "Turquoise water",
+                    "Cuernos reflection"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "ABC or EBC - which is better?",
-                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
+                "question": "How far in advance should I book?",
+                "answer": "For December-February, book refugios/campsites 5-6 months ahead. Shoulder seasons 2-3 months. The park has strict capacity limits."
             },
             {
-                "question": "Can I do it independently?",
-                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
+                "question": "Can I trek independently?",
+                "answer": "Yes, the trails are well-marked and guides aren't required. However, weather can change rapidly, so experience with multi-day treks is recommended."
             },
             {
-                "question": "How cold is base camp?",
-                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
+                "question": "Camping or refugios?",
+                "answer": "Refugios offer comfort and meals but are expensive. Camping is cheaper but means carrying more gear in challenging weather. Many do a mix."
             },
             {
-                "question": "Is altitude a problem?",
-                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
+                "question": "What about the wind?",
+                "answer": "Patagonian wind is legendary. Gusts can exceed 100km/h. Bring proper windproof gear and trekking poles for stability. Be prepared to wait out extreme conditions."
+            },
+            {
+                "question": "Is water safe to drink?",
+                "answer": "Yes, water from streams and lakes is generally safe to drink without treatment, though some prefer to purify as a precaution."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 95,
+        "popularity_score": 96,
         "seo": {
-            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
-            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+            "meta_title": "Torres del Paine W Circuit Trek Guide 2024 | Complete 5-Day Itinerary",
+            "meta_description": "Complete guide to hiking the W Circuit in Torres del Paine. Detailed itinerary, booking tips, gear list, and insider advice for Patagonia's most iconic trek.",
             "keywords": [
-                "annapurna base camp",
-                "abc trek",
-                "nepal trekking",
-                "annapurna sanctuary",
-                "pokhara trekking"
+                "torres del paine",
+                "w circuit",
+                "patagonia trek",
+                "chile hiking",
+                "torres del paine itinerary"
             ]
         }
     };

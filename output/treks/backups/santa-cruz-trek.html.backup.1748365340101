@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
-    <meta name="description" content="Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.">
+    <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
+    <meta name="description" content="Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/annapurna-base-camp-trek.jpg');
+            background-image: url('/images/treks/covers/santa-cruz-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,19 +952,19 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Annapurna Base Camp Trek</h1>
+            <h1>Santa Cruz Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">10</span>
+                    <span class="hero-stat-value">4</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,130m</span>
+                    <span class="hero-stat-value">4,750m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">50km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +991,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Nepal/Himalayas</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.
+                    The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +1041,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">7-12 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">50 km / 31 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,130m (13,550ft)</span>
+                    <span class="info-value">4,750m (15,584ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +1063,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Pokhara</span>
+                    <span class="info-value">Huaraz</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">2 permits</span>
+                    <span class="info-value">1 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,000</span>
+                        <span class="price-range">$200 - $600</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +1081,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>10-Day Detailed Itinerary</h2>
+        <h2>4-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Pokhara to Ghandruk</h3>
+          <h3 class="day-title">Cashapampa to Llamacorral</h3>
           <div class="day-stats">
-            <span>📏 42km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +1192m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +100m</span>
+            <span>🏔️ 3,760m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views.</p>
+      <p class="day-description">Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Drive to Nayapul</span><span class="day-highlight">Gurung village culture</span><span class="day-highlight">Annapurna South views</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Santa Cruz valley entrance</span><span class="day-highlight">Alpamayo views</span><span class="day-highlight">River valley hiking</span><span class="day-highlight">Acclimatization day</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Ghandruk to Chhomrong</h3>
+          <h3 class="day-title">Llamacorral to Taullipampa</h3>
           <div class="day-stats">
             <span>📏 14km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 2,170m</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 4,250m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary.</p>
+      <p class="day-description">Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Cross Kimrong Khola</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Machhapuchhre views</span><span class="day-highlight">Gateway to sanctuary</span>
+          <span class="day-highlight">Laguna Jatuncocha</span><span class="day-highlight">Taulliraju views (5,830m)</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">360-degree mountain panorama</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Chhomrong to Bamboo</h3>
+          <h3 class="day-title">Taullipampa to Paria Valley via Punta Union</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 3,850m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests.</p>
+      <p class="day-description">Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Enter sanctuary</span><span class="day-highlight">Bamboo forests</span><span class="day-highlight">Modi Khola gorge</span><span class="day-highlight">Changing vegetation</span>
+          <span class="day-highlight">Punta Union Pass (4,750m)</span><span class="day-highlight">Spectacular 360° views</span><span class="day-highlight">Laguna Morococha</span><span class="day-highlight">Dramatic descent</span>
         </div>
       
     </div>
@@ -1155,124 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Bamboo to Deurali</h3>
+          <h3 class="day-title">Paria Valley to Vaqueria</h3>
           <div class="day-stats">
-            <span>📏 11km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +920m</span>
-            <span>🏔️ 3,230m</span>
+            <span>📏 9km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 -150m</span>
+            <span>🏔️ 3,700m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up.</p>
+      <p class="day-description">Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Himalaya Hotel</span><span class="day-highlight">Alpine environment</span><span class="day-highlight">Avalanche areas</span><span class="day-highlight">Mountain views emerging</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 5</div>
-          <h3 class="day-title">Deurali to Annapurna Base Camp</h3>
-          <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +900m</span>
-            <span>🏔️ 4,130m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Machhapuchhre Base Camp</span><span class="day-highlight">360-degree mountain views</span><span class="day-highlight">Annapurna Sanctuary</span><span class="day-highlight">Sunset on peaks</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">ABC Sunrise and Descend to Bamboo</h3>
-          <div class="day-stats">
-            <span>📏 17km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 -1820m</span>
-            <span>🏔️ 2,310m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Sunrise on Annapurna I</span><span class="day-highlight">Last sanctuary views</span><span class="day-highlight">Rapid descent</span><span class="day-highlight">Return through forests</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 7</div>
-          <h3 class="day-title">Bamboo to Jhinu Danda</h3>
-          <div class="day-stats">
-            <span>📏 13km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 1,780m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Return to Chhomrong</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Relaxation</span><span class="day-highlight">Modi Khola riverside</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 8</div>
-          <h3 class="day-title">Jhinu to Ghandruk</h3>
-          <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +232m</span>
-            <span>🏔️ 2,012m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Take alternative route back to Ghandruk through villages and terraced fields.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Alternative route</span><span class="day-highlight">Village life</span><span class="day-highlight">Cultural immersion</span><span class="day-highlight">Mountain views</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 9</div>
-          <h3 class="day-title">Ghandruk to Pokhara</h3>
-          <div class="day-stats">
-            <span>📏 20km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 -1192m</span>
-            <span>🏔️ 820m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Final mountain views</span><span class="day-highlight">Descent to Nayapul</span><span class="day-highlight">Drive to Pokhara</span><span class="day-highlight">Trek completion</span>
+          <span class="day-highlight">Gentle valley descent</span><span class="day-highlight">Rural Andean life</span><span class="day-highlight">Trek completion</span><span class="day-highlight">Transport to Huaraz</span>
         </div>
       
     </div>
@@ -1297,8 +1192,8 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking boots</div>
-          <div class="gear-description">Comfortable and waterproof</div>
+          <div class="gear-name">4-season tent</div>
+          <div class="gear-description">Wind-resistant for exposed camps</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1306,31 +1201,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-10°C rated</div>
+          <div class="gear-description">-15°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at base camp</div>
+          <div class="gear-name">Waterproof boots</div>
+          <div class="gear-description">Stream crossings common</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Essential any season</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Layers</div>
-          <div class="gear-description">Temperature varies greatly</div>
+          <div class="gear-name">Layers for all weather</div>
+          <div class="gear-description">Can snow at pass anytime</div>
         </div>
         
       </li>
@@ -1338,17 +1225,25 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Hat, sunglasses, sunscreen</div>
+          <div class="gear-description">Intense at altitude</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Basic first aid</div>
-          <div class="gear-description">Including blister kit</div>
+          <div class="gear-name">Water purification</div>
+          <div class="gear-description">Tablets or filter</div>
         </div>
         
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Very helpful for pass day</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
       </li>
     
                 </ul>
@@ -1363,24 +1258,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful on stairs</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or SteriPen</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For stream crossings</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Snacks</div>
-          <div class="gear-description">Energy bars, nuts</div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Cold at camps</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Camera with extra batteries</div>
+          <div class="gear-description">Spectacular scenery</div>
         </div>
         
       </li>
@@ -1400,17 +1295,10 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October, November</p>
-      <p>Clear views, stable weather, peak season</p>
-    </div>
-  
-    <div class="season-card">
-      <div class="season-icon">🌸</div>
-      <h3 class="season-name">Spring</h3>
-      <p class="season-months">March, April, May</p>
-      <p>Rhododendron blooms, good weather, warmer</p>
+      <div class="season-icon">☀️</div>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear skies, stable weather, cold nights at altitude</p>
     </div>
   
         </div>
@@ -1433,11 +1321,11 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$40</span>
+      <span>$30</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$25</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
@@ -1449,11 +1337,11 @@
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$30</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,000</span>
+      <span>$200 - $600</span>
     </div>
   
         </div>
@@ -1475,10 +1363,10 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>ABC or EBC - which is better?</span>
+        <span>How does this compare to the Inca Trail?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible.</div>
+      <div class="faq-answer">More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded.</div>
     </div>
   
     <div class="faq-item">
@@ -1486,23 +1374,15 @@
         <span>Can I do it independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety.</div>
+      <div class="faq-answer">Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How cold is base camp?</span>
+        <span>Is acclimatization really necessary?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is altitude a problem?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps.</div>
+      <div class="faq-answer">Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69.</div>
     </div>
   
         </div>
@@ -1543,33 +1423,21 @@
             scrollToSectionTop();
         }
 
-                function scrollToSectionTop() {
-            requestAnimationFrame(() => {
+        function scrollToSectionTop() {
+            setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
-                
                 if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
                     
                     window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-            });
+            }, 50);
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1654,73 +1522,64 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "annapurna-base-camp-trek",
-        "name": "Annapurna Base Camp Trek",
-        "slug": "annapurna-base-camp-trek",
-        "region": "Nepal/Himalayas",
-        "country": "Nepal",
-        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+        "_id": "santa-cruz-trek",
+        "name": "Santa Cruz Trek",
+        "slug": "santa-cruz-trek",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
         "duration": {
-            "min_days": 7,
-            "max_days": 12,
-            "recommended_days": 10
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 4
         },
-        "distance_km": 110,
+        "distance_km": 50,
         "difficulty": "moderate",
-        "max_elevation_m": 4130,
-        "starting_elevation_m": 1070,
-        "airport": "Pokhara (PKR)",
-        "nearest_city": "Pokhara",
+        "max_elevation_m": 4750,
+        "starting_elevation_m": 3900,
+        "airport": "Lima (LIM)",
+        "nearest_city": "Huaraz",
         "coordinates": {
             "start": {
-                "lat": 28.3784,
-                "lng": 83.7284,
-                "location": "Nayapul"
+                "lat": -8.9689,
+                "lng": -77.3928,
+                "location": "Cashapampa"
             },
             "end": {
-                "lat": 28.53,
-                "lng": 83.8783,
-                "location": "Annapurna Base Camp"
+                "lat": -8.8681,
+                "lng": -77.7089,
+                "location": "Vaqueria"
             }
         },
         "best_seasons": [
             {
-                "name": "Autumn",
+                "name": "Dry Season",
                 "months": [
-                    "September",
-                    "October",
-                    "November"
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
                 ],
-                "description": "Clear views, stable weather, peak season"
-            },
-            {
-                "name": "Spring",
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "description": "Rhododendron blooms, good weather, warmer"
+                "description": "Clear skies, stable weather, cold nights at altitude"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Pokhara to Ghandruk",
-                "start_location": "Pokhara",
-                "end_location": "Ghandruk",
-                "distance_km": 42,
-                "duration_hours": 6,
-                "elevation_start_m": 820,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 1192,
-                "difficulty": "moderate",
+                "title": "Cashapampa to Llamacorral",
+                "start_location": "Cashapampa",
+                "end_location": "Llamacorral",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3900,
+                "elevation_end_m": 3760,
+                "elevation_gain_m": 100,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "camping",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage",
-                        "Mountain View Lodge"
+                        "Llamacorral campsite"
                     ]
                 },
                 "meals_included": [
@@ -1728,30 +1587,28 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Drive to Nayapul",
-                    "Gurung village culture",
-                    "Annapurna South views",
-                    "Traditional architecture"
+                    "Santa Cruz valley entrance",
+                    "Alpamayo views",
+                    "River valley hiking",
+                    "Acclimatization day"
                 ],
-                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
+                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
             },
             {
                 "day": 2,
-                "title": "Ghandruk to Chhomrong",
-                "start_location": "Ghandruk",
-                "end_location": "Chhomrong",
+                "title": "Llamacorral to Taullipampa",
+                "start_location": "Llamacorral",
+                "end_location": "Taullipampa",
                 "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 2170,
-                "elevation_gain_m": 500,
+                "elevation_start_m": 3760,
+                "elevation_end_m": 4250,
+                "elevation_gain_m": 490,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "camping",
                     "options": [
-                        "Chhomrong Guest House",
-                        "Annapurna Lodge",
-                        "Panorama Lodge"
+                        "Taullipampa campsite"
                     ]
                 },
                 "meals_included": [
@@ -1760,29 +1617,28 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Cross Kimrong Khola",
-                    "Terraced fields",
-                    "Machhapuchhre views",
-                    "Gateway to sanctuary"
+                    "Laguna Jatuncocha",
+                    "Taulliraju views (5,830m)",
+                    "Alpine meadows",
+                    "360-degree mountain panorama"
                 ],
-                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
+                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
             },
             {
                 "day": 3,
-                "title": "Chhomrong to Bamboo",
-                "start_location": "Chhomrong",
-                "end_location": "Bamboo",
-                "distance_km": 10,
-                "duration_hours": 5,
-                "elevation_start_m": 2170,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
+                "title": "Taullipampa to Paria Valley via Punta Union",
+                "start_location": "Taullipampa",
+                "end_location": "Paria Valley",
+                "distance_km": 15,
+                "duration_hours": 8,
+                "elevation_start_m": 4250,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 500,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "camping",
                     "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
+                        "Paria campsite"
                     ]
                 },
                 "meals_included": [
@@ -1791,183 +1647,28 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Enter sanctuary",
-                    "Bamboo forests",
-                    "Modi Khola gorge",
-                    "Changing vegetation"
+                    "Punta Union Pass (4,750m)",
+                    "Spectacular 360° views",
+                    "Laguna Morococha",
+                    "Dramatic descent"
                 ],
-                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
+                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
             },
             {
                 "day": 4,
-                "title": "Bamboo to Deurali",
-                "start_location": "Bamboo",
-                "end_location": "Deurali",
-                "distance_km": 11,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 3230,
-                "elevation_gain_m": 920,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Deurali Guest House",
-                        "Himalaya Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Himalaya Hotel",
-                    "Alpine environment",
-                    "Avalanche areas",
-                    "Mountain views emerging"
-                ],
-                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
-            },
-            {
-                "day": 5,
-                "title": "Deurali to Annapurna Base Camp",
-                "start_location": "Deurali",
-                "end_location": "Annapurna Base Camp",
-                "distance_km": 6,
-                "duration_hours": 4,
-                "elevation_start_m": 3230,
-                "elevation_end_m": 4130,
-                "elevation_gain_m": 900,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "ABC Lodge",
-                        "Annapurna Sanctuary Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Machhapuchhre Base Camp",
-                    "360-degree mountain views",
-                    "Annapurna Sanctuary",
-                    "Sunset on peaks"
-                ],
-                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
-            },
-            {
-                "day": 6,
-                "title": "ABC Sunrise and Descend to Bamboo",
-                "start_location": "Annapurna Base Camp",
-                "end_location": "Bamboo",
-                "distance_km": 17,
-                "duration_hours": 7,
-                "elevation_start_m": 4130,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": -1820,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Sunrise on Annapurna I",
-                    "Last sanctuary views",
-                    "Rapid descent",
-                    "Return through forests"
-                ],
-                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
-            },
-            {
-                "day": 7,
-                "title": "Bamboo to Jhinu Danda",
-                "start_location": "Bamboo",
-                "end_location": "Jhinu Danda",
-                "distance_km": 13,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 1780,
-                "elevation_gain_m": 200,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Jhinu Guest House",
-                        "Hot Spring Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Return to Chhomrong",
-                    "Natural hot springs",
-                    "Relaxation",
-                    "Modi Khola riverside"
-                ],
-                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
-            },
-            {
-                "day": 8,
-                "title": "Jhinu to Ghandruk",
-                "start_location": "Jhinu Danda",
-                "end_location": "Ghandruk",
-                "distance_km": 8,
-                "duration_hours": 4,
-                "elevation_start_m": 1780,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 232,
+                "title": "Paria Valley to Vaqueria",
+                "start_location": "Paria Valley",
+                "end_location": "Vaqueria",
+                "distance_km": 9,
+                "duration_hours": 3,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 3700,
+                "elevation_gain_m": -150,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "end point",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Alternative route",
-                    "Village life",
-                    "Cultural immersion",
-                    "Mountain views"
-                ],
-                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
-            },
-            {
-                "day": 9,
-                "title": "Ghandruk to Pokhara",
-                "start_location": "Ghandruk",
-                "end_location": "Pokhara",
-                "distance_km": 20,
-                "duration_hours": 4,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 820,
-                "elevation_gain_m": -1192,
-                "difficulty": "easy",
-                "accommodation": {
-                    "type": "hotel",
-                    "options": [
-                        "Return to Pokhara hotel"
+                        "Return to Huaraz"
                     ]
                 },
                 "meals_included": [
@@ -1975,341 +1676,301 @@
                     "lunch"
                 ],
                 "highlights": [
-                    "Final mountain views",
-                    "Descent to Nayapul",
-                    "Drive to Pokhara",
-                    "Trek completion"
+                    "Gentle valley descent",
+                    "Rural Andean life",
+                    "Trek completion",
+                    "Transport to Huaraz"
                 ],
-                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Trekking boots",
-                    "description": "Comfortable and waterproof",
+                    "item": "4-season tent",
+                    "description": "Wind-resistant for exposed camps",
                     "rental_available": true
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "-10°C rated",
+                    "description": "-15°C rated for cold nights",
                     "rental_available": true
                 },
                 {
-                    "item": "Down jacket",
-                    "description": "Cold at base camp",
+                    "item": "Waterproof boots",
+                    "description": "Stream crossings common",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain gear",
-                    "description": "Essential any season",
-                    "rental_available": true
-                },
-                {
-                    "item": "Layers",
-                    "description": "Temperature varies greatly",
+                    "item": "Layers for all weather",
+                    "description": "Can snow at pass anytime",
                     "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Hat, sunglasses, sunscreen",
+                    "description": "Intense at altitude",
                     "rental_available": false
                 },
                 {
-                    "item": "Basic first aid",
-                    "description": "Including blister kit",
+                    "item": "Water purification",
+                    "description": "Tablets or filter",
                     "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Very helpful for pass day",
+                    "rental_available": true
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Very helpful on stairs",
-                    "rental_available": true
-                },
-                {
-                    "item": "Water purification",
-                    "description": "Tablets or SteriPen",
+                    "item": "Gaiters",
+                    "description": "For stream crossings",
                     "rental_available": false
                 },
                 {
-                    "item": "Snacks",
-                    "description": "Energy bars, nuts",
+                    "item": "Down jacket",
+                    "description": "Cold at camps",
+                    "rental_available": true
+                },
+                {
+                    "item": "Camera with extra batteries",
+                    "description": "Spectacular scenery",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "ACAP (Annapurna Conservation)",
+                "name": "Huascaran National Park Entry",
                 "cost_usd": 30,
-                "cost_npr": 3000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Single entry"
-            },
-            {
-                "name": "TIMS Card",
-                "cost_usd": 10,
-                "cost_npr": 1000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Trek duration"
+                "cost_pen": 90,
+                "where_to_obtain": "Park office in Huaraz or entrance",
+                "validity": "Valid for 21 days"
             }
         ],
         "costs": {
-            "permit_total_usd": 40,
-            "guide_daily_usd": 25,
-            "porter_daily_usd": 18,
+            "permit_total_usd": 30,
+            "guide_daily_usd": 50,
+            "cook_daily_usd": 30,
+            "muleteer_daily_usd": 25,
+            "pack_animal_daily_usd": 15,
             "accommodation_daily_usd": 5,
             "meals_daily_usd": 20,
-            "transportation_usd": 30,
+            "transportation_usd": 60,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1000
+                "min": 200,
+                "max": 600
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Gurung",
-                "Magar"
+                "Quechua",
+                "Mestizo"
             ],
-            "primary_religion": "Buddhism and Hinduism",
+            "primary_religion": "Catholic with Andean traditions",
             "languages": [
-                "Nepali",
-                "Gurung",
-                "English"
+                "Spanish",
+                "Quechua",
+                "Limited English"
             ],
             "customs_etiquette": [
-                "Remove shoes when entering homes",
-                "Use right hand for eating/giving",
-                "Walk clockwise around mani walls",
-                "Dress modestly in villages",
-                "Ask permission for photos"
+                "Respect mountain spirits (Apus)",
+                "Ask permission before photographing locals",
+                "Support local economy",
+                "Participate in coca leaf offerings if invited"
             ],
             "local_foods": [
                 {
-                    "name": "Dal bhat",
-                    "description": "Traditional meal available everywhere"
+                    "name": "Pachamanca",
+                    "description": "Earth oven cooked feast"
                 },
                 {
-                    "name": "Gurung bread",
-                    "description": "Local specialty"
+                    "name": "Cuy",
+                    "description": "Guinea pig delicacy"
                 },
                 {
-                    "name": "Raksi",
-                    "description": "Local millet alcohol"
-                },
-                {
-                    "name": "Dhindo",
-                    "description": "Traditional porridge"
+                    "name": "Quinoa soup",
+                    "description": "High-altitude superfood"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "moderate",
+                "risk_level": "high",
                 "prevention": [
-                    "Gradual ascent built into itinerary",
+                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
+                    "Consider day hikes first",
+                    "Climb slowly on pass day",
                     "Stay hydrated",
-                    "Rest day can be added",
-                    "Don't rush to ABC"
+                    "Consider Diamox"
                 ],
                 "critical_points": [
-                    "Above 3000m",
-                    "Especially approaching ABC"
+                    "Punta Union Pass day"
                 ]
             },
             "medical_facilities": [
                 {
-                    "location": "Chhomrong",
-                    "type": "Basic health post"
+                    "location": "Trail",
+                    "type": "None - remote area"
                 },
                 {
-                    "location": "Pokhara",
-                    "type": "Good hospitals"
+                    "location": "Huaraz",
+                    "type": "Good hospitals and clinics"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter from most points",
-                "cost_usd": "3000-5000",
-                "insurance_required": true
+                "method": "Horse/mule to road, then vehicle",
+                "cost_usd": "1000-3000",
+                "insurance_required": true,
+                "response_time": "6-12 hours"
             }
         },
         "weather_patterns": {
-            "autumn": {
+            "dry_season": {
                 "months": [
-                    "September",
-                    "October",
-                    "November"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Low",
-                "visibility": "Excellent",
-                "notes": "Best views, busy season"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "15 to 25",
-                "night_temp_c": "0 to 10",
-                "precipitation": "Moderate",
-                "visibility": "Good mornings",
-                "notes": "Rhododendrons bloom"
-            },
-            "winter": {
-                "months": [
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "-10 to 0",
-                "precipitation": "Low, possible snow",
-                "visibility": "Excellent",
-                "notes": "Very cold at ABC"
-            },
-            "monsoon": {
-                "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
                 "day_temp_c": "15 to 20",
-                "night_temp_c": "5 to 15",
-                "precipitation": "Very high",
-                "visibility": "Poor",
-                "notes": "Not recommended, leeches"
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Can snow at pass anytime"
+            },
+            "wet_season": {
+                "months": [
+                    "October",
+                    "November",
+                    "December",
+                    "January",
+                    "February",
+                    "March",
+                    "April"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily afternoon rain",
+                "notes": "Trail muddy, clouds obscure views"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Tourist bus",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 10,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Private taxi",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
+                    "method": "Private transport",
+                    "from": "Huaraz",
+                    "to": "Cashapampa",
+                    "duration": "3 hours",
                     "cost_usd": 30,
-                    "frequency": "Any time"
+                    "notes": "Usually arranged with guide/agency"
                 }
             ],
-            "from_end": "Same options in reverse"
+            "from_end": [
+                {
+                    "method": "Private transport",
+                    "from": "Vaqueria",
+                    "to": "Huaraz",
+                    "duration": "3 hours",
+                    "cost_usd": 30,
+                    "notes": "Pre-arranged pickup essential"
+                }
+            ]
         },
         "accommodation": {
-            "type": "Teahouses",
-            "description": "Basic but comfortable lodges",
+            "type": "Camping only",
+            "description": "Designated camping areas",
             "amenities": [
-                "Twin-bed rooms",
-                "Shared bathrooms mostly",
-                "Hot showers (lower elevations)",
-                "Charging for devices (paid)",
-                "WiFi in some lodges (paid)",
-                "Meals available"
+                "Flat tent sites",
+                "Water sources nearby",
+                "Basic toilet facilities at some sites",
+                "No showers on trail",
+                "Pack out all waste"
             ],
-            "booking": "Not required except peak season",
-            "cost_per_night_usd": "3-8"
+            "booking": "First come, first served",
+            "cost_per_night_usd": {
+                "camping": "5"
+            }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness required",
-            "technical_skills": "None needed",
-            "altitude_challenge": "Moderate - max 4,130m",
-            "trail_conditions": "Well-maintained, many stone steps",
-            "daily_hiking_hours": "5-7 hours",
-            "total_elevation_gain": 4500,
-            "total_elevation_loss": 4500
+            "physical_demands": "Good fitness for altitude and pass day",
+            "technical_skills": "None required",
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Well-defined path, rocky on pass",
+            "daily_hiking_hours": "5-8 hours",
+            "total_elevation_gain": 1200,
+            "total_elevation_loss": 1350
         },
         "alternative_routes": [
             {
-                "name": "ABC via Poon Hill",
-                "variation": "Add Poon Hill sunrise",
-                "extra_days": 2,
+                "name": "Alpamayo Circuit",
+                "variation": "Extended version via Alpamayo base camp",
+                "extra_days": 3,
                 "highlights": [
-                    "Famous sunrise viewpoint",
-                    "Different villages",
-                    "More variety"
+                    "See Alpamayo up close",
+                    "More remote",
+                    "Additional passes"
                 ]
             },
             {
-                "name": "Mardi Himal addition",
-                "variation": "Combine with Mardi Himal",
-                "extra_days": 4,
+                "name": "Santa Cruz-Llanganuco",
+                "variation": "Exit via Llanganuco",
+                "extra_days": 0,
                 "highlights": [
-                    "Less crowded ridge trek",
-                    "Different perspective",
-                    "Forest camps"
+                    "Different exit valley",
+                    "Laguna 69 option",
+                    "Transport flexibility"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Annapurna Base Camp",
-                "best_time": "Sunrise",
+                "location": "Taullipampa camp",
+                "best_time": "Sunrise/sunset",
                 "subjects": [
-                    "360° amphitheater",
-                    "Annapurna I south face",
-                    "Alpenglow"
+                    "Taulliraju",
+                    "Alpenglow on peaks",
+                    "Star photography"
                 ]
             },
             {
-                "location": "Machhapuchhre Base Camp",
-                "best_time": "Sunset",
-                "subjects": [
-                    "Fishtail mountain",
-                    "Sacred peak",
-                    "Evening colors"
-                ]
-            },
-            {
-                "location": "Ghandruk village",
+                "location": "Punta Union Pass",
                 "best_time": "Morning",
                 "subjects": [
-                    "Traditional architecture",
-                    "Mountain backdrop",
-                    "Village life"
+                    "360° panorama",
+                    "Both valleys",
+                    "Achievement shots"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "ABC or EBC - which is better?",
-                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
+                "question": "How does this compare to the Inca Trail?",
+                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
             },
             {
                 "question": "Can I do it independently?",
-                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
+                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
             },
             {
-                "question": "How cold is base camp?",
-                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
-            },
-            {
-                "question": "Is altitude a problem?",
-                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
+                "question": "Is acclimatization really necessary?",
+                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 95,
+        "popularity_score": 85,
         "seo": {
-            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
-            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
+            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
             "keywords": [
-                "annapurna base camp",
-                "abc trek",
-                "nepal trekking",
-                "annapurna sanctuary",
-                "pokhara trekking"
+                "santa cruz trek",
+                "cordillera blanca",
+                "peru trekking",
+                "huaraz hiking",
+                "punta union pass"
             ]
         }
     };

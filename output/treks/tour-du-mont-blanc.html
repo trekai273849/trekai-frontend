@@ -1387,28 +1387,33 @@
             scrollToSectionTop();
         }
 
-        function scrollToSectionTop() {
-            setTimeout(() => {
+                function scrollToSectionTop() {
+            requestAnimationFrame(() => {
                 const navTabs = document.querySelector('.nav-tabs');
+                
                 if (navTabs) {
-                    // Get nav height to account for sticky positioning
-                    const navHeight = navTabs.offsetHeight;
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    // Get the currently active section
-                    const activeSection = document.querySelector('.content-section.active');
-                    if (activeSection) {
-                        // Get the position of the active section
-                        const sectionTop = activeSection.offsetTop;
-                        // Scroll to section minus nav height to show content at top
-                        const targetPosition = sectionTop - navHeight - 10;
-                        
-                        window.scrollTo({
-                            top: Math.max(0, targetPosition),
-                            behavior: 'smooth'
-                        });
-                    }
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 }
-            }, 100);
+            });
         }
 
         function centerTabWithNextVisible(clickedTab) {

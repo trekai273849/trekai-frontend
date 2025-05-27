@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
-    <meta name="description" content="Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.">
+    <title>Annapurna Circuit Trek Guide 2024 | Complete 18-Day Itinerary</title>
+    <meta name="description" content="Complete guide to the Annapurna Circuit Trek including Thorong La Pass. Detailed itinerary, gear list, cultural insights, and expert tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/annapurna-base-camp-trek.jpg');
+            background-image: url('/images/treks/covers/annapurna-circuit-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,23 +952,23 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Annapurna Base Camp Trek</h1>
+            <h1>Annapurna Circuit Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">10</span>
+                    <span class="hero-stat-value">18</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,130m</span>
+                    <span class="hero-stat-value">5,416m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">230km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">moderate</span>
+                    <span class="hero-stat-value">challenging</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -993,7 +993,7 @@
             <div class="overview-main">
                 <h2>Journey to Nepal/Himalayas</h2>
                 <p class="overview-description">
-                    Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.
+                    A diverse journey through varied landscapes, from tropical forests to high-altitude deserts, crossing the challenging Thorong La Pass at 5,416m.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,20 +1041,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">7-12 days</span>
+                    <span class="info-value">15-21 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">230 km / 143 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,130m (13,550ft)</span>
+                    <span class="info-value">5,416m (17,769ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">moderate</span>
+                        <span class="difficulty-badge">challenging</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -1063,7 +1063,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Pokhara</span>
+                    <span class="info-value">Kathmandu/Pokhara</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +1072,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,000</span>
+                        <span class="price-range">$800 - $2,000</span>
                     </span>
                 </div>
             </div>
@@ -1081,7 +1081,7 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>10-Day Detailed Itinerary</h2>
+        <h2>18-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
             Follow the route through Nepal/Himalayas with proper acclimatization and rest days
         </p>
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Pokhara to Ghandruk</h3>
+          <h3 class="day-title">Drive from Kathmandu to Besisahar</h3>
           <div class="day-stats">
-            <span>📏 42km</span>
+            <span>📏 175km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +1192m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📈 -640m</span>
+            <span>🏔️ 760m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views.</p>
+      <p class="day-description">Early morning departure from Kathmandu for a scenic drive to Besisahar. The journey follows the Prithvi Highway before turning north along the Marsyangdi River valley.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Drive to Nayapul</span><span class="day-highlight">Gurung village culture</span><span class="day-highlight">Annapurna South views</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Scenic drive through rural Nepal</span><span class="day-highlight">Views of Ganesh Himal</span><span class="day-highlight">Cross Trishuli River</span><span class="day-highlight">Traditional villages</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Ghandruk to Chhomrong</h3>
+          <h3 class="day-title">Trek to Bahundanda</h3>
           <div class="day-stats">
             <span>📏 14km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 2,170m</span>
+            <span>📈 +550m</span>
+            <span>🏔️ 1,310m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary.</p>
+      <p class="day-description">Begin trekking along the Marsyangdi River through subtropical forests and terraced fields. Pass through several Gurung and Brahmin villages.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Cross Kimrong Khola</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Machhapuchhre views</span><span class="day-highlight">Gateway to sanctuary</span>
+          <span class="day-highlight">First day of trekking</span><span class="day-highlight">Marsyangdi River valley</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Mixed Hindu and Buddhist villages</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Chhomrong to Bamboo</h3>
+          <h3 class="day-title">Trek to Chamje</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +100m</span>
+            <span>🏔️ 1,410m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests.</p>
+      <p class="day-description">Trek through narrow gorge sections with the trail carved into cliff faces. Cross several suspension bridges and enjoy views of cascading waterfalls.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Enter sanctuary</span><span class="day-highlight">Bamboo forests</span><span class="day-highlight">Modi Khola gorge</span><span class="day-highlight">Changing vegetation</span>
+          <span class="day-highlight">Dramatic gorge sections</span><span class="day-highlight">Suspension bridges</span><span class="day-highlight">Waterfalls</span><span class="day-highlight">Changing vegetation</span>
         </div>
       
     </div>
@@ -1155,19 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Bamboo to Deurali</h3>
+          <h3 class="day-title">Trek to Dharapani</h3>
           <div class="day-stats">
-            <span>📏 11km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +920m</span>
-            <span>🏔️ 3,230m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +550m</span>
+            <span>🏔️ 1,960m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up.</p>
+      <p class="day-description">Steady climb through bamboo and rhododendron forests. Enter the Manang district at Koto, where Tibetan cultural influence becomes apparent.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Himalaya Hotel</span><span class="day-highlight">Alpine environment</span><span class="day-highlight">Avalanche areas</span><span class="day-highlight">Mountain views emerging</span>
+          <span class="day-highlight">Enter Manang district</span><span class="day-highlight">Views of Annapurna II</span><span class="day-highlight">Pine forests</span><span class="day-highlight">Tibetan influenced architecture</span>
         </div>
       
     </div>
@@ -1176,19 +1176,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Deurali to Annapurna Base Camp</h3>
+          <h3 class="day-title">Trek to Chame</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +900m</span>
-            <span>🏔️ 4,130m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +750m</span>
+            <span>🏔️ 2,710m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks.</p>
+      <p class="day-description">Trek through dense forests with occasional clearings offering stunning views of Annapurna II. Chame is the administrative center of Manang district.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Machhapuchhre Base Camp</span><span class="day-highlight">360-degree mountain views</span><span class="day-highlight">Annapurna Sanctuary</span><span class="day-highlight">Sunset on peaks</span>
+          <span class="day-highlight">Annapurna II close-up views</span><span class="day-highlight">Hot springs at Koto</span><span class="day-highlight">Chame - district headquarters</span><span class="day-highlight">Apple orchards</span>
         </div>
       
     </div>
@@ -1197,19 +1197,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 6</div>
-          <h3 class="day-title">ABC Sunrise and Descend to Bamboo</h3>
+          <h3 class="day-title">Trek to Pisang</h3>
           <div class="day-stats">
-            <span>📏 17km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 -1820m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +590m</span>
+            <span>🏔️ 3,300m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo.</p>
+      <p class="day-description">Spectacular day walking through deep forests with the massive Paungda Danda rock face rising 1,500m above. Choose between Upper or Lower Pisang routes.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Sunrise on Annapurna I</span><span class="day-highlight">Last sanctuary views</span><span class="day-highlight">Rapid descent</span><span class="day-highlight">Return through forests</span>
+          <span class="day-highlight">Paungda Danda rock face</span><span class="day-highlight">First views of Annapurna III</span><span class="day-highlight">Upper and Lower Pisang</span><span class="day-highlight">Traditional Buddhist monastery</span>
         </div>
       
     </div>
@@ -1218,19 +1218,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 7</div>
-          <h3 class="day-title">Bamboo to Jhinu Danda</h3>
+          <h3 class="day-title">Trek to Manang</h3>
           <div class="day-stats">
-            <span>📏 13km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 1,780m</span>
+            <span>📏 19km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +219m</span>
+            <span>🏔️ 3,519m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river.</p>
+      <p class="day-description">Choose between the upper route through Ghyaru and Ngawal (highly recommended for views) or the lower valley route. Both converge at Manang.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Return to Chhomrong</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Relaxation</span><span class="day-highlight">Modi Khola riverside</span>
+          <span class="day-highlight">Upper route via Ghyaru</span><span class="day-highlight">360-degree mountain panorama</span><span class="day-highlight">Tibetan Buddhist culture</span><span class="day-highlight">Manang village exploration</span>
         </div>
       
     </div>
@@ -1239,19 +1239,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 8</div>
-          <h3 class="day-title">Jhinu to Ghandruk</h3>
+          <h3 class="day-title">Acclimatization Day in Manang</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +232m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 0 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 3,519m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Take alternative route back to Ghandruk through villages and terraced fields.</p>
+      <p class="day-description">Essential acclimatization day. Options include hiking to Gangapurna Lake, visiting the monastery, or climbing to viewpoints above the village.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Alternative route</span><span class="day-highlight">Village life</span><span class="day-highlight">Cultural immersion</span><span class="day-highlight">Mountain views</span>
+          <span class="day-highlight">Hike to Gangapurna Lake</span><span class="day-highlight">Visit 500-year-old monastery</span><span class="day-highlight">HRA health post lecture</span><span class="day-highlight">Explore Manang village</span>
         </div>
       
     </div>
@@ -1260,19 +1260,187 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 9</div>
-          <h3 class="day-title">Ghandruk to Pokhara</h3>
+          <h3 class="day-title">Trek to Yak Kharka</h3>
           <div class="day-stats">
-            <span>📏 20km</span>
+            <span>📏 10km</span>
             <span>⏱️ 4 hours</span>
-            <span>📈 -1192m</span>
-            <span>🏔️ 820m</span>
+            <span>📈 +591m</span>
+            <span>🏔️ 4,110m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration.</p>
+      <p class="day-description">Leave the last major village behind as you enter high alpine terrain. The landscape becomes more barren with scattered juniper bushes.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Final mountain views</span><span class="day-highlight">Descent to Nayapul</span><span class="day-highlight">Drive to Pokhara</span><span class="day-highlight">Trek completion</span>
+          <span class="day-highlight">Alpine terrain begins</span><span class="day-highlight">Yak pastures</span><span class="day-highlight">Stunning mountain views</span><span class="day-highlight">Shorter day for acclimatization</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Trek to Thorong Phedi</h3>
+          <div class="day-stats">
+            <span>📏 7km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 4,600m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Short but steady climb to the base of Thorong La Pass. Rest early as tomorrow requires a very early start for the pass crossing.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Base of Thorong La Pass</span><span class="day-highlight">Dramatic mountain amphitheater</span><span class="day-highlight">Final preparations for pass crossing</span><span class="day-highlight">Early rest for summit day</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 11</div>
+          <h3 class="day-title">Cross Thorong La Pass to Muktinath</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +816m</span>
+            <span>🏔️ 3,800m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">The big day! Start at 3-4 AM for the challenging climb to Thorong La Pass. Celebrate at the top before the long descent to Muktinath.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Thorong La Pass at 5,416m</span><span class="day-highlight">Sunrise over the Himalayas</span><span class="day-highlight">Achievement of highest point</span><span class="day-highlight">Descent to Muktinath temple</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 12</div>
+          <h3 class="day-title">Trek to Kagbeni</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -990m</span>
+            <span>🏔️ 2,810m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Morning visit to the sacred Muktinath temple before descending through the dramatic landscape to the ancient village of Kagbeni.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Visit Muktinath temple</span><span class="day-highlight">Enter Mustang region</span><span class="day-highlight">Medieval village of Kagbeni</span><span class="day-highlight">Kali Gandaki valley views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 13</div>
+          <h3 class="day-title">Trek to Marpha</h3>
+          <div class="day-stats">
+            <span>📏 16km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -140m</span>
+            <span>🏔️ 2,670m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Follow the Kali Gandaki River through the world's deepest gorge between Dhaulagiri and Annapurna. Marpha is famous for its apples.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Walk through world's deepest gorge</span><span class="day-highlight">Apple orchards of Marpha</span><span class="day-highlight">Traditional whitewashed village</span><span class="day-highlight">Apple products and brandy</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 14</div>
+          <h3 class="day-title">Trek to Kalopani</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -140m</span>
+            <span>🏔️ 2,530m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Continue down the valley passing through traditional Thakali villages. The landscape transitions back to pine forests as you descend.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Pass through Tukuche</span><span class="day-highlight">Views of Dhaulagiri</span><span class="day-highlight">Traditional Thakali villages</span><span class="day-highlight">Pine forests return</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 15</div>
+          <h3 class="day-title">Trek to Tatopani</h3>
+          <div class="day-stats">
+            <span>📏 18km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -1340m</span>
+            <span>🏔️ 1,190m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Long descent through changing vegetation zones. Tatopani means 'hot water' - enjoy the natural hot springs to soothe tired muscles.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Dramatic descent</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Subtropical vegetation</span><span class="day-highlight">Relax sore muscles</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 16</div>
+          <h3 class="day-title">Trek to Ghorepani</h3>
+          <div class="day-stats">
+            <span>📏 15km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1670m</span>
+            <span>🏔️ 2,860m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Challenging climb up stone steps through terraced fields and rhododendron forests to reach Ghorepani, gateway to Poon Hill.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Steep climb through villages</span><span class="day-highlight">Rhododendron forests</span><span class="day-highlight">Magar and Gurung culture</span><span class="day-highlight">Prepare for Poon Hill sunrise</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 17</div>
+          <h3 class="day-title">Poon Hill Sunrise, Trek to Nayapul, Drive to Pokhara</h3>
+          <div class="day-stats">
+            <span>📏 20km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 -2038m</span>
+            <span>🏔️ 822m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Pre-dawn hike to Poon Hill for spectacular sunrise over the Himalayas. Descend to Nayapul and drive to Pokhara to complete the circuit.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Sunrise from Poon Hill (3,210m)</span><span class="day-highlight">Panoramic mountain views</span><span class="day-highlight">Final descent to road</span><span class="day-highlight">Arrive in Pokhara</span>
         </div>
       
     </div>
@@ -1298,7 +1466,7 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking boots</div>
-          <div class="gear-description">Comfortable and waterproof</div>
+          <div class="gear-description">Waterproof with good ankle support</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1306,7 +1474,7 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-10°C rated</div>
+          <div class="gear-description">-20°C rated for Thorong La Pass</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1314,23 +1482,39 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at base camp</div>
+          <div class="gear-description">Essential for pass crossing</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Essential any season</div>
+          <div class="gear-name">Thermal layers</div>
+          <div class="gear-description">Top and bottom, 2 sets minimum</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Waterproof jacket and pants</div>
+          <div class="gear-description">Good quality rain gear</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Layers</div>
-          <div class="gear-description">Temperature varies greatly</div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Highly recommended for pass day</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Warm gloves</div>
+          <div class="gear-description">Insulated for high altitude</div>
         </div>
         
       </li>
@@ -1338,15 +1522,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Hat, sunglasses, sunscreen</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen SPF 50+</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Basic first aid</div>
-          <div class="gear-description">Including blister kit</div>
+          <div class="gear-name">First aid kit</div>
+          <div class="gear-description">Including altitude medication</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water purification</div>
+          <div class="gear-description">Tablets or SteriPen</div>
         </div>
         
       </li>
@@ -1363,26 +1555,42 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful on stairs</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For potential snow on pass</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or SteriPen</div>
+          <div class="gear-name">Down pants</div>
+          <div class="gear-description">For extreme cold on pass day</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Buff/neck warmer</div>
+          <div class="gear-description">Wind protection</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Snacks</div>
-          <div class="gear-description">Energy bars, nuts</div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">Essential for pass day start</div>
         </div>
         
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Crampons</div>
+          <div class="gear-description">If crossing in winter/spring</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
       </li>
     
                 </ul>
@@ -1402,15 +1610,15 @@
     <div class="season-card">
       <div class="season-icon">🍂</div>
       <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October, November</p>
-      <p>Clear views, stable weather, peak season</p>
+      <p class="season-months">October, November</p>
+      <p>Clear skies, stable weather, best mountain views</p>
     </div>
   
     <div class="season-card">
       <div class="season-icon">🌸</div>
       <h3 class="season-name">Spring</h3>
-      <p class="season-months">March, April, May</p>
-      <p>Rhododendron blooms, good weather, warmer</p>
+      <p class="season-months">March, April</p>
+      <p>Rhododendrons bloom, warmer temperatures, occasional clouds</p>
     </div>
   
         </div>
@@ -1449,11 +1657,11 @@
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$30</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,000</span>
+      <span>$800 - $2,000</span>
     </div>
   
         </div>
@@ -1473,38 +1681,6 @@
 
         <div class="faq-list">
             
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>ABC or EBC - which is better?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How cold is base camp?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is altitude a problem?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps.</div>
-    </div>
-  
         </div>
     </section>
 
@@ -1543,33 +1719,21 @@
             scrollToSectionTop();
         }
 
-                function scrollToSectionTop() {
-            requestAnimationFrame(() => {
+        function scrollToSectionTop() {
+            setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
-                
                 if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
                     
                     window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-            });
+            }, 50);
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1654,72 +1818,70 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "annapurna-base-camp-trek",
-        "name": "Annapurna Base Camp Trek",
-        "slug": "annapurna-base-camp-trek",
+        "_id": "annapurna-circuit-trek",
+        "name": "Annapurna Circuit Trek",
+        "slug": "annapurna-circuit-trek",
         "region": "Nepal/Himalayas",
         "country": "Nepal",
-        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+        "summary": "A diverse journey through varied landscapes, from tropical forests to high-altitude deserts, crossing the challenging Thorong La Pass at 5,416m.",
         "duration": {
-            "min_days": 7,
-            "max_days": 12,
-            "recommended_days": 10
+            "min_days": 15,
+            "max_days": 21,
+            "recommended_days": 18
         },
-        "distance_km": 110,
-        "difficulty": "moderate",
-        "max_elevation_m": 4130,
-        "starting_elevation_m": 1070,
-        "airport": "Pokhara (PKR)",
-        "nearest_city": "Pokhara",
+        "distance_km": 230,
+        "difficulty": "challenging",
+        "max_elevation_m": 5416,
+        "starting_elevation_m": 760,
+        "airport": "Kathmandu (KTM)",
+        "nearest_city": "Kathmandu/Pokhara",
         "coordinates": {
             "start": {
-                "lat": 28.3784,
-                "lng": 83.7284,
-                "location": "Nayapul"
+                "lat": 28.4222,
+                "lng": 84.4291,
+                "location": "Besisahar"
             },
             "end": {
-                "lat": 28.53,
-                "lng": 83.8783,
-                "location": "Annapurna Base Camp"
+                "lat": 28.5167,
+                "lng": 83.8,
+                "location": "Nayapul"
             }
         },
         "best_seasons": [
             {
                 "name": "Autumn",
                 "months": [
-                    "September",
                     "October",
                     "November"
                 ],
-                "description": "Clear views, stable weather, peak season"
+                "description": "Clear skies, stable weather, best mountain views"
             },
             {
                 "name": "Spring",
                 "months": [
                     "March",
-                    "April",
-                    "May"
+                    "April"
                 ],
-                "description": "Rhododendron blooms, good weather, warmer"
+                "description": "Rhododendrons bloom, warmer temperatures, occasional clouds"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Pokhara to Ghandruk",
-                "start_location": "Pokhara",
-                "end_location": "Ghandruk",
-                "distance_km": 42,
+                "title": "Drive from Kathmandu to Besisahar",
+                "start_location": "Kathmandu",
+                "end_location": "Besisahar",
+                "distance_km": 175,
                 "duration_hours": 6,
-                "elevation_start_m": 820,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 1192,
-                "difficulty": "moderate",
+                "elevation_start_m": 1400,
+                "elevation_end_m": 760,
+                "elevation_gain_m": -640,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "lodge",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage",
+                        "Hotel Besisahar",
+                        "Trekkers Lodge",
                         "Mountain View Lodge"
                     ]
                 },
@@ -1728,30 +1890,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Drive to Nayapul",
-                    "Gurung village culture",
-                    "Annapurna South views",
-                    "Traditional architecture"
+                    "Scenic drive through rural Nepal",
+                    "Views of Ganesh Himal",
+                    "Cross Trishuli River",
+                    "Traditional villages"
                 ],
-                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
+                "description": "Early morning departure from Kathmandu for a scenic drive to Besisahar. The journey follows the Prithvi Highway before turning north along the Marsyangdi River valley."
             },
             {
                 "day": 2,
-                "title": "Ghandruk to Chhomrong",
-                "start_location": "Ghandruk",
-                "end_location": "Chhomrong",
+                "title": "Trek to Bahundanda",
+                "start_location": "Besisahar",
+                "end_location": "Bahundanda",
                 "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 2170,
-                "elevation_gain_m": 500,
+                "elevation_start_m": 760,
+                "elevation_end_m": 1310,
+                "elevation_gain_m": 550,
                 "difficulty": "moderate",
                 "accommodation": {
                     "type": "teahouse",
                     "options": [
-                        "Chhomrong Guest House",
-                        "Annapurna Lodge",
-                        "Panorama Lodge"
+                        "Himalaya Lodge",
+                        "Rainbow Lodge",
+                        "Peaceful Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1760,29 +1922,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Cross Kimrong Khola",
+                    "First day of trekking",
+                    "Marsyangdi River valley",
                     "Terraced fields",
-                    "Machhapuchhre views",
-                    "Gateway to sanctuary"
+                    "Mixed Hindu and Buddhist villages"
                 ],
-                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
+                "description": "Begin trekking along the Marsyangdi River through subtropical forests and terraced fields. Pass through several Gurung and Brahmin villages."
             },
             {
                 "day": 3,
-                "title": "Chhomrong to Bamboo",
-                "start_location": "Chhomrong",
-                "end_location": "Bamboo",
-                "distance_km": 10,
-                "duration_hours": 5,
-                "elevation_start_m": 2170,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": 400,
+                "title": "Trek to Chamje",
+                "start_location": "Bahundanda",
+                "end_location": "Chamje",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 1310,
+                "elevation_end_m": 1410,
+                "elevation_gain_m": 100,
                 "difficulty": "moderate",
                 "accommodation": {
                     "type": "teahouse",
                     "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
+                        "Tashi Delek Lodge",
+                        "River View Lodge",
+                        "Namaste Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1791,29 +1954,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Enter sanctuary",
-                    "Bamboo forests",
-                    "Modi Khola gorge",
+                    "Dramatic gorge sections",
+                    "Suspension bridges",
+                    "Waterfalls",
                     "Changing vegetation"
                 ],
-                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
+                "description": "Trek through narrow gorge sections with the trail carved into cliff faces. Cross several suspension bridges and enjoy views of cascading waterfalls."
             },
             {
                 "day": 4,
-                "title": "Bamboo to Deurali",
-                "start_location": "Bamboo",
-                "end_location": "Deurali",
-                "distance_km": 11,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 3230,
-                "elevation_gain_m": 920,
+                "title": "Trek to Dharapani",
+                "start_location": "Chamje",
+                "end_location": "Dharapani",
+                "distance_km": 16,
+                "duration_hours": 7,
+                "elevation_start_m": 1410,
+                "elevation_end_m": 1960,
+                "elevation_gain_m": 550,
                 "difficulty": "moderate",
                 "accommodation": {
                     "type": "teahouse",
                     "options": [
-                        "Deurali Guest House",
-                        "Himalaya Lodge"
+                        "Tibet Lodge",
+                        "Mountain Lodge",
+                        "Eagle Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1822,29 +1986,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Himalaya Hotel",
-                    "Alpine environment",
-                    "Avalanche areas",
-                    "Mountain views emerging"
+                    "Enter Manang district",
+                    "Views of Annapurna II",
+                    "Pine forests",
+                    "Tibetan influenced architecture"
                 ],
-                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
+                "description": "Steady climb through bamboo and rhododendron forests. Enter the Manang district at Koto, where Tibetan cultural influence becomes apparent."
             },
             {
                 "day": 5,
-                "title": "Deurali to Annapurna Base Camp",
-                "start_location": "Deurali",
-                "end_location": "Annapurna Base Camp",
-                "distance_km": 6,
-                "duration_hours": 4,
-                "elevation_start_m": 3230,
-                "elevation_end_m": 4130,
-                "elevation_gain_m": 900,
+                "title": "Trek to Chame",
+                "start_location": "Dharapani",
+                "end_location": "Chame",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 1960,
+                "elevation_end_m": 2710,
+                "elevation_gain_m": 750,
                 "difficulty": "moderate",
                 "accommodation": {
                     "type": "teahouse",
                     "options": [
-                        "ABC Lodge",
-                        "Annapurna Sanctuary Lodge"
+                        "New Tibet Lodge",
+                        "Marshyangdi Hotel",
+                        "Karma Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1853,29 +2018,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Machhapuchhre Base Camp",
-                    "360-degree mountain views",
-                    "Annapurna Sanctuary",
-                    "Sunset on peaks"
+                    "Annapurna II close-up views",
+                    "Hot springs at Koto",
+                    "Chame - district headquarters",
+                    "Apple orchards"
                 ],
-                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
+                "description": "Trek through dense forests with occasional clearings offering stunning views of Annapurna II. Chame is the administrative center of Manang district."
             },
             {
                 "day": 6,
-                "title": "ABC Sunrise and Descend to Bamboo",
-                "start_location": "Annapurna Base Camp",
-                "end_location": "Bamboo",
-                "distance_km": 17,
-                "duration_hours": 7,
-                "elevation_start_m": 4130,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": -1820,
+                "title": "Trek to Pisang",
+                "start_location": "Chame",
+                "end_location": "Pisang",
+                "distance_km": 14,
+                "duration_hours": 5,
+                "elevation_start_m": 2710,
+                "elevation_end_m": 3300,
+                "elevation_gain_m": 590,
                 "difficulty": "moderate",
                 "accommodation": {
                     "type": "teahouse",
                     "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
+                        "Hotel Pisang Peak",
+                        "Mountain View Lodge",
+                        "Annapurna Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1884,28 +2050,282 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Sunrise on Annapurna I",
-                    "Last sanctuary views",
-                    "Rapid descent",
-                    "Return through forests"
+                    "Paungda Danda rock face",
+                    "First views of Annapurna III",
+                    "Upper and Lower Pisang",
+                    "Traditional Buddhist monastery"
                 ],
-                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
+                "description": "Spectacular day walking through deep forests with the massive Paungda Danda rock face rising 1,500m above. Choose between Upper or Lower Pisang routes."
             },
             {
                 "day": 7,
-                "title": "Bamboo to Jhinu Danda",
-                "start_location": "Bamboo",
-                "end_location": "Jhinu Danda",
-                "distance_km": 13,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 1780,
-                "elevation_gain_m": 200,
+                "title": "Trek to Manang",
+                "start_location": "Pisang",
+                "end_location": "Manang",
+                "distance_km": 19,
+                "duration_hours": 7,
+                "elevation_start_m": 3300,
+                "elevation_end_m": 3519,
+                "elevation_gain_m": 219,
                 "difficulty": "moderate",
                 "accommodation": {
                     "type": "teahouse",
                     "options": [
-                        "Jhinu Guest House",
+                        "Yak Hotel",
+                        "Himalaya Lodge",
+                        "Tilicho Hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Upper route via Ghyaru",
+                    "360-degree mountain panorama",
+                    "Tibetan Buddhist culture",
+                    "Manang village exploration"
+                ],
+                "description": "Choose between the upper route through Ghyaru and Ngawal (highly recommended for views) or the lower valley route. Both converge at Manang."
+            },
+            {
+                "day": 8,
+                "title": "Acclimatization Day in Manang",
+                "start_location": "Manang",
+                "end_location": "Manang",
+                "distance_km": 0,
+                "duration_hours": 0,
+                "elevation_start_m": 3519,
+                "elevation_end_m": 3519,
+                "elevation_gain_m": 0,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Hike to Gangapurna Lake",
+                    "Visit 500-year-old monastery",
+                    "HRA health post lecture",
+                    "Explore Manang village"
+                ],
+                "description": "Essential acclimatization day. Options include hiking to Gangapurna Lake, visiting the monastery, or climbing to viewpoints above the village."
+            },
+            {
+                "day": 9,
+                "title": "Trek to Yak Kharka",
+                "start_location": "Manang",
+                "end_location": "Yak Kharka",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 3519,
+                "elevation_end_m": 4110,
+                "elevation_gain_m": 591,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Yak Kharka Lodge",
+                        "Himalayan Lodge",
+                        "Sun Rise Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Alpine terrain begins",
+                    "Yak pastures",
+                    "Stunning mountain views",
+                    "Shorter day for acclimatization"
+                ],
+                "description": "Leave the last major village behind as you enter high alpine terrain. The landscape becomes more barren with scattered juniper bushes."
+            },
+            {
+                "day": 10,
+                "title": "Trek to Thorong Phedi",
+                "start_location": "Yak Kharka",
+                "end_location": "Thorong Phedi",
+                "distance_km": 7,
+                "duration_hours": 4,
+                "elevation_start_m": 4110,
+                "elevation_end_m": 4600,
+                "elevation_gain_m": 490,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Thorong Base Camp Lodge",
+                        "Thorong Phedi Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Base of Thorong La Pass",
+                    "Dramatic mountain amphitheater",
+                    "Final preparations for pass crossing",
+                    "Early rest for summit day"
+                ],
+                "description": "Short but steady climb to the base of Thorong La Pass. Rest early as tomorrow requires a very early start for the pass crossing."
+            },
+            {
+                "day": 11,
+                "title": "Cross Thorong La Pass to Muktinath",
+                "start_location": "Thorong Phedi",
+                "end_location": "Muktinath",
+                "distance_km": 16,
+                "duration_hours": 9,
+                "elevation_start_m": 4600,
+                "elevation_end_m": 3800,
+                "elevation_gain_m": 816,
+                "difficulty": "very challenging",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Bob Marley",
+                        "Hotel North Pole",
+                        "New Plaza Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Thorong La Pass at 5,416m",
+                    "Sunrise over the Himalayas",
+                    "Achievement of highest point",
+                    "Descent to Muktinath temple"
+                ],
+                "description": "The big day! Start at 3-4 AM for the challenging climb to Thorong La Pass. Celebrate at the top before the long descent to Muktinath."
+            },
+            {
+                "day": 12,
+                "title": "Trek to Kagbeni",
+                "start_location": "Muktinath",
+                "end_location": "Kagbeni",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 3800,
+                "elevation_end_m": 2810,
+                "elevation_gain_m": -990,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Red House Lodge",
+                        "Hotel Nilgiri View",
+                        "YacDonalds"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Visit Muktinath temple",
+                    "Enter Mustang region",
+                    "Medieval village of Kagbeni",
+                    "Kali Gandaki valley views"
+                ],
+                "description": "Morning visit to the sacred Muktinath temple before descending through the dramatic landscape to the ancient village of Kagbeni."
+            },
+            {
+                "day": 13,
+                "title": "Trek to Marpha",
+                "start_location": "Kagbeni",
+                "end_location": "Marpha",
+                "distance_km": 16,
+                "duration_hours": 5,
+                "elevation_start_m": 2810,
+                "elevation_end_m": 2670,
+                "elevation_gain_m": -140,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Paradise",
+                        "Dhaulagiri Lodge",
+                        "Hotel Marpha Palace"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Walk through world's deepest gorge",
+                    "Apple orchards of Marpha",
+                    "Traditional whitewashed village",
+                    "Apple products and brandy"
+                ],
+                "description": "Follow the Kali Gandaki River through the world's deepest gorge between Dhaulagiri and Annapurna. Marpha is famous for its apples."
+            },
+            {
+                "day": 14,
+                "title": "Trek to Kalopani",
+                "start_location": "Marpha",
+                "end_location": "Kalopani",
+                "distance_km": 17,
+                "duration_hours": 6,
+                "elevation_start_m": 2670,
+                "elevation_end_m": 2530,
+                "elevation_gain_m": -140,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "See You Lodge",
+                        "Annapurna Lodge",
+                        "Green Forest Hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Pass through Tukuche",
+                    "Views of Dhaulagiri",
+                    "Traditional Thakali villages",
+                    "Pine forests return"
+                ],
+                "description": "Continue down the valley passing through traditional Thakali villages. The landscape transitions back to pine forests as you descend."
+            },
+            {
+                "day": 15,
+                "title": "Trek to Tatopani",
+                "start_location": "Kalopani",
+                "end_location": "Tatopani",
+                "distance_km": 18,
+                "duration_hours": 6,
+                "elevation_start_m": 2530,
+                "elevation_end_m": 1190,
+                "elevation_gain_m": -1340,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Hotel Tatopani",
+                        "Dhaulagiri Lodge",
                         "Hot Spring Lodge"
                     ]
                 },
@@ -1915,29 +2335,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Return to Chhomrong",
+                    "Dramatic descent",
                     "Natural hot springs",
-                    "Relaxation",
-                    "Modi Khola riverside"
+                    "Subtropical vegetation",
+                    "Relax sore muscles"
                 ],
-                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
+                "description": "Long descent through changing vegetation zones. Tatopani means 'hot water' - enjoy the natural hot springs to soothe tired muscles."
             },
             {
-                "day": 8,
-                "title": "Jhinu to Ghandruk",
-                "start_location": "Jhinu Danda",
-                "end_location": "Ghandruk",
-                "distance_km": 8,
-                "duration_hours": 4,
-                "elevation_start_m": 1780,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 232,
-                "difficulty": "easy",
+                "day": 16,
+                "title": "Trek to Ghorepani",
+                "start_location": "Tatopani",
+                "end_location": "Ghorepani",
+                "distance_km": 15,
+                "duration_hours": 7,
+                "elevation_start_m": 1190,
+                "elevation_end_m": 2860,
+                "elevation_gain_m": 1670,
+                "difficulty": "challenging",
                 "accommodation": {
                     "type": "teahouse",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage"
+                        "Hotel Sunny",
+                        "Fishtail Lodge",
+                        "Super View Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1946,28 +2367,28 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Alternative route",
-                    "Village life",
-                    "Cultural immersion",
-                    "Mountain views"
+                    "Steep climb through villages",
+                    "Rhododendron forests",
+                    "Magar and Gurung culture",
+                    "Prepare for Poon Hill sunrise"
                 ],
-                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
+                "description": "Challenging climb up stone steps through terraced fields and rhododendron forests to reach Ghorepani, gateway to Poon Hill."
             },
             {
-                "day": 9,
-                "title": "Ghandruk to Pokhara",
-                "start_location": "Ghandruk",
+                "day": 17,
+                "title": "Poon Hill Sunrise, Trek to Nayapul, Drive to Pokhara",
+                "start_location": "Ghorepani",
                 "end_location": "Pokhara",
                 "distance_km": 20,
-                "duration_hours": 4,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 820,
-                "elevation_gain_m": -1192,
-                "difficulty": "easy",
+                "duration_hours": 8,
+                "elevation_start_m": 2860,
+                "elevation_end_m": 822,
+                "elevation_gain_m": -2038,
+                "difficulty": "moderate",
                 "accommodation": {
                     "type": "hotel",
                     "options": [
-                        "Return to Pokhara hotel"
+                        "Hotel in Pokhara"
                     ]
                 },
                 "meals_included": [
@@ -1975,84 +2396,109 @@
                     "lunch"
                 ],
                 "highlights": [
-                    "Final mountain views",
-                    "Descent to Nayapul",
-                    "Drive to Pokhara",
-                    "Trek completion"
+                    "Sunrise from Poon Hill (3,210m)",
+                    "Panoramic mountain views",
+                    "Final descent to road",
+                    "Arrive in Pokhara"
                 ],
-                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+                "description": "Pre-dawn hike to Poon Hill for spectacular sunrise over the Himalayas. Descend to Nayapul and drive to Pokhara to complete the circuit."
             }
         ],
         "gear_list": {
             "essential": [
                 {
                     "item": "Trekking boots",
-                    "description": "Comfortable and waterproof",
+                    "description": "Waterproof with good ankle support",
                     "rental_available": true
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "-10°C rated",
+                    "description": "-20°C rated for Thorong La Pass",
                     "rental_available": true
                 },
                 {
                     "item": "Down jacket",
-                    "description": "Cold at base camp",
+                    "description": "Essential for pass crossing",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain gear",
-                    "description": "Essential any season",
+                    "item": "Thermal layers",
+                    "description": "Top and bottom, 2 sets minimum",
+                    "rental_available": false
+                },
+                {
+                    "item": "Waterproof jacket and pants",
+                    "description": "Good quality rain gear",
                     "rental_available": true
                 },
                 {
-                    "item": "Layers",
-                    "description": "Temperature varies greatly",
+                    "item": "Trekking poles",
+                    "description": "Highly recommended for pass day",
+                    "rental_available": true
+                },
+                {
+                    "item": "Warm gloves",
+                    "description": "Insulated for high altitude",
                     "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Hat, sunglasses, sunscreen",
+                    "description": "Hat, sunglasses, sunscreen SPF 50+",
                     "rental_available": false
                 },
                 {
-                    "item": "Basic first aid",
-                    "description": "Including blister kit",
+                    "item": "First aid kit",
+                    "description": "Including altitude medication",
                     "rental_available": false
-                }
-            ],
-            "recommended": [
-                {
-                    "item": "Trekking poles",
-                    "description": "Very helpful on stairs",
-                    "rental_available": true
                 },
                 {
                     "item": "Water purification",
                     "description": "Tablets or SteriPen",
                     "rental_available": false
+                }
+            ],
+            "recommended": [
+                {
+                    "item": "Gaiters",
+                    "description": "For potential snow on pass",
+                    "rental_available": true
                 },
                 {
-                    "item": "Snacks",
-                    "description": "Energy bars, nuts",
+                    "item": "Down pants",
+                    "description": "For extreme cold on pass day",
+                    "rental_available": true
+                },
+                {
+                    "item": "Buff/neck warmer",
+                    "description": "Wind protection",
                     "rental_available": false
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "Essential for pass day start",
+                    "rental_available": false
+                },
+                {
+                    "item": "Crampons",
+                    "description": "If crossing in winter/spring",
+                    "rental_available": true
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "ACAP (Annapurna Conservation)",
+                "name": "Annapurna Conservation Area Permit (ACAP)",
                 "cost_usd": 30,
                 "cost_npr": 3000,
-                "where_to_obtain": "Pokhara or Kathmandu",
+                "where_to_obtain": "ACAP office in Kathmandu or Pokhara",
                 "validity": "Single entry"
             },
             {
-                "name": "TIMS Card",
+                "name": "Trekkers' Information Management System (TIMS)",
                 "cost_usd": 10,
                 "cost_npr": 1000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Trek duration"
+                "where_to_obtain": "Tourism Board offices",
+                "validity": "Duration of trek"
             }
         ],
         "costs": {
@@ -2061,103 +2507,119 @@
             "porter_daily_usd": 18,
             "accommodation_daily_usd": 5,
             "meals_daily_usd": 20,
-            "transportation_usd": 30,
+            "transportation_usd": 50,
+            "miscellaneous_daily_usd": 5,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1000
+                "min": 800,
+                "max": 2000
             }
         },
         "cultural_information": {
             "ethnic_groups": [
                 "Gurung",
-                "Magar"
+                "Thakali",
+                "Manangi",
+                "Tibetan"
             ],
             "primary_religion": "Buddhism and Hinduism",
             "languages": [
                 "Nepali",
                 "Gurung",
+                "Tibetan dialects",
                 "English"
             ],
             "customs_etiquette": [
-                "Remove shoes when entering homes",
-                "Use right hand for eating/giving",
-                "Walk clockwise around mani walls",
-                "Dress modestly in villages",
-                "Ask permission for photos"
+                "Walk clockwise around mani walls and stupas",
+                "Remove shoes in monasteries and homes",
+                "Don't eat beef in Hindu areas",
+                "Respect local dress codes",
+                "Ask permission before photographing"
             ],
             "local_foods": [
                 {
-                    "name": "Dal bhat",
-                    "description": "Traditional meal available everywhere"
+                    "name": "Thakali Thali",
+                    "description": "Traditional set meal from the Thakali people"
                 },
                 {
-                    "name": "Gurung bread",
-                    "description": "Local specialty"
+                    "name": "Yak cheese",
+                    "description": "Local specialty in higher regions"
                 },
                 {
-                    "name": "Raksi",
-                    "description": "Local millet alcohol"
+                    "name": "Apple products",
+                    "description": "From Marpha - pie, brandy, cider"
                 },
                 {
-                    "name": "Dhindo",
-                    "description": "Traditional porridge"
+                    "name": "Buckwheat pancakes",
+                    "description": "Traditional in Manang region"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "moderate",
+                "risk_level": "very high",
                 "prevention": [
-                    "Gradual ascent built into itinerary",
-                    "Stay hydrated",
-                    "Rest day can be added",
-                    "Don't rush to ABC"
+                    "Mandatory acclimatization day in Manang",
+                    "Consider additional day if needed",
+                    "Hydrate constantly",
+                    "Avoid alcohol before pass crossing",
+                    "Consider Diamox prescription"
                 ],
                 "critical_points": [
-                    "Above 3000m",
-                    "Especially approaching ABC"
+                    "Manang",
+                    "Thorong Phedi",
+                    "Pass day"
                 ]
             },
             "medical_facilities": [
                 {
-                    "location": "Chhomrong",
-                    "type": "Basic health post"
+                    "location": "Chame",
+                    "type": "Health post"
                 },
                 {
-                    "location": "Pokhara",
-                    "type": "Good hospitals"
+                    "location": "Manang",
+                    "type": "HRA clinic with daily lectures"
+                },
+                {
+                    "location": "Jomsom",
+                    "type": "Hospital with basic facilities"
                 }
             ],
             "evacuation": {
                 "method": "Helicopter from most points",
                 "cost_usd": "3000-5000",
-                "insurance_required": true
+                "challenging_areas": "Thorong La Pass area"
             }
         },
         "weather_patterns": {
-            "autumn": {
-                "months": [
-                    "September",
-                    "October",
-                    "November"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Low",
-                "visibility": "Excellent",
-                "notes": "Best views, busy season"
-            },
-            "spring": {
+            "pre_monsoon": {
                 "months": [
                     "March",
                     "April",
                     "May"
                 ],
-                "day_temp_c": "15 to 25",
-                "night_temp_c": "0 to 10",
-                "precipitation": "Moderate",
-                "visibility": "Good mornings",
-                "notes": "Rhododendrons bloom"
+                "pass_conditions": "May have snow, crampons possibly needed",
+                "temperatures": "Moderate days, cold nights",
+                "notes": "Rhododendrons bloom, dustier conditions"
+            },
+            "monsoon": {
+                "months": [
+                    "June",
+                    "July",
+                    "August",
+                    "September"
+                ],
+                "pass_conditions": "Not recommended",
+                "temperatures": "Warm and wet",
+                "notes": "Trails muddy, leeches in lower sections"
+            },
+            "post_monsoon": {
+                "months": [
+                    "October",
+                    "November"
+                ],
+                "pass_conditions": "Best conditions, usually snow-free",
+                "temperatures": "Clear days, very cold nights",
+                "notes": "Peak season, clearest mountain views"
             },
             "winter": {
                 "months": [
@@ -2165,136 +2627,82 @@
                     "January",
                     "February"
                 ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "-10 to 0",
-                "precipitation": "Low, possible snow",
-                "visibility": "Excellent",
-                "notes": "Very cold at ABC"
-            },
-            "monsoon": {
-                "months": [
-                    "June",
-                    "July",
-                    "August"
-                ],
-                "day_temp_c": "15 to 20",
-                "night_temp_c": "5 to 15",
-                "precipitation": "Very high",
-                "visibility": "Poor",
-                "notes": "Not recommended, leeches"
+                "pass_conditions": "Often blocked by snow",
+                "temperatures": "Very cold, especially at altitude",
+                "notes": "Many lodges closed, experienced trekkers only"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Tourist bus",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
+                    "method": "Public bus",
+                    "from": "Kathmandu",
+                    "to": "Besisahar",
+                    "duration": "6-7 hours",
                     "cost_usd": 10,
-                    "frequency": "Multiple daily"
+                    "comfort": "Basic"
                 },
                 {
-                    "method": "Private taxi",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 30,
-                    "frequency": "Any time"
+                    "method": "Private jeep",
+                    "from": "Kathmandu",
+                    "to": "Besisahar",
+                    "duration": "5-6 hours",
+                    "cost_usd": 150,
+                    "comfort": "Comfortable"
+                },
+                {
+                    "method": "Local jeep",
+                    "from": "Besisahar",
+                    "to": "Chame/Manang",
+                    "duration": "Variable",
+                    "cost_usd": 50,
+                    "notes": "Can skip lower section if short on time"
                 }
             ],
-            "from_end": "Same options in reverse"
-        },
-        "accommodation": {
-            "type": "Teahouses",
-            "description": "Basic but comfortable lodges",
-            "amenities": [
-                "Twin-bed rooms",
-                "Shared bathrooms mostly",
-                "Hot showers (lower elevations)",
-                "Charging for devices (paid)",
-                "WiFi in some lodges (paid)",
-                "Meals available"
-            ],
-            "booking": "Not required except peak season",
-            "cost_per_night_usd": "3-8"
-        },
-        "difficulty_details": {
-            "physical_demands": "Moderate fitness required",
-            "technical_skills": "None needed",
-            "altitude_challenge": "Moderate - max 4,130m",
-            "trail_conditions": "Well-maintained, many stone steps",
-            "daily_hiking_hours": "5-7 hours",
-            "total_elevation_gain": 4500,
-            "total_elevation_loss": 4500
+            "from_end": [
+                {
+                    "method": "Bus",
+                    "from": "Pokhara",
+                    "to": "Kathmandu",
+                    "duration": "6-7 hours",
+                    "cost_usd": 10
+                },
+                {
+                    "method": "Flight",
+                    "from": "Pokhara",
+                    "to": "Kathmandu",
+                    "duration": "25 minutes",
+                    "cost_usd": 100
+                }
+            ]
         },
         "alternative_routes": [
             {
-                "name": "ABC via Poon Hill",
-                "variation": "Add Poon Hill sunrise",
+                "name": "Annapurna Circuit with Tilicho Lake",
+                "variation": "Add side trip to Tilicho Lake",
                 "extra_days": 2,
                 "highlights": [
-                    "Famous sunrise viewpoint",
-                    "Different villages",
-                    "More variety"
+                    "World's highest lake",
+                    "Additional acclimatization"
                 ]
             },
             {
-                "name": "Mardi Himal addition",
-                "variation": "Combine with Mardi Himal",
+                "name": "Circuit via Nar Phu Valley",
+                "variation": "Include restricted Nar Phu Valley",
                 "extra_days": 4,
                 "highlights": [
-                    "Less crowded ridge trek",
-                    "Different perspective",
-                    "Forest camps"
-                ]
-            }
-        ],
-        "photography_highlights": [
-            {
-                "location": "Annapurna Base Camp",
-                "best_time": "Sunrise",
-                "subjects": [
-                    "360° amphitheater",
-                    "Annapurna I south face",
-                    "Alpenglow"
+                    "Remote Tibetan villages",
+                    "Requires special permit"
                 ]
             },
             {
-                "location": "Machhapuchhre Base Camp",
-                "best_time": "Sunset",
-                "subjects": [
-                    "Fishtail mountain",
-                    "Sacred peak",
-                    "Evening colors"
+                "name": "Shorter Circuit",
+                "variation": "Drive to Manang, skip lower section",
+                "fewer_days": 4,
+                "highlights": [
+                    "Focus on high altitude sections",
+                    "Good for time-limited"
                 ]
-            },
-            {
-                "location": "Ghandruk village",
-                "best_time": "Morning",
-                "subjects": [
-                    "Traditional architecture",
-                    "Mountain backdrop",
-                    "Village life"
-                ]
-            }
-        ],
-        "faqs": [
-            {
-                "question": "ABC or EBC - which is better?",
-                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
-            },
-            {
-                "question": "Can I do it independently?",
-                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
-            },
-            {
-                "question": "How cold is base camp?",
-                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
-            },
-            {
-                "question": "Is altitude a problem?",
-                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
@@ -2302,14 +2710,14 @@
         "status": "active",
         "popularity_score": 95,
         "seo": {
-            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
-            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+            "meta_title": "Annapurna Circuit Trek Guide 2024 | Complete 18-Day Itinerary",
+            "meta_description": "Complete guide to the Annapurna Circuit Trek including Thorong La Pass. Detailed itinerary, gear list, cultural insights, and expert tips.",
             "keywords": [
-                "annapurna base camp",
-                "abc trek",
+                "annapurna circuit",
+                "thorong la pass",
                 "nepal trekking",
-                "annapurna sanctuary",
-                "pokhara trekking"
+                "annapurna trek",
+                "himalaya circuit trek"
             ]
         }
     };

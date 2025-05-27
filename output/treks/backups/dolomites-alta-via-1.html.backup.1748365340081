@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
-    <meta name="description" content="Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.">
+    <title>Dolomites Alta Via 1 Complete Guide 2024 | 10-Day Trek Itinerary</title>
+    <meta name="description" content="Ultimate guide to hiking Alta Via 1 through the Italian Dolomites. Detailed itinerary, rifugio bookings, costs, and insider tips for this classic trek.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/annapurna-base-camp-trek.jpg');
+            background-image: url('/images/treks/covers/dolomites-alta-via-1.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,8 +734,8 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Annapurna Base Camp Trek</h1>
+        <div class="hero-content">
+            <h1>Dolomites Alta Via 1</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -960,11 +743,11 @@
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,130m</span>
+                    <span class="hero-stat-value">2,950m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">120km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Nepal/Himalayas</h2>
+                <h2>Journey to European Alps</h2>
                 <p class="overview-description">
-                    Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.
+                    Classic high route through the dramatic limestone peaks of the Dolomites, staying in traditional rifugios with incredible Italian mountain cuisine.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">7-12 days</span>
+                    <span class="info-value">8-12 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">120 km / 75 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,130m (13,550ft)</span>
+                    <span class="info-value">2,950m (9,678ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +846,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Pokhara</span>
+                    <span class="info-value">Cortina d'Ampezzo</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">2 permits</span>
+                    <span class="info-value">1 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,000</span>
+                        <span class="price-range">$1,000 - $2,000</span>
                     </span>
                 </div>
             </div>
@@ -1083,7 +866,7 @@
     <section id="itinerary" class="content-section">
         <h2>10-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
+            Follow the route through European Alps with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Pokhara to Ghandruk</h3>
+          <h3 class="day-title">Lago di Braies to Rifugio Biella</h3>
           <div class="day-stats">
-            <span>📏 42km</span>
+            <span>📏 14km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +1192m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📈 +850m</span>
+            <span>🏔️ 2,327m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views.</p>
+      <p class="day-description">Start at the stunning Lago di Braies, famous for its emerald waters. Climb through forests and meadows to reach the welcoming Rifugio Biella.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Drive to Nayapul</span><span class="day-highlight">Gurung village culture</span><span class="day-highlight">Annapurna South views</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Lago di Braies (Pragser Wildsee)</span><span class="day-highlight">Croda del Becco views</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">First rifugio experience</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Ghandruk to Chhomrong</h3>
+          <h3 class="day-title">Rifugio Biella to Rifugio Lavarella</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 2,170m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 2,042m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary.</p>
+      <p class="day-description">Traverse the otherworldly Fanes plateau, surrounded by towering limestone peaks. Choose between two excellent rifugios for the night.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Cross Kimrong Khola</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Machhapuchhre views</span><span class="day-highlight">Gateway to sanctuary</span>
+          <span class="day-highlight">Alpe di Fanes plateau</span><span class="day-highlight">Limestone pinnacles</span><span class="day-highlight">Marmot sightings</span><span class="day-highlight">Traditional Ladin culture</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Chhomrong to Bamboo</h3>
+          <h3 class="day-title">Rifugio Lavarella to Rifugio Lagazuoi</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 2,752m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests.</p>
+      <p class="day-description">Climb to one of the most spectacular rifugios in the Dolomites. Explore WWI history and enjoy incredible views from Lagazuoi summit.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Enter sanctuary</span><span class="day-highlight">Bamboo forests</span><span class="day-highlight">Modi Khola gorge</span><span class="day-highlight">Changing vegetation</span>
+          <span class="day-highlight">Forcella del Lago</span><span class="day-highlight">WWI tunnels and positions</span><span class="day-highlight">360-degree summit views</span><span class="day-highlight">Cable car option down</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Bamboo to Deurali</h3>
+          <h3 class="day-title">Rifugio Lagazuoi to Rifugio Averau</h3>
           <div class="day-stats">
-            <span>📏 11km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +920m</span>
-            <span>🏔️ 3,230m</span>
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 2,413m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up.</p>
+      <p class="day-description">Shorter day with options to explore the famous Cinque Torri climbing area or summit Nuvolau for panoramic views.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Himalaya Hotel</span><span class="day-highlight">Alpine environment</span><span class="day-highlight">Avalanche areas</span><span class="day-highlight">Mountain views emerging</span>
+          <span class="day-highlight">Cinque Torri rock formations</span><span class="day-highlight">Nuvolau summit option</span><span class="day-highlight">Cortina valley views</span><span class="day-highlight">Easier hiking day</span>
         </div>
       
     </div>
@@ -1176,19 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Deurali to Annapurna Base Camp</h3>
+          <h3 class="day-title">Rifugio Averau to Rifugio Città di Fiume</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +900m</span>
-            <span>🏔️ 4,130m</span>
+            <span>📏 13km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +300m</span>
+            <span>🏔️ 1,918m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks.</p>
+      <p class="day-description">Descend through beautiful forests with optional detour around the scenic Lago di Croda da Lago. More intimate rifugio experience.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Machhapuchhre Base Camp</span><span class="day-highlight">360-degree mountain views</span><span class="day-highlight">Annapurna Sanctuary</span><span class="day-highlight">Sunset on peaks</span>
+          <span class="day-highlight">Lago di Federa</span><span class="day-highlight">Croda da Lago circuit option</span><span class="day-highlight">Forest trails</span><span class="day-highlight">Wildlife viewing</span>
         </div>
       
     </div>
@@ -1197,19 +980,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 6</div>
-          <h3 class="day-title">ABC Sunrise and Descend to Bamboo</h3>
+          <h3 class="day-title">Rifugio Città di Fiume to Rifugio Tissi</h3>
           <div class="day-stats">
-            <span>📏 17km</span>
+            <span>📏 15km</span>
             <span>⏱️ 7 hours</span>
-            <span>📈 -1820m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 2,250m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo.</p>
+      <p class="day-description">Leave the busier routes for a more remote section. Long but rewarding day reaching the small and atmospheric Rifugio Tissi.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Sunrise on Annapurna I</span><span class="day-highlight">Last sanctuary views</span><span class="day-highlight">Rapid descent</span><span class="day-highlight">Return through forests</span>
+          <span class="day-highlight">Remote mountain valleys</span><span class="day-highlight">Pelmo massif views</span><span class="day-highlight">Traditional shepherding areas</span><span class="day-highlight">Quiet trails</span>
         </div>
       
     </div>
@@ -1218,19 +1001,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 7</div>
-          <h3 class="day-title">Bamboo to Jhinu Danda</h3>
+          <h3 class="day-title">Rifugio Tissi to Rifugio Vázzoler</h3>
           <div class="day-stats">
-            <span>📏 13km</span>
+            <span>📏 12km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 1,780m</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 1,714m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river.</p>
+      <p class="day-description">Spectacular approach to Rifugio Vázzoler beneath the imposing north face of Civetta, one of the Dolomites' most impressive walls.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Return to Chhomrong</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Relaxation</span><span class="day-highlight">Modi Khola riverside</span>
+          <span class="day-highlight">Civetta north face views</span><span class="day-highlight">Alpine botanical variety</span><span class="day-highlight">Historical rifugio</span><span class="day-highlight">Dramatic mountain amphitheater</span>
         </div>
       
     </div>
@@ -1239,19 +1022,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 8</div>
-          <h3 class="day-title">Jhinu to Ghandruk</h3>
+          <h3 class="day-title">Rifugio Vázzoler to Rifugio Carestiato</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +232m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 1,834m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Take alternative route back to Ghandruk through villages and terraced fields.</p>
+      <p class="day-description">Challenging day crossing high passes through the Moiazza group. Remote and wild mountain scenery.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Alternative route</span><span class="day-highlight">Village life</span><span class="day-highlight">Cultural immersion</span><span class="day-highlight">Mountain views</span>
+          <span class="day-highlight">Forcella Col Negro</span><span class="day-highlight">Moiazza group traverse</span><span class="day-highlight">Remote valleys</span><span class="day-highlight">Sense of accomplishment</span>
         </div>
       
     </div>
@@ -1260,19 +1043,40 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 9</div>
-          <h3 class="day-title">Ghandruk to Pokhara</h3>
+          <h3 class="day-title">Rifugio Carestiato to Rifugio Pian de Fontana</h3>
           <div class="day-stats">
-            <span>📏 20km</span>
+            <span>📏 10km</span>
             <span>⏱️ 4 hours</span>
-            <span>📈 -1192m</span>
-            <span>🏔️ 820m</span>
+            <span>📈 +300m</span>
+            <span>🏔️ 1,632m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration.</p>
+      <p class="day-description">Gentler day through forests and meadows. Last night in a rifugio before completing the Alta Via 1.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Final mountain views</span><span class="day-highlight">Descent to Nayapul</span><span class="day-highlight">Drive to Pokhara</span><span class="day-highlight">Trek completion</span>
+          <span class="day-highlight">Easier walking day</span><span class="day-highlight">Forest trails</span><span class="day-highlight">Traditional farming areas</span><span class="day-highlight">Final rifugio night</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Rifugio Pian de Fontana to Passo Duran/Belluno</h3>
+          <div class="day-stats">
+            <span>📏 8km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 +100m</span>
+            <span>🏔️ 1,601m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final descent to Passo Duran where you can catch a bus to Belluno or Agordo. Celebrate completing one of Italy's classic treks!</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Alta Via completion</span><span class="day-highlight">Final mountain views</span><span class="day-highlight">Sense of achievement</span><span class="day-highlight">Return to civilization</span>
         </div>
       
     </div>
@@ -1297,40 +1101,48 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking boots</div>
-          <div class="gear-description">Comfortable and waterproof</div>
+          <div class="gear-name">Mountain boots</div>
+          <div class="gear-description">Good ankle support for rocky terrain</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Via ferrata kit</div>
+          <div class="gear-description">For optional protected sections</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-10°C rated</div>
+          <div class="gear-name">Daypack</div>
+          <div class="gear-description">25-35L sufficient for rifugio trek</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at base camp</div>
+          <div class="gear-name">Sleeping bag liner</div>
+          <div class="gear-description">Required in rifugios</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Layered clothing</div>
+          <div class="gear-description">Mountain weather changeable</div>
+        </div>
+        
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Essential any season</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Layers</div>
-          <div class="gear-description">Temperature varies greatly</div>
+          <div class="gear-description">Afternoon storms common</div>
         </div>
         
       </li>
@@ -1338,15 +1150,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Hat, sunglasses, sunscreen</div>
+          <div class="gear-description">High altitude sun intense</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Basic first aid</div>
-          <div class="gear-description">Including blister kit</div>
+          <div class="gear-name">First aid kit</div>
+          <div class="gear-description">Basic supplies</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Cash (Euros)</div>
+          <div class="gear-description">Many rifugios cash only</div>
         </div>
         
       </li>
@@ -1364,23 +1184,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful on stairs</div>
+          <div class="gear-description">Helpful on descents</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or SteriPen</div>
+          <div class="gear-name">Hut shoes</div>
+          <div class="gear-description">Crocs or slippers for rifugios</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Snacks</div>
-          <div class="gear-description">Energy bars, nuts</div>
+          <div class="gear-name">Earplugs</div>
+          <div class="gear-description">For dormitory sleeping</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Quick-dry towel</div>
+          <div class="gear-description">Small and lightweight</div>
         </div>
         
       </li>
@@ -1400,17 +1228,10 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October, November</p>
-      <p>Clear views, stable weather, peak season</p>
-    </div>
-  
-    <div class="season-card">
-      <div class="season-icon">🌸</div>
-      <h3 class="season-name">Spring</h3>
-      <p class="season-months">March, April, May</p>
-      <p>Rhododendron blooms, good weather, warmer</p>
+      <div class="season-icon">☀️</div>
+      <h3 class="season-name">Summer</h3>
+      <p class="season-months">July, August, September</p>
+      <p>Rifugios open, snow-free passes, stable weather</p>
     </div>
   
         </div>
@@ -1433,27 +1254,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$40</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$25</span>
+      <span>$200</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$30</span>
+      <span>$100</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,000</span>
+      <span>$1,000 - $2,000</span>
     </div>
   
         </div>
@@ -1475,34 +1296,34 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>ABC or EBC - which is better?</span>
+        <span>Do I need via ferrata experience?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible.</div>
+      <div class="faq-answer">No, the main route avoids technical sections. Optional via ferratas are available but can be bypassed. Basic scrambling comfort helpful.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
+        <span>How far ahead should I book rifugios?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety.</div>
+      <div class="faq-answer">For July-August, book 2-3 months ahead. September is easier but still book 1 month ahead for weekends.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How cold is base camp?</span>
+        <span>What's the food like in rifugios?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag.</div>
+      <div class="faq-answer">Excellent! Expect hearty multi-course dinners with local specialties. Vegetarian options available if requested in advance.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is altitude a problem?</span>
+        <span>Can I do it without speaking Italian?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps.</div>
+      <div class="faq-answer">Yes, English is widely spoken in rifugios. Basic Italian phrases are appreciated and enhance the experience.</div>
     </div>
   
         </div>
@@ -1543,33 +1364,21 @@
             scrollToSectionTop();
         }
 
-                function scrollToSectionTop() {
-            requestAnimationFrame(() => {
+        function scrollToSectionTop() {
+            setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
-                
                 if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
                     
                     window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-            });
+            }, 50);
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1654,662 +1463,633 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "annapurna-base-camp-trek",
-        "name": "Annapurna Base Camp Trek",
-        "slug": "annapurna-base-camp-trek",
-        "region": "Nepal/Himalayas",
-        "country": "Nepal",
-        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+        "_id": "dolomites-alta-via-1",
+        "name": "Dolomites Alta Via 1",
+        "slug": "dolomites-alta-via-1",
+        "region": "European Alps",
+        "country": "Italy",
+        "summary": "Classic high route through the dramatic limestone peaks of the Dolomites, staying in traditional rifugios with incredible Italian mountain cuisine.",
         "duration": {
-            "min_days": 7,
+            "min_days": 8,
             "max_days": 12,
             "recommended_days": 10
         },
-        "distance_km": 110,
+        "distance_km": 120,
         "difficulty": "moderate",
-        "max_elevation_m": 4130,
-        "starting_elevation_m": 1070,
-        "airport": "Pokhara (PKR)",
-        "nearest_city": "Pokhara",
+        "max_elevation_m": 2950,
+        "starting_elevation_m": 1530,
+        "airport": "Venice (VCE) or Innsbruck (INN)",
+        "nearest_city": "Cortina d'Ampezzo",
         "coordinates": {
             "start": {
-                "lat": 28.3784,
-                "lng": 83.7284,
-                "location": "Nayapul"
+                "lat": 46.658,
+                "lng": 11.779,
+                "location": "Lago di Braies"
             },
             "end": {
-                "lat": 28.53,
-                "lng": 83.8783,
-                "location": "Annapurna Base Camp"
+                "lat": 46.4373,
+                "lng": 11.7732,
+                "location": "Belluno/Passo Duran"
             }
         },
         "best_seasons": [
             {
-                "name": "Autumn",
+                "name": "Summer",
                 "months": [
-                    "September",
-                    "October",
-                    "November"
+                    "July",
+                    "August",
+                    "September"
                 ],
-                "description": "Clear views, stable weather, peak season"
-            },
-            {
-                "name": "Spring",
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "description": "Rhododendron blooms, good weather, warmer"
+                "description": "Rifugios open, snow-free passes, stable weather"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Pokhara to Ghandruk",
-                "start_location": "Pokhara",
-                "end_location": "Ghandruk",
-                "distance_km": 42,
+                "title": "Lago di Braies to Rifugio Biella",
+                "start_location": "Lago di Braies",
+                "end_location": "Rifugio Biella",
+                "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 820,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 1192,
+                "elevation_start_m": 1496,
+                "elevation_end_m": 2327,
+                "elevation_gain_m": 850,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "rifugio",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage",
-                        "Mountain View Lodge"
+                        "Rifugio Biella"
                     ]
                 },
                 "meals_included": [
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Drive to Nayapul",
-                    "Gurung village culture",
-                    "Annapurna South views",
-                    "Traditional architecture"
+                    "Lago di Braies (Pragser Wildsee)",
+                    "Croda del Becco views",
+                    "Alpine meadows",
+                    "First rifugio experience"
                 ],
-                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
+                "description": "Start at the stunning Lago di Braies, famous for its emerald waters. Climb through forests and meadows to reach the welcoming Rifugio Biella."
             },
             {
                 "day": 2,
-                "title": "Ghandruk to Chhomrong",
-                "start_location": "Ghandruk",
-                "end_location": "Chhomrong",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 2170,
-                "elevation_gain_m": 500,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Chhomrong Guest House",
-                        "Annapurna Lodge",
-                        "Panorama Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Cross Kimrong Khola",
-                    "Terraced fields",
-                    "Machhapuchhre views",
-                    "Gateway to sanctuary"
-                ],
-                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
-            },
-            {
-                "day": 3,
-                "title": "Chhomrong to Bamboo",
-                "start_location": "Chhomrong",
-                "end_location": "Bamboo",
-                "distance_km": 10,
+                "title": "Rifugio Biella to Rifugio Lavarella",
+                "start_location": "Rifugio Biella",
+                "end_location": "Rifugio Lavarella",
+                "distance_km": 11,
                 "duration_hours": 5,
-                "elevation_start_m": 2170,
-                "elevation_end_m": 2310,
+                "elevation_start_m": 2327,
+                "elevation_end_m": 2042,
                 "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "rifugio",
                     "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
+                        "Rifugio Lavarella",
+                        "Rifugio Fanes"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Enter sanctuary",
-                    "Bamboo forests",
-                    "Modi Khola gorge",
-                    "Changing vegetation"
+                    "Alpe di Fanes plateau",
+                    "Limestone pinnacles",
+                    "Marmot sightings",
+                    "Traditional Ladin culture"
                 ],
-                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
+                "description": "Traverse the otherworldly Fanes plateau, surrounded by towering limestone peaks. Choose between two excellent rifugios for the night."
+            },
+            {
+                "day": 3,
+                "title": "Rifugio Lavarella to Rifugio Lagazuoi",
+                "start_location": "Rifugio Lavarella",
+                "end_location": "Rifugio Lagazuoi",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 2042,
+                "elevation_end_m": 2752,
+                "elevation_gain_m": 900,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Lagazuoi"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Forcella del Lago",
+                    "WWI tunnels and positions",
+                    "360-degree summit views",
+                    "Cable car option down"
+                ],
+                "description": "Climb to one of the most spectacular rifugios in the Dolomites. Explore WWI history and enjoy incredible views from Lagazuoi summit."
             },
             {
                 "day": 4,
-                "title": "Bamboo to Deurali",
-                "start_location": "Bamboo",
-                "end_location": "Deurali",
-                "distance_km": 11,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 3230,
-                "elevation_gain_m": 920,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Deurali Guest House",
-                        "Himalaya Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Himalaya Hotel",
-                    "Alpine environment",
-                    "Avalanche areas",
-                    "Mountain views emerging"
-                ],
-                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
-            },
-            {
-                "day": 5,
-                "title": "Deurali to Annapurna Base Camp",
-                "start_location": "Deurali",
-                "end_location": "Annapurna Base Camp",
-                "distance_km": 6,
+                "title": "Rifugio Lagazuoi to Rifugio Averau",
+                "start_location": "Rifugio Lagazuoi",
+                "end_location": "Rifugio Averau",
+                "distance_km": 10,
                 "duration_hours": 4,
-                "elevation_start_m": 3230,
-                "elevation_end_m": 4130,
-                "elevation_gain_m": 900,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "ABC Lodge",
-                        "Annapurna Sanctuary Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Machhapuchhre Base Camp",
-                    "360-degree mountain views",
-                    "Annapurna Sanctuary",
-                    "Sunset on peaks"
-                ],
-                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
-            },
-            {
-                "day": 6,
-                "title": "ABC Sunrise and Descend to Bamboo",
-                "start_location": "Annapurna Base Camp",
-                "end_location": "Bamboo",
-                "distance_km": 17,
-                "duration_hours": 7,
-                "elevation_start_m": 4130,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": -1820,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Sunrise on Annapurna I",
-                    "Last sanctuary views",
-                    "Rapid descent",
-                    "Return through forests"
-                ],
-                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
-            },
-            {
-                "day": 7,
-                "title": "Bamboo to Jhinu Danda",
-                "start_location": "Bamboo",
-                "end_location": "Jhinu Danda",
-                "distance_km": 13,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 1780,
+                "elevation_start_m": 2752,
+                "elevation_end_m": 2413,
                 "elevation_gain_m": 200,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "rifugio",
                     "options": [
-                        "Jhinu Guest House",
-                        "Hot Spring Lodge"
+                        "Rifugio Averau",
+                        "Rifugio Nuvolau"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Return to Chhomrong",
-                    "Natural hot springs",
-                    "Relaxation",
-                    "Modi Khola riverside"
+                    "Cinque Torri rock formations",
+                    "Nuvolau summit option",
+                    "Cortina valley views",
+                    "Easier hiking day"
                 ],
-                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
+                "description": "Shorter day with options to explore the famous Cinque Torri climbing area or summit Nuvolau for panoramic views."
+            },
+            {
+                "day": 5,
+                "title": "Rifugio Averau to Rifugio Città di Fiume",
+                "start_location": "Rifugio Averau",
+                "end_location": "Rifugio Città di Fiume",
+                "distance_km": 13,
+                "duration_hours": 5,
+                "elevation_start_m": 2413,
+                "elevation_end_m": 1918,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Città di Fiume",
+                        "Rifugio Croda da Lago"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Lago di Federa",
+                    "Croda da Lago circuit option",
+                    "Forest trails",
+                    "Wildlife viewing"
+                ],
+                "description": "Descend through beautiful forests with optional detour around the scenic Lago di Croda da Lago. More intimate rifugio experience."
+            },
+            {
+                "day": 6,
+                "title": "Rifugio Città di Fiume to Rifugio Tissi",
+                "start_location": "Rifugio Città di Fiume",
+                "end_location": "Rifugio Tissi",
+                "distance_km": 15,
+                "duration_hours": 7,
+                "elevation_start_m": 1918,
+                "elevation_end_m": 2250,
+                "elevation_gain_m": 800,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Tissi"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Remote mountain valleys",
+                    "Pelmo massif views",
+                    "Traditional shepherding areas",
+                    "Quiet trails"
+                ],
+                "description": "Leave the busier routes for a more remote section. Long but rewarding day reaching the small and atmospheric Rifugio Tissi."
+            },
+            {
+                "day": 7,
+                "title": "Rifugio Tissi to Rifugio Vázzoler",
+                "start_location": "Rifugio Tissi",
+                "end_location": "Rifugio Vázzoler",
+                "distance_km": 12,
+                "duration_hours": 6,
+                "elevation_start_m": 2250,
+                "elevation_end_m": 1714,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Vázzoler"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Civetta north face views",
+                    "Alpine botanical variety",
+                    "Historical rifugio",
+                    "Dramatic mountain amphitheater"
+                ],
+                "description": "Spectacular approach to Rifugio Vázzoler beneath the imposing north face of Civetta, one of the Dolomites' most impressive walls."
             },
             {
                 "day": 8,
-                "title": "Jhinu to Ghandruk",
-                "start_location": "Jhinu Danda",
-                "end_location": "Ghandruk",
-                "distance_km": 8,
-                "duration_hours": 4,
-                "elevation_start_m": 1780,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 232,
-                "difficulty": "easy",
+                "title": "Rifugio Vázzoler to Rifugio Carestiato",
+                "start_location": "Rifugio Vázzoler",
+                "end_location": "Rifugio Carestiato",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 1714,
+                "elevation_end_m": 1834,
+                "elevation_gain_m": 900,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "rifugio",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage"
+                        "Rifugio Carestiato"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Alternative route",
-                    "Village life",
-                    "Cultural immersion",
-                    "Mountain views"
+                    "Forcella Col Negro",
+                    "Moiazza group traverse",
+                    "Remote valleys",
+                    "Sense of accomplishment"
                 ],
-                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
+                "description": "Challenging day crossing high passes through the Moiazza group. Remote and wild mountain scenery."
             },
             {
                 "day": 9,
-                "title": "Ghandruk to Pokhara",
-                "start_location": "Ghandruk",
-                "end_location": "Pokhara",
-                "distance_km": 20,
+                "title": "Rifugio Carestiato to Rifugio Pian de Fontana",
+                "start_location": "Rifugio Carestiato",
+                "end_location": "Rifugio Pian de Fontana",
+                "distance_km": 10,
                 "duration_hours": 4,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 820,
-                "elevation_gain_m": -1192,
+                "elevation_start_m": 1834,
+                "elevation_end_m": 1632,
+                "elevation_gain_m": 300,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "hotel",
+                    "type": "rifugio",
                     "options": [
-                        "Return to Pokhara hotel"
+                        "Rifugio Pian de Fontana"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Final mountain views",
-                    "Descent to Nayapul",
-                    "Drive to Pokhara",
-                    "Trek completion"
+                    "Easier walking day",
+                    "Forest trails",
+                    "Traditional farming areas",
+                    "Final rifugio night"
                 ],
-                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+                "description": "Gentler day through forests and meadows. Last night in a rifugio before completing the Alta Via 1."
+            },
+            {
+                "day": 10,
+                "title": "Rifugio Pian de Fontana to Passo Duran/Belluno",
+                "start_location": "Rifugio Pian de Fontana",
+                "end_location": "Passo Duran/Belluno",
+                "distance_km": 8,
+                "duration_hours": 3,
+                "elevation_start_m": 1632,
+                "elevation_end_m": 1601,
+                "elevation_gain_m": 100,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel/end",
+                    "options": [
+                        "Bus to Belluno or Agordo"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Alta Via completion",
+                    "Final mountain views",
+                    "Sense of achievement",
+                    "Return to civilization"
+                ],
+                "description": "Final descent to Passo Duran where you can catch a bus to Belluno or Agordo. Celebrate completing one of Italy's classic treks!"
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Trekking boots",
-                    "description": "Comfortable and waterproof",
+                    "item": "Mountain boots",
+                    "description": "Good ankle support for rocky terrain",
+                    "rental_available": false
+                },
+                {
+                    "item": "Via ferrata kit",
+                    "description": "For optional protected sections",
                     "rental_available": true
                 },
                 {
-                    "item": "Sleeping bag",
-                    "description": "-10°C rated",
-                    "rental_available": true
+                    "item": "Daypack",
+                    "description": "25-35L sufficient for rifugio trek",
+                    "rental_available": false
                 },
                 {
-                    "item": "Down jacket",
-                    "description": "Cold at base camp",
-                    "rental_available": true
+                    "item": "Sleeping bag liner",
+                    "description": "Required in rifugios",
+                    "rental_available": false
+                },
+                {
+                    "item": "Layered clothing",
+                    "description": "Mountain weather changeable",
+                    "rental_available": false
                 },
                 {
                     "item": "Rain gear",
-                    "description": "Essential any season",
-                    "rental_available": true
-                },
-                {
-                    "item": "Layers",
-                    "description": "Temperature varies greatly",
+                    "description": "Afternoon storms common",
                     "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Hat, sunglasses, sunscreen",
+                    "description": "High altitude sun intense",
                     "rental_available": false
                 },
                 {
-                    "item": "Basic first aid",
-                    "description": "Including blister kit",
+                    "item": "First aid kit",
+                    "description": "Basic supplies",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash (Euros)",
+                    "description": "Many rifugios cash only",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Very helpful on stairs",
+                    "description": "Helpful on descents",
                     "rental_available": true
                 },
                 {
-                    "item": "Water purification",
-                    "description": "Tablets or SteriPen",
+                    "item": "Hut shoes",
+                    "description": "Crocs or slippers for rifugios",
                     "rental_available": false
                 },
                 {
-                    "item": "Snacks",
-                    "description": "Energy bars, nuts",
+                    "item": "Earplugs",
+                    "description": "For dormitory sleeping",
+                    "rental_available": false
+                },
+                {
+                    "item": "Quick-dry towel",
+                    "description": "Small and lightweight",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "ACAP (Annapurna Conservation)",
-                "cost_usd": 30,
-                "cost_npr": 3000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Single entry"
-            },
-            {
-                "name": "TIMS Card",
-                "cost_usd": 10,
-                "cost_npr": 1000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Trek duration"
+                "name": "None required",
+                "cost_usd": 0,
+                "notes": "Just rifugio reservations needed"
             }
         ],
         "costs": {
-            "permit_total_usd": 40,
-            "guide_daily_usd": 25,
-            "porter_daily_usd": 18,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 30,
+            "permit_total_usd": 0,
+            "guide_daily_usd": 200,
+            "accommodation_daily_usd": 60,
+            "meals_daily_usd": 50,
+            "transportation_usd": 100,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1000
+                "min": 1000,
+                "max": 2000
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Gurung",
-                "Magar"
+                "Italian",
+                "Ladin (local minority)"
             ],
-            "primary_religion": "Buddhism and Hinduism",
+            "primary_religion": "Catholic",
             "languages": [
-                "Nepali",
-                "Gurung",
-                "English"
+                "Italian",
+                "German",
+                "Ladin",
+                "English in tourist areas"
             ],
             "customs_etiquette": [
-                "Remove shoes when entering homes",
-                "Use right hand for eating/giving",
-                "Walk clockwise around mani walls",
-                "Dress modestly in villages",
-                "Ask permission for photos"
+                "Greet with 'Buongiorno' or 'Grüß Gott'",
+                "Remove boots when entering rifugios",
+                "Quiet hours 10pm-6am strictly observed",
+                "Share tables at busy times",
+                "Tip not expected but appreciated"
             ],
             "local_foods": [
                 {
-                    "name": "Dal bhat",
-                    "description": "Traditional meal available everywhere"
+                    "name": "Canederli",
+                    "description": "Bread dumplings in broth"
                 },
                 {
-                    "name": "Gurung bread",
-                    "description": "Local specialty"
+                    "name": "Speck",
+                    "description": "Smoked ham specialty"
                 },
                 {
-                    "name": "Raksi",
-                    "description": "Local millet alcohol"
+                    "name": "Kaiserschmarrn",
+                    "description": "Shredded pancake dessert"
                 },
                 {
-                    "name": "Dhindo",
-                    "description": "Traditional porridge"
+                    "name": "Grappa",
+                    "description": "Traditional digestif"
+                },
+                {
+                    "name": "Strudel",
+                    "description": "Apple strudel is a rifugio staple"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "moderate",
-                "prevention": [
-                    "Gradual ascent built into itinerary",
-                    "Stay hydrated",
-                    "Rest day can be added",
-                    "Don't rush to ABC"
-                ],
-                "critical_points": [
-                    "Above 3000m",
-                    "Especially approaching ABC"
-                ]
+                "risk_level": "low",
+                "notes": "Maximum elevation under 3000m"
             },
-            "medical_facilities": [
-                {
-                    "location": "Chhomrong",
-                    "type": "Basic health post"
+            "main_concerns": {
+                "weather": {
+                    "risk_level": "moderate",
+                    "description": "Afternoon thunderstorms common",
+                    "prevention": [
+                        "Start early",
+                        "Check forecasts",
+                        "Carry waterproofs",
+                        "Know rifugio locations"
+                    ]
                 },
-                {
-                    "location": "Pokhara",
-                    "type": "Good hospitals"
+                "via_ferrata": {
+                    "risk_level": "moderate",
+                    "description": "Some exposed sections",
+                    "prevention": [
+                        "Use proper equipment",
+                        "Check conditions",
+                        "Know your limits",
+                        "Consider guide"
+                    ]
                 }
-            ],
+            },
             "evacuation": {
-                "method": "Helicopter from most points",
-                "cost_usd": "3000-5000",
+                "method": "Helicopter",
+                "cost_usd": "2000-4000",
                 "insurance_required": true
             }
         },
         "weather_patterns": {
-            "autumn": {
+            "summer": {
                 "months": [
-                    "September",
-                    "October",
-                    "November"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Low",
-                "visibility": "Excellent",
-                "notes": "Best views, busy season"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "15 to 25",
-                "night_temp_c": "0 to 10",
-                "precipitation": "Moderate",
-                "visibility": "Good mornings",
-                "notes": "Rhododendrons bloom"
-            },
-            "winter": {
-                "months": [
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "-10 to 0",
-                "precipitation": "Low, possible snow",
-                "visibility": "Excellent",
-                "notes": "Very cold at ABC"
-            },
-            "monsoon": {
-                "months": [
-                    "June",
                     "July",
                     "August"
                 ],
-                "day_temp_c": "15 to 20",
-                "night_temp_c": "5 to 15",
-                "precipitation": "Very high",
-                "visibility": "Poor",
-                "notes": "Not recommended, leeches"
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Afternoon storms",
+                "notes": "Busiest period"
+            },
+            "early_autumn": {
+                "months": [
+                    "September"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "0 to 8",
+                "precipitation": "More stable",
+                "notes": "Often best weather"
             }
         },
-        "transportation": {
-            "to_start": [
-                {
-                    "method": "Tourist bus",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 10,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Private taxi",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 30,
-                    "frequency": "Any time"
-                }
-            ],
-            "from_end": "Same options in reverse"
-        },
         "accommodation": {
-            "type": "Teahouses",
-            "description": "Basic but comfortable lodges",
+            "type": "Mountain rifugios",
+            "description": "Traditional mountain huts with meals",
             "amenities": [
-                "Twin-bed rooms",
-                "Shared bathrooms mostly",
-                "Hot showers (lower elevations)",
-                "Charging for devices (paid)",
-                "WiFi in some lodges (paid)",
-                "Meals available"
+                "Dormitory rooms (4-20 beds)",
+                "Half-board (dinner and breakfast)",
+                "Hot showers (sometimes paid)",
+                "Bar service",
+                "Packed lunch available",
+                "Blankets provided (bring liner)"
             ],
-            "booking": "Not required except peak season",
-            "cost_per_night_usd": "3-8"
+            "booking": "Essential in high season",
+            "cost_per_night_usd": {
+                "half_board": "50-70",
+                "bed_only": "25-35"
+            }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness required",
-            "technical_skills": "None needed",
-            "altitude_challenge": "Moderate - max 4,130m",
-            "trail_conditions": "Well-maintained, many stone steps",
+            "physical_demands": "Good fitness for long days",
+            "technical_skills": "Some exposed sections",
+            "altitude_challenge": "Minimal",
+            "trail_conditions": "Rocky, well-marked",
             "daily_hiking_hours": "5-7 hours",
-            "total_elevation_gain": 4500,
-            "total_elevation_loss": 4500
+            "total_elevation_gain": 7000,
+            "total_elevation_loss": 7000
         },
         "alternative_routes": [
             {
-                "name": "ABC via Poon Hill",
-                "variation": "Add Poon Hill sunrise",
-                "extra_days": 2,
+                "name": "Alta Via 2",
+                "variation": "More challenging route",
+                "extra_days": 0,
                 "highlights": [
-                    "Famous sunrise viewpoint",
-                    "Different villages",
-                    "More variety"
+                    "More technical",
+                    "Fewer crowds",
+                    "Wilder terrain"
                 ]
             },
             {
-                "name": "Mardi Himal addition",
-                "variation": "Combine with Mardi Himal",
-                "extra_days": 4,
+                "name": "Alta Via 3-4",
+                "variation": "Eastern Dolomites",
+                "extra_days": "Various",
                 "highlights": [
-                    "Less crowded ridge trek",
-                    "Different perspective",
-                    "Forest camps"
+                    "Less developed",
+                    "More remote",
+                    "Cultural variety"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Annapurna Base Camp",
-                "best_time": "Sunrise",
+                "location": "Lago di Braies",
+                "best_time": "Early morning",
                 "subjects": [
-                    "360° amphitheater",
-                    "Annapurna I south face",
-                    "Alpenglow"
+                    "Lake reflections",
+                    "Emerald waters",
+                    "Seekofel peak"
                 ]
             },
             {
-                "location": "Machhapuchhre Base Camp",
+                "location": "Lagazuoi summit",
                 "best_time": "Sunset",
                 "subjects": [
-                    "Fishtail mountain",
-                    "Sacred peak",
-                    "Evening colors"
+                    "360-degree views",
+                    "Marmolada glacier",
+                    "Tofane group"
                 ]
             },
             {
-                "location": "Ghandruk village",
+                "location": "Civetta north face",
                 "best_time": "Morning",
                 "subjects": [
-                    "Traditional architecture",
-                    "Mountain backdrop",
-                    "Village life"
+                    "Massive rock wall",
+                    "Alpine glow",
+                    "Climbers on route"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "ABC or EBC - which is better?",
-                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
+                "question": "Do I need via ferrata experience?",
+                "answer": "No, the main route avoids technical sections. Optional via ferratas are available but can be bypassed. Basic scrambling comfort helpful."
             },
             {
-                "question": "Can I do it independently?",
-                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
+                "question": "How far ahead should I book rifugios?",
+                "answer": "For July-August, book 2-3 months ahead. September is easier but still book 1 month ahead for weekends."
             },
             {
-                "question": "How cold is base camp?",
-                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
+                "question": "What's the food like in rifugios?",
+                "answer": "Excellent! Expect hearty multi-course dinners with local specialties. Vegetarian options available if requested in advance."
             },
             {
-                "question": "Is altitude a problem?",
-                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
+                "question": "Can I do it without speaking Italian?",
+                "answer": "Yes, English is widely spoken in rifugios. Basic Italian phrases are appreciated and enhance the experience."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 95,
+        "popularity_score": 90,
         "seo": {
-            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
-            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+            "meta_title": "Dolomites Alta Via 1 Complete Guide 2024 | 10-Day Trek Itinerary",
+            "meta_description": "Ultimate guide to hiking Alta Via 1 through the Italian Dolomites. Detailed itinerary, rifugio bookings, costs, and insider tips for this classic trek.",
             "keywords": [
-                "annapurna base camp",
-                "abc trek",
-                "nepal trekking",
-                "annapurna sanctuary",
-                "pokhara trekking"
+                "alta via 1",
+                "dolomites trek",
+                "italian alps hiking",
+                "rifugio to rifugio",
+                "dolomites alta via"
             ]
         }
     };

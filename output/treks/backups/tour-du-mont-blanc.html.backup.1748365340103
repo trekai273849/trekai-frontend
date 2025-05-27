@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
-    <meta name="description" content="Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.">
+    <title>Tour du Mont Blanc Complete Guide 2024 | 11-Day TMB Trek Itinerary</title>
+    <meta name="description" content="Ultimate guide to hiking the Tour du Mont Blanc through France, Italy &amp; Switzerland. Detailed TMB itinerary, refuges booking, costs, and expert tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/annapurna-base-camp-trek.jpg');
+            background-image: url('/images/treks/covers/tour-du-mont-blanc.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,20 +734,20 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Annapurna Base Camp Trek</h1>
+        <div class="hero-content">
+            <h1>Tour du Mont Blanc</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">10</span>
+                    <span class="hero-stat-value">11</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,130m</span>
+                    <span class="hero-stat-value">2,665m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">170km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -975,7 +758,7 @@
         </div>
     </section>
 
-    <!-- Navigation Tabs -->
+        <!-- Navigation Tabs -->
     <nav class="nav-tabs">
         <div class="nav-tabs-container">
             <button class="nav-tab active" data-section="overview">Overview</button>
@@ -987,13 +770,13 @@
         </div>
     </nav>
 
-    <!-- Overview Section -->
+<!-- Overview Section -->
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Nepal/Himalayas</h2>
+                <h2>Journey to European Alps</h2>
                 <p class="overview-description">
-                    Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.
+                    The classic Alpine circuit around Western Europe's highest peak, passing through three countries with spectacular mountain scenery and charming villages.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">7-12 days</span>
+                    <span class="info-value">9-12 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">170 km / 106 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,130m (13,550ft)</span>
+                    <span class="info-value">2,665m (8,743ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,16 +846,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Pokhara</span>
+                    <span class="info-value">Chamonix</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">2 permits</span>
+                    <span class="info-value">1 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,000</span>
+                        <span class="price-range">$1,200 - $2,500</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>10-Day Detailed Itinerary</h2>
+        <h2>11-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
+            Follow the route through European Alps with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Pokhara to Ghandruk</h3>
+          <h3 class="day-title">Chamonix to Les Houches</h3>
           <div class="day-stats">
-            <span>📏 42km</span>
+            <span>📏 16km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +1192m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📈 +680m</span>
+            <span>🏔️ 1,012m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views.</p>
+      <p class="day-description">Start the tour with a warm-up day, choosing between the high balcony route via Le Brévent or the valley route. Both offer stunning views of the Mont Blanc massif.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Drive to Nayapul</span><span class="day-highlight">Gurung village culture</span><span class="day-highlight">Annapurna South views</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Views of Mont Blanc massif</span><span class="day-highlight">Aiguilles de Chamonix</span><span class="day-highlight">Traditional Alpine villages</span><span class="day-highlight">Forest trails</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Ghandruk to Chhomrong</h3>
+          <h3 class="day-title">Les Houches to Les Contamines</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 2,170m</span>
+            <span>📏 17km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 1,164m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary.</p>
+      <p class="day-description">Cross the Col de Voza with views of the Bionnassay Glacier, then descend through alpine pastures to the charming village of Les Contamines.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Cross Kimrong Khola</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Machhapuchhre views</span><span class="day-highlight">Gateway to sanctuary</span>
+          <span class="day-highlight">Col de Voza views</span><span class="day-highlight">Bionnassay Glacier</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">Historic Roman bridge</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Chhomrong to Bamboo</h3>
+          <h3 class="day-title">Les Contamines to Les Chapieux</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📏 18km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +1120m</span>
+            <span>🏔️ 1,554m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests.</p>
+      <p class="day-description">A challenging day crossing the Col du Bonhomme and Col de la Croix du Bonhomme. Long ascent rewarded with spectacular views and remote mountain scenery.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Enter sanctuary</span><span class="day-highlight">Bamboo forests</span><span class="day-highlight">Modi Khola gorge</span><span class="day-highlight">Changing vegetation</span>
+          <span class="day-highlight">Col du Bonhomme (2,483m)</span><span class="day-highlight">Remote mountain landscapes</span><span class="day-highlight">Possible wildlife sightings</span><span class="day-highlight">Traditional refuges</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Bamboo to Deurali</h3>
+          <h3 class="day-title">Les Chapieux to Courmayeur</h3>
           <div class="day-stats">
-            <span>📏 11km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +920m</span>
-            <span>🏔️ 3,230m</span>
+            <span>📏 19km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +820m</span>
+            <span>🏔️ 1,224m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up.</p>
+      <p class="day-description">Cross into Italy via the Col de la Seigne. The landscape changes dramatically as you enter the Val Veny with new perspectives of Mont Blanc's south face.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Himalaya Hotel</span><span class="day-highlight">Alpine environment</span><span class="day-highlight">Avalanche areas</span><span class="day-highlight">Mountain views emerging</span>
+          <span class="day-highlight">Enter Italy</span><span class="day-highlight">Col de la Seigne (2,516m)</span><span class="day-highlight">South side Mont Blanc views</span><span class="day-highlight">Italian cuisine</span>
         </div>
       
     </div>
@@ -1176,19 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Deurali to Annapurna Base Camp</h3>
+          <h3 class="day-title">Courmayeur to Val Ferret</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +900m</span>
-            <span>🏔️ 4,130m</span>
+            <span>📏 20km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 1,780m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks.</p>
+      <p class="day-description">Spectacular high route above Val Ferret with close views of the Grandes Jorasses. Option to stay at the beautifully positioned Rifugio Bonatti.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Machhapuchhre Base Camp</span><span class="day-highlight">360-degree mountain views</span><span class="day-highlight">Annapurna Sanctuary</span><span class="day-highlight">Sunset on peaks</span>
+          <span class="day-highlight">Grandes Jorasses views</span><span class="day-highlight">Mont Dolent</span><span class="day-highlight">Italian Val Ferret</span><span class="day-highlight">Alpine architecture</span>
         </div>
       
     </div>
@@ -1197,19 +980,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 6</div>
-          <h3 class="day-title">ABC Sunrise and Descend to Bamboo</h3>
+          <h3 class="day-title">Val Ferret to Champex</h3>
           <div class="day-stats">
-            <span>📏 17km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 -1820m</span>
-            <span>🏔️ 2,310m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +680m</span>
+            <span>🏔️ 1,466m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo.</p>
+      <p class="day-description">Cross the Grand Col Ferret into Switzerland. Descend through Swiss alpine pastures to the pretty resort of Champex with its beautiful lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Sunrise on Annapurna I</span><span class="day-highlight">Last sanctuary views</span><span class="day-highlight">Rapid descent</span><span class="day-highlight">Return through forests</span>
+          <span class="day-highlight">Grand Col Ferret (2,537m)</span><span class="day-highlight">Enter Switzerland</span><span class="day-highlight">Champex lake</span><span class="day-highlight">Swiss hospitality</span>
         </div>
       
     </div>
@@ -1218,19 +1001,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 7</div>
-          <h3 class="day-title">Bamboo to Jhinu Danda</h3>
+          <h3 class="day-title">Champex to Trient</h3>
           <div class="day-stats">
-            <span>📏 13km</span>
+            <span>📏 16km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 1,780m</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 1,279m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river.</p>
+      <p class="day-description">Choose between the high route via Fenêtre d'Arpette (challenging) or the easier Bovine route. Both offer great views and pass through scenic alpine terrain.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Return to Chhomrong</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Relaxation</span><span class="day-highlight">Modi Khola riverside</span>
+          <span class="day-highlight">Fenêtre d'Arpette option</span><span class="day-highlight">Trient Glacier</span><span class="day-highlight">Alpine pastures</span><span class="day-highlight">Traditional villages</span>
         </div>
       
     </div>
@@ -1239,19 +1022,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 8</div>
-          <h3 class="day-title">Jhinu to Ghandruk</h3>
+          <h3 class="day-title">Trient to Argentière</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +232m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +720m</span>
+            <span>🏔️ 1,252m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Take alternative route back to Ghandruk through villages and terraced fields.</p>
+      <p class="day-description">Cross back into France via the Col de Balme with panoramic views. Descend to the village of Argentière in the Chamonix valley.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Alternative route</span><span class="day-highlight">Village life</span><span class="day-highlight">Cultural immersion</span><span class="day-highlight">Mountain views</span>
+          <span class="day-highlight">Col de Balme (2,191m)</span><span class="day-highlight">Return to France</span><span class="day-highlight">360-degree views</span><span class="day-highlight">Argentière Glacier</span>
         </div>
       
     </div>
@@ -1260,19 +1043,40 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 9</div>
-          <h3 class="day-title">Ghandruk to Pokhara</h3>
+          <h3 class="day-title">Argentière to La Flégère</h3>
           <div class="day-stats">
-            <span>📏 20km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 -1192m</span>
-            <span>🏔️ 820m</span>
+            <span>📏 13km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 1,877m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration.</p>
+      <p class="day-description">Climb into the Aiguilles Rouges for classic views of the entire Mont Blanc massif. Option to visit the stunning Lac Blanc.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Final mountain views</span><span class="day-highlight">Descent to Nayapul</span><span class="day-highlight">Drive to Pokhara</span><span class="day-highlight">Trek completion</span>
+          <span class="day-highlight">Lac Blanc option</span><span class="day-highlight">Aiguilles Rouges</span><span class="day-highlight">Classic Mont Blanc views</span><span class="day-highlight">Alpine lakes</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">La Flégère to Chamonix</h3>
+          <div class="day-stats">
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 1,035m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final descent back to Chamonix, completing the circuit. Gentle morning walk with time to reflect on the journey and celebrate your achievement.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Final descent</span><span class="day-highlight">Complete the circuit</span><span class="day-highlight">Celebration in Chamonix</span><span class="day-highlight">Sense of achievement</span>
         </div>
       
     </div>
@@ -1297,24 +1101,16 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking boots</div>
-          <div class="gear-description">Comfortable and waterproof</div>
+          <div class="gear-name">Hiking boots</div>
+          <div class="gear-description">Well broken-in, waterproof</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-10°C rated</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at base camp</div>
+          <div class="gear-name">Backpack</div>
+          <div class="gear-description">30-40L for hut-to-hut hiking</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1322,15 +1118,15 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Essential any season</div>
+          <div class="gear-description">Jacket and pants/poncho</div>
         </div>
-        <span class="rental-badge">Rental available</span>
+        
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Layers</div>
-          <div class="gear-description">Temperature varies greatly</div>
+          <div class="gear-name">Layering system</div>
+          <div class="gear-description">Base, insulation, shell layers</div>
         </div>
         
       </li>
@@ -1345,8 +1141,40 @@
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Basic first aid</div>
-          <div class="gear-description">Including blister kit</div>
+          <div class="gear-name">First aid kit</div>
+          <div class="gear-description">Blister treatment essential</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2L capacity</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early starts</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Highly recommended</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sleep sheet</div>
+          <div class="gear-description">Required in refuges</div>
         </div>
         
       </li>
@@ -1363,24 +1191,32 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful on stairs</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or SteriPen</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For snow patches</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Snacks</div>
-          <div class="gear-description">Energy bars, nuts</div>
+          <div class="gear-name">Lightweight shoes</div>
+          <div class="gear-description">For evenings in refuges</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Cash (Euros)</div>
+          <div class="gear-description">Many refuges don't take cards</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Plug adapter</div>
+          <div class="gear-description">European standard</div>
         </div>
         
       </li>
@@ -1400,17 +1236,17 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October, November</p>
-      <p>Clear views, stable weather, peak season</p>
+      <div class="season-icon">☀️</div>
+      <h3 class="season-name">Summer</h3>
+      <p class="season-months">July, August</p>
+      <p>All passes open, warmest weather, busiest time</p>
     </div>
   
     <div class="season-card">
-      <div class="season-icon">🌸</div>
-      <h3 class="season-name">Spring</h3>
-      <p class="season-months">March, April, May</p>
-      <p>Rhododendron blooms, good weather, warmer</p>
+      <div class="season-icon">🌄</div>
+      <h3 class="season-name">Early Autumn</h3>
+      <p class="season-months">September</p>
+      <p>Cooler weather, fewer crowds, stunning colors</p>
     </div>
   
         </div>
@@ -1433,27 +1269,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$40</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$25</span>
+      <span>$200</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$70</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$30</span>
+      <span>$150</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,000</span>
+      <span>$1,200 - $2,500</span>
     </div>
   
         </div>
@@ -1475,34 +1311,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>ABC or EBC - which is better?</span>
+        <span>Do I need to book refuges in advance?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible.</div>
+      <div class="faq-answer">Yes, absolutely essential in July-August. Book 2-4 months ahead. June and September are easier but still recommended to book ahead.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
+        <span>Can I wild camp?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety.</div>
+      <div class="faq-answer">Wild camping is generally prohibited except at high altitude (above 2500m) and only sunset to sunrise. Most hikers use the excellent refuge system.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How cold is base camp?</span>
+        <span>Which direction should I go?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag.</div>
+      <div class="faq-answer">Most go counter-clockwise for gentler start and to get major climbs done while fresh. Both directions have merits.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is altitude a problem?</span>
+        <span>Can I do it without a guide?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps.</div>
+      <div class="faq-answer">Yes, the trail is well-marked and most hikers go independently. Maps and basic navigation skills are sufficient.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>What about language barriers?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">English is widely spoken in tourist areas. Basic French phrases are appreciated and helpful in remote areas.</div>
     </div>
   
         </div>
@@ -1543,33 +1387,28 @@
             scrollToSectionTop();
         }
 
-                function scrollToSectionTop() {
-            requestAnimationFrame(() => {
+        function scrollToSectionTop() {
+            setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
-                
                 if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    // Get nav height to account for sticky positioning
+                    const navHeight = navTabs.offsetHeight;
                     
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                    
-                    window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+                    // Get the currently active section
+                    const activeSection = document.querySelector('.content-section.active');
+                    if (activeSection) {
+                        // Get the position of the active section
+                        const sectionTop = activeSection.offsetTop;
+                        // Scroll to section minus nav height to show content at top
+                        const targetPosition = sectionTop - navHeight - 10;
+                        
+                        window.scrollTo({
+                            top: Math.max(0, targetPosition),
+                            behavior: 'smooth'
+                        });
+                    }
                 }
-            });
+            }, 100);
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1654,360 +1493,375 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "annapurna-base-camp-trek",
-        "name": "Annapurna Base Camp Trek",
-        "slug": "annapurna-base-camp-trek",
-        "region": "Nepal/Himalayas",
-        "country": "Nepal",
-        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+        "_id": "tour-du-mont-blanc",
+        "name": "Tour du Mont Blanc",
+        "slug": "tour-du-mont-blanc",
+        "region": "European Alps",
+        "country": "France/Italy/Switzerland",
+        "summary": "The classic Alpine circuit around Western Europe's highest peak, passing through three countries with spectacular mountain scenery and charming villages.",
         "duration": {
-            "min_days": 7,
+            "min_days": 9,
             "max_days": 12,
-            "recommended_days": 10
+            "recommended_days": 11
         },
-        "distance_km": 110,
+        "distance_km": 170,
         "difficulty": "moderate",
-        "max_elevation_m": 4130,
-        "starting_elevation_m": 1070,
-        "airport": "Pokhara (PKR)",
-        "nearest_city": "Pokhara",
+        "max_elevation_m": 2665,
+        "starting_elevation_m": 1035,
+        "airport": "Geneva (GVA)",
+        "nearest_city": "Chamonix",
         "coordinates": {
             "start": {
-                "lat": 28.3784,
-                "lng": 83.7284,
-                "location": "Nayapul"
+                "lat": 45.9237,
+                "lng": 6.8694,
+                "location": "Chamonix"
             },
             "end": {
-                "lat": 28.53,
-                "lng": 83.8783,
-                "location": "Annapurna Base Camp"
+                "lat": 45.9237,
+                "lng": 6.8694,
+                "location": "Chamonix"
             }
         },
         "best_seasons": [
             {
-                "name": "Autumn",
+                "name": "Summer",
                 "months": [
-                    "September",
-                    "October",
-                    "November"
+                    "July",
+                    "August"
                 ],
-                "description": "Clear views, stable weather, peak season"
+                "description": "All passes open, warmest weather, busiest time"
             },
             {
-                "name": "Spring",
+                "name": "Early Autumn",
                 "months": [
-                    "March",
-                    "April",
-                    "May"
+                    "September"
                 ],
-                "description": "Rhododendron blooms, good weather, warmer"
+                "description": "Cooler weather, fewer crowds, stunning colors"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Pokhara to Ghandruk",
-                "start_location": "Pokhara",
-                "end_location": "Ghandruk",
-                "distance_km": 42,
+                "title": "Chamonix to Les Houches",
+                "start_location": "Chamonix",
+                "end_location": "Les Houches",
+                "distance_km": 16,
                 "duration_hours": 6,
-                "elevation_start_m": 820,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 1192,
+                "elevation_start_m": 1035,
+                "elevation_end_m": 1012,
+                "elevation_gain_m": 680,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "gite/hotel",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage",
-                        "Mountain View Lodge"
+                        "Gîte Michel Fagot",
+                        "Hotel Le Prarion",
+                        "Camping"
                     ]
                 },
                 "meals_included": [
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Drive to Nayapul",
-                    "Gurung village culture",
-                    "Annapurna South views",
-                    "Traditional architecture"
+                    "Views of Mont Blanc massif",
+                    "Aiguilles de Chamonix",
+                    "Traditional Alpine villages",
+                    "Forest trails"
                 ],
-                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
+                "description": "Start the tour with a warm-up day, choosing between the high balcony route via Le Brévent or the valley route. Both offer stunning views of the Mont Blanc massif."
             },
             {
                 "day": 2,
-                "title": "Ghandruk to Chhomrong",
-                "start_location": "Ghandruk",
-                "end_location": "Chhomrong",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 2170,
-                "elevation_gain_m": 500,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Chhomrong Guest House",
-                        "Annapurna Lodge",
-                        "Panorama Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Cross Kimrong Khola",
-                    "Terraced fields",
-                    "Machhapuchhre views",
-                    "Gateway to sanctuary"
-                ],
-                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
-            },
-            {
-                "day": 3,
-                "title": "Chhomrong to Bamboo",
-                "start_location": "Chhomrong",
-                "end_location": "Bamboo",
-                "distance_km": 10,
-                "duration_hours": 5,
-                "elevation_start_m": 2170,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Enter sanctuary",
-                    "Bamboo forests",
-                    "Modi Khola gorge",
-                    "Changing vegetation"
-                ],
-                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
-            },
-            {
-                "day": 4,
-                "title": "Bamboo to Deurali",
-                "start_location": "Bamboo",
-                "end_location": "Deurali",
-                "distance_km": 11,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 3230,
-                "elevation_gain_m": 920,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Deurali Guest House",
-                        "Himalaya Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Himalaya Hotel",
-                    "Alpine environment",
-                    "Avalanche areas",
-                    "Mountain views emerging"
-                ],
-                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
-            },
-            {
-                "day": 5,
-                "title": "Deurali to Annapurna Base Camp",
-                "start_location": "Deurali",
-                "end_location": "Annapurna Base Camp",
-                "distance_km": 6,
-                "duration_hours": 4,
-                "elevation_start_m": 3230,
-                "elevation_end_m": 4130,
+                "title": "Les Houches to Les Contamines",
+                "start_location": "Les Houches",
+                "end_location": "Les Contamines",
+                "distance_km": 17,
+                "duration_hours": 7,
+                "elevation_start_m": 1012,
+                "elevation_end_m": 1164,
                 "elevation_gain_m": 900,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "gite/hotel",
                     "options": [
-                        "ABC Lodge",
-                        "Annapurna Sanctuary Lodge"
+                        "Gîte le Pontet",
+                        "Hotel la Chemenaz",
+                        "CAF Refuge"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Machhapuchhre Base Camp",
-                    "360-degree mountain views",
-                    "Annapurna Sanctuary",
-                    "Sunset on peaks"
+                    "Col de Voza views",
+                    "Bionnassay Glacier",
+                    "Alpine meadows",
+                    "Historic Roman bridge"
                 ],
-                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
+                "description": "Cross the Col de Voza with views of the Bionnassay Glacier, then descend through alpine pastures to the charming village of Les Contamines."
+            },
+            {
+                "day": 3,
+                "title": "Les Contamines to Les Chapieux",
+                "start_location": "Les Contamines",
+                "end_location": "Les Chapieux",
+                "distance_km": 18,
+                "duration_hours": 8,
+                "elevation_start_m": 1164,
+                "elevation_end_m": 1554,
+                "elevation_gain_m": 1120,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "refuge/auberge",
+                    "options": [
+                        "Refuge de la Nova",
+                        "Auberge de la Nova"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Col du Bonhomme (2,483m)",
+                    "Remote mountain landscapes",
+                    "Possible wildlife sightings",
+                    "Traditional refuges"
+                ],
+                "description": "A challenging day crossing the Col du Bonhomme and Col de la Croix du Bonhomme. Long ascent rewarded with spectacular views and remote mountain scenery."
+            },
+            {
+                "day": 4,
+                "title": "Les Chapieux to Courmayeur",
+                "start_location": "Les Chapieux",
+                "end_location": "Courmayeur",
+                "distance_km": 19,
+                "duration_hours": 7,
+                "elevation_start_m": 1554,
+                "elevation_end_m": 1224,
+                "elevation_gain_m": 820,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "hotel/b&b",
+                    "options": [
+                        "Hotel Courmayeur",
+                        "Pensione Venezia",
+                        "Various B&Bs"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Enter Italy",
+                    "Col de la Seigne (2,516m)",
+                    "South side Mont Blanc views",
+                    "Italian cuisine"
+                ],
+                "description": "Cross into Italy via the Col de la Seigne. The landscape changes dramatically as you enter the Val Veny with new perspectives of Mont Blanc's south face."
+            },
+            {
+                "day": 5,
+                "title": "Courmayeur to Val Ferret",
+                "start_location": "Courmayeur",
+                "end_location": "Val Ferret",
+                "distance_km": 20,
+                "duration_hours": 8,
+                "elevation_start_m": 1224,
+                "elevation_end_m": 1780,
+                "elevation_gain_m": 800,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "rifugio/hotel",
+                    "options": [
+                        "Rifugio Bonatti",
+                        "Hotel Lavachey",
+                        "Rifugio Elena"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Grandes Jorasses views",
+                    "Mont Dolent",
+                    "Italian Val Ferret",
+                    "Alpine architecture"
+                ],
+                "description": "Spectacular high route above Val Ferret with close views of the Grandes Jorasses. Option to stay at the beautifully positioned Rifugio Bonatti."
             },
             {
                 "day": 6,
-                "title": "ABC Sunrise and Descend to Bamboo",
-                "start_location": "Annapurna Base Camp",
-                "end_location": "Bamboo",
-                "distance_km": 17,
-                "duration_hours": 7,
-                "elevation_start_m": 4130,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": -1820,
+                "title": "Val Ferret to Champex",
+                "start_location": "Val Ferret",
+                "end_location": "Champex",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 1780,
+                "elevation_end_m": 1466,
+                "elevation_gain_m": 680,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "hotel/pension",
                     "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
+                        "Hotel du Glacier",
+                        "Pension en Plein Air",
+                        "Au Club Alpin"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Sunrise on Annapurna I",
-                    "Last sanctuary views",
-                    "Rapid descent",
-                    "Return through forests"
+                    "Grand Col Ferret (2,537m)",
+                    "Enter Switzerland",
+                    "Champex lake",
+                    "Swiss hospitality"
                 ],
-                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
+                "description": "Cross the Grand Col Ferret into Switzerland. Descend through Swiss alpine pastures to the pretty resort of Champex with its beautiful lake."
             },
             {
                 "day": 7,
-                "title": "Bamboo to Jhinu Danda",
-                "start_location": "Bamboo",
-                "end_location": "Jhinu Danda",
-                "distance_km": 13,
+                "title": "Champex to Trient",
+                "start_location": "Champex",
+                "end_location": "Trient",
+                "distance_km": 16,
                 "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 1780,
-                "elevation_gain_m": 200,
+                "elevation_start_m": 1466,
+                "elevation_end_m": 1279,
+                "elevation_gain_m": 600,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "auberge/refuge",
                     "options": [
-                        "Jhinu Guest House",
-                        "Hot Spring Lodge"
+                        "Auberge du Mont-Blanc",
+                        "Refuge du Peuty"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Return to Chhomrong",
-                    "Natural hot springs",
-                    "Relaxation",
-                    "Modi Khola riverside"
+                    "Fenêtre d'Arpette option",
+                    "Trient Glacier",
+                    "Alpine pastures",
+                    "Traditional villages"
                 ],
-                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
+                "description": "Choose between the high route via Fenêtre d'Arpette (challenging) or the easier Bovine route. Both offer great views and pass through scenic alpine terrain."
             },
             {
                 "day": 8,
-                "title": "Jhinu to Ghandruk",
-                "start_location": "Jhinu Danda",
-                "end_location": "Ghandruk",
-                "distance_km": 8,
-                "duration_hours": 4,
-                "elevation_start_m": 1780,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 232,
-                "difficulty": "easy",
+                "title": "Trient to Argentière",
+                "start_location": "Trient",
+                "end_location": "Argentière",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 1279,
+                "elevation_end_m": 1252,
+                "elevation_gain_m": 720,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "hotel/gite",
                     "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage"
+                        "Hotel de la Couronne",
+                        "Gîte le Belvedere",
+                        "Various hotels"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Alternative route",
-                    "Village life",
-                    "Cultural immersion",
-                    "Mountain views"
+                    "Col de Balme (2,191m)",
+                    "Return to France",
+                    "360-degree views",
+                    "Argentière Glacier"
                 ],
-                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
+                "description": "Cross back into France via the Col de Balme with panoramic views. Descend to the village of Argentière in the Chamonix valley."
             },
             {
                 "day": 9,
-                "title": "Ghandruk to Pokhara",
-                "start_location": "Ghandruk",
-                "end_location": "Pokhara",
-                "distance_km": 20,
+                "title": "Argentière to La Flégère",
+                "start_location": "Argentière",
+                "end_location": "La Flégère",
+                "distance_km": 13,
+                "duration_hours": 6,
+                "elevation_start_m": 1252,
+                "elevation_end_m": 1877,
+                "elevation_gain_m": 900,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "refuge",
+                    "options": [
+                        "Refuge de la Flégère",
+                        "Hotel in valley"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Lac Blanc option",
+                    "Aiguilles Rouges",
+                    "Classic Mont Blanc views",
+                    "Alpine lakes"
+                ],
+                "description": "Climb into the Aiguilles Rouges for classic views of the entire Mont Blanc massif. Option to visit the stunning Lac Blanc."
+            },
+            {
+                "day": 10,
+                "title": "La Flégère to Chamonix",
+                "start_location": "La Flégère",
+                "end_location": "Chamonix",
+                "distance_km": 10,
                 "duration_hours": 4,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 820,
-                "elevation_gain_m": -1192,
+                "elevation_start_m": 1877,
+                "elevation_end_m": 1035,
+                "elevation_gain_m": 200,
                 "difficulty": "easy",
                 "accommodation": {
                     "type": "hotel",
                     "options": [
-                        "Return to Pokhara hotel"
+                        "Hotels in Chamonix"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch"
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Final mountain views",
-                    "Descent to Nayapul",
-                    "Drive to Pokhara",
-                    "Trek completion"
+                    "Final descent",
+                    "Complete the circuit",
+                    "Celebration in Chamonix",
+                    "Sense of achievement"
                 ],
-                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+                "description": "Final descent back to Chamonix, completing the circuit. Gentle morning walk with time to reflect on the journey and celebrate your achievement."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Trekking boots",
-                    "description": "Comfortable and waterproof",
-                    "rental_available": true
+                    "item": "Hiking boots",
+                    "description": "Well broken-in, waterproof",
+                    "rental_available": false
                 },
                 {
-                    "item": "Sleeping bag",
-                    "description": "-10°C rated",
-                    "rental_available": true
-                },
-                {
-                    "item": "Down jacket",
-                    "description": "Cold at base camp",
+                    "item": "Backpack",
+                    "description": "30-40L for hut-to-hut hiking",
                     "rental_available": true
                 },
                 {
                     "item": "Rain gear",
-                    "description": "Essential any season",
-                    "rental_available": true
+                    "description": "Jacket and pants/poncho",
+                    "rental_available": false
                 },
                 {
-                    "item": "Layers",
-                    "description": "Temperature varies greatly",
+                    "item": "Layering system",
+                    "description": "Base, insulation, shell layers",
                     "rental_available": false
                 },
                 {
@@ -2016,300 +1870,447 @@
                     "rental_available": false
                 },
                 {
-                    "item": "Basic first aid",
-                    "description": "Including blister kit",
+                    "item": "First aid kit",
+                    "description": "Blister treatment essential",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2L capacity",
+                    "rental_available": false
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Highly recommended",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleep sheet",
+                    "description": "Required in refuges",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Very helpful on stairs",
-                    "rental_available": true
-                },
-                {
-                    "item": "Water purification",
-                    "description": "Tablets or SteriPen",
+                    "item": "Gaiters",
+                    "description": "For snow patches",
                     "rental_available": false
                 },
                 {
-                    "item": "Snacks",
-                    "description": "Energy bars, nuts",
+                    "item": "Lightweight shoes",
+                    "description": "For evenings in refuges",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash (Euros)",
+                    "description": "Many refuges don't take cards",
+                    "rental_available": false
+                },
+                {
+                    "item": "Plug adapter",
+                    "description": "European standard",
+                    "rental_available": false
+                }
+            ],
+            "optional": [
+                {
+                    "item": "Camera",
+                    "description": "Spectacular photo opportunities",
+                    "rental_available": false
+                },
+                {
+                    "item": "Guidebook",
+                    "description": "Detailed route information",
+                    "rental_available": false
+                },
+                {
+                    "item": "Altitude sickness medication",
+                    "description": "If susceptible",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "ACAP (Annapurna Conservation)",
-                "cost_usd": 30,
-                "cost_npr": 3000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Single entry"
-            },
-            {
-                "name": "TIMS Card",
-                "cost_usd": 10,
-                "cost_npr": 1000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Trek duration"
+                "name": "None required",
+                "cost_usd": 0,
+                "cost_eur": 0,
+                "where_to_obtain": "N/A",
+                "validity": "N/A",
+                "notes": "No permits needed but accommodation must be booked in advance"
             }
         ],
         "costs": {
-            "permit_total_usd": 40,
-            "guide_daily_usd": 25,
-            "porter_daily_usd": 18,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 30,
+            "permit_total_usd": 0,
+            "guide_daily_usd": 200,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 70,
+            "meals_daily_usd": 50,
+            "transportation_usd": 150,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1000
+                "min": 1200,
+                "max": 2500
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Gurung",
-                "Magar"
+                "French",
+                "Italian",
+                "Swiss"
             ],
-            "primary_religion": "Buddhism and Hinduism",
+            "primary_religion": "Catholic/Secular",
             "languages": [
-                "Nepali",
-                "Gurung",
-                "English"
+                "French",
+                "Italian",
+                "German",
+                "English widely spoken"
             ],
             "customs_etiquette": [
-                "Remove shoes when entering homes",
-                "Use right hand for eating/giving",
-                "Walk clockwise around mani walls",
-                "Dress modestly in villages",
-                "Ask permission for photos"
+                "Greet everyone with 'Bonjour/Buongiorno/Grüezi'",
+                "Respect refuge rules and quiet hours",
+                "Remove boots when entering refuges",
+                "Share tables at busy refuges",
+                "Pack out all trash",
+                "Yield to uphill hikers"
             ],
             "local_foods": [
                 {
-                    "name": "Dal bhat",
-                    "description": "Traditional meal available everywhere"
+                    "name": "Tartiflette",
+                    "description": "Potato, cheese, and bacon gratin (Savoy)"
                 },
                 {
-                    "name": "Gurung bread",
-                    "description": "Local specialty"
+                    "name": "Polenta",
+                    "description": "Cornmeal dish popular in Italian valleys"
                 },
                 {
-                    "name": "Raksi",
-                    "description": "Local millet alcohol"
+                    "name": "Rösti",
+                    "description": "Swiss potato pancake"
                 },
                 {
-                    "name": "Dhindo",
-                    "description": "Traditional porridge"
+                    "name": "Génépy",
+                    "description": "Alpine herb liqueur"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Ultra-Trail du Mont-Blanc",
+                    "when": "Late August",
+                    "description": "Famous trail running race"
+                },
+                {
+                    "name": "Fête des Guides",
+                    "when": "August 15",
+                    "description": "Chamonix guides festival"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "moderate",
+                "risk_level": "low",
                 "prevention": [
-                    "Gradual ascent built into itinerary",
+                    "Gradual ascent built into route",
                     "Stay hydrated",
-                    "Rest day can be added",
-                    "Don't rush to ABC"
+                    "Don't rush the first days"
                 ],
-                "critical_points": [
-                    "Above 3000m",
-                    "Especially approaching ABC"
-                ]
+                "notes": "Maximum elevation 2,665m rarely causes issues"
+            },
+            "main_concerns": {
+                "weather": {
+                    "risk_level": "moderate",
+                    "description": "Afternoon thunderstorms common",
+                    "prevention": [
+                        "Start early each day",
+                        "Check weather forecasts",
+                        "Carry rain gear always",
+                        "Know refuge locations"
+                    ]
+                },
+                "trail_conditions": {
+                    "risk_level": "low",
+                    "description": "Well-maintained paths",
+                    "prevention": [
+                        "Watch for wet rocks",
+                        "Use poles for stability",
+                        "Take care on steep sections"
+                    ]
+                }
             },
             "medical_facilities": [
                 {
-                    "location": "Chhomrong",
-                    "type": "Basic health post"
+                    "location": "Chamonix",
+                    "type": "Hospital with mountain medicine unit"
                 },
                 {
-                    "location": "Pokhara",
-                    "type": "Good hospitals"
+                    "location": "Courmayeur",
+                    "type": "Medical center"
+                },
+                {
+                    "location": "Mountain refuges",
+                    "type": "Basic first aid"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter from most points",
+                "method": "Helicopter",
                 "cost_usd": "3000-5000",
-                "insurance_required": true
-            }
+                "insurance_required": true,
+                "response_time": "Usually within hours"
+            },
+            "vaccinations_recommended": [
+                "Routine vaccinations",
+                "Tick-borne encephalitis (if camping)"
+            ]
         },
         "weather_patterns": {
-            "autumn": {
+            "summer": {
                 "months": [
-                    "September",
-                    "October",
-                    "November"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Low",
-                "visibility": "Excellent",
-                "notes": "Best views, busy season"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "15 to 25",
-                "night_temp_c": "0 to 10",
-                "precipitation": "Moderate",
-                "visibility": "Good mornings",
-                "notes": "Rhododendrons bloom"
-            },
-            "winter": {
-                "months": [
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "-10 to 0",
-                "precipitation": "Low, possible snow",
-                "visibility": "Excellent",
-                "notes": "Very cold at ABC"
-            },
-            "monsoon": {
-                "months": [
-                    "June",
                     "July",
                     "August"
                 ],
-                "day_temp_c": "15 to 20",
+                "day_temp_c": "15 to 25",
                 "night_temp_c": "5 to 15",
-                "precipitation": "Very high",
-                "visibility": "Poor",
-                "notes": "Not recommended, leeches"
+                "precipitation": "Afternoon thunderstorms common",
+                "snow_level": "Above 3000m usually",
+                "notes": "Busiest period, book well ahead"
+            },
+            "early_summer": {
+                "months": [
+                    "June"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "0 to 10",
+                "precipitation": "Variable",
+                "snow_level": "Can be at pass level",
+                "notes": "Snow possible on high passes"
+            },
+            "autumn": {
+                "months": [
+                    "September"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Generally stable",
+                "snow_level": "First snows possible",
+                "notes": "Often best weather, fewer crowds"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Tourist bus",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 10,
+                    "method": "Train",
+                    "from": "Geneva",
+                    "to": "Chamonix",
+                    "duration": "2.5 hours",
+                    "cost_usd": 35,
                     "frequency": "Multiple daily"
                 },
                 {
-                    "method": "Private taxi",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
+                    "method": "Bus",
+                    "from": "Geneva Airport",
+                    "to": "Chamonix",
+                    "duration": "2 hours",
                     "cost_usd": 30,
-                    "frequency": "Any time"
+                    "frequency": "Hourly shuttles"
+                },
+                {
+                    "method": "Car",
+                    "from": "Geneva",
+                    "to": "Chamonix",
+                    "duration": "1.5 hours",
+                    "cost_usd": 50,
+                    "notes": "Parking available in Chamonix"
                 }
             ],
-            "from_end": "Same options in reverse"
+            "during_trek": [
+                {
+                    "method": "Cable cars",
+                    "description": "Optional to skip sections",
+                    "cost_usd": "20-40 per ride"
+                },
+                {
+                    "method": "Local buses",
+                    "description": "Connect valley towns",
+                    "cost_usd": "5-15"
+                }
+            ]
         },
         "accommodation": {
-            "type": "Teahouses",
-            "description": "Basic but comfortable lodges",
-            "amenities": [
-                "Twin-bed rooms",
-                "Shared bathrooms mostly",
-                "Hot showers (lower elevations)",
-                "Charging for devices (paid)",
-                "WiFi in some lodges (paid)",
-                "Meals available"
+            "type": "Mountain refuges and valley hotels",
+            "description": "Mix of staffed refuges, gîtes, and hotels",
+            "refuge_amenities": [
+                "Dormitory sleeping",
+                "Evening meal and breakfast",
+                "Hot showers (often paid)",
+                "Packed lunch available",
+                "Basic supplies shop"
             ],
-            "booking": "Not required except peak season",
-            "cost_per_night_usd": "3-8"
+            "booking": "Essential, especially July-August",
+            "cost_per_night_usd": {
+                "refuge_half_board": "60-80",
+                "gite_half_board": "50-70",
+                "hotel_b&b": "80-150",
+                "camping": "10-20"
+            }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness required",
-            "technical_skills": "None needed",
-            "altitude_challenge": "Moderate - max 4,130m",
-            "trail_conditions": "Well-maintained, many stone steps",
-            "daily_hiking_hours": "5-7 hours",
-            "total_elevation_gain": 4500,
-            "total_elevation_loss": 4500
+            "physical_demands": "Good fitness for consecutive long days",
+            "technical_skills": "None required",
+            "altitude_challenge": "Minimal",
+            "trail_conditions": "Well-marked and maintained",
+            "daily_hiking_hours": "5-8 hours",
+            "total_elevation_gain": 10000,
+            "total_elevation_loss": 10000
+        },
+        "sustainability": {
+            "environmental_concerns": [
+                "Trail erosion",
+                "Overcrowding in peak season",
+                "Waste management"
+            ],
+            "responsible_practices": [
+                "Use refuges instead of wild camping",
+                "Stay on marked trails",
+                "Pack out all waste",
+                "Use public transport when possible",
+                "Support local businesses"
+            ],
+            "local_initiatives": [
+                "Espace Mont-Blanc conservation",
+                "Trail maintenance programs",
+                "Sustainable tourism initiatives"
+            ]
+        },
+        "connectivity": {
+            "mobile_coverage": [
+                {
+                    "location": "Valleys",
+                    "quality": "Excellent",
+                    "providers": [
+                        "Orange",
+                        "SFR",
+                        "Swisscom",
+                        "TIM"
+                    ]
+                },
+                {
+                    "location": "Mountain passes",
+                    "quality": "Limited to none",
+                    "providers": [
+                        "Emergency calls only"
+                    ]
+                }
+            ],
+            "internet": {
+                "availability": "WiFi in most refuges and hotels",
+                "cost_usd": "Often free in hotels, paid in refuges",
+                "speed": "Variable, basic in refuges"
+            }
+        },
+        "booking_recommendations": {
+            "advance_booking": "2-4 months for peak season",
+            "group_size": "Easier for small groups",
+            "guide_requirement": "Not required, trail well-marked",
+            "luggage_transfer": "Available between valley stops",
+            "insurance_essential": true,
+            "fitness_preparation": "3 months hiking training"
         },
         "alternative_routes": [
             {
-                "name": "ABC via Poon Hill",
-                "variation": "Add Poon Hill sunrise",
-                "extra_days": 2,
+                "name": "TMB Shorter Version",
+                "variation": "7-day highlights tour",
+                "fewer_days": 4,
                 "highlights": [
-                    "Famous sunrise viewpoint",
-                    "Different villages",
-                    "More variety"
+                    "Hit main highlights",
+                    "Use transport for valleys"
                 ]
             },
             {
-                "name": "Mardi Himal addition",
-                "variation": "Combine with Mardi Himal",
-                "extra_days": 4,
+                "name": "Walker's Haute Route",
+                "variation": "Continue to Zermatt",
+                "extra_days": 7,
                 "highlights": [
-                    "Less crowded ridge trek",
-                    "Different perspective",
-                    "Forest camps"
+                    "Chamonix to Zermatt",
+                    "More glaciers",
+                    "Matterhorn finale"
+                ]
+            },
+            {
+                "name": "Trail Running TMB",
+                "variation": "Fast and light",
+                "fewer_days": 7,
+                "highlights": [
+                    "4-7 day running tour",
+                    "Ultralight approach"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Annapurna Base Camp",
+                "location": "Lac Blanc",
                 "best_time": "Sunrise",
                 "subjects": [
-                    "360° amphitheater",
-                    "Annapurna I south face",
-                    "Alpenglow"
+                    "Mont Blanc reflection",
+                    "Alpenglow",
+                    "Ibex"
                 ]
             },
             {
-                "location": "Machhapuchhre Base Camp",
-                "best_time": "Sunset",
-                "subjects": [
-                    "Fishtail mountain",
-                    "Sacred peak",
-                    "Evening colors"
-                ]
-            },
-            {
-                "location": "Ghandruk village",
+                "location": "Col de la Seigne",
                 "best_time": "Morning",
                 "subjects": [
-                    "Traditional architecture",
-                    "Mountain backdrop",
-                    "Village life"
+                    "South face Mont Blanc",
+                    "Val Veny views"
+                ]
+            },
+            {
+                "location": "Rifugio Bonatti",
+                "best_time": "Sunset",
+                "subjects": [
+                    "Grandes Jorasses",
+                    "Val Ferret",
+                    "Alpine glow"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "ABC or EBC - which is better?",
-                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
+                "question": "Do I need to book refuges in advance?",
+                "answer": "Yes, absolutely essential in July-August. Book 2-4 months ahead. June and September are easier but still recommended to book ahead."
             },
             {
-                "question": "Can I do it independently?",
-                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
+                "question": "Can I wild camp?",
+                "answer": "Wild camping is generally prohibited except at high altitude (above 2500m) and only sunset to sunrise. Most hikers use the excellent refuge system."
             },
             {
-                "question": "How cold is base camp?",
-                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
+                "question": "Which direction should I go?",
+                "answer": "Most go counter-clockwise for gentler start and to get major climbs done while fresh. Both directions have merits."
             },
             {
-                "question": "Is altitude a problem?",
-                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
+                "question": "Can I do it without a guide?",
+                "answer": "Yes, the trail is well-marked and most hikers go independently. Maps and basic navigation skills are sufficient."
+            },
+            {
+                "question": "What about language barriers?",
+                "answer": "English is widely spoken in tourist areas. Basic French phrases are appreciated and helpful in remote areas."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 95,
+        "popularity_score": 97,
         "seo": {
-            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
-            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+            "meta_title": "Tour du Mont Blanc Complete Guide 2024 | 11-Day TMB Trek Itinerary",
+            "meta_description": "Ultimate guide to hiking the Tour du Mont Blanc through France, Italy & Switzerland. Detailed TMB itinerary, refuges booking, costs, and expert tips.",
             "keywords": [
-                "annapurna base camp",
-                "abc trek",
-                "nepal trekking",
-                "annapurna sanctuary",
-                "pokhara trekking"
+                "tour du mont blanc",
+                "tmb trek",
+                "mont blanc circuit",
+                "alpine hiking",
+                "tmb itinerary"
             ]
         }
     };

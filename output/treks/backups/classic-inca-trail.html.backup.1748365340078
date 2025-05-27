@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
-    <meta name="description" content="Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.">
+    <title>Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu</title>
+    <meta name="description" content="Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/annapurna-base-camp-trek.jpg');
+            background-image: url('/images/treks/covers/classic-inca-trail.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,20 +734,20 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Annapurna Base Camp Trek</h1>
+        <div class="hero-content">
+            <h1>Classic Inca Trail</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">10</span>
+                    <span class="hero-stat-value">4</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,130m</span>
+                    <span class="hero-stat-value">4,200m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">43km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Nepal/Himalayas</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.
+                    The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">7-12 days</span>
+                    <span class="info-value">4-4 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">43 km / 27 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,130m (13,550ft)</span>
+                    <span class="info-value">4,200m (13,780ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,7 +846,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Pokhara</span>
+                    <span class="info-value">Cusco</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +855,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,000</span>
+                        <span class="price-range">$650 - $1,200</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>10-Day Detailed Itinerary</h2>
+        <h2>4-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Pokhara to Ghandruk</h3>
+          <h3 class="day-title">Km 82 to Wayllabamba</h3>
           <div class="day-stats">
-            <span>📏 42km</span>
+            <span>📏 12km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +1192m</span>
-            <span>🏔️ 2,012m</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 3,000m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views.</p>
+      <p class="day-description">Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Drive to Nayapul</span><span class="day-highlight">Gurung village culture</span><span class="day-highlight">Annapurna South views</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Patallacta ruins</span><span class="day-highlight">Urubamba River views</span><span class="day-highlight">First glimpse of snow peaks</span><span class="day-highlight">Traditional villages</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Ghandruk to Chhomrong</h3>
+          <h3 class="day-title">Wayllabamba to Pacaymayo</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +500m</span>
-            <span>🏔️ 2,170m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1200m</span>
+            <span>🏔️ 3,600m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary.</p>
+      <p class="day-description">The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Cross Kimrong Khola</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Machhapuchhre views</span><span class="day-highlight">Gateway to sanctuary</span>
+          <span class="day-highlight">Dead Woman's Pass (4,200m)</span><span class="day-highlight">Cloud forest ecosystem</span><span class="day-highlight">Llamas and alpacas</span><span class="day-highlight">Achievement of highest point</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Chhomrong to Bamboo</h3>
+          <h3 class="day-title">Pacaymayo to Wiñay Wayna</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 5 hours</span>
+            <span>📏 16km</span>
+            <span>⏱️ 9 hours</span>
             <span>📈 +400m</span>
-            <span>🏔️ 2,310m</span>
+            <span>🏔️ 2,650m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests.</p>
+      <p class="day-description">Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Enter sanctuary</span><span class="day-highlight">Bamboo forests</span><span class="day-highlight">Modi Khola gorge</span><span class="day-highlight">Changing vegetation</span>
+          <span class="day-highlight">Runkurakay ruins</span><span class="day-highlight">Sayacmarca ruins</span><span class="day-highlight">Phuyupatamarca ruins</span><span class="day-highlight">Cloud forest descent</span>
         </div>
       
     </div>
@@ -1155,124 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Bamboo to Deurali</h3>
+          <h3 class="day-title">Wiñay Wayna to Machu Picchu</h3>
           <div class="day-stats">
-            <span>📏 11km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +920m</span>
-            <span>🏔️ 3,230m</span>
+            <span>📏 4km</span>
+            <span>⏱️ 2 hours</span>
+            <span>📈 -220m</span>
+            <span>🏔️ 2,430m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up.</p>
+      <p class="day-description">Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Himalaya Hotel</span><span class="day-highlight">Alpine environment</span><span class="day-highlight">Avalanche areas</span><span class="day-highlight">Mountain views emerging</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 5</div>
-          <h3 class="day-title">Deurali to Annapurna Base Camp</h3>
-          <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +900m</span>
-            <span>🏔️ 4,130m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Machhapuchhre Base Camp</span><span class="day-highlight">360-degree mountain views</span><span class="day-highlight">Annapurna Sanctuary</span><span class="day-highlight">Sunset on peaks</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">ABC Sunrise and Descend to Bamboo</h3>
-          <div class="day-stats">
-            <span>📏 17km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 -1820m</span>
-            <span>🏔️ 2,310m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Sunrise on Annapurna I</span><span class="day-highlight">Last sanctuary views</span><span class="day-highlight">Rapid descent</span><span class="day-highlight">Return through forests</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 7</div>
-          <h3 class="day-title">Bamboo to Jhinu Danda</h3>
-          <div class="day-stats">
-            <span>📏 13km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 1,780m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Return to Chhomrong</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Relaxation</span><span class="day-highlight">Modi Khola riverside</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 8</div>
-          <h3 class="day-title">Jhinu to Ghandruk</h3>
-          <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +232m</span>
-            <span>🏔️ 2,012m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Take alternative route back to Ghandruk through villages and terraced fields.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Alternative route</span><span class="day-highlight">Village life</span><span class="day-highlight">Cultural immersion</span><span class="day-highlight">Mountain views</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 9</div>
-          <h3 class="day-title">Ghandruk to Pokhara</h3>
-          <div class="day-stats">
-            <span>📏 20km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 -1192m</span>
-            <span>🏔️ 820m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Final mountain views</span><span class="day-highlight">Descent to Nayapul</span><span class="day-highlight">Drive to Pokhara</span><span class="day-highlight">Trek completion</span>
+          <span class="day-highlight">Sun Gate first view</span><span class="day-highlight">Machu Picchu sunrise</span><span class="day-highlight">Guided site tour</span><span class="day-highlight">Optional Huayna Picchu</span>
         </div>
       
     </div>
@@ -1297,8 +975,8 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking boots</div>
-          <div class="gear-description">Comfortable and waterproof</div>
+          <div class="gear-name">Hiking boots</div>
+          <div class="gear-description">Well broken-in, waterproof</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1306,15 +984,7 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">-10°C rated</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Down jacket</div>
-          <div class="gear-description">Cold at base camp</div>
+          <div class="gear-description">-10°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1322,15 +992,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Essential any season</div>
+          <div class="gear-description">Jacket and pants essential</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Layers</div>
-          <div class="gear-description">Temperature varies greatly</div>
+          <div class="gear-name">Daypack</div>
+          <div class="gear-description">Porters carry main gear</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning starts</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2-3 liters capacity</div>
         </div>
         
       </li>
@@ -1338,15 +1024,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Hat, sunglasses, sunscreen</div>
+          <div class="gear-description">High altitude sun intense</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Basic first aid</div>
-          <div class="gear-description">Including blister kit</div>
+          <div class="gear-name">Personal medications</div>
+          <div class="gear-description">Including altitude sickness meds</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Warm layers</div>
+          <div class="gear-description">Gets very cold at altitude</div>
         </div>
         
       </li>
@@ -1364,23 +1058,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Very helpful on stairs</div>
+          <div class="gear-description">Helpful for steep descents</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water purification</div>
-          <div class="gear-description">Tablets or SteriPen</div>
+          <div class="gear-name">Sleeping pad</div>
+          <div class="gear-description">Extra comfort</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Coca leaves</div>
+          <div class="gear-description">Traditional altitude remedy</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Snacks</div>
-          <div class="gear-description">Energy bars, nuts</div>
+          <div class="gear-name">Cash (soles)</div>
+          <div class="gear-description">For tips and snacks</div>
         </div>
         
       </li>
@@ -1400,17 +1102,17 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October, November</p>
-      <p>Clear views, stable weather, peak season</p>
+      <div class="season-icon">☀️</div>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear skies, cold nights, busiest period</p>
     </div>
   
     <div class="season-card">
-      <div class="season-icon">🌸</div>
-      <h3 class="season-name">Spring</h3>
-      <p class="season-months">March, April, May</p>
-      <p>Rhododendron blooms, good weather, warmer</p>
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">April, October</p>
+      <p>Variable weather, fewer crowds, lush vegetation</p>
     </div>
   
         </div>
@@ -1433,27 +1135,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$40</span>
+      <span>$130</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$25</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$5</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$20</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$30</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,000</span>
+      <span>$650 - $1,200</span>
     </div>
   
         </div>
@@ -1475,34 +1177,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>ABC or EBC - which is better?</span>
+        <span>How fit do I need to be?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible.</div>
+      <div class="faq-answer">Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I do it independently?</span>
+        <span>Why must I book so far ahead?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety.</div>
+      <div class="faq-answer">Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How cold is base camp?</span>
+        <span>What about altitude sickness?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag.</div>
+      <div class="faq-answer">Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is altitude a problem?</span>
+        <span>How heavy is my daypack?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps.</div>
+      <div class="faq-answer">Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is the trail crowded?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others.</div>
     </div>
   
         </div>
@@ -1543,33 +1253,21 @@
             scrollToSectionTop();
         }
 
-                function scrollToSectionTop() {
-            requestAnimationFrame(() => {
+        function scrollToSectionTop() {
+            setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
-                
                 if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    // Get the height of the sticky nav
+                    const navHeight = navTabs.offsetHeight;
+                    // Scroll to just below the nav bar
+                    const targetPosition = navTabs.offsetTop + navHeight + 20;
                     
                     window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-            });
+            }, 50);
         }
 
         function centerTabWithNextVisible(clickedTab) {
@@ -1654,135 +1352,101 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "annapurna-base-camp-trek",
-        "name": "Annapurna Base Camp Trek",
-        "slug": "annapurna-base-camp-trek",
-        "region": "Nepal/Himalayas",
-        "country": "Nepal",
-        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+        "_id": "classic-inca-trail",
+        "name": "Classic Inca Trail",
+        "slug": "classic-inca-trail",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.",
         "duration": {
-            "min_days": 7,
-            "max_days": 12,
-            "recommended_days": 10
+            "min_days": 4,
+            "max_days": 4,
+            "recommended_days": 4
         },
-        "distance_km": 110,
+        "distance_km": 43,
         "difficulty": "moderate",
-        "max_elevation_m": 4130,
-        "starting_elevation_m": 1070,
-        "airport": "Pokhara (PKR)",
-        "nearest_city": "Pokhara",
+        "max_elevation_m": 4200,
+        "starting_elevation_m": 2600,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
         "coordinates": {
             "start": {
-                "lat": 28.3784,
-                "lng": 83.7284,
-                "location": "Nayapul"
+                "lat": -13.2585,
+                "lng": -72.2636,
+                "location": "Km 82 (Piscacucho)"
             },
             "end": {
-                "lat": 28.53,
-                "lng": 83.8783,
-                "location": "Annapurna Base Camp"
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
             }
         },
         "best_seasons": [
             {
-                "name": "Autumn",
+                "name": "Dry Season",
                 "months": [
-                    "September",
-                    "October",
-                    "November"
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September"
                 ],
-                "description": "Clear views, stable weather, peak season"
+                "description": "Clear skies, cold nights, busiest period"
             },
             {
-                "name": "Spring",
+                "name": "Shoulder Season",
                 "months": [
-                    "March",
                     "April",
-                    "May"
+                    "October"
                 ],
-                "description": "Rhododendron blooms, good weather, warmer"
+                "description": "Variable weather, fewer crowds, lush vegetation"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Pokhara to Ghandruk",
-                "start_location": "Pokhara",
-                "end_location": "Ghandruk",
-                "distance_km": 42,
+                "title": "Km 82 to Wayllabamba",
+                "start_location": "Km 82",
+                "end_location": "Wayllabamba",
+                "distance_km": 12,
                 "duration_hours": 6,
-                "elevation_start_m": 820,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 1192,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage",
-                        "Mountain View Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Drive to Nayapul",
-                    "Gurung village culture",
-                    "Annapurna South views",
-                    "Traditional architecture"
-                ],
-                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
-            },
-            {
-                "day": 2,
-                "title": "Ghandruk to Chhomrong",
-                "start_location": "Ghandruk",
-                "end_location": "Chhomrong",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 2170,
-                "elevation_gain_m": 500,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Chhomrong Guest House",
-                        "Annapurna Lodge",
-                        "Panorama Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Cross Kimrong Khola",
-                    "Terraced fields",
-                    "Machhapuchhre views",
-                    "Gateway to sanctuary"
-                ],
-                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
-            },
-            {
-                "day": 3,
-                "title": "Chhomrong to Bamboo",
-                "start_location": "Chhomrong",
-                "end_location": "Bamboo",
-                "distance_km": 10,
-                "duration_hours": 5,
-                "elevation_start_m": 2170,
-                "elevation_end_m": 2310,
+                "elevation_start_m": 2600,
+                "elevation_end_m": 3000,
                 "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "teahouse",
+                    "type": "camping",
                     "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
+                        "Wayllabamba campsite"
+                    ]
+                },
+                "meals_included": [
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Patallacta ruins",
+                    "Urubamba River views",
+                    "First glimpse of snow peaks",
+                    "Traditional villages"
+                ],
+                "description": "Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp."
+            },
+            {
+                "day": 2,
+                "title": "Wayllabamba to Pacaymayo",
+                "start_location": "Wayllabamba",
+                "end_location": "Pacaymayo",
+                "distance_km": 11,
+                "duration_hours": 7,
+                "elevation_start_m": 3000,
+                "elevation_end_m": 3600,
+                "elevation_gain_m": 1200,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Pacaymayo campsite"
                     ]
                 },
                 "meals_included": [
@@ -1791,525 +1455,520 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Enter sanctuary",
-                    "Bamboo forests",
-                    "Modi Khola gorge",
-                    "Changing vegetation"
+                    "Dead Woman's Pass (4,200m)",
+                    "Cloud forest ecosystem",
+                    "Llamas and alpacas",
+                    "Achievement of highest point"
                 ],
-                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
+                "description": "The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass."
+            },
+            {
+                "day": 3,
+                "title": "Pacaymayo to Wiñay Wayna",
+                "start_location": "Pacaymayo",
+                "end_location": "Wiñay Wayna",
+                "distance_km": 16,
+                "duration_hours": 9,
+                "elevation_start_m": 3600,
+                "elevation_end_m": 2650,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Wiñay Wayna campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Runkurakay ruins",
+                    "Sayacmarca ruins",
+                    "Phuyupatamarca ruins",
+                    "Cloud forest descent"
+                ],
+                "description": "Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp."
             },
             {
                 "day": 4,
-                "title": "Bamboo to Deurali",
-                "start_location": "Bamboo",
-                "end_location": "Deurali",
-                "distance_km": 11,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 3230,
-                "elevation_gain_m": 920,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Deurali Guest House",
-                        "Himalaya Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Himalaya Hotel",
-                    "Alpine environment",
-                    "Avalanche areas",
-                    "Mountain views emerging"
-                ],
-                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
-            },
-            {
-                "day": 5,
-                "title": "Deurali to Annapurna Base Camp",
-                "start_location": "Deurali",
-                "end_location": "Annapurna Base Camp",
-                "distance_km": 6,
-                "duration_hours": 4,
-                "elevation_start_m": 3230,
-                "elevation_end_m": 4130,
-                "elevation_gain_m": 900,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "ABC Lodge",
-                        "Annapurna Sanctuary Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Machhapuchhre Base Camp",
-                    "360-degree mountain views",
-                    "Annapurna Sanctuary",
-                    "Sunset on peaks"
-                ],
-                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
-            },
-            {
-                "day": 6,
-                "title": "ABC Sunrise and Descend to Bamboo",
-                "start_location": "Annapurna Base Camp",
-                "end_location": "Bamboo",
-                "distance_km": 17,
-                "duration_hours": 7,
-                "elevation_start_m": 4130,
-                "elevation_end_m": 2310,
-                "elevation_gain_m": -1820,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Bamboo Lodge",
-                        "Forest Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Sunrise on Annapurna I",
-                    "Last sanctuary views",
-                    "Rapid descent",
-                    "Return through forests"
-                ],
-                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
-            },
-            {
-                "day": 7,
-                "title": "Bamboo to Jhinu Danda",
-                "start_location": "Bamboo",
-                "end_location": "Jhinu Danda",
-                "distance_km": 13,
-                "duration_hours": 6,
-                "elevation_start_m": 2310,
-                "elevation_end_m": 1780,
-                "elevation_gain_m": 200,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Jhinu Guest House",
-                        "Hot Spring Lodge"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Return to Chhomrong",
-                    "Natural hot springs",
-                    "Relaxation",
-                    "Modi Khola riverside"
-                ],
-                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
-            },
-            {
-                "day": 8,
-                "title": "Jhinu to Ghandruk",
-                "start_location": "Jhinu Danda",
-                "end_location": "Ghandruk",
-                "distance_km": 8,
-                "duration_hours": 4,
-                "elevation_start_m": 1780,
-                "elevation_end_m": 2012,
-                "elevation_gain_m": 232,
-                "difficulty": "easy",
-                "accommodation": {
-                    "type": "teahouse",
-                    "options": [
-                        "Himalaya Lodge",
-                        "Gurung Cottage"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Alternative route",
-                    "Village life",
-                    "Cultural immersion",
-                    "Mountain views"
-                ],
-                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
-            },
-            {
-                "day": 9,
-                "title": "Ghandruk to Pokhara",
-                "start_location": "Ghandruk",
-                "end_location": "Pokhara",
-                "distance_km": 20,
-                "duration_hours": 4,
-                "elevation_start_m": 2012,
-                "elevation_end_m": 820,
-                "elevation_gain_m": -1192,
+                "title": "Wiñay Wayna to Machu Picchu",
+                "start_location": "Wiñay Wayna",
+                "end_location": "Machu Picchu",
+                "distance_km": 4,
+                "duration_hours": 2,
+                "elevation_start_m": 2650,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": -220,
                 "difficulty": "easy",
                 "accommodation": {
                     "type": "hotel",
                     "options": [
-                        "Return to Pokhara hotel"
+                        "Aguas Calientes hotels"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch"
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Final mountain views",
-                    "Descent to Nayapul",
-                    "Drive to Pokhara",
-                    "Trek completion"
+                    "Sun Gate first view",
+                    "Machu Picchu sunrise",
+                    "Guided site tour",
+                    "Optional Huayna Picchu"
                 ],
-                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+                "description": "Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Trekking boots",
-                    "description": "Comfortable and waterproof",
+                    "item": "Hiking boots",
+                    "description": "Well broken-in, waterproof",
                     "rental_available": true
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "-10°C rated",
-                    "rental_available": true
-                },
-                {
-                    "item": "Down jacket",
-                    "description": "Cold at base camp",
+                    "description": "-10°C rated for cold nights",
                     "rental_available": true
                 },
                 {
                     "item": "Rain gear",
-                    "description": "Essential any season",
+                    "description": "Jacket and pants essential",
                     "rental_available": true
                 },
                 {
-                    "item": "Layers",
-                    "description": "Temperature varies greatly",
+                    "item": "Daypack",
+                    "description": "Porters carry main gear",
+                    "rental_available": true
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2-3 liters capacity",
                     "rental_available": false
                 },
                 {
                     "item": "Sun protection",
-                    "description": "Hat, sunglasses, sunscreen",
+                    "description": "High altitude sun intense",
                     "rental_available": false
                 },
                 {
-                    "item": "Basic first aid",
-                    "description": "Including blister kit",
+                    "item": "Personal medications",
+                    "description": "Including altitude sickness meds",
+                    "rental_available": false
+                },
+                {
+                    "item": "Warm layers",
+                    "description": "Gets very cold at altitude",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Very helpful on stairs",
+                    "description": "Helpful for steep descents",
                     "rental_available": true
                 },
                 {
-                    "item": "Water purification",
-                    "description": "Tablets or SteriPen",
+                    "item": "Sleeping pad",
+                    "description": "Extra comfort",
+                    "rental_available": true
+                },
+                {
+                    "item": "Coca leaves",
+                    "description": "Traditional altitude remedy",
                     "rental_available": false
                 },
                 {
-                    "item": "Snacks",
-                    "description": "Energy bars, nuts",
+                    "item": "Cash (soles)",
+                    "description": "For tips and snacks",
                     "rental_available": false
+                }
+            ],
+            "provided_by_operator": [
+                {
+                    "item": "Tents",
+                    "description": "2-person tents"
+                },
+                {
+                    "item": "Dining tent",
+                    "description": "With tables and chairs"
+                },
+                {
+                    "item": "Kitchen equipment",
+                    "description": "All cooking gear"
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Comprehensive kit with guide"
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "ACAP (Annapurna Conservation)",
-                "cost_usd": 30,
-                "cost_npr": 3000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Single entry"
+                "name": "Inca Trail Permit",
+                "cost_usd": 80,
+                "cost_pen": 280,
+                "where_to_obtain": "Only through licensed operators",
+                "validity": "Specific date only",
+                "notes": "Limited to 500 people/day including support staff"
             },
             {
-                "name": "TIMS Card",
-                "cost_usd": 10,
-                "cost_npr": 1000,
-                "where_to_obtain": "Pokhara or Kathmandu",
-                "validity": "Trek duration"
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Included in trek package",
+                "validity": "Specific time slot"
             }
         ],
         "costs": {
-            "permit_total_usd": 40,
-            "guide_daily_usd": 25,
-            "porter_daily_usd": 18,
-            "accommodation_daily_usd": 5,
-            "meals_daily_usd": 20,
-            "transportation_usd": 30,
+            "permit_total_usd": 130,
+            "guide_daily_usd": "included",
+            "porter_daily_usd": "included",
+            "accommodation_daily_usd": 0,
+            "meals_daily_usd": "included",
+            "trek_package_usd": 650,
+            "transportation_usd": 50,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1000
+                "min": 650,
+                "max": 1200
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Gurung",
-                "Magar"
+                "Quechua",
+                "Mestizo"
             ],
-            "primary_religion": "Buddhism and Hinduism",
+            "primary_religion": "Catholic with Andean traditions",
             "languages": [
-                "Nepali",
-                "Gurung",
-                "English"
+                "Spanish",
+                "Quechua",
+                "English (guides)"
             ],
             "customs_etiquette": [
-                "Remove shoes when entering homes",
-                "Use right hand for eating/giving",
-                "Walk clockwise around mani walls",
-                "Dress modestly in villages",
-                "Ask permission for photos"
+                "Ask permission before photographing locals",
+                "Respect sacred sites - no climbing on ruins",
+                "Participate in coca leaf ceremonies if offered",
+                "Tip porters and cooks ($20-30 total)",
+                "Don't touch or move stones at archaeological sites",
+                "Greet with 'Buenos días' or 'Allin p'unchay' (Quechua)"
             ],
             "local_foods": [
                 {
-                    "name": "Dal bhat",
-                    "description": "Traditional meal available everywhere"
+                    "name": "Quinoa soup",
+                    "description": "Traditional high-protein grain soup"
                 },
                 {
-                    "name": "Gurung bread",
-                    "description": "Local specialty"
+                    "name": "Lomo saltado",
+                    "description": "Stir-fried beef with vegetables"
                 },
                 {
-                    "name": "Raksi",
-                    "description": "Local millet alcohol"
+                    "name": "Coca tea",
+                    "description": "Helps with altitude adjustment"
                 },
                 {
-                    "name": "Dhindo",
-                    "description": "Traditional porridge"
+                    "name": "Chuño",
+                    "description": "Freeze-dried potatoes"
+                }
+            ],
+            "festivals": [
+                {
+                    "name": "Inti Raymi",
+                    "when": "June 24",
+                    "description": "Festival of the Sun"
+                },
+                {
+                    "name": "Qoyllur Rit'i",
+                    "when": "May/June",
+                    "description": "Snow Star Festival"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "moderate",
+                "risk_level": "high",
                 "prevention": [
-                    "Gradual ascent built into itinerary",
-                    "Stay hydrated",
-                    "Rest day can be added",
-                    "Don't rush to ABC"
+                    "Acclimatize in Cusco 2-3 days before",
+                    "Climb slowly, rest frequently",
+                    "Stay hydrated (3-4 liters daily)",
+                    "Consider acetazolamide (Diamox)",
+                    "Coca tea and coca leaves help",
+                    "Avoid alcohol before and during trek"
                 ],
-                "critical_points": [
-                    "Above 3000m",
-                    "Especially approaching ABC"
-                ]
+                "symptoms": [
+                    "Headache",
+                    "Nausea",
+                    "Shortness of breath",
+                    "Fatigue",
+                    "Loss of appetite"
+                ],
+                "treatment": "Descend if symptoms worsen, guides carry oxygen"
             },
             "medical_facilities": [
                 {
-                    "location": "Chhomrong",
-                    "type": "Basic health post"
+                    "location": "Trail",
+                    "type": "Basic first aid with guides"
                 },
                 {
-                    "location": "Pokhara",
-                    "type": "Good hospitals"
+                    "location": "Aguas Calientes",
+                    "type": "Medical post"
+                },
+                {
+                    "location": "Cusco",
+                    "type": "Hospitals and clinics"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter from most points",
-                "cost_usd": "3000-5000",
-                "insurance_required": true
-            }
+                "method": "Porter stretcher or helicopter",
+                "cost_usd": "2000-5000",
+                "insurance_required": true,
+                "response_time": "Several hours to days"
+            },
+            "vaccinations_recommended": [
+                "Yellow fever",
+                "Hepatitis A & B",
+                "Typhoid",
+                "Routine vaccinations"
+            ],
+            "other_concerns": [
+                "Sun exposure at altitude",
+                "Hypothermia risk at passes",
+                "Basic hygiene to avoid GI issues"
+            ]
         },
         "weather_patterns": {
-            "autumn": {
+            "dry_season": {
                 "months": [
-                    "September",
-                    "October",
-                    "November"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Low",
-                "visibility": "Excellent",
-                "notes": "Best views, busy season"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "15 to 25",
-                "night_temp_c": "0 to 10",
-                "precipitation": "Moderate",
-                "visibility": "Good mornings",
-                "notes": "Rhododendrons bloom"
-            },
-            "winter": {
-                "months": [
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "-10 to 0",
-                "precipitation": "Low, possible snow",
-                "visibility": "Excellent",
-                "notes": "Very cold at ABC"
-            },
-            "monsoon": {
-                "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
                 "day_temp_c": "15 to 20",
-                "night_temp_c": "5 to 15",
-                "precipitation": "Very high",
-                "visibility": "Poor",
-                "notes": "Not recommended, leeches"
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Busy season, cold nights"
+            },
+            "wet_season": {
+                "months": [
+                    "November",
+                    "December",
+                    "January",
+                    "February",
+                    "March"
+                ],
+                "day_temp_c": "13 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily rain likely",
+                "notes": "Trail closed in February"
+            },
+            "shoulder": {
+                "months": [
+                    "April",
+                    "October"
+                ],
+                "day_temp_c": "15 to 18",
+                "night_temp_c": "0 to 5",
+                "precipitation": "Occasional",
+                "notes": "Good compromise, fewer crowds"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Tourist bus",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 10,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Private taxi",
-                    "from": "Pokhara",
-                    "to": "Nayapul",
-                    "duration": "1.5 hours",
-                    "cost_usd": 30,
-                    "frequency": "Any time"
+                    "method": "Bus/Van",
+                    "from": "Cusco",
+                    "to": "Km 82",
+                    "duration": "2.5 hours",
+                    "cost_usd": "included",
+                    "notes": "Early morning departure"
                 }
             ],
-            "from_end": "Same options in reverse"
+            "from_end": [
+                {
+                    "method": "Train",
+                    "from": "Aguas Calientes",
+                    "to": "Ollantaytambo",
+                    "duration": "1.5 hours",
+                    "cost_usd": 75,
+                    "notes": "Then bus to Cusco"
+                }
+            ]
         },
         "accommodation": {
-            "type": "Teahouses",
-            "description": "Basic but comfortable lodges",
+            "type": "Camping",
+            "description": "Designated campsites only",
             "amenities": [
-                "Twin-bed rooms",
-                "Shared bathrooms mostly",
-                "Hot showers (lower elevations)",
-                "Charging for devices (paid)",
-                "WiFi in some lodges (paid)",
-                "Meals available"
+                "Two-person tents provided",
+                "Dining tent with tables",
+                "Portable toilet tent",
+                "No showers on trail",
+                "Basic facilities at campsites"
             ],
-            "booking": "Not required except peak season",
-            "cost_per_night_usd": "3-8"
+            "booking": "Must book through licensed operator",
+            "cost_per_night_usd": "Included in package"
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness required",
-            "technical_skills": "None needed",
-            "altitude_challenge": "Moderate - max 4,130m",
-            "trail_conditions": "Well-maintained, many stone steps",
-            "daily_hiking_hours": "5-7 hours",
-            "total_elevation_gain": 4500,
-            "total_elevation_loss": 4500
+            "physical_demands": "Good fitness for altitude and long days",
+            "technical_skills": "None required",
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Stone steps, some uneven terrain",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 2200,
+            "total_elevation_loss": 2370
+        },
+        "sustainability": {
+            "environmental_concerns": [
+                "Trail erosion",
+                "Waste management",
+                "Overcrowding"
+            ],
+            "responsible_practices": [
+                "Pack out all trash",
+                "Use designated toilet facilities",
+                "Stay on marked trails",
+                "Support porter welfare initiatives",
+                "Choose operators following sustainability practices"
+            ],
+            "local_initiatives": [
+                "Porter welfare laws",
+                "Trail maintenance programs",
+                "Daily visitor limits"
+            ]
+        },
+        "connectivity": {
+            "mobile_coverage": [
+                {
+                    "location": "Start/End points",
+                    "quality": "Good",
+                    "providers": [
+                        "Claro",
+                        "Movistar"
+                    ]
+                },
+                {
+                    "location": "Trail",
+                    "quality": "None",
+                    "providers": []
+                }
+            ],
+            "internet": {
+                "availability": "No internet on trail",
+                "cost_usd": 0,
+                "speed": "N/A"
+            }
+        },
+        "booking_recommendations": {
+            "advance_booking": "4-6 months essential",
+            "group_size": "Maximum 16 per group",
+            "guide_requirement": "Mandatory - licensed guide only",
+            "porter_recommendation": "Included in all packages",
+            "insurance_essential": true,
+            "fitness_preparation": "3 months cardio and stair training"
         },
         "alternative_routes": [
             {
-                "name": "ABC via Poon Hill",
-                "variation": "Add Poon Hill sunrise",
-                "extra_days": 2,
+                "name": "Salkantay Trek",
+                "variation": "Higher altitude alternative",
+                "extra_days": 1,
                 "highlights": [
-                    "Famous sunrise viewpoint",
-                    "Different villages",
-                    "More variety"
+                    "No permit needed",
+                    "Salkantay peak views",
+                    "More challenging"
                 ]
             },
             {
-                "name": "Mardi Himal addition",
-                "variation": "Combine with Mardi Himal",
-                "extra_days": 4,
+                "name": "Lares Trek",
+                "variation": "Cultural focus",
+                "extra_days": 0,
                 "highlights": [
-                    "Less crowded ridge trek",
-                    "Different perspective",
-                    "Forest camps"
+                    "Remote villages",
+                    "Hot springs",
+                    "Weaving communities"
+                ]
+            },
+            {
+                "name": "Short Inca Trail",
+                "variation": "2-day version",
+                "fewer_days": 2,
+                "highlights": [
+                    "Less strenuous",
+                    "Still enter via Sun Gate",
+                    "Good for families"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Annapurna Base Camp",
-                "best_time": "Sunrise",
-                "subjects": [
-                    "360° amphitheater",
-                    "Annapurna I south face",
-                    "Alpenglow"
-                ]
-            },
-            {
-                "location": "Machhapuchhre Base Camp",
-                "best_time": "Sunset",
-                "subjects": [
-                    "Fishtail mountain",
-                    "Sacred peak",
-                    "Evening colors"
-                ]
-            },
-            {
-                "location": "Ghandruk village",
+                "location": "Dead Woman's Pass",
                 "best_time": "Morning",
                 "subjects": [
-                    "Traditional architecture",
-                    "Mountain backdrop",
-                    "Village life"
+                    "Mountain panorama",
+                    "Achievement shots",
+                    "Cloud formations"
+                ]
+            },
+            {
+                "location": "Phuyupatamarca",
+                "best_time": "Sunset",
+                "subjects": [
+                    "Ruins with mountain backdrop",
+                    "Cloud forest",
+                    "Distant peaks"
+                ]
+            },
+            {
+                "location": "Sun Gate",
+                "best_time": "Sunrise",
+                "subjects": [
+                    "First view of Machu Picchu",
+                    "Morning mist",
+                    "Dramatic reveal"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "ABC or EBC - which is better?",
-                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
+                "question": "How fit do I need to be?",
+                "answer": "Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior."
             },
             {
-                "question": "Can I do it independently?",
-                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
+                "question": "Why must I book so far ahead?",
+                "answer": "Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently."
             },
             {
-                "question": "How cold is base camp?",
-                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
+                "question": "What about altitude sickness?",
+                "answer": "Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely."
             },
             {
-                "question": "Is altitude a problem?",
-                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
+                "question": "How heavy is my daypack?",
+                "answer": "Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg."
+            },
+            {
+                "question": "Is the trail crowded?",
+                "answer": "Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 95,
+        "popularity_score": 99,
         "seo": {
-            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
-            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+            "meta_title": "Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu",
+            "meta_description": "Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.",
             "keywords": [
-                "annapurna base camp",
-                "abc trek",
-                "nepal trekking",
-                "annapurna sanctuary",
-                "pokhara trekking"
+                "inca trail",
+                "machu picchu trek",
+                "peru trekking",
+                "inca trail permits",
+                "cusco hiking"
             ]
         }
     };
