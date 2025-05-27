@@ -396,8 +396,25 @@
       
       // For popular treks, use the title (trek name); for custom itineraries, use location
       const displayTitle = isPopularTrek ? 
-        (itinerary.title || 'Popular Trek') : 
+        (itinerary.title || itinerary.trekName || 'Popular Trek') : 
         toTitleCase(itinerary.location || 'Custom Itinerary');
+      
+      // Check if this is a popular trek with its own image
+      if (isPopularTrek && itinerary.trekImage) {
+        // Use the trek's specific image
+        return Promise.resolve(`
+          <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
+               style="background-image: url('${itinerary.trekImage}')">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="relative z-10 text-center">
+              <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
+              ${itinerary.trekDetails?.region ? `
+                <p class="text-sm text-gray-200 opacity-90">${toTitleCase(itinerary.trekDetails.region)}</p>
+              ` : ''}
+            </div>
+          </div>
+        `);
+      }
       
       // For location info (for gradient/image matching), use the region or location
       const locationForStyling = isPopularTrek ? 
