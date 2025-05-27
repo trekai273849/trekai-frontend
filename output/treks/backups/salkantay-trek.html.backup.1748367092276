@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail</title>
+    <meta name="description" content="Ultimate guide to the Salkantay Trek to Machu Picchu. Detailed 5-day itinerary, no permits needed, costs, gear list, and expert tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/salkantay-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,23 +952,23 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+            <h1>Salkantay Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">5</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">4,600m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">75km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">moderate</span>
+                    <span class="hero-stat-value">challenging</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -991,9 +991,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,20 +1041,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">75 km / 47 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">4,600m (15,092ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">moderate</span>
+                        <span class="difficulty-badge">challenging</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -1063,16 +1063,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Cusco</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">3 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$300 - $800</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +1081,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>5-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Cusco to Soraypampa</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 3,850m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">Drive from Cusco to Mollepata, then to Challacancha. Trek through valleys to Soraypampa with optional afternoon hike to stunning turquoise Humantay Lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Humantay Lake option</span><span class="day-highlight">First views of Salkantay</span><span class="day-highlight">Apurimac Valley</span><span class="day-highlight">Acclimatization hike</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Soraypampa to Chaullay</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📏 22km</span>
+            <span>⏱️ 10 hours</span>
+            <span>📈 +750m</span>
+            <span>🏔️ 2,900m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">The big day! Early start for the challenging climb to Salkantay Pass at 4,600m. Incredible views of sacred Salkantay peak before long descent into warmer cloud forest.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Salkantay Pass (4,600m)</span><span class="day-highlight">Salkantay peak close views</span><span class="day-highlight">Dramatic ecosystem change</span><span class="day-highlight">Descent to cloud forest</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">Chaullay to Santa Teresa</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
+            <span>📏 15km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>📈 -1350m</span>
+            <span>🏔️ 1,550m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">Beautiful day hiking through cloud forest with increasing vegetation and warmth. Pass coffee and fruit plantations. Optional visit to Cocalmayo hot springs in afternoon.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">Cloud forest biodiversity</span><span class="day-highlight">Coffee plantations</span><span class="day-highlight">Waterfalls</span><span class="day-highlight">Hot springs option</span>
         </div>
       
     </div>
@@ -1155,19 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Santa Teresa to Aguas Calientes</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 2,040m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Optional zipline before hiking to Hidroelectrica. Walk along train tracks to Aguas Calientes or take optional train. First distant views of Machu Picchu from Llactapata.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
+          <span class="day-highlight">Llactapata ruins</span><span class="day-highlight">First Machu Picchu views</span><span class="day-highlight">Urubamba River</span><span class="day-highlight">Train tracks walk</span>
         </div>
       
     </div>
@@ -1176,40 +1176,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
+          <h3 class="day-title">Machu Picchu Visit</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +390m</span>
+            <span>🏔️ 2,430m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
+      <p class="day-description">Early morning bus or hike to Machu Picchu for sunrise. Guided tour of the ancient citadel. Optional climb Huayna Picchu or Machu Picchu Mountain. Afternoon train to Cusco.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
-          <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Machu Picchu sunrise</span><span class="day-highlight">Guided tour of citadel</span><span class="day-highlight">Optional Huayna Picchu</span><span class="day-highlight">Return to Cusco</span>
         </div>
       
     </div>
@@ -1234,74 +1213,74 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Waterproof with ankle support</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-15°C for pass night</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Quality jacket and pants</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
+          <div class="gear-name">Warm clothing</div>
+          <div class="gear-description">Down jacket, fleece, thermals</div>
         </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
-        </div>
-        
+        <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-description">30-40L capacity</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning start</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen</div>
         </div>
         
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">3L capacity total</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Highly recommended</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
       </li>
     
                 </ul>
@@ -1316,32 +1295,32 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Incredible photo opportunities</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For muddy sections</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
+          <div class="gear-name">Swimsuit</div>
+          <div class="gear-description">For hot springs</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
+          <div class="gear-name">Sandals</div>
+          <div class="gear-description">For camp and river crossings</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Cash</div>
+          <div class="gear-description">For tips and extras</div>
         </div>
         
       </li>
@@ -1362,16 +1341,16 @@
             
     <div class="season-card">
       <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear mountain views, cold at altitude, stable weather</p>
     </div>
   
     <div class="season-card">
       <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">April, October, November</p>
+      <p>Variable weather, fewer trekkers, lush landscapes</p>
     </div>
   
         </div>
@@ -1394,27 +1373,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
-    </div>
-    <div class="cost-item">
-      <span>Guide (per day)</span>
-      <span>$200</span>
-    </div>
-    <div class="cost-item">
-      <span>Accommodation (per night)</span>
-      <span>$100</span>
-    </div>
-    <div class="cost-item">
-      <span>Meals (per day)</span>
       <span>$50</span>
     </div>
     <div class="cost-item">
+      <span>Guide (per day)</span>
+      <span>$30</span>
+    </div>
+    <div class="cost-item">
+      <span>Accommodation (per night)</span>
+      <span>$15</span>
+    </div>
+    <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$25</span>
+    </div>
+    <div class="cost-item">
       <span>Transportation</span>
-      <span>$200</span>
+      <span>$150</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$300 - $800</span>
     </div>
   
         </div>
@@ -1436,34 +1415,34 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
+        <span>Is it as good as the Inca Trail?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
+      <div class="faq-answer">Different but equally spectacular. More challenging, fewer ruins, but stunning mountain scenery and no permit stress. Many consider it superior for landscapes.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
+        <span>Can I do it independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
+      <div class="faq-answer">Yes, unlike the Inca Trail. But guided tours provide logistics, meals, and camping equipment. Solo requires carrying everything.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
+        <span>How cold does it get?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
+      <div class="faq-answer">Very cold at Salkantay Pass - can be -10°C at night. But by day 3 you're in warm cloud forest. Pack for all climates.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
+        <span>Is altitude sickness common?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
+      <div class="faq-answer">Yes, especially on pass day. Crucial to acclimatize in Cusco first. The rapid descent helps recovery.</div>
     </div>
   
         </div>
@@ -1504,28 +1483,21 @@
             scrollToSectionTop();
         }
 
-                                                    function scrollToSectionTop() {
-            // Get the currently active content section
-            const activeSection = document.querySelector('.content-section.active');
-            
-            if (activeSection) {
-                // Scroll to the top of the active section content
-                activeSection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
+                                            function scrollToSectionTop() {
+            // Simple approach: scroll the navigation into view, then add offset
+            const navTabs = document.querySelector('.nav-tabs');
+            if (navTabs) {
+                // Scroll nav to top of viewport
+                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                // Small delay then adjust for sticky nav
+                // Add small delay then scroll down by nav height + padding
                 setTimeout(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
-                    if (navTabs) {
-                        const navHeight = navTabs.offsetHeight;
-                        window.scrollBy({
-                            top: -(navHeight + 10), // Negative to go UP
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 50);
+                    const navHeight = navTabs.offsetHeight;
+                    window.scrollBy({
+                        top: navHeight + 20,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         }
 
@@ -1611,713 +1583,555 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "salkantay-trek",
+        "name": "Salkantay Trek",
+        "slug": "salkantay-trek",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The spectacular alternative to the Inca Trail, crossing high mountain passes with views of sacred Salkantay peak before descending through cloud forest to Machu Picchu.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 6
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 5
         },
-        "distance_km": 60,
-        "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "distance_km": 75,
+        "difficulty": "challenging",
+        "max_elevation_m": 4600,
+        "starting_elevation_m": 3350,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": -13.3886,
+                "lng": -72.7973,
+                "location": "Mollepata"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
+                "name": "Dry Season",
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
+                "description": "Clear mountain views, cold at altitude, stable weather"
             },
             {
-                "name": "Autumn",
+                "name": "Shoulder Season",
                 "months": [
-                    "September",
-                    "October"
+                    "April",
+                    "October",
+                    "November"
                 ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Variable weather, fewer trekkers, lush landscapes"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hotel/hostel",
-                    "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
-                ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
-            },
-            {
-                "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
-                "distance_km": 8,
+                "title": "Cusco to Soraypampa",
+                "start_location": "Cusco",
+                "end_location": "Soraypampa",
+                "distance_km": 12,
                 "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
+                "elevation_start_m": 3350,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 500,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "camping/lodge",
                     "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
+                        "Sky Camp",
+                        "Salkantay Lodge",
+                        "Standard camping"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
+                    "Humantay Lake option",
+                    "First views of Salkantay",
+                    "Apurimac Valley",
+                    "Acclimatization hike"
                 ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
+                "description": "Drive from Cusco to Mollepata, then to Challacancha. Trek through valleys to Soraypampa with optional afternoon hike to stunning turquoise Humantay Lake."
             },
             {
-                "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
+                "day": 2,
+                "title": "Soraypampa to Chaullay",
+                "start_location": "Soraypampa",
+                "end_location": "Chaullay",
+                "distance_km": 22,
+                "duration_hours": 10,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 2900,
+                "elevation_gain_m": 750,
+                "difficulty": "very challenging",
                 "accommodation": {
-                    "type": "historic rorbu",
+                    "type": "camping/lodge",
                     "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Chaullay camp",
+                        "Andenes camp",
+                        "Lodge options"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
+                    "lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Salkantay Pass (4,600m)",
+                    "Salkantay peak close views",
+                    "Dramatic ecosystem change",
+                    "Descent to cloud forest"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "The big day! Early start for the challenging climb to Salkantay Pass at 4,600m. Incredible views of sacred Salkantay peak before long descent into warmer cloud forest."
+            },
+            {
+                "day": 3,
+                "title": "Chaullay to Santa Teresa",
+                "start_location": "Chaullay",
+                "end_location": "Santa Teresa",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 2900,
+                "elevation_end_m": 1550,
+                "elevation_gain_m": -1350,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "camping/lodge",
+                    "options": [
+                        "Santa Teresa camp",
+                        "Local lodges",
+                        "Eco lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Cloud forest biodiversity",
+                    "Coffee plantations",
+                    "Waterfalls",
+                    "Hot springs option"
+                ],
+                "description": "Beautiful day hiking through cloud forest with increasing vegetation and warmth. Pass coffee and fruit plantations. Optional visit to Cocalmayo hot springs in afternoon."
             },
             {
                 "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
-                "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
-                "elevation_gain_m": 400,
+                "title": "Santa Teresa to Aguas Calientes",
+                "start_location": "Santa Teresa",
+                "end_location": "Aguas Calientes",
+                "distance_km": 16,
+                "duration_hours": 6,
+                "elevation_start_m": 1550,
+                "elevation_end_m": 2040,
+                "elevation_gain_m": 490,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "hotel",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Various hotels in Aguas Calientes"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "breakfast",
+                    "lunch"
                 ],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Llactapata ruins",
+                    "First Machu Picchu views",
+                    "Urubamba River",
+                    "Train tracks walk"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
+                "description": "Optional zipline before hiking to Hidroelectrica. Walk along train tracks to Aguas Calientes or take optional train. First distant views of Machu Picchu from Llactapata."
             },
             {
                 "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
-                "difficulty": "challenging",
+                "title": "Machu Picchu Visit",
+                "start_location": "Aguas Calientes",
+                "end_location": "Cusco",
+                "distance_km": 0,
+                "duration_hours": 8,
+                "elevation_start_m": 2040,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": 390,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "none",
                     "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
+                        "Return to Cusco"
                     ]
                 },
                 "meals_included": [
                     "breakfast"
                 ],
                 "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
+                    "Machu Picchu sunrise",
+                    "Guided tour of citadel",
+                    "Optional Huayna Picchu",
+                    "Return to Cusco"
                 ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
-            },
-            {
-                "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hostel/rorbu",
-                    "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
-                ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Early morning bus or hike to Machu Picchu for sunrise. Guided tour of the ancient citadel. Optional climb Huayna Picchu or Machu Picchu Mountain. Afternoon train to Cusco."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
+                    "item": "Trekking boots",
+                    "description": "Waterproof with ankle support",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
+                    "item": "Sleeping bag",
+                    "description": "-15°C for pass night",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm layers",
-                    "description": "Even summer is cool",
-                    "rental_available": false
-                },
-                {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Rain gear",
+                    "description": "Quality jacket and pants",
                     "rental_available": true
                 },
                 {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
-                    "rental_available": false
-                },
-                {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
-                    "rental_available": false
+                    "item": "Warm clothing",
+                    "description": "Down jacket, fleece, thermals",
+                    "rental_available": true
                 },
                 {
                     "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "description": "30-40L capacity",
                     "rental_available": true
                 },
                 {
-                    "item": "Water bottles",
-                    "description": "Streams safe to drink",
+                    "item": "Headlamp",
+                    "description": "For early morning start",
                     "rental_available": false
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "GPS backup recommended",
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
                     "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "3L capacity total",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Highly recommended",
+                    "rental_available": true
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
-                    "rental_available": true
-                },
-                {
-                    "item": "Camera gear",
-                    "description": "Incredible photo opportunities",
+                    "item": "Gaiters",
+                    "description": "For muddy sections",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
+                    "item": "Swimsuit",
+                    "description": "For hot springs",
                     "rental_available": false
                 },
                 {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
+                    "item": "Sandals",
+                    "description": "For camp and river crossings",
                     "rental_available": false
-                }
-            ],
-            "optional": [
-                {
-                    "item": "Camping gear",
-                    "description": "For wild camping option",
-                    "rental_available": true
                 },
                 {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
-                },
-                {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
+                    "item": "Cash",
+                    "description": "For tips and extras",
+                    "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
+                "name": "None for trail",
                 "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "notes": "No permits needed for Salkantay route"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Online or through operator",
+                "validity": "Specific date and time"
+            },
+            {
+                "name": "Huayna Picchu (optional)",
+                "cost_usd": 15,
+                "cost_pen": 50,
+                "where_to_obtain": "Book with Machu Picchu ticket",
+                "validity": "Limited to 400/day"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
-            "meals_daily_usd": 50,
-            "transportation_usd": 200,
+            "permit_total_usd": 50,
+            "guide_daily_usd": 30,
+            "porter_daily_usd": 25,
+            "accommodation_daily_usd": 15,
+            "meals_daily_usd": 25,
+            "transportation_usd": 150,
             "total_budget_range_usd": {
-                "min": 800,
-                "max": 2000
+                "min": 300,
+                "max": 800
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
+                "Quechua",
+                "Mestizo"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Catholic with Andean traditions",
             "languages": [
-                "Norwegian",
-                "English widely spoken"
+                "Spanish",
+                "Quechua",
+                "Basic English"
             ],
             "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
+                "Respect sacred mountains (Apus)",
+                "Participate in coca leaf ceremonies",
+                "Don't point at mountains with one finger",
+                "Ask before photographing locals",
+                "Support local communities by buying crafts"
             ],
             "local_foods": [
                 {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
+                    "name": "Pachamanca",
+                    "description": "Earth oven cooked meats and vegetables"
                 },
                 {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
+                    "name": "Cuy",
+                    "description": "Guinea pig - traditional delicacy"
                 },
                 {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
+                    "name": "Chicha morada",
+                    "description": "Purple corn drink"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
-                },
-                {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
-                },
-                {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
+                    "name": "Aji de gallina",
+                    "description": "Spicy creamed chicken"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
-            },
-            "main_concerns": {
-                "weather": {
-                    "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
-                    "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
-                    ]
-                },
-                "exposure": {
-                    "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
-                    "prevention": [
-                        "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
-                    ]
-                },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
-                    "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
-                    ]
-                }
+                "risk_level": "very high",
+                "prevention": [
+                    "Essential to acclimatize in Cusco",
+                    "Ascend gradually",
+                    "Hydrate constantly",
+                    "Coca tea and leaves",
+                    "Consider Diamox",
+                    "No alcohol before pass day"
+                ],
+                "critical_points": [
+                    "Salkantay Pass day",
+                    "First night at altitude"
+                ]
             },
             "medical_facilities": [
                 {
-                    "location": "Svolvær",
-                    "type": "Hospital"
+                    "location": "Trail",
+                    "type": "Basic first aid with guides"
                 },
                 {
-                    "location": "Leknes",
-                    "type": "Hospital"
+                    "location": "Santa Teresa",
+                    "type": "Basic health post"
                 },
                 {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
+                    "location": "Aguas Calientes",
+                    "type": "Medical center"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Free with insurance",
+                "method": "Horse to road, then vehicle",
+                "cost_usd": "1000-3000",
                 "insurance_required": true,
-                "response_time": "Usually within 2 hours"
+                "response_time": "4-8 hours"
             }
         },
         "weather_patterns": {
-            "summer": {
+            "dry_season": {
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "-10 to 5",
+                "precipitation": "Rare",
+                "notes": "Very cold at pass, warm in jungle"
             },
-            "autumn": {
+            "wet_season": {
                 "months": [
-                    "September",
-                    "October"
-                ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
-                "months": [
-                    "November",
                     "December",
                     "January",
-                    "February"
+                    "February",
+                    "March"
                 ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "2 to 10",
-                "night_temp_c": "-2 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "-5 to 10",
+                "precipitation": "Daily rain likely",
+                "notes": "Muddy trails, cloud forest lush"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
+                    "method": "Private van",
+                    "from": "Cusco",
+                    "to": "Mollepata/Challacancha",
                     "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
+                    "cost_usd": 30,
+                    "notes": "Usually included in tour"
                 }
             ],
-            "during_trek": [
+            "from_end": [
                 {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
+                    "method": "Train + Bus",
+                    "from": "Aguas Calientes",
+                    "to": "Cusco",
+                    "duration": "4 hours",
+                    "cost_usd": 100,
+                    "notes": "Via Ollantaytambo"
                 }
             ]
         },
         "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
+            "type": "Camping and lodges",
+            "description": "Mix of camping and basic lodges",
+            "amenities": [
+                "Camping: tents, dining tent, basic toilets",
+                "Lodges: beds, hot showers, electricity",
+                "Sky Camps: glamping with beds",
+                "Hotels in Aguas Calientes"
             ],
-            "booking": "Essential in summer",
+            "booking": "Can book independently or with operator",
             "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
+                "camping": "included in tour",
+                "basic_lodge": "20-30",
+                "sky_camp": "100+"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
-            "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
-        },
-        "sustainability": {
-            "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
-            ],
-            "responsible_practices": [
-                "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
-            ],
-            "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
-            ]
-        },
-        "connectivity": {
-            "mobile_coverage": [
-                {
-                    "location": "Villages",
-                    "quality": "Excellent",
-                    "providers": [
-                        "Telenor",
-                        "Telia"
-                    ]
-                },
-                {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
-                    "providers": [
-                        "Emergency calls usually possible"
-                    ]
-                }
-            ],
-            "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
-            }
-        },
-        "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
-            "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "physical_demands": "High - long days and extreme altitude",
+            "technical_skills": "None required",
+            "altitude_challenge": "Very significant at pass",
+            "trail_conditions": "Variable - rocky, muddy, steep",
+            "daily_hiking_hours": "6-10 hours",
+            "total_elevation_gain": 3100,
+            "total_elevation_loss": 4150
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
+                "name": "Salkantay + Inca Trail",
+                "variation": "Combine both treks",
                 "extra_days": 3,
                 "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
+                    "Ultimate experience",
+                    "Enter via Sun Gate",
+                    "More ruins"
                 ]
             },
             {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
+                "name": "Mollepata Circuit",
+                "variation": "Return different route",
+                "extra_days": 1,
+                "highlights": [
+                    "Less crowds",
+                    "More villages",
+                    "Complete circuit"
+                ]
+            },
+            {
+                "name": "Lodge-to-Lodge",
+                "variation": "Luxury version",
                 "extra_days": 0,
                 "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
-                ]
-            },
-            {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
-                "extra_days": 2,
-                "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "Mountain lodges",
+                    "Hot showers daily",
+                    "Gourmet meals"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
+                "location": "Humantay Lake",
+                "best_time": "Morning",
                 "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
+                    "Turquoise waters",
+                    "Mountain reflections",
+                    "Ice formations"
                 ]
             },
             {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
+                "location": "Salkantay Pass",
+                "best_time": "Early morning",
                 "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
+                    "Sacred peak",
+                    "Prayer flags",
+                    "Achievement shots"
                 ]
             },
             {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
+                "location": "Cloud forest",
+                "best_time": "Any",
                 "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
-                    "Northern lights"
+                    "Biodiversity",
+                    "Waterfalls",
+                    "Atmospheric shots"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
+                "question": "Is it as good as the Inca Trail?",
+                "answer": "Different but equally spectacular. More challenging, fewer ruins, but stunning mountain scenery and no permit stress. Many consider it superior for landscapes."
             },
             {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
+                "question": "Can I do it independently?",
+                "answer": "Yes, unlike the Inca Trail. But guided tours provide logistics, meals, and camping equipment. Solo requires carrying everything."
             },
             {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
+                "question": "How cold does it get?",
+                "answer": "Very cold at Salkantay Pass - can be -10°C at night. But by day 3 you're in warm cloud forest. Pack for all climates."
             },
             {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
+                "question": "Is altitude sickness common?",
+                "answer": "Yes, especially on pass day. Crucial to acclimatize in Cusco first. The rapid descent helps recovery."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 94,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Salkantay Trek Complete Guide 2024 | 5-Day Alternative to Inca Trail",
+            "meta_description": "Ultimate guide to the Salkantay Trek to Machu Picchu. Detailed 5-day itinerary, no permits needed, costs, gear list, and expert tips.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "salkantay trek",
+                "machu picchu alternative",
+                "peru trekking",
+                "salkantay pass",
+                "cusco to machu picchu"
             ]
         }
     };

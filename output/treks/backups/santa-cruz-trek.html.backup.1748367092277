@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
+    <meta name="description" content="Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/santa-cruz-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,19 +952,19 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+            <h1>Santa Cruz Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">4</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">4,750m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">50km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +991,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +1041,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">50 km / 31 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">4,750m (15,584ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,7 +1063,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Huaraz</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +1072,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$200 - $600</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +1081,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>4-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Cashapampa to Llamacorral</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +100m</span>
+            <span>🏔️ 3,760m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Santa Cruz valley entrance</span><span class="day-highlight">Alpamayo views</span><span class="day-highlight">River valley hiking</span><span class="day-highlight">Acclimatization day</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Llamacorral to Taullipampa</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 4,250m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Laguna Jatuncocha</span><span class="day-highlight">Taulliraju views (5,830m)</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">360-degree mountain panorama</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">Taullipampa to Paria Valley via Punta Union</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 3,850m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">Punta Union Pass (4,750m)</span><span class="day-highlight">Spectacular 360° views</span><span class="day-highlight">Laguna Morococha</span><span class="day-highlight">Dramatic descent</span>
         </div>
       
     </div>
@@ -1155,61 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Paria Valley to Vaqueria</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📏 9km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 -150m</span>
+            <span>🏔️ 3,700m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
-          <div class="day-stats">
-            <span>📏 6km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
-          <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Gentle valley descent</span><span class="day-highlight">Rural Andean life</span><span class="day-highlight">Trek completion</span><span class="day-highlight">Transport to Huaraz</span>
         </div>
       
     </div>
@@ -1234,74 +1192,58 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
+          <div class="gear-name">4-season tent</div>
+          <div class="gear-description">Wind-resistant for exposed camps</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-15°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Waterproof boots</div>
+          <div class="gear-description">Stream crossings common</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
+          <div class="gear-name">Layers for all weather</div>
+          <div class="gear-description">Can snow at pass anytime</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Intense at altitude</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-name">Water purification</div>
+          <div class="gear-description">Tablets or filter</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Very helpful for pass day</div>
         </div>
         <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
-        </div>
-        
       </li>
     
                 </ul>
@@ -1316,32 +1258,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For stream crossings</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Cold at camps</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Incredible photo opportunities</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
+          <div class="gear-name">Camera with extra batteries</div>
+          <div class="gear-description">Spectacular scenery</div>
         </div>
         
       </li>
@@ -1362,16 +1296,9 @@
             
     <div class="season-card">
       <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
-    </div>
-  
-    <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear skies, stable weather, cold nights at altitude</p>
     </div>
   
         </div>
@@ -1394,27 +1321,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$30</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
-    </div>
-    <div class="cost-item">
-      <span>Accommodation (per night)</span>
-      <span>$100</span>
-    </div>
-    <div class="cost-item">
-      <span>Meals (per day)</span>
       <span>$50</span>
     </div>
     <div class="cost-item">
+      <span>Accommodation (per night)</span>
+      <span>$5</span>
+    </div>
+    <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$20</span>
+    </div>
+    <div class="cost-item">
       <span>Transportation</span>
-      <span>$200</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$200 - $600</span>
     </div>
   
         </div>
@@ -1436,34 +1363,26 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
+        <span>How does this compare to the Inca Trail?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
+      <div class="faq-answer">More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
+        <span>Can I do it independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
+      <div class="faq-answer">Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
+        <span>Is acclimatization really necessary?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
+      <div class="faq-answer">Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69.</div>
     </div>
   
         </div>
@@ -1504,28 +1423,21 @@
             scrollToSectionTop();
         }
 
-                                                    function scrollToSectionTop() {
-            // Get the currently active content section
-            const activeSection = document.querySelector('.content-section.active');
-            
-            if (activeSection) {
-                // Scroll to the top of the active section content
-                activeSection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
+                                            function scrollToSectionTop() {
+            // Simple approach: scroll the navigation into view, then add offset
+            const navTabs = document.querySelector('.nav-tabs');
+            if (navTabs) {
+                // Scroll nav to top of viewport
+                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                // Small delay then adjust for sticky nav
+                // Add small delay then scroll down by nav height + padding
                 setTimeout(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
-                    if (navTabs) {
-                        const navHeight = navTabs.offsetHeight;
-                        window.scrollBy({
-                            top: -(navHeight + 10), // Negative to go UP
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 50);
+                    const navHeight = navTabs.offsetHeight;
+                    window.scrollBy({
+                        top: navHeight + 20,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         }
 
@@ -1611,713 +1523,455 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "santa-cruz-trek",
+        "name": "Santa Cruz Trek",
+        "slug": "santa-cruz-trek",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 6
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 4
         },
-        "distance_km": 60,
+        "distance_km": 50,
         "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "max_elevation_m": 4750,
+        "starting_elevation_m": 3900,
+        "airport": "Lima (LIM)",
+        "nearest_city": "Huaraz",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": -8.9689,
+                "lng": -77.3928,
+                "location": "Cashapampa"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": -8.8681,
+                "lng": -77.7089,
+                "location": "Vaqueria"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
+                "name": "Dry Season",
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
-            },
-            {
-                "name": "Autumn",
-                "months": [
-                    "September",
-                    "October"
-                ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Clear skies, stable weather, cold nights at altitude"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hotel/hostel",
-                    "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
-                ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
-            },
-            {
-                "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
-                "distance_km": 8,
+                "title": "Cashapampa to Llamacorral",
+                "start_location": "Cashapampa",
+                "end_location": "Llamacorral",
+                "distance_km": 12,
                 "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
-                "difficulty": "moderate",
+                "elevation_start_m": 3900,
+                "elevation_end_m": 3760,
+                "elevation_gain_m": 100,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "camping",
                     "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
+                        "Llamacorral campsite"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "lunch",
+                    "dinner"
                 ],
                 "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
+                    "Santa Cruz valley entrance",
+                    "Alpamayo views",
+                    "River valley hiking",
+                    "Acclimatization day"
                 ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
+                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
             },
             {
-                "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
+                "day": 2,
+                "title": "Llamacorral to Taullipampa",
+                "start_location": "Llamacorral",
+                "end_location": "Taullipampa",
+                "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
-                "elevation_gain_m": 400,
+                "elevation_start_m": 3760,
+                "elevation_end_m": 4250,
+                "elevation_gain_m": 490,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "historic rorbu",
+                    "type": "camping",
                     "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Taullipampa campsite"
                     ]
                 },
                 "meals_included": [
                     "breakfast",
+                    "lunch",
                     "dinner"
                 ],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Laguna Jatuncocha",
+                    "Taulliraju views (5,830m)",
+                    "Alpine meadows",
+                    "360-degree mountain panorama"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
+            },
+            {
+                "day": 3,
+                "title": "Taullipampa to Paria Valley via Punta Union",
+                "start_location": "Taullipampa",
+                "end_location": "Paria Valley",
+                "distance_km": 15,
+                "duration_hours": 8,
+                "elevation_start_m": 4250,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 500,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Paria campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Punta Union Pass (4,750m)",
+                    "Spectacular 360° views",
+                    "Laguna Morococha",
+                    "Dramatic descent"
+                ],
+                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
             },
             {
                 "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
-                "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
+                "title": "Paria Valley to Vaqueria",
+                "start_location": "Paria Valley",
+                "end_location": "Vaqueria",
+                "distance_km": 9,
+                "duration_hours": 3,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 3700,
+                "elevation_gain_m": -150,
+                "difficulty": "easy",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "end point",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Return to Huaraz"
                     ]
                 },
                 "meals_included": [
-                    "breakfast"
+                    "breakfast",
+                    "lunch"
                 ],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Gentle valley descent",
+                    "Rural Andean life",
+                    "Trek completion",
+                    "Transport to Huaraz"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
-            },
-            {
-                "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
-                "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
-                "difficulty": "challenging",
-                "accommodation": {
-                    "type": "rorbu/hotel",
-                    "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
-                ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
-            },
-            {
-                "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
-                "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "hostel/rorbu",
-                    "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast"
-                ],
-                "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
-                ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
+                    "item": "4-season tent",
+                    "description": "Wind-resistant for exposed camps",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
+                    "item": "Sleeping bag",
+                    "description": "-15°C rated for cold nights",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm layers",
-                    "description": "Even summer is cool",
-                    "rental_available": false
-                },
-                {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Waterproof boots",
+                    "description": "Stream crossings common",
                     "rental_available": true
                 },
                 {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
+                    "item": "Layers for all weather",
+                    "description": "Can snow at pass anytime",
                     "rental_available": false
                 },
                 {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
+                    "item": "Sun protection",
+                    "description": "Intense at altitude",
                     "rental_available": false
                 },
                 {
-                    "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "item": "Water purification",
+                    "description": "Tablets or filter",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Very helpful for pass day",
                     "rental_available": true
-                },
-                {
-                    "item": "Water bottles",
-                    "description": "Streams safe to drink",
-                    "rental_available": false
-                },
-                {
-                    "item": "Map and compass",
-                    "description": "GPS backup recommended",
-                    "rental_available": false
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
-                    "rental_available": true
-                },
-                {
-                    "item": "Camera gear",
-                    "description": "Incredible photo opportunities",
+                    "item": "Gaiters",
+                    "description": "For stream crossings",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
+                    "item": "Down jacket",
+                    "description": "Cold at camps",
+                    "rental_available": true
+                },
+                {
+                    "item": "Camera with extra batteries",
+                    "description": "Spectacular scenery",
                     "rental_available": false
-                },
-                {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
-                    "rental_available": false
-                }
-            ],
-            "optional": [
-                {
-                    "item": "Camping gear",
-                    "description": "For wild camping option",
-                    "rental_available": true
-                },
-                {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
-                },
-                {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
-                "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "name": "Huascaran National Park Entry",
+                "cost_usd": 30,
+                "cost_pen": 90,
+                "where_to_obtain": "Park office in Huaraz or entrance",
+                "validity": "Valid for 21 days"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
-            "meals_daily_usd": 50,
-            "transportation_usd": 200,
+            "permit_total_usd": 30,
+            "guide_daily_usd": 50,
+            "cook_daily_usd": 30,
+            "muleteer_daily_usd": 25,
+            "pack_animal_daily_usd": 15,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 60,
             "total_budget_range_usd": {
-                "min": 800,
-                "max": 2000
+                "min": 200,
+                "max": 600
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
+                "Quechua",
+                "Mestizo"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Catholic with Andean traditions",
             "languages": [
-                "Norwegian",
-                "English widely spoken"
+                "Spanish",
+                "Quechua",
+                "Limited English"
             ],
             "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
+                "Respect mountain spirits (Apus)",
+                "Ask permission before photographing locals",
+                "Support local economy",
+                "Participate in coca leaf offerings if invited"
             ],
             "local_foods": [
                 {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
+                    "name": "Pachamanca",
+                    "description": "Earth oven cooked feast"
                 },
                 {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
+                    "name": "Cuy",
+                    "description": "Guinea pig delicacy"
                 },
                 {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
-                },
-                {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
-                },
-                {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
-                },
-                {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
+                    "name": "Quinoa soup",
+                    "description": "High-altitude superfood"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
-            },
-            "main_concerns": {
-                "weather": {
-                    "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
-                    "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
-                    ]
-                },
-                "exposure": {
-                    "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
-                    "prevention": [
-                        "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
-                    ]
-                },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
-                    "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
-                    ]
-                }
+                "risk_level": "high",
+                "prevention": [
+                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
+                    "Consider day hikes first",
+                    "Climb slowly on pass day",
+                    "Stay hydrated",
+                    "Consider Diamox"
+                ],
+                "critical_points": [
+                    "Punta Union Pass day"
+                ]
             },
             "medical_facilities": [
                 {
-                    "location": "Svolvær",
-                    "type": "Hospital"
+                    "location": "Trail",
+                    "type": "None - remote area"
                 },
                 {
-                    "location": "Leknes",
-                    "type": "Hospital"
-                },
-                {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
+                    "location": "Huaraz",
+                    "type": "Good hospitals and clinics"
                 }
             ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Free with insurance",
+                "method": "Horse/mule to road, then vehicle",
+                "cost_usd": "1000-3000",
                 "insurance_required": true,
-                "response_time": "Usually within 2 hours"
+                "response_time": "6-12 hours"
             }
         },
         "weather_patterns": {
-            "summer": {
+            "dry_season": {
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Can snow at pass anytime"
             },
-            "autumn": {
+            "wet_season": {
                 "months": [
-                    "September",
-                    "October"
-                ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
-                "months": [
+                    "October",
                     "November",
                     "December",
                     "January",
-                    "February"
-                ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
-            },
-            "spring": {
-                "months": [
+                    "February",
                     "March",
-                    "April",
-                    "May"
+                    "April"
                 ],
-                "day_temp_c": "2 to 10",
-                "night_temp_c": "-2 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily afternoon rain",
+                "notes": "Trail muddy, clouds obscure views"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
+                    "method": "Private transport",
+                    "from": "Huaraz",
+                    "to": "Cashapampa",
                     "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
+                    "cost_usd": 30,
+                    "notes": "Usually arranged with guide/agency"
                 }
             ],
-            "during_trek": [
+            "from_end": [
                 {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
+                    "method": "Private transport",
+                    "from": "Vaqueria",
+                    "to": "Huaraz",
+                    "duration": "3 hours",
+                    "cost_usd": 30,
+                    "notes": "Pre-arranged pickup essential"
                 }
             ]
         },
         "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
+            "type": "Camping only",
+            "description": "Designated camping areas",
+            "amenities": [
+                "Flat tent sites",
+                "Water sources nearby",
+                "Basic toilet facilities at some sites",
+                "No showers on trail",
+                "Pack out all waste"
             ],
-            "booking": "Essential in summer",
+            "booking": "First come, first served",
             "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
+                "camping": "5"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
-            "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
-        },
-        "sustainability": {
-            "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
-            ],
-            "responsible_practices": [
-                "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
-            ],
-            "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
-            ]
-        },
-        "connectivity": {
-            "mobile_coverage": [
-                {
-                    "location": "Villages",
-                    "quality": "Excellent",
-                    "providers": [
-                        "Telenor",
-                        "Telia"
-                    ]
-                },
-                {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
-                    "providers": [
-                        "Emergency calls usually possible"
-                    ]
-                }
-            ],
-            "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
-            }
-        },
-        "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
-            "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "physical_demands": "Good fitness for altitude and pass day",
+            "technical_skills": "None required",
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Well-defined path, rocky on pass",
+            "daily_hiking_hours": "5-8 hours",
+            "total_elevation_gain": 1200,
+            "total_elevation_loss": 1350
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
+                "name": "Alpamayo Circuit",
+                "variation": "Extended version via Alpamayo base camp",
                 "extra_days": 3,
                 "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
+                    "See Alpamayo up close",
+                    "More remote",
+                    "Additional passes"
                 ]
             },
             {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
+                "name": "Santa Cruz-Llanganuco",
+                "variation": "Exit via Llanganuco",
                 "extra_days": 0,
                 "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
-                ]
-            },
-            {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
-                "extra_days": 2,
-                "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "Different exit valley",
+                    "Laguna 69 option",
+                    "Transport flexibility"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
+                "location": "Taullipampa camp",
+                "best_time": "Sunrise/sunset",
                 "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
+                    "Taulliraju",
+                    "Alpenglow on peaks",
+                    "Star photography"
                 ]
             },
             {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
+                "location": "Punta Union Pass",
+                "best_time": "Morning",
                 "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
-                ]
-            },
-            {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
-                "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
-                    "Northern lights"
+                    "360° panorama",
+                    "Both valleys",
+                    "Achievement shots"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
+                "question": "How does this compare to the Inca Trail?",
+                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
             },
             {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
+                "question": "Can I do it independently?",
+                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
             },
             {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
-            },
-            {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
+                "question": "Is acclimatization really necessary?",
+                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 85,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
+            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "santa cruz trek",
+                "cordillera blanca",
+                "peru trekking",
+                "huaraz hiking",
+                "punta union pass"
             ]
         }
     };

@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure</title>
-    <meta name="description" content="Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.">
+    <title>Dolomites Alta Via 1 Complete Guide 2024 | 10-Day Trek Itinerary</title>
+    <meta name="description" content="Ultimate guide to hiking Alta Via 1 through the Italian Dolomites. Detailed itinerary, rifugio bookings, costs, and insider tips for this classic trek.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/lofoten-islands-trek.jpg');
+            background-image: url('/images/treks/covers/dolomites-alta-via-1.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,6 +75,12 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .hero-stats {
@@ -555,32 +561,18 @@
         }
 
         /* Mobile Responsive */
-        
-/* Mobile Header Fixes */
-
-/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
-@media (max-width: 768px) {
-    /* FORCE HERO STATS INTO 2x2 GRID */
-    
-    /* ENHANCED 2x2 GRID FIX */
+        @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
-        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
-        padding: 0 !important;
         justify-content: center !important;
-        align-items: stretch !important;
-        box-sizing: border-box !important;
-        /* Remove conflicting flex properties */
-        flex-direction: unset !important;
-        flex-wrap: unset !important;
     }
     
-    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -595,265 +587,56 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
-        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        border: 1px solid rgba(255,255,255,0.1) !important;
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.8rem 0.5rem !important;
-        background: rgba(0,0,0,0.4) !important;
-        border-radius: 8px !important;
-        backdrop-filter: blur(3px) !important;
-        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        margin-bottom: 0.2rem !important;
         color: white !important;
-        display: block !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 0.75rem !important;
         color: white !important;
-        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
-        display: block !important;
-    }
-    
-    /* FIX HERO CONTAINER */
-    .hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-    }
-    
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        position: relative !important;
-        z-index: 2 !important;
-    }
-    
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-        line-height: 1.2 !important;
-        max-width: 90% !important;
-    }
-    
-    /* FIX MAIN CONTENT LAYOUT */
-    .content-section {
-        padding: 2rem 1rem !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-    
-    .overview-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .overview-main {
-        width: 100% !important;
-        margin-bottom: 2rem !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    .overview-main h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-    }
-    
-    /* FIX SIDEBAR */
-    .quick-info-card {
-        width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        padding: 1.5rem !important;
-        box-sizing: border-box !important;
-        order: -1 !important;
-    }
-    
-    /* FIX NAVIGATION */
-    .nav-tabs-container {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        display: flex !important;
-        padding: 0 1rem !important;
-    }
-    
-    .nav-tab {
-        white-space: nowrap !important;
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* PREVENT HORIZONTAL SCROLL */
-    body {
-        overflow-x: hidden !important;
-    }
-    
-    * {
-        box-sizing: border-box !important;
-    }
-    
-    .max-w-7xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* FIX HIGHLIGHTS */
-    .highlights-list {
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .highlight-item {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .highlight-text {
-        flex: 1 !important;
-        overflow-wrap: break-word !important;
-    }
-    
-    /* FIX BUTTONS */
-    .cta-section {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        width: 100% !important;
-    }
-    
-    .btn {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem 2rem !important;
-    }
-    
-    /* TAILWIND STYLE FIXES */
-    .hero-image {
-        height: 350px !important;
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-image .absolute {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        opacity: 0.95 !important;
     }
 }
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .hero-stats {
-        max-width: 240px !important;
-        gap: 0.6rem !important;
-    }
-    
-    .hero-stat {
-        min-height: 50px !important;
-        padding: 0.6rem 0.4rem !important;
-    }
-    
-    .hero-stat-value {
-        font-size: 1.2rem !important;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .hero-image h1 {
-        font-size: 1.5rem !important;
-    }
-}
+            .hero h1 {
+                font-size: 2.5em;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 50vh !important;
-        min-height: 350px !important;
-    }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .hero h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem !important;
-    }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-        max-width: 200px !important;
-    }
+            .nav-tabs-container {
+                justify-content: start;
+            }
 
-    .hero-stat-value {
-        font-size: 1.6rem !important;
-    }
+            .cta-section {
+                flex-direction: column;
+            }
 
-    .hero-stat-label {
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        height: 300px !important;
-    }
-
-    .hero-image h1 {
-        font-size: 1.6rem !important;
-    }
-}
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
 
         /* Animations */
         @keyframes fadeIn {
@@ -951,20 +734,20 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content mobile-fixed">
-            <h1>Lofoten Islands Trek</h1>
+        <div class="hero-content">
+            <h1>Dolomites Alta Via 1</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-value">10</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,029m</span>
+                    <span class="hero-stat-value">2,950m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">60km</span>
+                    <span class="hero-stat-value">120km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -991,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Norway/Scandinavia</h2>
+                <h2>Journey to European Alps</h2>
                 <p class="overview-description">
-                    Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.
+                    Classic high route through the dramatic limestone peaks of the Dolomites, staying in traditional rifugios with incredible Italian mountain cuisine.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +824,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">8-12 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">60 km / 37 mi</span>
+                    <span class="info-value">120 km / 75 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,029m (3,376ft)</span>
+                    <span class="info-value">2,950m (9,678ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,7 +846,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Svolvær</span>
+                    <span class="info-value">Cortina d'Ampezzo</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +855,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$800 - $2,000</span>
+                        <span class="price-range">$1,000 - $2,000</span>
                     </span>
                 </div>
             </div>
@@ -1081,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>6-Day Detailed Itinerary</h2>
+        <h2>10-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Norway/Scandinavia with proper acclimatization and rest days
+            Follow the route through European Alps with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -1092,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Arrival and Svolværgeita</h3>
+          <h3 class="day-title">Lago di Braies to Rifugio Biella</h3>
           <div class="day-stats">
-            <span>📏 4km</span>
-            <span>⏱️ 3 hours</span>
-            <span>📈 +590m</span>
-            <span>🏔️ 590m</span>
+            <span>📏 14km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +850m</span>
+            <span>🏔️ 2,327m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight.</p>
+      <p class="day-description">Start at the stunning Lago di Braies, famous for its emerald waters. Climb through forests and meadows to reach the welcoming Rifugio Biella.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Svolværgeita climb</span><span class="day-highlight">Panoramic harbor views</span><span class="day-highlight">Arctic town exploration</span><span class="day-highlight">Midnight sun experience</span>
+          <span class="day-highlight">Lago di Braies (Pragser Wildsee)</span><span class="day-highlight">Croda del Becco views</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">First rifugio experience</span>
         </div>
       
     </div>
@@ -1113,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Henningsvær and Festvågtind</h3>
+          <h3 class="day-title">Rifugio Biella to Rifugio Lavarella</h3>
           <div class="day-stats">
-            <span>📏 8km</span>
+            <span>📏 11km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 +541m</span>
-            <span>🏔️ 541m</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 2,042m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges.</p>
+      <p class="day-description">Traverse the otherworldly Fanes plateau, surrounded by towering limestone peaks. Choose between two excellent rifugios for the night.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Festvågtind summit</span><span class="day-highlight">Venice of the North</span><span class="day-highlight">Traditional fishing village</span><span class="day-highlight">Art galleries and cafes</span>
+          <span class="day-highlight">Alpe di Fanes plateau</span><span class="day-highlight">Limestone pinnacles</span><span class="day-highlight">Marmot sightings</span><span class="day-highlight">Traditional Ladin culture</span>
         </div>
       
     </div>
@@ -1134,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Nusfjord and Hiking</h3>
+          <h3 class="day-title">Rifugio Lavarella to Rifugio Lagazuoi</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
+            <span>📏 14km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 400m</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 2,752m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea.</p>
+      <p class="day-description">Climb to one of the most spectacular rifugios in the Dolomites. Explore WWI history and enjoy incredible views from Lagazuoi summit.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">UNESCO preserved village</span><span class="day-highlight">Coastal mountain hiking</span><span class="day-highlight">Historic fishing culture</span><span class="day-highlight">Dramatic fjord setting</span>
+          <span class="day-highlight">Forcella del Lago</span><span class="day-highlight">WWI tunnels and positions</span><span class="day-highlight">360-degree summit views</span><span class="day-highlight">Cable car option down</span>
         </div>
       
     </div>
@@ -1155,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Kvalvika Beach Trek</h3>
+          <h3 class="day-title">Rifugio Lagazuoi to Rifugio Averau</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 200m</span>
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 2,413m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area.</p>
+      <p class="day-description">Shorter day with options to explore the famous Cinque Torri climbing area or summit Nuvolau for panoramic views.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Kvalvika arctic beach</span><span class="day-highlight">Dramatic cliff scenery</span><span class="day-highlight">Possible wild camping</span><span class="day-highlight">Midnight sun on beach</span>
+          <span class="day-highlight">Cinque Torri rock formations</span><span class="day-highlight">Nuvolau summit option</span><span class="day-highlight">Cortina valley views</span><span class="day-highlight">Easier hiking day</span>
         </div>
       
     </div>
@@ -1176,19 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Reinebringen</h3>
+          <h3 class="day-title">Rifugio Averau to Rifugio Città di Fiume</h3>
           <div class="day-stats">
-            <span>📏 6km</span>
+            <span>📏 13km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 +448m</span>
-            <span>🏔️ 448m</span>
+            <span>📈 +300m</span>
+            <span>🏔️ 1,918m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village.</p>
+      <p class="day-description">Descend through beautiful forests with optional detour around the scenic Lago di Croda da Lago. More intimate rifugio experience.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Iconic Reinebringen viewpoint</span><span class="day-highlight">Newly built stone steps</span><span class="day-highlight">Classic Lofoten panorama</span><span class="day-highlight">Picturesque Reine village</span>
+          <span class="day-highlight">Lago di Federa</span><span class="day-highlight">Croda da Lago circuit option</span><span class="day-highlight">Forest trails</span><span class="day-highlight">Wildlife viewing</span>
         </div>
       
     </div>
@@ -1197,19 +980,103 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 6</div>
-          <h3 class="day-title">Å and Munkebu Hut</h3>
+          <h3 class="day-title">Rifugio Città di Fiume to Rifugio Tissi</h3>
           <div class="day-stats">
-            <span>📏 10km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +450m</span>
-            <span>🏔️ 450m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 2,250m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes.</p>
+      <p class="day-description">Leave the busier routes for a more remote section. Long but rewarding day reaching the small and atmospheric Rifugio Tissi.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">End of the road village</span><span class="day-highlight">Optional Munkebu hut hike</span><span class="day-highlight">Stockfish museums</span><span class="day-highlight">Traditional architecture</span>
+          <span class="day-highlight">Remote mountain valleys</span><span class="day-highlight">Pelmo massif views</span><span class="day-highlight">Traditional shepherding areas</span><span class="day-highlight">Quiet trails</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Rifugio Tissi to Rifugio Vázzoler</h3>
+          <div class="day-stats">
+            <span>📏 12km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 1,714m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Spectacular approach to Rifugio Vázzoler beneath the imposing north face of Civetta, one of the Dolomites' most impressive walls.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Civetta north face views</span><span class="day-highlight">Alpine botanical variety</span><span class="day-highlight">Historical rifugio</span><span class="day-highlight">Dramatic mountain amphitheater</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Rifugio Vázzoler to Rifugio Carestiato</h3>
+          <div class="day-stats">
+            <span>📏 14km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 1,834m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Challenging day crossing high passes through the Moiazza group. Remote and wild mountain scenery.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Forcella Col Negro</span><span class="day-highlight">Moiazza group traverse</span><span class="day-highlight">Remote valleys</span><span class="day-highlight">Sense of accomplishment</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">Rifugio Carestiato to Rifugio Pian de Fontana</h3>
+          <div class="day-stats">
+            <span>📏 10km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +300m</span>
+            <span>🏔️ 1,632m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Gentler day through forests and meadows. Last night in a rifugio before completing the Alta Via 1.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Easier walking day</span><span class="day-highlight">Forest trails</span><span class="day-highlight">Traditional farming areas</span><span class="day-highlight">Final rifugio night</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 10</div>
+          <h3 class="day-title">Rifugio Pian de Fontana to Passo Duran/Belluno</h3>
+          <div class="day-stats">
+            <span>📏 8km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 +100m</span>
+            <span>🏔️ 1,601m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Final descent to Passo Duran where you can catch a bus to Belluno or Agordo. Celebrate completing one of Italy's classic treks!</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Alta Via completion</span><span class="day-highlight">Final mountain views</span><span class="day-highlight">Sense of achievement</span><span class="day-highlight">Return to civilization</span>
         </div>
       
     </div>
@@ -1234,72 +1101,72 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Waterproof hiking boots</div>
-          <div class="gear-description">Essential for wet conditions</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Rain jacket and pants</div>
-          <div class="gear-description">Weather changes rapidly</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Even summer is cool</div>
+          <div class="gear-name">Mountain boots</div>
+          <div class="gear-description">Good ankle support for rocky terrain</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Windproof jacket</div>
-          <div class="gear-description">Exposed coastal conditions</div>
+          <div class="gear-name">Via ferrata kit</div>
+          <div class="gear-description">For optional protected sections</div>
         </div>
         <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Hat and gloves</div>
-          <div class="gear-description">For summit winds</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Sunglasses</div>
-          <div class="gear-description">24-hour daylight intense</div>
-        </div>
-        
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Water bottles</div>
-          <div class="gear-description">Streams safe to drink</div>
+          <div class="gear-description">25-35L sufficient for rifugio trek</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">GPS backup recommended</div>
+          <div class="gear-name">Sleeping bag liner</div>
+          <div class="gear-description">Required in rifugios</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Layered clothing</div>
+          <div class="gear-description">Mountain weather changeable</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Rain gear</div>
+          <div class="gear-description">Afternoon storms common</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">High altitude sun intense</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">First aid kit</div>
+          <div class="gear-description">Basic supplies</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Cash (Euros)</div>
+          <div class="gear-description">Many rifugios cash only</div>
         </div>
         
       </li>
@@ -1317,31 +1184,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful on steep sections</div>
+          <div class="gear-description">Helpful on descents</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Incredible photo opportunities</div>
+          <div class="gear-name">Hut shoes</div>
+          <div class="gear-description">Crocs or slippers for rifugios</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Mosquito repellent</div>
-          <div class="gear-description">For July-August</div>
+          <div class="gear-name">Earplugs</div>
+          <div class="gear-description">For dormitory sleeping</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Eye mask</div>
-          <div class="gear-description">For midnight sun sleep</div>
+          <div class="gear-name">Quick-dry towel</div>
+          <div class="gear-description">Small and lightweight</div>
         </div>
         
       </li>
@@ -1363,15 +1230,8 @@
     <div class="season-card">
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Midnight sun, warmest weather, all trails accessible</p>
-    </div>
-  
-    <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September, October</p>
-      <p>Northern lights begin, autumn colors, fewer tourists</p>
+      <p class="season-months">July, August, September</p>
+      <p>Rifugios open, snow-free passes, stable weather</p>
     </div>
   
         </div>
@@ -1402,7 +1262,7 @@
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$100</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
@@ -1410,11 +1270,11 @@
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$200</span>
+      <span>$100</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$800 - $2,000</span>
+      <span>$1,000 - $2,000</span>
     </div>
   
         </div>
@@ -1436,34 +1296,34 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>When can I see the midnight sun?</span>
+        <span>Do I need via ferrata experience?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits.</div>
+      <div class="faq-answer">No, the main route avoids technical sections. Optional via ferratas are available but can be bypassed. Basic scrambling comfort helpful.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is wild camping really allowed?</span>
+        <span>How far ahead should I book rifugios?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace.</div>
+      <div class="faq-answer">For July-August, book 2-3 months ahead. September is easier but still book 1 month ahead for weekends.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How difficult are the hikes?</span>
+        <span>What's the food like in rifugios?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge.</div>
+      <div class="faq-answer">Excellent! Expect hearty multi-course dinners with local specialties. Vegetarian options available if requested in advance.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need a car?</span>
+        <span>Can I do it without speaking Italian?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads.</div>
+      <div class="faq-answer">Yes, English is widely spoken in rifugios. Basic Italian phrases are appreciated and enhance the experience.</div>
     </div>
   
         </div>
@@ -1504,28 +1364,21 @@
             scrollToSectionTop();
         }
 
-                                                    function scrollToSectionTop() {
-            // Get the currently active content section
-            const activeSection = document.querySelector('.content-section.active');
-            
-            if (activeSection) {
-                // Scroll to the top of the active section content
-                activeSection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
+                                            function scrollToSectionTop() {
+            // Simple approach: scroll the navigation into view, then add offset
+            const navTabs = document.querySelector('.nav-tabs');
+            if (navTabs) {
+                // Scroll nav to top of viewport
+                navTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                // Small delay then adjust for sticky nav
+                // Add small delay then scroll down by nav height + padding
                 setTimeout(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
-                    if (navTabs) {
-                        const navHeight = navTabs.offsetHeight;
-                        window.scrollBy({
-                            top: -(navHeight + 10), // Negative to go UP
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 50);
+                    const navHeight = navTabs.offsetHeight;
+                    window.scrollBy({
+                        top: navHeight + 20,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         }
 
@@ -1611,319 +1464,408 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "lofoten-islands-trek",
-        "name": "Lofoten Islands Trek",
-        "slug": "lofoten-islands-trek",
-        "region": "Norway/Scandinavia",
-        "country": "Norway",
-        "summary": "Arctic island hopping adventure with dramatic peaks rising directly from the sea, midnight sun in summer, northern lights in winter, and authentic fishing villages.",
+        "_id": "dolomites-alta-via-1",
+        "name": "Dolomites Alta Via 1",
+        "slug": "dolomites-alta-via-1",
+        "region": "European Alps",
+        "country": "Italy",
+        "summary": "Classic high route through the dramatic limestone peaks of the Dolomites, staying in traditional rifugios with incredible Italian mountain cuisine.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 6
+            "min_days": 8,
+            "max_days": 12,
+            "recommended_days": 10
         },
-        "distance_km": 60,
+        "distance_km": 120,
         "difficulty": "moderate",
-        "max_elevation_m": 1029,
-        "starting_elevation_m": 0,
-        "airport": "Bodø (BOO) or Leknes (LKN)",
-        "nearest_city": "Svolvær",
+        "max_elevation_m": 2950,
+        "starting_elevation_m": 1530,
+        "airport": "Venice (VCE) or Innsbruck (INN)",
+        "nearest_city": "Cortina d'Ampezzo",
         "coordinates": {
             "start": {
-                "lat": 68.2333,
-                "lng": 14.5667,
-                "location": "Svolvær"
+                "lat": 46.658,
+                "lng": 11.779,
+                "location": "Lago di Braies"
             },
             "end": {
-                "lat": 67.9328,
-                "lng": 13.0886,
-                "location": "Å"
+                "lat": 46.4373,
+                "lng": 11.7732,
+                "location": "Belluno/Passo Duran"
             }
         },
         "best_seasons": [
             {
                 "name": "Summer",
                 "months": [
-                    "June",
                     "July",
-                    "August"
+                    "August",
+                    "September"
                 ],
-                "description": "Midnight sun, warmest weather, all trails accessible"
-            },
-            {
-                "name": "Autumn",
-                "months": [
-                    "September",
-                    "October"
-                ],
-                "description": "Northern lights begin, autumn colors, fewer tourists"
+                "description": "Rifugios open, snow-free passes, stable weather"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Arrival and Svolværgeita",
-                "start_location": "Svolvær",
-                "end_location": "Svolvær",
-                "distance_km": 4,
-                "duration_hours": 3,
-                "elevation_start_m": 0,
-                "elevation_end_m": 590,
-                "elevation_gain_m": 590,
+                "title": "Lago di Braies to Rifugio Biella",
+                "start_location": "Lago di Braies",
+                "end_location": "Rifugio Biella",
+                "distance_km": 14,
+                "duration_hours": 6,
+                "elevation_start_m": 1496,
+                "elevation_end_m": 2327,
+                "elevation_gain_m": 850,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "hotel/hostel",
+                    "type": "rifugio",
                     "options": [
-                        "Thon Hotel Lofoten",
-                        "Svolvær Hostel",
-                        "Anker Brygge"
+                        "Rifugio Biella"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Svolværgeita climb",
-                    "Panoramic harbor views",
-                    "Arctic town exploration",
-                    "Midnight sun experience"
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
                 ],
-                "description": "Arrive in Svolvær, the 'capital' of Lofoten. Afternoon hike up Svolværgeita (The Goat) for incredible views. Explore the fishing town and adjust to continuous daylight."
+                "highlights": [
+                    "Lago di Braies (Pragser Wildsee)",
+                    "Croda del Becco views",
+                    "Alpine meadows",
+                    "First rifugio experience"
+                ],
+                "description": "Start at the stunning Lago di Braies, famous for its emerald waters. Climb through forests and meadows to reach the welcoming Rifugio Biella."
             },
             {
                 "day": 2,
-                "title": "Henningsvær and Festvågtind",
-                "start_location": "Svolvær",
-                "end_location": "Henningsvær",
-                "distance_km": 8,
+                "title": "Rifugio Biella to Rifugio Lavarella",
+                "start_location": "Rifugio Biella",
+                "end_location": "Rifugio Lavarella",
+                "distance_km": 11,
                 "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 541,
-                "elevation_gain_m": 541,
+                "elevation_start_m": 2327,
+                "elevation_end_m": 2042,
+                "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "rifugio",
                     "options": [
-                        "Henningsvær Bryggehotel",
-                        "Classic rorbu cabins",
-                        "Henningsvær Hostel"
+                        "Rifugio Lavarella",
+                        "Rifugio Fanes"
                     ]
                 },
                 "meals_included": [
+                    "dinner",
                     "breakfast"
                 ],
                 "highlights": [
-                    "Festvågtind summit",
-                    "Venice of the North",
-                    "Traditional fishing village",
-                    "Art galleries and cafes"
+                    "Alpe di Fanes plateau",
+                    "Limestone pinnacles",
+                    "Marmot sightings",
+                    "Traditional Ladin culture"
                 ],
-                "description": "Morning hike up Festvågtind for spectacular views, then explore picturesque Henningsvær spread across several small islands connected by bridges."
+                "description": "Traverse the otherworldly Fanes plateau, surrounded by towering limestone peaks. Choose between two excellent rifugios for the night."
             },
             {
                 "day": 3,
-                "title": "Nusfjord and Hiking",
-                "start_location": "Henningsvær",
-                "end_location": "Nusfjord",
-                "distance_km": 10,
+                "title": "Rifugio Lavarella to Rifugio Lagazuoi",
+                "start_location": "Rifugio Lavarella",
+                "end_location": "Rifugio Lagazuoi",
+                "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 400,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
+                "elevation_start_m": 2042,
+                "elevation_end_m": 2752,
+                "elevation_gain_m": 900,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "historic rorbu",
+                    "type": "rifugio",
                     "options": [
-                        "Nusfjord Arctic Resort",
-                        "Historic fishermen's cabins"
+                        "Rifugio Lagazuoi"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "dinner"
+                    "dinner",
+                    "breakfast"
                 ],
                 "highlights": [
-                    "UNESCO preserved village",
-                    "Coastal mountain hiking",
-                    "Historic fishing culture",
-                    "Dramatic fjord setting"
+                    "Forcella del Lago",
+                    "WWI tunnels and positions",
+                    "360-degree summit views",
+                    "Cable car option down"
                 ],
-                "description": "Travel to Nusfjord, one of Norway's best-preserved fishing villages. Afternoon hike in surrounding mountains with views over the Norwegian Sea."
+                "description": "Climb to one of the most spectacular rifugios in the Dolomites. Explore WWI history and enjoy incredible views from Lagazuoi summit."
             },
             {
                 "day": 4,
-                "title": "Kvalvika Beach Trek",
-                "start_location": "Nusfjord",
-                "end_location": "Fredvang",
-                "distance_km": 12,
-                "duration_hours": 7,
-                "elevation_start_m": 0,
-                "elevation_end_m": 200,
-                "elevation_gain_m": 400,
+                "title": "Rifugio Lagazuoi to Rifugio Averau",
+                "start_location": "Rifugio Lagazuoi",
+                "end_location": "Rifugio Averau",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 2752,
+                "elevation_end_m": 2413,
+                "elevation_gain_m": 200,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "camping/cabin",
+                    "type": "rifugio",
                     "options": [
-                        "Fredvang camping",
-                        "Yttersand camping",
-                        "Local cabins"
+                        "Rifugio Averau",
+                        "Rifugio Nuvolau"
                     ]
                 },
                 "meals_included": [
+                    "dinner",
                     "breakfast"
                 ],
                 "highlights": [
-                    "Kvalvika arctic beach",
-                    "Dramatic cliff scenery",
-                    "Possible wild camping",
-                    "Midnight sun on beach"
+                    "Cinque Torri rock formations",
+                    "Nuvolau summit option",
+                    "Cortina valley views",
+                    "Easier hiking day"
                 ],
-                "description": "Trek to stunning Kvalvika Beach, surrounded by 1000m cliffs. Option to wild camp on the beach or continue to accommodation in Fredvang area."
+                "description": "Shorter day with options to explore the famous Cinque Torri climbing area or summit Nuvolau for panoramic views."
             },
             {
                 "day": 5,
-                "title": "Reinebringen",
-                "start_location": "Fredvang",
-                "end_location": "Reine",
-                "distance_km": 6,
+                "title": "Rifugio Averau to Rifugio Città di Fiume",
+                "start_location": "Rifugio Averau",
+                "end_location": "Rifugio Città di Fiume",
+                "distance_km": 13,
                 "duration_hours": 5,
-                "elevation_start_m": 0,
-                "elevation_end_m": 448,
-                "elevation_gain_m": 448,
-                "difficulty": "challenging",
+                "elevation_start_m": 2413,
+                "elevation_end_m": 1918,
+                "elevation_gain_m": 300,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "rorbu/hotel",
+                    "type": "rifugio",
                     "options": [
-                        "Reine Rorbuer",
-                        "Eliassen Rorbuer",
-                        "Sakrisøy Rorbuer"
+                        "Rifugio Città di Fiume",
+                        "Rifugio Croda da Lago"
                     ]
                 },
                 "meals_included": [
+                    "dinner",
                     "breakfast"
                 ],
                 "highlights": [
-                    "Iconic Reinebringen viewpoint",
-                    "Newly built stone steps",
-                    "Classic Lofoten panorama",
-                    "Picturesque Reine village"
+                    "Lago di Federa",
+                    "Croda da Lago circuit option",
+                    "Forest trails",
+                    "Wildlife viewing"
                 ],
-                "description": "Climb the famous Reinebringen via new stone stairway (1,978 steps!) for the most photographed view in Lofoten. Explore beautiful Reine village."
+                "description": "Descend through beautiful forests with optional detour around the scenic Lago di Croda da Lago. More intimate rifugio experience."
             },
             {
                 "day": 6,
-                "title": "Å and Munkebu Hut",
-                "start_location": "Reine",
-                "end_location": "Å",
-                "distance_km": 10,
+                "title": "Rifugio Città di Fiume to Rifugio Tissi",
+                "start_location": "Rifugio Città di Fiume",
+                "end_location": "Rifugio Tissi",
+                "distance_km": 15,
+                "duration_hours": 7,
+                "elevation_start_m": 1918,
+                "elevation_end_m": 2250,
+                "elevation_gain_m": 800,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Tissi"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Remote mountain valleys",
+                    "Pelmo massif views",
+                    "Traditional shepherding areas",
+                    "Quiet trails"
+                ],
+                "description": "Leave the busier routes for a more remote section. Long but rewarding day reaching the small and atmospheric Rifugio Tissi."
+            },
+            {
+                "day": 7,
+                "title": "Rifugio Tissi to Rifugio Vázzoler",
+                "start_location": "Rifugio Tissi",
+                "end_location": "Rifugio Vázzoler",
+                "distance_km": 12,
                 "duration_hours": 6,
-                "elevation_start_m": 0,
-                "elevation_end_m": 450,
-                "elevation_gain_m": 450,
+                "elevation_start_m": 2250,
+                "elevation_end_m": 1714,
+                "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "hostel/rorbu",
+                    "type": "rifugio",
                     "options": [
-                        "Å Hostel",
-                        "Å Rorbuer",
-                        "Local guesthouses"
+                        "Rifugio Vázzoler"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Civetta north face views",
+                    "Alpine botanical variety",
+                    "Historical rifugio",
+                    "Dramatic mountain amphitheater"
+                ],
+                "description": "Spectacular approach to Rifugio Vázzoler beneath the imposing north face of Civetta, one of the Dolomites' most impressive walls."
+            },
+            {
+                "day": 8,
+                "title": "Rifugio Vázzoler to Rifugio Carestiato",
+                "start_location": "Rifugio Vázzoler",
+                "end_location": "Rifugio Carestiato",
+                "distance_km": 14,
+                "duration_hours": 7,
+                "elevation_start_m": 1714,
+                "elevation_end_m": 1834,
+                "elevation_gain_m": 900,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Carestiato"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Forcella Col Negro",
+                    "Moiazza group traverse",
+                    "Remote valleys",
+                    "Sense of accomplishment"
+                ],
+                "description": "Challenging day crossing high passes through the Moiazza group. Remote and wild mountain scenery."
+            },
+            {
+                "day": 9,
+                "title": "Rifugio Carestiato to Rifugio Pian de Fontana",
+                "start_location": "Rifugio Carestiato",
+                "end_location": "Rifugio Pian de Fontana",
+                "distance_km": 10,
+                "duration_hours": 4,
+                "elevation_start_m": 1834,
+                "elevation_end_m": 1632,
+                "elevation_gain_m": 300,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "rifugio",
+                    "options": [
+                        "Rifugio Pian de Fontana"
+                    ]
+                },
+                "meals_included": [
+                    "dinner",
+                    "breakfast"
+                ],
+                "highlights": [
+                    "Easier walking day",
+                    "Forest trails",
+                    "Traditional farming areas",
+                    "Final rifugio night"
+                ],
+                "description": "Gentler day through forests and meadows. Last night in a rifugio before completing the Alta Via 1."
+            },
+            {
+                "day": 10,
+                "title": "Rifugio Pian de Fontana to Passo Duran/Belluno",
+                "start_location": "Rifugio Pian de Fontana",
+                "end_location": "Passo Duran/Belluno",
+                "distance_km": 8,
+                "duration_hours": 3,
+                "elevation_start_m": 1632,
+                "elevation_end_m": 1601,
+                "elevation_gain_m": 100,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel/end",
+                    "options": [
+                        "Bus to Belluno or Agordo"
                     ]
                 },
                 "meals_included": [
                     "breakfast"
                 ],
                 "highlights": [
-                    "End of the road village",
-                    "Optional Munkebu hut hike",
-                    "Stockfish museums",
-                    "Traditional architecture"
+                    "Alta Via completion",
+                    "Final mountain views",
+                    "Sense of achievement",
+                    "Return to civilization"
                 ],
-                "description": "Final day hiking to Å, the last village on the islands. Option for challenging hike to Munkebu mountain hut or explore village museums and cafes."
+                "description": "Final descent to Passo Duran where you can catch a bus to Belluno or Agordo. Celebrate completing one of Italy's classic treks!"
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Waterproof hiking boots",
-                    "description": "Essential for wet conditions",
-                    "rental_available": true
-                },
-                {
-                    "item": "Rain jacket and pants",
-                    "description": "Weather changes rapidly",
-                    "rental_available": true
-                },
-                {
-                    "item": "Warm layers",
-                    "description": "Even summer is cool",
+                    "item": "Mountain boots",
+                    "description": "Good ankle support for rocky terrain",
                     "rental_available": false
                 },
                 {
-                    "item": "Windproof jacket",
-                    "description": "Exposed coastal conditions",
+                    "item": "Via ferrata kit",
+                    "description": "For optional protected sections",
                     "rental_available": true
-                },
-                {
-                    "item": "Hat and gloves",
-                    "description": "For summit winds",
-                    "rental_available": false
-                },
-                {
-                    "item": "Sunglasses",
-                    "description": "24-hour daylight intense",
-                    "rental_available": false
                 },
                 {
                     "item": "Daypack",
-                    "description": "20-30L sufficient",
-                    "rental_available": true
-                },
-                {
-                    "item": "Water bottles",
-                    "description": "Streams safe to drink",
+                    "description": "25-35L sufficient for rifugio trek",
                     "rental_available": false
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "GPS backup recommended",
+                    "item": "Sleeping bag liner",
+                    "description": "Required in rifugios",
+                    "rental_available": false
+                },
+                {
+                    "item": "Layered clothing",
+                    "description": "Mountain weather changeable",
+                    "rental_available": false
+                },
+                {
+                    "item": "Rain gear",
+                    "description": "Afternoon storms common",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "High altitude sun intense",
+                    "rental_available": false
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Basic supplies",
+                    "rental_available": false
+                },
+                {
+                    "item": "Cash (Euros)",
+                    "description": "Many rifugios cash only",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Helpful on steep sections",
+                    "description": "Helpful on descents",
                     "rental_available": true
                 },
                 {
-                    "item": "Camera gear",
-                    "description": "Incredible photo opportunities",
+                    "item": "Hut shoes",
+                    "description": "Crocs or slippers for rifugios",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito repellent",
-                    "description": "For July-August",
+                    "item": "Earplugs",
+                    "description": "For dormitory sleeping",
                     "rental_available": false
                 },
                 {
-                    "item": "Eye mask",
-                    "description": "For midnight sun sleep",
+                    "item": "Quick-dry towel",
+                    "description": "Small and lightweight",
                     "rental_available": false
-                }
-            ],
-            "optional": [
-                {
-                    "item": "Camping gear",
-                    "description": "For wild camping option",
-                    "rental_available": true
-                },
-                {
-                    "item": "Fishing gear",
-                    "description": "Excellent sea fishing",
-                    "rental_available": true
-                },
-                {
-                    "item": "Wetsuit",
-                    "description": "For arctic swimming",
-                    "rental_available": true
                 }
             ]
         },
@@ -1931,393 +1873,224 @@
             {
                 "name": "None required",
                 "cost_usd": 0,
-                "notes": "Right to roam applies, wild camping allowed"
+                "notes": "Just rifugio reservations needed"
             }
         ],
         "costs": {
             "permit_total_usd": 0,
             "guide_daily_usd": 200,
-            "accommodation_daily_usd": 100,
+            "accommodation_daily_usd": 60,
             "meals_daily_usd": 50,
-            "transportation_usd": 200,
+            "transportation_usd": 100,
             "total_budget_range_usd": {
-                "min": 800,
+                "min": 1000,
                 "max": 2000
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Norwegian",
-                "Sami heritage"
+                "Italian",
+                "Ladin (local minority)"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Catholic",
             "languages": [
-                "Norwegian",
-                "English widely spoken"
+                "Italian",
+                "German",
+                "Ladin",
+                "English in tourist areas"
             ],
             "customs_etiquette": [
-                "Respect private property near trails",
-                "Leave no trace principles strong",
-                "Remove shoes when entering homes",
-                "Quiet appreciation of nature valued",
-                "Don't pick cloudberries on private land"
+                "Greet with 'Buongiorno' or 'Grüß Gott'",
+                "Remove boots when entering rifugios",
+                "Quiet hours 10pm-6am strictly observed",
+                "Share tables at busy times",
+                "Tip not expected but appreciated"
             ],
             "local_foods": [
                 {
-                    "name": "Stockfish (Tørrfisk)",
-                    "description": "Air-dried cod, Lofoten's main export"
+                    "name": "Canederli",
+                    "description": "Bread dumplings in broth"
                 },
                 {
-                    "name": "King crab",
-                    "description": "Arctic delicacy"
+                    "name": "Speck",
+                    "description": "Smoked ham specialty"
                 },
                 {
-                    "name": "Reindeer",
-                    "description": "Traditional Sami dish"
+                    "name": "Kaiserschmarrn",
+                    "description": "Shredded pancake dessert"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold - precious local berry"
+                    "name": "Grappa",
+                    "description": "Traditional digestif"
                 },
                 {
-                    "name": "Lefse",
-                    "description": "Traditional flatbread"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Lofoten International Chamber Music Festival",
-                    "when": "July",
-                    "description": "Concerts in unique venues"
-                },
-                {
-                    "name": "Lofoten Fishing Festival",
-                    "when": "March",
-                    "description": "World championship in cod fishing"
+                    "name": "Strudel",
+                    "description": "Apple strudel is a rifugio staple"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,029m"
+                "risk_level": "low",
+                "notes": "Maximum elevation under 3000m"
             },
             "main_concerns": {
                 "weather": {
-                    "risk_level": "high",
-                    "description": "Rapid changes, strong winds",
-                    "prevention": [
-                        "Always carry full rain gear",
-                        "Check forecasts frequently",
-                        "Be prepared to turn back",
-                        "Layer clothing system"
-                    ]
-                },
-                "exposure": {
                     "risk_level": "moderate",
-                    "description": "Exposed ridges and summits",
+                    "description": "Afternoon thunderstorms common",
                     "prevention": [
                         "Start early",
-                        "Know escape routes",
-                        "Carry emergency shelter",
-                        "Travel with others"
+                        "Check forecasts",
+                        "Carry waterproofs",
+                        "Know rifugio locations"
                     ]
                 },
-                "midnight_sun": {
-                    "risk_level": "low",
-                    "description": "24-hour daylight disorientation",
+                "via_ferrata": {
+                    "risk_level": "moderate",
+                    "description": "Some exposed sections",
                     "prevention": [
-                        "Wear watch",
-                        "Maintain regular schedule",
-                        "Use eye mask for sleep",
-                        "Stay hydrated"
+                        "Use proper equipment",
+                        "Check conditions",
+                        "Know your limits",
+                        "Consider guide"
                     ]
                 }
             },
-            "medical_facilities": [
-                {
-                    "location": "Svolvær",
-                    "type": "Hospital"
-                },
-                {
-                    "location": "Leknes",
-                    "type": "Hospital"
-                },
-                {
-                    "location": "Villages",
-                    "type": "Basic medical centers"
-                }
-            ],
             "evacuation": {
                 "method": "Helicopter",
-                "cost_usd": "Free with insurance",
-                "insurance_required": true,
-                "response_time": "Usually within 2 hours"
+                "cost_usd": "2000-4000",
+                "insurance_required": true
             }
         },
         "weather_patterns": {
             "summer": {
                 "months": [
-                    "June",
                     "July",
                     "August"
                 ],
-                "day_temp_c": "12 to 18",
-                "night_temp_c": "8 to 12",
-                "precipitation": "Moderate",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, no darkness"
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "5 to 10",
+                "precipitation": "Afternoon storms",
+                "notes": "Busiest period"
             },
-            "autumn": {
+            "early_autumn": {
                 "months": [
-                    "September",
-                    "October"
+                    "September"
                 ],
-                "day_temp_c": "6 to 12",
-                "night_temp_c": "2 to 8",
-                "precipitation": "Increasing",
-                "daylight_hours": "12-18",
-                "notes": "Northern lights begin"
-            },
-            "winter": {
-                "months": [
-                    "November",
-                    "December",
-                    "January",
-                    "February"
-                ],
-                "day_temp_c": "-2 to 4",
-                "night_temp_c": "-5 to 0",
-                "precipitation": "Snow common",
-                "daylight_hours": "0-6",
-                "notes": "Polar night Dec-Jan"
-            },
-            "spring": {
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "day_temp_c": "2 to 10",
-                "night_temp_c": "-2 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "12-24",
-                "notes": "Snow lingers on peaks"
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "0 to 8",
+                "precipitation": "More stable",
+                "notes": "Often best weather"
             }
         },
-        "transportation": {
-            "to_start": [
-                {
-                    "method": "Flight",
-                    "from": "Oslo/Bodø",
-                    "to": "Leknes/Svolvær",
-                    "duration": "1.5 hours from Bodø",
-                    "cost_usd": 150,
-                    "frequency": "Multiple daily"
-                },
-                {
-                    "method": "Ferry",
-                    "from": "Bodø",
-                    "to": "Moskenes",
-                    "duration": "3.5 hours",
-                    "cost_usd": 50,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Express boat",
-                    "from": "Bodø",
-                    "to": "Svolvær",
-                    "duration": "3 hours",
-                    "cost_usd": 80,
-                    "frequency": "Daily"
-                }
-            ],
-            "during_trek": [
-                {
-                    "method": "Local bus",
-                    "description": "Connects main villages",
-                    "cost_usd": "10-20 per trip",
-                    "frequency": "Limited schedule"
-                },
-                {
-                    "method": "Rental car",
-                    "description": "Most flexible option",
-                    "cost_usd": "80 per day",
-                    "notes": "Book well ahead in summer"
-                }
-            ]
-        },
         "accommodation": {
-            "type": "Varied options",
-            "description": "From camping to luxury",
-            "options": [
-                "Rorbu (fishermen's cabins) - iconic red cabins",
-                "Hotels and guesthouses",
-                "Hostels with kitchen facilities",
-                "Camping (wild camping allowed)",
-                "DNT mountain huts (limited)"
+            "type": "Mountain rifugios",
+            "description": "Traditional mountain huts with meals",
+            "amenities": [
+                "Dormitory rooms (4-20 beds)",
+                "Half-board (dinner and breakfast)",
+                "Hot showers (sometimes paid)",
+                "Bar service",
+                "Packed lunch available",
+                "Blankets provided (bring liner)"
             ],
-            "booking": "Essential in summer",
+            "booking": "Essential in high season",
             "cost_per_night_usd": {
-                "camping": "15-25",
-                "hostel": "40-60",
-                "rorbu": "100-200",
-                "hotel": "150-300"
+                "half_board": "50-70",
+                "bed_only": "25-35"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness for steep climbs",
-            "technical_skills": "Some scrambling on peaks",
-            "altitude_challenge": "None",
-            "trail_conditions": "Can be muddy, rocky",
-            "navigation_challenge": "Trails not always marked",
-            "daily_hiking_hours": "3-7 hours",
-            "total_elevation_gain": 3500,
-            "total_elevation_loss": 3500
-        },
-        "sustainability": {
-            "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Increasing tourism pressure",
-                "Coastal pollution"
-            ],
-            "responsible_practices": [
-                "Strict leave no trace",
-                "Use established trails",
-                "Support local businesses",
-                "Respect wildlife distances",
-                "Participate in beach cleanups"
-            ],
-            "local_initiatives": [
-                "Sustainable tourism certification",
-                "Plastic-free islands goal",
-                "Traditional fishing preservation"
-            ]
-        },
-        "connectivity": {
-            "mobile_coverage": [
-                {
-                    "location": "Villages",
-                    "quality": "Excellent",
-                    "providers": [
-                        "Telenor",
-                        "Telia"
-                    ]
-                },
-                {
-                    "location": "Hiking trails",
-                    "quality": "Variable",
-                    "providers": [
-                        "Emergency calls usually possible"
-                    ]
-                }
-            ],
-            "internet": {
-                "availability": "WiFi in all accommodations",
-                "cost_usd": "Usually free",
-                "speed": "Good in villages"
-            }
-        },
-        "booking_recommendations": {
-            "advance_booking": "2-3 months for summer",
-            "group_size": "Small groups best",
-            "guide_requirement": "Not necessary, well-marked",
-            "car_rental": "Recommended for flexibility",
-            "insurance_essential": true,
-            "fitness_preparation": "Hill walking and stairs"
+            "physical_demands": "Good fitness for long days",
+            "technical_skills": "Some exposed sections",
+            "altitude_challenge": "Minimal",
+            "trail_conditions": "Rocky, well-marked",
+            "daily_hiking_hours": "5-7 hours",
+            "total_elevation_gain": 7000,
+            "total_elevation_loss": 7000
         },
         "alternative_routes": [
             {
-                "name": "Vesterålen Extension",
-                "variation": "Continue north",
-                "extra_days": 3,
-                "highlights": [
-                    "Whale watching",
-                    "Less touristy",
-                    "Andøya island"
-                ]
-            },
-            {
-                "name": "Winter Northern Lights",
-                "variation": "Winter version",
+                "name": "Alta Via 2",
+                "variation": "More challenging route",
                 "extra_days": 0,
                 "highlights": [
-                    "Aurora borealis",
-                    "Polar night",
-                    "Snow hiking"
+                    "More technical",
+                    "Fewer crowds",
+                    "Wilder terrain"
                 ]
             },
             {
-                "name": "Sea Kayaking Combo",
-                "variation": "Paddle between hikes",
-                "extra_days": 2,
+                "name": "Alta Via 3-4",
+                "variation": "Eastern Dolomites",
+                "extra_days": "Various",
                 "highlights": [
-                    "Sea eagle viewing",
-                    "Hidden beaches",
-                    "Unique perspective"
+                    "Less developed",
+                    "More remote",
+                    "Cultural variety"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Reinebringen",
-                "best_time": "Midnight sun",
+                "location": "Lago di Braies",
+                "best_time": "Early morning",
                 "subjects": [
-                    "Classic Lofoten view",
-                    "Reine village",
-                    "Dramatic light"
+                    "Lake reflections",
+                    "Emerald waters",
+                    "Seekofel peak"
                 ]
             },
             {
-                "location": "Kvalvika Beach",
-                "best_time": "Golden hour",
+                "location": "Lagazuoi summit",
+                "best_time": "Sunset",
                 "subjects": [
-                    "Arctic beach",
-                    "Cliff reflections",
-                    "Wild camping"
+                    "360-degree views",
+                    "Marmolada glacier",
+                    "Tofane group"
                 ]
             },
             {
-                "location": "Henningsvær",
-                "best_time": "Blue hour",
+                "location": "Civetta north face",
+                "best_time": "Morning",
                 "subjects": [
-                    "Football pitch",
-                    "Harbor reflections",
-                    "Northern lights"
+                    "Massive rock wall",
+                    "Alpine glow",
+                    "Climbers on route"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "When can I see the midnight sun?",
-                "answer": "Late May to mid-July. The sun never sets, creating surreal 24-hour daylight. Best experienced from mountain summits."
+                "question": "Do I need via ferrata experience?",
+                "answer": "No, the main route avoids technical sections. Optional via ferratas are available but can be bypassed. Basic scrambling comfort helpful."
             },
             {
-                "question": "Is wild camping really allowed?",
-                "answer": "Yes! Norway's 'allemannsretten' (right to roam) allows wild camping. Stay 150m from houses, leave no trace."
+                "question": "How far ahead should I book rifugios?",
+                "answer": "For July-August, book 2-3 months ahead. September is easier but still book 1 month ahead for weekends."
             },
             {
-                "question": "How difficult are the hikes?",
-                "answer": "Varied. Some peaks require scrambling and exposure comfort. Many easier coastal walks available. Weather is main challenge."
+                "question": "What's the food like in rifugios?",
+                "answer": "Excellent! Expect hearty multi-course dinners with local specialties. Vegetarian options available if requested in advance."
             },
             {
-                "question": "Do I need a car?",
-                "answer": "Not essential but recommended. Buses exist but limited. Car allows flexibility and access to trailheads."
+                "question": "Can I do it without speaking Italian?",
+                "answer": "Yes, English is widely spoken in rifugios. Basic Italian phrases are appreciated and enhance the experience."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 91,
+        "popularity_score": 90,
         "seo": {
-            "meta_title": "Lofoten Islands Trek Guide 2024 | 6-Day Arctic Norway Adventure",
-            "meta_description": "Complete guide to trekking the Lofoten Islands. Midnight sun hikes, fishing villages, dramatic peaks, and Arctic beaches in Norway's stunning archipelago.",
+            "meta_title": "Dolomites Alta Via 1 Complete Guide 2024 | 10-Day Trek Itinerary",
+            "meta_description": "Ultimate guide to hiking Alta Via 1 through the Italian Dolomites. Detailed itinerary, rifugio bookings, costs, and insider tips for this classic trek.",
             "keywords": [
-                "lofoten islands trek",
-                "norway hiking",
-                "midnight sun trek",
-                "arctic hiking",
-                "lofoten islands guide"
+                "alta via 1",
+                "dolomites trek",
+                "italian alps hiking",
+                "rifugio to rifugio",
+                "dolomites alta via"
             ]
         }
     };
