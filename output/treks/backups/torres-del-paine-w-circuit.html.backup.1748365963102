@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland</title>
-    <meta name="description" content="Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.">
+    <title>Torres del Paine W Circuit Trek Guide 2024 | Complete 5-Day Itinerary</title>
+    <meta name="description" content="Complete guide to hiking the W Circuit in Torres del Paine. Detailed itinerary, booking tips, gear list, and insider advice for Patagonia's most iconic trek.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/kungsleden-kings-trail.jpg');
+            background-image: url('/images/treks/covers/torres-del-paine-w-circuit.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -735,7 +735,7 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Kungsleden (King's Trail)</h1>
+            <h1>Torres del Paine 'W' Circuit</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -743,15 +743,15 @@
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,140m</span>
+                    <span class="hero-stat-value">1,200m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">80km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">easy</span>
+                    <span class="hero-stat-value">moderate</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -774,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Sweden/Scandinavia</h2>
+                <h2>Journey to Patagonia</h2>
                 <p class="overview-description">
-                    Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.
+                    Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.
                 </p>
                 
                 <div class="highlights-list">
@@ -824,20 +824,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">80 km / 50 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,140m (3,740ft)</span>
+                    <span class="info-value">1,200m (3,937ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">easy</span>
+                        <span class="difficulty-badge">moderate</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -846,16 +846,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Kiruna/Abisko</span>
+                    <span class="info-value">Puerto Natales</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,200</span>
+                        <span class="price-range">$600 - $1,500</span>
                     </span>
                 </div>
             </div>
@@ -866,7 +866,7 @@
     <section id="itinerary" class="content-section">
         <h2>5-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Sweden/Scandinavia with proper acclimatization and rest days
+            Follow the route through Patagonia with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -875,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Abisko to Abiskojaure</h3>
+          <h3 class="day-title">Las Torres Base Trek</h3>
           <div class="day-stats">
-            <span>📏 15km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 490m</span>
+            <span>📏 22km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +800m</span>
+            <span>🏔️ 900m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake.</p>
+      <p class="day-description">The classic day hike to the base of the famous Torres. Start early for the steep climb through lenga forest, across mountain streams, and up the final boulder field to reach the stunning viewpoint of the three granite spires reflected in the turquoise lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Abisko National Park</span><span class="day-highlight">Abiskojaure lake</span><span class="day-highlight">First taste of Lapland</span><span class="day-highlight">Mountain views</span>
+          <span class="day-highlight">Iconic three granite towers</span><span class="day-highlight">Turquoise glacial lake at base</span><span class="day-highlight">Ascenso Valley views</span><span class="day-highlight">Beech forest hiking</span>
         </div>
       
     </div>
@@ -896,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Abiskojaure to Alesjaure</h3>
+          <h3 class="day-title">Cuernos del Paine</h3>
           <div class="day-stats">
-            <span>📏 22km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 785m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +250m</span>
+            <span>🏔️ 350m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure.</p>
+      <p class="day-description">Scenic traverse along the turquoise waters of Nordenskjöld Lake with constantly changing views of the distinctive Cuernos (Horns) del Paine. The trail winds through diverse landscapes from grasslands to forests.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass views</span><span class="day-highlight">Alesjaure valley</span><span class="day-highlight">Possible reindeer</span><span class="day-highlight">Alpine environment</span>
+          <span class="day-highlight">Views of Cuernos del Paine horns</span><span class="day-highlight">Nordenskjöld Lake shoreline</span><span class="day-highlight">Varied terrain and ecosystems</span><span class="day-highlight">Potential condor sightings</span>
         </div>
       
     </div>
@@ -917,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Alesjaure to Sälka</h3>
+          <h3 class="day-title">French Valley</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 820m</span>
+            <span>📏 25km</span>
+            <span>⏱️ 10 hours</span>
+            <span>📈 +600m</span>
+            <span>🏔️ 550m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks.</p>
+      <p class="day-description">The longest day includes a detour into the spectacular French Valley. Hike up the valley surrounded by granite spires and hanging glaciers, with the option to reach Británico viewpoint for panoramic views, before continuing to Paine Grande.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle terrain</span><span class="day-highlight">Mountain streams</span><span class="day-highlight">Wildflowers (summer)</span><span class="day-highlight">Shorter day</span>
+          <span class="day-highlight">French Valley hanging glaciers</span><span class="day-highlight">360-degree mountain amphitheater</span><span class="day-highlight">Avalanche sounds from glaciers</span><span class="day-highlight">Británico viewpoint option</span>
         </div>
       
     </div>
@@ -938,19 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Sälka to Kebnekaise Fjällstation</h3>
+          <h3 class="day-title">Grey Glacier Viewpoint</h3>
           <div class="day-stats">
-            <span>📏 24km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +300m</span>
-            <span>🏔️ 690m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 300m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station.</p>
+      <p class="day-description">Trek along Grey Lake's shoreline through burned and regenerating forest areas. Cross suspension bridges with views of floating icebergs and the massive Grey Glacier flowing from the Southern Patagonian Ice Field.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass (1,140m)</span><span class="day-highlight">Highest point on trail</span><span class="day-highlight">Kebnekaise views</span><span class="day-highlight">Laddjuvagge valley</span>
+          <span class="day-highlight">Grey Glacier views</span><span class="day-highlight">Icebergs in Grey Lake</span><span class="day-highlight">Suspension bridges</span><span class="day-highlight">Southern Ice Field connection</span>
         </div>
       
     </div>
@@ -959,19 +959,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Kebnekaise to Nikkaluokta</h3>
+          <h3 class="day-title">Return via Catamaran</h3>
           <div class="day-stats">
-            <span>📏 19km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 0m</span>
-            <span>🏔️ 470m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 -280m</span>
+            <span>🏔️ 20m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise.</p>
+      <p class="day-description">Morning catamaran ride across Grey Lake among the icebergs, followed by bus transfer back to Puerto Natales. Alternatively, hike back to Paine Grande and take catamaran across Pehoé Lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Forest return</span><span class="day-highlight">Trail completion</span><span class="day-highlight">Sami culture center</span><span class="day-highlight">Bus to Kiruna</span>
+          <span class="day-highlight">Catamaran across Grey Lake</span><span class="day-highlight">Close views of icebergs</span><span class="day-highlight">Glacier perspectives from water</span><span class="day-highlight">Return to civilization</span>
         </div>
       
     </div>
@@ -997,39 +997,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Hiking boots</div>
-          <div class="gear-description">Waterproof recommended</div>
+          <div class="gear-description">Waterproof with ankle support for varied terrain</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Top and bottom essential</div>
+          <div class="gear-name">Windproof/waterproof jacket</div>
+          <div class="gear-description">Patagonia winds can exceed 100km/h</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Can be cold even in summer</div>
+          <div class="gear-name">Windproof pants</div>
+          <div class="gear-description">Essential for exposed sections</div>
         </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Mosquito protection</div>
-          <div class="gear-description">Head net, repellent (July)</div>
-        </div>
-        
+        <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">If camping</div>
+          <div class="gear-description">0°C rated if camping</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1037,23 +1029,47 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Backpack</div>
-          <div class="gear-description">40-60L</div>
+          <div class="gear-description">40-60L with rain cover</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">Well-marked but essential</div>
+          <div class="gear-name">Layering system</div>
+          <div class="gear-description">Base layer, insulating layer, shell</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">First aid kit</div>
-          <div class="gear-description">Include blister treatment</div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Sunglasses, hat, SPF 50+ sunscreen</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Helpful for river crossings and wind</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2L capacity, water is drinkable from streams</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early starts and refugio use</div>
         </div>
         
       </li>
@@ -1070,24 +1086,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful for river crossings</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For muddy sections and stream crossings</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For wet sections</div>
+          <div class="gear-name">Buff or balaclava</div>
+          <div class="gear-description">Wind and sun protection</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camp shoes</div>
-          <div class="gear-description">For hut/tent comfort</div>
+          <div class="gear-name">Camera rain cover</div>
+          <div class="gear-description">Weather changes quickly</div>
         </div>
         
       </li>
@@ -1096,6 +1112,14 @@
         <div>
           <div class="gear-name">Dry bags</div>
           <div class="gear-description">Keep essentials dry</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Blister kit</div>
+          <div class="gear-description">Long days require foot care</div>
         </div>
         
       </li>
@@ -1117,15 +1141,15 @@
     <div class="season-card">
       <div class="season-icon">☀️</div>
       <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August, September</p>
-      <p>Midnight sun, warm weather, full facilities open</p>
+      <p class="season-months">December, January, February</p>
+      <p>Warmest weather, longest days, but most crowded</p>
     </div>
   
     <div class="season-card">
       <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September</p>
-      <p>Spectacular fall colors, northern lights begin, fewer mosquitoes</p>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">October, November, March, April</p>
+      <p>Fewer crowds, variable weather, stunning autumn colors in March-April</p>
     </div>
   
         </div>
@@ -1148,19 +1172,19 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$35</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$150</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$50</span>
+      <span>$80</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$40</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
@@ -1168,7 +1192,7 @@
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,200</span>
+      <span>$600 - $1,500</span>
     </div>
   
         </div>
@@ -1190,34 +1214,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How bad are the mosquitoes?</span>
+        <span>How far in advance should I book?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better.</div>
+      <div class="faq-answer">For December-February, book refugios/campsites 5-6 months ahead. Shoulder seasons 2-3 months. The park has strict capacity limits.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need to book huts in advance?</span>
+        <span>Can I trek independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms.</div>
+      <div class="faq-answer">Yes, the trails are well-marked and guides aren't required. However, weather can change rapidly, so experience with multi-day treks is recommended.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can beginners do this trek?</span>
+        <span>Camping or refugios?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers.</div>
+      <div class="faq-answer">Refugios offer comfort and meals but are expensive. Camping is cheaper but means carrying more gear in challenging weather. Many do a mix.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What about the northern lights?</span>
+        <span>What about the wind?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Best from late August onward. September offers a great combination of autumn colors and aurora possibilities.</div>
+      <div class="faq-answer">Patagonian wind is legendary. Gusts can exceed 100km/h. Bring proper windproof gear and trekking poles for stability. Be prepared to wait out extreme conditions.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is water safe to drink?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, water from streams and lakes is generally safe to drink without treatment, though some prefer to purify as a precaution.</div>
     </div>
   
         </div>
@@ -1258,34 +1290,34 @@
             scrollToSectionTop();
         }
 
-                            function scrollToSectionTop() {
-                requestAnimationFrame(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
+                function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    if (navTabs) {
-                        // Get the nav's current position in the viewport
-                        const navRect = navTabs.getBoundingClientRect();
-                        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // Calculate where the nav actually is on the page
-                        const navTopPosition = currentScrollY + navRect.top;
-                        
-                        // Scroll to just below the nav
-                        const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                        
-                        window.scrollTo({
-                            top: Math.max(0, targetScroll),
-                            behavior: 'smooth'
-                        );
-                    } else {
-                        // Fallback: scroll to top if nav not found
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        );
-                    }
-                );
-            }
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
 
         function centerTabWithNextVisible(clickedTab) {
             const tabContainer = document.querySelector('.nav-tabs-container');
@@ -1369,588 +1401,714 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "kungsleden-kings-trail",
-        "name": "Kungsleden (King's Trail)",
-        "slug": "kungsleden-kings-trail",
-        "region": "Sweden/Scandinavia",
-        "country": "Sweden",
-        "summary": "Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.",
+        "_id": "torres-del-paine-w-circuit",
+        "name": "Torres del Paine 'W' Circuit",
+        "slug": "torres-del-paine-w-circuit",
+        "region": "Patagonia",
+        "country": "Chile",
+        "summary": "Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
+            "min_days": 4,
+            "max_days": 5,
             "recommended_days": 5
         },
-        "distance_km": 110,
-        "difficulty": "easy",
-        "max_elevation_m": 1140,
-        "starting_elevation_m": 480,
-        "airport": "Kiruna (KRN)",
-        "nearest_city": "Kiruna/Abisko",
+        "distance_km": 80,
+        "difficulty": "moderate",
+        "max_elevation_m": 1200,
+        "starting_elevation_m": 100,
+        "airport": "Punta Arenas (PUQ)",
+        "nearest_city": "Puerto Natales",
         "coordinates": {
             "start": {
-                "lat": 68.3494,
-                "lng": 18.8311,
-                "location": "Abisko"
+                "lat": -50.9423,
+                "lng": -73.4068,
+                "location": "Las Torres Hotel"
             },
             "end": {
-                "lat": 67.8482,
-                "lng": 18.4161,
-                "location": "Nikkaluokta"
+                "lat": -50.9811,
+                "lng": -73.0765,
+                "location": "Grey Glacier"
             }
         },
         "best_seasons": [
             {
                 "name": "Summer",
                 "months": [
-                    "June",
-                    "July",
-                    "August",
-                    "September"
+                    "December",
+                    "January",
+                    "February"
                 ],
-                "description": "Midnight sun, warm weather, full facilities open"
+                "description": "Warmest weather, longest days, but most crowded"
             },
             {
-                "name": "Autumn",
+                "name": "Shoulder Season",
                 "months": [
-                    "September"
+                    "October",
+                    "November",
+                    "March",
+                    "April"
                 ],
-                "description": "Spectacular fall colors, northern lights begin, fewer mosquitoes"
+                "description": "Fewer crowds, variable weather, stunning autumn colors in March-April"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Abisko to Abiskojaure",
-                "start_location": "Abisko",
-                "end_location": "Abiskojaure",
-                "distance_km": 15,
-                "duration_hours": 4,
-                "elevation_start_m": 480,
-                "elevation_end_m": 490,
-                "elevation_gain_m": 200,
-                "difficulty": "easy",
+                "title": "Las Torres Base Trek",
+                "start_location": "Las Torres Hotel",
+                "end_location": "Las Torres Hotel/Chileno",
+                "distance_km": 22,
+                "duration_hours": 8,
+                "elevation_start_m": 100,
+                "elevation_end_m": 900,
+                "elevation_gain_m": 800,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "refugio/camping",
                     "options": [
-                        "Abiskojaure STF hut",
-                        "Camping"
+                        "Refugio Chileno",
+                        "Camping Chileno",
+                        "Return to Las Torres"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Abisko National Park",
-                    "Abiskojaure lake",
-                    "First taste of Lapland",
-                    "Mountain views"
+                "meals_included": [
+                    "breakfast",
+                    "box lunch",
+                    "dinner"
                 ],
-                "description": "Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake."
+                "highlights": [
+                    "Iconic three granite towers",
+                    "Turquoise glacial lake at base",
+                    "Ascenso Valley views",
+                    "Beech forest hiking"
+                ],
+                "description": "The classic day hike to the base of the famous Torres. Start early for the steep climb through lenga forest, across mountain streams, and up the final boulder field to reach the stunning viewpoint of the three granite spires reflected in the turquoise lake."
             },
             {
                 "day": 2,
-                "title": "Abiskojaure to Alesjaure",
-                "start_location": "Abiskojaure",
-                "end_location": "Alesjaure",
-                "distance_km": 22,
-                "duration_hours": 6,
-                "elevation_start_m": 490,
-                "elevation_end_m": 785,
-                "elevation_gain_m": 400,
+                "title": "Cuernos del Paine",
+                "start_location": "Las Torres/Chileno",
+                "end_location": "Refugio Cuernos",
+                "distance_km": 11,
+                "duration_hours": 5,
+                "elevation_start_m": 100,
+                "elevation_end_m": 350,
+                "elevation_gain_m": 250,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "refugio/camping",
                     "options": [
-                        "Alesjaure STF hut",
-                        "Camping"
+                        "Refugio Cuernos",
+                        "Camping Cuernos"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass views",
-                    "Alesjaure valley",
-                    "Possible reindeer",
-                    "Alpine environment"
+                "meals_included": [
+                    "breakfast",
+                    "box lunch",
+                    "dinner"
                 ],
-                "description": "Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure."
+                "highlights": [
+                    "Views of Cuernos del Paine horns",
+                    "Nordenskjöld Lake shoreline",
+                    "Varied terrain and ecosystems",
+                    "Potential condor sightings"
+                ],
+                "description": "Scenic traverse along the turquoise waters of Nordenskjöld Lake with constantly changing views of the distinctive Cuernos (Horns) del Paine. The trail winds through diverse landscapes from grasslands to forests."
             },
             {
                 "day": 3,
-                "title": "Alesjaure to Sälka",
-                "start_location": "Alesjaure",
-                "end_location": "Sälka",
-                "distance_km": 12,
-                "duration_hours": 4,
-                "elevation_start_m": 785,
-                "elevation_end_m": 820,
-                "elevation_gain_m": 200,
-                "difficulty": "easy",
+                "title": "French Valley",
+                "start_location": "Refugio Cuernos",
+                "end_location": "Refugio Paine Grande",
+                "distance_km": 25,
+                "duration_hours": 10,
+                "elevation_start_m": 350,
+                "elevation_end_m": 550,
+                "elevation_gain_m": 600,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "refugio/camping",
                     "options": [
-                        "Sälka STF hut",
-                        "Camping"
+                        "Refugio Paine Grande",
+                        "Camping Paine Grande"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Gentle terrain",
-                    "Mountain streams",
-                    "Wildflowers (summer)",
-                    "Shorter day"
+                "meals_included": [
+                    "breakfast",
+                    "box lunch",
+                    "dinner"
                 ],
-                "description": "Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks."
+                "highlights": [
+                    "French Valley hanging glaciers",
+                    "360-degree mountain amphitheater",
+                    "Avalanche sounds from glaciers",
+                    "Británico viewpoint option"
+                ],
+                "description": "The longest day includes a detour into the spectacular French Valley. Hike up the valley surrounded by granite spires and hanging glaciers, with the option to reach Británico viewpoint for panoramic views, before continuing to Paine Grande."
             },
             {
                 "day": 4,
-                "title": "Sälka to Kebnekaise Fjällstation",
-                "start_location": "Sälka",
-                "end_location": "Kebnekaise Fjällstation",
-                "distance_km": 24,
-                "duration_hours": 7,
-                "elevation_start_m": 820,
-                "elevation_end_m": 690,
-                "elevation_gain_m": 300,
+                "title": "Grey Glacier Viewpoint",
+                "start_location": "Refugio Paine Grande",
+                "end_location": "Refugio Grey",
+                "distance_km": 11,
+                "duration_hours": 4,
+                "elevation_start_m": 550,
+                "elevation_end_m": 300,
+                "elevation_gain_m": 200,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF station",
+                    "type": "refugio/camping",
                     "options": [
-                        "Kebnekaise Fjällstation",
-                        "Camping"
+                        "Refugio Grey",
+                        "Camping Grey"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass (1,140m)",
-                    "Highest point on trail",
-                    "Kebnekaise views",
-                    "Laddjuvagge valley"
+                "meals_included": [
+                    "breakfast",
+                    "box lunch",
+                    "dinner"
                 ],
-                "description": "Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station."
+                "highlights": [
+                    "Grey Glacier views",
+                    "Icebergs in Grey Lake",
+                    "Suspension bridges",
+                    "Southern Ice Field connection"
+                ],
+                "description": "Trek along Grey Lake's shoreline through burned and regenerating forest areas. Cross suspension bridges with views of floating icebergs and the massive Grey Glacier flowing from the Southern Patagonian Ice Field."
             },
             {
                 "day": 5,
-                "title": "Kebnekaise to Nikkaluokta",
-                "start_location": "Kebnekaise Fjällstation",
-                "end_location": "Nikkaluokta",
-                "distance_km": 19,
-                "duration_hours": 5,
-                "elevation_start_m": 690,
-                "elevation_end_m": 470,
-                "elevation_gain_m": 0,
+                "title": "Return via Catamaran",
+                "start_location": "Refugio Grey",
+                "end_location": "Puerto Natales",
+                "distance_km": 0,
+                "duration_hours": 3,
+                "elevation_start_m": 300,
+                "elevation_end_m": 20,
+                "elevation_gain_m": -280,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "end point",
+                    "type": "hotel",
                     "options": [
-                        "Nikkaluokta Sarri Lodge",
-                        "Return to Kiruna"
+                        "Hotel in Puerto Natales"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Forest return",
-                    "Trail completion",
-                    "Sami culture center",
-                    "Bus to Kiruna"
+                "meals_included": [
+                    "breakfast"
                 ],
-                "description": "Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise."
+                "highlights": [
+                    "Catamaran across Grey Lake",
+                    "Close views of icebergs",
+                    "Glacier perspectives from water",
+                    "Return to civilization"
+                ],
+                "description": "Morning catamaran ride across Grey Lake among the icebergs, followed by bus transfer back to Puerto Natales. Alternatively, hike back to Paine Grande and take catamaran across Pehoé Lake."
             }
         ],
         "gear_list": {
             "essential": [
                 {
                     "item": "Hiking boots",
-                    "description": "Waterproof recommended",
+                    "description": "Waterproof with ankle support for varied terrain",
                     "rental_available": true
                 },
                 {
-                    "item": "Rain gear",
-                    "description": "Top and bottom essential",
+                    "item": "Windproof/waterproof jacket",
+                    "description": "Patagonia winds can exceed 100km/h",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm layers",
-                    "description": "Can be cold even in summer",
-                    "rental_available": false
-                },
-                {
-                    "item": "Mosquito protection",
-                    "description": "Head net, repellent (July)",
-                    "rental_available": false
+                    "item": "Windproof pants",
+                    "description": "Essential for exposed sections",
+                    "rental_available": true
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "If camping",
+                    "description": "0°C rated if camping",
                     "rental_available": true
                 },
                 {
                     "item": "Backpack",
-                    "description": "40-60L",
+                    "description": "40-60L with rain cover",
                     "rental_available": true
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "Well-marked but essential",
+                    "item": "Layering system",
+                    "description": "Base layer, insulating layer, shell",
                     "rental_available": false
                 },
                 {
-                    "item": "First aid kit",
-                    "description": "Include blister treatment",
+                    "item": "Sun protection",
+                    "description": "Sunglasses, hat, SPF 50+ sunscreen",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Helpful for river crossings and wind",
+                    "rental_available": true
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2L capacity, water is drinkable from streams",
+                    "rental_available": false
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early starts and refugio use",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Helpful for river crossings",
+                    "item": "Gaiters",
+                    "description": "For muddy sections and stream crossings",
                     "rental_available": true
                 },
                 {
-                    "item": "Gaiters",
-                    "description": "For wet sections",
+                    "item": "Buff or balaclava",
+                    "description": "Wind and sun protection",
                     "rental_available": false
                 },
                 {
-                    "item": "Camp shoes",
-                    "description": "For hut/tent comfort",
+                    "item": "Camera rain cover",
+                    "description": "Weather changes quickly",
                     "rental_available": false
                 },
                 {
                     "item": "Dry bags",
                     "description": "Keep essentials dry",
                     "rental_available": false
+                },
+                {
+                    "item": "Blister kit",
+                    "description": "Long days require foot care",
+                    "rental_available": false
+                }
+            ],
+            "optional": [
+                {
+                    "item": "Camping gear",
+                    "description": "Tent, mat, stove if not using refugios",
+                    "rental_available": true
+                },
+                {
+                    "item": "Binoculars",
+                    "description": "For wildlife viewing",
+                    "rental_available": false
+                },
+                {
+                    "item": "Portable charger",
+                    "description": "Limited electricity in refugios",
+                    "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
+                "name": "Park Entry Fee",
+                "cost_usd": 35,
+                "cost_clp": 28000,
+                "where_to_obtain": "Park entrance or online",
+                "validity": "3 consecutive days"
+            },
+            {
+                "name": "Camping/Refugio Reservations",
                 "cost_usd": 0,
-                "notes": "Right to roam applies"
+                "cost_clp": 0,
+                "where_to_obtain": "Must book in advance through Vertice or Fantastico Sur",
+                "validity": "Specific dates only",
+                "notes": "Booking required far in advance, especially Dec-Feb"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 50,
-            "meals_daily_usd": 40,
+            "permit_total_usd": 35,
+            "guide_daily_usd": 150,
+            "porter_daily_usd": 0,
+            "accommodation_daily_usd": 80,
+            "meals_daily_usd": 60,
             "transportation_usd": 100,
+            "catamaran_usd": 35,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1200
+                "min": 600,
+                "max": 1500
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Swedish",
-                "Sami (indigenous)"
+                "Chilean",
+                "Argentine",
+                "Indigenous Tehuelche/Aonikenk heritage"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Secular/Catholic",
             "languages": [
-                "Swedish",
-                "Sami",
-                "English common"
+                "Spanish",
+                "English widely spoken in tourism"
             ],
             "customs_etiquette": [
-                "Respect Sami reindeer herding areas",
-                "Don't disturb reindeer",
-                "Remove shoes in huts",
-                "Help with hut chores if asked",
-                "Leave no trace strictly followed"
+                "Pack out all trash - leave no trace",
+                "Respect refugio quiet hours (10pm-7am)",
+                "Share trail information with other hikers",
+                "Don't feed wildlife (especially foxes)",
+                "Stay on marked trails to prevent erosion",
+                "Respect private estancia property boundaries"
             ],
             "local_foods": [
                 {
-                    "name": "Reindeer meat",
-                    "description": "Traditional Sami staple"
+                    "name": "Cordero al Palo",
+                    "description": "Patagonian lamb roasted over open fire"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold berry"
+                    "name": "Calafate berry",
+                    "description": "Local berry - legend says you'll return to Patagonia"
                 },
                 {
-                    "name": "Gáhkku",
-                    "description": "Sami flatbread"
+                    "name": "King Crab (Centolla)",
+                    "description": "Fresh from the Magellan Strait"
                 },
                 {
-                    "name": "Smoked fish",
-                    "description": "Arctic char and salmon"
+                    "name": "Mate",
+                    "description": "Traditional herbal tea drunk throughout the day"
                 }
             ],
             "festivals": [
                 {
-                    "name": "Autumn Reindeer Separation",
-                    "when": "September",
-                    "description": "Traditional herding event"
+                    "name": "Festival de la Esquila",
+                    "when": "January",
+                    "description": "Sheep shearing festival"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
                 "risk_level": "none",
-                "notes": "Maximum elevation only 1,140m"
+                "notes": "Maximum elevation only 1,200m"
             },
             "main_concerns": {
+                "weather": {
+                    "risk_level": "high",
+                    "description": "Extreme winds, rapid weather changes",
+                    "prevention": [
+                        "Check weather forecasts daily",
+                        "Be prepared to wait out storms",
+                        "Carry emergency shelter/bivy",
+                        "Know escape routes"
+                    ]
+                },
                 "river_crossings": {
                     "risk_level": "moderate",
-                    "description": "Can be high after rain",
+                    "description": "Streams can rise rapidly after rain",
                     "prevention": [
-                        "Check conditions at huts",
-                        "Use bridges where available",
-                        "Trekking poles help",
-                        "Consider waiting if high"
+                        "Use trekking poles for stability",
+                        "Unbuckle pack waist belt",
+                        "Cross early in the day when water is lower"
                     ]
                 },
-                "mosquitoes": {
-                    "risk_level": "high in July",
-                    "description": "Can be overwhelming",
+                "sun_exposure": {
+                    "risk_level": "high",
+                    "description": "Intense UV due to ozone hole",
                     "prevention": [
-                        "Head net essential",
-                        "Long sleeves and pants",
-                        "Strong repellent",
-                        "Keep moving"
-                    ]
-                },
-                "weather": {
-                    "risk_level": "moderate",
-                    "description": "Changes quickly",
-                    "prevention": [
-                        "Layer clothing",
-                        "Always carry rain gear",
-                        "Check forecasts at huts",
-                        "Be flexible with plans"
+                        "Apply sunscreen every 2 hours",
+                        "Wear protective clothing",
+                        "Use quality sunglasses"
                     ]
                 }
             },
+            "medical_facilities": [
+                {
+                    "location": "Park ranger stations",
+                    "type": "Basic first aid"
+                },
+                {
+                    "location": "Puerto Natales",
+                    "type": "Hospital with emergency services"
+                },
+                {
+                    "location": "Punta Arenas",
+                    "type": "Regional hospital (3 hours away)"
+                }
+            ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Covered by European health insurance",
+                "method": "Helicopter or horseback",
+                "cost_usd": "2000-5000",
                 "insurance_required": true,
-                "response_time": "Few hours to a day"
-            }
+                "response_time": "Weather dependent, can be days"
+            },
+            "vaccinations_recommended": [
+                "Routine vaccinations up to date",
+                "Hepatitis A",
+                "Typhoid"
+            ]
         },
         "weather_patterns": {
             "summer": {
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "2 to 8",
+                "precipitation": "Moderate, expect rain",
+                "wind": "Strong, 50-100 km/h common",
+                "daylight_hours": "17-18",
+                "notes": "Peak season, book far in advance"
+            },
+            "autumn": {
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "-2 to 5",
+                "precipitation": "Increasing, possible snow",
+                "wind": "Very strong",
+                "daylight_hours": "10-14",
+                "notes": "Beautiful fall colors, fewer crowds"
+            },
+            "winter": {
                 "months": [
                     "June",
                     "July",
                     "August"
                 ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "5 to 10",
-                "precipitation": "Frequent rain",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, mosquitoes peak July"
+                "day_temp_c": "0 to 8",
+                "night_temp_c": "-5 to 0",
+                "precipitation": "Snow likely",
+                "wind": "Extreme",
+                "daylight_hours": "8-9",
+                "notes": "Many facilities closed, experienced hikers only"
             },
-            "autumn": {
+            "spring": {
                 "months": [
-                    "September"
+                    "September",
+                    "October",
+                    "November"
                 ],
                 "day_temp_c": "5 to 15",
                 "night_temp_c": "0 to 5",
                 "precipitation": "Variable",
-                "daylight_hours": "14",
-                "notes": "Stunning colors, possible snow"
+                "wind": "Strong to extreme",
+                "daylight_hours": "11-16",
+                "notes": "Wildflowers bloom, weather improving"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Train",
-                    "from": "Kiruna",
-                    "to": "Abisko",
-                    "duration": "1.5 hours",
-                    "cost_usd": 20,
-                    "frequency": "2-4 daily"
+                    "method": "Fly + Bus",
+                    "from": "Santiago",
+                    "to": "Punta Arenas + Puerto Natales",
+                    "duration": "5-6 hours total",
+                    "cost_usd": 200,
+                    "frequency": "Multiple daily flights",
+                    "notes": "3-hour flight + 3-hour bus"
                 },
                 {
                     "method": "Bus",
-                    "from": "Kiruna Airport",
-                    "to": "Abisko",
+                    "from": "Puerto Natales",
+                    "to": "Torres del Paine",
+                    "duration": "2 hours",
+                    "cost_usd": 15,
+                    "frequency": "2-3 daily in season"
+                },
+                {
+                    "method": "Transfer service",
+                    "from": "Puerto Natales",
+                    "to": "Torres del Paine",
                     "duration": "2 hours",
                     "cost_usd": 30,
-                    "frequency": "Connects with flights"
+                    "frequency": "Multiple daily"
                 }
             ],
-            "from_end": [
-                {
-                    "method": "Bus",
-                    "from": "Nikkaluokta",
-                    "to": "Kiruna",
-                    "duration": "1.5 hours",
-                    "cost_usd": 25,
-                    "frequency": "2-3 daily in season"
-                }
-            ]
+            "from_end": "Similar options in reverse"
         },
         "accommodation": {
-            "type": "STF mountain huts",
-            "description": "Swedish Tourist Association huts",
-            "amenities": [
-                "Bunk beds in dorms",
-                "Self-catering kitchens",
-                "Shop with supplies",
-                "Sauna at most huts",
-                "Camping allowed nearby",
-                "Host provides info"
+            "type": "Refugios and camping",
+            "description": "Mountain huts with beds or camping platforms",
+            "refugio_amenities": [
+                "Bunk beds with bedding (bring sleep sheet)",
+                "Hot meals available for purchase",
+                "Hot showers (sometimes paid)",
+                "Electricity for charging (limited hours)",
+                "Small shops with basic supplies",
+                "Drying rooms"
             ],
-            "booking": "Not required but recommended",
+            "camping_amenities": [
+                "Designated platforms or areas",
+                "Cooking shelters at some sites",
+                "Bathroom facilities",
+                "Cold water only at most sites"
+            ],
+            "booking": "Essential to book months in advance",
             "cost_per_night_usd": {
-                "stf_member": "25-35",
-                "non_member": "50-60",
-                "camping": "15-20"
+                "refugio_bed": "60-80",
+                "refugio_full_board": "140-160",
+                "camping": "8-15"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness sufficient",
+            "physical_demands": "Moderate fitness required, long days",
             "technical_skills": "None required",
             "altitude_challenge": "None",
-            "trail_conditions": "Well-marked, boardwalks in wet areas",
-            "navigation_challenge": "Easy - clear trail",
-            "daily_hiking_hours": "4-7 hours",
-            "total_elevation_gain": 1300,
-            "total_elevation_loss": 1430
+            "trail_conditions": "Well-marked but can be muddy, rocky",
+            "weather_challenge": "Primary difficulty - extreme winds",
+            "daily_hiking_hours": "4-10 hours",
+            "total_elevation_gain": 2850,
+            "total_elevation_loss": 2850
         },
         "sustainability": {
             "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Reindeer grazing areas",
-                "Erosion in popular sections"
+                "Trail erosion from high traffic",
+                "Waste management",
+                "Wildlife disturbance"
             ],
             "responsible_practices": [
-                "Strict leave no trace",
-                "Stay on marked trails",
-                "Respect Sami land use",
-                "Use designated camping",
-                "Pack out all waste"
+                "Strict leave no trace principles",
+                "Stay on designated trails",
+                "Use established campsites only",
+                "Pack out all waste",
+                "Respect wildlife viewing distances"
             ],
             "local_initiatives": [
-                "STF conservation work",
-                "Trail maintenance volunteers",
-                "Sustainable hut operations"
+                "Trail maintenance programs",
+                "Visitor limits being considered",
+                "Ranger education programs"
             ]
         },
         "connectivity": {
             "mobile_coverage": [
                 {
-                    "location": "Abisko/Nikkaluokta",
-                    "quality": "Good",
+                    "location": "Refugios",
+                    "quality": "Limited to none",
                     "providers": [
-                        "Telia",
-                        "Telenor"
+                        "Entel",
+                        "Movistar"
                     ]
                 },
                 {
                     "location": "Trail",
-                    "quality": "Very limited",
-                    "providers": [
-                        "Emergency calls sometimes"
-                    ]
+                    "quality": "None",
+                    "providers": []
                 }
             ],
             "internet": {
-                "availability": "Only at Kebnekaise station",
-                "cost_usd": "5",
-                "speed": "Basic"
+                "availability": "Some refugios have paid WiFi",
+                "cost_usd": "5-10 per day",
+                "speed": "Very slow, weather dependent"
             }
         },
         "booking_recommendations": {
-            "advance_booking": "1-2 months for huts in peak season",
-            "group_size": "Any size welcome",
-            "guide_requirement": "Not necessary",
-            "food_planning": "Buy at huts or carry all",
+            "advance_booking": "3-6 months for high season",
+            "group_size": "Individual bookings easier than groups",
+            "guide_requirement": "Not required but helpful",
+            "porter_recommendation": "Not available/necessary",
             "insurance_essential": true,
-            "fitness_preparation": "Basic hiking fitness"
+            "fitness_preparation": "3 months cardio and hiking training"
         },
         "alternative_routes": [
             {
-                "name": "Full Kungsleden",
-                "variation": "Abisko to Hemavan",
-                "extra_days": 20,
+                "name": "O Circuit",
+                "variation": "Complete circuit including backside",
+                "extra_days": 3,
                 "highlights": [
-                    "440km total",
-                    "Full arctic traverse",
-                    "More solitude south"
+                    "More solitude",
+                    "John Gardner Pass",
+                    "Complete park experience"
                 ]
             },
             {
-                "name": "Kebnekaise Extension",
-                "variation": "Climb Sweden's highest",
-                "extra_days": 2,
+                "name": "Day trips from refugios",
+                "variation": "Base yourself and day hike",
+                "extra_days": 0,
                 "highlights": [
-                    "2,106m summit",
-                    "Glacier option",
-                    "Achievement"
+                    "Lighter pack",
+                    "More flexibility",
+                    "Same highlights"
                 ]
             },
             {
-                "name": "Winter Skiing",
-                "variation": "March-April ski tour",
-                "extra_days": 2,
+                "name": "Q Circuit",
+                "variation": "Extended O with Pingo Valley",
+                "extra_days": 5,
                 "highlights": [
-                    "Northern lights",
-                    "Winter huts open",
-                    "Arctic experience"
+                    "Ultimate Torres experience",
+                    "Remote valleys",
+                    "Wildlife"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Tjäktja Pass",
-                "best_time": "Clear weather",
+                "location": "Base Torres",
+                "best_time": "Sunrise",
                 "subjects": [
-                    "Valley views",
-                    "Kebnekaise massif",
-                    "Arctic landscape"
+                    "Tower reflections",
+                    "Alpenglow on granite"
                 ]
             },
             {
-                "location": "Abiskojaure",
+                "location": "Mirador Británico",
+                "best_time": "Midday",
+                "subjects": [
+                    "360-degree amphitheater",
+                    "Hanging glaciers"
+                ]
+            },
+            {
+                "location": "Grey Glacier viewpoint",
                 "best_time": "Evening",
                 "subjects": [
-                    "Lake reflections",
-                    "Midnight sun",
-                    "Lapporten gate"
+                    "Blue ice",
+                    "Icebergs",
+                    "Sunset colors"
                 ]
             },
             {
-                "location": "Autumn tundra",
-                "best_time": "September",
+                "location": "Nordenskjöld Lake",
+                "best_time": "Morning",
                 "subjects": [
-                    "Fall colors",
-                    "Reindeer",
-                    "Northern lights"
+                    "Turquoise water",
+                    "Cuernos reflection"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How bad are the mosquitoes?",
-                "answer": "In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better."
+                "question": "How far in advance should I book?",
+                "answer": "For December-February, book refugios/campsites 5-6 months ahead. Shoulder seasons 2-3 months. The park has strict capacity limits."
             },
             {
-                "question": "Do I need to book huts in advance?",
-                "answer": "Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms."
+                "question": "Can I trek independently?",
+                "answer": "Yes, the trails are well-marked and guides aren't required. However, weather can change rapidly, so experience with multi-day treks is recommended."
             },
             {
-                "question": "Can beginners do this trek?",
-                "answer": "Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers."
+                "question": "Camping or refugios?",
+                "answer": "Refugios offer comfort and meals but are expensive. Camping is cheaper but means carrying more gear in challenging weather. Many do a mix."
             },
             {
-                "question": "What about the northern lights?",
-                "answer": "Best from late August onward. September offers a great combination of autumn colors and aurora possibilities."
+                "question": "What about the wind?",
+                "answer": "Patagonian wind is legendary. Gusts can exceed 100km/h. Bring proper windproof gear and trekking poles for stability. Be prepared to wait out extreme conditions."
+            },
+            {
+                "question": "Is water safe to drink?",
+                "answer": "Yes, water from streams and lakes is generally safe to drink without treatment, though some prefer to purify as a precaution."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 93,
+        "popularity_score": 96,
         "seo": {
-            "meta_title": "Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland",
-            "meta_description": "Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.",
+            "meta_title": "Torres del Paine W Circuit Trek Guide 2024 | Complete 5-Day Itinerary",
+            "meta_description": "Complete guide to hiking the W Circuit in Torres del Paine. Detailed itinerary, booking tips, gear list, and insider advice for Patagonia's most iconic trek.",
             "keywords": [
-                "kungsleden",
-                "kings trail sweden",
-                "lapland hiking",
-                "arctic trekking",
-                "sweden hiking trail"
+                "torres del paine",
+                "w circuit",
+                "patagonia trek",
+                "chile hiking",
+                "torres del paine itinerary"
             ]
         }
     };

@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland</title>
-    <meta name="description" content="Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.">
+    <title>Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu</title>
+    <meta name="description" content="Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/kungsleden-kings-trail.jpg');
+            background-image: url('/images/treks/covers/classic-inca-trail.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -735,23 +735,23 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Kungsleden (King's Trail)</h1>
+            <h1>Classic Inca Trail</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">5</span>
+                    <span class="hero-stat-value">4</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,140m</span>
+                    <span class="hero-stat-value">4,200m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">43km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">easy</span>
+                    <span class="hero-stat-value">moderate</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -774,9 +774,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Sweden/Scandinavia</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.
+                    The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.
                 </p>
                 
                 <div class="highlights-list">
@@ -824,20 +824,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">4-4 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">43 km / 27 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,140m (3,740ft)</span>
+                    <span class="info-value">4,200m (13,780ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">easy</span>
+                        <span class="difficulty-badge">moderate</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -846,16 +846,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Kiruna/Abisko</span>
+                    <span class="info-value">Cusco</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,200</span>
+                        <span class="price-range">$650 - $1,200</span>
                     </span>
                 </div>
             </div>
@@ -864,9 +864,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>5-Day Detailed Itinerary</h2>
+        <h2>4-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Sweden/Scandinavia with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -875,19 +875,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Abisko to Abiskojaure</h3>
+          <h3 class="day-title">Km 82 to Wayllabamba</h3>
           <div class="day-stats">
-            <span>📏 15km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 490m</span>
+            <span>📏 12km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 3,000m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake.</p>
+      <p class="day-description">Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Abisko National Park</span><span class="day-highlight">Abiskojaure lake</span><span class="day-highlight">First taste of Lapland</span><span class="day-highlight">Mountain views</span>
+          <span class="day-highlight">Patallacta ruins</span><span class="day-highlight">Urubamba River views</span><span class="day-highlight">First glimpse of snow peaks</span><span class="day-highlight">Traditional villages</span>
         </div>
       
     </div>
@@ -896,19 +896,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Abiskojaure to Alesjaure</h3>
+          <h3 class="day-title">Wayllabamba to Pacaymayo</h3>
           <div class="day-stats">
-            <span>📏 22km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 785m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 +1200m</span>
+            <span>🏔️ 3,600m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure.</p>
+      <p class="day-description">The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass views</span><span class="day-highlight">Alesjaure valley</span><span class="day-highlight">Possible reindeer</span><span class="day-highlight">Alpine environment</span>
+          <span class="day-highlight">Dead Woman's Pass (4,200m)</span><span class="day-highlight">Cloud forest ecosystem</span><span class="day-highlight">Llamas and alpacas</span><span class="day-highlight">Achievement of highest point</span>
         </div>
       
     </div>
@@ -917,19 +917,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Alesjaure to Sälka</h3>
+          <h3 class="day-title">Pacaymayo to Wiñay Wayna</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 820m</span>
+            <span>📏 16km</span>
+            <span>⏱️ 9 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 2,650m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks.</p>
+      <p class="day-description">Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle terrain</span><span class="day-highlight">Mountain streams</span><span class="day-highlight">Wildflowers (summer)</span><span class="day-highlight">Shorter day</span>
+          <span class="day-highlight">Runkurakay ruins</span><span class="day-highlight">Sayacmarca ruins</span><span class="day-highlight">Phuyupatamarca ruins</span><span class="day-highlight">Cloud forest descent</span>
         </div>
       
     </div>
@@ -938,40 +938,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Sälka to Kebnekaise Fjällstation</h3>
+          <h3 class="day-title">Wiñay Wayna to Machu Picchu</h3>
           <div class="day-stats">
-            <span>📏 24km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +300m</span>
-            <span>🏔️ 690m</span>
+            <span>📏 4km</span>
+            <span>⏱️ 2 hours</span>
+            <span>📈 -220m</span>
+            <span>🏔️ 2,430m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station.</p>
+      <p class="day-description">Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass (1,140m)</span><span class="day-highlight">Highest point on trail</span><span class="day-highlight">Kebnekaise views</span><span class="day-highlight">Laddjuvagge valley</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 5</div>
-          <h3 class="day-title">Kebnekaise to Nikkaluokta</h3>
-          <div class="day-stats">
-            <span>📏 19km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 0m</span>
-            <span>🏔️ 470m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Forest return</span><span class="day-highlight">Trail completion</span><span class="day-highlight">Sami culture center</span><span class="day-highlight">Bus to Kiruna</span>
+          <span class="day-highlight">Sun Gate first view</span><span class="day-highlight">Machu Picchu sunrise</span><span class="day-highlight">Guided site tour</span><span class="day-highlight">Optional Huayna Picchu</span>
         </div>
       
     </div>
@@ -997,7 +976,15 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Hiking boots</div>
-          <div class="gear-description">Waterproof recommended</div>
+          <div class="gear-description">Well broken-in, waterproof</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-10°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1005,55 +992,55 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Top and bottom essential</div>
+          <div class="gear-description">Jacket and pants essential</div>
         </div>
         <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Daypack</div>
+          <div class="gear-description">Porters carry main gear</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning starts</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles</div>
+          <div class="gear-description">2-3 liters capacity</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">High altitude sun intense</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Personal medications</div>
+          <div class="gear-description">Including altitude sickness meds</div>
+        </div>
+        
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Can be cold even in summer</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Mosquito protection</div>
-          <div class="gear-description">Head net, repellent (July)</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">If camping</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Backpack</div>
-          <div class="gear-description">40-60L</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">Well-marked but essential</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">First aid kit</div>
-          <div class="gear-description">Include blister treatment</div>
+          <div class="gear-description">Gets very cold at altitude</div>
         </div>
         
       </li>
@@ -1071,31 +1058,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful for river crossings</div>
+          <div class="gear-description">Helpful for steep descents</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For wet sections</div>
+          <div class="gear-name">Sleeping pad</div>
+          <div class="gear-description">Extra comfort</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Coca leaves</div>
+          <div class="gear-description">Traditional altitude remedy</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camp shoes</div>
-          <div class="gear-description">For hut/tent comfort</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Dry bags</div>
-          <div class="gear-description">Keep essentials dry</div>
+          <div class="gear-name">Cash (soles)</div>
+          <div class="gear-description">For tips and snacks</div>
         </div>
         
       </li>
@@ -1116,16 +1103,16 @@
             
     <div class="season-card">
       <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August, September</p>
-      <p>Midnight sun, warm weather, full facilities open</p>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear skies, cold nights, busiest period</p>
     </div>
   
     <div class="season-card">
       <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September</p>
-      <p>Spectacular fall colors, northern lights begin, fewer mosquitoes</p>
+      <h3 class="season-name">Shoulder Season</h3>
+      <p class="season-months">April, October</p>
+      <p>Variable weather, fewer crowds, lush vegetation</p>
     </div>
   
         </div>
@@ -1148,27 +1135,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$130</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$50</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$40</span>
+      <span>$NaN</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$100</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,200</span>
+      <span>$650 - $1,200</span>
     </div>
   
         </div>
@@ -1190,34 +1177,42 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How bad are the mosquitoes?</span>
+        <span>How fit do I need to be?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better.</div>
+      <div class="faq-answer">Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need to book huts in advance?</span>
+        <span>Why must I book so far ahead?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms.</div>
+      <div class="faq-answer">Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can beginners do this trek?</span>
+        <span>What about altitude sickness?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers.</div>
+      <div class="faq-answer">Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What about the northern lights?</span>
+        <span>How heavy is my daypack?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Best from late August onward. September offers a great combination of autumn colors and aurora possibilities.</div>
+      <div class="faq-answer">Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg.</div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is the trail crowded?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others.</div>
     </div>
   
         </div>
@@ -1258,34 +1253,34 @@
             scrollToSectionTop();
         }
 
-                            function scrollToSectionTop() {
-                requestAnimationFrame(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
+                function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    if (navTabs) {
-                        // Get the nav's current position in the viewport
-                        const navRect = navTabs.getBoundingClientRect();
-                        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // Calculate where the nav actually is on the page
-                        const navTopPosition = currentScrollY + navRect.top;
-                        
-                        // Scroll to just below the nav
-                        const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                        
-                        window.scrollTo({
-                            top: Math.max(0, targetScroll),
-                            behavior: 'smooth'
-                        );
-                    } else {
-                        // Fallback: scroll to top if nav not found
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        );
-                    }
-                );
-            }
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
 
         function centerTabWithNextVisible(clickedTab) {
             const tabContainer = document.querySelector('.nav-tabs-container');
@@ -1369,588 +1364,623 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "kungsleden-kings-trail",
-        "name": "Kungsleden (King's Trail)",
-        "slug": "kungsleden-kings-trail",
-        "region": "Sweden/Scandinavia",
-        "country": "Sweden",
-        "summary": "Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.",
+        "_id": "classic-inca-trail",
+        "name": "Classic Inca Trail",
+        "slug": "classic-inca-trail",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The legendary 4-day trek to Machu Picchu following ancient Inca paths through cloud forests, alpine tundra, and numerous archaeological sites.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 5
+            "min_days": 4,
+            "max_days": 4,
+            "recommended_days": 4
         },
-        "distance_km": 110,
-        "difficulty": "easy",
-        "max_elevation_m": 1140,
-        "starting_elevation_m": 480,
-        "airport": "Kiruna (KRN)",
-        "nearest_city": "Kiruna/Abisko",
+        "distance_km": 43,
+        "difficulty": "moderate",
+        "max_elevation_m": 4200,
+        "starting_elevation_m": 2600,
+        "airport": "Cusco (CUZ)",
+        "nearest_city": "Cusco",
         "coordinates": {
             "start": {
-                "lat": 68.3494,
-                "lng": 18.8311,
-                "location": "Abisko"
+                "lat": -13.2585,
+                "lng": -72.2636,
+                "location": "Km 82 (Piscacucho)"
             },
             "end": {
-                "lat": 67.8482,
-                "lng": 18.4161,
-                "location": "Nikkaluokta"
+                "lat": -13.1631,
+                "lng": -72.5449,
+                "location": "Machu Picchu"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
+                "name": "Dry Season",
                 "months": [
+                    "May",
                     "June",
                     "July",
                     "August",
                     "September"
                 ],
-                "description": "Midnight sun, warm weather, full facilities open"
+                "description": "Clear skies, cold nights, busiest period"
             },
             {
-                "name": "Autumn",
+                "name": "Shoulder Season",
                 "months": [
-                    "September"
+                    "April",
+                    "October"
                 ],
-                "description": "Spectacular fall colors, northern lights begin, fewer mosquitoes"
+                "description": "Variable weather, fewer crowds, lush vegetation"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Abisko to Abiskojaure",
-                "start_location": "Abisko",
-                "end_location": "Abiskojaure",
-                "distance_km": 15,
-                "duration_hours": 4,
-                "elevation_start_m": 480,
-                "elevation_end_m": 490,
-                "elevation_gain_m": 200,
-                "difficulty": "easy",
-                "accommodation": {
-                    "type": "STF hut",
-                    "options": [
-                        "Abiskojaure STF hut",
-                        "Camping"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Abisko National Park",
-                    "Abiskojaure lake",
-                    "First taste of Lapland",
-                    "Mountain views"
-                ],
-                "description": "Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake."
-            },
-            {
-                "day": 2,
-                "title": "Abiskojaure to Alesjaure",
-                "start_location": "Abiskojaure",
-                "end_location": "Alesjaure",
-                "distance_km": 22,
+                "title": "Km 82 to Wayllabamba",
+                "start_location": "Km 82",
+                "end_location": "Wayllabamba",
+                "distance_km": 12,
                 "duration_hours": 6,
-                "elevation_start_m": 490,
-                "elevation_end_m": 785,
+                "elevation_start_m": 2600,
+                "elevation_end_m": 3000,
                 "elevation_gain_m": 400,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "camping",
                     "options": [
-                        "Alesjaure STF hut",
-                        "Camping"
+                        "Wayllabamba campsite"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass views",
-                    "Alesjaure valley",
-                    "Possible reindeer",
-                    "Alpine environment"
+                "meals_included": [
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure."
+                "highlights": [
+                    "Patallacta ruins",
+                    "Urubamba River views",
+                    "First glimpse of snow peaks",
+                    "Traditional villages"
+                ],
+                "description": "Begin at Km 82 after early morning pickup from Cusco. Cross the Urubamba River and hike through the valley with views of Veronica mountain. Visit Patallacta ruins before reaching camp."
+            },
+            {
+                "day": 2,
+                "title": "Wayllabamba to Pacaymayo",
+                "start_location": "Wayllabamba",
+                "end_location": "Pacaymayo",
+                "distance_km": 11,
+                "duration_hours": 7,
+                "elevation_start_m": 3000,
+                "elevation_end_m": 3600,
+                "elevation_gain_m": 1200,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "camping",
+                    "options": [
+                        "Pacaymayo campsite"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Dead Woman's Pass (4,200m)",
+                    "Cloud forest ecosystem",
+                    "Llamas and alpacas",
+                    "Achievement of highest point"
+                ],
+                "description": "The most challenging day, climbing to Dead Woman's Pass at 4,200m. Start early through humid cloud forest, emerging above treeline for the final steep ascent. Spectacular views from the pass."
             },
             {
                 "day": 3,
-                "title": "Alesjaure to Sälka",
-                "start_location": "Alesjaure",
-                "end_location": "Sälka",
-                "distance_km": 12,
-                "duration_hours": 4,
-                "elevation_start_m": 785,
-                "elevation_end_m": 820,
-                "elevation_gain_m": 200,
-                "difficulty": "easy",
+                "title": "Pacaymayo to Wiñay Wayna",
+                "start_location": "Pacaymayo",
+                "end_location": "Wiñay Wayna",
+                "distance_km": 16,
+                "duration_hours": 9,
+                "elevation_start_m": 3600,
+                "elevation_end_m": 2650,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "camping",
                     "options": [
-                        "Sälka STF hut",
-                        "Camping"
+                        "Wiñay Wayna campsite"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Gentle terrain",
-                    "Mountain streams",
-                    "Wildflowers (summer)",
-                    "Shorter day"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks."
+                "highlights": [
+                    "Runkurakay ruins",
+                    "Sayacmarca ruins",
+                    "Phuyupatamarca ruins",
+                    "Cloud forest descent"
+                ],
+                "description": "Longest but most rewarding day passing through several archaeological sites. Cross the second pass at 3,950m, explore ancient ruins, and descend through stunning cloud forest to camp."
             },
             {
                 "day": 4,
-                "title": "Sälka to Kebnekaise Fjällstation",
-                "start_location": "Sälka",
-                "end_location": "Kebnekaise Fjällstation",
-                "distance_km": 24,
-                "duration_hours": 7,
-                "elevation_start_m": 820,
-                "elevation_end_m": 690,
-                "elevation_gain_m": 300,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "STF station",
-                    "options": [
-                        "Kebnekaise Fjällstation",
-                        "Camping"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass (1,140m)",
-                    "Highest point on trail",
-                    "Kebnekaise views",
-                    "Laddjuvagge valley"
-                ],
-                "description": "Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station."
-            },
-            {
-                "day": 5,
-                "title": "Kebnekaise to Nikkaluokta",
-                "start_location": "Kebnekaise Fjällstation",
-                "end_location": "Nikkaluokta",
-                "distance_km": 19,
-                "duration_hours": 5,
-                "elevation_start_m": 690,
-                "elevation_end_m": 470,
-                "elevation_gain_m": 0,
+                "title": "Wiñay Wayna to Machu Picchu",
+                "start_location": "Wiñay Wayna",
+                "end_location": "Machu Picchu",
+                "distance_km": 4,
+                "duration_hours": 2,
+                "elevation_start_m": 2650,
+                "elevation_end_m": 2430,
+                "elevation_gain_m": -220,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "end point",
+                    "type": "hotel",
                     "options": [
-                        "Nikkaluokta Sarri Lodge",
-                        "Return to Kiruna"
+                        "Aguas Calientes hotels"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Forest return",
-                    "Trail completion",
-                    "Sami culture center",
-                    "Bus to Kiruna"
+                "meals_included": [
+                    "breakfast"
                 ],
-                "description": "Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise."
+                "highlights": [
+                    "Sun Gate first view",
+                    "Machu Picchu sunrise",
+                    "Guided site tour",
+                    "Optional Huayna Picchu"
+                ],
+                "description": "Pre-dawn start to reach the Sun Gate for sunrise over Machu Picchu. Descend to the citadel for a guided tour of this Wonder of the World. Afternoon train back to Cusco."
             }
         ],
         "gear_list": {
             "essential": [
                 {
                     "item": "Hiking boots",
-                    "description": "Waterproof recommended",
+                    "description": "Well broken-in, waterproof",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-10°C rated for cold nights",
                     "rental_available": true
                 },
                 {
                     "item": "Rain gear",
-                    "description": "Top and bottom essential",
+                    "description": "Jacket and pants essential",
                     "rental_available": true
+                },
+                {
+                    "item": "Daypack",
+                    "description": "Porters carry main gear",
+                    "rental_available": true
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Water bottles",
+                    "description": "2-3 liters capacity",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "High altitude sun intense",
+                    "rental_available": false
+                },
+                {
+                    "item": "Personal medications",
+                    "description": "Including altitude sickness meds",
+                    "rental_available": false
                 },
                 {
                     "item": "Warm layers",
-                    "description": "Can be cold even in summer",
-                    "rental_available": false
-                },
-                {
-                    "item": "Mosquito protection",
-                    "description": "Head net, repellent (July)",
-                    "rental_available": false
-                },
-                {
-                    "item": "Sleeping bag",
-                    "description": "If camping",
-                    "rental_available": true
-                },
-                {
-                    "item": "Backpack",
-                    "description": "40-60L",
-                    "rental_available": true
-                },
-                {
-                    "item": "Map and compass",
-                    "description": "Well-marked but essential",
-                    "rental_available": false
-                },
-                {
-                    "item": "First aid kit",
-                    "description": "Include blister treatment",
+                    "description": "Gets very cold at altitude",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Helpful for river crossings",
+                    "description": "Helpful for steep descents",
                     "rental_available": true
                 },
                 {
-                    "item": "Gaiters",
-                    "description": "For wet sections",
+                    "item": "Sleeping pad",
+                    "description": "Extra comfort",
+                    "rental_available": true
+                },
+                {
+                    "item": "Coca leaves",
+                    "description": "Traditional altitude remedy",
                     "rental_available": false
                 },
                 {
-                    "item": "Camp shoes",
-                    "description": "For hut/tent comfort",
+                    "item": "Cash (soles)",
+                    "description": "For tips and snacks",
                     "rental_available": false
+                }
+            ],
+            "provided_by_operator": [
+                {
+                    "item": "Tents",
+                    "description": "2-person tents"
                 },
                 {
-                    "item": "Dry bags",
-                    "description": "Keep essentials dry",
-                    "rental_available": false
+                    "item": "Dining tent",
+                    "description": "With tables and chairs"
+                },
+                {
+                    "item": "Kitchen equipment",
+                    "description": "All cooking gear"
+                },
+                {
+                    "item": "First aid kit",
+                    "description": "Comprehensive kit with guide"
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
-                "cost_usd": 0,
-                "notes": "Right to roam applies"
+                "name": "Inca Trail Permit",
+                "cost_usd": 80,
+                "cost_pen": 280,
+                "where_to_obtain": "Only through licensed operators",
+                "validity": "Specific date only",
+                "notes": "Limited to 500 people/day including support staff"
+            },
+            {
+                "name": "Machu Picchu Entry",
+                "cost_usd": 50,
+                "cost_pen": 152,
+                "where_to_obtain": "Included in trek package",
+                "validity": "Specific time slot"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 50,
-            "meals_daily_usd": 40,
-            "transportation_usd": 100,
+            "permit_total_usd": 130,
+            "guide_daily_usd": "included",
+            "porter_daily_usd": "included",
+            "accommodation_daily_usd": 0,
+            "meals_daily_usd": "included",
+            "trek_package_usd": 650,
+            "transportation_usd": 50,
             "total_budget_range_usd": {
-                "min": 400,
+                "min": 650,
                 "max": 1200
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Swedish",
-                "Sami (indigenous)"
+                "Quechua",
+                "Mestizo"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Catholic with Andean traditions",
             "languages": [
-                "Swedish",
-                "Sami",
-                "English common"
+                "Spanish",
+                "Quechua",
+                "English (guides)"
             ],
             "customs_etiquette": [
-                "Respect Sami reindeer herding areas",
-                "Don't disturb reindeer",
-                "Remove shoes in huts",
-                "Help with hut chores if asked",
-                "Leave no trace strictly followed"
+                "Ask permission before photographing locals",
+                "Respect sacred sites - no climbing on ruins",
+                "Participate in coca leaf ceremonies if offered",
+                "Tip porters and cooks ($20-30 total)",
+                "Don't touch or move stones at archaeological sites",
+                "Greet with 'Buenos días' or 'Allin p'unchay' (Quechua)"
             ],
             "local_foods": [
                 {
-                    "name": "Reindeer meat",
-                    "description": "Traditional Sami staple"
+                    "name": "Quinoa soup",
+                    "description": "Traditional high-protein grain soup"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold berry"
+                    "name": "Lomo saltado",
+                    "description": "Stir-fried beef with vegetables"
                 },
                 {
-                    "name": "Gáhkku",
-                    "description": "Sami flatbread"
+                    "name": "Coca tea",
+                    "description": "Helps with altitude adjustment"
                 },
                 {
-                    "name": "Smoked fish",
-                    "description": "Arctic char and salmon"
+                    "name": "Chuño",
+                    "description": "Freeze-dried potatoes"
                 }
             ],
             "festivals": [
                 {
-                    "name": "Autumn Reindeer Separation",
-                    "when": "September",
-                    "description": "Traditional herding event"
+                    "name": "Inti Raymi",
+                    "when": "June 24",
+                    "description": "Festival of the Sun"
+                },
+                {
+                    "name": "Qoyllur Rit'i",
+                    "when": "May/June",
+                    "description": "Snow Star Festival"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,140m"
+                "risk_level": "high",
+                "prevention": [
+                    "Acclimatize in Cusco 2-3 days before",
+                    "Climb slowly, rest frequently",
+                    "Stay hydrated (3-4 liters daily)",
+                    "Consider acetazolamide (Diamox)",
+                    "Coca tea and coca leaves help",
+                    "Avoid alcohol before and during trek"
+                ],
+                "symptoms": [
+                    "Headache",
+                    "Nausea",
+                    "Shortness of breath",
+                    "Fatigue",
+                    "Loss of appetite"
+                ],
+                "treatment": "Descend if symptoms worsen, guides carry oxygen"
             },
-            "main_concerns": {
-                "river_crossings": {
-                    "risk_level": "moderate",
-                    "description": "Can be high after rain",
-                    "prevention": [
-                        "Check conditions at huts",
-                        "Use bridges where available",
-                        "Trekking poles help",
-                        "Consider waiting if high"
-                    ]
+            "medical_facilities": [
+                {
+                    "location": "Trail",
+                    "type": "Basic first aid with guides"
                 },
-                "mosquitoes": {
-                    "risk_level": "high in July",
-                    "description": "Can be overwhelming",
-                    "prevention": [
-                        "Head net essential",
-                        "Long sleeves and pants",
-                        "Strong repellent",
-                        "Keep moving"
-                    ]
+                {
+                    "location": "Aguas Calientes",
+                    "type": "Medical post"
                 },
-                "weather": {
-                    "risk_level": "moderate",
-                    "description": "Changes quickly",
-                    "prevention": [
-                        "Layer clothing",
-                        "Always carry rain gear",
-                        "Check forecasts at huts",
-                        "Be flexible with plans"
-                    ]
+                {
+                    "location": "Cusco",
+                    "type": "Hospitals and clinics"
                 }
-            },
+            ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Covered by European health insurance",
+                "method": "Porter stretcher or helicopter",
+                "cost_usd": "2000-5000",
                 "insurance_required": true,
-                "response_time": "Few hours to a day"
-            }
+                "response_time": "Several hours to days"
+            },
+            "vaccinations_recommended": [
+                "Yellow fever",
+                "Hepatitis A & B",
+                "Typhoid",
+                "Routine vaccinations"
+            ],
+            "other_concerns": [
+                "Sun exposure at altitude",
+                "Hypothermia risk at passes",
+                "Basic hygiene to avoid GI issues"
+            ]
         },
         "weather_patterns": {
-            "summer": {
+            "dry_season": {
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "5 to 10",
-                "precipitation": "Frequent rain",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, mosquitoes peak July"
-            },
-            "autumn": {
-                "months": [
+                    "August",
                     "September"
                 ],
-                "day_temp_c": "5 to 15",
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Busy season, cold nights"
+            },
+            "wet_season": {
+                "months": [
+                    "November",
+                    "December",
+                    "January",
+                    "February",
+                    "March"
+                ],
+                "day_temp_c": "13 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily rain likely",
+                "notes": "Trail closed in February"
+            },
+            "shoulder": {
+                "months": [
+                    "April",
+                    "October"
+                ],
+                "day_temp_c": "15 to 18",
                 "night_temp_c": "0 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "14",
-                "notes": "Stunning colors, possible snow"
+                "precipitation": "Occasional",
+                "notes": "Good compromise, fewer crowds"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Train",
-                    "from": "Kiruna",
-                    "to": "Abisko",
-                    "duration": "1.5 hours",
-                    "cost_usd": 20,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Bus",
-                    "from": "Kiruna Airport",
-                    "to": "Abisko",
-                    "duration": "2 hours",
-                    "cost_usd": 30,
-                    "frequency": "Connects with flights"
+                    "method": "Bus/Van",
+                    "from": "Cusco",
+                    "to": "Km 82",
+                    "duration": "2.5 hours",
+                    "cost_usd": "included",
+                    "notes": "Early morning departure"
                 }
             ],
             "from_end": [
                 {
-                    "method": "Bus",
-                    "from": "Nikkaluokta",
-                    "to": "Kiruna",
+                    "method": "Train",
+                    "from": "Aguas Calientes",
+                    "to": "Ollantaytambo",
                     "duration": "1.5 hours",
-                    "cost_usd": 25,
-                    "frequency": "2-3 daily in season"
+                    "cost_usd": 75,
+                    "notes": "Then bus to Cusco"
                 }
             ]
         },
         "accommodation": {
-            "type": "STF mountain huts",
-            "description": "Swedish Tourist Association huts",
+            "type": "Camping",
+            "description": "Designated campsites only",
             "amenities": [
-                "Bunk beds in dorms",
-                "Self-catering kitchens",
-                "Shop with supplies",
-                "Sauna at most huts",
-                "Camping allowed nearby",
-                "Host provides info"
+                "Two-person tents provided",
+                "Dining tent with tables",
+                "Portable toilet tent",
+                "No showers on trail",
+                "Basic facilities at campsites"
             ],
-            "booking": "Not required but recommended",
-            "cost_per_night_usd": {
-                "stf_member": "25-35",
-                "non_member": "50-60",
-                "camping": "15-20"
-            }
+            "booking": "Must book through licensed operator",
+            "cost_per_night_usd": "Included in package"
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness sufficient",
+            "physical_demands": "Good fitness for altitude and long days",
             "technical_skills": "None required",
-            "altitude_challenge": "None",
-            "trail_conditions": "Well-marked, boardwalks in wet areas",
-            "navigation_challenge": "Easy - clear trail",
-            "daily_hiking_hours": "4-7 hours",
-            "total_elevation_gain": 1300,
-            "total_elevation_loss": 1430
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Stone steps, some uneven terrain",
+            "daily_hiking_hours": "6-9 hours",
+            "total_elevation_gain": 2200,
+            "total_elevation_loss": 2370
         },
         "sustainability": {
             "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Reindeer grazing areas",
-                "Erosion in popular sections"
+                "Trail erosion",
+                "Waste management",
+                "Overcrowding"
             ],
             "responsible_practices": [
-                "Strict leave no trace",
+                "Pack out all trash",
+                "Use designated toilet facilities",
                 "Stay on marked trails",
-                "Respect Sami land use",
-                "Use designated camping",
-                "Pack out all waste"
+                "Support porter welfare initiatives",
+                "Choose operators following sustainability practices"
             ],
             "local_initiatives": [
-                "STF conservation work",
-                "Trail maintenance volunteers",
-                "Sustainable hut operations"
+                "Porter welfare laws",
+                "Trail maintenance programs",
+                "Daily visitor limits"
             ]
         },
         "connectivity": {
             "mobile_coverage": [
                 {
-                    "location": "Abisko/Nikkaluokta",
+                    "location": "Start/End points",
                     "quality": "Good",
                     "providers": [
-                        "Telia",
-                        "Telenor"
+                        "Claro",
+                        "Movistar"
                     ]
                 },
                 {
                     "location": "Trail",
-                    "quality": "Very limited",
-                    "providers": [
-                        "Emergency calls sometimes"
-                    ]
+                    "quality": "None",
+                    "providers": []
                 }
             ],
             "internet": {
-                "availability": "Only at Kebnekaise station",
-                "cost_usd": "5",
-                "speed": "Basic"
+                "availability": "No internet on trail",
+                "cost_usd": 0,
+                "speed": "N/A"
             }
         },
         "booking_recommendations": {
-            "advance_booking": "1-2 months for huts in peak season",
-            "group_size": "Any size welcome",
-            "guide_requirement": "Not necessary",
-            "food_planning": "Buy at huts or carry all",
+            "advance_booking": "4-6 months essential",
+            "group_size": "Maximum 16 per group",
+            "guide_requirement": "Mandatory - licensed guide only",
+            "porter_recommendation": "Included in all packages",
             "insurance_essential": true,
-            "fitness_preparation": "Basic hiking fitness"
+            "fitness_preparation": "3 months cardio and stair training"
         },
         "alternative_routes": [
             {
-                "name": "Full Kungsleden",
-                "variation": "Abisko to Hemavan",
-                "extra_days": 20,
+                "name": "Salkantay Trek",
+                "variation": "Higher altitude alternative",
+                "extra_days": 1,
                 "highlights": [
-                    "440km total",
-                    "Full arctic traverse",
-                    "More solitude south"
+                    "No permit needed",
+                    "Salkantay peak views",
+                    "More challenging"
                 ]
             },
             {
-                "name": "Kebnekaise Extension",
-                "variation": "Climb Sweden's highest",
-                "extra_days": 2,
+                "name": "Lares Trek",
+                "variation": "Cultural focus",
+                "extra_days": 0,
                 "highlights": [
-                    "2,106m summit",
-                    "Glacier option",
-                    "Achievement"
+                    "Remote villages",
+                    "Hot springs",
+                    "Weaving communities"
                 ]
             },
             {
-                "name": "Winter Skiing",
-                "variation": "March-April ski tour",
-                "extra_days": 2,
+                "name": "Short Inca Trail",
+                "variation": "2-day version",
+                "fewer_days": 2,
                 "highlights": [
-                    "Northern lights",
-                    "Winter huts open",
-                    "Arctic experience"
+                    "Less strenuous",
+                    "Still enter via Sun Gate",
+                    "Good for families"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Tjäktja Pass",
-                "best_time": "Clear weather",
+                "location": "Dead Woman's Pass",
+                "best_time": "Morning",
                 "subjects": [
-                    "Valley views",
-                    "Kebnekaise massif",
-                    "Arctic landscape"
+                    "Mountain panorama",
+                    "Achievement shots",
+                    "Cloud formations"
                 ]
             },
             {
-                "location": "Abiskojaure",
-                "best_time": "Evening",
+                "location": "Phuyupatamarca",
+                "best_time": "Sunset",
                 "subjects": [
-                    "Lake reflections",
-                    "Midnight sun",
-                    "Lapporten gate"
+                    "Ruins with mountain backdrop",
+                    "Cloud forest",
+                    "Distant peaks"
                 ]
             },
             {
-                "location": "Autumn tundra",
-                "best_time": "September",
+                "location": "Sun Gate",
+                "best_time": "Sunrise",
                 "subjects": [
-                    "Fall colors",
-                    "Reindeer",
-                    "Northern lights"
+                    "First view of Machu Picchu",
+                    "Morning mist",
+                    "Dramatic reveal"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How bad are the mosquitoes?",
-                "answer": "In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better."
+                "question": "How fit do I need to be?",
+                "answer": "Moderate fitness required. You'll be hiking 6-9 hours daily at altitude. Train with cardio and hill walking for 3 months prior."
             },
             {
-                "question": "Do I need to book huts in advance?",
-                "answer": "Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms."
+                "question": "Why must I book so far ahead?",
+                "answer": "Only 500 permits issued daily (including staff). Popular dates sell out 6 months ahead. No permits sold independently."
             },
             {
-                "question": "Can beginners do this trek?",
-                "answer": "Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers."
+                "question": "What about altitude sickness?",
+                "answer": "Common on day 2. Spend 2-3 days acclimatizing in Cusco. Go slowly, stay hydrated. Guides monitor everyone closely."
             },
             {
-                "question": "What about the northern lights?",
-                "answer": "Best from late August onward. September offers a great combination of autumn colors and aurora possibilities."
+                "question": "How heavy is my daypack?",
+                "answer": "Porters carry up to 7kg of your gear. You carry only water, snacks, camera, rain gear - about 5-6kg."
+            },
+            {
+                "question": "Is the trail crowded?",
+                "answer": "Yes, especially May-September. But the experience is still magical. Your group often hikes separately from others."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 93,
+        "popularity_score": 99,
         "seo": {
-            "meta_title": "Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland",
-            "meta_description": "Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.",
+            "meta_title": "Classic Inca Trail Complete Guide 2024 | 4-Day Trek to Machu Picchu",
+            "meta_description": "Ultimate guide to hiking the Classic Inca Trail to Machu Picchu. Detailed 4-day itinerary, permit info, costs, packing list, and insider tips.",
             "keywords": [
-                "kungsleden",
-                "kings trail sweden",
-                "lapland hiking",
-                "arctic trekking",
-                "sweden hiking trail"
+                "inca trail",
+                "machu picchu trek",
+                "peru trekking",
+                "inca trail permits",
+                "cusco hiking"
             ]
         }
     };

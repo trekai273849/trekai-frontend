@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland</title>
-    <meta name="description" content="Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.">
+    <title>Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking</title>
+    <meta name="description" content="Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/kungsleden-kings-trail.jpg');
+            background-image: url('/images/treks/covers/santa-cruz-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,12 +75,6 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-tagline {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.95;
         }
 
         .hero-stats {
@@ -561,18 +555,32 @@
         }
 
         /* Mobile Responsive */
-        @media (max-width: 768px) {
-    @media (max-width: 768px) {
+        
+/* Mobile Header Fixes */
+
+/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
+@media (max-width: 768px) {
+    /* FORCE HERO STATS INTO 2x2 GRID */
+    
+    /* ENHANCED 2x2 GRID FIX */
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
+        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
+        padding: 0 !important;
         justify-content: center !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        /* Remove conflicting flex properties */
+        flex-direction: unset !important;
+        flex-wrap: unset !important;
     }
     
+    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -587,56 +595,265 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
+        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.8rem 0.5rem !important;
+        background: rgba(0,0,0,0.4) !important;
+        border-radius: 8px !important;
+        backdrop-filter: blur(3px) !important;
+        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
+        margin-bottom: 0.2rem !important;
         color: white !important;
-        margin-bottom: 0.3rem !important;
+        display: block !important;
     }
     
     .hero-stat-label {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
         color: white !important;
+        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        opacity: 0.95 !important;
+        letter-spacing: 0.05em !important;
+        display: block !important;
+    }
+    
+    /* FIX HERO CONTAINER */
+    .hero {
+        height: 60vh !important;
+        min-height: 400px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+    
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .hero h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        line-height: 1.2 !important;
+        max-width: 90% !important;
+    }
+    
+    /* FIX MAIN CONTENT LAYOUT */
+    .content-section {
+        padding: 2rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    .overview-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .overview-main {
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .overview-main h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    
+    /* FIX SIDEBAR */
+    .quick-info-card {
+        width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        padding: 1.5rem !important;
+        box-sizing: border-box !important;
+        order: -1 !important;
+    }
+    
+    /* FIX NAVIGATION */
+    .nav-tabs-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        padding: 0 1rem !important;
+    }
+    
+    .nav-tab {
+        white-space: nowrap !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* PREVENT HORIZONTAL SCROLL */
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    .max-w-7xl {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* FIX HIGHLIGHTS */
+    .highlights-list {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .highlight-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .highlight-text {
+        flex: 1 !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* FIX BUTTONS */
+    .cta-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .btn {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem 2rem !important;
+    }
+    
+    /* TAILWIND STYLE FIXES */
+    .hero-image {
+        height: 350px !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-image .absolute {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 1.5rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
     }
 }
-            .hero {
-                height: 60vh;
-                min-height: 400px;
-            }
 
-            .hero h1 {
-                font-size: 2.5em;
-            }
+@media (max-width: 480px) {
+    .hero-stats {
+        max-width: 240px !important;
+        gap: 0.6rem !important;
+    }
+    
+    .hero-stat {
+        min-height: 50px !important;
+        padding: 0.6rem 0.4rem !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.65rem !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.5rem !important;
+    }
+}
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh !important;
+        min-height: 350px !important;
+    }
 
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
+    .hero h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
 
-            .nav-tabs-container {
-                justify-content: start;
-            }
+    .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+        max-width: 200px !important;
+    }
 
-            .cta-section {
-                flex-direction: column;
-            }
+    .hero-stat-value {
+        font-size: 1.6rem !important;
+    }
 
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+    .hero-stat-label {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-image {
+        height: 300px !important;
+    }
+
+    .hero-image h1 {
+        font-size: 1.6rem !important;
+    }
+}
 
         /* Animations */
         @keyframes fadeIn {
@@ -734,24 +951,24 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Kungsleden (King's Trail)</h1>
+        <div class="hero-content mobile-fixed">
+            <h1>Santa Cruz Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">5</span>
+                    <span class="hero-stat-value">4</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,140m</span>
+                    <span class="hero-stat-value">4,750m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">110km</span>
+                    <span class="hero-stat-value">50km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">easy</span>
+                    <span class="hero-stat-value">moderate</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -774,9 +991,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Sweden/Scandinavia</h2>
+                <h2>Journey to Peru/Andes</h2>
                 <p class="overview-description">
-                    Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.
+                    The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.
                 </p>
                 
                 <div class="highlights-list">
@@ -824,20 +1041,20 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">4-5 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">110 km / 68 mi</span>
+                    <span class="info-value">50 km / 31 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,140m (3,740ft)</span>
+                    <span class="info-value">4,750m (15,584ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">easy</span>
+                        <span class="difficulty-badge">moderate</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -846,7 +1063,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Kiruna/Abisko</span>
+                    <span class="info-value">Huaraz</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -855,7 +1072,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,200</span>
+                        <span class="price-range">$200 - $600</span>
                     </span>
                 </div>
             </div>
@@ -864,9 +1081,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>5-Day Detailed Itinerary</h2>
+        <h2>4-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Sweden/Scandinavia with proper acclimatization and rest days
+            Follow the route through Peru/Andes with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -875,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Abisko to Abiskojaure</h3>
+          <h3 class="day-title">Cashapampa to Llamacorral</h3>
           <div class="day-stats">
-            <span>📏 15km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 490m</span>
+            <span>📏 12km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +100m</span>
+            <span>🏔️ 3,760m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake.</p>
+      <p class="day-description">Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Abisko National Park</span><span class="day-highlight">Abiskojaure lake</span><span class="day-highlight">First taste of Lapland</span><span class="day-highlight">Mountain views</span>
+          <span class="day-highlight">Santa Cruz valley entrance</span><span class="day-highlight">Alpamayo views</span><span class="day-highlight">River valley hiking</span><span class="day-highlight">Acclimatization day</span>
         </div>
       
     </div>
@@ -896,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Abiskojaure to Alesjaure</h3>
+          <h3 class="day-title">Llamacorral to Taullipampa</h3>
           <div class="day-stats">
-            <span>📏 22km</span>
+            <span>📏 14km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 785m</span>
+            <span>📈 +490m</span>
+            <span>🏔️ 4,250m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure.</p>
+      <p class="day-description">Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass views</span><span class="day-highlight">Alesjaure valley</span><span class="day-highlight">Possible reindeer</span><span class="day-highlight">Alpine environment</span>
+          <span class="day-highlight">Laguna Jatuncocha</span><span class="day-highlight">Taulliraju views (5,830m)</span><span class="day-highlight">Alpine meadows</span><span class="day-highlight">360-degree mountain panorama</span>
         </div>
       
     </div>
@@ -917,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Alesjaure to Sälka</h3>
+          <h3 class="day-title">Taullipampa to Paria Valley via Punta Union</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 820m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 8 hours</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 3,850m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks.</p>
+      <p class="day-description">Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle terrain</span><span class="day-highlight">Mountain streams</span><span class="day-highlight">Wildflowers (summer)</span><span class="day-highlight">Shorter day</span>
+          <span class="day-highlight">Punta Union Pass (4,750m)</span><span class="day-highlight">Spectacular 360° views</span><span class="day-highlight">Laguna Morococha</span><span class="day-highlight">Dramatic descent</span>
         </div>
       
     </div>
@@ -938,40 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Sälka to Kebnekaise Fjällstation</h3>
+          <h3 class="day-title">Paria Valley to Vaqueria</h3>
           <div class="day-stats">
-            <span>📏 24km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +300m</span>
-            <span>🏔️ 690m</span>
+            <span>📏 9km</span>
+            <span>⏱️ 3 hours</span>
+            <span>📈 -150m</span>
+            <span>🏔️ 3,700m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station.</p>
+      <p class="day-description">Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass (1,140m)</span><span class="day-highlight">Highest point on trail</span><span class="day-highlight">Kebnekaise views</span><span class="day-highlight">Laddjuvagge valley</span>
-        </div>
-      
-    </div>
-  
-    <div class="itinerary-day">
-      <div class="day-header">
-        <div>
-          <div class="day-number">Day 5</div>
-          <h3 class="day-title">Kebnekaise to Nikkaluokta</h3>
-          <div class="day-stats">
-            <span>📏 19km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 0m</span>
-            <span>🏔️ 470m</span>
-          </div>
-        </div>
-      </div>
-      <p class="day-description">Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise.</p>
-      
-        <div class="day-highlights">
-          <span class="day-highlight">Forest return</span><span class="day-highlight">Trail completion</span><span class="day-highlight">Sami culture center</span><span class="day-highlight">Bus to Kiruna</span>
+          <span class="day-highlight">Gentle valley descent</span><span class="day-highlight">Rural Andean life</span><span class="day-highlight">Trek completion</span><span class="day-highlight">Transport to Huaraz</span>
         </div>
       
     </div>
@@ -996,66 +1192,58 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hiking boots</div>
-          <div class="gear-description">Waterproof recommended</div>
+          <div class="gear-name">4-season tent</div>
+          <div class="gear-description">Wind-resistant for exposed camps</div>
         </div>
         <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Top and bottom essential</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Can be cold even in summer</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Mosquito protection</div>
-          <div class="gear-description">Head net, repellent (July)</div>
-        </div>
-        
       </li>
     
       <li class="gear-item">
         <div>
           <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">If camping</div>
+          <div class="gear-description">-15°C rated for cold nights</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Backpack</div>
-          <div class="gear-description">40-60L</div>
+          <div class="gear-name">Waterproof boots</div>
+          <div class="gear-description">Stream crossings common</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">Well-marked but essential</div>
+          <div class="gear-name">Layers for all weather</div>
+          <div class="gear-description">Can snow at pass anytime</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">First aid kit</div>
-          <div class="gear-description">Include blister treatment</div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Intense at altitude</div>
         </div>
         
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water purification</div>
+          <div class="gear-description">Tablets or filter</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Very helpful for pass day</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
       </li>
     
                 </ul>
@@ -1070,32 +1258,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful for river crossings</div>
+          <div class="gear-name">Gaiters</div>
+          <div class="gear-description">For stream crossings</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Cold at camps</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For wet sections</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Camp shoes</div>
-          <div class="gear-description">For hut/tent comfort</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Dry bags</div>
-          <div class="gear-description">Keep essentials dry</div>
+          <div class="gear-name">Camera with extra batteries</div>
+          <div class="gear-description">Spectacular scenery</div>
         </div>
         
       </li>
@@ -1116,16 +1296,9 @@
             
     <div class="season-card">
       <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August, September</p>
-      <p>Midnight sun, warm weather, full facilities open</p>
-    </div>
-  
-    <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September</p>
-      <p>Spectacular fall colors, northern lights begin, fewer mosquitoes</p>
+      <h3 class="season-name">Dry Season</h3>
+      <p class="season-months">May, June, July, August, September</p>
+      <p>Clear skies, stable weather, cold nights at altitude</p>
     </div>
   
         </div>
@@ -1148,27 +1321,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
+      <span>$30</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$200</span>
-    </div>
-    <div class="cost-item">
-      <span>Accommodation (per night)</span>
       <span>$50</span>
     </div>
     <div class="cost-item">
+      <span>Accommodation (per night)</span>
+      <span>$5</span>
+    </div>
+    <div class="cost-item">
       <span>Meals (per day)</span>
-      <span>$40</span>
+      <span>$20</span>
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$100</span>
+      <span>$60</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,200</span>
+      <span>$200 - $600</span>
     </div>
   
         </div>
@@ -1190,34 +1363,26 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How bad are the mosquitoes?</span>
+        <span>How does this compare to the Inca Trail?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better.</div>
+      <div class="faq-answer">More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need to book huts in advance?</span>
+        <span>Can I do it independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms.</div>
+      <div class="faq-answer">Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can beginners do this trek?</span>
+        <span>Is acclimatization really necessary?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers.</div>
-    </div>
-  
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What about the northern lights?</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">Best from late August onward. September offers a great combination of autumn colors and aurora possibilities.</div>
+      <div class="faq-answer">Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69.</div>
     </div>
   
         </div>
@@ -1258,34 +1423,34 @@
             scrollToSectionTop();
         }
 
-                            function scrollToSectionTop() {
-                requestAnimationFrame(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
+                function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    if (navTabs) {
-                        // Get the nav's current position in the viewport
-                        const navRect = navTabs.getBoundingClientRect();
-                        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // Calculate where the nav actually is on the page
-                        const navTopPosition = currentScrollY + navRect.top;
-                        
-                        // Scroll to just below the nav
-                        const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                        
-                        window.scrollTo({
-                            top: Math.max(0, targetScroll),
-                            behavior: 'smooth'
-                        );
-                    } else {
-                        // Fallback: scroll to top if nav not found
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        );
-                    }
-                );
-            }
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
 
         function centerTabWithNextVisible(clickedTab) {
             const tabContainer = document.querySelector('.nav-tabs-container');
@@ -1369,588 +1534,455 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "kungsleden-kings-trail",
-        "name": "Kungsleden (King's Trail)",
-        "slug": "kungsleden-kings-trail",
-        "region": "Sweden/Scandinavia",
-        "country": "Sweden",
-        "summary": "Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.",
+        "_id": "santa-cruz-trek",
+        "name": "Santa Cruz Trek",
+        "slug": "santa-cruz-trek",
+        "region": "Peru/Andes",
+        "country": "Peru",
+        "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 5
+            "min_days": 4,
+            "max_days": 5,
+            "recommended_days": 4
         },
-        "distance_km": 110,
-        "difficulty": "easy",
-        "max_elevation_m": 1140,
-        "starting_elevation_m": 480,
-        "airport": "Kiruna (KRN)",
-        "nearest_city": "Kiruna/Abisko",
+        "distance_km": 50,
+        "difficulty": "moderate",
+        "max_elevation_m": 4750,
+        "starting_elevation_m": 3900,
+        "airport": "Lima (LIM)",
+        "nearest_city": "Huaraz",
         "coordinates": {
             "start": {
-                "lat": 68.3494,
-                "lng": 18.8311,
-                "location": "Abisko"
+                "lat": -8.9689,
+                "lng": -77.3928,
+                "location": "Cashapampa"
             },
             "end": {
-                "lat": 67.8482,
-                "lng": 18.4161,
-                "location": "Nikkaluokta"
+                "lat": -8.8681,
+                "lng": -77.7089,
+                "location": "Vaqueria"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
+                "name": "Dry Season",
                 "months": [
+                    "May",
                     "June",
                     "July",
                     "August",
                     "September"
                 ],
-                "description": "Midnight sun, warm weather, full facilities open"
-            },
-            {
-                "name": "Autumn",
-                "months": [
-                    "September"
-                ],
-                "description": "Spectacular fall colors, northern lights begin, fewer mosquitoes"
+                "description": "Clear skies, stable weather, cold nights at altitude"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Abisko to Abiskojaure",
-                "start_location": "Abisko",
-                "end_location": "Abiskojaure",
-                "distance_km": 15,
-                "duration_hours": 4,
-                "elevation_start_m": 480,
-                "elevation_end_m": 490,
-                "elevation_gain_m": 200,
+                "title": "Cashapampa to Llamacorral",
+                "start_location": "Cashapampa",
+                "end_location": "Llamacorral",
+                "distance_km": 12,
+                "duration_hours": 5,
+                "elevation_start_m": 3900,
+                "elevation_end_m": 3760,
+                "elevation_gain_m": 100,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "camping",
                     "options": [
-                        "Abiskojaure STF hut",
-                        "Camping"
+                        "Llamacorral campsite"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Abisko National Park",
-                    "Abiskojaure lake",
-                    "First taste of Lapland",
-                    "Mountain views"
+                "meals_included": [
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake."
+                "highlights": [
+                    "Santa Cruz valley entrance",
+                    "Alpamayo views",
+                    "River valley hiking",
+                    "Acclimatization day"
+                ],
+                "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
             },
             {
                 "day": 2,
-                "title": "Abiskojaure to Alesjaure",
-                "start_location": "Abiskojaure",
-                "end_location": "Alesjaure",
-                "distance_km": 22,
+                "title": "Llamacorral to Taullipampa",
+                "start_location": "Llamacorral",
+                "end_location": "Taullipampa",
+                "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 490,
-                "elevation_end_m": 785,
-                "elevation_gain_m": 400,
+                "elevation_start_m": 3760,
+                "elevation_end_m": 4250,
+                "elevation_gain_m": 490,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "camping",
                     "options": [
-                        "Alesjaure STF hut",
-                        "Camping"
+                        "Taullipampa campsite"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass views",
-                    "Alesjaure valley",
-                    "Possible reindeer",
-                    "Alpine environment"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure."
+                "highlights": [
+                    "Laguna Jatuncocha",
+                    "Taulliraju views (5,830m)",
+                    "Alpine meadows",
+                    "360-degree mountain panorama"
+                ],
+                "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
             },
             {
                 "day": 3,
-                "title": "Alesjaure to Sälka",
-                "start_location": "Alesjaure",
-                "end_location": "Sälka",
-                "distance_km": 12,
-                "duration_hours": 4,
-                "elevation_start_m": 785,
-                "elevation_end_m": 820,
-                "elevation_gain_m": 200,
-                "difficulty": "easy",
+                "title": "Taullipampa to Paria Valley via Punta Union",
+                "start_location": "Taullipampa",
+                "end_location": "Paria Valley",
+                "distance_km": 15,
+                "duration_hours": 8,
+                "elevation_start_m": 4250,
+                "elevation_end_m": 3850,
+                "elevation_gain_m": 500,
+                "difficulty": "challenging",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "camping",
                     "options": [
-                        "Sälka STF hut",
-                        "Camping"
+                        "Paria campsite"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Gentle terrain",
-                    "Mountain streams",
-                    "Wildflowers (summer)",
-                    "Shorter day"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks."
+                "highlights": [
+                    "Punta Union Pass (4,750m)",
+                    "Spectacular 360° views",
+                    "Laguna Morococha",
+                    "Dramatic descent"
+                ],
+                "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
             },
             {
                 "day": 4,
-                "title": "Sälka to Kebnekaise Fjällstation",
-                "start_location": "Sälka",
-                "end_location": "Kebnekaise Fjällstation",
-                "distance_km": 24,
-                "duration_hours": 7,
-                "elevation_start_m": 820,
-                "elevation_end_m": 690,
-                "elevation_gain_m": 300,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "STF station",
-                    "options": [
-                        "Kebnekaise Fjällstation",
-                        "Camping"
-                    ]
-                },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass (1,140m)",
-                    "Highest point on trail",
-                    "Kebnekaise views",
-                    "Laddjuvagge valley"
-                ],
-                "description": "Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station."
-            },
-            {
-                "day": 5,
-                "title": "Kebnekaise to Nikkaluokta",
-                "start_location": "Kebnekaise Fjällstation",
-                "end_location": "Nikkaluokta",
-                "distance_km": 19,
-                "duration_hours": 5,
-                "elevation_start_m": 690,
-                "elevation_end_m": 470,
-                "elevation_gain_m": 0,
+                "title": "Paria Valley to Vaqueria",
+                "start_location": "Paria Valley",
+                "end_location": "Vaqueria",
+                "distance_km": 9,
+                "duration_hours": 3,
+                "elevation_start_m": 3850,
+                "elevation_end_m": 3700,
+                "elevation_gain_m": -150,
                 "difficulty": "easy",
                 "accommodation": {
                     "type": "end point",
                     "options": [
-                        "Nikkaluokta Sarri Lodge",
-                        "Return to Kiruna"
+                        "Return to Huaraz"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Forest return",
-                    "Trail completion",
-                    "Sami culture center",
-                    "Bus to Kiruna"
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
                 ],
-                "description": "Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise."
+                "highlights": [
+                    "Gentle valley descent",
+                    "Rural Andean life",
+                    "Trek completion",
+                    "Transport to Huaraz"
+                ],
+                "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Hiking boots",
-                    "description": "Waterproof recommended",
+                    "item": "4-season tent",
+                    "description": "Wind-resistant for exposed camps",
                     "rental_available": true
-                },
-                {
-                    "item": "Rain gear",
-                    "description": "Top and bottom essential",
-                    "rental_available": true
-                },
-                {
-                    "item": "Warm layers",
-                    "description": "Can be cold even in summer",
-                    "rental_available": false
-                },
-                {
-                    "item": "Mosquito protection",
-                    "description": "Head net, repellent (July)",
-                    "rental_available": false
                 },
                 {
                     "item": "Sleeping bag",
-                    "description": "If camping",
+                    "description": "-15°C rated for cold nights",
                     "rental_available": true
                 },
                 {
-                    "item": "Backpack",
-                    "description": "40-60L",
+                    "item": "Waterproof boots",
+                    "description": "Stream crossings common",
                     "rental_available": true
                 },
                 {
-                    "item": "Map and compass",
-                    "description": "Well-marked but essential",
+                    "item": "Layers for all weather",
+                    "description": "Can snow at pass anytime",
                     "rental_available": false
                 },
                 {
-                    "item": "First aid kit",
-                    "description": "Include blister treatment",
+                    "item": "Sun protection",
+                    "description": "Intense at altitude",
                     "rental_available": false
+                },
+                {
+                    "item": "Water purification",
+                    "description": "Tablets or filter",
+                    "rental_available": false
+                },
+                {
+                    "item": "Trekking poles",
+                    "description": "Very helpful for pass day",
+                    "rental_available": true
                 }
             ],
             "recommended": [
                 {
-                    "item": "Trekking poles",
-                    "description": "Helpful for river crossings",
+                    "item": "Gaiters",
+                    "description": "For stream crossings",
+                    "rental_available": false
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Cold at camps",
                     "rental_available": true
                 },
                 {
-                    "item": "Gaiters",
-                    "description": "For wet sections",
-                    "rental_available": false
-                },
-                {
-                    "item": "Camp shoes",
-                    "description": "For hut/tent comfort",
-                    "rental_available": false
-                },
-                {
-                    "item": "Dry bags",
-                    "description": "Keep essentials dry",
+                    "item": "Camera with extra batteries",
+                    "description": "Spectacular scenery",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
-                "cost_usd": 0,
-                "notes": "Right to roam applies"
+                "name": "Huascaran National Park Entry",
+                "cost_usd": 30,
+                "cost_pen": 90,
+                "where_to_obtain": "Park office in Huaraz or entrance",
+                "validity": "Valid for 21 days"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 50,
-            "meals_daily_usd": 40,
-            "transportation_usd": 100,
+            "permit_total_usd": 30,
+            "guide_daily_usd": 50,
+            "cook_daily_usd": 30,
+            "muleteer_daily_usd": 25,
+            "pack_animal_daily_usd": 15,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 60,
             "total_budget_range_usd": {
-                "min": 400,
-                "max": 1200
+                "min": 200,
+                "max": 600
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Swedish",
-                "Sami (indigenous)"
+                "Quechua",
+                "Mestizo"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Catholic with Andean traditions",
             "languages": [
-                "Swedish",
-                "Sami",
-                "English common"
+                "Spanish",
+                "Quechua",
+                "Limited English"
             ],
             "customs_etiquette": [
-                "Respect Sami reindeer herding areas",
-                "Don't disturb reindeer",
-                "Remove shoes in huts",
-                "Help with hut chores if asked",
-                "Leave no trace strictly followed"
+                "Respect mountain spirits (Apus)",
+                "Ask permission before photographing locals",
+                "Support local economy",
+                "Participate in coca leaf offerings if invited"
             ],
             "local_foods": [
                 {
-                    "name": "Reindeer meat",
-                    "description": "Traditional Sami staple"
+                    "name": "Pachamanca",
+                    "description": "Earth oven cooked feast"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold berry"
+                    "name": "Cuy",
+                    "description": "Guinea pig delicacy"
                 },
                 {
-                    "name": "Gáhkku",
-                    "description": "Sami flatbread"
-                },
-                {
-                    "name": "Smoked fish",
-                    "description": "Arctic char and salmon"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Autumn Reindeer Separation",
-                    "when": "September",
-                    "description": "Traditional herding event"
+                    "name": "Quinoa soup",
+                    "description": "High-altitude superfood"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,140m"
+                "risk_level": "high",
+                "prevention": [
+                    "Acclimatize in Huaraz (3,100m) for 2-3 days",
+                    "Consider day hikes first",
+                    "Climb slowly on pass day",
+                    "Stay hydrated",
+                    "Consider Diamox"
+                ],
+                "critical_points": [
+                    "Punta Union Pass day"
+                ]
             },
-            "main_concerns": {
-                "river_crossings": {
-                    "risk_level": "moderate",
-                    "description": "Can be high after rain",
-                    "prevention": [
-                        "Check conditions at huts",
-                        "Use bridges where available",
-                        "Trekking poles help",
-                        "Consider waiting if high"
-                    ]
+            "medical_facilities": [
+                {
+                    "location": "Trail",
+                    "type": "None - remote area"
                 },
-                "mosquitoes": {
-                    "risk_level": "high in July",
-                    "description": "Can be overwhelming",
-                    "prevention": [
-                        "Head net essential",
-                        "Long sleeves and pants",
-                        "Strong repellent",
-                        "Keep moving"
-                    ]
-                },
-                "weather": {
-                    "risk_level": "moderate",
-                    "description": "Changes quickly",
-                    "prevention": [
-                        "Layer clothing",
-                        "Always carry rain gear",
-                        "Check forecasts at huts",
-                        "Be flexible with plans"
-                    ]
+                {
+                    "location": "Huaraz",
+                    "type": "Good hospitals and clinics"
                 }
-            },
+            ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Covered by European health insurance",
+                "method": "Horse/mule to road, then vehicle",
+                "cost_usd": "1000-3000",
                 "insurance_required": true,
-                "response_time": "Few hours to a day"
+                "response_time": "6-12 hours"
             }
         },
         "weather_patterns": {
-            "summer": {
+            "dry_season": {
                 "months": [
+                    "May",
                     "June",
                     "July",
-                    "August"
-                ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "5 to 10",
-                "precipitation": "Frequent rain",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, mosquitoes peak July"
-            },
-            "autumn": {
-                "months": [
+                    "August",
                     "September"
                 ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "0 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "14",
-                "notes": "Stunning colors, possible snow"
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Minimal",
+                "notes": "Can snow at pass anytime"
+            },
+            "wet_season": {
+                "months": [
+                    "October",
+                    "November",
+                    "December",
+                    "January",
+                    "February",
+                    "March",
+                    "April"
+                ],
+                "day_temp_c": "10 to 18",
+                "night_temp_c": "0 to 8",
+                "precipitation": "Daily afternoon rain",
+                "notes": "Trail muddy, clouds obscure views"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Train",
-                    "from": "Kiruna",
-                    "to": "Abisko",
-                    "duration": "1.5 hours",
-                    "cost_usd": 20,
-                    "frequency": "2-4 daily"
-                },
-                {
-                    "method": "Bus",
-                    "from": "Kiruna Airport",
-                    "to": "Abisko",
-                    "duration": "2 hours",
+                    "method": "Private transport",
+                    "from": "Huaraz",
+                    "to": "Cashapampa",
+                    "duration": "3 hours",
                     "cost_usd": 30,
-                    "frequency": "Connects with flights"
+                    "notes": "Usually arranged with guide/agency"
                 }
             ],
             "from_end": [
                 {
-                    "method": "Bus",
-                    "from": "Nikkaluokta",
-                    "to": "Kiruna",
-                    "duration": "1.5 hours",
-                    "cost_usd": 25,
-                    "frequency": "2-3 daily in season"
+                    "method": "Private transport",
+                    "from": "Vaqueria",
+                    "to": "Huaraz",
+                    "duration": "3 hours",
+                    "cost_usd": 30,
+                    "notes": "Pre-arranged pickup essential"
                 }
             ]
         },
         "accommodation": {
-            "type": "STF mountain huts",
-            "description": "Swedish Tourist Association huts",
+            "type": "Camping only",
+            "description": "Designated camping areas",
             "amenities": [
-                "Bunk beds in dorms",
-                "Self-catering kitchens",
-                "Shop with supplies",
-                "Sauna at most huts",
-                "Camping allowed nearby",
-                "Host provides info"
+                "Flat tent sites",
+                "Water sources nearby",
+                "Basic toilet facilities at some sites",
+                "No showers on trail",
+                "Pack out all waste"
             ],
-            "booking": "Not required but recommended",
+            "booking": "First come, first served",
             "cost_per_night_usd": {
-                "stf_member": "25-35",
-                "non_member": "50-60",
-                "camping": "15-20"
+                "camping": "5"
             }
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness sufficient",
+            "physical_demands": "Good fitness for altitude and pass day",
             "technical_skills": "None required",
-            "altitude_challenge": "None",
-            "trail_conditions": "Well-marked, boardwalks in wet areas",
-            "navigation_challenge": "Easy - clear trail",
-            "daily_hiking_hours": "4-7 hours",
-            "total_elevation_gain": 1300,
-            "total_elevation_loss": 1430
-        },
-        "sustainability": {
-            "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Reindeer grazing areas",
-                "Erosion in popular sections"
-            ],
-            "responsible_practices": [
-                "Strict leave no trace",
-                "Stay on marked trails",
-                "Respect Sami land use",
-                "Use designated camping",
-                "Pack out all waste"
-            ],
-            "local_initiatives": [
-                "STF conservation work",
-                "Trail maintenance volunteers",
-                "Sustainable hut operations"
-            ]
-        },
-        "connectivity": {
-            "mobile_coverage": [
-                {
-                    "location": "Abisko/Nikkaluokta",
-                    "quality": "Good",
-                    "providers": [
-                        "Telia",
-                        "Telenor"
-                    ]
-                },
-                {
-                    "location": "Trail",
-                    "quality": "Very limited",
-                    "providers": [
-                        "Emergency calls sometimes"
-                    ]
-                }
-            ],
-            "internet": {
-                "availability": "Only at Kebnekaise station",
-                "cost_usd": "5",
-                "speed": "Basic"
-            }
-        },
-        "booking_recommendations": {
-            "advance_booking": "1-2 months for huts in peak season",
-            "group_size": "Any size welcome",
-            "guide_requirement": "Not necessary",
-            "food_planning": "Buy at huts or carry all",
-            "insurance_essential": true,
-            "fitness_preparation": "Basic hiking fitness"
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Well-defined path, rocky on pass",
+            "daily_hiking_hours": "5-8 hours",
+            "total_elevation_gain": 1200,
+            "total_elevation_loss": 1350
         },
         "alternative_routes": [
             {
-                "name": "Full Kungsleden",
-                "variation": "Abisko to Hemavan",
-                "extra_days": 20,
+                "name": "Alpamayo Circuit",
+                "variation": "Extended version via Alpamayo base camp",
+                "extra_days": 3,
                 "highlights": [
-                    "440km total",
-                    "Full arctic traverse",
-                    "More solitude south"
+                    "See Alpamayo up close",
+                    "More remote",
+                    "Additional passes"
                 ]
             },
             {
-                "name": "Kebnekaise Extension",
-                "variation": "Climb Sweden's highest",
-                "extra_days": 2,
+                "name": "Santa Cruz-Llanganuco",
+                "variation": "Exit via Llanganuco",
+                "extra_days": 0,
                 "highlights": [
-                    "2,106m summit",
-                    "Glacier option",
-                    "Achievement"
-                ]
-            },
-            {
-                "name": "Winter Skiing",
-                "variation": "March-April ski tour",
-                "extra_days": 2,
-                "highlights": [
-                    "Northern lights",
-                    "Winter huts open",
-                    "Arctic experience"
+                    "Different exit valley",
+                    "Laguna 69 option",
+                    "Transport flexibility"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Tjäktja Pass",
-                "best_time": "Clear weather",
+                "location": "Taullipampa camp",
+                "best_time": "Sunrise/sunset",
                 "subjects": [
-                    "Valley views",
-                    "Kebnekaise massif",
-                    "Arctic landscape"
+                    "Taulliraju",
+                    "Alpenglow on peaks",
+                    "Star photography"
                 ]
             },
             {
-                "location": "Abiskojaure",
-                "best_time": "Evening",
+                "location": "Punta Union Pass",
+                "best_time": "Morning",
                 "subjects": [
-                    "Lake reflections",
-                    "Midnight sun",
-                    "Lapporten gate"
-                ]
-            },
-            {
-                "location": "Autumn tundra",
-                "best_time": "September",
-                "subjects": [
-                    "Fall colors",
-                    "Reindeer",
-                    "Northern lights"
+                    "360° panorama",
+                    "Both valleys",
+                    "Achievement shots"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How bad are the mosquitoes?",
-                "answer": "In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better."
+                "question": "How does this compare to the Inca Trail?",
+                "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
             },
             {
-                "question": "Do I need to book huts in advance?",
-                "answer": "Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms."
+                "question": "Can I do it independently?",
+                "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
             },
             {
-                "question": "Can beginners do this trek?",
-                "answer": "Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers."
-            },
-            {
-                "question": "What about the northern lights?",
-                "answer": "Best from late August onward. September offers a great combination of autumn colors and aurora possibilities."
+                "question": "Is acclimatization really necessary?",
+                "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 93,
+        "popularity_score": 85,
         "seo": {
-            "meta_title": "Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland",
-            "meta_description": "Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.",
+            "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
+            "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
             "keywords": [
-                "kungsleden",
-                "kings trail sweden",
-                "lapland hiking",
-                "arctic trekking",
-                "sweden hiking trail"
+                "santa cruz trek",
+                "cordillera blanca",
+                "peru trekking",
+                "huaraz hiking",
+                "punta union pass"
             ]
         }
     };

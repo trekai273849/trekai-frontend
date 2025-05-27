@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland</title>
-    <meta name="description" content="Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.">
+    <title>Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal</title>
+    <meta name="description" content="Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/kungsleden-kings-trail.jpg');
+            background-image: url('/images/treks/covers/annapurna-base-camp-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -75,12 +75,6 @@
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-tagline {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.95;
         }
 
         .hero-stats {
@@ -561,18 +555,32 @@
         }
 
         /* Mobile Responsive */
-        @media (max-width: 768px) {
-    @media (max-width: 768px) {
+        
+/* Mobile Header Fixes */
+
+/* EMERGENCY MOBILE FIXES - PROVEN TO WORK */
+@media (max-width: 768px) {
+    /* FORCE HERO STATS INTO 2x2 GRID */
+    
+    /* ENHANCED 2x2 GRID FIX */
     .hero-stats {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
         gap: 0.8rem !important;
+        width: 100% !important;
         max-width: 300px !important;
         margin: 1.5rem auto 0 !important;
+        padding: 0 !important;
         justify-content: center !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        /* Remove conflicting flex properties */
+        flex-direction: unset !important;
+        flex-wrap: unset !important;
     }
     
+    /* Explicit grid positioning */
     .hero-stats .hero-stat:nth-child(1) { grid-column: 1; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(2) { grid-column: 2; grid-row: 1; }
     .hero-stats .hero-stat:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -587,56 +595,265 @@
         padding: 1rem 0.8rem !important;
         background: rgba(0,0,0,0.6) !important;
         border-radius: 12px !important;
+        backdrop-filter: blur(5px) !important;
         min-height: 70px !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    .hero-stat {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.8rem 0.5rem !important;
+        background: rgba(0,0,0,0.4) !important;
+        border-radius: 8px !important;
+        backdrop-filter: blur(3px) !important;
+        min-height: 60px !important;
     }
     
     .hero-stat-value {
         font-size: 1.4rem !important;
         font-weight: 700 !important;
+        margin-bottom: 0.2rem !important;
         color: white !important;
-        margin-bottom: 0.3rem !important;
+        display: block !important;
     }
     
     .hero-stat-label {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
         color: white !important;
+        opacity: 0.9 !important;
         text-transform: uppercase !important;
-        opacity: 0.95 !important;
+        letter-spacing: 0.05em !important;
+        display: block !important;
+    }
+    
+    /* FIX HERO CONTAINER */
+    .hero {
+        height: 60vh !important;
+        min-height: 400px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+    
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .hero h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        line-height: 1.2 !important;
+        max-width: 90% !important;
+    }
+    
+    /* FIX MAIN CONTENT LAYOUT */
+    .content-section {
+        padding: 2rem 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    .overview-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .overview-main {
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .overview-main h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    
+    /* FIX SIDEBAR */
+    .quick-info-card {
+        width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        padding: 1.5rem !important;
+        box-sizing: border-box !important;
+        order: -1 !important;
+    }
+    
+    /* FIX NAVIGATION */
+    .nav-tabs-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        padding: 0 1rem !important;
+    }
+    
+    .nav-tab {
+        white-space: nowrap !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* PREVENT HORIZONTAL SCROLL */
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    .max-w-7xl {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* FIX HIGHLIGHTS */
+    .highlights-list {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .highlight-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .highlight-text {
+        flex: 1 !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* FIX BUTTONS */
+    .cta-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .btn {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem 2rem !important;
+    }
+    
+    /* TAILWIND STYLE FIXES */
+    .hero-image {
+        height: 350px !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-image .absolute {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 1.5rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
     }
 }
-            .hero {
-                height: 60vh;
-                min-height: 400px;
-            }
 
-            .hero h1 {
-                font-size: 2.5em;
-            }
+@media (max-width: 480px) {
+    .hero-stats {
+        max-width: 240px !important;
+        gap: 0.6rem !important;
+    }
+    
+    .hero-stat {
+        min-height: 50px !important;
+        padding: 0.6rem 0.4rem !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.65rem !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero-image h1 {
+        font-size: 1.5rem !important;
+    }
+}
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh !important;
+        min-height: 350px !important;
+    }
 
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
+    .hero h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
 
-            .nav-tabs-container {
-                justify-content: start;
-            }
+    .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+        max-width: 200px !important;
+    }
 
-            .cta-section {
-                flex-direction: column;
-            }
+    .hero-stat-value {
+        font-size: 1.6rem !important;
+    }
 
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+    .hero-stat-label {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-image {
+        height: 300px !important;
+    }
+
+    .hero-image h1 {
+        font-size: 1.6rem !important;
+    }
+}
 
         /* Animations */
         @keyframes fadeIn {
@@ -734,16 +951,16 @@
     <!-- Hero Section with Real Image -->
     <section class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Kungsleden (King's Trail)</h1>
+        <div class="hero-content mobile-fixed">
+            <h1>Annapurna Base Camp Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value">5</span>
+                    <span class="hero-stat-value">10</span>
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">1,140m</span>
+                    <span class="hero-stat-value">4,130m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
@@ -751,7 +968,7 @@
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">easy</span>
+                    <span class="hero-stat-value">moderate</span>
                     <span class="hero-stat-label">Difficulty</span>
                 </div>
             </div>
@@ -774,9 +991,9 @@
     <section id="overview" class="content-section active">
         <div class="overview-grid">
             <div class="overview-main">
-                <h2>Journey to Sweden/Scandinavia</h2>
+                <h2>Journey to Nepal/Himalayas</h2>
                 <p class="overview-description">
-                    Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.
+                    Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.
                 </p>
                 
                 <div class="highlights-list">
@@ -824,7 +1041,7 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">5-7 days</span>
+                    <span class="info-value">7-12 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
@@ -832,12 +1049,12 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">1,140m (3,740ft)</span>
+                    <span class="info-value">4,130m (13,550ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
                     <span class="info-value">
-                        <span class="difficulty-badge">easy</span>
+                        <span class="difficulty-badge">moderate</span>
                     </span>
                 </div>
                 <div class="info-row">
@@ -846,16 +1063,16 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Kiruna/Abisko</span>
+                    <span class="info-value">Pokhara</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
-                    <span class="info-value">1 permits</span>
+                    <span class="info-value">2 permits</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$400 - $1,200</span>
+                        <span class="price-range">$400 - $1,000</span>
                     </span>
                 </div>
             </div>
@@ -864,9 +1081,9 @@
 
     <!-- Itinerary Section -->
     <section id="itinerary" class="content-section">
-        <h2>5-Day Detailed Itinerary</h2>
+        <h2>10-Day Detailed Itinerary</h2>
         <p style="color: var(--text-light); margin-bottom: 40px;">
-            Follow the route through Sweden/Scandinavia with proper acclimatization and rest days
+            Follow the route through Nepal/Himalayas with proper acclimatization and rest days
         </p>
 
         <div class="itinerary-timeline">
@@ -875,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Abisko to Abiskojaure</h3>
+          <h3 class="day-title">Pokhara to Ghandruk</h3>
           <div class="day-stats">
-            <span>📏 15km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 490m</span>
+            <span>📏 42km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +1192m</span>
+            <span>🏔️ 2,012m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake.</p>
+      <p class="day-description">Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Abisko National Park</span><span class="day-highlight">Abiskojaure lake</span><span class="day-highlight">First taste of Lapland</span><span class="day-highlight">Mountain views</span>
+          <span class="day-highlight">Drive to Nayapul</span><span class="day-highlight">Gurung village culture</span><span class="day-highlight">Annapurna South views</span><span class="day-highlight">Traditional architecture</span>
         </div>
       
     </div>
@@ -896,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Abiskojaure to Alesjaure</h3>
+          <h3 class="day-title">Ghandruk to Chhomrong</h3>
           <div class="day-stats">
-            <span>📏 22km</span>
+            <span>📏 14km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 785m</span>
+            <span>📈 +500m</span>
+            <span>🏔️ 2,170m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure.</p>
+      <p class="day-description">Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass views</span><span class="day-highlight">Alesjaure valley</span><span class="day-highlight">Possible reindeer</span><span class="day-highlight">Alpine environment</span>
+          <span class="day-highlight">Cross Kimrong Khola</span><span class="day-highlight">Terraced fields</span><span class="day-highlight">Machhapuchhre views</span><span class="day-highlight">Gateway to sanctuary</span>
         </div>
       
     </div>
@@ -917,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Alesjaure to Sälka</h3>
+          <h3 class="day-title">Chhomrong to Bamboo</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 4 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 820m</span>
+            <span>📏 10km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +400m</span>
+            <span>🏔️ 2,310m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks.</p>
+      <p class="day-description">Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Gentle terrain</span><span class="day-highlight">Mountain streams</span><span class="day-highlight">Wildflowers (summer)</span><span class="day-highlight">Shorter day</span>
+          <span class="day-highlight">Enter sanctuary</span><span class="day-highlight">Bamboo forests</span><span class="day-highlight">Modi Khola gorge</span><span class="day-highlight">Changing vegetation</span>
         </div>
       
     </div>
@@ -938,19 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Sälka to Kebnekaise Fjällstation</h3>
+          <h3 class="day-title">Bamboo to Deurali</h3>
           <div class="day-stats">
-            <span>📏 24km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +300m</span>
-            <span>🏔️ 690m</span>
+            <span>📏 11km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +920m</span>
+            <span>🏔️ 3,230m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station.</p>
+      <p class="day-description">Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tjäktja Pass (1,140m)</span><span class="day-highlight">Highest point on trail</span><span class="day-highlight">Kebnekaise views</span><span class="day-highlight">Laddjuvagge valley</span>
+          <span class="day-highlight">Himalaya Hotel</span><span class="day-highlight">Alpine environment</span><span class="day-highlight">Avalanche areas</span><span class="day-highlight">Mountain views emerging</span>
         </div>
       
     </div>
@@ -959,19 +1176,103 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Kebnekaise to Nikkaluokta</h3>
+          <h3 class="day-title">Deurali to Annapurna Base Camp</h3>
           <div class="day-stats">
-            <span>📏 19km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 0m</span>
-            <span>🏔️ 470m</span>
+            <span>📏 6km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +900m</span>
+            <span>🏔️ 4,130m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise.</p>
+      <p class="day-description">Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Forest return</span><span class="day-highlight">Trail completion</span><span class="day-highlight">Sami culture center</span><span class="day-highlight">Bus to Kiruna</span>
+          <span class="day-highlight">Machhapuchhre Base Camp</span><span class="day-highlight">360-degree mountain views</span><span class="day-highlight">Annapurna Sanctuary</span><span class="day-highlight">Sunset on peaks</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 6</div>
+          <h3 class="day-title">ABC Sunrise and Descend to Bamboo</h3>
+          <div class="day-stats">
+            <span>📏 17km</span>
+            <span>⏱️ 7 hours</span>
+            <span>📈 -1820m</span>
+            <span>🏔️ 2,310m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Sunrise on Annapurna I</span><span class="day-highlight">Last sanctuary views</span><span class="day-highlight">Rapid descent</span><span class="day-highlight">Return through forests</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 7</div>
+          <h3 class="day-title">Bamboo to Jhinu Danda</h3>
+          <div class="day-stats">
+            <span>📏 13km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 1,780m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Return to Chhomrong</span><span class="day-highlight">Natural hot springs</span><span class="day-highlight">Relaxation</span><span class="day-highlight">Modi Khola riverside</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 8</div>
+          <h3 class="day-title">Jhinu to Ghandruk</h3>
+          <div class="day-stats">
+            <span>📏 8km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +232m</span>
+            <span>🏔️ 2,012m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Take alternative route back to Ghandruk through villages and terraced fields.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Alternative route</span><span class="day-highlight">Village life</span><span class="day-highlight">Cultural immersion</span><span class="day-highlight">Mountain views</span>
+        </div>
+      
+    </div>
+  
+    <div class="itinerary-day">
+      <div class="day-header">
+        <div>
+          <div class="day-number">Day 9</div>
+          <h3 class="day-title">Ghandruk to Pokhara</h3>
+          <div class="day-stats">
+            <span>📏 20km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 -1192m</span>
+            <span>🏔️ 820m</span>
+          </div>
+        </div>
+      </div>
+      <p class="day-description">Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration.</p>
+      
+        <div class="day-highlights">
+          <span class="day-highlight">Final mountain views</span><span class="day-highlight">Descent to Nayapul</span><span class="day-highlight">Drive to Pokhara</span><span class="day-highlight">Trek completion</span>
         </div>
       
     </div>
@@ -996,8 +1297,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Hiking boots</div>
-          <div class="gear-description">Waterproof recommended</div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Comfortable and waterproof</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-10°C rated</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Cold at base camp</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1005,55 +1322,31 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Rain gear</div>
-          <div class="gear-description">Top and bottom essential</div>
+          <div class="gear-description">Essential any season</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Can be cold even in summer</div>
+          <div class="gear-name">Layers</div>
+          <div class="gear-description">Temperature varies greatly</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Mosquito protection</div>
-          <div class="gear-description">Head net, repellent (July)</div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sleeping bag</div>
-          <div class="gear-description">If camping</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Backpack</div>
-          <div class="gear-description">40-60L</div>
-        </div>
-        <span class="rental-badge">Rental available</span>
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Map and compass</div>
-          <div class="gear-description">Well-marked but essential</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">First aid kit</div>
-          <div class="gear-description">Include blister treatment</div>
+          <div class="gear-name">Basic first aid</div>
+          <div class="gear-description">Including blister kit</div>
         </div>
         
       </li>
@@ -1071,31 +1364,23 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Trekking poles</div>
-          <div class="gear-description">Helpful for river crossings</div>
+          <div class="gear-description">Very helpful on stairs</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Gaiters</div>
-          <div class="gear-description">For wet sections</div>
+          <div class="gear-name">Water purification</div>
+          <div class="gear-description">Tablets or SteriPen</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Camp shoes</div>
-          <div class="gear-description">For hut/tent comfort</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Dry bags</div>
-          <div class="gear-description">Keep essentials dry</div>
+          <div class="gear-name">Snacks</div>
+          <div class="gear-description">Energy bars, nuts</div>
         </div>
         
       </li>
@@ -1115,17 +1400,17 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">☀️</div>
-      <h3 class="season-name">Summer</h3>
-      <p class="season-months">June, July, August, September</p>
-      <p>Midnight sun, warm weather, full facilities open</p>
+      <div class="season-icon">🍂</div>
+      <h3 class="season-name">Autumn</h3>
+      <p class="season-months">September, October, November</p>
+      <p>Clear views, stable weather, peak season</p>
     </div>
   
     <div class="season-card">
-      <div class="season-icon">🍂</div>
-      <h3 class="season-name">Autumn</h3>
-      <p class="season-months">September</p>
-      <p>Spectacular fall colors, northern lights begin, fewer mosquitoes</p>
+      <div class="season-icon">🌸</div>
+      <h3 class="season-name">Spring</h3>
+      <p class="season-months">March, April, May</p>
+      <p>Rhododendron blooms, good weather, warmer</p>
     </div>
   
         </div>
@@ -1148,27 +1433,27 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$0</span>
-    </div>
-    <div class="cost-item">
-      <span>Guide (per day)</span>
-      <span>$200</span>
-    </div>
-    <div class="cost-item">
-      <span>Accommodation (per night)</span>
-      <span>$50</span>
-    </div>
-    <div class="cost-item">
-      <span>Meals (per day)</span>
       <span>$40</span>
     </div>
     <div class="cost-item">
+      <span>Guide (per day)</span>
+      <span>$25</span>
+    </div>
+    <div class="cost-item">
+      <span>Accommodation (per night)</span>
+      <span>$5</span>
+    </div>
+    <div class="cost-item">
+      <span>Meals (per day)</span>
+      <span>$20</span>
+    </div>
+    <div class="cost-item">
       <span>Transportation</span>
-      <span>$100</span>
+      <span>$30</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$400 - $1,200</span>
+      <span>$400 - $1,000</span>
     </div>
   
         </div>
@@ -1190,34 +1475,34 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>How bad are the mosquitoes?</span>
+        <span>ABC or EBC - which is better?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better.</div>
+      <div class="faq-answer">ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Do I need to book huts in advance?</span>
+        <span>Can I do it independently?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms.</div>
+      <div class="faq-answer">Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can beginners do this trek?</span>
+        <span>How cold is base camp?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers.</div>
+      <div class="faq-answer">Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>What about the northern lights?</span>
+        <span>Is altitude a problem?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Best from late August onward. September offers a great combination of autumn colors and aurora possibilities.</div>
+      <div class="faq-answer">At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps.</div>
     </div>
   
         </div>
@@ -1258,34 +1543,34 @@
             scrollToSectionTop();
         }
 
-                            function scrollToSectionTop() {
-                requestAnimationFrame(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
+                function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    if (navTabs) {
-                        // Get the nav's current position in the viewport
-                        const navRect = navTabs.getBoundingClientRect();
-                        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // Calculate where the nav actually is on the page
-                        const navTopPosition = currentScrollY + navRect.top;
-                        
-                        // Scroll to just below the nav
-                        const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                        
-                        window.scrollTo({
-                            top: Math.max(0, targetScroll),
-                            behavior: 'smooth'
-                        );
-                    } else {
-                        // Fallback: scroll to top if nav not found
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        );
-                    }
-                );
-            }
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
 
         function centerTabWithNextVisible(clickedTab) {
             const tabContainer = document.querySelector('.nav-tabs-container');
@@ -1369,588 +1654,662 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "kungsleden-kings-trail",
-        "name": "Kungsleden (King's Trail)",
-        "slug": "kungsleden-kings-trail",
-        "region": "Sweden/Scandinavia",
-        "country": "Sweden",
-        "summary": "Sweden's most famous trail through Arctic wilderness, offering vast tundra landscapes, reindeer herds, Sami culture, and the midnight sun or northern lights.",
+        "_id": "annapurna-base-camp-trek",
+        "name": "Annapurna Base Camp Trek",
+        "slug": "annapurna-base-camp-trek",
+        "region": "Nepal/Himalayas",
+        "country": "Nepal",
+        "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
         "duration": {
-            "min_days": 5,
-            "max_days": 7,
-            "recommended_days": 5
+            "min_days": 7,
+            "max_days": 12,
+            "recommended_days": 10
         },
         "distance_km": 110,
-        "difficulty": "easy",
-        "max_elevation_m": 1140,
-        "starting_elevation_m": 480,
-        "airport": "Kiruna (KRN)",
-        "nearest_city": "Kiruna/Abisko",
+        "difficulty": "moderate",
+        "max_elevation_m": 4130,
+        "starting_elevation_m": 1070,
+        "airport": "Pokhara (PKR)",
+        "nearest_city": "Pokhara",
         "coordinates": {
             "start": {
-                "lat": 68.3494,
-                "lng": 18.8311,
-                "location": "Abisko"
+                "lat": 28.3784,
+                "lng": 83.7284,
+                "location": "Nayapul"
             },
             "end": {
-                "lat": 67.8482,
-                "lng": 18.4161,
-                "location": "Nikkaluokta"
+                "lat": 28.53,
+                "lng": 83.8783,
+                "location": "Annapurna Base Camp"
             }
         },
         "best_seasons": [
             {
-                "name": "Summer",
-                "months": [
-                    "June",
-                    "July",
-                    "August",
-                    "September"
-                ],
-                "description": "Midnight sun, warm weather, full facilities open"
-            },
-            {
                 "name": "Autumn",
                 "months": [
-                    "September"
+                    "September",
+                    "October",
+                    "November"
                 ],
-                "description": "Spectacular fall colors, northern lights begin, fewer mosquitoes"
+                "description": "Clear views, stable weather, peak season"
+            },
+            {
+                "name": "Spring",
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "description": "Rhododendron blooms, good weather, warmer"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Abisko to Abiskojaure",
-                "start_location": "Abisko",
-                "end_location": "Abiskojaure",
-                "distance_km": 15,
-                "duration_hours": 4,
-                "elevation_start_m": 480,
-                "elevation_end_m": 490,
-                "elevation_gain_m": 200,
-                "difficulty": "easy",
+                "title": "Pokhara to Ghandruk",
+                "start_location": "Pokhara",
+                "end_location": "Ghandruk",
+                "distance_km": 42,
+                "duration_hours": 6,
+                "elevation_start_m": 820,
+                "elevation_end_m": 2012,
+                "elevation_gain_m": 1192,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "teahouse",
                     "options": [
-                        "Abiskojaure STF hut",
-                        "Camping"
+                        "Himalaya Lodge",
+                        "Gurung Cottage",
+                        "Mountain View Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Abisko National Park",
-                    "Abiskojaure lake",
-                    "First taste of Lapland",
-                    "Mountain views"
+                "meals_included": [
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Easy start through Abisko National Park. Well-marked trail through birch forest opens to mountain views. Reach STF hut by beautiful lake."
+                "highlights": [
+                    "Drive to Nayapul",
+                    "Gurung village culture",
+                    "Annapurna South views",
+                    "Traditional architecture"
+                ],
+                "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
             },
             {
                 "day": 2,
-                "title": "Abiskojaure to Alesjaure",
-                "start_location": "Abiskojaure",
-                "end_location": "Alesjaure",
-                "distance_km": 22,
+                "title": "Ghandruk to Chhomrong",
+                "start_location": "Ghandruk",
+                "end_location": "Chhomrong",
+                "distance_km": 14,
                 "duration_hours": 6,
-                "elevation_start_m": 490,
-                "elevation_end_m": 785,
-                "elevation_gain_m": 400,
+                "elevation_start_m": 2012,
+                "elevation_end_m": 2170,
+                "elevation_gain_m": 500,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "teahouse",
                     "options": [
-                        "Alesjaure STF hut",
-                        "Camping"
+                        "Chhomrong Guest House",
+                        "Annapurna Lodge",
+                        "Panorama Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass views",
-                    "Alesjaure valley",
-                    "Possible reindeer",
-                    "Alpine environment"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Climb gently to treeline with expanding views. Pass through wide valleys with good chances of seeing reindeer. Beautiful location at Alesjaure."
+                "highlights": [
+                    "Cross Kimrong Khola",
+                    "Terraced fields",
+                    "Machhapuchhre views",
+                    "Gateway to sanctuary"
+                ],
+                "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
             },
             {
                 "day": 3,
-                "title": "Alesjaure to Sälka",
-                "start_location": "Alesjaure",
-                "end_location": "Sälka",
-                "distance_km": 12,
-                "duration_hours": 4,
-                "elevation_start_m": 785,
-                "elevation_end_m": 820,
-                "elevation_gain_m": 200,
-                "difficulty": "easy",
+                "title": "Chhomrong to Bamboo",
+                "start_location": "Chhomrong",
+                "end_location": "Bamboo",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 2170,
+                "elevation_end_m": 2310,
+                "elevation_gain_m": 400,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF hut",
+                    "type": "teahouse",
                     "options": [
-                        "Sälka STF hut",
-                        "Camping"
+                        "Bamboo Lodge",
+                        "Forest Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Gentle terrain",
-                    "Mountain streams",
-                    "Wildflowers (summer)",
-                    "Shorter day"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Shorter day through gentle terrain. Good for rest or side trips. Cross mountain streams and enjoy expansive views of surrounding peaks."
+                "highlights": [
+                    "Enter sanctuary",
+                    "Bamboo forests",
+                    "Modi Khola gorge",
+                    "Changing vegetation"
+                ],
+                "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
             },
             {
                 "day": 4,
-                "title": "Sälka to Kebnekaise Fjällstation",
-                "start_location": "Sälka",
-                "end_location": "Kebnekaise Fjällstation",
-                "distance_km": 24,
-                "duration_hours": 7,
-                "elevation_start_m": 820,
-                "elevation_end_m": 690,
-                "elevation_gain_m": 300,
+                "title": "Bamboo to Deurali",
+                "start_location": "Bamboo",
+                "end_location": "Deurali",
+                "distance_km": 11,
+                "duration_hours": 6,
+                "elevation_start_m": 2310,
+                "elevation_end_m": 3230,
+                "elevation_gain_m": 920,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "STF station",
+                    "type": "teahouse",
                     "options": [
-                        "Kebnekaise Fjällstation",
-                        "Camping"
+                        "Deurali Guest House",
+                        "Himalaya Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Tjäktja Pass (1,140m)",
-                    "Highest point on trail",
-                    "Kebnekaise views",
-                    "Laddjuvagge valley"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Cross the highest point at Tjäktja Pass with panoramic views. Long descent through dramatic Laddjuvagge valley to comfortable mountain station."
+                "highlights": [
+                    "Himalaya Hotel",
+                    "Alpine environment",
+                    "Avalanche areas",
+                    "Mountain views emerging"
+                ],
+                "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
             },
             {
                 "day": 5,
-                "title": "Kebnekaise to Nikkaluokta",
-                "start_location": "Kebnekaise Fjällstation",
-                "end_location": "Nikkaluokta",
-                "distance_km": 19,
-                "duration_hours": 5,
-                "elevation_start_m": 690,
-                "elevation_end_m": 470,
-                "elevation_gain_m": 0,
-                "difficulty": "easy",
+                "title": "Deurali to Annapurna Base Camp",
+                "start_location": "Deurali",
+                "end_location": "Annapurna Base Camp",
+                "distance_km": 6,
+                "duration_hours": 4,
+                "elevation_start_m": 3230,
+                "elevation_end_m": 4130,
+                "elevation_gain_m": 900,
+                "difficulty": "moderate",
                 "accommodation": {
-                    "type": "end point",
+                    "type": "teahouse",
                     "options": [
-                        "Nikkaluokta Sarri Lodge",
-                        "Return to Kiruna"
+                        "ABC Lodge",
+                        "Annapurna Sanctuary Lodge"
                     ]
                 },
-                "meals_included": [],
-                "highlights": [
-                    "Forest return",
-                    "Trail completion",
-                    "Sami culture center",
-                    "Bus to Kiruna"
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
                 ],
-                "description": "Final walk through forest to Nikkaluokta. Celebrate at Sami-run lodge before catching bus back to Kiruna. Option to extend and climb Kebnekaise."
+                "highlights": [
+                    "Machhapuchhre Base Camp",
+                    "360-degree mountain views",
+                    "Annapurna Sanctuary",
+                    "Sunset on peaks"
+                ],
+                "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
+            },
+            {
+                "day": 6,
+                "title": "ABC Sunrise and Descend to Bamboo",
+                "start_location": "Annapurna Base Camp",
+                "end_location": "Bamboo",
+                "distance_km": 17,
+                "duration_hours": 7,
+                "elevation_start_m": 4130,
+                "elevation_end_m": 2310,
+                "elevation_gain_m": -1820,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Bamboo Lodge",
+                        "Forest Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Sunrise on Annapurna I",
+                    "Last sanctuary views",
+                    "Rapid descent",
+                    "Return through forests"
+                ],
+                "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
+            },
+            {
+                "day": 7,
+                "title": "Bamboo to Jhinu Danda",
+                "start_location": "Bamboo",
+                "end_location": "Jhinu Danda",
+                "distance_km": 13,
+                "duration_hours": 6,
+                "elevation_start_m": 2310,
+                "elevation_end_m": 1780,
+                "elevation_gain_m": 200,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Jhinu Guest House",
+                        "Hot Spring Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Return to Chhomrong",
+                    "Natural hot springs",
+                    "Relaxation",
+                    "Modi Khola riverside"
+                ],
+                "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
+            },
+            {
+                "day": 8,
+                "title": "Jhinu to Ghandruk",
+                "start_location": "Jhinu Danda",
+                "end_location": "Ghandruk",
+                "distance_km": 8,
+                "duration_hours": 4,
+                "elevation_start_m": 1780,
+                "elevation_end_m": 2012,
+                "elevation_gain_m": 232,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Himalaya Lodge",
+                        "Gurung Cottage"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Alternative route",
+                    "Village life",
+                    "Cultural immersion",
+                    "Mountain views"
+                ],
+                "description": "Take alternative route back to Ghandruk through villages and terraced fields."
+            },
+            {
+                "day": 9,
+                "title": "Ghandruk to Pokhara",
+                "start_location": "Ghandruk",
+                "end_location": "Pokhara",
+                "distance_km": 20,
+                "duration_hours": 4,
+                "elevation_start_m": 2012,
+                "elevation_end_m": 820,
+                "elevation_gain_m": -1192,
+                "difficulty": "easy",
+                "accommodation": {
+                    "type": "hotel",
+                    "options": [
+                        "Return to Pokhara hotel"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch"
+                ],
+                "highlights": [
+                    "Final mountain views",
+                    "Descent to Nayapul",
+                    "Drive to Pokhara",
+                    "Trek completion"
+                ],
+                "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Hiking boots",
-                    "description": "Waterproof recommended",
+                    "item": "Trekking boots",
+                    "description": "Comfortable and waterproof",
+                    "rental_available": true
+                },
+                {
+                    "item": "Sleeping bag",
+                    "description": "-10°C rated",
+                    "rental_available": true
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Cold at base camp",
                     "rental_available": true
                 },
                 {
                     "item": "Rain gear",
-                    "description": "Top and bottom essential",
+                    "description": "Essential any season",
                     "rental_available": true
                 },
                 {
-                    "item": "Warm layers",
-                    "description": "Can be cold even in summer",
+                    "item": "Layers",
+                    "description": "Temperature varies greatly",
                     "rental_available": false
                 },
                 {
-                    "item": "Mosquito protection",
-                    "description": "Head net, repellent (July)",
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
                     "rental_available": false
                 },
                 {
-                    "item": "Sleeping bag",
-                    "description": "If camping",
-                    "rental_available": true
-                },
-                {
-                    "item": "Backpack",
-                    "description": "40-60L",
-                    "rental_available": true
-                },
-                {
-                    "item": "Map and compass",
-                    "description": "Well-marked but essential",
-                    "rental_available": false
-                },
-                {
-                    "item": "First aid kit",
-                    "description": "Include blister treatment",
+                    "item": "Basic first aid",
+                    "description": "Including blister kit",
                     "rental_available": false
                 }
             ],
             "recommended": [
                 {
                     "item": "Trekking poles",
-                    "description": "Helpful for river crossings",
+                    "description": "Very helpful on stairs",
                     "rental_available": true
                 },
                 {
-                    "item": "Gaiters",
-                    "description": "For wet sections",
+                    "item": "Water purification",
+                    "description": "Tablets or SteriPen",
                     "rental_available": false
                 },
                 {
-                    "item": "Camp shoes",
-                    "description": "For hut/tent comfort",
-                    "rental_available": false
-                },
-                {
-                    "item": "Dry bags",
-                    "description": "Keep essentials dry",
+                    "item": "Snacks",
+                    "description": "Energy bars, nuts",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "None required",
-                "cost_usd": 0,
-                "notes": "Right to roam applies"
+                "name": "ACAP (Annapurna Conservation)",
+                "cost_usd": 30,
+                "cost_npr": 3000,
+                "where_to_obtain": "Pokhara or Kathmandu",
+                "validity": "Single entry"
+            },
+            {
+                "name": "TIMS Card",
+                "cost_usd": 10,
+                "cost_npr": 1000,
+                "where_to_obtain": "Pokhara or Kathmandu",
+                "validity": "Trek duration"
             }
         ],
         "costs": {
-            "permit_total_usd": 0,
-            "guide_daily_usd": 200,
-            "accommodation_daily_usd": 50,
-            "meals_daily_usd": 40,
-            "transportation_usd": 100,
+            "permit_total_usd": 40,
+            "guide_daily_usd": 25,
+            "porter_daily_usd": 18,
+            "accommodation_daily_usd": 5,
+            "meals_daily_usd": 20,
+            "transportation_usd": 30,
             "total_budget_range_usd": {
                 "min": 400,
-                "max": 1200
+                "max": 1000
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Swedish",
-                "Sami (indigenous)"
+                "Gurung",
+                "Magar"
             ],
-            "primary_religion": "Lutheran/Secular",
+            "primary_religion": "Buddhism and Hinduism",
             "languages": [
-                "Swedish",
-                "Sami",
-                "English common"
+                "Nepali",
+                "Gurung",
+                "English"
             ],
             "customs_etiquette": [
-                "Respect Sami reindeer herding areas",
-                "Don't disturb reindeer",
-                "Remove shoes in huts",
-                "Help with hut chores if asked",
-                "Leave no trace strictly followed"
+                "Remove shoes when entering homes",
+                "Use right hand for eating/giving",
+                "Walk clockwise around mani walls",
+                "Dress modestly in villages",
+                "Ask permission for photos"
             ],
             "local_foods": [
                 {
-                    "name": "Reindeer meat",
-                    "description": "Traditional Sami staple"
+                    "name": "Dal bhat",
+                    "description": "Traditional meal available everywhere"
                 },
                 {
-                    "name": "Cloudberries",
-                    "description": "Arctic gold berry"
+                    "name": "Gurung bread",
+                    "description": "Local specialty"
                 },
                 {
-                    "name": "Gáhkku",
-                    "description": "Sami flatbread"
+                    "name": "Raksi",
+                    "description": "Local millet alcohol"
                 },
                 {
-                    "name": "Smoked fish",
-                    "description": "Arctic char and salmon"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Autumn Reindeer Separation",
-                    "when": "September",
-                    "description": "Traditional herding event"
+                    "name": "Dhindo",
+                    "description": "Traditional porridge"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "none",
-                "notes": "Maximum elevation only 1,140m"
+                "risk_level": "moderate",
+                "prevention": [
+                    "Gradual ascent built into itinerary",
+                    "Stay hydrated",
+                    "Rest day can be added",
+                    "Don't rush to ABC"
+                ],
+                "critical_points": [
+                    "Above 3000m",
+                    "Especially approaching ABC"
+                ]
             },
-            "main_concerns": {
-                "river_crossings": {
-                    "risk_level": "moderate",
-                    "description": "Can be high after rain",
-                    "prevention": [
-                        "Check conditions at huts",
-                        "Use bridges where available",
-                        "Trekking poles help",
-                        "Consider waiting if high"
-                    ]
+            "medical_facilities": [
+                {
+                    "location": "Chhomrong",
+                    "type": "Basic health post"
                 },
-                "mosquitoes": {
-                    "risk_level": "high in July",
-                    "description": "Can be overwhelming",
-                    "prevention": [
-                        "Head net essential",
-                        "Long sleeves and pants",
-                        "Strong repellent",
-                        "Keep moving"
-                    ]
-                },
-                "weather": {
-                    "risk_level": "moderate",
-                    "description": "Changes quickly",
-                    "prevention": [
-                        "Layer clothing",
-                        "Always carry rain gear",
-                        "Check forecasts at huts",
-                        "Be flexible with plans"
-                    ]
+                {
+                    "location": "Pokhara",
+                    "type": "Good hospitals"
                 }
-            },
+            ],
             "evacuation": {
-                "method": "Helicopter",
-                "cost_usd": "Covered by European health insurance",
-                "insurance_required": true,
-                "response_time": "Few hours to a day"
+                "method": "Helicopter from most points",
+                "cost_usd": "3000-5000",
+                "insurance_required": true
             }
         },
         "weather_patterns": {
-            "summer": {
+            "autumn": {
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "day_temp_c": "10 to 20",
+                "night_temp_c": "-5 to 5",
+                "precipitation": "Low",
+                "visibility": "Excellent",
+                "notes": "Best views, busy season"
+            },
+            "spring": {
+                "months": [
+                    "March",
+                    "April",
+                    "May"
+                ],
+                "day_temp_c": "15 to 25",
+                "night_temp_c": "0 to 10",
+                "precipitation": "Moderate",
+                "visibility": "Good mornings",
+                "notes": "Rhododendrons bloom"
+            },
+            "winter": {
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "day_temp_c": "5 to 15",
+                "night_temp_c": "-10 to 0",
+                "precipitation": "Low, possible snow",
+                "visibility": "Excellent",
+                "notes": "Very cold at ABC"
+            },
+            "monsoon": {
                 "months": [
                     "June",
                     "July",
                     "August"
                 ],
-                "day_temp_c": "10 to 20",
-                "night_temp_c": "5 to 10",
-                "precipitation": "Frequent rain",
-                "daylight_hours": "24",
-                "notes": "Midnight sun, mosquitoes peak July"
-            },
-            "autumn": {
-                "months": [
-                    "September"
-                ],
-                "day_temp_c": "5 to 15",
-                "night_temp_c": "0 to 5",
-                "precipitation": "Variable",
-                "daylight_hours": "14",
-                "notes": "Stunning colors, possible snow"
+                "day_temp_c": "15 to 20",
+                "night_temp_c": "5 to 15",
+                "precipitation": "Very high",
+                "visibility": "Poor",
+                "notes": "Not recommended, leeches"
             }
         },
         "transportation": {
             "to_start": [
                 {
-                    "method": "Train",
-                    "from": "Kiruna",
-                    "to": "Abisko",
+                    "method": "Tourist bus",
+                    "from": "Pokhara",
+                    "to": "Nayapul",
                     "duration": "1.5 hours",
-                    "cost_usd": 20,
-                    "frequency": "2-4 daily"
+                    "cost_usd": 10,
+                    "frequency": "Multiple daily"
                 },
                 {
-                    "method": "Bus",
-                    "from": "Kiruna Airport",
-                    "to": "Abisko",
-                    "duration": "2 hours",
+                    "method": "Private taxi",
+                    "from": "Pokhara",
+                    "to": "Nayapul",
+                    "duration": "1.5 hours",
                     "cost_usd": 30,
-                    "frequency": "Connects with flights"
+                    "frequency": "Any time"
                 }
             ],
-            "from_end": [
-                {
-                    "method": "Bus",
-                    "from": "Nikkaluokta",
-                    "to": "Kiruna",
-                    "duration": "1.5 hours",
-                    "cost_usd": 25,
-                    "frequency": "2-3 daily in season"
-                }
-            ]
+            "from_end": "Same options in reverse"
         },
         "accommodation": {
-            "type": "STF mountain huts",
-            "description": "Swedish Tourist Association huts",
+            "type": "Teahouses",
+            "description": "Basic but comfortable lodges",
             "amenities": [
-                "Bunk beds in dorms",
-                "Self-catering kitchens",
-                "Shop with supplies",
-                "Sauna at most huts",
-                "Camping allowed nearby",
-                "Host provides info"
+                "Twin-bed rooms",
+                "Shared bathrooms mostly",
+                "Hot showers (lower elevations)",
+                "Charging for devices (paid)",
+                "WiFi in some lodges (paid)",
+                "Meals available"
             ],
-            "booking": "Not required but recommended",
-            "cost_per_night_usd": {
-                "stf_member": "25-35",
-                "non_member": "50-60",
-                "camping": "15-20"
-            }
+            "booking": "Not required except peak season",
+            "cost_per_night_usd": "3-8"
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness sufficient",
-            "technical_skills": "None required",
-            "altitude_challenge": "None",
-            "trail_conditions": "Well-marked, boardwalks in wet areas",
-            "navigation_challenge": "Easy - clear trail",
-            "daily_hiking_hours": "4-7 hours",
-            "total_elevation_gain": 1300,
-            "total_elevation_loss": 1430
-        },
-        "sustainability": {
-            "environmental_concerns": [
-                "Fragile arctic ecosystem",
-                "Reindeer grazing areas",
-                "Erosion in popular sections"
-            ],
-            "responsible_practices": [
-                "Strict leave no trace",
-                "Stay on marked trails",
-                "Respect Sami land use",
-                "Use designated camping",
-                "Pack out all waste"
-            ],
-            "local_initiatives": [
-                "STF conservation work",
-                "Trail maintenance volunteers",
-                "Sustainable hut operations"
-            ]
-        },
-        "connectivity": {
-            "mobile_coverage": [
-                {
-                    "location": "Abisko/Nikkaluokta",
-                    "quality": "Good",
-                    "providers": [
-                        "Telia",
-                        "Telenor"
-                    ]
-                },
-                {
-                    "location": "Trail",
-                    "quality": "Very limited",
-                    "providers": [
-                        "Emergency calls sometimes"
-                    ]
-                }
-            ],
-            "internet": {
-                "availability": "Only at Kebnekaise station",
-                "cost_usd": "5",
-                "speed": "Basic"
-            }
-        },
-        "booking_recommendations": {
-            "advance_booking": "1-2 months for huts in peak season",
-            "group_size": "Any size welcome",
-            "guide_requirement": "Not necessary",
-            "food_planning": "Buy at huts or carry all",
-            "insurance_essential": true,
-            "fitness_preparation": "Basic hiking fitness"
+            "physical_demands": "Moderate fitness required",
+            "technical_skills": "None needed",
+            "altitude_challenge": "Moderate - max 4,130m",
+            "trail_conditions": "Well-maintained, many stone steps",
+            "daily_hiking_hours": "5-7 hours",
+            "total_elevation_gain": 4500,
+            "total_elevation_loss": 4500
         },
         "alternative_routes": [
             {
-                "name": "Full Kungsleden",
-                "variation": "Abisko to Hemavan",
-                "extra_days": 20,
+                "name": "ABC via Poon Hill",
+                "variation": "Add Poon Hill sunrise",
+                "extra_days": 2,
                 "highlights": [
-                    "440km total",
-                    "Full arctic traverse",
-                    "More solitude south"
+                    "Famous sunrise viewpoint",
+                    "Different villages",
+                    "More variety"
                 ]
             },
             {
-                "name": "Kebnekaise Extension",
-                "variation": "Climb Sweden's highest",
-                "extra_days": 2,
+                "name": "Mardi Himal addition",
+                "variation": "Combine with Mardi Himal",
+                "extra_days": 4,
                 "highlights": [
-                    "2,106m summit",
-                    "Glacier option",
-                    "Achievement"
-                ]
-            },
-            {
-                "name": "Winter Skiing",
-                "variation": "March-April ski tour",
-                "extra_days": 2,
-                "highlights": [
-                    "Northern lights",
-                    "Winter huts open",
-                    "Arctic experience"
+                    "Less crowded ridge trek",
+                    "Different perspective",
+                    "Forest camps"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Tjäktja Pass",
-                "best_time": "Clear weather",
+                "location": "Annapurna Base Camp",
+                "best_time": "Sunrise",
                 "subjects": [
-                    "Valley views",
-                    "Kebnekaise massif",
-                    "Arctic landscape"
+                    "360° amphitheater",
+                    "Annapurna I south face",
+                    "Alpenglow"
                 ]
             },
             {
-                "location": "Abiskojaure",
-                "best_time": "Evening",
+                "location": "Machhapuchhre Base Camp",
+                "best_time": "Sunset",
                 "subjects": [
-                    "Lake reflections",
-                    "Midnight sun",
-                    "Lapporten gate"
+                    "Fishtail mountain",
+                    "Sacred peak",
+                    "Evening colors"
                 ]
             },
             {
-                "location": "Autumn tundra",
-                "best_time": "September",
+                "location": "Ghandruk village",
+                "best_time": "Morning",
                 "subjects": [
-                    "Fall colors",
-                    "Reindeer",
-                    "Northern lights"
+                    "Traditional architecture",
+                    "Mountain backdrop",
+                    "Village life"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "How bad are the mosquitoes?",
-                "answer": "In July they can be terrible, especially in still weather. Bring a head net and strong repellent. Late August/September is much better."
+                "question": "ABC or EBC - which is better?",
+                "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
             },
             {
-                "question": "Do I need to book huts in advance?",
-                "answer": "Not required as they don't turn anyone away, but booking guarantees a bed vs mattress on floor. Essential for private rooms."
+                "question": "Can I do it independently?",
+                "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
             },
             {
-                "question": "Can beginners do this trek?",
-                "answer": "Yes! It's one of Europe's easiest long-distance trails. Well-marked, gentle terrain, and comfortable huts make it perfect for first-time trekkers."
+                "question": "How cold is base camp?",
+                "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
             },
             {
-                "question": "What about the northern lights?",
-                "answer": "Best from late August onward. September offers a great combination of autumn colors and aurora possibilities."
+                "question": "Is altitude a problem?",
+                "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 93,
+        "popularity_score": 95,
         "seo": {
-            "meta_title": "Kungsleden Trek Guide 2024 | Sweden's King's Trail in Arctic Lapland",
-            "meta_description": "Complete guide to hiking the Kungsleden (King's Trail) in Swedish Lapland. 5-day arctic trek through wilderness, reindeer country, and midnight sun.",
+            "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
+            "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
             "keywords": [
-                "kungsleden",
-                "kings trail sweden",
-                "lapland hiking",
-                "arctic trekking",
-                "sweden hiking trail"
+                "annapurna base camp",
+                "abc trek",
+                "nepal trekking",
+                "annapurna sanctuary",
+                "pokhara trekking"
             ]
         }
     };

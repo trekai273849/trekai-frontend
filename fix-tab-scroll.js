@@ -7,35 +7,185 @@ const path = require('path');
 const TREKS_FOLDER = './output/treks';
 const BACKUP_FOLDER = './output/treks/backups';
 
-// New improved scrollToSectionTop function
-const NEW_SCROLL_FUNCTION = `        function scrollToSectionTop() {
-            requestAnimationFrame(() => {
-                const navTabs = document.querySelector('.nav-tabs');
-                
-                if (navTabs) {
-                    // Get the nav's current position in the viewport
-                    const navRect = navTabs.getBoundingClientRect();
-                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // Calculate where the nav actually is on the page
-                    const navTopPosition = currentScrollY + navRect.top;
-                    
-                    // Scroll to just below the nav
-                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                    
-                    window.scrollTo({
-                        top: Math.max(0, targetScroll),
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback: scroll to top if nav not found
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+// Function to generate the new scrollToSectionTop function with correct indentation
+function generateNewScrollFunction(indentSpaces = 12) {
+    const indent = ' '.repeat(indentSpaces);
+    const innerIndent = ' '.repeat(indentSpaces + 4);
+    const deepIndent = ' '.repeat(indentSpaces + 8);
+    const deeperIndent = ' '.repeat(indentSpaces + 12);
+    
+    return `${indent}function scrollToSectionTop() {
+${innerIndent}requestAnimationFrame(() => {
+${deepIndent}const navTabs = document.querySelector('.nav-tabs');
+${deepIndent}
+${deepIndent}if (navTabs) {
+${deeperIndent}// Get the nav's current position in the viewport
+${deeperIndent}const navRect = navTabs.getBoundingClientRect();
+${deeperIndent}const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+${deeperIndent}
+${deeperIndent}// Calculate where the nav actually is on the page
+${deeperIndent}const navTopPosition = currentScrollY + navRect.top;
+${deeperIndent}
+${deeperIndent}// Scroll to just below the nav
+${deeperIndent}const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+${deeperIndent}
+${deeperIndent}window.scrollTo({
+${deeperIndent}    top: Math.max(0, targetScroll),
+${deeperIndent}    behavior: 'smooth'
+${deeperIndent});
+${deepIndent}} else {
+${deeperIndent}// Fallback: scroll to top if nav not found
+${deeperIndent}window.scrollTo({
+${deeperIndent}    top: 0,
+${deeperIndent}    behavior: 'smooth'
+${deeperIndent});
+${deepIndent}}
+${innerIndent});
+${indent}}`;
+}
+
+// Diagnostic function to analyze the file structure
+function analyzeFile(filename) {
+    const filePath = path.join(TREKS_FOLDER, filename);
+    
+    try {
+        const content = fs.readFileSync(filePath, 'utf8');
+        
+        console.log(`\n🔍 ANALYZING: ${filename}`);
+        console.log('=' + '='.repeat(filename.length + 12));
+        
+        // Check if file contains scrollToSectionTop
+        if (!content.includes('scrollToSectionTop')) {
+            console.log('❌ No scrollToSectionTop found in file');
+            return false;
+        }
+        
+        console.log('✅ Found scrollToSectionTop references');
+        
+        // Find all lines containing scrollToSectionTop
+        const lines = content.split('\n');
+        const relevantLines = [];
+        
+        lines.forEach((line, index) => {
+            if (line.includes('scrollToSectionTop')) {
+                relevantLines.push({
+                    lineNumber: index + 1,
+                    content: line,
+                    trimmed: line.trim()
+                });
+            }
+        });
+        
+        console.log(`\n📍 Found ${relevantLines.length} references:`);
+        relevantLines.forEach(ref => {
+            console.log(`   Line ${ref.lineNumber}: ${ref.trimmed}`);
+        });
+        
+        // Try to extract the full function
+        const functionStart = content.indexOf('function scrollToSectionTop()');
+        if (functionStart === -1) {
+            console.log('\n❌ Could not find function definition');
+            return false;
+        }
+        
+        console.log(`\n✅ Function starts at character position: ${functionStart}`);
+        
+        // Extract some context around the function
+        const beforeFunction = content.substring(Math.max(0, functionStart - 100), functionStart);
+        const afterStart = content.substring(functionStart);
+        
+        // Find the end of the function by counting braces
+        let braceCount = 0;
+        let inFunction = false;
+        let functionEnd = functionStart;
+        
+        for (let i = functionStart; i < content.length; i++) {
+            const char = content[i];
+            if (char === '{') {
+                braceCount++;
+                inFunction = true;
+            } else if (char === '}') {
+                braceCount--;
+                if (inFunction && braceCount === 0) {
+                    functionEnd = i + 1;
+                    break;
                 }
-            });
-        }`;
+            }
+        }
+        
+        const fullFunction = content.substring(functionStart, functionEnd);
+        
+        console.log('\n📄 CURRENT FUNCTION:');
+        console.log('─'.repeat(50));
+        console.log(fullFunction);
+        console.log('─'.repeat(50));
+        
+        // Check indentation
+        const functionLines = fullFunction.split('\n');
+        if (functionLines.length > 1) {
+            const secondLine = functionLines[1];
+            const leadingSpaces = secondLine.match(/^(\s*)/)[1].length;
+            console.log(`\n📏 Function indentation: ${leadingSpaces} spaces`);
+        }
+        
+        return {
+            functionStart,
+            functionEnd,
+            fullFunction,
+            beforeFunction,
+            content
+        };
+        
+    } catch (error) {
+        console.error(`❌ Error analyzing ${filename}: ${error.message}`);
+        return false;
+    }
+}
+
+// Function to actually replace the function
+function replaceFunction(filename, analysisResult) {
+    const filePath = path.join(TREKS_FOLDER, filename);
+    
+    try {
+        const { content, functionStart, functionEnd, fullFunction } = analysisResult;
+        
+        console.log(`\n🔧 REPLACING function in ${filename}`);
+        
+        // Detect the indentation from the existing function
+        const functionLines = fullFunction.split('\n');
+        let indentSpaces = 12; // default
+        
+        if (functionLines.length > 1) {
+            const secondLine = functionLines[1];
+            const leadingSpaces = secondLine.match(/^(\s*)/);
+            if (leadingSpaces) {
+                indentSpaces = leadingSpaces[1].length;
+                console.log(`📏 Using ${indentSpaces} spaces for indentation`);
+            }
+        }
+        
+        // Generate the new function with correct indentation
+        const newScrollFunction = generateNewScrollFunction(indentSpaces);
+        
+        // Create backup first
+        createBackup(filename);
+        
+        // Replace the function
+        const beforeFunction = content.substring(0, functionStart);
+        const afterFunction = content.substring(functionEnd);
+        const newContent = beforeFunction + newScrollFunction + afterFunction;
+        
+        // Write the new content
+        fs.writeFileSync(filePath, newContent, 'utf8');
+        
+        console.log('✅ Function replaced successfully');
+        return true;
+        
+    } catch (error) {
+        console.error(`❌ Error replacing function: ${error.message}`);
+        return false;
+    }
+}
 
 // Create backup folder if it doesn't exist
 function createBackupFolder() {
@@ -45,9 +195,29 @@ function createBackupFolder() {
     }
 }
 
+// Create backup of a file
+function createBackup(filename) {
+    const sourcePath = path.join(TREKS_FOLDER, filename);
+    const backupPath = path.join(BACKUP_FOLDER, `${filename}.backup.${Date.now()}`);
+    
+    try {
+        fs.copyFileSync(sourcePath, backupPath);
+        console.log(`📦 Backup created: ${path.basename(backupPath)}`);
+        return true;
+    } catch (error) {
+        console.error(`❌ Failed to create backup for ${filename}: ${error.message}`);
+        return false;
+    }
+}
+
 // Get all HTML files in the treks folder
 function getHtmlFiles() {
     try {
+        if (!fs.existsSync(TREKS_FOLDER)) {
+            console.error(`❌ Treks folder not found: ${TREKS_FOLDER}`);
+            return [];
+        }
+        
         const files = fs.readdirSync(TREKS_FOLDER);
         return files.filter(file => 
             file.endsWith('.html') && 
@@ -59,223 +229,108 @@ function getHtmlFiles() {
     }
 }
 
-// Create backup of a file
-function createBackup(filename) {
-    const sourcePath = path.join(TREKS_FOLDER, filename);
-    const backupPath = path.join(BACKUP_FOLDER, `${filename}.backup.${Date.now()}`);
+// Main diagnostic function
+function runDiagnostic() {
+    console.log('🔍 DIAGNOSTIC MODE');
+    console.log('==================\n');
     
-    try {
-        fs.copyFileSync(sourcePath, backupPath);
-        console.log(`📦 Backup created: ${backupPath}`);
-        return true;
-    } catch (error) {
-        console.error(`❌ Failed to create backup for ${filename}: ${error.message}`);
-        return false;
-    }
-}
-
-// Update the scrollToSectionTop function in HTML content
-function updateScrollFunction(htmlContent, filename) {
-    // Pattern to match the existing scrollToSectionTop function
-    // This pattern looks for the function definition and captures everything until the next function or closing brace
-    const functionPattern = /function scrollToSectionTop\(\)\s*{[\s\S]*?^        }/m;
-    
-    // Alternative patterns in case the formatting is different
-    const alternativePatterns = [
-        /scrollToSectionTop\(\)\s*{[\s\S]*?(?=\n\s*function|\n\s*\/\/|\n\s*$|\n\s*\w+\s*\(|\n\s*}\s*$)/m,
-        /function scrollToSectionTop\(\)\s*{[\s\S]*?(?=\n\s{8}function|\n\s{8}\/\/|\n\s{4}}\s*\n)/m
-    ];
-    
-    let updatedContent = htmlContent;
-    let functionFound = false;
-    
-    // Try the main pattern first
-    if (functionPattern.test(htmlContent)) {
-        updatedContent = htmlContent.replace(functionPattern, NEW_SCROLL_FUNCTION);
-        functionFound = true;
-        console.log(`✅ Updated scrollToSectionTop function in ${filename} (main pattern)`);
-    } else {
-        // Try alternative patterns
-        for (let i = 0; i < alternativePatterns.length; i++) {
-            const pattern = alternativePatterns[i];
-            if (pattern.test(htmlContent)) {
-                updatedContent = htmlContent.replace(pattern, NEW_SCROLL_FUNCTION);
-                functionFound = true;
-                console.log(`✅ Updated scrollToSectionTop function in ${filename} (alternative pattern ${i + 1})`);
-                break;
-            }
-        }
-    }
-    
-    if (!functionFound) {
-        // Try to find any reference to scrollToSectionTop and show context
-        const contextPattern = /.*scrollToSectionTop.*$/gm;
-        const matches = htmlContent.match(contextPattern);
-        
-        if (matches) {
-            console.log(`⚠️  Found scrollToSectionTop references in ${filename} but couldn't match function pattern:`);
-            matches.forEach((match, index) => {
-                console.log(`   ${index + 1}: ${match.trim()}`);
-            });
-        } else {
-            console.log(`ℹ️  No scrollToSectionTop function found in ${filename}`);
-        }
-    }
-    
-    return { content: updatedContent, updated: functionFound };
-}
-
-// Process a single file
-function processFile(filename) {
-    const filePath = path.join(TREKS_FOLDER, filename);
-    
-    console.log(`\n📄 Processing: ${filename}`);
-    
-    try {
-        // Read the file
-        const htmlContent = fs.readFileSync(filePath, 'utf8');
-        
-        // Check if it contains scrollToSectionTop function
-        if (!htmlContent.includes('scrollToSectionTop')) {
-            console.log(`ℹ️  No scrollToSectionTop function found in ${filename}, skipping`);
-            return { success: true, updated: false };
-        }
-        
-        // Create backup
-        if (!createBackup(filename)) {
-            return { success: false, error: 'Backup failed' };
-        }
-        
-        // Update the function
-        const { content: updatedContent, updated } = updateScrollFunction(htmlContent, filename);
-        
-        if (updated) {
-            // Write the updated content
-            fs.writeFileSync(filePath, updatedContent, 'utf8');
-            console.log(`✅ Successfully updated ${filename}`);
-            return { success: true, updated: true };
-        } else {
-            console.log(`⚠️  Could not locate function pattern in ${filename}`);
-            return { success: true, updated: false };
-        }
-        
-    } catch (error) {
-        console.error(`❌ Error processing ${filename}: ${error.message}`);
-        return { success: false, error: error.message };
-    }
-}
-
-// Validate that we're in the right directory
-function validateEnvironment() {
-    if (!fs.existsSync(TREKS_FOLDER)) {
-        console.error(`❌ Treks folder not found: ${TREKS_FOLDER}`);
-        console.log('Make sure you run this script from the project root directory');
-        return false;
-    }
-    return true;
-}
-
-// Main execution function
-function main() {
-    console.log('🚀 Starting Tab Scroll Navigation Fix');
-    console.log('=====================================\n');
-    
-    // Validate environment
-    if (!validateEnvironment()) {
-        process.exit(1);
-    }
-    
-    // Create backup folder
-    createBackupFolder();
-    
-    // Get all HTML files
     const htmlFiles = getHtmlFiles();
     
     if (htmlFiles.length === 0) {
-        console.log('❌ No HTML files found in the treks folder');
-        process.exit(1);
+        console.log('❌ No HTML files found');
+        return;
     }
     
-    console.log(`📁 Found ${htmlFiles.length} HTML files to process:`);
+    console.log(`📁 Found ${htmlFiles.length} HTML files:`);
     htmlFiles.forEach(file => console.log(`   - ${file}`));
     
-    // Process each file
-    const results = {
-        total: htmlFiles.length,
-        updated: 0,
-        skipped: 0,
-        failed: 0
-    };
+    // Analyze each file
+    const analysisResults = [];
     
     htmlFiles.forEach(filename => {
-        const result = processFile(filename);
-        
-        if (!result.success) {
-            results.failed++;
-        } else if (result.updated) {
-            results.updated++;
-        } else {
-            results.skipped++;
+        const result = analyzeFile(filename);
+        if (result) {
+            analysisResults.push({ filename, ...result });
         }
     });
     
-    // Summary
-    console.log('\n📊 SUMMARY');
-    console.log('===========');
-    console.log(`Total files processed: ${results.total}`);
-    console.log(`✅ Successfully updated: ${results.updated}`);
-    console.log(`⏭️  Skipped (no function found): ${results.skipped}`);
-    console.log(`❌ Failed: ${results.failed}`);
+    console.log(`\n📊 SUMMARY: ${analysisResults.length} files contain scrollToSectionTop function`);
     
-    if (results.updated > 0) {
-        console.log(`\n📦 Backups saved to: ${BACKUP_FOLDER}`);
+    return analysisResults;
+}
+
+// Main fix function
+function runFix() {
+    console.log('🔧 FIX MODE');
+    console.log('===========\n');
+    
+    createBackupFolder();
+    
+    const htmlFiles = getHtmlFiles();
+    
+    if (htmlFiles.length === 0) {
+        console.log('❌ No HTML files found');
+        return;
     }
     
-    if (results.failed > 0) {
-        console.log('\n⚠️  Some files failed to process. Check the logs above for details.');
-        process.exit(1);
-    } else {
-        console.log('\n🎉 All files processed successfully!');
+    let updated = 0;
+    let failed = 0;
+    
+    htmlFiles.forEach(filename => {
+        console.log(`\n📄 Processing: ${filename}`);
+        
+        const analysis = analyzeFile(filename);
+        if (analysis) {
+            if (replaceFunction(filename, analysis)) {
+                updated++;
+            } else {
+                failed++;
+            }
+        } else {
+            console.log(`⏭️  Skipping ${filename} (no function found)`);
+        }
+    });
+    
+    console.log('\n📊 FINAL SUMMARY');
+    console.log('================');
+    console.log(`✅ Successfully updated: ${updated}`);
+    console.log(`❌ Failed: ${failed}`);
+    
+    if (updated > 0) {
+        console.log(`\n📦 Backups saved to: ${BACKUP_FOLDER}`);
+        console.log('🎉 Tab scroll navigation should now work correctly!');
     }
 }
 
-// Help function
-function showHelp() {
-    console.log(`
+// Command line interface
+function main() {
+    const args = process.argv.slice(2);
+    
+    if (args.includes('--help') || args.includes('-h')) {
+        console.log(`
 Tab Scroll Navigation Fix Script
 ================================
 
-This script updates the scrollToSectionTop function in all HTML files 
-in the output/treks folder to fix tab navigation scroll issues.
-
 Usage:
-  node fix-tab-scroll.js [options]
+  node fix-tab-scroll.js --analyze    # Analyze files without making changes
+  node fix-tab-scroll.js --fix        # Analyze and fix files
+  node fix-tab-scroll.js --help       # Show this help
 
-Options:
-  --help, -h    Show this help message
-  --dry-run     Show what would be changed without making changes
-
-The script will:
-1. Create backups of all files before modifying them
-2. Update the scrollToSectionTop function with improved logic
-3. Provide a detailed summary of changes made
-
-Make sure to run this from your project root directory.
+Examples:
+  node fix-tab-scroll.js --analyze    # See what's in your files first
+  node fix-tab-scroll.js --fix        # Actually fix the files
 `);
+        return;
+    }
+    
+    if (args.includes('--analyze')) {
+        runDiagnostic();
+    } else if (args.includes('--fix')) {
+        runFix();
+    } else {
+        console.log('❓ Please specify --analyze or --fix (use --help for more info)');
+        console.log('\nRecommended: Start with --analyze to see what the script finds');
+    }
 }
 
-// Handle command line arguments
-const args = process.argv.slice(2);
-
-if (args.includes('--help') || args.includes('-h')) {
-    showHelp();
-    process.exit(0);
-}
-
-if (args.includes('--dry-run')) {
-    console.log('🔍 DRY RUN MODE - No files will be modified\n');
-    // You could implement dry-run logic here
-}
-
-// Run the main function
 main();

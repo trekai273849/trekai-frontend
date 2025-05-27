@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upper Mustang Trek Guide 2024 | Nepal's Forbidden Kingdom</title>
-    <meta name="description" content="Complete guide to trekking Upper Mustang, the former forbidden kingdom. 12-day journey through Tibetan culture, desert landscapes, and ancient monasteries.">
+    <title>Gokyo Lakes Trek Guide 2024 | Nepal's Turquoise Lake Trek</title>
+    <meta name="description" content="Complete guide to the Gokyo Lakes Trek in Nepal. 12-day itinerary to turquoise lakes, Gokyo Ri viewpoint, and spectacular Everest region scenery.">
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('/images/treks/covers/upper-mustang-trek.jpg');
+            background-image: url('/images/treks/covers/gokyo-lakes-trek.jpg');
             background-size: cover;
             background-position: center;
             background-color: #374151; /* Fallback color */
@@ -952,7 +952,7 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content mobile-fixed">
-            <h1>Upper Mustang Trek</h1>
+            <h1>Gokyo Lakes Trek</h1>
             
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -960,11 +960,11 @@
                     <span class="hero-stat-label">Days</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">4,230m</span>
+                    <span class="hero-stat-value">5,357m</span>
                     <span class="hero-stat-label">Max Elevation</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value">160km</span>
+                    <span class="hero-stat-value">90km</span>
                     <span class="hero-stat-label">Total Distance</span>
                 </div>
                 <div class="hero-stat">
@@ -993,7 +993,7 @@
             <div class="overview-main">
                 <h2>Journey to Nepal/Himalayas</h2>
                 <p class="overview-description">
-                    Journey to the ancient forbidden kingdom of Lo, a hidden Tibetan culture preserved behind the Himalayas with desert landscapes, cave monasteries, and medieval walled cities.
+                    A stunning alternative to Everest Base Camp, featuring turquoise glacial lakes, the challenging Gokyo Ri viewpoint, and incredible views of four 8,000m peaks.
                 </p>
                 
                 <div class="highlights-list">
@@ -1041,15 +1041,15 @@
                 <h3>Quick Facts</h3>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">10-14 days</span>
+                    <span class="info-value">12-14 days</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Distance</span>
-                    <span class="info-value">160 km / 99 mi</span>
+                    <span class="info-value">90 km / 56 mi</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Max Altitude</span>
-                    <span class="info-value">4,230m (13,878ft)</span>
+                    <span class="info-value">5,357m (17,575ft)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Difficulty</span>
@@ -1063,7 +1063,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Starting Point</span>
-                    <span class="info-value">Pokhara</span>
+                    <span class="info-value">Kathmandu</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Permits Required</span>
@@ -1072,7 +1072,7 @@
                 <div class="info-row">
                     <span class="info-label">Estimated Cost</span>
                     <span class="info-value">
-                        <span class="price-range">$1,500 - $3,000</span>
+                        <span class="price-range">$1,200 - $2,500</span>
                     </span>
                 </div>
             </div>
@@ -1092,19 +1092,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 1</div>
-          <h3 class="day-title">Fly Pokhara to Jomsom, Trek to Kagbeni</h3>
+          <h3 class="day-title">Fly to Lukla, Trek to Phakding</h3>
           <div class="day-stats">
-            <span>📏 11km</span>
+            <span>📏 8km</span>
             <span>⏱️ 3 hours</span>
-            <span>📈 +138m</span>
-            <span>🏔️ 2,858m</span>
+            <span>📈 -250m</span>
+            <span>🏔️ 2,610m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Spectacular 20-minute flight between Dhaulagiri and Annapurna. Walk along the Kali Gandaki riverbed to ancient Kagbeni, the gateway to Upper Mustang.</p>
+      <p class="day-description">Fly to Lukla early morning. Easy descent through villages along the Dudh Koshi river to Phakding.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Mountain flight</span><span class="day-highlight">Kali Gandaki valley</span><span class="day-highlight">Medieval Kagbeni village</span><span class="day-highlight">Gateway to Mustang</span>
+          <span class="day-highlight">Thrilling Lukla flight</span><span class="day-highlight">Dudh Koshi valley</span><span class="day-highlight">Prayer wheels and mani walls</span><span class="day-highlight">Gentle introduction</span>
         </div>
       
     </div>
@@ -1113,19 +1113,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 2</div>
-          <h3 class="day-title">Kagbeni to Chele</h3>
+          <h3 class="day-title">Phakding to Namche Bazaar</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
+            <span>📏 11km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +350m</span>
-            <span>🏔️ 3,050m</span>
+            <span>📈 +830m</span>
+            <span>🏔️ 3,440m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Check permits and enter Upper Mustang. The landscape transforms into high desert with red cliffs and eroded canyons.</p>
+      <p class="day-description">Cross several suspension bridges before steep climb to Namche. First glimpses of Everest if weather permits.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Enter restricted area</span><span class="day-highlight">Tangbe village</span><span class="day-highlight">Desert landscapes begin</span><span class="day-highlight">Ancient chortens</span>
+          <span class="day-highlight">Hillary Bridge crossing</span><span class="day-highlight">First Everest views</span><span class="day-highlight">Enter Sagarmatha National Park</span><span class="day-highlight">Namche Bazaar</span>
         </div>
       
     </div>
@@ -1134,19 +1134,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 3</div>
-          <h3 class="day-title">Chele to Syangboche</h3>
+          <h3 class="day-title">Acclimatization Day in Namche</h3>
           <div class="day-stats">
-            <span>📏 16km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +850m</span>
-            <span>🏔️ 3,475m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 0 hours</span>
+            <span>📈 0m</span>
+            <span>🏔️ 3,440m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Cross several passes with stunning views. Optional visit to Ramchung cave monastery with ancient Buddhist art.</p>
+      <p class="day-description">Important acclimatization day. Options include hiking to Everest View Hotel or exploring Khumjung village.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Multiple pass crossings</span><span class="day-highlight">Ramchung cave monastery</span><span class="day-highlight">Painted cliffs</span><span class="day-highlight">Remote valleys</span>
+          <span class="day-highlight">Hike to Everest View Hotel</span><span class="day-highlight">Visit Sherpa Museum</span><span class="day-highlight">Explore markets</span><span class="day-highlight">Acclimatization walks</span>
         </div>
       
     </div>
@@ -1155,19 +1155,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 4</div>
-          <h3 class="day-title">Syangboche to Ghami</h3>
+          <h3 class="day-title">Namche to Dole</h3>
           <div class="day-stats">
-            <span>📏 13km</span>
+            <span>📏 10km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 3,520m</span>
+            <span>📈 +760m</span>
+            <span>🏔️ 4,200m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Pass through Dhakmar with its dramatic red cliffs. Ghami has one of the longest mani walls in Nepal.</p>
+      <p class="day-description">Climb steeply out of Namche to Mongla pass, then traverse to Dole. Much quieter than main EBC route.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Nyi La pass (4,010m)</span><span class="day-highlight">Ghami village</span><span class="day-highlight">Longest mani wall</span><span class="day-highlight">Red cliffs of Dhakmar</span>
+          <span class="day-highlight">Leave main EBC trail</span><span class="day-highlight">Quieter paths</span><span class="day-highlight">Mongla pass views</span><span class="day-highlight">Rhododendron forests</span>
         </div>
       
     </div>
@@ -1176,19 +1176,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 5</div>
-          <h3 class="day-title">Ghami to Charang</h3>
+          <h3 class="day-title">Dole to Machhermo</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
+            <span>📏 8km</span>
             <span>⏱️ 5 hours</span>
-            <span>📈 +300m</span>
-            <span>🏔️ 3,500m</span>
+            <span>📈 +270m</span>
+            <span>🏔️ 4,470m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Visit the impressive Tsarang monastery and fortress. The architecture becomes more Tibetan as you near the capital.</p>
+      <p class="day-description">Steady climb through beautiful alpine terrain. Machhermo has a health post with altitude talks.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Tsarang monastery</span><span class="day-highlight">Medieval fortress</span><span class="day-highlight">Traditional architecture</span><span class="day-highlight">Approaching Lo Manthang</span>
+          <span class="day-highlight">Alpine scenery</span><span class="day-highlight">Yak pastures</span><span class="day-highlight">Mountain views expanding</span><span class="day-highlight">HRA health post</span>
         </div>
       
     </div>
@@ -1197,19 +1197,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 6</div>
-          <h3 class="day-title">Charang to Lo Manthang</h3>
+          <h3 class="day-title">Machhermo to Gokyo</h3>
           <div class="day-stats">
-            <span>📏 12km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 +340m</span>
-            <span>🏔️ 3,840m</span>
+            <span>📏 7km</span>
+            <span>⏱️ 4 hours</span>
+            <span>📈 +330m</span>
+            <span>🏔️ 4,800m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Exciting arrival at the walled city of Lo Manthang, capital of the former Kingdom of Lo. Explore the medieval streets.</p>
+      <p class="day-description">Pass the first two Gokyo lakes before reaching Gokyo village on the shore of the third lake.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Lo La pass (3,950m)</span><span class="day-highlight">First view of Lo Manthang</span><span class="day-highlight">Walled city entrance</span><span class="day-highlight">Medieval atmosphere</span>
+          <span class="day-highlight">First Gokyo lake</span><span class="day-highlight">Ngozumpa Glacier</span><span class="day-highlight">Arrival at Gokyo</span><span class="day-highlight">Turquoise lakes</span>
         </div>
       
     </div>
@@ -1218,19 +1218,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 7</div>
-          <h3 class="day-title">Explore Lo Manthang</h3>
+          <h3 class="day-title">Gokyo Ri Climb</h3>
           <div class="day-stats">
-            <span>📏 0km</span>
-            <span>⏱️ 0 hours</span>
-            <span>📈 0m</span>
-            <span>🏔️ 3,840m</span>
+            <span>📏 4km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 +557m</span>
+            <span>🏔️ 5,357m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Full day exploring Lo Manthang's monasteries, palace, and unique culture. Visit Jampa, Thubchen, and Chodey monasteries.</p>
+      <p class="day-description">Pre-dawn start to climb Gokyo Ri for sunrise. Spectacular 360° views including Everest, Lhotse, Makalu, and Cho Oyu.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Royal palace</span><span class="day-highlight">Three main monasteries</span><span class="day-highlight">Amchi museum</span><span class="day-highlight">Local culture</span>
+          <span class="day-highlight">Gokyo Ri summit</span><span class="day-highlight">Four 8000m peaks visible</span><span class="day-highlight">Everest views</span><span class="day-highlight">Sunrise option</span>
         </div>
       
     </div>
@@ -1239,19 +1239,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 8</div>
-          <h3 class="day-title">Day Trip to Chhoser</h3>
+          <h3 class="day-title">Explore 4th and 5th Lakes</h3>
           <div class="day-stats">
-            <span>📏 16km</span>
+            <span>📏 12km</span>
             <span>⏱️ 6 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 3,840m</span>
+            <span>📈 +200m</span>
+            <span>🏔️ 5,000m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Optional day trip to Chhoser village with its remarkable cave monastery and ancient sky caves carved into cliffs.</p>
+      <p class="day-description">Optional day hike to the upper lakes. The 5th lake offers incredible views of Cho Oyu and the glacier.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Chhoser cave monastery</span><span class="day-highlight">Ancient sky caves</span><span class="day-highlight">Garphu monastery</span><span class="day-highlight">Remote landscapes</span>
+          <span class="day-highlight">4th and 5th Gokyo lakes</span><span class="day-highlight">Cho Oyu base camp views</span><span class="day-highlight">Ngozumpa Glacier</span><span class="day-highlight">Remote scenery</span>
         </div>
       
     </div>
@@ -1260,19 +1260,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 9</div>
-          <h3 class="day-title">Lo Manthang to Yara</h3>
+          <h3 class="day-title">Gokyo to Dole</h3>
           <div class="day-stats">
-            <span>📏 18km</span>
-            <span>⏱️ 7 hours</span>
-            <span>📈 +400m</span>
-            <span>🏔️ 3,650m</span>
+            <span>📏 15km</span>
+            <span>⏱️ 6 hours</span>
+            <span>📈 -600m</span>
+            <span>🏔️ 4,200m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Take alternative route back through remote areas. Yara is a small village with unique geological formations.</p>
+      <p class="day-description">Retrace steps down valley, enjoying easier breathing at lower altitude. Long but mostly downhill day.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Different return route</span><span class="day-highlight">Remote villages</span><span class="day-highlight">Spectacular erosion</span><span class="day-highlight">Authentic experience</span>
+          <span class="day-highlight">Rapid descent</span><span class="day-highlight">Retracing steps</span><span class="day-highlight">Easier breathing</span><span class="day-highlight">Familiar terrain</span>
         </div>
       
     </div>
@@ -1281,19 +1281,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 10</div>
-          <h3 class="day-title">Yara to Tangge</h3>
+          <h3 class="day-title">Dole to Namche Bazaar</h3>
           <div class="day-stats">
-            <span>📏 14km</span>
-            <span>⏱️ 6 hours</span>
-            <span>📈 +200m</span>
-            <span>🏔️ 3,240m</span>
+            <span>📏 10km</span>
+            <span>⏱️ 5 hours</span>
+            <span>📈 -760m</span>
+            <span>🏔️ 3,440m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Continue through remote terrain to Tangge, one of the most isolated villages in Mustang.</p>
+      <p class="day-description">Descend through forests back to bustling Namche Bazaar. Celebrate with good food and comfort.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Remote trail</span><span class="day-highlight">Desert canyon</span><span class="day-highlight">Traditional village</span><span class="day-highlight">Few tourists</span>
+          <span class="day-highlight">Return to civilization</span><span class="day-highlight">Hot showers</span><span class="day-highlight">Bakeries and cafes</span><span class="day-highlight">Internet access</span>
         </div>
       
     </div>
@@ -1302,19 +1302,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 11</div>
-          <h3 class="day-title">Tangge to Chhusang</h3>
+          <h3 class="day-title">Namche to Lukla</h3>
           <div class="day-stats">
-            <span>📏 16km</span>
+            <span>📏 19km</span>
             <span>⏱️ 7 hours</span>
-            <span>📈 +300m</span>
-            <span>🏔️ 2,980m</span>
+            <span>📈 -580m</span>
+            <span>🏔️ 2,860m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Cross high pass before descending to rejoin the main trail at Chhusang. Long but rewarding day.</p>
+      <p class="day-description">Long final day retracing steps to Lukla. Traditional celebration with trekking crew in evening.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Pa pass (4,200m)</span><span class="day-highlight">Rejoin main trail</span><span class="day-highlight">Spectacular views</span><span class="day-highlight">Nearly complete</span>
+          <span class="day-highlight">Final trekking day</span><span class="day-highlight">Cross Hillary Bridge</span><span class="day-highlight">Celebration in Lukla</span><span class="day-highlight">Trek completion</span>
         </div>
       
     </div>
@@ -1323,19 +1323,19 @@
       <div class="day-header">
         <div>
           <div class="day-number">Day 12</div>
-          <h3 class="day-title">Chhusang to Jomsom</h3>
+          <h3 class="day-title">Fly to Kathmandu</h3>
           <div class="day-stats">
-            <span>📏 16km</span>
-            <span>⏱️ 5 hours</span>
-            <span>📈 -260m</span>
-            <span>🏔️ 2,720m</span>
+            <span>📏 0km</span>
+            <span>⏱️ 0.5 hours</span>
+            <span>📈 -1460m</span>
+            <span>🏔️ 1,400m</span>
           </div>
         </div>
       </div>
-      <p class="day-description">Final walk back through Kagbeni to Jomsom. Celebrate completing the journey to the forbidden kingdom.</p>
+      <p class="day-description">Morning flight back to Kathmandu, weather permitting. Rest of day free to relax and celebrate.</p>
       
         <div class="day-highlights">
-          <span class="day-highlight">Return to Kagbeni</span><span class="day-highlight">Complete circuit</span><span class="day-highlight">Jomsom facilities</span><span class="day-highlight">Trek completion</span>
+          <span class="day-highlight">Mountain flight</span><span class="day-highlight">Return to Kathmandu</span><span class="day-highlight">Hot shower</span><span class="day-highlight">Celebration dinner</span>
         </div>
       
     </div>
@@ -1360,40 +1360,40 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Wind-proof jacket</div>
-          <div class="gear-description">Strong winds common</div>
+          <div class="gear-name">Trekking boots</div>
+          <div class="gear-description">Waterproof with good ankle support</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Sun protection</div>
-          <div class="gear-description">Intense high-altitude sun</div>
+          <div class="gear-name">Sleeping bag</div>
+          <div class="gear-description">-15°C rated for cold nights</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Down jacket</div>
+          <div class="gear-description">Essential for mornings/evenings</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Base layers</div>
+          <div class="gear-description">Thermal underwear sets</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Dust mask/buff</div>
-          <div class="gear-description">For windy, dusty conditions</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Warm layers</div>
-          <div class="gear-description">Cold nights despite lower altitude</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Good hiking boots</div>
-          <div class="gear-description">Rocky, dusty terrain</div>
+          <div class="gear-name">Waterproof jacket/pants</div>
+          <div class="gear-description">Weather can change quickly</div>
         </div>
         <span class="rental-badge">Rental available</span>
       </li>
@@ -1401,9 +1401,33 @@
       <li class="gear-item">
         <div>
           <div class="gear-name">Daypack</div>
-          <div class="gear-description">20-30L sufficient</div>
+          <div class="gear-description">25-35 liters</div>
         </div>
         <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Water bottles/hydration</div>
+          <div class="gear-description">3 liter capacity</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Headlamp</div>
+          <div class="gear-description">For early morning starts</div>
+        </div>
+        
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Sun protection</div>
+          <div class="gear-description">Hat, sunglasses, sunscreen</div>
+        </div>
+        
       </li>
     
                 </ul>
@@ -1418,24 +1442,24 @@
                     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Lip balm with SPF</div>
-          <div class="gear-description">Very dry conditions</div>
+          <div class="gear-name">Trekking poles</div>
+          <div class="gear-description">Very helpful for descents</div>
+        </div>
+        <span class="rental-badge">Rental available</span>
+      </li>
+    
+      <li class="gear-item">
+        <div>
+          <div class="gear-name">Buff/neck warmer</div>
+          <div class="gear-description">Versatile protection</div>
         </div>
         
       </li>
     
       <li class="gear-item">
         <div>
-          <div class="gear-name">Moisturizer</div>
-          <div class="gear-description">Combat dry air</div>
-        </div>
-        
-      </li>
-    
-      <li class="gear-item">
-        <div>
-          <div class="gear-name">Camera gear</div>
-          <div class="gear-description">Unique landscapes</div>
+          <div class="gear-name">Camera</div>
+          <div class="gear-description">Incredible photo opportunities</div>
         </div>
         
       </li>
@@ -1455,24 +1479,17 @@
         <div class="seasons-grid">
             
     <div class="season-card">
-      <div class="season-icon">🌸</div>
-      <h3 class="season-name">Spring</h3>
-      <p class="season-months">March, April, May</p>
-      <p>Clear skies, moderate temperatures, some wind</p>
-    </div>
-  
-    <div class="season-card">
       <div class="season-icon">🍂</div>
       <h3 class="season-name">Autumn</h3>
       <p class="season-months">September, October, November</p>
-      <p>Best weather, clear mountain views, harvest season</p>
+      <p>Clear skies, best mountain views, stable weather</p>
     </div>
   
     <div class="season-card">
-      <div class="season-icon">🌧️</div>
-      <h3 class="season-name">Monsoon</h3>
-      <p class="season-months">June, July, August</p>
-      <p>Possible due to rain shadow, but some rain occurs</p>
+      <div class="season-icon">🌸</div>
+      <h3 class="season-name">Spring</h3>
+      <p class="season-months">March, April, May</p>
+      <p>Rhododendrons bloom, good weather, busier trails</p>
     </div>
   
         </div>
@@ -1495,15 +1512,15 @@
             
     <div class="cost-item">
       <span>Permits</span>
-      <span>$530</span>
+      <span>$50</span>
     </div>
     <div class="cost-item">
       <span>Guide (per day)</span>
-      <span>$30</span>
+      <span>$25</span>
     </div>
     <div class="cost-item">
       <span>Accommodation (per night)</span>
-      <span>$15</span>
+      <span>$5</span>
     </div>
     <div class="cost-item">
       <span>Meals (per day)</span>
@@ -1511,11 +1528,11 @@
     </div>
     <div class="cost-item">
       <span>Transportation</span>
-      <span>$300</span>
+      <span>$0</span>
     </div>
     <div class="cost-item">
       <span>Total Budget Range</span>
-      <span>$1,500 - $3,000</span>
+      <span>$1,200 - $2,500</span>
     </div>
   
         </div>
@@ -1537,26 +1554,26 @@
             
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Why is the permit so expensive?</span>
+        <span>How does this compare to EBC trek?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">Upper Mustang was closed until 1992 and remains restricted to preserve its unique Tibetan culture. The high permit fee limits visitors and funds conservation.</div>
+      <div class="faq-answer">Less crowded, arguably better views from Gokyo Ri, sees multiple lakes instead of base camp. Similar difficulty but different highlights.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Can I trek independently?</span>
+        <span>Can I combine with EBC?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">No, you must be with a registered guide due to restricted area regulations. This helps preserve the culture and ensures proper permits.</div>
+      <div class="faq-answer">Yes, via Cho La Pass (5,420m). Adds 3-4 days and requires good weather and fitness. Technical but rewarding.</div>
     </div>
   
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Is it worth the cost?</span>
+        <span>Are the lakes always turquoise?</span>
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-answer">For those interested in Tibetan culture, unique landscapes, and off-beaten paths, absolutely. It's unlike anywhere else in Nepal.</div>
+      <div class="faq-answer">Best color in autumn when skies are clear. Can appear more grey in cloudy weather. Still beautiful regardless.</div>
     </div>
   
         </div>
@@ -1597,34 +1614,34 @@
             scrollToSectionTop();
         }
 
-                            function scrollToSectionTop() {
-                requestAnimationFrame(() => {
-                    const navTabs = document.querySelector('.nav-tabs');
+                function scrollToSectionTop() {
+            requestAnimationFrame(() => {
+                const navTabs = document.querySelector('.nav-tabs');
+                
+                if (navTabs) {
+                    // Get the nav's current position in the viewport
+                    const navRect = navTabs.getBoundingClientRect();
+                    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    if (navTabs) {
-                        // Get the nav's current position in the viewport
-                        const navRect = navTabs.getBoundingClientRect();
-                        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // Calculate where the nav actually is on the page
-                        const navTopPosition = currentScrollY + navRect.top;
-                        
-                        // Scroll to just below the nav
-                        const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
-                        
-                        window.scrollTo({
-                            top: Math.max(0, targetScroll),
-                            behavior: 'smooth'
-                        );
-                    } else {
-                        // Fallback: scroll to top if nav not found
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        );
-                    }
-                );
-            }
+                    // Calculate where the nav actually is on the page
+                    const navTopPosition = currentScrollY + navRect.top;
+                    
+                    // Scroll to just below the nav
+                    const targetScroll = navTopPosition + navTabs.offsetHeight + 20;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetScroll),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback: scroll to top if nav not found
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
 
         function centerTabWithNextVisible(clickedTab) {
             const tabContainer = document.querySelector('.nav-tabs-container');
@@ -1708,45 +1725,36 @@
 <script type="module">
     // Trek data for save functionality
     window.trekData = {
-        "_id": "upper-mustang-trek",
-        "name": "Upper Mustang Trek",
-        "slug": "upper-mustang-trek",
+        "_id": "gokyo-lakes-trek",
+        "name": "Gokyo Lakes Trek",
+        "slug": "gokyo-lakes-trek",
         "region": "Nepal/Himalayas",
         "country": "Nepal",
-        "summary": "Journey to the ancient forbidden kingdom of Lo, a hidden Tibetan culture preserved behind the Himalayas with desert landscapes, cave monasteries, and medieval walled cities.",
+        "summary": "A stunning alternative to Everest Base Camp, featuring turquoise glacial lakes, the challenging Gokyo Ri viewpoint, and incredible views of four 8,000m peaks.",
         "duration": {
-            "min_days": 10,
+            "min_days": 12,
             "max_days": 14,
             "recommended_days": 12
         },
-        "distance_km": 160,
+        "distance_km": 90,
         "difficulty": "moderate",
-        "max_elevation_m": 4230,
-        "starting_elevation_m": 2720,
-        "airport": "Jomsom (JMO) or Pokhara (PKR)",
-        "nearest_city": "Pokhara",
+        "max_elevation_m": 5357,
+        "starting_elevation_m": 2860,
+        "airport": "Lukla (LUA)",
+        "nearest_city": "Kathmandu",
         "coordinates": {
             "start": {
-                "lat": 28.7816,
-                "lng": 83.7274,
-                "location": "Jomsom"
+                "lat": 27.687,
+                "lng": 86.7319,
+                "location": "Lukla"
             },
             "end": {
-                "lat": 29.1778,
-                "lng": 83.9542,
-                "location": "Lo Manthang"
+                "lat": 27.9538,
+                "lng": 86.6936,
+                "location": "Gokyo"
             }
         },
         "best_seasons": [
-            {
-                "name": "Spring",
-                "months": [
-                    "March",
-                    "April",
-                    "May"
-                ],
-                "description": "Clear skies, moderate temperatures, some wind"
-            },
             {
                 "name": "Autumn",
                 "months": [
@@ -1754,36 +1762,36 @@
                     "October",
                     "November"
                 ],
-                "description": "Best weather, clear mountain views, harvest season"
+                "description": "Clear skies, best mountain views, stable weather"
             },
             {
-                "name": "Monsoon",
+                "name": "Spring",
                 "months": [
-                    "June",
-                    "July",
-                    "August"
+                    "March",
+                    "April",
+                    "May"
                 ],
-                "description": "Possible due to rain shadow, but some rain occurs"
+                "description": "Rhododendrons bloom, good weather, busier trails"
             }
         ],
         "detailed_itinerary": [
             {
                 "day": 1,
-                "title": "Fly Pokhara to Jomsom, Trek to Kagbeni",
-                "start_location": "Pokhara",
-                "end_location": "Kagbeni",
-                "distance_km": 11,
+                "title": "Fly to Lukla, Trek to Phakding",
+                "start_location": "Kathmandu",
+                "end_location": "Phakding",
+                "distance_km": 8,
                 "duration_hours": 3,
-                "elevation_start_m": 2720,
-                "elevation_end_m": 2858,
-                "elevation_gain_m": 138,
+                "elevation_start_m": 2860,
+                "elevation_end_m": 2610,
+                "elevation_gain_m": -250,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "lodge",
+                    "type": "teahouse",
                     "options": [
-                        "Red House Lodge",
-                        "Hotel YacDonalds",
-                        "Nilgiri View"
+                        "Sherpa Guide Lodge",
+                        "Buddha Lodge",
+                        "Himalaya Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1791,29 +1799,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Mountain flight",
-                    "Kali Gandaki valley",
-                    "Medieval Kagbeni village",
-                    "Gateway to Mustang"
+                    "Thrilling Lukla flight",
+                    "Dudh Koshi valley",
+                    "Prayer wheels and mani walls",
+                    "Gentle introduction"
                 ],
-                "description": "Spectacular 20-minute flight between Dhaulagiri and Annapurna. Walk along the Kali Gandaki riverbed to ancient Kagbeni, the gateway to Upper Mustang."
+                "description": "Fly to Lukla early morning. Easy descent through villages along the Dudh Koshi river to Phakding."
             },
             {
                 "day": 2,
-                "title": "Kagbeni to Chele",
-                "start_location": "Kagbeni",
-                "end_location": "Chele",
-                "distance_km": 14,
+                "title": "Phakding to Namche Bazaar",
+                "start_location": "Phakding",
+                "end_location": "Namche Bazaar",
+                "distance_km": 11,
                 "duration_hours": 6,
-                "elevation_start_m": 2858,
-                "elevation_end_m": 3050,
-                "elevation_gain_m": 350,
+                "elevation_start_m": 2610,
+                "elevation_end_m": 3440,
+                "elevation_gain_m": 830,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "lodge",
+                    "type": "teahouse",
                     "options": [
-                        "Himalaya Lodge",
-                        "Local guesthouses"
+                        "Khumbu Lodge",
+                        "Namche Hotel",
+                        "Himalaya Lodge"
                     ]
                 },
                 "meals_included": [
@@ -1822,151 +1831,26 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Enter restricted area",
-                    "Tangbe village",
-                    "Desert landscapes begin",
-                    "Ancient chortens"
+                    "Hillary Bridge crossing",
+                    "First Everest views",
+                    "Enter Sagarmatha National Park",
+                    "Namche Bazaar"
                 ],
-                "description": "Check permits and enter Upper Mustang. The landscape transforms into high desert with red cliffs and eroded canyons."
+                "description": "Cross several suspension bridges before steep climb to Namche. First glimpses of Everest if weather permits."
             },
             {
                 "day": 3,
-                "title": "Chele to Syangboche",
-                "start_location": "Chele",
-                "end_location": "Syangboche",
-                "distance_km": 16,
-                "duration_hours": 7,
-                "elevation_start_m": 3050,
-                "elevation_end_m": 3475,
-                "elevation_gain_m": 850,
-                "difficulty": "challenging",
-                "accommodation": {
-                    "type": "lodge",
-                    "options": [
-                        "Local lodges",
-                        "Basic teahouses"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Multiple pass crossings",
-                    "Ramchung cave monastery",
-                    "Painted cliffs",
-                    "Remote valleys"
-                ],
-                "description": "Cross several passes with stunning views. Optional visit to Ramchung cave monastery with ancient Buddhist art."
-            },
-            {
-                "day": 4,
-                "title": "Syangboche to Ghami",
-                "start_location": "Syangboche",
-                "end_location": "Ghami",
-                "distance_km": 13,
-                "duration_hours": 6,
-                "elevation_start_m": 3475,
-                "elevation_end_m": 3520,
-                "elevation_gain_m": 400,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "lodge",
-                    "options": [
-                        "Dhakmar Lodge",
-                        "Local guesthouses"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Nyi La pass (4,010m)",
-                    "Ghami village",
-                    "Longest mani wall",
-                    "Red cliffs of Dhakmar"
-                ],
-                "description": "Pass through Dhakmar with its dramatic red cliffs. Ghami has one of the longest mani walls in Nepal."
-            },
-            {
-                "day": 5,
-                "title": "Ghami to Charang",
-                "start_location": "Ghami",
-                "end_location": "Charang",
-                "distance_km": 12,
-                "duration_hours": 5,
-                "elevation_start_m": 3520,
-                "elevation_end_m": 3500,
-                "elevation_gain_m": 300,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "lodge",
-                    "options": [
-                        "Charang Lodge",
-                        "Local homestays"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Tsarang monastery",
-                    "Medieval fortress",
-                    "Traditional architecture",
-                    "Approaching Lo Manthang"
-                ],
-                "description": "Visit the impressive Tsarang monastery and fortress. The architecture becomes more Tibetan as you near the capital."
-            },
-            {
-                "day": 6,
-                "title": "Charang to Lo Manthang",
-                "start_location": "Charang",
-                "end_location": "Lo Manthang",
-                "distance_km": 12,
-                "duration_hours": 5,
-                "elevation_start_m": 3500,
-                "elevation_end_m": 3840,
-                "elevation_gain_m": 340,
-                "difficulty": "moderate",
-                "accommodation": {
-                    "type": "lodge",
-                    "options": [
-                        "Lotus Holiday Inn",
-                        "Royal Mustang Resort",
-                        "Local lodges"
-                    ]
-                },
-                "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
-                ],
-                "highlights": [
-                    "Lo La pass (3,950m)",
-                    "First view of Lo Manthang",
-                    "Walled city entrance",
-                    "Medieval atmosphere"
-                ],
-                "description": "Exciting arrival at the walled city of Lo Manthang, capital of the former Kingdom of Lo. Explore the medieval streets."
-            },
-            {
-                "day": 7,
-                "title": "Explore Lo Manthang",
-                "start_location": "Lo Manthang",
-                "end_location": "Lo Manthang",
+                "title": "Acclimatization Day in Namche",
+                "start_location": "Namche Bazaar",
+                "end_location": "Namche Bazaar",
                 "distance_km": 0,
                 "duration_hours": 0,
-                "elevation_start_m": 3840,
-                "elevation_end_m": 3840,
+                "elevation_start_m": 3440,
+                "elevation_end_m": 3440,
                 "elevation_gain_m": 0,
                 "difficulty": "easy",
                 "accommodation": {
-                    "type": "lodge",
+                    "type": "teahouse",
                     "options": [
                         "Same as previous night"
                     ]
@@ -1977,26 +1861,151 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Royal palace",
-                    "Three main monasteries",
-                    "Amchi museum",
-                    "Local culture"
+                    "Hike to Everest View Hotel",
+                    "Visit Sherpa Museum",
+                    "Explore markets",
+                    "Acclimatization walks"
                 ],
-                "description": "Full day exploring Lo Manthang's monasteries, palace, and unique culture. Visit Jampa, Thubchen, and Chodey monasteries."
+                "description": "Important acclimatization day. Options include hiking to Everest View Hotel or exploring Khumjung village."
+            },
+            {
+                "day": 4,
+                "title": "Namche to Dole",
+                "start_location": "Namche Bazaar",
+                "end_location": "Dole",
+                "distance_km": 10,
+                "duration_hours": 6,
+                "elevation_start_m": 3440,
+                "elevation_end_m": 4200,
+                "elevation_gain_m": 760,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Dole Guest House",
+                        "Himalaya Lodge",
+                        "Basic lodges"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Leave main EBC trail",
+                    "Quieter paths",
+                    "Mongla pass views",
+                    "Rhododendron forests"
+                ],
+                "description": "Climb steeply out of Namche to Mongla pass, then traverse to Dole. Much quieter than main EBC route."
+            },
+            {
+                "day": 5,
+                "title": "Dole to Machhermo",
+                "start_location": "Dole",
+                "end_location": "Machhermo",
+                "distance_km": 8,
+                "duration_hours": 5,
+                "elevation_start_m": 4200,
+                "elevation_end_m": 4470,
+                "elevation_gain_m": 270,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Machhermo Guest House",
+                        "Himalaya Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Alpine scenery",
+                    "Yak pastures",
+                    "Mountain views expanding",
+                    "HRA health post"
+                ],
+                "description": "Steady climb through beautiful alpine terrain. Machhermo has a health post with altitude talks."
+            },
+            {
+                "day": 6,
+                "title": "Machhermo to Gokyo",
+                "start_location": "Machhermo",
+                "end_location": "Gokyo",
+                "distance_km": 7,
+                "duration_hours": 4,
+                "elevation_start_m": 4470,
+                "elevation_end_m": 4800,
+                "elevation_gain_m": 330,
+                "difficulty": "moderate",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Gokyo Resort",
+                        "Namaste Lodge",
+                        "Cho Oyu Lodge"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "First Gokyo lake",
+                    "Ngozumpa Glacier",
+                    "Arrival at Gokyo",
+                    "Turquoise lakes"
+                ],
+                "description": "Pass the first two Gokyo lakes before reaching Gokyo village on the shore of the third lake."
+            },
+            {
+                "day": 7,
+                "title": "Gokyo Ri Climb",
+                "start_location": "Gokyo",
+                "end_location": "Gokyo",
+                "distance_km": 4,
+                "duration_hours": 5,
+                "elevation_start_m": 4800,
+                "elevation_end_m": 5357,
+                "elevation_gain_m": 557,
+                "difficulty": "challenging",
+                "accommodation": {
+                    "type": "teahouse",
+                    "options": [
+                        "Same as previous night"
+                    ]
+                },
+                "meals_included": [
+                    "breakfast",
+                    "lunch",
+                    "dinner"
+                ],
+                "highlights": [
+                    "Gokyo Ri summit",
+                    "Four 8000m peaks visible",
+                    "Everest views",
+                    "Sunrise option"
+                ],
+                "description": "Pre-dawn start to climb Gokyo Ri for sunrise. Spectacular 360° views including Everest, Lhotse, Makalu, and Cho Oyu."
             },
             {
                 "day": 8,
-                "title": "Day Trip to Chhoser",
-                "start_location": "Lo Manthang",
-                "end_location": "Lo Manthang",
-                "distance_km": 16,
+                "title": "Explore 4th and 5th Lakes",
+                "start_location": "Gokyo",
+                "end_location": "Gokyo",
+                "distance_km": 12,
                 "duration_hours": 6,
-                "elevation_start_m": 3840,
-                "elevation_end_m": 3840,
-                "elevation_gain_m": 400,
+                "elevation_start_m": 4800,
+                "elevation_end_m": 5000,
+                "elevation_gain_m": 200,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "lodge",
+                    "type": "teahouse",
                     "options": [
                         "Same as previous night"
                     ]
@@ -2007,29 +2016,29 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Chhoser cave monastery",
-                    "Ancient sky caves",
-                    "Garphu monastery",
-                    "Remote landscapes"
+                    "4th and 5th Gokyo lakes",
+                    "Cho Oyu base camp views",
+                    "Ngozumpa Glacier",
+                    "Remote scenery"
                 ],
-                "description": "Optional day trip to Chhoser village with its remarkable cave monastery and ancient sky caves carved into cliffs."
+                "description": "Optional day hike to the upper lakes. The 5th lake offers incredible views of Cho Oyu and the glacier."
             },
             {
                 "day": 9,
-                "title": "Lo Manthang to Yara",
-                "start_location": "Lo Manthang",
-                "end_location": "Yara",
-                "distance_km": 18,
-                "duration_hours": 7,
-                "elevation_start_m": 3840,
-                "elevation_end_m": 3650,
-                "elevation_gain_m": 400,
+                "title": "Gokyo to Dole",
+                "start_location": "Gokyo",
+                "end_location": "Dole",
+                "distance_km": 15,
+                "duration_hours": 6,
+                "elevation_start_m": 4800,
+                "elevation_end_m": 4200,
+                "elevation_gain_m": -600,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "basic lodge",
+                    "type": "teahouse",
                     "options": [
-                        "Local homestay",
-                        "Basic lodge"
+                        "Dole Guest House",
+                        "Himalaya Lodge"
                     ]
                 },
                 "meals_included": [
@@ -2038,29 +2047,29 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Different return route",
-                    "Remote villages",
-                    "Spectacular erosion",
-                    "Authentic experience"
+                    "Rapid descent",
+                    "Retracing steps",
+                    "Easier breathing",
+                    "Familiar terrain"
                 ],
-                "description": "Take alternative route back through remote areas. Yara is a small village with unique geological formations."
+                "description": "Retrace steps down valley, enjoying easier breathing at lower altitude. Long but mostly downhill day."
             },
             {
                 "day": 10,
-                "title": "Yara to Tangge",
-                "start_location": "Yara",
-                "end_location": "Tangge",
-                "distance_km": 14,
-                "duration_hours": 6,
-                "elevation_start_m": 3650,
-                "elevation_end_m": 3240,
-                "elevation_gain_m": 200,
+                "title": "Dole to Namche Bazaar",
+                "start_location": "Dole",
+                "end_location": "Namche Bazaar",
+                "distance_km": 10,
+                "duration_hours": 5,
+                "elevation_start_m": 4200,
+                "elevation_end_m": 3440,
+                "elevation_gain_m": -760,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "basic lodge",
+                    "type": "teahouse",
                     "options": [
-                        "Village homestay",
-                        "Basic lodge"
+                        "Khumbu Lodge",
+                        "Namche Hotel"
                     ]
                 },
                 "meals_included": [
@@ -2069,29 +2078,30 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Remote trail",
-                    "Desert canyon",
-                    "Traditional village",
-                    "Few tourists"
+                    "Return to civilization",
+                    "Hot showers",
+                    "Bakeries and cafes",
+                    "Internet access"
                 ],
-                "description": "Continue through remote terrain to Tangge, one of the most isolated villages in Mustang."
+                "description": "Descend through forests back to bustling Namche Bazaar. Celebrate with good food and comfort."
             },
             {
                 "day": 11,
-                "title": "Tangge to Chhusang",
-                "start_location": "Tangge",
-                "end_location": "Chhusang",
-                "distance_km": 16,
+                "title": "Namche to Lukla",
+                "start_location": "Namche Bazaar",
+                "end_location": "Lukla",
+                "distance_km": 19,
                 "duration_hours": 7,
-                "elevation_start_m": 3240,
-                "elevation_end_m": 2980,
-                "elevation_gain_m": 300,
+                "elevation_start_m": 3440,
+                "elevation_end_m": 2860,
+                "elevation_gain_m": -580,
                 "difficulty": "moderate",
                 "accommodation": {
-                    "type": "lodge",
+                    "type": "teahouse",
                     "options": [
-                        "Hotel Nilgiri",
-                        "Local lodge"
+                        "Numbur Lodge",
+                        "Buddha Lodge",
+                        "Lukla Resort"
                     ]
                 },
                 "meals_included": [
@@ -2100,230 +2110,244 @@
                     "dinner"
                 ],
                 "highlights": [
-                    "Pa pass (4,200m)",
-                    "Rejoin main trail",
-                    "Spectacular views",
-                    "Nearly complete"
+                    "Final trekking day",
+                    "Cross Hillary Bridge",
+                    "Celebration in Lukla",
+                    "Trek completion"
                 ],
-                "description": "Cross high pass before descending to rejoin the main trail at Chhusang. Long but rewarding day."
+                "description": "Long final day retracing steps to Lukla. Traditional celebration with trekking crew in evening."
             },
             {
                 "day": 12,
-                "title": "Chhusang to Jomsom",
-                "start_location": "Chhusang",
-                "end_location": "Jomsom",
-                "distance_km": 16,
-                "duration_hours": 5,
-                "elevation_start_m": 2980,
-                "elevation_end_m": 2720,
-                "elevation_gain_m": -260,
+                "title": "Fly to Kathmandu",
+                "start_location": "Lukla",
+                "end_location": "Kathmandu",
+                "distance_km": 0,
+                "duration_hours": 0.5,
+                "elevation_start_m": 2860,
+                "elevation_end_m": 1400,
+                "elevation_gain_m": -1460,
                 "difficulty": "easy",
                 "accommodation": {
                     "type": "hotel",
                     "options": [
-                        "Om's Home",
-                        "Hotel Majesty",
-                        "Marco Polo"
+                        "Return to Kathmandu hotel"
                     ]
                 },
                 "meals_included": [
-                    "breakfast",
-                    "lunch",
-                    "dinner"
+                    "breakfast"
                 ],
                 "highlights": [
-                    "Return to Kagbeni",
-                    "Complete circuit",
-                    "Jomsom facilities",
-                    "Trek completion"
+                    "Mountain flight",
+                    "Return to Kathmandu",
+                    "Hot shower",
+                    "Celebration dinner"
                 ],
-                "description": "Final walk back through Kagbeni to Jomsom. Celebrate completing the journey to the forbidden kingdom."
+                "description": "Morning flight back to Kathmandu, weather permitting. Rest of day free to relax and celebrate."
             }
         ],
         "gear_list": {
             "essential": [
                 {
-                    "item": "Wind-proof jacket",
-                    "description": "Strong winds common",
+                    "item": "Trekking boots",
+                    "description": "Waterproof with good ankle support",
                     "rental_available": true
                 },
                 {
-                    "item": "Sun protection",
-                    "description": "Intense high-altitude sun",
+                    "item": "Sleeping bag",
+                    "description": "-15°C rated for cold nights",
+                    "rental_available": true
+                },
+                {
+                    "item": "Down jacket",
+                    "description": "Essential for mornings/evenings",
+                    "rental_available": true
+                },
+                {
+                    "item": "Base layers",
+                    "description": "Thermal underwear sets",
                     "rental_available": false
                 },
                 {
-                    "item": "Dust mask/buff",
-                    "description": "For windy, dusty conditions",
-                    "rental_available": false
-                },
-                {
-                    "item": "Warm layers",
-                    "description": "Cold nights despite lower altitude",
-                    "rental_available": false
-                },
-                {
-                    "item": "Good hiking boots",
-                    "description": "Rocky, dusty terrain",
+                    "item": "Waterproof jacket/pants",
+                    "description": "Weather can change quickly",
                     "rental_available": true
                 },
                 {
                     "item": "Daypack",
-                    "description": "20-30L sufficient",
+                    "description": "25-35 liters",
                     "rental_available": true
+                },
+                {
+                    "item": "Water bottles/hydration",
+                    "description": "3 liter capacity",
+                    "rental_available": false
+                },
+                {
+                    "item": "Headlamp",
+                    "description": "For early morning starts",
+                    "rental_available": false
+                },
+                {
+                    "item": "Sun protection",
+                    "description": "Hat, sunglasses, sunscreen",
+                    "rental_available": false
                 }
             ],
             "recommended": [
                 {
-                    "item": "Lip balm with SPF",
-                    "description": "Very dry conditions",
+                    "item": "Trekking poles",
+                    "description": "Very helpful for descents",
+                    "rental_available": true
+                },
+                {
+                    "item": "Buff/neck warmer",
+                    "description": "Versatile protection",
                     "rental_available": false
                 },
                 {
-                    "item": "Moisturizer",
-                    "description": "Combat dry air",
-                    "rental_available": false
-                },
-                {
-                    "item": "Camera gear",
-                    "description": "Unique landscapes",
+                    "item": "Camera",
+                    "description": "Incredible photo opportunities",
                     "rental_available": false
                 }
             ]
         },
         "permits_required": [
             {
-                "name": "Restricted Area Permit",
-                "cost_usd": 500,
-                "cost_npr": 50000,
-                "where_to_obtain": "Only through registered agency in Kathmandu",
-                "validity": "10 days",
-                "notes": "Additional days $50/day"
-            },
-            {
-                "name": "Annapurna Conservation Area Permit",
+                "name": "Sagarmatha National Park Permit",
                 "cost_usd": 30,
                 "cost_npr": 3000,
-                "where_to_obtain": "Kathmandu or Pokhara",
+                "where_to_obtain": "Monjo entrance or Kathmandu",
+                "validity": "Single entry"
+            },
+            {
+                "name": "Khumbu Local Area Permit",
+                "cost_usd": 20,
+                "cost_npr": 2000,
+                "where_to_obtain": "Lukla",
                 "validity": "Duration of trek"
             }
         ],
         "costs": {
-            "permit_total_usd": 530,
-            "guide_daily_usd": 30,
-            "porter_daily_usd": 0,
-            "accommodation_daily_usd": 15,
+            "permit_total_usd": 50,
+            "guide_daily_usd": 25,
+            "porter_daily_usd": 18,
+            "accommodation_daily_usd": 5,
             "meals_daily_usd": 25,
-            "transportation_usd": 300,
+            "flight_lukla_usd": 360,
             "total_budget_range_usd": {
-                "min": 1500,
-                "max": 3000
+                "min": 1200,
+                "max": 2500
             }
         },
         "cultural_information": {
             "ethnic_groups": [
-                "Loba (Tibetan origin)"
+                "Sherpa"
             ],
             "primary_religion": "Tibetan Buddhism",
             "languages": [
-                "Loba",
-                "Tibetan",
-                "Nepali"
+                "Sherpa",
+                "Nepali",
+                "English"
             ],
             "customs_etiquette": [
-                "Photography restrictions in monasteries",
-                "Respect the former king if met",
-                "Conservative dress required",
-                "Remove shoes when entering homes",
                 "Walk clockwise around religious sites",
-                "Don't touch religious artifacts"
+                "Remove shoes in monasteries",
+                "Don't touch religious artifacts",
+                "Respect local customs",
+                "No public displays of affection"
             ],
             "local_foods": [
                 {
-                    "name": "Tsampa",
-                    "description": "Roasted barley flour staple"
+                    "name": "Sherpa stew",
+                    "description": "Hearty potato-based stew"
                 },
                 {
-                    "name": "Butter tea",
-                    "description": "Traditional Tibetan tea"
+                    "name": "Tsampa porridge",
+                    "description": "Roasted barley flour breakfast"
                 },
                 {
-                    "name": "Tingmo",
-                    "description": "Steamed Tibetan bread"
+                    "name": "Yak cheese",
+                    "description": "Local delicacy"
                 },
                 {
-                    "name": "Local apple brandy",
-                    "description": "Mustang specialty"
-                }
-            ],
-            "festivals": [
-                {
-                    "name": "Tiji Festival",
-                    "when": "May",
-                    "description": "Three-day festival in Lo Manthang"
-                },
-                {
-                    "name": "Yartung Festival",
-                    "when": "August",
-                    "description": "Horse racing and celebrations"
+                    "name": "Dal bhat",
+                    "description": "Traditional Nepali meal"
                 }
             ]
         },
         "health_safety": {
             "altitude_sickness": {
-                "risk_level": "moderate",
+                "risk_level": "high",
                 "prevention": [
-                    "Gradual ascent built in",
-                    "Maximum altitude only 4,230m",
-                    "Stay hydrated in dry climate",
-                    "Rest days in Lo Manthang"
+                    "Acclimatization day in Namche mandatory",
+                    "Ascend slowly above 3000m",
+                    "Stay hydrated",
+                    "Consider Diamox",
+                    "Listen to your body"
+                ],
+                "critical_points": [
+                    "Above Namche",
+                    "Gokyo Ri day"
                 ]
-            },
-            "main_concerns": {
-                "wind_and_dust": {
-                    "risk_level": "high",
-                    "description": "Strong afternoon winds",
-                    "prevention": [
-                        "Start trekking early",
-                        "Protect eyes and face",
-                        "Stay hydrated",
-                        "Use lip balm"
-                    ]
-                },
-                "dehydration": {
-                    "risk_level": "high",
-                    "description": "Very dry climate",
-                    "prevention": [
-                        "Drink 4-5 liters daily",
-                        "Avoid alcohol",
-                        "Use moisturizer",
-                        "Monitor urine color"
-                    ]
-                }
             },
             "medical_facilities": [
                 {
-                    "location": "Jomsom",
-                    "type": "Basic health post"
+                    "location": "Namche Bazaar",
+                    "type": "Hospital with altitude chamber"
                 },
                 {
-                    "location": "Lo Manthang",
-                    "type": "Amchi traditional medicine"
+                    "location": "Machhermo",
+                    "type": "HRA aid post"
+                },
+                {
+                    "location": "Gokyo",
+                    "type": "Basic first aid"
                 }
-            ]
+            ],
+            "evacuation": {
+                "method": "Helicopter",
+                "cost_usd": "4000-6000",
+                "insurance_required": true,
+                "response_time": "Weather dependent"
+            }
         },
         "weather_patterns": {
+            "autumn": {
+                "months": [
+                    "September",
+                    "October",
+                    "November"
+                ],
+                "day_temp_c": "10 to 15",
+                "night_temp_c": "-10 to 0",
+                "precipitation": "Very low",
+                "visibility": "Excellent",
+                "notes": "Best season, cold nights"
+            },
             "spring": {
                 "months": [
                     "March",
                     "April",
                     "May"
                 ],
-                "day_temp_c": "10 to 20",
+                "day_temp_c": "10 to 15",
                 "night_temp_c": "-5 to 5",
-                "precipitation": "Minimal",
-                "wind": "Strong afternoon winds",
-                "notes": "Can be dusty"
+                "precipitation": "Low to moderate",
+                "visibility": "Good, some clouds",
+                "notes": "Rhododendrons bloom"
+            },
+            "winter": {
+                "months": [
+                    "December",
+                    "January",
+                    "February"
+                ],
+                "day_temp_c": "0 to 8",
+                "night_temp_c": "-20 to -10",
+                "precipitation": "Low, some snow",
+                "visibility": "Excellent when clear",
+                "notes": "Very cold, some lodges closed"
             },
             "monsoon": {
                 "months": [
@@ -2331,138 +2355,118 @@
                     "July",
                     "August"
                 ],
-                "day_temp_c": "15 to 25",
-                "night_temp_c": "5 to 10",
-                "precipitation": "Some rain (rain shadow)",
-                "wind": "Less wind",
-                "notes": "Possible to trek"
-            },
-            "autumn": {
-                "months": [
-                    "September",
-                    "October",
-                    "November"
-                ],
                 "day_temp_c": "10 to 18",
-                "night_temp_c": "-5 to 5",
-                "precipitation": "Very low",
-                "wind": "Moderate",
-                "notes": "Best season"
+                "night_temp_c": "0 to 10",
+                "precipitation": "High",
+                "visibility": "Poor",
+                "notes": "Not recommended"
             }
         },
         "transportation": {
             "to_start": [
                 {
                     "method": "Flight",
-                    "from": "Pokhara",
-                    "to": "Jomsom",
-                    "duration": "20 minutes",
-                    "cost_usd": 120,
-                    "frequency": "Morning flights only"
-                },
-                {
-                    "method": "Drive + Trek",
-                    "from": "Pokhara",
-                    "to": "Jomsom",
-                    "duration": "2 days",
-                    "cost_usd": 50,
-                    "notes": "Via Beni and Ghasa"
+                    "from": "Kathmandu",
+                    "to": "Lukla",
+                    "duration": "30 minutes",
+                    "cost_usd": 180,
+                    "frequency": "Multiple daily (weather dependent)"
                 }
             ],
-            "from_end": "Same options in reverse"
+            "from_end": "Same as to start"
         },
         "accommodation": {
-            "type": "Basic lodges",
-            "description": "Simple but adequate",
+            "type": "Teahouses",
+            "description": "Basic mountain lodges",
             "amenities": [
-                "Basic rooms",
-                "Shared bathrooms mostly",
-                "Solar hot water (limited)",
-                "Charging available",
-                "Basic meals",
-                "No WiFi in most places"
+                "Twin-bed rooms",
+                "Shared bathrooms",
+                "Dining room with stove",
+                "Basic meals available",
+                "Charging for devices (paid)",
+                "Hot showers (paid, not always available)"
             ],
-            "booking": "Not required but limited options",
-            "cost_per_night_usd": "10-20"
+            "booking": "Not required except peak season",
+            "cost_per_night_usd": "3-8"
         },
         "difficulty_details": {
-            "physical_demands": "Moderate fitness sufficient",
+            "physical_demands": "Good fitness for consecutive days",
             "technical_skills": "None required",
-            "altitude_challenge": "Moderate",
-            "trail_conditions": "Dusty, rocky, well-defined",
-            "daily_hiking_hours": "5-7 hours",
-            "total_elevation_gain": 5000,
-            "total_elevation_loss": 5000
+            "altitude_challenge": "Significant - proper acclimatization essential",
+            "trail_conditions": "Well-marked, some steep sections",
+            "daily_hiking_hours": "4-7 hours",
+            "total_elevation_gain": 3400,
+            "total_elevation_loss": 3400
         },
         "alternative_routes": [
             {
-                "name": "Eastern Mustang",
-                "variation": "Via Luri Gompa",
-                "extra_days": 2,
+                "name": "Gokyo via Cho La Pass",
+                "variation": "Connect to EBC",
+                "extra_days": 3,
                 "highlights": [
-                    "Remote monasteries",
-                    "Fewer tourists",
-                    "Challenging terrain"
+                    "Technical pass crossing",
+                    "Visit both Gokyo and EBC",
+                    "More challenging"
                 ]
             },
             {
-                "name": "Teri La Pass",
-                "variation": "High route option",
+                "name": "Renjo La Pass",
+                "variation": "Alternative exit route",
                 "extra_days": 1,
                 "highlights": [
-                    "5,595m pass",
-                    "Connects to Nar Phu",
-                    "Technical"
+                    "Additional high pass",
+                    "Great views",
+                    "Complete circuit"
                 ]
             }
         ],
         "photography_highlights": [
             {
-                "location": "Lo Manthang walls",
-                "best_time": "Sunrise/sunset",
+                "location": "Gokyo Ri",
+                "best_time": "Sunrise",
                 "subjects": [
-                    "Medieval architecture",
-                    "Mountain backdrop",
-                    "Daily life"
+                    "Four 8000m peaks",
+                    "Ngozumpa Glacier",
+                    "Gokyo Lakes from above"
                 ]
             },
             {
-                "location": "Red cliffs of Dhakmar",
-                "best_time": "Late afternoon",
+                "location": "5th Lake",
+                "best_time": "Morning",
                 "subjects": [
-                    "Eroded landscapes",
-                    "Color contrasts",
-                    "Geological formations"
+                    "Cho Oyu reflection",
+                    "Turquoise waters",
+                    "Glacier views"
                 ]
             }
         ],
         "faqs": [
             {
-                "question": "Why is the permit so expensive?",
-                "answer": "Upper Mustang was closed until 1992 and remains restricted to preserve its unique Tibetan culture. The high permit fee limits visitors and funds conservation."
+                "question": "How does this compare to EBC trek?",
+                "answer": "Less crowded, arguably better views from Gokyo Ri, sees multiple lakes instead of base camp. Similar difficulty but different highlights."
             },
             {
-                "question": "Can I trek independently?",
-                "answer": "No, you must be with a registered guide due to restricted area regulations. This helps preserve the culture and ensures proper permits."
+                "question": "Can I combine with EBC?",
+                "answer": "Yes, via Cho La Pass (5,420m). Adds 3-4 days and requires good weather and fitness. Technical but rewarding."
             },
             {
-                "question": "Is it worth the cost?",
-                "answer": "For those interested in Tibetan culture, unique landscapes, and off-beaten paths, absolutely. It's unlike anywhere else in Nepal."
+                "question": "Are the lakes always turquoise?",
+                "answer": "Best color in autumn when skies are clear. Can appear more grey in cloudy weather. Still beautiful regardless."
             }
         ],
         "created_at": "2024-01-15T10:00:00Z",
         "updated_at": "2024-01-15T10:00:00Z",
         "status": "active",
-        "popularity_score": 82,
+        "popularity_score": 88,
         "seo": {
-            "meta_title": "Upper Mustang Trek Guide 2024 | Nepal's Forbidden Kingdom",
-            "meta_description": "Complete guide to trekking Upper Mustang, the former forbidden kingdom. 12-day journey through Tibetan culture, desert landscapes, and ancient monasteries.",
+            "meta_title": "Gokyo Lakes Trek Guide 2024 | Nepal's Turquoise Lake Trek",
+            "meta_description": "Complete guide to the Gokyo Lakes Trek in Nepal. 12-day itinerary to turquoise lakes, Gokyo Ri viewpoint, and spectacular Everest region scenery.",
             "keywords": [
-                "upper mustang trek",
-                "forbidden kingdom",
-                "lo manthang",
-                "nepal restricted area",
-                "tibetan culture trek"
+                "gokyo lakes trek",
+                "gokyo ri",
+                "nepal trekking",
+                "everest region",
+                "turquoise lakes nepal"
             ]
         }
     };
