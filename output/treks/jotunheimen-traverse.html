@@ -653,7 +653,79 @@
         .content-section.active > * {
             animation: fadeIn 0.5s ease-out;
         }
-    </style>
+    
+        /* Enhanced Section Headers Styling */
+        .content-section h2 {
+            font-size: 2.8em !important;
+            font-weight: 800 !important;
+            color: var(--text-dark) !important;
+            margin-bottom: 30px !important;
+            margin-top: 20px !important;
+            padding-bottom: 20px !important;
+            position: relative !important;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            border-bottom: 2px solid #E0E0E0 !important;
+        }
+
+        .content-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        /* Subtitle styling enhancement */
+        .content-section h2 + p {
+            font-size: 1.2em !important;
+            color: var(--text-light) !important;
+            margin-bottom: 50px !important;
+            font-weight: 500 !important;
+            line-height: 1.6 !important;
+        }
+
+        @media (max-width: 768px) {
+            .content-section h2 {
+                font-size: 2.2em !important;
+                margin-bottom: 25px !important;
+                padding-bottom: 15px !important;
+            }
+            
+            .content-section h2 + p {
+                font-size: 1.1em !important;
+                margin-bottom: 40px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section h2 {
+                font-size: 1.9em !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .content-section h2 + p {
+                font-size: 1em !important;
+                margin-bottom: 35px !important;
+            }
+        }
+        </style>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
