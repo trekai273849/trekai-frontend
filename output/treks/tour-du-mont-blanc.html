@@ -1391,17 +1391,24 @@
             setTimeout(() => {
                 const navTabs = document.querySelector('.nav-tabs');
                 if (navTabs) {
-                    // Get the height of the sticky nav
+                    // Get nav height to account for sticky positioning
                     const navHeight = navTabs.offsetHeight;
-                    // Scroll to just below the nav bar
-                    const targetPosition = navTabs.offsetTop + navHeight + 20;
                     
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    // Get the currently active section
+                    const activeSection = document.querySelector('.content-section.active');
+                    if (activeSection) {
+                        // Get the position of the active section
+                        const sectionTop = activeSection.offsetTop;
+                        // Scroll to section minus nav height to show content at top
+                        const targetPosition = sectionTop - navHeight - 10;
+                        
+                        window.scrollTo({
+                            top: Math.max(0, targetPosition),
+                            behavior: 'smooth'
+                        });
+                    }
                 }
-            }, 50);
+            }, 100);
         }
 
         function centerTabWithNextVisible(clickedTab) {
