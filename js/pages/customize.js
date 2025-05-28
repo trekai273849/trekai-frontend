@@ -1,840 +1,1031 @@
-// js/pages/customize.js - Enhanced version
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
+  <!-- End Google Tag Manager -->
 
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyD48TPwzdcYiD6AfVgh6PX1P86OQ7qgPHg",
-  authDomain: "smarttrailsauth.firebaseapp.com",
-  projectId: "smarttrailsauth",
-  storageBucket: "smarttrailsauth.firebasestorage.app",
-  messagingSenderId: "763807584090",
-  appId: "1:763807584090:web:822fb9109f7be5d432ed63",
-  measurementId: "G-M6N5V4TDX6"
-};
+  <meta charset="UTF-8" />
+  <title>Customize Your Trek - Smart Trails</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+  
+  <style>
+    /* CSS Variables for consistent theming */
+    :root {
+      --primary: #2D5016;
+      --primary-light: #4A7C28;
+      --accent: #F39C12;
+      --text-dark: #2C3E50;
+      --text-light: #5D6D7E;
+      --bg-light: #F8F9FA;
+      --white: #FFFFFF;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --success: #27AE60;
+      --warning: #E74C3C;
+      --info: #3498DB;
+    }
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg-light);
+    }
 
-// Store Firebase in a global variable for easier access
-let firebase = {
-  app,
-  auth
-};
+    /* Enhanced Hero Section */
+    .hero-enhanced {
+      position: relative;
+      height: 50vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Update location in greeting
-  const location = localStorage.getItem('userLocation') || 'the mountains';
-  document.getElementById('greeting').innerText = `Design a personalized adventure in ${location}`;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
 
-  let cachedPackingList = '';
-  let cachedInsights = '';
-  let cachedPracticalInfo = '';
-  let rawItineraryText = '';
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, 
+        rgba(0,0,0,0.2) 0%, 
+        rgba(0,0,0,0.4) 50%, 
+        rgba(0,0,0,0.6) 100%);
+    }
 
-  // Function to get location-specific tips
-  function getLocationTip(location) {
-    const tips = {
-      'french alps': 'The French Alps contain Mont Blanc, Western Europe\'s highest peak at 4,809m!',
-      'italian alps': 'The Dolomites\' unique pale rock formations are made of ancient coral reefs.',
-      'alps': 'Alpine glaciers carved these valleys over millions of years, creating dramatic landscapes.',
-      'himalayas': 'The Himalayas contain 14 peaks over 8,000m, formed by tectonic plate collision.',
-      'himalaya': 'The Himalayas are still growing about 1cm per year due to continental drift.',
-      'andes': 'The Andes stretch 7,000km - longer than the distance from New York to Paris!',
-      'patagonia': 'Patagonia\'s weather can change from sun to snow in minutes due to its unique geography.',
-      'kilimanjaro': 'Kilimanjaro has three distinct climate zones: tropical, temperate, and arctic.',
-      'norway': 'Norwegian fjords were carved by glaciers that were over 1km thick.',
-      'scotland': 'Scotland\'s highlands were formed 400 million years ago during mountain-building events.',
-      'switzerland': 'Switzerland generates 60% of its electricity from hydropower thanks to alpine geography.',
-      'japan': 'Japan sits on four tectonic plates, creating its mountainous terrain and hot springs.',
-      'new zealand': 'New Zealand was the last landmass on Earth to be discovered by humans.',
-      'rockies': 'The Rocky Mountains contain ecosystems ranging from prairie to alpine tundra.',
-      'appalachian': 'The Appalachian Mountains are among Earth\'s oldest, formed 480 million years ago.',
-      'default': 'Mountain air contains less oxygen, which is why you might feel breathless at first.'
-    };
+    .hero-content-enhanced {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-content-enhanced h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-content-enhanced h2 {
+      font-size: 1.5em;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    /* Filter Section Enhancement */
+    .filters-container {
+      background: white;
+      box-shadow: 0 2px 10px var(--shadow);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+
+    .filter-group {
+      margin-bottom: 30px;
+    }
+
+    .filter-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .filter-group h3 {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .enhanced-filter-btn {
+      padding: 12px 24px !important;
+      border-radius: 30px !important;
+      font-weight: 600 !important;
+      font-size: 0.95em !important;
+      transition: all 0.3s ease !important;
+      background-color: var(--bg-light) !important;
+      border: 2px solid transparent !important;
+      color: var(--text-dark) !important;
+      cursor: pointer !important;
+      white-space: nowrap;
+    }
+
+    .enhanced-filter-btn:hover {
+      background-color: var(--white) !important;
+      border-color: var(--primary) !important;
+      color: var(--primary) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15) !important;
+    }
+
+    .enhanced-filter-btn.active {
+      background-color: var(--primary) !important;
+      color: white !important;
+      border-color: var(--primary) !important;
+      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3) !important;
+    }
+
+    /* Comments Section Enhancement */
+    .comments-container {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 2px 10px var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .comments-container label {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .comments-container textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #E0E0E0;
+      border-radius: 12px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+
+    .comments-container textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* Generate Button Enhancement */
+    .generate-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 30px auto;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+    }
+
+    /* Navigation Tabs for Results */
+    .results-nav-tabs {
+      background: white;
+      box-shadow: 0 2px 10px var(--shadow);
+      margin-bottom: 40px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .results-nav-container {
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .results-nav-tab {
+      padding: 20px 30px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      color: var(--text-light);
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .results-nav-tab:hover {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+
+    .results-nav-tab.active {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+
+    .results-nav-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--primary);
+    }
+
+    /* Enhanced Itinerary Timeline */
+    .itinerary-timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .itinerary-timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #E0E0E0;
+    }
+
+    .itinerary-day-card {
+      position: relative;
+      margin-bottom: 40px;
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .itinerary-day-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px var(--shadow);
+    }
+
+    .itinerary-day-card::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 35px;
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 0 2px #E0E0E0;
+    }
+
+    .day-header-enhanced {
+      margin-bottom: 20px;
+    }
+
+    .day-number {
+      font-size: 0.9em;
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .day-title-enhanced {
+      font-size: 1.5em;
+      margin: 10px 0;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .day-stats-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+    }
+
+    .day-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95em;
+      color: var(--text-light);
+    }
+
+    .day-stat-icon {
+      font-size: 1.2em;
+    }
+
+    .day-description-enhanced {
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin: 20px 0;
+    }
+
+    .day-details-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .day-detail-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #F0F0F0;
+      display: flex;
+      align-items: start;
+      gap: 15px;
+    }
+
+    .day-detail-item:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: var(--text-dark);
+      min-width: 120px;
+    }
+
+    .detail-value {
+      color: var(--text-light);
+      flex: 1;
+    }
+
+    /* Additional Sections Cards */
+    .info-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .info-card h3 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .info-card-icon {
+      font-size: 1.5em;
+    }
+
+    /* Section Headers */
+    .section-header {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      margin-top: 50px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1em;
+      color: var(--text-light);
+      margin-bottom: 40px;
+    }
+
+    /* Enhanced Loading Animation */
+    .loading-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 20px var(--shadow);
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 3px solid var(--bg-light);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 30px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Action Buttons Enhancement */
+    .action-buttons-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      flex: 1;
+      min-width: 200px;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1em;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .action-btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+    }
+
+    .action-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+    }
+
+    .action-btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .action-btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Content Sections */
+    .content-section-result {
+      display: none;
+    }
+
+    .content-section-result.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .enhanced-content {
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Progress Bar from original */
+    .progress-bar-container {
+      background-color: #f3f4f6;
+      overflow: hidden;
+    }
     
-    if (!location) return tips.default;
+    .progress-bar {
+      background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+      background-size: 200% 100%;
+      animation: progressShimmer 2s ease-in-out infinite;
+      transition: width 0.5s ease-out;
+    }
     
-    const locationLower = location.toLowerCase();
+    @keyframes progressShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Hide the Chat to Pro Guide button */
+    #talk-to-guide {
+      display: none !important;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero-content-enhanced h1 {
+        font-size: 2em;
+      }
+      
+      .filters-container {
+        padding: 20px;
+      }
+      
+      .filter-container {
+        flex-direction: column;
+      }
+      
+      .enhanced-filter-btn {
+        flex: none;
+        width: 100%;
+      }
+      
+      .itinerary-day-card {
+        padding: 20px;
+      }
+      
+      .day-stats-grid {
+        gap: 15px;
+      }
+      
+      .action-buttons-container {
+        flex-direction: column;
+      }
+      
+      .action-btn {
+        width: 100%;
+      }
+    }
+
+    /* Modal styles from original */
+    .auth-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      animation: iconBounce 0.6s ease-out 0.2s both;
+      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+    }
     
-    // Find matching tip
-    for (const [key, tip] of Object.entries(tips)) {
-      if (key !== 'default' && locationLower.includes(key)) {
-        return tip;
+    .welcome-icon {
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+    }
+    
+    .auth-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: white;
+      stroke-width: 2;
+      fill: white;
+    }
+    
+    .modal {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 480px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: scale(1);
+      animation: modalAppear 0.3s ease-out;
+    }
+    
+    .modal-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1f2937;
+      text-align: center;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #1f2937, #4b5563);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .modal-message {
+      font-size: 16px;
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    
+    .auth-benefits {
+      margin: 24px 0;
+      text-align: left;
+      background: #f0fdf4;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid #16a34a;
+    }
+    
+    .auth-benefits h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #166534;
+      margin-bottom: 12px;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #166534;
+    }
+    
+    .benefit-item:before {
+      content: "✓";
+      color: #16a34a;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    
+    .button-primary {
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+      margin-bottom: 12px;
+    }
+    
+    .button-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
+    }
+    
+    .button-secondary {
+      background: transparent;
+      color: #15803d;
+      border: 2px solid #16a34a;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+    }
+    
+    .button-secondary:hover {
+      background: #16a34a;
+      color: white;
+      transform: translateY(-1px);
+    }
+    
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: #f3f4f6;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      color: #6b7280;
+    }
+    
+    .close-button:hover {
+      background: #e5e7eb;
+      transform: scale(1.1);
+    }
+    
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+    }
+    
+    @keyframes iconBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
       }
     }
     
-    return tips.default;
-  }
-
-  // Enhanced progressive loading function
-  function showProgressiveLoading(container, location) {
-    const stages = [
-      { 
-        message: "🗺️ Analyzing your destination...", 
-        tip: getLocationTip(location),
-        duration: 4000
-      },
-      { 
-        message: "🥾 Planning optimal routes...", 
-        tip: "The best trekking routes balance scenic beauty with safety, avoiding steep drop-offs and unstable terrain.",
-        duration: 5000
-      },
-      { 
-        message: "🏔️ Selecting scenic highlights...", 
-        tip: "Dawn and dusk provide the most dramatic mountain lighting - photographers call it 'alpenglow'.",
-        duration: 4500
-      },
-      { 
-        message: "🎒 Customizing your experience...", 
-        tip: "Every 1000m of elevation gain requires an extra day for proper acclimatization.",
-        duration: 4000
-      },
-      { 
-        message: "📋 Finalizing your itinerary...", 
-        tip: "The 'leave no trace' principle helps preserve these incredible landscapes for future generations.",
-        duration: 3000
+    @keyframes modalAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
       }
-    ];
-    
-    let currentStage = 0;
-    
-    container.innerHTML = `
-      <div class="loading-card">
-        <div class="loading-spinner"></div>
-        <h3 id="loading-message" style="font-size: 1.3em; color: var(--text-dark); margin-bottom: 15px;">
-          ${stages[0].message}
-        </h3>
-        <p id="loading-tip" style="color: var(--text-light); max-width: 500px; margin: 0 auto;">
-          ${stages[0].tip}
-        </p>
-      </div>
-    `;
-    
-    // Update stages
-    const totalDuration = stages.reduce((sum, stage) => sum + stage.duration, 0);
-    let elapsed = 0;
-    
-    const interval = setInterval(() => {
-      elapsed += 100;
-      
-      // Update stage
-      let cumulative = 0;
-      for (let i = 0; i < stages.length; i++) {
-        cumulative += stages[i].duration;
-        if (elapsed < cumulative) {
-          if (i !== currentStage) {
-            currentStage = i;
-            document.getElementById('loading-message').textContent = stages[i].message;
-            document.getElementById('loading-tip').textContent = stages[i].tip;
-          }
-          break;
-        }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
       }
-      
-      if (elapsed >= totalDuration) {
-        clearInterval(interval);
-      }
-    }, 100);
-    
-    container.dataset.loadingInterval = interval;
-  }
-
-  // Clear loading intervals
-  function clearLoadingIntervals(container) {
-    const interval = container.dataset.loadingInterval;
-    if (interval) {
-      clearInterval(interval);
-      container.removeAttribute('data-loadingInterval');
     }
-  }
-
-  // Initialize filter buttons
-  const setupFilterButtons = () => {
-    document.querySelectorAll('.enhanced-filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const group = btn.dataset.category;
-        document.querySelectorAll(`.enhanced-filter-btn[data-category="${group}"]`).forEach(el => {
-          el.classList.remove('active');
-        });
-        btn.classList.add('active');
-      });
-    });
-  };
-
-  setupFilterButtons();
-
-  document.getElementById('customization-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    generateItinerary();
-  });
-
-  async function generateItinerary(additionalFeedback = '') {
-    const location = localStorage.getItem('userLocation') || 'Mountains';
-    if (!location) {
-      console.error('No location specified');
-      return;
-    }
-
-    // Get selected filters
-    const filters = {};
-    document.querySelectorAll('.enhanced-filter-btn.active').forEach(btn => {
-      const category = btn.dataset.category;
-      filters[category] = btn.dataset.value;
-    });
-
-    // Provide defaults if no filters selected
-    if (Object.keys(filters).length === 0) {
-      const defaultDifficultyBtn = document.querySelector('.enhanced-filter-btn[data-category="difficulty"][data-value="Moderate"]');
-      const defaultAccommodationBtn = document.querySelector('.enhanced-filter-btn[data-category="accommodation"][data-value="Camping"]');
-      
-      if (defaultDifficultyBtn) {
-        defaultDifficultyBtn.classList.add('active');
-        filters.difficulty = 'Moderate';
-      }
-      
-      if (defaultAccommodationBtn) {
-        defaultAccommodationBtn.classList.add('active');
-        filters.accommodation = 'Camping';
-      }
-      
-      filters.technical = 'None';
-    }
-
-    let userComment = document.getElementById('comments').value.trim();
-    let baseText = `${userComment} ${location}`;
-
-    const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
-    const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
-
-    let comments = userComment;
-    if (requestedDays) {
-      comments += ` Please generate a ${requestedDays}-day itinerary.`;
-    } else {
-      comments += ' Please generate a 3-day trekking itinerary.';
-    }
-
-    console.log({ location, filters, comments });
-
-    const outputDiv = document.getElementById('itinerary-cards');
     
-    // Show enhanced loading
-    showProgressiveLoading(outputDiv, location);
-
-    try {
-      let useMockData = false;
-      let data = null;
-      
-      try {
-        const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            location,
-            filters: {
-              ...filters,
-              altitude: "2000–3000m"
-            },
-            comments,
-            title: `${location} Trek`
-          })
-        });
-
-        if (!response.ok) {
-          console.warn(`Server returned status ${response.status}. Using mock data instead.`);
-          useMockData = true;
-        } else {
-          data = await response.json();
-          
-          if (!data || !data.reply) {
-            console.warn('API returned empty response. Using mock data instead.');
-            useMockData = true;
-          }
-        }
-      } catch (apiError) {
-        console.warn('API request failed:', apiError);
-        useMockData = true;
-      }
-      
-      // Mock data fallback
-      if (useMockData) {
-        console.log("Using mock data for development");
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        const locationName = location.toLowerCase();
-        const trekName = locationName.includes('french alps') ? 'Tour du Mont Blanc' : 
-                         locationName.includes('himalaya') ? 'Annapurna Circuit' :
-                         locationName.includes('andes') ? 'Inca Trail' :
-                         locationName.includes('patagonia') ? 'Torres del Paine W Trek' :
-                         locationName.includes('kilimanjaro') ? 'Machame Route' :
-                         `${location} Trek`;
-        
-        data = {
-          reply: `### Day 1: Starting Point to First Camp
-- **Distance**: 8 km (5 miles)
-- **Elevation Gain**: 600m (1,970ft)
-- **Terrain**: Alpine meadows and forest trails
-- **Accommodation**: ${filters.accommodation || 'Mountain hut'}
-- **Difficulty**: ${filters.difficulty || 'Moderate'}
-- **Highlights**: Panoramic views, local wildlife, acclimatization
-
-Begin your journey in the picturesque village, gradually ascending through beautiful landscapes. Take time to acclimatize to the altitude and enjoy the panoramic views of surrounding peaks.
-
-### Day 2: First Camp to Mountain Pass
-- **Distance**: 12 km (7.5 miles)
-- **Elevation Gain**: 800m (2,625ft)
-- **Terrain**: Rocky paths and alpine terrain
-- **Difficulty**: ${filters.difficulty || 'Moderate'}
-- **Accommodation**: ${filters.accommodation || 'Mountain hut'}
-- **Highlights**: Mountain pass views, changing ecosystems
-
-Today features the most challenging hiking of your trek. The trail climbs steadily through changing ecosystems before reaching the dramatic mountain pass.
-
-### Day 3: Mountain Pass to Endpoint
-- **Distance**: 10 km (6.2 miles)
-- **Elevation Loss**: 900m (2,950ft)
-- **Terrain**: Scenic descent with river crossings
-- **Accommodation**: Return to trailhead
-
-The final day offers a gentle descent with spectacular views throughout.
-
-### Packing List
-*Essentials:*
-- Broken-in hiking boots with ankle support
-- Backpack (30-40L)
-- Trekking poles
-- First aid kit
-
-*Clothing:*
-- Quick-dry hiking shirts and pants
-- Warm layers (fleece, down jacket)
-- Waterproof jacket and pants
-- Hat and gloves
-
-### Local Insights
-*Culture:*
-- Respect local customs and traditions
-- Greet locals with a smile
-
-*Food:*
-- Try regional specialties
-- Stay hydrated at altitude
-
-### Practical Information
-*Best Season:*
-- June to September for most alpine regions
-- Check local conditions
-
-*Permits:*
-- Check if permits are required in advance
-- Consider hiring a local guide`
-        };
-      }
-      
-      clearLoadingIntervals(outputDiv);
-      
-      rawItineraryText = data.reply;
-      const preprocessedText = preprocessRawText(rawItineraryText);
-
-      // Extract sections
-      cachedPackingList = extractSection(preprocessedText, 'Packing List');
-      cachedInsights = extractSection(preprocessedText, 'Local Insights');
-      cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
-
-      setTimeout(() => {
-        processAndRenderEnhancedItinerary(preprocessedText);
-      }, 500);
-
-    } catch (error) {
-      clearLoadingIntervals(outputDiv);
-      outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-      console.error('Error generating itinerary:', error);
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
     }
-  }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-  // Enhanced render function
-  function processAndRenderEnhancedItinerary(text) {
-    const container = document.getElementById('itinerary-cards');
-    container.innerHTML = '';
+  <!-- Enhanced Hero Header -->
+  <header class="hero-enhanced">
+    <div class="hero-bg" style="background-image: url('Images/alps.jpg');"></div>
+    <div class="hero-content-enhanced">
+      <h1>Create Your Perfect Trek</h1>
+      <h2 id="greeting">Design a personalized adventure tailored to your preferences</h2>
+    </div>
+  </header>
 
-    // Create main results container
-    const resultsWrapper = document.createElement('div');
-    resultsWrapper.className = 'results-wrapper';
-
-    // Add section header
-    const sectionHeader = document.createElement('h2');
-    sectionHeader.className = 'section-header';
-    sectionHeader.innerText = 'Your Custom Itinerary';
-    resultsWrapper.appendChild(sectionHeader);
-
-    const sectionSubtitle = document.createElement('p');
-    sectionSubtitle.className = 'section-subtitle';
-    sectionSubtitle.innerText = 'Explore your personalized adventure with day-by-day details';
-    resultsWrapper.appendChild(sectionSubtitle);
-
-    // Create navigation tabs
-    const navTabs = document.createElement('div');
-    navTabs.className = 'results-nav-tabs';
-    navTabs.innerHTML = `
-      <div class="results-nav-container">
-        <button class="results-nav-tab active" data-section="itinerary">Itinerary</button>
-        <button class="results-nav-tab" data-section="packing">What to Pack</button>
-        <button class="results-nav-tab" data-section="insights">Local Insights</button>
-        <button class="results-nav-tab" data-section="practical">Practical Info</button>
-      </div>
-    `;
-    resultsWrapper.appendChild(navTabs);
-
-    // Create content sections container
-    const contentSections = document.createElement('div');
-    contentSections.className = 'content-sections';
-
-    // ITINERARY SECTION
-    const itinerarySection = document.createElement('div');
-    itinerarySection.className = 'content-section-result active';
-    itinerarySection.id = 'itinerary-section';
-
-    // Extract intro text
-    const introRegex = /^([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+:|$)/i;
-    const introMatch = text.match(introRegex);
-    const intro = introMatch && introMatch[1].trim();
-    
-    if (intro && intro.length > 10) {
-      const cleanedIntro = intro.replace(/#{1,3}/g, '').trim();
-      const introCard = document.createElement('div');
-      introCard.className = 'info-card';
-      introCard.innerHTML = `
-        <h3><span class="info-card-icon">🏔️</span> Overview</h3>
-        <p style="line-height: 1.8; color: var(--text-light);">${cleanedIntro.replace(/\n/g, '<br>')}</p>
-      `;
-      itinerarySection.appendChild(introCard);
-    }
-
-    // Create timeline container
-    const timeline = document.createElement('div');
-    timeline.className = 'itinerary-timeline';
-
-    // Extract days
-    const dayRegex = /(?:(?:\*\*\*|\#{1,3}|\*\*|\*)?\s*Day\s+(\d+)[:\s]+([^\n]*?)(?:\*\*\*|\*\*|\*)?)(?:\n)([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+[:\s]|#{1,3}\s*Packing List|#{1,3}\s*Local Insights|#{1,3}\s*Practical Information|$)/gi;
-    
-    let dayMatch;
-    let dayCount = 0;
-
-    while ((dayMatch = dayRegex.exec(text)) !== null) {
-      dayCount++;
-      const dayNum = dayMatch[1];
-      const title = dayMatch[2].trim();
-      let bodyText = dayMatch[3].trim();
-      
-      bodyText = bodyText.replace(/#{1,3}/g, '');
-
-      // Create enhanced day card
-      const dayCard = document.createElement('div');
-      dayCard.className = 'itinerary-day-card';
-
-      const details = parseDayDetails(bodyText);
-      
-      dayCard.innerHTML = `
-        <div class="day-header-enhanced">
-          <div class="day-number">Day ${dayNum}</div>
-          <h3 class="day-title-enhanced">${title}</h3>
-          ${createDayStats(details)}
+  <!-- Main Content with Enhanced Styling -->
+  <main class="max-w-5xl mx-auto p-6">
+    <!-- Filters Section -->
+    <div class="filters-container">
+      <form id="customization-form">
+        <!-- Accommodation -->
+        <div class="filter-group">
+          <h3>🏕️ Accommodation Type</h3>
+          <div class="flex gap-3">
+            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
+            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
+            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
+          </div>
         </div>
-        ${details.description ? `<p class="day-description-enhanced">${details.description}</p>` : ''}
-        ${createDetailsList(details)}
-      `;
 
-      timeline.appendChild(dayCard);
-    }
+        <!-- Difficulty -->
+        <div class="filter-group">
+          <h3>🏔️ Difficulty Level</h3>
+          <div class="flex gap-3">
+            <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
+            <button type="button" class="enhanced-filter-btn active" data-category="difficulty" data-value="Moderate">Moderate</button>
+            <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
+          </div>
+        </div>
 
-    itinerarySection.appendChild(timeline);
-    contentSections.appendChild(itinerarySection);
+        <!-- Technical -->
+        <div class="filter-group">
+          <h3>🧗 Technical Requirements</h3>
+          <div class="flex gap-3">
+            <button type="button" class="enhanced-filter-btn active" data-category="technical" data-value="None">None</button>
+            <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
+            <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-    // PACKING SECTION
-    if (cachedPackingList) {
-      const packingSection = createEnhancedSection('packing-section', 'Packing List', '🎒', cachedPackingList);
-      contentSections.appendChild(packingSection);
-    }
+    <!-- Comments Section -->
+    <div class="comments-container">
+      <label for="comments">Describe Your Dream Trek</label>
+      <textarea 
+        id="comments" 
+        name="comments" 
+        rows="4" 
+        placeholder="e.g., 8-day hike in Peru with scenic views, not too steep, local food stops, stay in eco-lodges..."
+      ></textarea>
+    </div>
 
-    // INSIGHTS SECTION
-    if (cachedInsights) {
-      const insightsSection = createEnhancedSection('insights-section', 'Local Insights', '🌍', cachedInsights);
-      contentSections.appendChild(insightsSection);
-    }
+    <!-- Generate Button -->
+    <button type="submit" form="customization-form" class="generate-btn">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+      </svg>
+      Generate Custom Itinerary
+    </button>
 
-    // PRACTICAL INFO SECTION
-    if (cachedPracticalInfo) {
-      const practicalSection = createEnhancedSection('practical-section', 'Practical Information', '📋', cachedPracticalInfo);
-      contentSections.appendChild(practicalSection);
-    }
+    <!-- Results Container -->
+    <div id="itinerary-cards"></div>
+  </main>
 
-    resultsWrapper.appendChild(contentSections);
-    container.appendChild(resultsWrapper);
-
-    // Add navigation functionality
-    setupResultsNavigation();
-
-    // Add action buttons
-    addEnhancedActionButtons(container);
-  }
-
-  // Helper function to parse day details
-  function parseDayDetails(bodyText) {
-    const details = {
-      distance: null,
-      elevationGain: null,
-      elevationLoss: null,
-      terrain: null,
-      difficulty: null,
-      accommodation: null,
-      highlights: null,
-      lunch: null,
-      tips: null,
-      waterSources: null,
-      description: null
-    };
-
-    const fieldPatterns = {
-      distance: /(?:Distance|Trek):\s*([^\n]+)/i,
-      elevationGain: /Elevation\s+(?:gain|Gain):\s*([^\n]+)/i,
-      elevationLoss: /Elevation\s+(?:loss|Loss):\s*([^\n]+)/i,
-      terrain: /Terrain:\s*([^\n]+)/i,
-      difficulty: /Difficulty:\s*([^\n]+)/i,
-      accommodation: /Accommodation:\s*([^\n]+)/i,
-      highlights: /Highlights?:\s*([^\n]+)/i,
-      lunch: /Lunch:\s*([^\n]+)/i,
-      tips: /Tips?:\s*([^\n]+)/i,
-      waterSources: /Water\s+sources?:\s*([^\n]+)/i
-    };
-
-    Object.keys(fieldPatterns).forEach(field => {
-      const match = bodyText.match(fieldPatterns[field]);
-      if (match) {
-        details[field] = match[1].trim();
-      }
-    });
-
-    const fieldsRegex = /(?:Distance|Trek|Elevation\s+(?:gain|loss)|Terrain|Difficulty|Accommodation|Highlights?|Lunch|Tips?|Water\s+sources?):\s*[^\n]+/gi;
-    const remainingText = bodyText.replace(fieldsRegex, '').trim();
-    if (remainingText && remainingText.length > 20) {
-      details.description = remainingText;
-    }
-
-    return details;
-  }
-
-  // Helper function to create day stats
-  function createDayStats(details) {
-    const stats = [];
-    
-    if (details.distance) {
-      stats.push(`<div class="day-stat"><span class="day-stat-icon">📏</span> ${details.distance}</div>`);
-    }
-    if (details.elevationGain) {
-      stats.push(`<div class="day-stat"><span class="day-stat-icon">📈</span> ${details.elevationGain}</div>`);
-    }
-    if (details.difficulty) {
-      const difficultyColor = details.difficulty.toLowerCase().includes('easy') ? 'var(--success)' : 
-                             details.difficulty.toLowerCase().includes('challenging') ? 'var(--warning)' : 
-                             'var(--accent)';
-      stats.push(`<div class="day-stat"><span class="day-stat-icon">💪</span> <span style="color: ${difficultyColor}; font-weight: 600;">${details.difficulty}</span></div>`);
-    }
-    
-    return stats.length > 0 ? `<div class="day-stats-grid">${stats.join('')}</div>` : '';
-  }
-
-  // Helper function to create details list
-  function createDetailsList(details) {
-    const items = [];
-    
-    const displayFields = [
-      { key: 'terrain', label: 'Terrain', icon: '🏔️' },
-      { key: 'accommodation', label: 'Accommodation', icon: '🏠' },
-      { key: 'highlights', label: 'Highlights', icon: '⭐' },
-      { key: 'lunch', label: 'Lunch', icon: '🍽️' },
-      { key: 'waterSources', label: 'Water Sources', icon: '💧' },
-      { key: 'tips', label: 'Tips', icon: '💡' }
-    ];
-    
-    displayFields.forEach(field => {
-      if (details[field.key]) {
-        items.push(`
-          <li class="day-detail-item">
-            <span class="detail-label">${field.icon} ${field.label}</span>
-            <span class="detail-value">${details[field.key]}</span>
-          </li>
-        `);
-      }
-    });
-    
-    return items.length > 0 ? `<ul class="day-details-list">${items.join('')}</ul>` : '';
-  }
-
-  // Helper function to create enhanced sections
-  function createEnhancedSection(id, title, icon, content) {
-    const section = document.createElement('div');
-    section.className = 'content-section-result';
-    section.id = id;
-
-    const card = document.createElement('div');
-    card.className = 'info-card';
-    
-    const processedContent = processSubsectionsEnhanced(content);
-    
-    card.innerHTML = `
-      <h3><span class="info-card-icon">${icon}</span> ${title}</h3>
-      <div class="enhanced-content">${processedContent}</div>
-    `;
-    
-    section.appendChild(card);
-    return section;
-  }
-
-  // Enhanced subsection processing
-  function processSubsectionsEnhanced(content) {
-    const lines = content.split('\n');
-    let html = '';
-    let currentSubsection = null;
-    let currentItems = [];
-
-    lines.forEach(line => {
-      const trimmedLine = line.trim();
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="itinerary-success-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeSuccessModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
       
-      if (trimmedLine.match(/^\*(.+?):\*$/) || trimmedLine.match(/^(.+?):$/)) {
-        if (currentSubsection) {
-          html += createSubsection(currentSubsection, currentItems);
-        }
-        
-        currentSubsection = trimmedLine.replace(/^\*|\*$/g, '').replace(/:$/, '');
-        currentItems = [];
-      } else if (trimmedLine.startsWith('-') || trimmedLine.startsWith('•')) {
-        currentItems.push(trimmedLine.substring(1).trim());
-      } else if (trimmedLine) {
-        if (currentSubsection) {
-          currentItems.push(trimmedLine);
-        } else {
-          html += `<p style="margin-bottom: 15px; line-height: 1.8;">${trimmedLine}</p>`;
-        }
-      }
-    });
-
-    if (currentSubsection) {
-      html += createSubsection(currentSubsection, currentItems);
-    }
-
-    return html || `<div style="white-space: pre-wrap; line-height: 1.8;">${content}</div>`;
-  }
-
-  // Helper to create subsection HTML
-  function createSubsection(title, items) {
-    return `
-      <div style="margin-bottom: 25px;">
-        <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 15px; font-size: 1.1em;">${title}</h4>
-        <ul style="list-style: none; padding: 0;">
-          ${items.map(item => `
-            <li style="padding: 8px 0; padding-left: 20px; position: relative; color: var(--text-light);">
-              <span style="position: absolute; left: 0; color: var(--primary);">•</span>
-              ${item}
-            </li>
-          `).join('')}
-        </ul>
-      </div>
-    `;
-  }
-
-  // Setup navigation for results tabs
-  function setupResultsNavigation() {
-    const tabs = document.querySelectorAll('.results-nav-tab');
-    const sections = document.querySelectorAll('.content-section-result');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        sections.forEach(s => s.classList.remove('active'));
-
-        tab.classList.add('active');
-
-        const targetSection = tab.dataset.section;
-        const section = document.getElementById(`${targetSection}-section`);
-        if (section) {
-          section.classList.add('active');
-        }
-      });
-    });
-  }
-
-  // Enhanced action buttons
-  function addEnhancedActionButtons(container) {
-    const buttonsWrapper = document.createElement('div');
-    buttonsWrapper.innerHTML = `
-      <div style="margin-top: 20px;">
-        <label for="feedback" style="font-weight: 600; color: var(--text-dark); display: block; margin-bottom: 10px;">
-          Refine your itinerary
-        </label>
-        <input type="text" id="feedback" placeholder="Add feedback to adjust your itinerary (e.g., 'make it easier', 'add more cultural experiences')" 
-          style="width: 100%; padding: 15px; border: 2px solid #E0E0E0; border-radius: 12px; font-size: 1em; transition: border-color 0.3s ease;">
+      <div class="auth-icon">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20,6 9,17 4,12"></polyline>
+        </svg>
       </div>
       
-      <div class="action-buttons-container">
-        <button id="regenerate-itinerary" class="action-btn action-btn-primary">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-          Update Itinerary
-        </button>
-        <button id="save-itinerary" class="action-btn action-btn-secondary">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
-          </svg>
-          Save My Adventure
+      <h2 class="modal-title">Adventure Saved! 🎉</h2>
+      <p class="modal-message">Your custom itinerary has been safely stored in your account. Ready to hit the trails!</p>
+      
+      <div class="button-group">
+        <a href="my-itineraries.html" class="button button-primary">
+          View My Adventures
+        </a>
+        <button class="button button-secondary" onclick="closeSuccessModal()">
+          Plan Another Trek
         </button>
       </div>
-    `;
-    
-    container.appendChild(buttonsWrapper);
+    </div>
+  </div>
 
-    // Re-attach event listeners
-    document.getElementById('regenerate-itinerary')?.addEventListener('click', () => {
-      const feedback = document.getElementById('feedback').value;
-      if (feedback) generateItinerary(feedback);
-    });
+  <!-- Authentication Required Modal -->
+  <div class="modal-overlay" id="auth-required-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeAuthModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="auth-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+          <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
+        </svg>
+      </div>
+      
+      <h2 class="modal-title">🏔️ Save Your Adventure</h2>
+      <p class="modal-message">Join thousands of adventurers and save your custom itinerary to access it anytime, anywhere!</p>
+      
+      <div class="auth-benefits">
+        <h4>🎯 What you'll get:</h4>
+        <div class="benefit-item">Personalized trail recommendations</div>
+        <div class="benefit-item">Gear lists and local insights</div>
+        <div class="benefit-item">Save your favorite itineraries</div>
+        <div class="benefit-item">Regenerate itineraries with feedback</div>
+      </div>
+      
+      <div class="button-group">
+        <button class="button-primary" onclick="redirectToSignUp()">
+          🚀 Join Our Community
+        </button>
+        <button class="button-secondary" onclick="redirectToSignIn()">
+          🏠 I Have an Account
+        </button>
+      </div>
+    </div>
+  </div>
 
-    document.getElementById('save-itinerary')?.addEventListener('click', async () => {
-      await handleSaveItinerary();
-    });
-  }
+  <!-- Welcome Back Modal -->
+  <div class="modal-overlay" id="welcome-back-modal" style="display: none;">
+    <div class="modal">
+      <button class="close-button" onclick="closeWelcomeModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="auth-icon welcome-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22,4 12,14.01 9,11.01"/>
+        </svg>
+      </div>
+      
+      <h2 class="modal-title">🎉 Welcome to Smart Trails!</h2>
+      <p class="modal-message">Your adventure has been saved! You're now part of our amazing trekking community.</p>
+      
+      <div class="button-group">
+        <a href="my-itineraries.html" class="button-primary">
+          🗺️ View My Adventures
+        </a>
+        <button class="button-secondary" onclick="closeWelcomeModal()">
+          🥾 Plan Another Trek
+        </button>
+      </div>
+    </div>
+  </div>
 
-  // Handle save itinerary
-  async function handleSaveItinerary() {
-    try {
-      if (!auth || !auth.currentUser) {
-        storeItineraryForLater();
-        showAuthModal();
-        return;
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/utils/itinerary.js" type="module"></script>
+  <script src="js/pages/customize.js" type="module"></script>
+  <script src="js/components/navbar.js" type="module"></script>
+  <script src="js/components/footer.js" type="module"></script>
+  
+  <!-- Override script for enhanced functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Update greeting with location
+      const location = localStorage.getItem('userLocation') || 'the mountains';
+      const greeting = document.getElementById('greeting');
+      if (greeting) {
+        greeting.innerText = `Design a personalized adventure in ${location}`;
       }
-
-      const token = await auth.currentUser.getIdToken();
       
-      const location = localStorage.getItem('userLocation') || 'Trek Location';
-      const title = `${location} Trek`;
-      const itineraryData = {
-        title,
-        location,
-        content: rawItineraryText,
-        comments: document.getElementById('comments').value || '',
-        filters: {}
-      };
-      
-      document.querySelectorAll('.enhanced-filter-btn.active').forEach(btn => {
-        const category = btn.dataset.category;
-        itineraryData.filters[category] = btn.dataset.value;
-      });
-      
-      const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(itineraryData)
-      });
-      
-      if (!response.ok) throw new Error(`Server returned status ${response.status}`);
-      
-      const data = await response.json();
-      showSuccessModal();
-      
-    } catch (error) {
-      console.error('Error saving itinerary:', error);
-      alert('Failed to save itinerary. Please try again.');
-    }
-  }
-
-  // Store itinerary for later saving
-  function storeItineraryForLater() {
-    const location = localStorage.getItem('userLocation') || 'Trek Location';
-    const title = `${location} Trek`;
-    const itineraryData = {
-      title,
-      location,
-      content: rawItineraryText,
-      comments: document.getElementById('comments').value || '',
-      filters: {}
-    };
-    
-    document.querySelectorAll('.enhanced-filter-btn.active').forEach(btn => {
-      const category = btn.dataset.category;
-      itineraryData.filters[category] = btn.dataset.value;
-    });
-    
-    localStorage.setItem('pendingItinerary', JSON.stringify(itineraryData));
-    localStorage.setItem('returnToCustomize', 'true');
-  }
-
-  // Modal functions
-  function showAuthModal() {
-    const modal = document.getElementById('auth-required-modal');
-    modal.style.display = 'flex';
-  }
-
-  function showSuccessModal() {
-    const modal = document.getElementById('itinerary-success-modal');
-    modal.style.display = 'flex';
-  }
-
-  function showWelcomeModal() {
-    const modal = document.getElementById('welcome-back-modal');
-    modal.style.display = 'flex';
-  }
-
-  // Handle pending itinerary after auth
-  async function handlePendingItinerary() {
-    const pendingItinerary = localStorage.getItem('pendingItinerary');
-    const returnToCustomize = localStorage.getItem('returnToCustomize');
-    
-    if (pendingItinerary && returnToCustomize && auth.currentUser) {
-      try {
-        const token = await auth.currentUser.getIdToken();
-        const itineraryData = JSON.parse(pendingItinerary);
-        
-        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify(itineraryData)
+      // Enhanced filter button functionality
+      document.querySelectorAll('.enhanced-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const group = btn.dataset.category;
+          document.querySelectorAll(`.enhanced-filter-btn[data-category="${group}"]`).forEach(el => {
+            el.classList.remove('active');
+          });
+          btn.classList.add('active');
         });
-        
-        if (response.ok) {
-          localStorage.removeItem('pendingItinerary');
-          localStorage.removeItem('returnToCustomize');
-          
-          setTimeout(() => {
-            showWelcomeModal();
-          }, 1000);
-        }
-      } catch (error) {
-        console.error('Error auto-saving itinerary:', error);
-        localStorage.removeItem('pendingItinerary');
-        localStorage.removeItem('returnToCustomize');
-      }
-    }
-  }
+      });
+    });
 
-  // Check for pending itinerary on auth state change
-  setTimeout(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        handlePendingItinerary();
+    // Modal functions
+    function closeSuccessModal() {
+      const modal = document.getElementById('itinerary-success-modal');
+      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.style.animation = '';
+      }, 200);
+    }
+
+    function closeAuthModal() {
+      const modal = document.getElementById('auth-required-modal');
+      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.style.animation = '';
+      }, 200);
+    }
+
+    function closeWelcomeModal() {
+      const modal = document.getElementById('welcome-back-modal');
+      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.style.animation = '';
+      }, 200);
+    }
+
+    function redirectToSignUp() {
+      window.location.href = 'sign-up.html';
+    }
+
+    function redirectToSignIn() {
+      window.location.href = 'sign-up.html';
+    }
+
+    // Close modals when clicking outside
+    document.addEventListener('click', function(e) {
+      const successModal = document.getElementById('itinerary-success-modal');
+      const authModal = document.getElementById('auth-required-modal');
+      const welcomeModal = document.getElementById('welcome-back-modal');
+      
+      if (e.target === successModal) closeSuccessModal();
+      if (e.target === authModal) closeAuthModal();
+      if (e.target === welcomeModal) closeWelcomeModal();
+    });
+
+    // Close modals with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const successModal = document.getElementById('itinerary-success-modal');
+        const authModal = document.getElementById('auth-required-modal');
+        const welcomeModal = document.getElementById('welcome-back-modal');
+        
+        if (successModal.style.display === 'flex') closeSuccessModal();
+        if (authModal.style.display === 'flex') closeAuthModal();
+        if (welcomeModal.style.display === 'flex') closeWelcomeModal();
       }
     });
-  }, 2000);
-
-  // Make functions globally available
-  window.showSuccessModal = showSuccessModal;
-  window.showAuthModal = showAuthModal;
-  window.showWelcomeModal = showWelcomeModal;
-});
+  </script>
+</body>
+</html>
