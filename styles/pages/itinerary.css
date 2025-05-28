@@ -77,6 +77,7 @@
 /* Day Card Content */
 .day-card-content {
   animation: fadeIn 0.3s ease;
+  padding-top: 8px;
 }
 
 @keyframes fadeIn {
@@ -92,8 +93,8 @@
 
 /* ===== Day Description Box ===== */
 .day-description-box {
-  margin-bottom: 20px;
-  padding: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
   background: #f8fafc;
   border-radius: 12px;
   border-left: 4px solid #557a3e;  /* Green to match day number */
@@ -103,6 +104,7 @@
   color: #4a5568;
   line-height: 1.8;
   margin: 0;
+  font-size: 0.98em;
 }
 
 /* Hide standalone elevation text with green border styling */
@@ -135,7 +137,7 @@
   padding: 16px 20px;
   background: #f0f4f8;
   border-radius: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   font-size: 1.1em;
   font-weight: 500;
   color: #2d3748;
@@ -153,53 +155,69 @@
 .grouped-details-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 35px;
+  margin-top: 10px;
 }
 
 /* ===== Detail Groups ===== */
 .detail-group {
-  background: #fafbfc;
+  background: linear-gradient(to bottom, #fafbfc 0%, #f8f9fa 100%);
   border-radius: 16px;
-  padding: 24px;
+  padding: 28px;
   border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.detail-group:last-child {
+  margin-bottom: 0;
 }
 
 .detail-group-title {
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #2d3748;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
   border-bottom: 2px solid #e2e8f0;
+  letter-spacing: 0.025em;
 }
 
 .detail-group-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 /* ===== Individual Detail Items ===== */
 .detail-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 12px;
+  gap: 10px;
+  padding: 16px;
   background: white;
   border-radius: 10px;
   border: 1px solid #e8eef5;
   transition: all 0.2s ease;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
 }
 
 .detail-item:hover {
   border-color: #cbd5e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
 }
 
 .detail-header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 2px;
 }
 
 .detail-icon {
@@ -210,37 +228,72 @@
 
 .detail-label {
   font-weight: 600;
-  color: #4a5568;
-  font-size: 0.95em;
+  color: #374151;
+  font-size: 0.98em;
+  letter-spacing: 0.01em;
 }
 
 .detail-content {
-  padding-left: 34px;
-  color: #2d3748;
-  line-height: 1.6;
+  padding-left: 36px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-top: 2px;
+  font-size: 0.95em;
 }
 
-/* Special styling for highlights and tips - NO YELLOW BACKGROUND */
-.detail-item.highlights,
+/* Special styling for highlights in Trail Tips section */
+.detail-item.highlights {
+  background: #fffbeb;
+  border: 1px solid #fbbf24;
+  padding: 18px;
+  margin-top: 8px;
+}
+
+.detail-item.highlights .detail-content {
+  font-style: italic;
+  color: #92400e;
+  font-size: 0.95em;
+}
+
+/* Tips styling */
 .detail-item.tips {
-  /* Uses default white background like other items */
-  background: white;
-  border-color: #e8eef5;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
 }
 
-.detail-item.highlights:hover,
 .detail-item.tips:hover {
-  border-color: #cbd5e0;
+  border-color: #4ade80;
+}
+
+/* Terrain box special styling */
+.detail-item.terrain {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 
 /* Difficulty-specific styling */
 .detail-item.difficulty .detail-content {
   font-weight: 500;
+  color: #f59e0b;
 }
 
 /* Ensure elevation is properly styled when in Essential Information */
 .detail-item.elevation .detail-icon::before {
   content: "📈";
+}
+
+/* Route & Accommodation special styling */
+.detail-item.route {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  padding: 18px;
+}
+
+.detail-item.route .detail-content {
+  font-size: 0.95em;
+  line-height: 1.8;
 }
 
 /* ===== Timeline Styles ===== */
@@ -304,15 +357,24 @@
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .grouped-details-container {
-    gap: 20px;
+    gap: 25px;
   }
   
   .detail-group {
-    padding: 18px;
+    padding: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-group-content {
+    gap: 16px;
+  }
+  
+  .detail-item {
+    padding: 14px;
   }
   
   .detail-content {
-    padding-left: 28px;
+    padding-left: 32px;
   }
   
   .itinerary-timeline {
@@ -349,21 +411,30 @@
   }
   
   .detail-group {
-    padding: 16px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  
+  .detail-group-content {
+    gap: 12px;
   }
   
   .detail-item {
-    padding: 10px;
+    padding: 12px;
   }
   
   .detail-content {
     padding-left: 0;
-    margin-top: 4px;
+    margin-top: 6px;
   }
   
   .day-number {
     font-size: 0.85em;
     padding: 6px 12px;
+  }
+  
+  .grouped-details-container {
+    gap: 20px;
   }
 }
 
