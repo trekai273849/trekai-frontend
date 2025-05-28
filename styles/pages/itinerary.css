@@ -1,0 +1,340 @@
+/* styles/pages/itinerary.css - Complete file with grouped layout styles */
+
+/* ===== Day Card Base Styles ===== */
+.itinerary-day-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.itinerary-day-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+/* Day Card Header */
+.day-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+  position: relative;
+}
+
+.day-number {
+  background: var(--primary, #4a90e2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.day-title-enhanced {
+  flex: 1;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.day-card-toggle {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #718096;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.day-card-toggle:hover {
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.day-card-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.itinerary-day-card.collapsed .day-card-toggle svg {
+  transform: rotate(-90deg);
+}
+
+.itinerary-day-card.collapsed .day-card-content {
+  display: none;
+}
+
+/* Day Card Content */
+.day-card-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Day Description Box */
+.day-description-box {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary, #4a90e2);
+}
+
+.day-description-enhanced {
+  color: #4a5568;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ===== Distance Section ===== */
+.distance-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: #f0f4f8;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.distance-icon {
+  font-size: 1.2em;
+}
+
+.distance-text {
+  color: #4a5568;
+}
+
+/* ===== Grouped Details Container ===== */
+.grouped-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===== Detail Groups ===== */
+.detail-group {
+  background: #fafbfc;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.detail-group-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.detail-group-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Individual Detail Items ===== */
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e8eef5;
+  transition: all 0.2s ease;
+}
+
+.detail-item:hover {
+  border-color: #cbd5e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-icon {
+  font-size: 1.2em;
+  min-width: 24px;
+  text-align: center;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.95em;
+}
+
+.detail-content {
+  padding-left: 34px;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* Special styling for highlights and tips */
+.detail-item.highlights,
+.detail-item.tips {
+  background: #fef8e1;
+  border-color: #f0e4b1;
+}
+
+.detail-item.highlights:hover,
+.detail-item.tips:hover {
+  border-color: #e8d49f;
+}
+
+/* Difficulty-specific styling */
+.detail-item.difficulty .detail-content {
+  font-weight: 500;
+}
+
+/* ===== Timeline Styles ===== */
+.itinerary-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: #e2e8f0;
+}
+
+.itinerary-day-card::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 40px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid var(--primary, #4a90e2);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ===== Info Cards (for other sections) ===== */
+.info-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.info-card h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-card-icon {
+  font-size: 1.2em;
+}
+
+.enhanced-content {
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .grouped-details-container {
+    gap: 20px;
+  }
+  
+  .detail-group {
+    padding: 18px;
+  }
+  
+  .detail-content {
+    padding-left: 28px;
+  }
+  
+  .itinerary-timeline {
+    padding-left: 20px;
+  }
+  
+  .itinerary-timeline::before {
+    left: 8px;
+  }
+  
+  .itinerary-day-card::before {
+    left: -15px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .day-card-header {
+    flex-wrap: wrap;
+  }
+  
+  .day-title-enhanced {
+    font-size: 1.1em;
+  }
+  
+  .distance-section {
+    padding: 12px 16px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .itinerary-day-card {
+    padding: 18px;
+  }
+  
+  .detail-group {
+    padding: 16px;
+  }
+  
+  .detail-item {
+    padding: 10px;
+  }
+  
+  .detail-content {
+    padding-left: 0;
+    margin-top: 4px;
+  }
+  
+  .day-number {
+    font-size: 0.85em;
+    padding: 6px 12px;
+  }
+}
