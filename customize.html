@@ -36,6 +36,23 @@
       background-color: var(--bg-light);
     }
 
+    /* Main content padding */
+    .main-content-padding {
+      padding: 24px;
+    }
+    
+    @media (max-width: 768px) {
+      .main-content-padding {
+        padding: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main-content-padding {
+        padding: 12px;
+      }
+    }
+
     /* Enhanced Hero Section */
     .hero-enhanced {
       position: relative;
@@ -113,6 +130,13 @@
       gap: 10px;
     }
 
+    .filter-buttons-container {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
     .enhanced-filter-btn {
       padding: 12px 24px !important;
       border-radius: 30px !important;
@@ -124,14 +148,36 @@
       color: var(--text-dark) !important;
       cursor: pointer !important;
       white-space: nowrap;
+      flex: 1;
+      min-width: 120px;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
-    .enhanced-filter-btn:hover {
-      background-color: var(--white) !important;
-      border-color: var(--primary) !important;
-      color: var(--primary) !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15) !important;
+    .enhanced-filter-btn:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2) !important;
+    }
+
+    /* Only apply hover effects on devices that support hover */
+    @media (hover: hover) {
+      .enhanced-filter-btn:hover {
+        background-color: var(--white) !important;
+        border-color: var(--primary) !important;
+        color: var(--primary) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15) !important;
+      }
+    }
+
+    .enhanced-filter-btn:focus {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .enhanced-filter-btn:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .enhanced-filter-btn.active {
@@ -139,6 +185,18 @@
       color: white !important;
       border-color: var(--primary) !important;
       box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3) !important;
+      position: relative;
+    }
+    
+    /* Add checkmark for active state on mobile */
+    @media (max-width: 768px) {
+      .enhanced-filter-btn.active::after {
+        content: "✓";
+        position: absolute;
+        right: 16px;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
     }
 
     /* Comments Section Enhancement */
@@ -148,6 +206,20 @@
       padding: 30px;
       box-shadow: 0 2px 10px var(--shadow);
       margin-bottom: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .comments-container {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .comments-container {
+        padding: 16px;
+        border-radius: 12px;
+      }
     }
 
     .comments-container label {
@@ -615,23 +687,95 @@
       display: none !important;
     }
 
+    /* Tablet view - stack buttons in pairs */
+    @media (max-width: 900px) and (min-width: 769px) {
+      .filters-container {
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+      }
+      
+      .filter-buttons-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      
+      .enhanced-filter-btn {
+        min-width: unset !important;
+      }
+      
+      /* Make the third button span full width if there are 3 buttons */
+      .filter-buttons-container:has(button:nth-child(3):last-child) button:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* Large phones and small tablets (481px to 768px) */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .filters-container {
+        max-width: 600px;
+        margin: 0 auto 40px auto;
+      }
+      
+      .filter-buttons-container {
+        max-width: 450px;
+        margin: 0 auto;
+      }
+    }
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .hero-content-enhanced h1 {
         font-size: 2em;
       }
       
-      .filters-container {
-        padding: 20px;
+      .hero-content-enhanced h2 {
+        font-size: 1.2em;
       }
       
-      .filter-container {
+      .filters-container {
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      
+      .filter-group {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      
+      .filter-group:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      
+      .filter-group h3 {
+        font-size: 1.1em;
+        margin-bottom: 12px;
+      }
+      
+      .filter-buttons-container {
         flex-direction: column;
+        gap: 8px;
       }
       
       .enhanced-filter-btn {
-        flex: none;
-        width: 100%;
+        flex: none !important;
+        width: 100% !important;
+        min-width: unset !important;
+        padding: 16px 20px !important;
+        font-size: 0.95em !important;
+        min-height: 50px !important;
+        height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
+      
+      .enhanced-filter-btn.active {
+        font-weight: 700 !important;
       }
       
       .day-card-header {
@@ -671,6 +815,83 @@
       
       .action-btn {
         width: 100%;
+      }
+    }
+
+    /* Small devices (phones under 480px) */
+    @media (max-width: 480px) {
+      .filters-container {
+        padding: 16px;
+      }
+      
+      .filter-group {
+        margin-bottom: 20px;
+      }
+      
+      .filter-group h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+      }
+      
+      .enhanced-filter-btn {
+        padding: 14px 16px !important;
+        font-size: 0.9em !important;
+        min-height: 46px !important;
+      }
+      
+      .comments-container {
+        padding: 20px;
+      }
+      
+      .comments-container textarea {
+        padding: 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 100px;
+      }
+      
+      .generate-btn {
+        padding: 16px 30px;
+        font-size: 1em;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    /* Very small devices (phones under 380px) */
+    @media (max-width: 380px) {
+      .enhanced-filter-btn {
+        font-size: 0.85em !important;
+        padding: 14px 12px !important;
+      }
+      
+      .filter-group h3 {
+        font-size: 0.95em;
+      }
+      
+      .comments-container label {
+        font-size: 1em;
+      }
+    }
+
+    /* Landscape mode for mobile */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .hero-enhanced {
+        height: 70vh;
+        min-height: 300px;
+      }
+      
+      .filter-buttons-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      
+      .filter-buttons-container:has(button:nth-child(3):last-child) button:last-child {
+        grid-column: 1 / -1;
+      }
+      
+      .enhanced-filter-btn {
+        min-height: 44px !important;
       }
     }
 
@@ -899,24 +1120,24 @@
   </header>
 
   <!-- Main Content with Enhanced Styling -->
-  <main class="max-w-5xl mx-auto p-6">
+  <main class="max-w-5xl mx-auto main-content-padding">
     <!-- Filters Section -->
     <div class="filters-container">
       <form id="customization-form">
         <!-- Accommodation -->
         <div class="filter-group">
           <h3>🏕️ Accommodation Type</h3>
-          <div class="flex gap-3">
+          <div class="filter-buttons-container">
             <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
             <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
-            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Luxury Lodges">Luxury Lodges</button>
+            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Lodges">Lodges</button>
           </div>
         </div>
 
         <!-- Difficulty -->
         <div class="filter-group">
           <h3>🏔️ Difficulty Level</h3>
-          <div class="flex gap-3">
+          <div class="filter-buttons-container">
             <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
             <button type="button" class="enhanced-filter-btn active" data-category="difficulty" data-value="Moderate">Moderate</button>
             <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
@@ -926,7 +1147,7 @@
         <!-- Technical -->
         <div class="filter-group">
           <h3>🧗 Technical Requirements</h3>
-          <div class="flex gap-3">
+          <div class="filter-buttons-container">
             <button type="button" class="enhanced-filter-btn active" data-category="technical" data-value="None">None</button>
             <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
             <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
