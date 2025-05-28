@@ -1,4 +1,4 @@
-/* styles/pages/itinerary.css - Complete file with grouped layout styles */
+/* styles/pages/itinerary.css - Complete file with all fixes */
 
 /* ===== Day Card Base Styles ===== */
 .itinerary-day-card {
@@ -28,7 +28,7 @@
 }
 
 .day-number {
-  background: var(--primary, #4a90e2);
+  background: #557a3e;  /* Dark green color */
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
@@ -90,13 +90,13 @@
   }
 }
 
-/* Day Description Box */
+/* ===== Day Description Box ===== */
 .day-description-box {
   margin-bottom: 20px;
   padding: 16px;
   background: #f8fafc;
   border-radius: 12px;
-  border-left: 4px solid var(--primary, #4a90e2);
+  border-left: 4px solid #557a3e;  /* Green to match day number */
 }
 
 .day-description-enhanced {
@@ -198,16 +198,17 @@
   line-height: 1.6;
 }
 
-/* Special styling for highlights and tips */
+/* Special styling for highlights and tips - NO YELLOW BACKGROUND */
 .detail-item.highlights,
 .detail-item.tips {
-  background: #fef8e1;
-  border-color: #f0e4b1;
+  /* Uses default white background like other items */
+  background: white;
+  border-color: #e8eef5;
 }
 
 .detail-item.highlights:hover,
 .detail-item.tips:hover {
-  border-color: #e8d49f;
+  border-color: #cbd5e0;
 }
 
 /* Difficulty-specific styling */
@@ -239,7 +240,7 @@
   width: 16px;
   height: 16px;
   background: white;
-  border: 3px solid var(--primary, #4a90e2);
+  border: 3px solid #557a3e;  /* Green to match day number */
   border-radius: 50%;
   z-index: 1;
 }
@@ -337,4 +338,39 @@
     font-size: 0.85em;
     padding: 6px 12px;
   }
+}
+
+/* ===== Additional Styles to Ensure Proper Layout ===== */
+
+/* Ensure elevation doesn't appear as a separate box */
+.elevation-box,
+.elevation-section {
+  display: none !important;
+}
+
+/* Make sure day number is always visible */
+.day-number:empty::before {
+  content: "Day";
+}
+
+/* Ensure proper spacing in grouped layout */
+.grouped-details-container:empty {
+  display: none;
+}
+
+/* Hide any duplicate distance displays */
+.distance-section + .distance-section {
+  display: none;
+}
+
+/* Ensure detail items are properly formatted */
+.detail-item .detail-content:empty {
+  display: none;
+}
+
+/* Override any conflicting styles from other CSS files */
+.itinerary-day-card .day-number {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
