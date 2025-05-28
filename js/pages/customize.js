@@ -25,9 +25,8 @@ let firebase = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Update location in greeting
-  const location = localStorage.getItem('userLocation') || 'the mountains';
-  document.getElementById('greeting').innerText = `Design a personalized adventure in ${location}`;
+  // Update greeting
+document.getElementById('greeting').innerText = 'Design your personalized adventure';
 
   let cachedPackingList = '';
   let cachedInsights = '';
