@@ -1,4 +1,4 @@
-// js/pages/customize.js - Complete Enhanced Version
+// js/pages/customize.js - Final Complete Version with Consistent Layout
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
@@ -363,7 +363,7 @@ The final day offers a gentle descent with spectacular views throughout.
     }
   }
 
-  // Enhanced render function with improved card layout
+  // Enhanced render function with consistent layout
   function processAndRenderEnhancedItinerary(text) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
@@ -445,7 +445,7 @@ The final day offers a gentle descent with spectacular views throughout.
 
       const details = parseDayDetails(bodyText);
       
-      // Enhanced day card HTML with better layout
+      // Updated day card HTML with consistent formatting
       dayCard.innerHTML = `
         <!-- Card Header -->
         <div class="day-card-header">
@@ -458,22 +458,18 @@ The final day offers a gentle descent with spectacular views throughout.
           </button>
         </div>
         
-        <!-- Stats Section -->
-        <div class="day-stats-section">
-          <div class="day-stats-grid">
-            ${createEnhancedDayStats(details)}
-          </div>
-        </div>
-        
         <!-- Main Content -->
         <div class="day-card-content">
-          ${createLocationInfo(details)}
           ${details.description ? `
             <div class="day-description-box">
               <p class="day-description-enhanced">${details.description}</p>
             </div>
           ` : ''}
-          ${createEnhancedDetailCards(details)}
+          
+          <!-- All Details in Consistent Format -->
+          <div class="all-details-container">
+            ${createAllDetailSections(details)}
+          </div>
         </div>
       `;
 
@@ -511,165 +507,87 @@ The final day offers a gentle descent with spectacular views throughout.
     addEnhancedActionButtons(container);
   }
 
-  // Enhanced stats creation with better layout
-  function createEnhancedDayStats(details) {
-    const stats = [];
+  // New function to create all detail sections with consistent formatting
+  function createAllDetailSections(details) {
+    const sections = [];
     
+    // Distance
     if (details.distance) {
-      stats.push(`
-        <div class="day-stat">
-          <div class="day-stat-icon">📏</div>
-          <div class="day-stat-label">Distance</div>
-          <div class="day-stat-value">${details.distance}</div>
-        </div>
-      `);
+      sections.push(createDetailSection('📏', 'Distance', details.distance));
     }
     
+    // Difficulty
+    if (details.difficulty) {
+      const difficultyColor = getDifficultyColor(details.difficulty);
+      sections.push(createDetailSection('💪', 'Difficulty', details.difficulty, 'difficulty', difficultyColor));
+    }
+    
+    // Terrain
+    if (details.terrain) {
+      sections.push(createDetailSection('🏔️', 'Terrain', details.terrain));
+    }
+    
+    // Elevation
     if (details.elevationGain || details.elevationLoss) {
       const elevText = [];
-      if (details.elevationGain) elevText.push(`↑ ${details.elevationGain}`);
-      if (details.elevationLoss) elevText.push(`↓ ${details.elevationLoss}`);
-      
-      stats.push(`
-        <div class="day-stat">
-          <div class="day-stat-icon">📈</div>
-          <div class="day-stat-label">Elevation</div>
-          <div class="day-stat-value">${elevText.join(' ')}</div>
-        </div>
-      `);
+      if (details.elevationGain) elevText.push(`Gain: ${details.elevationGain}`);
+      if (details.elevationLoss) elevText.push(`Loss: ${details.elevationLoss}`);
+      sections.push(createDetailSection('📈', 'Elevation', elevText.join(' • ')));
     }
     
-    if (details.difficulty) {
-      const difficultyColors = {
-        'easy': '#27AE60',
-        'moderate': '#F39C12',
-        'challenging': '#E74C3C',
-        'difficult': '#E74C3C'
-      };
-      
-      const difficultyLevel = details.difficulty.toLowerCase();
-      let difficultyColor = '#F39C12'; // default to moderate
-      
-      for (const [key, color] of Object.entries(difficultyColors)) {
-        if (difficultyLevel.includes(key)) {
-          difficultyColor = color;
-          break;
-        }
-      }
-      
-      stats.push(`
-        <div class="day-stat">
-          <div class="day-stat-icon" style="color: ${difficultyColor}">💪</div>
-          <div class="day-stat-label">Difficulty</div>
-          <div class="day-stat-value" style="color: ${difficultyColor}">${details.difficulty}</div>
-        </div>
-      `);
-    }
-    
-    if (details.terrain) {
-      stats.push(`
-        <div class="day-stat">
-          <div class="day-stat-icon">🏔️</div>
-          <div class="day-stat-label">Terrain</div>
-          <div class="day-stat-value">${details.terrain}</div>
-        </div>
-      `);
-    }
-    
-    return stats.join('');
-  }
-
-  // Create location info card
-  function createLocationInfo(details) {
-    let locationHtml = '';
-    
+    // Route & Accommodation
     if (details.start || details.end || details.accommodation) {
-      locationHtml = `
-        <div class="location-info-card">
-          <div class="location-icon">📍</div>
-          <div class="location-text">
-            <div class="location-label">Route & Accommodation</div>
-            <div class="location-value">
-              ${details.start ? `Start: ${details.start}` : ''}
-              ${details.end ? ` → End: ${details.end}` : ''}
-              ${details.accommodation ? ` • Stay: ${details.accommodation}` : ''}
-            </div>
-          </div>
-        </div>
-      `;
+      const routeText = [];
+      if (details.start) routeText.push(`Start: ${details.start}`);
+      if (details.end) routeText.push(`End: ${details.end}`);
+      if (details.accommodation) routeText.push(`Stay: ${details.accommodation}`);
+      sections.push(createDetailSection('📍', 'Route & Accommodation', routeText.join(' → ')));
     }
     
-    return locationHtml;
+    // Highlights
+    if (details.highlights) {
+      sections.push(createDetailSection('⭐', 'Highlights', details.highlights, 'highlights'));
+    }
+    
+    // Lunch
+    if (details.lunch) {
+      sections.push(createDetailSection('🍽️', 'Lunch', details.lunch));
+    }
+    
+    // Water Sources
+    if (details.waterSources) {
+      sections.push(createDetailSection('💧', 'Water Sources', details.waterSources));
+    }
+    
+    // Tips
+    if (details.tips) {
+      sections.push(createDetailSection('💡', 'Tips', details.tips, 'tips'));
+    }
+    
+    return sections.join('');
   }
 
-  // Create enhanced detail cards
-  function createEnhancedDetailCards(details) {
-    const cards = [];
-    
-    // Highlights get special treatment
-    if (details.highlights) {
-      cards.push(`
-        <div class="day-details-grid">
-          <div class="detail-card highlights">
-            <div class="detail-card-header">
-              <div class="detail-icon">⭐</div>
-              <div class="detail-label">Highlights</div>
-            </div>
-            <div class="detail-value">${details.highlights}</div>
-          </div>
+  // Helper function to create a detail section
+  function createDetailSection(icon, label, content, className = '', customStyle = '') {
+    return `
+      <div class="detail-section ${className}">
+        <div class="detail-header">
+          <span class="detail-icon">${icon}</span>
+          <span class="detail-label">${label}</span>
         </div>
-      `);
-    }
-    
-    // Other details in a grid
-    const otherDetails = [];
-    
-    if (details.lunch) {
-      otherDetails.push(`
-        <div class="detail-card">
-          <div class="detail-card-header">
-            <div class="detail-icon">🍽️</div>
-            <div class="detail-label">Lunch</div>
-          </div>
-          <div class="detail-value">${details.lunch}</div>
+        <div class="detail-content" ${customStyle ? `style="color: ${customStyle};"` : ''}>
+          ${content}
         </div>
-      `);
-    }
-    
-    if (details.waterSources) {
-      otherDetails.push(`
-        <div class="detail-card">
-          <div class="detail-card-header">
-            <div class="detail-icon">💧</div>
-            <div class="detail-label">Water Sources</div>
-          </div>
-          <div class="detail-value">${details.waterSources}</div>
-        </div>
-      `);
-    }
-    
-    if (otherDetails.length > 0) {
-      cards.push(`
-        <div class="day-details-grid">
-          ${otherDetails.join('')}
-        </div>
-      `);
-    }
-    
-    // Tips get their own special card
-    if (details.tips) {
-      cards.push(`
-        <div class="tips-card detail-card">
-          <div class="detail-card-header">
-            <div class="detail-icon">💡</div>
-            <div class="detail-label">Tips</div>
-          </div>
-          <div class="detail-value">${details.tips}</div>
-        </div>
-      `);
-    }
-    
-    return cards.join('');
+      </div>
+    `;
+  }
+
+  // Helper function to get difficulty color
+  function getDifficultyColor(difficulty) {
+    const difficultyLevel = difficulty.toLowerCase();
+    if (difficultyLevel.includes('easy')) return '#27AE60';
+    if (difficultyLevel.includes('challenging') || difficultyLevel.includes('difficult')) return '#E74C3C';
+    return '#F39C12'; // moderate
   }
 
   // Enhanced helper function to parse day details
