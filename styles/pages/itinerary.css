@@ -105,6 +105,28 @@
   margin: 0;
 }
 
+/* Hide standalone elevation text with green border styling */
+.day-card-content > :not(.day-description-box):not(.distance-section):not(.grouped-details-container)[style*="border-left"] {
+  display: none !important;
+}
+
+/* Hide any direct p tags that contain elevation info outside proper containers */
+.day-card-content > p {
+  display: none;
+}
+
+/* Ensure all properly structured content remains visible */
+.day-description-box,
+.day-description-box *,
+.distance-section,
+.distance-section *,
+.grouped-details-container,
+.grouped-details-container *,
+.detail-group,
+.detail-group * {
+  display: revert !important;
+}
+
 /* ===== Distance Section ===== */
 .distance-section {
   display: flex;
@@ -214,6 +236,11 @@
 /* Difficulty-specific styling */
 .detail-item.difficulty .detail-content {
   font-weight: 500;
+}
+
+/* Ensure elevation is properly styled when in Essential Information */
+.detail-item.elevation .detail-icon::before {
+  content: "📈";
 }
 
 /* ===== Timeline Styles ===== */
@@ -342,9 +369,10 @@
 
 /* ===== Additional Styles to Ensure Proper Layout ===== */
 
-/* Ensure elevation doesn't appear as a separate box */
+/* Hide any elevation elements outside the grouped layout */
 .elevation-box,
-.elevation-section {
+.elevation-section,
+div[class*="elevation"]:not(.detail-item) {
   display: none !important;
 }
 
