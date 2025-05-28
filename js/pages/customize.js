@@ -1,4 +1,4 @@
-// js/pages/customize.js - Final Complete Version with Grouped Layout
+// js/pages/customize.js - Final Complete Version with Fixed Grouped Layout
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
@@ -363,91 +363,7 @@ The final day offers a gentle descent with spectacular views throughout.
     }
   }
 
-  // New function to create grouped detail sections
-  function createGroupedDetailSections(details) {
-    const sections = [];
-    
-    // Group 1: Essential Information
-    const essentialItems = [];
-    
-    // Elevation
-    if (details.elevationGain || details.elevationLoss) {
-      const elevText = [];
-      if (details.elevationGain) elevText.push(`Gain: ${details.elevationGain}`);
-      if (details.elevationLoss) elevText.push(`Loss: ${details.elevationLoss}`);
-      essentialItems.push(createDetailItem('📈', 'Elevation', elevText.join(' • ')));
-    }
-    
-    // Difficulty
-    if (details.difficulty) {
-      const difficultyColor = getDifficultyColor(details.difficulty);
-      essentialItems.push(createDetailItem('💪', 'Difficulty', details.difficulty, 'difficulty', difficultyColor));
-    }
-    
-    // Terrain
-    if (details.terrain) {
-      essentialItems.push(createDetailItem('🏔️', 'Terrain', details.terrain));
-    }
-    
-    // Route & Accommodation
-    if (details.start || details.end || details.accommodation) {
-      const routeText = [];
-      if (details.start) routeText.push(`Start: ${details.start}`);
-      if (details.end) routeText.push(`End: ${details.end}`);
-      if (details.accommodation) routeText.push(`Stay: ${details.accommodation}`);
-      essentialItems.push(createDetailItem('📍', 'Route & Accommodation', routeText.join(' → ')));
-    }
-    
-    // Group 2: Trail Tips
-    const trailTipItems = [];
-    
-    // Highlights
-    if (details.highlights) {
-      trailTipItems.push(createDetailItem('⭐', 'Highlights', details.highlights, 'highlights'));
-    }
-    
-    // Lunch
-    if (details.lunch) {
-      trailTipItems.push(createDetailItem('🍽️', 'Lunch', details.lunch));
-    }
-    
-    // Water Sources
-    if (details.waterSources) {
-      trailTipItems.push(createDetailItem('💧', 'Water Sources', details.waterSources));
-    }
-    
-    // Tips
-    if (details.tips) {
-      trailTipItems.push(createDetailItem('💡', 'Tips', details.tips, 'tips'));
-    }
-    
-    // Build the grouped sections HTML
-    if (essentialItems.length > 0) {
-      sections.push(`
-        <div class="detail-group">
-          <h4 class="detail-group-title">Essential Information</h4>
-          <div class="detail-group-content">
-            ${essentialItems.join('')}
-          </div>
-        </div>
-      `);
-    }
-    
-    if (trailTipItems.length > 0) {
-      sections.push(`
-        <div class="detail-group">
-          <h4 class="detail-group-title">Trail Tips</h4>
-          <div class="detail-group-content">
-            ${trailTipItems.join('')}
-          </div>
-        </div>
-      `);
-    }
-    
-    return sections.join('');
-  }
-
-  // New helper function to create individual detail items
+  // Helper function to create individual detail items
   function createDetailItem(icon, label, content, className = '', customStyle = '') {
     return `
       <div class="detail-item ${className}">
@@ -464,10 +380,97 @@ The final day offers a gentle descent with spectacular views throughout.
 
   // Helper function to get difficulty color
   function getDifficultyColor(difficulty) {
+    if (!difficulty) return '#F39C12';
     const difficultyLevel = difficulty.toLowerCase();
     if (difficultyLevel.includes('easy')) return '#27AE60';
     if (difficultyLevel.includes('challenging') || difficultyLevel.includes('difficult')) return '#E74C3C';
     return '#F39C12'; // moderate
+  }
+
+  // Fixed function to create properly grouped detail sections
+  function createGroupedDetailSections(details) {
+    console.log('Creating grouped sections with details:', details);
+    
+    let essentialHTML = '';
+    let trailTipsHTML = '';
+    
+    // Group 1: Essential Information
+    // Elevation
+    if (details.elevationGain || details.elevationLoss) {
+      const elevText = [];
+      if (details.elevationGain) elevText.push(`Gain: ${details.elevationGain}`);
+      if (details.elevationLoss) elevText.push(`Loss: ${details.elevationLoss}`);
+      essentialHTML += createDetailItem('📈', 'Elevation', elevText.join(' • '));
+    }
+    
+    // Difficulty
+    if (details.difficulty) {
+      const difficultyColor = getDifficultyColor(details.difficulty);
+      essentialHTML += createDetailItem('💪', 'Difficulty', details.difficulty, 'difficulty', difficultyColor);
+    }
+    
+    // Terrain
+    if (details.terrain) {
+      essentialHTML += createDetailItem('🏔️', 'Terrain', details.terrain);
+    }
+    
+    // Route & Accommodation
+    if (details.start || details.end || details.accommodation) {
+      const routeParts = [];
+      if (details.start) routeParts.push(`Start: ${details.start}`);
+      if (details.end) routeParts.push(`End: ${details.end}`);
+      if (details.accommodation) routeParts.push(`Stay: ${details.accommodation}`);
+      essentialHTML += createDetailItem('📍', 'Route & Accommodation', routeParts.join(' → '));
+    }
+    
+    // Group 2: Trail Tips
+    // Highlights
+    if (details.highlights) {
+      trailTipsHTML += createDetailItem('⭐', 'Highlights', details.highlights, 'highlights');
+    }
+    
+    // Lunch
+    if (details.lunch) {
+      trailTipsHTML += createDetailItem('🍽️', 'Lunch', details.lunch);
+    }
+    
+    // Water Sources
+    if (details.waterSources) {
+      trailTipsHTML += createDetailItem('💧', 'Water Sources', details.waterSources);
+    }
+    
+    // Tips
+    if (details.tips) {
+      trailTipsHTML += createDetailItem('💡', 'Tips', details.tips, 'tips');
+    }
+    
+    // Build the final HTML
+    let html = '';
+    
+    if (essentialHTML) {
+      html += `
+        <div class="detail-group">
+          <h4 class="detail-group-title">Essential Information</h4>
+          <div class="detail-group-content">
+            ${essentialHTML}
+          </div>
+        </div>
+      `;
+    }
+    
+    if (trailTipsHTML) {
+      html += `
+        <div class="detail-group">
+          <h4 class="detail-group-title">Trail Tips</h4>
+          <div class="detail-group-content">
+            ${trailTipsHTML}
+          </div>
+        </div>
+      `;
+    }
+    
+    console.log('Generated grouped HTML with', essentialHTML ? 'Essential Info' : 'NO Essential', 'and', trailTipsHTML ? 'Trail Tips' : 'NO Tips');
+    return html;
   }
 
   // Enhanced render function with grouped layout
@@ -551,6 +554,9 @@ The final day offers a gentle descent with spectacular views throughout.
       dayCard.className = 'itinerary-day-card';
 
       const details = parseDayDetails(bodyText);
+      
+      // Debug: Log the details to see what we're working with
+      console.log('Day details:', details);
       
       // Updated day card HTML with grouped sections
       dayCard.innerHTML = `
@@ -640,44 +646,53 @@ The final day offers a gentle descent with spectacular views throughout.
       end: null
     };
 
-    // Enhanced field patterns including start/end
+    console.log('Parsing body text:', bodyText);
+
+    // Enhanced field patterns - handle both with and without ** markers
     const fieldPatterns = {
-      distance: /(?:Distance|Trek):\s*([^\n]+)/i,
-      elevationGain: /Elevation\s+(?:gain|Gain):\s*([^\n]+)/i,
-      elevationLoss: /Elevation\s+(?:loss|Loss):\s*([^\n]+)/i,
-      terrain: /Terrain:\s*([^\n]+)/i,
-      difficulty: /Difficulty:\s*([^\n]+)/i,
-      accommodation: /Accommodation:\s*([^\n]+)/i,
-      highlights: /Highlights?:\s*([^\n]+)/i,
-      lunch: /Lunch:\s*([^\n]+)/i,
-      tips: /Tips?:\s*([^\n]+)/i,
-      waterSources: /Water\s+sources?:\s*([^\n]+)/i,
-      start: /Start:\s*([^\n-]+)/i,
-      end: /End:\s*([^\n-]+)/i
+      distance: /(?:-\s*)?(?:\*\*)?(?:Distance|Trek)(?:\*\*)?:\s*([^\n]+)/i,
+      elevationGain: /(?:-\s*)?(?:\*\*)?Elevation\s+(?:gain|Gain)(?:\*\*)?:\s*([^\n]+)/i,
+      elevationLoss: /(?:-\s*)?(?:\*\*)?Elevation\s+(?:loss|Loss)(?:\*\*)?:\s*([^\n]+)/i,
+      terrain: /(?:-\s*)?(?:\*\*)?Terrain(?:\*\*)?:\s*([^\n]+)/i,
+      difficulty: /(?:-\s*)?(?:\*\*)?Difficulty(?:\*\*)?:\s*([^\n]+)/i,
+      accommodation: /(?:-\s*)?(?:\*\*)?Accommodation(?:\*\*)?:\s*([^\n]+)/i,
+      highlights: /(?:-\s*)?(?:\*\*)?Highlights?(?:\*\*)?:\s*([^\n]+)/i,
+      lunch: /(?:-\s*)?(?:\*\*)?Lunch(?:\*\*)?:\s*([^\n]+)/i,
+      tips: /(?:-\s*)?(?:\*\*)?Tips?(?:\*\*)?:\s*([^\n]+)/i,
+      waterSources: /(?:-\s*)?(?:\*\*)?Water\s+sources?(?:\*\*)?:\s*([^\n]+)/i,
+      start: /(?:-\s*)?(?:\*\*)?Start(?:\*\*)?:\s*([^\n\-]+)/i,
+      end: /(?:-\s*)?(?:\*\*)?End(?:\*\*)?:\s*([^\n\-]+)/i
     };
 
-    // Extract all fields
+    // Extract all fields - remove ** markers from captured content
     Object.keys(fieldPatterns).forEach(field => {
       const match = bodyText.match(fieldPatterns[field]);
       if (match) {
-        details[field] = match[1].trim();
+        details[field] = match[1].trim().replace(/\*\*/g, '');
+        console.log(`Found ${field}:`, details[field]);
       }
     });
 
-    // Try to extract start/end from the text if not found as separate fields
-    if (!details.start && !details.end) {
-      const startEndMatch = bodyText.match(/-\s*Start:\s*([^-]+)-\s*End:\s*([^\n-]+)/i);
+    // Try to extract start/end from combined format like "- Start: X - End: Y"
+    if (!details.start || !details.end) {
+      const startEndMatch = bodyText.match(/-\s*(?:\*\*)?Start(?:\*\*)?:\s*([^-]+)\s*-\s*(?:\*\*)?End(?:\*\*)?:\s*([^\n-]+)/i);
       if (startEndMatch) {
-        details.start = startEndMatch[1].trim();
-        details.end = startEndMatch[2].trim();
+        details.start = startEndMatch[1].trim().replace(/\*\*/g, '');
+        details.end = startEndMatch[2].trim().replace(/\*\*/g, '');
+        console.log('Found combined start/end:', details.start, details.end);
       }
     }
 
-    // Extract description (remaining text)
-    const fieldsRegex = /(?:Distance|Trek|Elevation\s+(?:gain|loss)|Terrain|Difficulty|Accommodation|Highlights?|Lunch|Tips?|Water\s+sources?|Start|End):\s*[^\n]+/gi;
-    const remainingText = bodyText.replace(fieldsRegex, '').replace(/-\s*Start:.*?End:[^\n]+/i, '').trim();
+    // Extract description (remaining text) - more robust regex
+    const fieldsRegex = /(?:-\s*)?(?:\*\*)?(?:Distance|Trek|Elevation\s+(?:gain|loss)|Terrain|Difficulty|Accommodation|Highlights?|Lunch|Tips?|Water\s+sources?|Start|End)(?:\*\*)?:\s*[^\n]+/gi;
+    const remainingText = bodyText
+      .replace(fieldsRegex, '')
+      .replace(/-\s*(?:\*\*)?Start(?:\*\*)?:.*?(?:\*\*)?End(?:\*\*)?:[^\n]+/i, '')
+      .trim();
+      
     if (remainingText && remainingText.length > 20) {
       details.description = remainingText;
+      console.log('Found description:', details.description);
     }
 
     return details;
