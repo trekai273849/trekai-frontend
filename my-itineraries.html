@@ -573,14 +573,33 @@
       return metadata;
     }
     
+    // Function to clean up custom trek titles
+    function cleanTrekTitle(title, isPopularTrek) {
+      if (!title || isPopularTrek) return title;
+      
+      // Remove redundant "Trek" at the end
+      let cleanTitle = title.replace(/\s+Trek$/i, '');
+      
+      // Extract location-based title
+      // Pattern: "X day trek/hike in/near [location]"
+      const locationMatch = cleanTitle.match(/\d+\s*day\s*(?:trek|hike)\s*(?:in|near)\s*(?:the\s+)?(.+)/i);
+      if (locationMatch && locationMatch[1]) {
+        // Return just the location part with "Trek" appended
+        return toTitleCase(locationMatch[1]) + ' Trek';
+      }
+      
+      // If no pattern match, just clean up the title
+      return toTitleCase(cleanTitle);
+    }
+    
     // Function to create a header for an itinerary card
     function createCardHeader(itinerary) {
       // Parse trek metadata from comments
       const trekMeta = parseTrekMetadata(itinerary.comments);
       const isPopularTrek = trekMeta.isPopularTrek || false;
       
-      // Use title for display
-      const displayTitle = itinerary.title || 'Custom Itinerary';
+      // Clean up the title for custom treks
+      const displayTitle = cleanTrekTitle(itinerary.title, isPopularTrek) || 'Custom Itinerary';
       
       // 1. For popular treks with saved image paths, use them directly
       if (isPopularTrek && trekMeta.trekImage) {
