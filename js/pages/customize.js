@@ -1117,6 +1117,26 @@ The final day offers a gentle descent with spectacular views throughout.
       setTimeout(updateScrollIndicators, 100);
     }
 
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        tab.classList.add('active');
+
+        const targetSection = tab.dataset.section;
+        const section = document.getElementById(`${targetSection}-section`);
+        if (section) {
+          section.classList.add('active');
+        }
+
+        // Center the clicked tab in the viewport
+        if (navContainer) {
+          centerTabInView(tab, navContainer);
+        }
+      });
+    });
+    
     // Add touch/swipe support for mobile
     let touchStartX = 0;
     let touchEndX = 0;
@@ -1150,24 +1170,6 @@ The final day offers a gentle descent with spectacular views throughout.
         }
       }
     }
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        sections.forEach(s => s.classList.remove('active'));
-
-        tab.classList.add('active');
-
-        const targetSection = tab.dataset.section;
-        const section = document.getElementById(`${targetSection}-section`);
-        if (section) {
-          section.classList.add('active');
-        }
-
-        // Center the clicked tab in the viewport
-        if (navContainer) {
-          centerTabInView(tab, navContainer);
-        }
-      });
-    });
   }
 
   // Function to center a tab in the scrollable container
