@@ -114,7 +114,26 @@
 
 /* Hide any direct p tags that contain elevation info outside proper containers */
 .day-card-content > p {
-  display: none;
+  display: none !important;
+}
+
+/* More specific rules to catch elevation text in various formats */
+.day-card-content > div[style*="border-left"]:not(.day-description-box):not(.distance-section):not(.grouped-details-container) {
+  display: none !important;
+}
+
+/* Hide elements with specific inline styles that indicate elevation content */
+.day-card-content > [style*="border-left: 4px"],
+.day-card-content > [style*="border-left:4px"],
+.day-card-content > [style*="color: #10b981"],
+.day-card-content > [style*="color:#10b981"] {
+  display: none !important;
+}
+
+/* Hide any first-level children that aren't our expected containers */
+.day-card-content > *:not(.day-description-box):not(.distance-section):not(.grouped-details-container):not(button) {
+  /* This will catch any unexpected elements */
+  display: none !important;
 }
 
 /* Ensure all properly structured content remains visible */
