@@ -34,6 +34,233 @@ document.addEventListener('DOMContentLoaded', () => {
   let cachedPracticalInfo = '';
   let rawItineraryText = '';
 
+  // Fix mobile filter spacing immediately on load
+  function fixMobileFilterSpacing() {
+    const isMobile = window.innerWidth <= 768;
+    
+    // Try multiple selectors to find button containers
+    const selectors = [
+      '.filter-buttons-container',
+      '.filter-group .flex',
+      '.filter-group div:has(.enhanced-filter-btn)',
+      'div.flex.gap-3:has(.enhanced-filter-btn)'
+    ];
+    
+    let filterContainers = [];
+    for (const selector of selectors) {
+      const found = document.querySelectorAll(selector);
+      if (found.length > 0) {
+        filterContainers = found;
+        console.log(`Found button containers using selector: ${selector}`);
+        break;
+      }
+    }
+    
+    filterContainers.forEach(container => {
+      if (isMobile) {
+        // Apply mobile styles
+        container.style.cssText = `
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 10px !important;
+          width: 100% !important;
+        `;
+        
+        // Style all buttons in this container
+        container.querySelectorAll('.enhanced-filter-btn, button[data-category]').forEach(btn => {
+          btn.style.cssText = `
+            width: 100% !important;
+            min-height: 48px !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 16px 20px !important;
+          `;
+        });
+      } else {
+        // Reset desktop styles
+        container.style.cssText = '';
+        container.querySelectorAll('.enhanced-filter-btn, button[data-category]').forEach(btn => {
+          btn.style.cssText = '';
+        });
+      }
+    });
+    
+    // Also ensure filter groups have proper spacing
+    if (isMobile) {
+      document.querySelectorAll('.filter-group').forEach((group, index, groups) => {
+        group.style.marginBottom = '24px';
+        group.style.paddingBottom = '24px';
+        group.style.borderBottom = index < groups.length - 1 ? '1px solid #e5e7eb' : 'none';
+        if (index === groups.length - 1) {
+          group.style.marginBottom = '0';
+          group.style.paddingBottom = '0';
+        }
+      });
+    } else {
+      document.querySelectorAll('.filter-group').forEach(group => {
+        group.style.marginBottom = '';
+        group.style.paddingBottom = '';
+        group.style.borderBottom = '';
+      });
+    }
+  }
+
+  // Inject critical mobile CSS if needed
+  function injectMobileCSSFix() {
+    const styleId = 'mobile-filter-fix';
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement('style');
+      style.id = styleId;
+      
+      // Check if browser supports :has() selector
+      const supportsHas = CSS.supports('selector(:has(*))');
+      
+      style.textContent = `
+        @media (max-width: 768px) {
+          .filter-group .flex,
+          .filter-buttons-container,
+          .filter-group > div:has(.enhanced-filter-btn)${!supportsHas ? ', .filter-group > div' : ''} {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            width: 100% !important;
+          }
+          
+          .enhanced-filter-btn,
+          button[data-category],
+          .filter-group button {
+            width: 100% !important;
+            min-height: 48px !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 16px 20px !important;
+          }
+          
+          .filter-group {
+            margin-bottom: 24px !important;
+            padding-bottom: 24px !important;
+            border-bottom: 1px solid #e5e7eb !important;
+          }
+          
+          .filter-group:last-child {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            border-bottom: none !important;
+          }
+          
+          /* Override Tailwind gap utilities */
+          .gap-3 {
+            gap: 10px !important;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+      console.log('Injected mobile CSS fix' + (!supportsHas ? ' (without :has() selector)' : ''));
+    }
+  }
+
+  // Nuclear option: Force fix by removing conflicting classes and applying inline styles
+  function forceFixMobileSpacing() {
+    console.log('Applying force fix for mobile spacing...');
+    const isMobile = window.innerWidth <= 768;
+    
+    document.querySelectorAll('.filter-group').forEach((group, groupIndex, groups) => {
+      // Find the button container
+      let container = group.querySelector('.flex');
+      if (!container) {
+        container = group.querySelector('div:has(button), div:has(.enhanced-filter-btn)');
+      }
+      if (!container) {
+        // Find div that contains buttons
+        const buttons = group.querySelectorAll('button, .enhanced-filter-btn');
+        if (buttons.length > 0) {
+          container = buttons[0].parentElement;
+        }
+      }
+      
+      if (container && isMobile) {
+        // Remove Tailwind classes that might interfere
+        container.classList.remove('flex', 'gap-3', 'gap-2', 'gap-4', 'flex-row', 'flex-wrap');
+        
+        // Apply inline styles with !important
+        container.setAttribute('style', `
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 12px !important;
+          width: 100% !important;
+          align-items: stretch !important;
+        `);
+        
+        // Fix all buttons in this container
+        const buttons = container.querySelectorAll('button, .enhanced-filter-btn');
+        buttons.forEach(btn => {
+          // Remove any width-limiting classes
+          btn.classList.remove('w-auto', 'w-fit', 'flex-1', 'flex-none');
+          
+          btn.setAttribute('style', `
+            width: 100% !important;
+            min-height: 50px !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 16px 24px !important;
+            white-space: nowrap !important;
+            box-sizing: border-box !important;
+          `);
+        });
+        
+        // Fix group spacing
+        group.setAttribute('style', `
+          margin-bottom: ${groupIndex < groups.length - 1 ? '28px' : '0'} !important;
+          padding-bottom: ${groupIndex < groups.length - 1 ? '28px' : '0'} !important;
+          border-bottom: ${groupIndex < groups.length - 1 ? '1px solid #e5e7eb' : 'none'} !important;
+        `);
+      } else if (!isMobile) {
+        // Reset for desktop
+        if (container) {
+          container.removeAttribute('style');
+          container.classList.add('flex', 'gap-3');
+        }
+        group.removeAttribute('style');
+        const buttons = group.querySelectorAll('button, .enhanced-filter-btn');
+        buttons.forEach(btn => {
+          btn.removeAttribute('style');
+        });
+      }
+    });
+    
+    console.log('Force fix applied!');
+  }
+  
+  // Apply all fixes
+  injectMobileCSSFix();
+  fixMobileFilterSpacing();
+  
+  // Apply force fix after a delay to ensure DOM is ready
+  if (window.innerWidth <= 768) {
+    setTimeout(forceFixMobileSpacing, 200);
+  }
+
+  // Apply fix after a short delay to ensure DOM is fully rendered
+  setTimeout(fixMobileFilterSpacing, 100);
+
+  // Re-apply on window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      fixMobileFilterSpacing();
+      if (window.innerWidth <= 768) {
+        forceFixMobileSpacing();
+      }
+    }, 250);
+  });
+
   // Function to get location-specific tips
   function getLocationTip(location) {
     const tips = {
@@ -151,6 +378,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Diagnostic function to check the DOM structure
+  function debugFilterStructure() {
+    console.log('=== Filter Structure Debug ===');
+    
+    // Check filter groups
+    const filterGroups = document.querySelectorAll('.filter-group');
+    console.log(`Found ${filterGroups.length} filter groups`);
+    
+    filterGroups.forEach((group, index) => {
+      const heading = group.querySelector('h3');
+      const buttonContainer = group.querySelector('.flex, .filter-buttons-container, div');
+      const buttons = group.querySelectorAll('.enhanced-filter-btn, button');
+      
+      console.log(`\nGroup ${index + 1}: ${heading?.textContent || 'No heading'}`);
+      console.log(`  Container classes: ${buttonContainer?.className || 'No container found'}`);
+      console.log(`  Container HTML: ${buttonContainer?.outerHTML.substring(0, 100)}...`);
+      console.log(`  Number of buttons: ${buttons.length}`);
+      
+      buttons.forEach((btn, btnIndex) => {
+        console.log(`    Button ${btnIndex + 1}: "${btn.textContent.trim()}" - Classes: ${btn.className}`);
+      });
+    });
+    
+    console.log('\n=== Current Styles Applied ===');
+    const firstContainer = document.querySelector('.filter-group .flex, .filter-group > div');
+    if (firstContainer) {
+      console.log('Container computed styles:');
+      const styles = window.getComputedStyle(firstContainer);
+      console.log(`  display: ${styles.display}`);
+      console.log(`  flex-direction: ${styles.flexDirection}`);
+      console.log(`  gap: ${styles.gap}`);
+      console.log(`  width: ${styles.width}`);
+    }
+    
+    const firstButton = document.querySelector('.enhanced-filter-btn, .filter-group button');
+    if (firstButton) {
+      console.log('\nFirst button computed styles:');
+      const styles = window.getComputedStyle(firstButton);
+      console.log(`  width: ${styles.width}`);
+      console.log(`  min-height: ${styles.minHeight}`);
+      console.log(`  display: ${styles.display}`);
+    }
+  }
+  
+  // Run debug after page loads
+  setTimeout(() => {
+    debugFilterStructure();
+    console.log('\nTo manually fix spacing, run: fixMobileFilterSpacing()');
+  }, 500);
+
   // Initialize filter buttons
   const setupFilterButtons = () => {
     document.querySelectorAll('.enhanced-filter-btn').forEach(btn => {
@@ -165,6 +442,19 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   setupFilterButtons();
+  
+  // Ensure mobile spacing is maintained after any DOM changes
+  const observer = new MutationObserver(() => {
+    if (window.innerWidth <= 768) {
+      fixMobileFilterSpacing();
+    }
+  });
+  
+  // Observe the filter containers for any changes
+  const filtersContainer = document.querySelector('.filters-container');
+  if (filtersContainer) {
+    observer.observe(filtersContainer, { childList: true, subtree: true });
+  }
 
   document.getElementById('customization-form').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -963,6 +1253,10 @@ The final day offers a gentle descent with spectacular views throughout.
   window.showSuccessModal = showSuccessModal;
   window.showAuthModal = showAuthModal;
   window.showWelcomeModal = showWelcomeModal;
+  window.fixMobileFilterSpacing = fixMobileFilterSpacing;
+  window.debugFilterStructure = debugFilterStructure;
+  window.injectMobileCSSFix = injectMobileCSSFix;
+  window.forceFixMobileSpacing = forceFixMobileSpacing;
   window.toggleDayCard = function(button) {
     const dayCard = button.closest('.itinerary-day-card');
     dayCard.classList.toggle('collapsed');
