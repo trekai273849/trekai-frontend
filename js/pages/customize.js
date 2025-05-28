@@ -1,4 +1,4 @@
-// js/pages/customize.js - Final Complete Version with Consistent Layout
+// js/pages/customize.js - Final Complete Version with Grouped Layout
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
@@ -363,7 +363,114 @@ The final day offers a gentle descent with spectacular views throughout.
     }
   }
 
-  // Enhanced render function with consistent layout
+  // New function to create grouped detail sections
+  function createGroupedDetailSections(details) {
+    const sections = [];
+    
+    // Group 1: Essential Information
+    const essentialItems = [];
+    
+    // Elevation
+    if (details.elevationGain || details.elevationLoss) {
+      const elevText = [];
+      if (details.elevationGain) elevText.push(`Gain: ${details.elevationGain}`);
+      if (details.elevationLoss) elevText.push(`Loss: ${details.elevationLoss}`);
+      essentialItems.push(createDetailItem('📈', 'Elevation', elevText.join(' • ')));
+    }
+    
+    // Difficulty
+    if (details.difficulty) {
+      const difficultyColor = getDifficultyColor(details.difficulty);
+      essentialItems.push(createDetailItem('💪', 'Difficulty', details.difficulty, 'difficulty', difficultyColor));
+    }
+    
+    // Terrain
+    if (details.terrain) {
+      essentialItems.push(createDetailItem('🏔️', 'Terrain', details.terrain));
+    }
+    
+    // Route & Accommodation
+    if (details.start || details.end || details.accommodation) {
+      const routeText = [];
+      if (details.start) routeText.push(`Start: ${details.start}`);
+      if (details.end) routeText.push(`End: ${details.end}`);
+      if (details.accommodation) routeText.push(`Stay: ${details.accommodation}`);
+      essentialItems.push(createDetailItem('📍', 'Route & Accommodation', routeText.join(' → ')));
+    }
+    
+    // Group 2: Trail Tips
+    const trailTipItems = [];
+    
+    // Highlights
+    if (details.highlights) {
+      trailTipItems.push(createDetailItem('⭐', 'Highlights', details.highlights, 'highlights'));
+    }
+    
+    // Lunch
+    if (details.lunch) {
+      trailTipItems.push(createDetailItem('🍽️', 'Lunch', details.lunch));
+    }
+    
+    // Water Sources
+    if (details.waterSources) {
+      trailTipItems.push(createDetailItem('💧', 'Water Sources', details.waterSources));
+    }
+    
+    // Tips
+    if (details.tips) {
+      trailTipItems.push(createDetailItem('💡', 'Tips', details.tips, 'tips'));
+    }
+    
+    // Build the grouped sections HTML
+    if (essentialItems.length > 0) {
+      sections.push(`
+        <div class="detail-group">
+          <h4 class="detail-group-title">Essential Information</h4>
+          <div class="detail-group-content">
+            ${essentialItems.join('')}
+          </div>
+        </div>
+      `);
+    }
+    
+    if (trailTipItems.length > 0) {
+      sections.push(`
+        <div class="detail-group">
+          <h4 class="detail-group-title">Trail Tips</h4>
+          <div class="detail-group-content">
+            ${trailTipItems.join('')}
+          </div>
+        </div>
+      `);
+    }
+    
+    return sections.join('');
+  }
+
+  // New helper function to create individual detail items
+  function createDetailItem(icon, label, content, className = '', customStyle = '') {
+    return `
+      <div class="detail-item ${className}">
+        <div class="detail-header">
+          <span class="detail-icon">${icon}</span>
+          <span class="detail-label">${label}</span>
+        </div>
+        <div class="detail-content" ${customStyle ? `style="color: ${customStyle};"` : ''}>
+          ${content}
+        </div>
+      </div>
+    `;
+  }
+
+  // Helper function to get difficulty color
+  function getDifficultyColor(difficulty) {
+    const difficultyLevel = difficulty.toLowerCase();
+    if (difficultyLevel.includes('easy')) return '#27AE60';
+    if (difficultyLevel.includes('challenging') || difficultyLevel.includes('difficult')) return '#E74C3C';
+    return '#F39C12'; // moderate
+  }
+
+  // Enhanced render function with grouped layout
   function processAndRenderEnhancedItinerary(text) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
@@ -445,7 +552,7 @@ The final day offers a gentle descent with spectacular views throughout.
 
       const details = parseDayDetails(bodyText);
       
-      // Updated day card HTML with consistent formatting
+      // Updated day card HTML with grouped sections
       dayCard.innerHTML = `
         <!-- Card Header -->
         <div class="day-card-header">
@@ -466,9 +573,17 @@ The final day offers a gentle descent with spectacular views throughout.
             </div>
           ` : ''}
           
-          <!-- All Details in Consistent Format -->
-          <div class="all-details-container">
-            ${createAllDetailSections(details)}
+          <!-- Distance at the top with better spacing -->
+          ${details.distance ? `
+            <div class="distance-section">
+              <span class="distance-icon">📏</span>
+              <span class="distance-text">${details.distance}</span>
+            </div>
+          ` : ''}
+          
+          <!-- Grouped Details -->
+          <div class="grouped-details-container">
+            ${createGroupedDetailSections(details)}
           </div>
         </div>
       `;
@@ -505,89 +620,6 @@ The final day offers a gentle descent with spectacular views throughout.
 
     // Add action buttons
     addEnhancedActionButtons(container);
-  }
-
-  // New function to create all detail sections with consistent formatting
-  function createAllDetailSections(details) {
-    const sections = [];
-    
-    // Distance
-    if (details.distance) {
-      sections.push(createDetailSection('📏', 'Distance', details.distance));
-    }
-    
-    // Difficulty
-    if (details.difficulty) {
-      const difficultyColor = getDifficultyColor(details.difficulty);
-      sections.push(createDetailSection('💪', 'Difficulty', details.difficulty, 'difficulty', difficultyColor));
-    }
-    
-    // Terrain
-    if (details.terrain) {
-      sections.push(createDetailSection('🏔️', 'Terrain', details.terrain));
-    }
-    
-    // Elevation
-    if (details.elevationGain || details.elevationLoss) {
-      const elevText = [];
-      if (details.elevationGain) elevText.push(`Gain: ${details.elevationGain}`);
-      if (details.elevationLoss) elevText.push(`Loss: ${details.elevationLoss}`);
-      sections.push(createDetailSection('📈', 'Elevation', elevText.join(' • ')));
-    }
-    
-    // Route & Accommodation
-    if (details.start || details.end || details.accommodation) {
-      const routeText = [];
-      if (details.start) routeText.push(`Start: ${details.start}`);
-      if (details.end) routeText.push(`End: ${details.end}`);
-      if (details.accommodation) routeText.push(`Stay: ${details.accommodation}`);
-      sections.push(createDetailSection('📍', 'Route & Accommodation', routeText.join(' → ')));
-    }
-    
-    // Highlights
-    if (details.highlights) {
-      sections.push(createDetailSection('⭐', 'Highlights', details.highlights, 'highlights'));
-    }
-    
-    // Lunch
-    if (details.lunch) {
-      sections.push(createDetailSection('🍽️', 'Lunch', details.lunch));
-    }
-    
-    // Water Sources
-    if (details.waterSources) {
-      sections.push(createDetailSection('💧', 'Water Sources', details.waterSources));
-    }
-    
-    // Tips
-    if (details.tips) {
-      sections.push(createDetailSection('💡', 'Tips', details.tips, 'tips'));
-    }
-    
-    return sections.join('');
-  }
-
-  // Helper function to create a detail section
-  function createDetailSection(icon, label, content, className = '', customStyle = '') {
-    return `
-      <div class="detail-section ${className}">
-        <div class="detail-header">
-          <span class="detail-icon">${icon}</span>
-          <span class="detail-label">${label}</span>
-        </div>
-        <div class="detail-content" ${customStyle ? `style="color: ${customStyle};"` : ''}>
-          ${content}
-        </div>
-      </div>
-    `;
-  }
-
-  // Helper function to get difficulty color
-  function getDifficultyColor(difficulty) {
-    const difficultyLevel = difficulty.toLowerCase();
-    if (difficultyLevel.includes('easy')) return '#27AE60';
-    if (difficultyLevel.includes('challenging') || difficultyLevel.includes('difficult')) return '#E74C3C';
-    return '#F39C12'; // moderate
   }
 
   // Enhanced helper function to parse day details
