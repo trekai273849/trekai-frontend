@@ -660,8 +660,13 @@ The final day offers a gentle descent with spectacular views throughout.
     }
   }
 
-  // Helper function to create individual detail items
+  // Helper function to create individual detail items - UPDATED to hide "Not applicable"
   function createDetailItem(icon, label, content, className = '', customStyle = '') {
+    // Check if content contains "Not applicable" (case insensitive)
+    if (content && content.toString().toLowerCase().includes('not applicable')) {
+      return ''; // Return empty string instead of the HTML
+    }
+    
     return `
       <div class="detail-item ${className}">
         <div class="detail-header">
@@ -855,7 +860,7 @@ The final day offers a gentle descent with spectacular views throughout.
       // Debug: Log the details to see what we're working with
       console.log('Day details:', details);
       
-      // Updated day card HTML with grouped sections
+      // Updated day card HTML with grouped sections - UPDATED to conditionally show distance
       dayCard.innerHTML = `
         <!-- Card Header -->
         <div class="day-card-header">
@@ -876,8 +881,8 @@ The final day offers a gentle descent with spectacular views throughout.
             </div>
           ` : ''}
           
-          <!-- Distance at the top with better spacing -->
-          ${details.distance ? `
+          <!-- Distance at the top with better spacing - Only show if not "Not applicable" -->
+          ${details.distance && !details.distance.toLowerCase().includes('not applicable') ? `
             <div class="distance-section">
               <span class="distance-icon">📏</span>
               <span class="distance-text">${details.distance}</span>
@@ -934,7 +939,7 @@ The final day offers a gentle descent with spectacular views throughout.
     }, 100);
   }
 
-  // Enhanced helper function to parse day details
+  // Enhanced helper function to parse day details - UPDATED to filter out "Not applicable"
   function parseDayDetails(bodyText) {
     const details = {
       distance: null,
@@ -974,8 +979,12 @@ The final day offers a gentle descent with spectacular views throughout.
     Object.keys(fieldPatterns).forEach(field => {
       const match = bodyText.match(fieldPatterns[field]);
       if (match) {
-        details[field] = match[1].trim().replace(/\*\*/g, '');
-        console.log(`Found ${field}:`, details[field]);
+        const value = match[1].trim().replace(/\*\*/g, '');
+        // Only set the value if it's not "Not applicable"
+        if (!value.toLowerCase().includes('not applicable')) {
+          details[field] = value;
+          console.log(`Found ${field}:`, details[field]);
+        }
       }
     });
 
@@ -983,8 +992,15 @@ The final day offers a gentle descent with spectacular views throughout.
     if (!details.start || !details.end) {
       const startEndMatch = bodyText.match(/-\s*(?:\*\*)?Start(?:\*\*)?:\s*([^-]+)\s*-\s*(?:\*\*)?End(?:\*\*)?:\s*([^\n-]+)/i);
       if (startEndMatch) {
-        details.start = startEndMatch[1].trim().replace(/\*\*/g, '');
-        details.end = startEndMatch[2].trim().replace(/\*\*/g, '');
+        const startValue = startEndMatch[1].trim().replace(/\*\*/g, '');
+        const endValue = startEndMatch[2].trim().replace(/\*\*/g, '');
+        
+        if (!startValue.toLowerCase().includes('not applicable')) {
+          details.start = startValue;
+        }
+        if (!endValue.toLowerCase().includes('not applicable')) {
+          details.end = endValue;
+        }
         console.log('Found combined start/end:', details.start, details.end);
       }
     }
