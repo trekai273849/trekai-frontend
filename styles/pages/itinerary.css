@@ -302,27 +302,30 @@
   padding-left: 30px;
 }
 
-.itinerary-timeline::before {
-  content: '';
-  position: absolute;
-  left: 12px;
-  top: 40px;
-  bottom: 40px;
-  width: 2px;
-  background: #e2e8f0;
-}
+@media (min-width: 769px) {
+  /* Only apply timeline styles on desktop */
+  .itinerary-timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 40px;
+    bottom: 40px;
+    width: 2px;
+    background: #e2e8f0;
+  }
 
-.itinerary-day-card::before {
-  content: '';
-  position: absolute;
-  left: -24px;
-  top: 40px;
-  width: 16px;
-  height: 16px;
-  background: white;
-  border: 3px solid #557a3e;  /* Green to match day number */
-  border-radius: 50%;
-  z-index: 1;
+  .itinerary-day-card::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 40px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid #557a3e;  /* Green to match day number */
+    border-radius: 50%;
+    z-index: 1;
+  }
 }
 
 /* ===== Info Cards (for other sections) ===== */
@@ -377,9 +380,10 @@
     padding-left: 32px;
   }
   
-  /* Hide timeline elements on mobile */
+  /* Hide timeline elements on mobile and expand content */
   .itinerary-timeline {
-    padding-left: 0;  /* Remove left padding since timeline is hidden */
+    padding-left: 0 !important;  /* Remove left padding since timeline is hidden */
+    margin-left: 0 !important;   /* Ensure no left margin */
   }
   
   .itinerary-timeline::before {
@@ -388,6 +392,14 @@
   
   .itinerary-day-card::before {
     display: none !important;  /* Hide the dots */
+  }
+  
+  /* Ensure day cards use full width on mobile */
+  .itinerary-day-card {
+    margin-left: 0 !important;   /* Remove any left margin */
+    margin-right: 0 !important;  /* Remove any right margin */
+    width: 100%;                 /* Use full width */
+    max-width: 100%;             /* Ensure it can expand fully */
   }
   
   .day-card-header {
@@ -466,10 +478,20 @@ div[class*="elevation"]:not(.detail-item) {
   display: none;
 }
 
-/* Override any conflicting styles from other CSS files */
-.itinerary-day-card .day-number {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: white !important;  /* Ensure white text */
+/* ===== Additional Responsive Fixes for Full Width on Mobile ===== */
+@media (max-width: 768px) {
+  /* Ensure all parent containers use full width */
+  .results-wrapper,
+  .content-sections,
+  .content-section-result {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Reset any container max-widths on mobile */
+  .max-w-5xl {
+    max-width: 100% !important;
+  }
 }
