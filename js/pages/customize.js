@@ -1,4 +1,4 @@
-// js/pages/customize.js - Enhanced version
+// js/pages/customize.js - Complete Enhanced Version
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
@@ -273,30 +273,39 @@ document.addEventListener('DOMContentLoaded', () => {
         
         data = {
           reply: `### Day 1: Starting Point to First Camp
+- Start: Dobbiaco, 1,256m - End: Mountain Hut, 2,100m
 - **Distance**: 8 km (5 miles)
 - **Elevation Gain**: 600m (1,970ft)
 - **Terrain**: Alpine meadows and forest trails
 - **Accommodation**: ${filters.accommodation || 'Mountain hut'}
 - **Difficulty**: ${filters.difficulty || 'Moderate'}
 - **Highlights**: Panoramic views, local wildlife, acclimatization
+- **Lunch**: Pack picnic with local specialties
+- **Water Sources**: Stream at 2km, fountain at hut
+- **Tips**: Start early to avoid afternoon thunderstorms
 
 Begin your journey in the picturesque village, gradually ascending through beautiful landscapes. Take time to acclimatize to the altitude and enjoy the panoramic views of surrounding peaks.
 
 ### Day 2: First Camp to Mountain Pass
+- Start: Mountain Hut, 2,100m - End: Alpine Lodge, 2,500m
 - **Distance**: 12 km (7.5 miles)
 - **Elevation Gain**: 800m (2,625ft)
 - **Terrain**: Rocky paths and alpine terrain
 - **Difficulty**: ${filters.difficulty || 'Moderate'}
 - **Accommodation**: ${filters.accommodation || 'Mountain hut'}
-- **Highlights**: Mountain pass views, changing ecosystems
+- **Highlights**: Mountain pass views, changing ecosystems, wildflowers
+- **Water Sources**: Limited - carry sufficient water
+- **Tips**: Use trekking poles for stability on rocky sections
 
 Today features the most challenging hiking of your trek. The trail climbs steadily through changing ecosystems before reaching the dramatic mountain pass.
 
 ### Day 3: Mountain Pass to Endpoint
+- Start: Alpine Lodge, 2,500m - End: Valley Town, 1,200m
 - **Distance**: 10 km (6.2 miles)
 - **Elevation Loss**: 900m (2,950ft)
 - **Terrain**: Scenic descent with river crossings
 - **Accommodation**: Return to trailhead
+- **Highlights**: Waterfalls, alpine lakes, celebration dinner
 
 The final day offers a gentle descent with spectacular views throughout.
 
@@ -354,7 +363,7 @@ The final day offers a gentle descent with spectacular views throughout.
     }
   }
 
-  // Enhanced render function
+  // Enhanced render function with improved card layout
   function processAndRenderEnhancedItinerary(text) {
     const container = document.getElementById('itinerary-cards');
     container.innerHTML = '';
@@ -436,14 +445,36 @@ The final day offers a gentle descent with spectacular views throughout.
 
       const details = parseDayDetails(bodyText);
       
+      // Enhanced day card HTML with better layout
       dayCard.innerHTML = `
-        <div class="day-header-enhanced">
+        <!-- Card Header -->
+        <div class="day-card-header">
           <div class="day-number">Day ${dayNum}</div>
           <h3 class="day-title-enhanced">${title}</h3>
-          ${createDayStats(details)}
+          <button class="day-card-toggle" onclick="toggleDayCard(this)" aria-label="Toggle day details">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
         </div>
-        ${details.description ? `<p class="day-description-enhanced">${details.description}</p>` : ''}
-        ${createDetailsList(details)}
+        
+        <!-- Stats Section -->
+        <div class="day-stats-section">
+          <div class="day-stats-grid">
+            ${createEnhancedDayStats(details)}
+          </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="day-card-content">
+          ${createLocationInfo(details)}
+          ${details.description ? `
+            <div class="day-description-box">
+              <p class="day-description-enhanced">${details.description}</p>
+            </div>
+          ` : ''}
+          ${createEnhancedDetailCards(details)}
+        </div>
       `;
 
       timeline.appendChild(dayCard);
@@ -480,7 +511,168 @@ The final day offers a gentle descent with spectacular views throughout.
     addEnhancedActionButtons(container);
   }
 
-  // Helper function to parse day details
+  // Enhanced stats creation with better layout
+  function createEnhancedDayStats(details) {
+    const stats = [];
+    
+    if (details.distance) {
+      stats.push(`
+        <div class="day-stat">
+          <div class="day-stat-icon">📏</div>
+          <div class="day-stat-label">Distance</div>
+          <div class="day-stat-value">${details.distance}</div>
+        </div>
+      `);
+    }
+    
+    if (details.elevationGain || details.elevationLoss) {
+      const elevText = [];
+      if (details.elevationGain) elevText.push(`↑ ${details.elevationGain}`);
+      if (details.elevationLoss) elevText.push(`↓ ${details.elevationLoss}`);
+      
+      stats.push(`
+        <div class="day-stat">
+          <div class="day-stat-icon">📈</div>
+          <div class="day-stat-label">Elevation</div>
+          <div class="day-stat-value">${elevText.join(' ')}</div>
+        </div>
+      `);
+    }
+    
+    if (details.difficulty) {
+      const difficultyColors = {
+        'easy': '#27AE60',
+        'moderate': '#F39C12',
+        'challenging': '#E74C3C',
+        'difficult': '#E74C3C'
+      };
+      
+      const difficultyLevel = details.difficulty.toLowerCase();
+      let difficultyColor = '#F39C12'; // default to moderate
+      
+      for (const [key, color] of Object.entries(difficultyColors)) {
+        if (difficultyLevel.includes(key)) {
+          difficultyColor = color;
+          break;
+        }
+      }
+      
+      stats.push(`
+        <div class="day-stat">
+          <div class="day-stat-icon" style="color: ${difficultyColor}">💪</div>
+          <div class="day-stat-label">Difficulty</div>
+          <div class="day-stat-value" style="color: ${difficultyColor}">${details.difficulty}</div>
+        </div>
+      `);
+    }
+    
+    if (details.terrain) {
+      stats.push(`
+        <div class="day-stat">
+          <div class="day-stat-icon">🏔️</div>
+          <div class="day-stat-label">Terrain</div>
+          <div class="day-stat-value">${details.terrain}</div>
+        </div>
+      `);
+    }
+    
+    return stats.join('');
+  }
+
+  // Create location info card
+  function createLocationInfo(details) {
+    let locationHtml = '';
+    
+    if (details.start || details.end || details.accommodation) {
+      locationHtml = `
+        <div class="location-info-card">
+          <div class="location-icon">📍</div>
+          <div class="location-text">
+            <div class="location-label">Route & Accommodation</div>
+            <div class="location-value">
+              ${details.start ? `Start: ${details.start}` : ''}
+              ${details.end ? ` → End: ${details.end}` : ''}
+              ${details.accommodation ? ` • Stay: ${details.accommodation}` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    return locationHtml;
+  }
+
+  // Create enhanced detail cards
+  function createEnhancedDetailCards(details) {
+    const cards = [];
+    
+    // Highlights get special treatment
+    if (details.highlights) {
+      cards.push(`
+        <div class="day-details-grid">
+          <div class="detail-card highlights">
+            <div class="detail-card-header">
+              <div class="detail-icon">⭐</div>
+              <div class="detail-label">Highlights</div>
+            </div>
+            <div class="detail-value">${details.highlights}</div>
+          </div>
+        </div>
+      `);
+    }
+    
+    // Other details in a grid
+    const otherDetails = [];
+    
+    if (details.lunch) {
+      otherDetails.push(`
+        <div class="detail-card">
+          <div class="detail-card-header">
+            <div class="detail-icon">🍽️</div>
+            <div class="detail-label">Lunch</div>
+          </div>
+          <div class="detail-value">${details.lunch}</div>
+        </div>
+      `);
+    }
+    
+    if (details.waterSources) {
+      otherDetails.push(`
+        <div class="detail-card">
+          <div class="detail-card-header">
+            <div class="detail-icon">💧</div>
+            <div class="detail-label">Water Sources</div>
+          </div>
+          <div class="detail-value">${details.waterSources}</div>
+        </div>
+      `);
+    }
+    
+    if (otherDetails.length > 0) {
+      cards.push(`
+        <div class="day-details-grid">
+          ${otherDetails.join('')}
+        </div>
+      `);
+    }
+    
+    // Tips get their own special card
+    if (details.tips) {
+      cards.push(`
+        <div class="tips-card detail-card">
+          <div class="detail-card-header">
+            <div class="detail-icon">💡</div>
+            <div class="detail-label">Tips</div>
+          </div>
+          <div class="detail-value">${details.tips}</div>
+        </div>
+      `);
+    }
+    
+    return cards.join('');
+  }
+
+  // Enhanced helper function to parse day details
   function parseDayDetails(bodyText) {
     const details = {
       distance: null,
@@ -493,9 +685,12 @@ The final day offers a gentle descent with spectacular views throughout.
       lunch: null,
       tips: null,
       waterSources: null,
-      description: null
+      description: null,
+      start: null,
+      end: null
     };
 
+    // Enhanced field patterns including start/end
     const fieldPatterns = {
       distance: /(?:Distance|Trek):\s*([^\n]+)/i,
       elevationGain: /Elevation\s+(?:gain|Gain):\s*([^\n]+)/i,
@@ -506,9 +701,12 @@ The final day offers a gentle descent with spectacular views throughout.
       highlights: /Highlights?:\s*([^\n]+)/i,
       lunch: /Lunch:\s*([^\n]+)/i,
       tips: /Tips?:\s*([^\n]+)/i,
-      waterSources: /Water\s+sources?:\s*([^\n]+)/i
+      waterSources: /Water\s+sources?:\s*([^\n]+)/i,
+      start: /Start:\s*([^\n-]+)/i,
+      end: /End:\s*([^\n-]+)/i
     };
 
+    // Extract all fields
     Object.keys(fieldPatterns).forEach(field => {
       const match = bodyText.match(fieldPatterns[field]);
       if (match) {
@@ -516,60 +714,23 @@ The final day offers a gentle descent with spectacular views throughout.
       }
     });
 
-    const fieldsRegex = /(?:Distance|Trek|Elevation\s+(?:gain|loss)|Terrain|Difficulty|Accommodation|Highlights?|Lunch|Tips?|Water\s+sources?):\s*[^\n]+/gi;
-    const remainingText = bodyText.replace(fieldsRegex, '').trim();
+    // Try to extract start/end from the text if not found as separate fields
+    if (!details.start && !details.end) {
+      const startEndMatch = bodyText.match(/-\s*Start:\s*([^-]+)-\s*End:\s*([^\n-]+)/i);
+      if (startEndMatch) {
+        details.start = startEndMatch[1].trim();
+        details.end = startEndMatch[2].trim();
+      }
+    }
+
+    // Extract description (remaining text)
+    const fieldsRegex = /(?:Distance|Trek|Elevation\s+(?:gain|loss)|Terrain|Difficulty|Accommodation|Highlights?|Lunch|Tips?|Water\s+sources?|Start|End):\s*[^\n]+/gi;
+    const remainingText = bodyText.replace(fieldsRegex, '').replace(/-\s*Start:.*?End:[^\n]+/i, '').trim();
     if (remainingText && remainingText.length > 20) {
       details.description = remainingText;
     }
 
     return details;
-  }
-
-  // Helper function to create day stats
-  function createDayStats(details) {
-    const stats = [];
-    
-    if (details.distance) {
-      stats.push(`<div class="day-stat"><span class="day-stat-icon">📏</span> ${details.distance}</div>`);
-    }
-    if (details.elevationGain) {
-      stats.push(`<div class="day-stat"><span class="day-stat-icon">📈</span> ${details.elevationGain}</div>`);
-    }
-    if (details.difficulty) {
-      const difficultyColor = details.difficulty.toLowerCase().includes('easy') ? 'var(--success)' : 
-                             details.difficulty.toLowerCase().includes('challenging') ? 'var(--warning)' : 
-                             'var(--accent)';
-      stats.push(`<div class="day-stat"><span class="day-stat-icon">💪</span> <span style="color: ${difficultyColor}; font-weight: 600;">${details.difficulty}</span></div>`);
-    }
-    
-    return stats.length > 0 ? `<div class="day-stats-grid">${stats.join('')}</div>` : '';
-  }
-
-  // Helper function to create details list
-  function createDetailsList(details) {
-    const items = [];
-    
-    const displayFields = [
-      { key: 'terrain', label: 'Terrain', icon: '🏔️' },
-      { key: 'accommodation', label: 'Accommodation', icon: '🏠' },
-      { key: 'highlights', label: 'Highlights', icon: '⭐' },
-      { key: 'lunch', label: 'Lunch', icon: '🍽️' },
-      { key: 'waterSources', label: 'Water Sources', icon: '💧' },
-      { key: 'tips', label: 'Tips', icon: '💡' }
-    ];
-    
-    displayFields.forEach(field => {
-      if (details[field.key]) {
-        items.push(`
-          <li class="day-detail-item">
-            <span class="detail-label">${field.icon} ${field.label}</span>
-            <span class="detail-value">${details[field.key]}</span>
-          </li>
-        `);
-      }
-    });
-    
-    return items.length > 0 ? `<ul class="day-details-list">${items.join('')}</ul>` : '';
   }
 
   // Helper function to create enhanced sections
@@ -837,4 +998,8 @@ The final day offers a gentle descent with spectacular views throughout.
   window.showSuccessModal = showSuccessModal;
   window.showAuthModal = showAuthModal;
   window.showWelcomeModal = showWelcomeModal;
+  window.toggleDayCard = function(button) {
+    const dayCard = button.closest('.itinerary-day-card');
+    dayCard.classList.toggle('collapsed');
+  };
 });
