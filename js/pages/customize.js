@@ -258,6 +258,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth <= 768) {
         forceFixMobileSpacing();
       }
+      
+      // Update tab scroll indicators on resize
+      const navContainer = document.querySelector('.results-nav-container');
+      if (navContainer) {
+        const event = new Event('scroll');
+        navContainer.dispatchEvent(event);
+      }
     }, 250);
   });
 
@@ -916,6 +923,15 @@ The final day offers a gentle descent with spectacular views throughout.
 
     // Add action buttons
     addEnhancedActionButtons(container);
+    
+    // Initialize tab position (center the active tab)
+    setTimeout(() => {
+      const activeTab = document.querySelector('.results-nav-tab.active');
+      const navContainer = document.querySelector('.results-nav-container');
+      if (activeTab && navContainer) {
+        centerTabInView(activeTab, navContainer);
+      }
+    }, 100);
   }
 
   // Enhanced helper function to parse day details
@@ -1064,8 +1080,76 @@ The final day offers a gentle descent with spectacular views throughout.
   function setupResultsNavigation() {
     const tabs = document.querySelectorAll('.results-nav-tab');
     const sections = document.querySelectorAll('.content-section-result');
+    const navContainer = document.querySelector('.results-nav-container');
+    const navTabs = document.querySelector('.results-nav-tabs');
 
-    tabs.forEach(tab => {
+    // Update scroll indicators
+    function updateScrollIndicators() {
+      if (!navContainer || !navTabs) return;
+      
+      const scrollLeft = navContainer.scrollLeft;
+      const scrollWidth = navContainer.scrollWidth;
+      const clientWidth = navContainer.clientWidth;
+      const maxScroll = scrollWidth - clientWidth;
+      
+      // Remove all classes first
+      navTabs.classList.remove('scroll-start', 'scroll-middle', 'scroll-end', 'has-scroll');
+      
+      // Check if scrolling is needed
+      if (scrollWidth > clientWidth) {
+        navTabs.classList.add('has-scroll');
+        
+        // Add appropriate class based on scroll position
+        if (scrollLeft <= 10) {
+          navTabs.classList.add('scroll-start');
+        } else if (scrollLeft >= maxScroll - 10) {
+          navTabs.classList.add('scroll-end');
+        } else {
+          navTabs.classList.add('scroll-middle');
+        }
+      }
+    }
+
+    // Add scroll listener for indicators
+    if (navContainer) {
+      navContainer.addEventListener('scroll', updateScrollIndicators);
+      // Initial check
+      setTimeout(updateScrollIndicators, 100);
+    }
+
+    // Add touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    if (navContainer) {
+      navContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+      
+      navContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+    }
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        const activeTab = document.querySelector('.results-nav-tab.active');
+        const tabs = Array.from(document.querySelectorAll('.results-nav-tab'));
+        const currentIndex = tabs.indexOf(activeTab);
+        
+        if (diff > 0 && currentIndex < tabs.length - 1) {
+          // Swipe left - go to next tab
+          tabs[currentIndex + 1].click();
+        } else if (diff < 0 && currentIndex > 0) {
+          // Swipe right - go to previous tab
+          tabs[currentIndex - 1].click();
+        }
+      }
+    }
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         sections.forEach(s => s.classList.remove('active'));
@@ -1077,8 +1161,47 @@ The final day offers a gentle descent with spectacular views throughout.
         if (section) {
           section.classList.add('active');
         }
+
+        // Center the clicked tab in the viewport
+        if (navContainer) {
+          centerTabInView(tab, navContainer);
+        }
       });
     });
+  }
+
+  // Function to center a tab in the scrollable container
+  function centerTabInView(tab, container) {
+    // Get dimensions
+    const containerWidth = container.offsetWidth;
+    const containerScrollWidth = container.scrollWidth;
+    const tabWidth = tab.offsetWidth;
+    const tabOffsetLeft = tab.offsetLeft;
+    
+    // Calculate the center position
+    let scrollPosition = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+    
+    // Adjust to show next tab on the right (offset by 30% to the left)
+    scrollPosition = scrollPosition - (containerWidth * 0.15);
+    
+    // Ensure we don't scroll past boundaries
+    const maxScroll = containerScrollWidth - containerWidth;
+    scrollPosition = Math.max(0, Math.min(scrollPosition, maxScroll));
+    
+    // Smooth scroll to the calculated position
+    container.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth'
+    });
+    
+    // Update indicators after scroll
+    setTimeout(() => {
+      const navTabs = document.querySelector('.results-nav-tabs');
+      if (navTabs) {
+        const event = new Event('scroll');
+        container.dispatchEvent(event);
+      }
+    }, 300);
   }
 
   // Enhanced action buttons
@@ -1257,6 +1380,7 @@ The final day offers a gentle descent with spectacular views throughout.
   window.debugFilterStructure = debugFilterStructure;
   window.injectMobileCSSFix = injectMobileCSSFix;
   window.forceFixMobileSpacing = forceFixMobileSpacing;
+  window.centerTabInView = centerTabInView;
   window.toggleDayCard = function(button) {
     const dayCard = button.closest('.itinerary-day-card');
     dayCard.classList.toggle('collapsed');
