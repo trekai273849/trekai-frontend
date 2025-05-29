@@ -69,8 +69,11 @@
     .hero-bg {
       position: absolute;
       inset: 0;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
     }
 
     .hero-bg::after {
@@ -81,11 +84,12 @@
         rgba(0,0,0,0.2) 0%, 
         rgba(0,0,0,0.4) 50%, 
         rgba(0,0,0,0.6) 100%);
+      z-index: 1;
     }
 
     .hero-content-enhanced {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 800px;
       padding: 0 20px;
     }
@@ -560,6 +564,11 @@
 
     /* Mobile Responsive - EXACT COPY WITH FIXES */
     @media (max-width: 768px) {
+      .hero-enhanced {
+        height: 40vh;
+        min-height: 300px;
+      }
+      
       .hero-content-enhanced h1 {
         font-size: 2em;
       }
@@ -689,6 +698,44 @@
     import { toTitleCase, cleanTrekTitle, extractTrekSubtitle } from './js/utils/trek-title.js';
     import { preprocessRawText, extractSection, processSubsections } from './js/utils/itinerary.js';
     
+    // Helper function to clean repetitive trek titles
+    function cleanTrekTitle(title) {
+      if (!title) return 'Your Trek';
+      
+      let cleaned = title;
+      
+      // Handle repetitive patterns like "Trek in X that is Y"
+      const patterns = [
+        /^(.+?)\s+(?:that\s+is|which\s+is)\s+(.+)$/i,
+        /^(.+?)\s+(?:for\s+a\s+week|for\s+\d+\s+days?)\s+(.+)$/i
+      ];
+      
+      for (const pattern of patterns) {
+        const match = cleaned.match(pattern);
+        if (match) {
+          cleaned = match[1];
+          break;
+        }
+      }
+      
+      // Remove common prefixes and suffixes
+      cleaned = cleaned
+        .replace(/^trek\s+in\s+the\s+/i, '')
+        .replace(/^trek\s+in\s+/i, '')
+        .replace(/^hike\s+in\s+the\s+/i, '')
+        .replace(/^hike\s+in\s+/i, '')
+        .replace(/\s+trek$/i, '')
+        .replace(/\s+hike$/i, '')
+        .trim();
+      
+      // Ensure we have a valid title
+      if (!cleaned || cleaned.length < 3) {
+        return 'Your Trek';
+      }
+      
+      return cleaned;
+    }
+
     // Get itinerary ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const itineraryId = urlParams.get('id');
@@ -1088,17 +1135,28 @@
       }, 100);
     }
 
-    async function updateHeaderBackground(location) {
+    async function updateHeaderBackground(locationOrImageUrl) {
       const header = document.getElementById('itinerary-header');
       const heroBg = document.getElementById('hero-bg');
       
-      // Set default gradient while checking for image
+      // Check if it's a URL (starts with http or /)
+      if (locationOrImageUrl && (locationOrImageUrl.startsWith('http') || locationOrImageUrl.startsWith('/'))) {
+        heroBg.style.backgroundImage = `url('${locationOrImageUrl}')`;
+        heroBg.style.backgroundSize = 'cover';
+        heroBg.style.backgroundPosition = 'center';
+        return;
+      }
+      
+      // Otherwise treat as location
       const gradient = 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)';
       heroBg.style.background = gradient;
       
       // You can add location-specific images here
       const locationImages = {
         'french alps': 'Images/alps.jpg',
+        'italian alps': 'Images/alps.jpg',
+        'italian dolomites': 'Images/alps.jpg',
+        'dolomites': 'Images/alps.jpg',
         'alps': 'Images/alps.jpg',
         'himalayas': 'Images/himalayas.jpg',
         // Add more location mappings as needed
@@ -1106,8 +1164,8 @@
       
       // Find matching location
       let imageUrl = null;
-      if (location) {
-        const locationLower = location.toLowerCase();
+      if (locationOrImageUrl) {
+        const locationLower = locationOrImageUrl.toLowerCase();
         for (const [key, value] of Object.entries(locationImages)) {
           if (locationLower.includes(key)) {
             imageUrl = value;
@@ -1117,9 +1175,18 @@
       }
       
       if (imageUrl) {
-        heroBg.style.backgroundImage = `url('${imageUrl}')`;
-        heroBg.style.backgroundSize = 'cover';
-        heroBg.style.backgroundPosition = 'center';
+        // Check if image exists before setting
+        const img = new Image();
+        img.onload = () => {
+          heroBg.style.backgroundImage = `url('${imageUrl}')`;
+          heroBg.style.backgroundSize = 'cover';
+          heroBg.style.backgroundPosition = 'center';
+        };
+        img.onerror = () => {
+          // Keep gradient if image fails
+          console.log('Location image not found, using gradient');
+        };
+        img.src = imageUrl;
       }
     }
 
@@ -1328,7 +1395,7 @@
       try {
         const token = await user.getIdToken();
         
-        const response = await fetch(`https://trekai-api-staging.onrender.com/api/itineraries/${itineraryId}`, {
+        const response = await fetch(`https://trekai-api.onrender.com/api/itineraries/${itineraryId}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -1346,23 +1413,69 @@
         
         const itinerary = await response.json();
         
+        // Debug: Log the itinerary data to see what fields are available
+        console.log('Itinerary data:', itinerary);
+        console.log('Available fields:', Object.keys(itinerary));
+        
         // Show itinerary details
         document.getElementById('itinerary-details').classList.remove('hidden');
         
-        // Apply title cleaning
-        const cleanedTitle = cleanTrekTitle(itinerary.title, false) || toTitleCase(itinerary.title || 'Your Trek');
-        document.getElementById('itinerary-title').textContent = cleanedTitle;
+        // Process title - use the new cleaning function
+        console.log('Original title:', itinerary.title); // Debug
+        let displayTitle = cleanTrekTitle(itinerary.title);
+        console.log('Cleaned title:', displayTitle); // Debug
         
-        // Add subtitle if needed
-        const subtitle = extractTrekSubtitle(itinerary.title, cleanedTitle);
-        if (subtitle) {
-          const subtitleElement = document.getElementById('itinerary-subtitle');
-          subtitleElement.textContent = subtitle;
-          subtitleElement.classList.remove('hidden');
+        // Apply title case
+        displayTitle = toTitleCase(displayTitle);
+        document.getElementById('itinerary-title').textContent = displayTitle;
+        
+        // Handle subtitle if the title had repetitive pattern
+        const repetitivePattern = /^(.+?)\s+(?:that\s+is|which\s+is|for\s+a\s+week)\s+(.+)$/i;
+        const match = itinerary.title?.match(repetitivePattern);
+        
+        if (match) {
+          const subtitle = match[2];
+          // Only show subtitle if it's meaningful and different from main title
+          if (subtitle && 
+              !subtitle.toLowerCase().includes(displayTitle.toLowerCase()) &&
+              subtitle.length > 5) {
+            const subtitleElement = document.getElementById('itinerary-subtitle');
+            subtitleElement.textContent = toTitleCase(subtitle);
+            subtitleElement.classList.remove('hidden');
+          }
         }
         
-        // Update header background
-        if (itinerary.location) {
+        // Update header background with image if available
+        // Check multiple possible image field names
+        const imageUrl = itinerary.imageUrl || 
+                        itinerary.image || 
+                        itinerary.coverImage || 
+                        itinerary.cover_image ||
+                        itinerary.backgroundImage;
+        
+        if (imageUrl) {
+          const heroBg = document.getElementById('hero-bg');
+          
+          // Create an image element to test if the image loads
+          const img = new Image();
+          img.onload = () => {
+            // Image loaded successfully, apply it
+            heroBg.style.backgroundImage = `url('${imageUrl}')`;
+            heroBg.style.backgroundSize = 'cover';
+            heroBg.style.backgroundPosition = 'center';
+            // Clear any gradient
+            heroBg.style.background = '';
+          };
+          img.onerror = () => {
+            // Image failed to load, fall back to location-based image
+            console.log('Cover image failed to load, trying location-based image');
+            if (itinerary.location) {
+              updateHeaderBackground(itinerary.location);
+            }
+          };
+          img.src = imageUrl;
+        } else if (itinerary.location) {
+          // Fall back to location-based image
           await updateHeaderBackground(itinerary.location);
         }
         
