@@ -103,19 +103,64 @@
       opacity: 0.95;
     }
 
-    /* Navigation Tabs for Results - EXACT COPY */
+    /* Navigation Tabs for Results - ENHANCED WITH SCROLL INDICATORS */
     .results-nav-tabs {
       background: white;
       box-shadow: 0 2px 10px var(--shadow);
       margin-bottom: 40px;
       border-radius: 16px;
       overflow: hidden;
+      position: relative;
     }
 
     .results-nav-container {
       display: flex;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
+
+    .results-nav-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Scroll indicators */
+    .results-nav-tabs.has-scroll::before,
+    .results-nav-tabs.has-scroll::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .results-nav-tabs.has-scroll::before {
+      left: 0;
+      background: linear-gradient(to right, white 0%, transparent 100%);
+    }
+
+    .results-nav-tabs.has-scroll::after {
+      right: 0;
+      background: linear-gradient(to left, white 0%, transparent 100%);
+    }
+
+    .results-nav-tabs.scroll-middle::before,
+    .results-nav-tabs.scroll-middle::after {
+      opacity: 1;
+    }
+
+    .results-nav-tabs.scroll-start::after {
+      opacity: 1;
+    }
+
+    .results-nav-tabs.scroll-end::before {
+      opacity: 1;
     }
 
     .results-nav-tab {
@@ -129,6 +174,7 @@
       white-space: nowrap;
       transition: all 0.3s ease;
       position: relative;
+      flex-shrink: 0;
     }
 
     .results-nav-tab:hover {
@@ -569,6 +615,12 @@
       .itinerary-day-card::before {
         display: none;
       }
+      
+      /* Smaller tab padding on mobile */
+      .results-nav-tab {
+        padding: 15px 20px;
+        font-size: 0.95em;
+      }
     }
 
     /* Loading skeleton */
@@ -910,10 +962,68 @@
       `;
     }
 
+    // Function to center a tab in the scrollable container
+    function centerTabInView(tab, container) {
+      // Get dimensions
+      const containerWidth = container.offsetWidth;
+      const containerScrollWidth = container.scrollWidth;
+      const tabWidth = tab.offsetWidth;
+      const tabOffsetLeft = tab.offsetLeft;
+      
+      // Calculate the center position
+      let scrollPosition = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+      
+      // Ensure we don't scroll past boundaries
+      const maxScroll = containerScrollWidth - containerWidth;
+      scrollPosition = Math.max(0, Math.min(scrollPosition, maxScroll));
+      
+      // Smooth scroll to the calculated position
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+
     // Setup navigation for results tabs
     function setupResultsNavigation() {
       const tabs = document.querySelectorAll('.results-nav-tab');
       const sections = document.querySelectorAll('.content-section-result');
+      const navContainer = document.querySelector('.results-nav-container');
+      const navTabs = document.querySelector('.results-nav-tabs');
+
+      // Update scroll indicators
+      function updateScrollIndicators() {
+        if (!navContainer || !navTabs) return;
+        
+        const scrollLeft = navContainer.scrollLeft;
+        const scrollWidth = navContainer.scrollWidth;
+        const clientWidth = navContainer.clientWidth;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        // Remove all classes first
+        navTabs.classList.remove('scroll-start', 'scroll-middle', 'scroll-end', 'has-scroll');
+        
+        // Check if scrolling is needed
+        if (scrollWidth > clientWidth) {
+          navTabs.classList.add('has-scroll');
+          
+          // Add appropriate class based on scroll position
+          if (scrollLeft <= 10) {
+            navTabs.classList.add('scroll-start');
+          } else if (scrollLeft >= maxScroll - 10) {
+            navTabs.classList.add('scroll-end');
+          } else {
+            navTabs.classList.add('scroll-middle');
+          }
+        }
+      }
+
+      // Add scroll listener for indicators
+      if (navContainer) {
+        navContainer.addEventListener('scroll', updateScrollIndicators);
+        // Initial check
+        setTimeout(updateScrollIndicators, 100);
+      }
 
       tabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -927,8 +1037,55 @@
           if (section) {
             section.classList.add('active');
           }
+
+          // Center the clicked tab in the viewport
+          if (navContainer) {
+            centerTabInView(tab, navContainer);
+          }
         });
       });
+      
+      // Add touch/swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      if (navContainer) {
+        navContainer.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        navContainer.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        });
+      }
+      
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+          const activeTab = document.querySelector('.results-nav-tab.active');
+          const tabs = Array.from(document.querySelectorAll('.results-nav-tab'));
+          const currentIndex = tabs.indexOf(activeTab);
+          
+          if (diff > 0 && currentIndex < tabs.length - 1) {
+            // Swipe left - go to next tab
+            tabs[currentIndex + 1].click();
+          } else if (diff < 0 && currentIndex > 0) {
+            // Swipe right - go to previous tab
+            tabs[currentIndex - 1].click();
+          }
+        }
+      }
+
+      // Center the initial active tab
+      setTimeout(() => {
+        const activeTab = document.querySelector('.results-nav-tab.active');
+        if (activeTab && navContainer) {
+          centerTabInView(activeTab, navContainer);
+        }
+      }, 100);
     }
 
     async function updateHeaderBackground(location) {
@@ -1126,6 +1283,27 @@
 
       // Add navigation functionality
       setupResultsNavigation();
+      
+      // Add window resize handler
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          const activeTab = document.querySelector('.results-nav-tab.active');
+          const navContainer = document.querySelector('.results-nav-container');
+          
+          if (activeTab && navContainer) {
+            centerTabInView(activeTab, navContainer);
+          }
+          
+          // Update scroll indicators
+          const navTabs = document.querySelector('.results-nav-tabs');
+          if (navContainer && navTabs) {
+            const event = new Event('scroll');
+            navContainer.dispatchEvent(event);
+          }
+        }, 250);
+      });
     }
 
     // Check if user is logged in
