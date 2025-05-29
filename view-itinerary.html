@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles/main.css" />
   
   <style>
-    /* CSS Variables for consistent theming - SAME AS CUSTOMIZE.HTML */
+    /* CSS Variables - EXACT COPY FROM CUSTOMIZE.HTML */
     :root {
       --primary: #2D5016;
       --primary-light: #4A7C28;
@@ -36,22 +36,74 @@
       background-color: var(--bg-light);
     }
 
-    /* Section Headers */
-    .section-header {
-      font-size: 2.5em;
+    /* Main content padding */
+    .main-content-padding {
+      padding: 24px;
+    }
+    
+    @media (max-width: 768px) {
+      .main-content-padding {
+        padding: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main-content-padding {
+        padding: 12px;
+      }
+    }
+
+    /* Hero Section */
+    .hero-enhanced {
+      position: relative;
+      height: 50vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, 
+        rgba(0,0,0,0.2) 0%, 
+        rgba(0,0,0,0.4) 50%, 
+        rgba(0,0,0,0.6) 100%);
+    }
+
+    .hero-content-enhanced {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-content-enhanced h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
       font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 15px;
-      margin-top: 50px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
-    .section-subtitle {
-      font-size: 1.1em;
-      color: var(--text-light);
-      margin-bottom: 40px;
+    .hero-content-enhanced h2 {
+      font-size: 1.5em;
+      font-weight: 400;
+      opacity: 0.95;
     }
 
-    /* Navigation Tabs for Results - SAME AS CUSTOMIZE.HTML */
+    /* Navigation Tabs for Results - EXACT COPY */
     .results-nav-tabs {
       background: white;
       box-shadow: 0 2px 10px var(--shadow);
@@ -64,12 +116,6 @@
       display: flex;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .results-nav-container::-webkit-scrollbar {
-      display: none;
     }
 
     .results-nav-tab {
@@ -105,28 +151,7 @@
       background: var(--primary);
     }
 
-    /* Content Sections */
-    .content-section-result {
-      display: none;
-    }
-
-    .content-section-result.active {
-      display: block;
-      animation: fadeIn 0.5s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Enhanced Itinerary Timeline */
+    /* Enhanced Itinerary Timeline - EXACT COPY */
     .itinerary-timeline {
       position: relative;
       padding-left: 40px;
@@ -142,7 +167,7 @@
       background: #E0E0E0;
     }
 
-    /* Enhanced Itinerary Card Layout - SAME AS CUSTOMIZE.HTML */
+    /* Enhanced Itinerary Card Layout - EXACT COPY */
     .itinerary-day-card {
       position: relative;
       margin-bottom: 40px;
@@ -159,7 +184,7 @@
       box-shadow: 0 6px 30px var(--shadow);
     }
 
-    /* Card Header Section */
+    /* Card Header Section - EXACT COPY */
     .day-card-header {
       background: linear-gradient(135deg, #f8fafb 0%, #e8f0e5 100%);
       padding: 25px 30px;
@@ -184,12 +209,12 @@
       line-height: 1.3;
     }
 
-    /* Main Content Section */
+    /* Main Content Section - EXACT COPY */
     .day-card-content {
       padding: 35px;
     }
 
-    /* Description Box */
+    /* Description Box - EXACT COPY */
     .day-description-box {
       background: #f0f7ff;
       border-left: 4px solid var(--info);
@@ -205,7 +230,7 @@
       font-size: 0.95em;
     }
 
-    /* Distance section */
+    /* Distance section - EXACT COPY */
     .distance-section {
       display: flex;
       align-items: center;
@@ -227,19 +252,20 @@
       color: var(--text-dark);
     }
 
-    /* Grouped details container - CRITICAL FOR PROPER LAYOUT */
+    /* Grouped details container - EXACT COPY */
     .grouped-details-container {
       display: flex;
       flex-direction: column;
       gap: 30px;
     }
 
-    /* Detail groups - MATCHES CUSTOMIZE.HTML EXACTLY */
+    /* Detail groups - ENHANCED FOR BETTER ALIGNMENT */
     .detail-group {
       border: 1px solid #e5e7eb;
       border-radius: 12px;
       padding: 24px;
       background: #fafbfc;
+      position: relative; /* For proper stacking */
     }
 
     .detail-group-title {
@@ -256,23 +282,28 @@
     .detail-group-content {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px; /* Reduced gap since items have their own margins */
     }
 
-    /* Individual detail items - FIXED STYLING */
+    /* Individual detail items - FIXED ALIGNMENT AND STYLING */
     .detail-item {
-      padding: 12px 0;
+      padding: 12px 16px; /* Added horizontal padding for better alignment */
       border-bottom: 1px solid #f0f0f0;
+      margin: 0; /* Ensure no margin */
+      background: white; /* Ensure white background */
+      border-radius: 8px; /* Slight rounding */
+      margin-bottom: 8px; /* Space between items */
     }
 
     .detail-item:last-child {
       border-bottom: none;
-      padding-bottom: 0;
+      padding-bottom: 12px;
+      margin-bottom: 0;
     }
 
     .detail-item .detail-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start; /* Align to top for better icon positioning */
       gap: 10px;
       margin-bottom: 8px;
     }
@@ -280,7 +311,14 @@
     .detail-item .detail-icon {
       font-size: 1.1em;
       width: 24px;
+      min-width: 24px; /* Ensure consistent width */
       text-align: center;
+      flex-shrink: 0;
+      display: inline-flex; /* Better alignment */
+      align-items: center;
+      justify-content: center;
+      height: 24px; /* Fixed height for consistency */
+      line-height: 1; /* Reset line height */
     }
 
     .detail-item .detail-label {
@@ -293,21 +331,73 @@
       color: var(--text-light);
       line-height: 1.6;
       font-size: 0.95em;
-      padding-left: 34px;
+      padding-left: 34px; /* Align with the text after the icon */
+      margin: 0; /* Reset margin */
     }
 
-    /* Special styling for highlights and tips - FIXED TO REMOVE BOX IN BOX */
-    .detail-item.highlights .detail-content,
-    .detail-item.tips .detail-content {
+    /* Regular detail items (not highlights/tips) - cleaner styling */
+    .detail-item:not(.highlights):not(.tips) {
+      background: transparent;
+      border-radius: 0;
+      margin-bottom: 0;
+      border: none; /* Remove border for regular items */
+      padding: 12px 0; /* Vertical padding only */
+    }
+
+    /* Special styling for highlights - CREATES BOX WITHIN BOX */
+    .detail-item.highlights {
+      background: white;
+      border: 1px solid #fcd34d;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .detail-item.highlights .detail-header {
+      margin-bottom: 10px;
+    }
+
+    .detail-item.highlights .detail-content {
       background: #fef9e7;
       padding: 12px 16px;
-      border-radius: 8px;
-      margin-left: 34px;
+      border-radius: 6px;
+      margin-left: 0; /* Reset for box within box */
+      padding-left: 16px; /* Just internal padding */
       border-left: 3px solid #f39c12;
       font-style: italic;
+      color: #92400e;
     }
 
-    /* Collapsible Day Cards */
+    /* Special styling for tips - CREATES BOX WITHIN BOX */
+    .detail-item.tips {
+      background: white;
+      border: 1px solid #86efac;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .detail-item.tips .detail-header {
+      margin-bottom: 10px;
+    }
+
+    .detail-item.tips .detail-content {
+      background: #f0fdf4;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-left: 0; /* Reset for box within box */
+      padding-left: 16px; /* Just internal padding */
+      border-left: 3px solid #4ade80;
+      font-style: italic;
+      color: #166534;
+    }
+
+    /* Special styling for difficulty color */
+    .detail-item.difficulty .detail-content {
+      font-weight: 600; /* Make it bolder */
+    }
+
+    /* Collapsible Day Cards - EXACT COPY */
     .day-card-toggle {
       position: absolute;
       top: 25px;
@@ -344,7 +434,7 @@
       display: none;
     }
 
-    /* Enhanced timeline dot */
+    /* Enhanced timeline dot - EXACT COPY */
     .itinerary-day-card::before {
       content: '';
       position: absolute;
@@ -359,7 +449,7 @@
       z-index: 1;
     }
 
-    /* Info card styles for additional sections */
+    /* Additional Sections Cards - EXACT COPY */
     .info-card {
       background: white;
       border-radius: 16px;
@@ -381,59 +471,55 @@
       font-size: 1.5em;
     }
 
-    /* Enhanced content sections */
+    /* Section Headers - EXACT COPY */
+    .section-header {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      margin-top: 50px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1em;
+      color: var(--text-light);
+      margin-bottom: 40px;
+    }
+
+    /* Content Sections - EXACT COPY */
+    .content-section-result {
+      display: none;
+    }
+
+    .content-section-result.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
     .enhanced-content {
       color: var(--text-light);
       line-height: 1.8;
     }
 
-    .enhanced-content h4 {
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 15px;
-      font-size: 1.1em;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .enhanced-content ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .enhanced-content li {
-      padding: 8px 0;
-      padding-left: 20px;
-      position: relative;
-      color: var(--text-light);
-    }
-
-    .enhanced-content li:before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-    }
-
-    /* Loading skeleton */
-    @keyframes shimmer {
-      0% { background-position: -200px 0; }
-      100% { background-position: calc(200px + 100%) 0; }
-    }
-    
-    .skeleton {
-      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-      background-size: 200px 100%;
-      animation: shimmer 1.5s infinite;
-    }
-
-    /* Mobile responsive */
+    /* Mobile Responsive - EXACT COPY WITH FIXES */
     @media (max-width: 768px) {
-      .itinerary-timeline {
-        padding-left: 0;
+      .hero-content-enhanced h1 {
+        font-size: 2em;
       }
       
-      .itinerary-timeline::before,
-      .itinerary-day-card::before {
-        display: none;
+      .hero-content-enhanced h2 {
+        font-size: 1.2em;
       }
       
       .day-card-header {
@@ -457,44 +543,64 @@
         gap: 20px;
       }
       
+      /* Updated mobile styles to preserve alignment */
+      .detail-item {
+        padding: 12px; /* Keep some padding on mobile */
+      }
+      
       .detail-item .detail-content {
         padding-left: 0;
         margin-top: 5px;
       }
       
+      /* Keep special styling for highlights/tips on mobile */
       .detail-item.highlights .detail-content,
       .detail-item.tips .detail-content {
         margin-left: 0;
+        margin-top: 10px; /* Add top margin instead */
+        padding: 12px 16px;
       }
       
-      .results-nav-tab {
-        padding: 15px 20px;
-        font-size: 0.95em;
+      .itinerary-timeline {
+        padding-left: 0;
       }
       
-      .section-header {
-        font-size: 2em;
-        margin-top: 30px;
+      .itinerary-timeline::before,
+      .itinerary-day-card::before {
+        display: none;
       }
+    }
+
+    /* Loading skeleton */
+    @keyframes shimmer {
+      0% { background-position: -200px 0; }
+      100% { background-position: calc(200px + 100%) 0; }
+    }
+    
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200px 100%;
+      animation: shimmer 1.5s infinite;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Hero Header -->
-  <header id="itinerary-header" class="relative bg-cover bg-center h-48 flex items-center justify-center text-white" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-    <div class="bg-black bg-opacity-50 p-6 rounded-lg">
-      <h1 id="itinerary-title" class="text-3xl font-bold mb-2">Loading Itinerary...</h1>
-      <p id="itinerary-subtitle" class="text-lg opacity-90 hidden"></p>
+  <header class="hero-enhanced" id="itinerary-header">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-content-enhanced">
+      <h1 id="itinerary-title">Loading Itinerary...</h1>
+      <h2 id="itinerary-subtitle" class="hidden"></h2>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto p-6">
+  <main class="max-w-5xl mx-auto main-content-padding">
     <div id="auth-status" class="mb-6">
       <p class="text-center text-gray-600">Checking authentication status...</p>
     </div>
@@ -512,26 +618,11 @@
       <div id="itinerary-content" class="mt-6">
         <!-- Enhanced loading skeleton -->
         <div id="itinerary-skeleton" class="space-y-6">
-          <!-- Intro skeleton -->
           <div class="bg-white p-6 rounded-lg shadow-sm">
             <div class="animate-pulse">
               <div class="h-4 bg-gray-300 rounded w-3/4 mb-3"></div>
               <div class="h-4 bg-gray-300 rounded w-full mb-3"></div>
               <div class="h-4 bg-gray-300 rounded w-5/6"></div>
-            </div>
-          </div>
-          
-          <!-- Day cards skeleton -->
-          <div class="space-y-4">
-            <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
-              <div class="bg-gray-100 px-6 py-4">
-                <div class="h-6 bg-gray-300 rounded w-1/2 animate-pulse"></div>
-              </div>
-            </div>
-            <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
-              <div class="bg-gray-100 px-6 py-4">
-                <div class="h-6 bg-gray-300 rounded w-1/2 animate-pulse"></div>
-              </div>
             </div>
           </div>
         </div>
@@ -546,136 +637,19 @@
     import { toTitleCase, cleanTrekTitle, extractTrekSubtitle } from './js/utils/trek-title.js';
     import { preprocessRawText, extractSection, processSubsections } from './js/utils/itinerary.js';
     
-    // Location data and helper functions
-    const locationData = [
-      {
-        keywords: ["london", "uk", "england", "british", "britain"],
-        image: "Images/locations/london.jpg", 
-        gradient: "linear-gradient(135deg, #3c70b4 0%, #63a4ff 100%)",
-        icon: "🏰"
-      },
-      {
-        keywords: ["french alps", "france", "chamonix", "mont blanc"],
-        image: "Images/locations/french-alps.jpg",
-        gradient: "linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)",
-        icon: "🏔️"
-      },
-      {
-        keywords: ["italian alps", "italy", "dolomites"],
-        image: "Images/locations/italian-alps.jpg",
-        gradient: "linear-gradient(135deg, #38ef7d 0%, #11998e 100%)",
-        icon: "🏔️"
-      },
-      {
-        keywords: ["alps", "alpine"],
-        image: "Images/locations/alps.jpg",
-        gradient: "linear-gradient(135deg, #00c6fb 0%, #005bea 100%)",
-        icon: "⛰️"
-      },
-      {
-        keywords: ["new york", "ny", "usa", "united states", "america"],
-        image: "Images/locations/new-york.jpg",
-        gradient: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
-        icon: "🗽"
-      },
-      {
-        keywords: ["andes", "peru", "south america", "machu picchu", "cusco"],
-        image: "Images/locations/peru.jpg",
-        gradient: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)",
-        icon: "🌄"
-      },
-      {
-        keywords: ["himalayas", "nepal", "tibet", "everest"],
-        image: "Images/locations/himalayas.jpg",
-        gradient: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
-        icon: "🏔️"
-      },
-      {
-        keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
-        image: "Images/locations/japan.jpg",
-        gradient: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
-        icon: "🗻"
-      },
-      {
-        keywords: ["norway", "norwegian", "scandinavia", "fjords"],
-        image: "Images/locations/norway.jpg",
-        gradient: "linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%)",
-        icon: "⛰️"
-      },
-      {
-        keywords: ["scotland", "scottish", "highlands"],
-        image: "Images/locations/scotland.jpg",
-        gradient: "linear-gradient(135deg, #3e5151 0%, #decba4 100%)",
-        icon: "🏞️"
-      },
-      {
-        keywords: ["switzerland", "swiss"],
-        image: "Images/locations/switzerland.jpg",
-        gradient: "linear-gradient(135deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%)",
-        icon: "🏔️"
-      }
-    ];
+    // Get itinerary ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const itineraryId = urlParams.get('id');
     
-    const defaultLocationData = { gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)", icon: "🥾" };
-    
-    function getLocationData(location) {
-      if (!location) return defaultLocationData;
-      const locationLower = location.toLowerCase();
-      
-      for (const locData of locationData) {
-        for (const keyword of locData.keywords) {
-          if (locationLower.includes(keyword) || keyword.includes(locationLower)) {
-            return locData;
-          }
-        }
-      }
-      
-      return defaultLocationData;
+    if (!itineraryId) {
+      window.location.href = 'my-itineraries.html';
     }
 
-    async function updateHeaderBackground(location) {
-      const header = document.getElementById('itinerary-header');
-      const locationInfo = getLocationData(location);
-      
-      if (locationInfo.image) {
-        const img = new Image();
-        img.src = locationInfo.image;
-        
-        return new Promise((resolve) => {
-          img.onload = () => {
-            header.style.background = '';
-            header.style.backgroundImage = `url('${locationInfo.image}')`;
-            header.style.backgroundSize = 'cover';
-            header.style.backgroundPosition = 'center';
-            header.style.backgroundRepeat = 'no-repeat';
-            resolve();
-          };
-          
-          img.onerror = () => {
-            header.style.backgroundImage = '';
-            header.style.background = locationInfo.gradient;
-            resolve();
-          };
-          
-          setTimeout(() => {
-            if (!img.complete) {
-              header.style.backgroundImage = '';
-              header.style.background = locationInfo.gradient;
-              resolve();
-            }
-          }, 3000);
-        });
-      } else {
-        header.style.backgroundImage = '';
-        header.style.background = locationInfo.gradient;
-        return Promise.resolve();
-      }
-    }
-    
-    // SAME HELPER FUNCTIONS AS CUSTOMIZE.JS
+    // EXACT COPY OF HELPER FUNCTIONS FROM CUSTOMIZE.JS
     function createDetailItem(icon, label, content, className = '', customStyle = '') {
+      // Check if content contains "Not applicable" (case insensitive)
       if (content && content.toString().toLowerCase().includes('not applicable')) {
-        return '';
+        return ''; // Return empty string instead of the HTML
       }
       
       return `
@@ -696,14 +670,17 @@
       const difficultyLevel = difficulty.toLowerCase();
       if (difficultyLevel.includes('easy')) return '#27AE60';
       if (difficultyLevel.includes('challenging') || difficultyLevel.includes('difficult')) return '#E74C3C';
-      return '#F39C12';
+      return '#F39C12'; // moderate
     }
 
     function createGroupedDetailSections(details) {
+      console.log('Creating grouped sections with details:', details);
+      
       let essentialHTML = '';
       let trailTipsHTML = '';
       
       // Group 1: Essential Information
+      // Elevation
       if (details.elevationGain || details.elevationLoss) {
         const elevText = [];
         if (details.elevationGain) elevText.push(`Gain: ${details.elevationGain}`);
@@ -711,15 +688,18 @@
         essentialHTML += createDetailItem('📈', 'Elevation', elevText.join(' • '));
       }
       
+      // Difficulty
       if (details.difficulty) {
         const difficultyColor = getDifficultyColor(details.difficulty);
         essentialHTML += createDetailItem('💪', 'Difficulty', details.difficulty, 'difficulty', difficultyColor);
       }
       
+      // Terrain
       if (details.terrain) {
         essentialHTML += createDetailItem('🏔️', 'Terrain', details.terrain);
       }
       
+      // Route & Accommodation
       if (details.start || details.end || details.accommodation) {
         const routeParts = [];
         if (details.start) routeParts.push(`Start: ${details.start}`);
@@ -729,22 +709,27 @@
       }
       
       // Group 2: Trail Tips
+      // Highlights - CRITICAL: Pass 'highlights' class
       if (details.highlights) {
         trailTipsHTML += createDetailItem('⭐', 'Highlights', details.highlights, 'highlights');
       }
       
+      // Lunch
       if (details.lunch) {
         trailTipsHTML += createDetailItem('🍽️', 'Lunch', details.lunch);
       }
       
+      // Water Sources
       if (details.waterSources) {
         trailTipsHTML += createDetailItem('💧', 'Water Sources', details.waterSources);
       }
       
+      // Tips - CRITICAL: Pass 'tips' class
       if (details.tips) {
         trailTipsHTML += createDetailItem('💡', 'Tips', details.tips, 'tips');
       }
       
+      // Build the final HTML
       let html = '';
       
       if (essentialHTML) {
@@ -769,6 +754,7 @@
         `;
       }
       
+      console.log('Generated grouped HTML with', essentialHTML ? 'Essential Info' : 'NO Essential', 'and', trailTipsHTML ? 'Trail Tips' : 'NO Tips');
       return html;
     }
 
@@ -789,6 +775,9 @@
         end: null
       };
 
+      console.log('Parsing body text:', bodyText);
+
+      // Enhanced field patterns - handle both with and without ** markers
       const fieldPatterns = {
         distance: /(?:-\s*)?(?:\*\*)?(?:Distance|Trek)(?:\*\*)?:\s*([^\n]+)/i,
         elevationGain: /(?:-\s*)?(?:\*\*)?Elevation\s+(?:gain|Gain)(?:\*\*)?:\s*([^\n]+)/i,
@@ -804,16 +793,20 @@
         end: /(?:-\s*)?(?:\*\*)?End(?:\*\*)?:\s*([^\n\-]+)/i
       };
 
+      // Extract all fields - remove ** markers from captured content
       Object.keys(fieldPatterns).forEach(field => {
         const match = bodyText.match(fieldPatterns[field]);
         if (match) {
           const value = match[1].trim().replace(/\*\*/g, '');
+          // Only set the value if it's not "Not applicable"
           if (!value.toLowerCase().includes('not applicable')) {
             details[field] = value;
+            console.log(`Found ${field}:`, details[field]);
           }
         }
       });
 
+      // Try to extract start/end from combined format like "- Start: X - End: Y"
       if (!details.start || !details.end) {
         const startEndMatch = bodyText.match(/-\s*(?:\*\*)?Start(?:\*\*)?:\s*([^-]+)\s*-\s*(?:\*\*)?End(?:\*\*)?:\s*([^\n-]+)/i);
         if (startEndMatch) {
@@ -826,9 +819,11 @@
           if (!endValue.toLowerCase().includes('not applicable')) {
             details.end = endValue;
           }
+          console.log('Found combined start/end:', details.start, details.end);
         }
       }
 
+      // Extract description (remaining text) - more robust regex
       const fieldsRegex = /(?:-\s*)?(?:\*\*)?(?:Distance|Trek|Elevation\s+(?:gain|loss)|Terrain|Difficulty|Accommodation|Highlights?|Lunch|Tips?|Water\s+sources?|Start|End)(?:\*\*)?:\s*[^\n]+/gi;
       const remainingText = bodyText
         .replace(fieldsRegex, '')
@@ -837,12 +832,33 @@
         
       if (remainingText && remainingText.length > 20) {
         details.description = remainingText;
+        console.log('Found description:', details.description);
       }
 
       return details;
     }
 
-    // Enhanced subsection processing for other sections
+    // Helper function to create enhanced sections
+    function createEnhancedSection(id, title, icon, content) {
+      const section = document.createElement('div');
+      section.className = 'content-section-result';
+      section.id = id;
+
+      const card = document.createElement('div');
+      card.className = 'info-card';
+      
+      const processedContent = processSubsectionsEnhanced(content);
+      
+      card.innerHTML = `
+        <h3><span class="info-card-icon">${icon}</span> ${title}</h3>
+        <div class="enhanced-content">${processedContent}</div>
+      `;
+      
+      section.appendChild(card);
+      return section;
+    }
+
+    // Enhanced subsection processing
     function processSubsectionsEnhanced(content) {
       const lines = content.split('\n');
       let html = '';
@@ -877,6 +893,7 @@
       return html || `<div style="white-space: pre-wrap; line-height: 1.8;">${content}</div>`;
     }
 
+    // Helper to create subsection HTML
     function createSubsection(title, items) {
       return `
         <div style="margin-bottom: 25px;">
@@ -893,28 +910,88 @@
       `;
     }
 
-    // Main function to process and display itinerary with tabs
-    function processEnhancedItinerary(text, container) {
-      // Clear skeleton
+    // Setup navigation for results tabs
+    function setupResultsNavigation() {
+      const tabs = document.querySelectorAll('.results-nav-tab');
+      const sections = document.querySelectorAll('.content-section-result');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+
+          tab.classList.add('active');
+
+          const targetSection = tab.dataset.section;
+          const section = document.getElementById(`${targetSection}-section`);
+          if (section) {
+            section.classList.add('active');
+          }
+        });
+      });
+    }
+
+    async function updateHeaderBackground(location) {
+      const header = document.getElementById('itinerary-header');
+      const heroBg = document.getElementById('hero-bg');
+      
+      // Set default gradient while checking for image
+      const gradient = 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)';
+      heroBg.style.background = gradient;
+      
+      // You can add location-specific images here
+      const locationImages = {
+        'french alps': 'Images/alps.jpg',
+        'alps': 'Images/alps.jpg',
+        'himalayas': 'Images/himalayas.jpg',
+        // Add more location mappings as needed
+      };
+      
+      // Find matching location
+      let imageUrl = null;
+      if (location) {
+        const locationLower = location.toLowerCase();
+        for (const [key, value] of Object.entries(locationImages)) {
+          if (locationLower.includes(key)) {
+            imageUrl = value;
+            break;
+          }
+        }
+      }
+      
+      if (imageUrl) {
+        heroBg.style.backgroundImage = `url('${imageUrl}')`;
+        heroBg.style.backgroundSize = 'cover';
+        heroBg.style.backgroundPosition = 'center';
+      }
+    }
+
+    // MAIN FUNCTION - Process and render enhanced itinerary
+    function processAndRenderEnhancedItinerary(text) {
+      const container = document.getElementById('itinerary-content');
+      
+      // Hide skeleton
       const skeleton = document.getElementById('itinerary-skeleton');
       if (skeleton) skeleton.style.display = 'none';
       
-      // Create main wrapper
+      container.innerHTML = '';
+
+      // Create main results container
       const resultsWrapper = document.createElement('div');
       resultsWrapper.className = 'results-wrapper';
 
       // Add section header
       const sectionHeader = document.createElement('h2');
       sectionHeader.className = 'section-header';
-      sectionHeader.innerText = 'Your Adventure Details';
+      sectionHeader.innerText = 'Your Custom Itinerary';
       resultsWrapper.appendChild(sectionHeader);
 
       const sectionSubtitle = document.createElement('p');
       sectionSubtitle.className = 'section-subtitle';
-      sectionSubtitle.innerText = 'Explore your trek with day-by-day details and essential information';
+      sectionSubtitle.innerText = 'Explore your personalized adventure with day-by-day details';
       resultsWrapper.appendChild(sectionSubtitle);
 
-      // Extract sections for tabs
+      // Extract sections
       const packingList = extractSection(text, 'Packing List');
       const insights = extractSection(text, 'Local Insights');
       const practicalInfo = extractSection(text, 'Practical Information');
@@ -941,7 +1018,7 @@
       itinerarySection.className = 'content-section-result active';
       itinerarySection.id = 'itinerary-section';
 
-      // Extract intro
+      // Extract intro text
       const introRegex = /^([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+:|$)/i;
       const introMatch = text.match(introRegex);
       const intro = introMatch && introMatch[1].trim();
@@ -957,7 +1034,7 @@
         itinerarySection.appendChild(introCard);
       }
 
-      // Create timeline
+      // Create timeline container
       const timeline = document.createElement('div');
       timeline.className = 'itinerary-timeline';
 
@@ -965,19 +1042,28 @@
       const dayRegex = /(?:(?:\*\*\*|\#{1,3}|\*\*|\*)?\s*Day\s+(\d+)[:\s]+([^\n]*?)(?:\*\*\*|\*\*|\*)?)(?:\n)([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+[:\s]|#{1,3}\s*Packing List|#{1,3}\s*Local Insights|#{1,3}\s*Practical Information|$)/gi;
       
       let dayMatch;
+      let dayCount = 0;
+
       while ((dayMatch = dayRegex.exec(text)) !== null) {
+        dayCount++;
         const dayNum = dayMatch[1];
         const title = dayMatch[2].trim();
         let bodyText = dayMatch[3].trim();
         
         bodyText = bodyText.replace(/#{1,3}/g, '');
 
+        // Create enhanced day card
         const dayCard = document.createElement('div');
         dayCard.className = 'itinerary-day-card';
 
         const details = parseDayDetails(bodyText);
         
+        // Debug: Log the details to see what we're working with
+        console.log('Day details:', details);
+        
+        // Updated day card HTML with grouped sections
         dayCard.innerHTML = `
+          <!-- Card Header -->
           <div class="day-card-header">
             <div class="day-number">Day ${dayNum}</div>
             <h3 class="day-title-enhanced">${title}</h3>
@@ -988,6 +1074,7 @@
             </button>
           </div>
           
+          <!-- Main Content -->
           <div class="day-card-content">
             ${details.description ? `
               <div class="day-description-box">
@@ -995,6 +1082,7 @@
               </div>
             ` : ''}
             
+            <!-- Distance at the top with better spacing - Only show if not "Not applicable" -->
             ${details.distance && !details.distance.toLowerCase().includes('not applicable') ? `
               <div class="distance-section">
                 <span class="distance-icon">📏</span>
@@ -1002,6 +1090,7 @@
               </div>
             ` : ''}
             
+            <!-- Grouped Details -->
             <div class="grouped-details-container">
               ${createGroupedDetailSections(details)}
             </div>
@@ -1016,93 +1105,28 @@
 
       // PACKING SECTION
       if (packingList) {
-        const packingSection = document.createElement('div');
-        packingSection.className = 'content-section-result';
-        packingSection.id = 'packing-section';
-        
-        const packingCard = document.createElement('div');
-        packingCard.className = 'info-card';
-        packingCard.innerHTML = `
-          <h3><span class="info-card-icon">🎒</span> Packing List</h3>
-          <div class="enhanced-content">${processSubsectionsEnhanced(packingList)}</div>
-        `;
-        
-        packingSection.appendChild(packingCard);
+        const packingSection = createEnhancedSection('packing-section', 'Packing List', '🎒', packingList);
         contentSections.appendChild(packingSection);
       }
 
       // INSIGHTS SECTION
       if (insights) {
-        const insightsSection = document.createElement('div');
-        insightsSection.className = 'content-section-result';
-        insightsSection.id = 'insights-section';
-        
-        const insightsCard = document.createElement('div');
-        insightsCard.className = 'info-card';
-        insightsCard.innerHTML = `
-          <h3><span class="info-card-icon">🌍</span> Local Insights</h3>
-          <div class="enhanced-content">${processSubsectionsEnhanced(insights)}</div>
-        `;
-        
-        insightsSection.appendChild(insightsCard);
+        const insightsSection = createEnhancedSection('insights-section', 'Local Insights', '🌍', insights);
         contentSections.appendChild(insightsSection);
       }
 
       // PRACTICAL INFO SECTION
       if (practicalInfo) {
-        const practicalSection = document.createElement('div');
-        practicalSection.className = 'content-section-result';
-        practicalSection.id = 'practical-section';
-        
-        const practicalCard = document.createElement('div');
-        practicalCard.className = 'info-card';
-        practicalCard.innerHTML = `
-          <h3><span class="info-card-icon">📋</span> Practical Information</h3>
-          <div class="enhanced-content">${processSubsectionsEnhanced(practicalInfo)}</div>
-        `;
-        
-        practicalSection.appendChild(practicalCard);
+        const practicalSection = createEnhancedSection('practical-section', 'Practical Information', '📋', practicalInfo);
         contentSections.appendChild(practicalSection);
       }
 
       resultsWrapper.appendChild(contentSections);
       container.appendChild(resultsWrapper);
 
-      // Setup navigation
+      // Add navigation functionality
       setupResultsNavigation();
     }
-
-    // Setup navigation for tabs
-    function setupResultsNavigation() {
-      const tabs = document.querySelectorAll('.results-nav-tab');
-      const sections = document.querySelectorAll('.content-section-result');
-      const navContainer = document.querySelector('.results-nav-container');
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('active'));
-          sections.forEach(s => s.classList.remove('active'));
-
-          tab.classList.add('active');
-
-          const targetSection = tab.dataset.section;
-          const section = document.getElementById(`${targetSection}-section`);
-          if (section) {
-            section.classList.add('active');
-          }
-        });
-      });
-    }
-
-    // Get itinerary ID from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const itineraryId = urlParams.get('id');
-    
-    if (!itineraryId) {
-      window.location.href = 'my-itineraries.html';
-    }
-    
-    let currentItinerary = null;
 
     // Check if user is logged in
     onAuthStateChanged(auth, (user) => {
@@ -1121,7 +1145,7 @@
       }
     });
 
-    // Function to fetch an itinerary
+    // Fetch itinerary
     async function fetchItinerary(user, itineraryId) {
       try {
         const token = await user.getIdToken();
@@ -1143,7 +1167,6 @@
         }
         
         const itinerary = await response.json();
-        currentItinerary = itinerary;
         
         // Show itinerary details
         document.getElementById('itinerary-details').classList.remove('hidden');
@@ -1165,14 +1188,13 @@
           await updateHeaderBackground(itinerary.location);
         }
         
-        // Process content with enhanced layout
-        const contentDiv = document.getElementById('itinerary-content');
+        // Process content
         const preprocessedText = preprocessRawText(itinerary.content);
-        processEnhancedItinerary(preprocessedText, contentDiv);
+        processAndRenderEnhancedItinerary(preprocessedText);
         
       } catch (error) {
         console.error('Error fetching itinerary:', error);
-        document.getElementById('auth-status').innerHTML += `
+        document.getElementById('auth-status').innerHTML = `
           <div class="bg-red-100 text-red-700 p-4 rounded-md">
             <p>${error.message || 'Failed to load itinerary. Please try again later.'}</p>
           </div>
