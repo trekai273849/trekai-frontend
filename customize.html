@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
-  <!-- End Google Tag Manager -->
-
+  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8" />
-  <title>Customize Your Trek - Smart Trails</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css" />
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Smart Trails Community</title>
   <style>
-    /* CSS Variables for consistent theming */
     :root {
       --primary: #2D5016;
       --primary-light: #4A7C28;
@@ -26,1352 +15,692 @@
       --bg-light: #F8F9FA;
       --white: #FFFFFF;
       --shadow: rgba(0, 0, 0, 0.1);
-      --success: #27AE60;
-      --warning: #E74C3C;
-      --info: #3498DB;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background-color: var(--bg-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Main content padding */
-    .main-content-padding {
-      padding: 24px;
-    }
-    
-    @media (max-width: 768px) {
-      .main-content-padding {
-        padding: 16px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .main-content-padding {
-        padding: 12px;
-      }
-    }
-
-    /* Enhanced Hero Section */
-    .hero-enhanced {
+    /* Hero Section - Matching the site style */
+    .hero-section {
       position: relative;
-      height: 50vh;
-      min-height: 400px;
+      height: 200px;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('Images/alps.jpg');
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       color: white;
-      overflow: hidden;
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, 
-        rgba(0,0,0,0.2) 0%, 
-        rgba(0,0,0,0.4) 50%, 
-        rgba(0,0,0,0.6) 100%);
-    }
-
-    .hero-content-enhanced {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
+    .hero-content {
+      text-align: center;
       padding: 0 20px;
     }
 
-    .hero-content-enhanced h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+    .hero-content h1 {
+      font-size: 2.5em;
       font-weight: 700;
+      margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
-    .hero-content-enhanced h2 {
-      font-size: 1.5em;
-      font-weight: 400;
+    .hero-content p {
+      font-size: 1.1em;
       opacity: 0.95;
     }
 
-    /* Filter Section Enhancement */
-    .filters-container {
-      background: white;
-      box-shadow: 0 2px 10px var(--shadow);
-      border-radius: 16px;
-      padding: 30px;
-      margin-bottom: 40px;
-    }
-
-    .filter-group {
-      margin-bottom: 30px;
-    }
-
-    .filter-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .filter-group h3 {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-      color: var(--text-dark);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .filter-buttons-container {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: stretch;
-    }
-
-    .enhanced-filter-btn {
-      padding: 12px 24px !important;
-      border-radius: 30px !important;
-      font-weight: 600 !important;
-      font-size: 0.95em !important;
-      transition: all 0.3s ease !important;
-      background-color: var(--bg-light) !important;
-      border: 2px solid transparent !important;
-      color: var(--text-dark) !important;
-      cursor: pointer !important;
-      white-space: nowrap;
+    /* Main Content Area */
+    .main-container {
       flex: 1;
-      min-width: 120px;
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
-    }
-
-    .enhanced-filter-btn:active {
-      transform: scale(0.98);
-      box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2) !important;
-    }
-
-    /* Only apply hover effects on devices that support hover */
-    @media (hover: hover) {
-      .enhanced-filter-btn:hover {
-        background-color: var(--white) !important;
-        border-color: var(--primary) !important;
-        color: var(--primary) !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15) !important;
-      }
-    }
-
-    .enhanced-filter-btn:focus {
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
-    }
-
-    .enhanced-filter-btn:focus-visible {
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
-    }
-
-    .enhanced-filter-btn.active {
-      background-color: var(--primary) !important;
-      color: white !important;
-      border-color: var(--primary) !important;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3) !important;
-      position: relative;
-    }
-    
-    /* Add checkmark for active state on mobile */
-    @media (max-width: 768px) {
-      .enhanced-filter-btn.active::after {
-        content: "✓";
-        position: absolute;
-        right: 16px;
-        font-weight: bold;
-        font-size: 1.1em;
-      }
-    }
-
-    /* Comments Section Enhancement */
-    .comments-container {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 2px 10px var(--shadow);
-      margin-bottom: 30px;
-    }
-    
-    @media (max-width: 768px) {
-      .comments-container {
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .comments-container {
-        padding: 16px;
-        border-radius: 12px;
-      }
-    }
-
-    .comments-container label {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .comments-container textarea {
-      width: 100%;
-      padding: 15px;
-      border: 2px solid #E0E0E0;
-      border-radius: 12px;
-      font-size: 1em;
-      transition: border-color 0.3s ease;
-      resize: vertical;
-    }
-
-    .comments-container textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-
-    /* Generate Button Enhancement */
-    .generate-btn {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      color: white;
-      padding: 18px 40px;
-      border-radius: 30px;
-      font-size: 1.1em;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 30px auto;
-    }
-
-    .generate-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
-    }
-
-    /* Navigation Tabs for Results */
-    .results-nav-tabs {
-      background: white;
-      box-shadow: 0 2px 10px var(--shadow);
-      margin-bottom: 40px;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .results-nav-container {
-      display: flex;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .results-nav-tab {
-      padding: 20px 30px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-size: 1em;
-      font-weight: 600;
-      color: var(--text-light);
-      white-space: nowrap;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .results-nav-tab:hover {
-      color: var(--primary);
-      background: var(--bg-light);
-    }
-
-    .results-nav-tab.active {
-      color: var(--primary);
-      background: var(--bg-light);
-    }
-
-    .results-nav-tab.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--primary);
-    }
-
-    /* Enhanced Itinerary Timeline */
-    .itinerary-timeline {
-      position: relative;
-      padding-left: 40px;
-    }
-
-    .itinerary-timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: #E0E0E0;
-    }
-
-    /* Enhanced Itinerary Card Layout - Updated */
-    .itinerary-day-card {
-      position: relative;
-      margin-bottom: 40px;
-      background: white;
-      border-radius: 16px;
-      padding: 0;
-      box-shadow: 0 4px 20px var(--shadow);
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
-
-    .itinerary-day-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 30px var(--shadow);
-    }
-
-    /* Card Header Section - Simplified */
-    .day-card-header {
-      background: linear-gradient(135deg, #f8fafb 0%, #e8f0e5 100%);
-      padding: 25px 30px;
-      border-bottom: 1px solid #e5e7eb;
-      position: relative;
-    }
-
-    .day-number {
-      font-size: 0.85em;
-      color: var(--primary);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-    }
-
-    .day-title-enhanced {
-      font-size: 1.4em;
-      margin: 0;
-      color: var(--text-dark);
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    /* Main Content Section */
-    .day-card-content {
-      padding: 35px;
-    }
-
-    /* Description Box */
-    .day-description-box {
-      background: #f0f7ff;
-      border-left: 4px solid var(--info);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-
-    .day-description-enhanced {
-      color: var(--text-dark);
-      line-height: 1.8;
-      margin: 0;
-      font-size: 0.95em;
-    }
-
-    /* Distance section at the top */
-    .distance-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 25px;
-      padding: 16px 20px;
-      background: #f0f4f8;
-      border-radius: 12px;
-      border-left: 4px solid var(--primary);
-    }
-
-    .distance-icon {
-      font-size: 1.2em;
-    }
-
-    .distance-text {
-      font-size: 1.05em;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
-
-    /* Grouped details container */
-    .grouped-details-container {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    /* Detail groups */
-    .detail-group {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 24px;
-      background: #fafbfc;
-    }
-
-    .detail-group-title {
-      font-size: 1.1em;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #e5e7eb;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .detail-group-content {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    /* Individual detail items */
-    .detail-item {
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .detail-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .detail-item .detail-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    .detail-item .detail-icon {
-      font-size: 1.1em;
-      width: 24px;
-      text-align: center;
-    }
-
-    .detail-item .detail-label {
-      font-weight: 600;
-      color: var(--text-dark);
-      font-size: 0.95em;
-    }
-
-    .detail-item .detail-content {
-      color: var(--text-light);
-      line-height: 1.6;
-      font-size: 0.95em;
-      padding-left: 34px; /* Align with the text after the icon */
-    }
-
-    /* Special styling for highlights and tips */
-    .detail-item.highlights .detail-content,
-    .detail-item.tips .detail-content {
-      background: #fef9e7;
-      padding: 12px 16px 12px 16px;
-      border-radius: 8px;
-      margin-left: 34px;
-      border-left: 3px solid #f39c12;
-      font-style: italic;
-    }
-
-    /* Collapsible Day Cards */
-    .day-card-toggle {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-      background: white;
-      border: 2px solid #e5e7eb;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .signup-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px var(--shadow);
+      max-width: 900px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      min-height: 500px;
+    }
+
+    /* Left side - Form */
+    .form-section {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Right side - Benefits */
+    .benefits-section {
+      flex: 1;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid #e5e7eb;
+    }
+
+    /* Logo */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(21, 128, 61, 0.2);
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* Tabs */
+    .auth-tabs {
+      display: flex;
+      background: #f3f4f6;
+      border-radius: 12px;
+      padding: 4px;
+      margin-bottom: 30px;
+    }
+
+    .auth-tab {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #6b7280;
       cursor: pointer;
       transition: all 0.2s ease;
     }
 
-    .day-card-toggle:hover {
-      border-color: var(--primary);
-      transform: scale(1.05);
-    }
-
-    .day-card-toggle svg {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.3s ease;
-      color: var(--text-light);
-    }
-
-    .itinerary-day-card.collapsed .day-card-toggle svg {
-      transform: rotate(180deg);
-    }
-
-    .itinerary-day-card.collapsed .day-card-content {
-      display: none;
-    }
-
-    /* Enhanced timeline dot */
-    .itinerary-day-card::before {
-      content: '';
-      position: absolute;
-      left: -30px;
-      top: 35px;
-      width: 20px;
-      height: 20px;
+    .auth-tab.active {
       background: white;
-      border: 3px solid var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(45, 80, 22, 0.1);
-      z-index: 1;
-    }
-
-    /* Additional Sections Cards */
-    .info-card {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 4px 20px var(--shadow);
-      margin-bottom: 30px;
-    }
-
-    .info-card h3 {
-      font-size: 1.8em;
-      margin-bottom: 25px;
-      color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .info-card-icon {
-      font-size: 1.5em;
-    }
-
-    /* Section Headers */
-    .section-header {
-      font-size: 2.5em;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 15px;
-      margin-top: 50px;
-    }
-
-    .section-subtitle {
-      font-size: 1.1em;
-      color: var(--text-light);
-      margin-bottom: 40px;
-    }
-
-    /* Enhanced Loading Animation */
-    .loading-card {
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 4px 20px var(--shadow);
-      text-align: center;
-    }
-
-    .loading-spinner {
-      width: 60px;
-      height: 60px;
-      border: 3px solid var(--bg-light);
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 30px;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* Action Buttons Enhancement */
-    .action-buttons-container {
-      display: flex;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .action-btn {
-      flex: 1;
-      min-width: 200px;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 1em;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .action-btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      color: white;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
-    }
-
-    .action-btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
-    }
-
-    .action-btn-secondary {
-      background: white;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .action-btn-secondary:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Content Sections */
-    .content-section-result {
-      display: none;
-    }
-
-    .content-section-result.active {
-      display: block;
-      animation: fadeIn 0.5s ease-out;
-    }
-
-    .enhanced-content {
-      color: var(--text-light);
-      line-height: 1.8;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Hide the Chat to Pro Guide button */
-    #talk-to-guide {
-      display: none !important;
-    }
-
-    /* Tablet view - stack buttons in pairs */
-    @media (max-width: 900px) and (min-width: 769px) {
-      .filters-container {
-        max-width: 700px;
-        margin: 0 auto 40px auto;
-      }
-      
-      .filter-buttons-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      
-      .enhanced-filter-btn {
-        min-width: unset !important;
-      }
-      
-      /* Make the third button span full width if there are 3 buttons */
-      .filter-buttons-container:has(button:nth-child(3):last-child) button:last-child {
-        grid-column: 1 / -1;
-      }
-    }
-
-    /* Large phones and small tablets (481px to 768px) */
-    @media (min-width: 481px) and (max-width: 768px) {
-      .filters-container {
-        max-width: 600px;
-        margin: 0 auto 40px auto;
-      }
-      
-      .filter-buttons-container {
-        max-width: 450px;
-        margin: 0 auto;
-      }
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .hero-content-enhanced h1 {
-        font-size: 2em;
-      }
-      
-      .hero-content-enhanced h2 {
-        font-size: 1.2em;
-      }
-      
-      .filters-container {
-        padding: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      
-      .filter-group {
-        margin-bottom: 25px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid #e5e7eb;
-      }
-      
-      .filter-group:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-      }
-      
-      .filter-group h3 {
-        font-size: 1.1em;
-        margin-bottom: 12px;
-      }
-      
-      .filter-buttons-container {
-        flex-direction: column;
-        gap: 8px;
-      }
-      
-      .enhanced-filter-btn {
-        flex: none !important;
-        width: 100% !important;
-        min-width: unset !important;
-        padding: 16px 20px !important;
-        font-size: 0.95em !important;
-        min-height: 50px !important;
-        height: auto !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-      }
-      
-      .enhanced-filter-btn.active {
-        font-weight: 700 !important;
-      }
-      
-      .day-card-header {
-        padding: 20px;
-      }
-      
-      .day-card-content {
-        padding: 20px;
-      }
-      
-      .detail-group {
-        padding: 18px;
-      }
-      
-      .detail-group-title {
-        font-size: 1em;
-        margin-bottom: 15px;
-      }
-      
-      .grouped-details-container {
-        gap: 20px;
-      }
-      
-      .detail-item .detail-content {
-        padding-left: 0;
-        margin-top: 5px;
-      }
-      
-      .detail-item.highlights .detail-content,
-      .detail-item.tips .detail-content {
-        margin-left: 0;
-      }
-      
-      .action-buttons-container {
-        flex-direction: column;
-      }
-      
-      .action-btn {
-        width: 100%;
-      }
-    }
-
-    /* Small devices (phones under 480px) */
-    @media (max-width: 480px) {
-      .filters-container {
-        padding: 16px;
-      }
-      
-      .filter-group {
-        margin-bottom: 20px;
-      }
-      
-      .filter-group h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
-      }
-      
-      .enhanced-filter-btn {
-        padding: 14px 16px !important;
-        font-size: 0.9em !important;
-        min-height: 46px !important;
-      }
-      
-      .comments-container {
-        padding: 20px;
-      }
-      
-      .comments-container textarea {
-        padding: 12px;
-        font-size: 16px; /* Prevents zoom on iOS */
-        min-height: 100px;
-      }
-      
-      .generate-btn {
-        padding: 16px 30px;
-        font-size: 1em;
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-
-    /* Very small devices (phones under 380px) */
-    @media (max-width: 380px) {
-      .enhanced-filter-btn {
-        font-size: 0.85em !important;
-        padding: 14px 12px !important;
-      }
-      
-      .filter-group h3 {
-        font-size: 0.95em;
-      }
-      
-      .comments-container label {
-        font-size: 1em;
-      }
-    }
-
-    /* Landscape mode for mobile */
-    @media (max-width: 768px) and (orientation: landscape) {
-      .hero-enhanced {
-        height: 70vh;
-        min-height: 300px;
-      }
-      
-      .filter-buttons-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-      
-      .filter-buttons-container:has(button:nth-child(3):last-child) button:last-child {
-        grid-column: 1 / -1;
-      }
-      
-      .enhanced-filter-btn {
-        min-height: 44px !important;
-      }
-    }
-
-    /* Modal styles from original */
-    .auth-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #16a34a, #15803d);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      animation: iconBounce 0.6s ease-out 0.2s both;
-      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
-    }
-    
-    .welcome-icon {
-      background: linear-gradient(135deg, #16a34a, #15803d);
-      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
-    }
-    
-    .auth-icon svg {
-      width: 40px;
-      height: 40px;
-      stroke: white;
-      stroke-width: 2;
-      fill: white;
-    }
-    
-    .modal {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      padding: 40px;
-      max-width: 480px;
-      width: 90%;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transform: scale(1);
-      animation: modalAppear 0.3s ease-out;
-    }
-    
-    .modal-title {
-      font-size: 28px;
-      font-weight: 700;
       color: #1f2937;
-      text-align: center;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #1f2937, #4b5563);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    
-    .modal-message {
-      font-size: 16px;
-      color: #6b7280;
-      text-align: center;
-      margin-bottom: 24px;
-      line-height: 1.5;
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 20px;
     }
-    
-    .auth-benefits {
-      margin: 24px 0;
-      text-align: left;
-      background: #f0fdf4;
-      padding: 20px;
-      border-radius: 12px;
-      border-left: 4px solid #16a34a;
-    }
-    
-    .auth-benefits h4 {
+
+    .form-label {
+      display: block;
       font-size: 14px;
       font-weight: 600;
-      color: #166534;
-      margin-bottom: 12px;
+      color: #374151;
+      margin-bottom: 8px;
     }
-    
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 15px;
+      background: #fafafa;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #16a34a;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+    }
+
+    /* Buttons */
+    .submit-button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+    }
+
+    .submit-button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
+    }
+
+    .submit-button:active {
+      transform: translateY(0);
+    }
+
+    /* Benefits Styling */
+    .benefits-header {
+      font-size: 20px;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .benefit-item {
       display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-      font-size: 14px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      font-size: 15px;
       color: #166534;
+      line-height: 1.5;
     }
-    
+
     .benefit-item:before {
       content: "✓";
       color: #16a34a;
       font-weight: bold;
-      margin-right: 10px;
-      font-size: 16px;
+      margin-right: 12px;
+      font-size: 18px;
+      flex-shrink: 0;
     }
-    
-    .button-primary {
-      background: linear-gradient(135deg, #16a34a, #15803d);
-      color: white;
-      padding: 16px 24px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: none;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
-      margin-bottom: 12px;
-    }
-    
-    .button-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
-    }
-    
-    .button-secondary {
-      background: transparent;
-      color: #15803d;
-      border: 2px solid #16a34a;
-      padding: 16px 24px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-    }
-    
-    .button-secondary:hover {
-      background: #16a34a;
-      color: white;
-      transform: translateY(-1px);
-    }
-    
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 32px;
-    }
-    
-    .close-button {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: #f3f4f6;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
+
+    /* Footer Text */
+    .footer-text {
+      font-size: 13px;
       color: #6b7280;
+      text-align: center;
+      margin-top: 24px;
+      line-height: 1.5;
     }
-    
-    .close-button:hover {
-      background: #e5e7eb;
-      transform: scale(1.1);
+
+    .footer-text a {
+      color: #16a34a;
+      text-decoration: none;
+      font-weight: 600;
     }
-    
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      backdrop-filter: blur(4px);
+
+    .footer-text a:hover {
+      text-decoration: underline;
     }
-    
-    @keyframes iconBounce {
-      0% {
-        opacity: 0;
-        transform: scale(0.3);
+
+    /* Error/Success Messages */
+    .message {
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      text-align: center;
+      display: none;
+    }
+
+    .error-message {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .success-message {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    /* Loading State */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .loading .submit-button {
+      position: relative;
+    }
+
+    .loading .submit-button:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: -10px;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section {
+        height: 150px;
       }
-      50% {
-        transform: scale(1.1);
+
+      .hero-content h1 {
+        font-size: 2em;
       }
-      100% {
-        opacity: 1;
-        transform: scale(1);
+
+      .signup-card {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .form-section, .benefits-section {
+        padding: 30px 20px;
+      }
+
+      .benefits-section {
+        border-left: none;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .main-container {
+        padding: 20px;
       }
     }
-    
-    @keyframes modalAppear {
-      from {
-        opacity: 0;
-        transform: scale(0.9) translateY(-20px);
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.75em;
       }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
+
+      .hero-content p {
+        font-size: 1em;
+      }
+
+      .logo-text {
+        font-size: 20px;
+      }
+
+      .form-section {
+        padding: 24px 16px;
+      }
+
+      .benefits-section {
+        padding: 24px 16px;
+      }
+
+      .benefit-item {
+        font-size: 14px;
       }
     }
-    
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to { opacity: 0; }
+
+    /* Hide elements for cleaner layout */
+    .hidden {
+      display: none !important;
     }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Enhanced Hero Header -->
-  <header class="hero-enhanced">
-    <div class="hero-bg" style="background-image: url('Images/alps.jpg');"></div>
-    <div class="hero-content-enhanced">
-      <h1>Create Your Perfect Trek</h1>
-      <h2 id="greeting">Design your personalized adventure</h2>
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1>Join the Adventure</h1>
+      <p>Create your account and start exploring amazing trails</p>
     </div>
   </header>
 
-  <!-- Main Content with Enhanced Styling -->
-  <main class="max-w-5xl mx-auto main-content-padding">
-    <!-- Filters Section -->
-    <div class="filters-container">
-      <form id="customization-form">
-        <!-- Accommodation -->
-        <div class="filter-group">
-          <h3>🏕️ Accommodation Type</h3>
-          <div class="filter-buttons-container">
-            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
-            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
-            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Lodges">Lodges</button>
+  <!-- Main Content -->
+  <main class="main-container">
+    <div class="signup-card">
+      <!-- Form Section -->
+      <div class="form-section">
+        <div class="logo-container">
+          <div class="logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
+            </svg>
           </div>
+          <div class="logo-text">Smart Trails</div>
         </div>
 
-        <!-- Difficulty -->
-        <div class="filter-group">
-          <h3>🏔️ Difficulty Level</h3>
-          <div class="filter-buttons-container">
-            <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
-            <button type="button" class="enhanced-filter-btn active" data-category="difficulty" data-value="Moderate">Moderate</button>
-            <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
-          </div>
+        <div class="auth-tabs">
+          <button id="signup-tab" class="auth-tab active">Create Account</button>
+          <button id="login-tab" class="auth-tab">Welcome Back</button>
         </div>
 
-        <!-- Technical -->
-        <div class="filter-group">
-          <h3>🧗 Technical Requirements</h3>
-          <div class="filter-buttons-container">
-            <button type="button" class="enhanced-filter-btn active" data-category="technical" data-value="None">None</button>
-            <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
-            <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
+        <div id="error-message" class="message error-message"></div>
+        <div id="success-message" class="message success-message"></div>
+
+        <!-- Sign Up Form -->
+        <form id="signup-form">
+          <div class="form-group">
+            <label class="form-label" for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" class="form-input" placeholder="your@email.com" required />
           </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="signup-password">Create Password</label>
+            <input type="password" id="signup-password" class="form-input" placeholder="At least 6 characters" required />
+          </div>
+          
+          <button type="submit" class="submit-button">🚀 Join Our Community</button>
+        </form>
+
+        <!-- Login Form -->
+        <form id="login-form" class="hidden">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input type="email" id="login-email" class="form-input" placeholder="your@email.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required />
+          </div>
+          
+          <button type="submit" class="submit-button">🏠 Welcome Back</button>
+        </form>
+
+        <p class="footer-text">
+          By joining, you agree to our <a href="#" onclick="alert('Terms of Service')">Terms of Service</a> and 
+          <a href="#" onclick="alert('Privacy Policy')">Privacy Policy</a>. 
+          We promise to keep your data safe! 🔒
+        </p>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="benefits-section">
+        <h3 class="benefits-header">
+          🎯 What you'll get:
+        </h3>
+        <div class="benefit-item">
+          Personalized trail recommendations based on your preferences
         </div>
-      </form>
+        <div class="benefit-item">
+          Detailed gear lists and local insights for every adventure
+        </div>
+        <div class="benefit-item">
+          Save and organize your favorite itineraries
+        </div>
+        <div class="benefit-item">
+          Regenerate itineraries with feedback to perfect your trip
+        </div>
+        <div class="benefit-item">
+          Join a community of thousands of fellow adventurers
+        </div>
+      </div>
     </div>
-
-    <!-- Comments Section -->
-    <div class="comments-container">
-      <label for="comments">Describe Your Dream Trek</label>
-      <textarea 
-        id="comments" 
-        name="comments" 
-        rows="4" 
-        placeholder="e.g., 8-day hike in Peru with scenic views, not too steep, local food stops, stay in eco-lodges..."
-      ></textarea>
-    </div>
-
-    <!-- Generate Button -->
-    <button type="submit" form="customization-form" class="generate-btn">
-      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-      </svg>
-      Generate Custom Itinerary
-    </button>
-
-    <!-- Results Container -->
-    <div id="itinerary-cards"></div>
   </main>
 
-  <!-- Success Modal -->
-  <div class="modal-overlay" id="itinerary-success-modal" style="display: none;">
-    <div class="modal">
-      <button class="close-button" onclick="closeSuccessModal()" aria-label="Close">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="auth-icon">
-        <svg viewBox="0 0 24 24">
-          <polyline points="20,6 9,17 4,12"></polyline>
-        </svg>
-      </div>
-      
-      <h2 class="modal-title">Adventure Saved! 🎉</h2>
-      <p class="modal-message">Your custom itinerary has been safely stored in your account. Ready to hit the trails!</p>
-      
-      <div class="button-group">
-        <a href="my-itineraries.html" class="button button-primary">
-          View My Adventures
-        </a>
-        <button class="button button-secondary" onclick="closeSuccessModal()">
-          Plan Another Trek
-        </button>
-      </div>
-    </div>
-  </div>
+  <script type="module">
+    // Import Firebase auth functions
+    import { signUp, signIn } from './js/auth/auth.js';
+    import { auth } from './js/auth/firebase.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
-  <!-- Authentication Required Modal -->
-  <div class="modal-overlay" id="auth-required-modal" style="display: none;">
-    <div class="modal">
-      <button class="close-button" onclick="closeAuthModal()" aria-label="Close">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="auth-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-          <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
-        </svg>
-      </div>
-      
-      <h2 class="modal-title">🏔️ Save Your Adventure</h2>
-      <p class="modal-message">Join thousands of adventurers and save your custom itinerary to access it anytime, anywhere!</p>
-      
-      <div class="auth-benefits">
-        <h4>🎯 What you'll get:</h4>
-        <div class="benefit-item">Personalized trail recommendations</div>
-        <div class="benefit-item">Gear lists and local insights</div>
-        <div class="benefit-item">Save your favorite itineraries</div>
-        <div class="benefit-item">Regenerate itineraries with feedback</div>
-      </div>
-      
-      <div class="button-group">
-        <button class="button-primary" onclick="redirectToSignUp()">
-          🚀 Join Our Community
-        </button>
-        <button class="button-secondary" onclick="redirectToSignIn()">
-          🏠 I Have an Account
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Welcome Back Modal -->
-  <div class="modal-overlay" id="welcome-back-modal" style="display: none;">
-    <div class="modal">
-      <button class="close-button" onclick="closeWelcomeModal()" aria-label="Close">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="auth-icon welcome-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-          <polyline points="22,4 12,14.01 9,11.01"/>
-        </svg>
-      </div>
-      
-      <h2 class="modal-title">🎉 Welcome to Smart Trails!</h2>
-      <p class="modal-message">Your adventure has been saved! You're now part of our amazing trekking community.</p>
-      
-      <div class="button-group">
-        <a href="my-itineraries.html" class="button-primary">
-          🗺️ View My Adventures
-        </a>
-        <button class="button-secondary" onclick="closeWelcomeModal()">
-          🥾 Plan Another Trek
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer Container -->
-  <div id="footer-container"></div>
-
-  <!-- Scripts -->
-  <script src="js/utils/itinerary.js" type="module"></script>
-  <script src="js/pages/customize.js" type="module"></script>
-  <script src="js/components/navbar.js" type="module"></script>
-  <script src="js/components/footer.js" type="module"></script>
-  
-  <!-- Override script for enhanced functionality -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Update greeting with location
-      const location = localStorage.getItem('userLocation') || 'the mountains';
-      const greeting = document.getElementById('greeting');
-      if (greeting) {
-        greeting.innerText = `Design a personalized adventure in ${location}`;
+    // Tab switching functionality
+    const signupTab = document.getElementById('signup-tab');
+    const loginTab = document.getElementById('login-tab');
+    const signupForm = document.getElementById('signup-form');
+    const loginForm = document.getElementById('login-form');
+    const errorDiv = document.getElementById('error-message');
+    const successDiv = document.getElementById('success-message');
+    
+    // Utility functions
+    function showError(message) {
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+      successDiv.style.display = 'none';
+    }
+    
+    function showSuccess(message) {
+      successDiv.textContent = message;
+      successDiv.style.display = 'block';
+      errorDiv.style.display = 'none';
+    }
+    
+    function hideMessages() {
+      errorDiv.style.display = 'none';
+      successDiv.style.display = 'none';
+    }
+    
+    function setLoading(loading) {
+      const container = document.querySelector('.signup-card');
+      if (loading) {
+        container.classList.add('loading');
+      } else {
+        container.classList.remove('loading');
       }
-      
-      // Enhanced filter button functionality
-      document.querySelectorAll('.enhanced-filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const group = btn.dataset.category;
-          document.querySelectorAll(`.enhanced-filter-btn[data-category="${group}"]`).forEach(el => {
-            el.classList.remove('active');
-          });
-          btn.classList.add('active');
-        });
-      });
+    }
+    
+    // Tab switching
+    signupTab.addEventListener('click', () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signupForm.classList.remove('hidden');
+      loginForm.classList.add('hidden');
+      hideMessages();
+    });
+    
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.classList.remove('hidden');
+      signupForm.classList.add('hidden');
+      hideMessages();
     });
 
-    // Toggle day card function
-    function toggleDayCard(button) {
-      const dayCard = button.closest('.itinerary-day-card');
-      dayCard.classList.toggle('collapsed');
-    }
-
-    // Modal functions
-    function closeSuccessModal() {
-      const modal = document.getElementById('itinerary-success-modal');
-      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.style.animation = '';
-      }, 200);
-    }
-
-    function closeAuthModal() {
-      const modal = document.getElementById('auth-required-modal');
-      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.style.animation = '';
-      }, 200);
-    }
-
-    function closeWelcomeModal() {
-      const modal = document.getElementById('welcome-back-modal');
-      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.style.animation = '';
-      }, 200);
-    }
-
-    function redirectToSignUp() {
-      window.location.href = 'sign-up.html';
-    }
-
-    function redirectToSignIn() {
-      window.location.href = 'sign-up.html';
-    }
-
-    // Close modals when clicking outside
-    document.addEventListener('click', function(e) {
-      const successModal = document.getElementById('itinerary-success-modal');
-      const authModal = document.getElementById('auth-required-modal');
-      const welcomeModal = document.getElementById('welcome-back-modal');
+    // Function to save pending itinerary after authentication
+    async function savePendingItinerary(user) {
+      const pendingItinerary = localStorage.getItem('pendingItinerary');
+      if (!pendingItinerary) return null;
       
-      if (e.target === successModal) closeSuccessModal();
-      if (e.target === authModal) closeAuthModal();
-      if (e.target === welcomeModal) closeWelcomeModal();
-    });
-
-    // Close modals with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const successModal = document.getElementById('itinerary-success-modal');
-        const authModal = document.getElementById('auth-required-modal');
-        const welcomeModal = document.getElementById('welcome-back-modal');
+      try {
+        const token = await user.getIdToken();
+        const itineraryData = JSON.parse(pendingItinerary);
         
-        if (successModal.style.display === 'flex') closeSuccessModal();
-        if (authModal.style.display === 'flex') closeAuthModal();
-        if (welcomeModal.style.display === 'flex') closeWelcomeModal();
+        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(itineraryData)
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Failed to save itinerary: ${response.status}`);
+        }
+        
+        const savedItinerary = await response.json();
+        
+        // Clear the pending data
+        localStorage.removeItem('pendingItinerary');
+        localStorage.removeItem('returnToCustomize');
+        
+        return savedItinerary;
+      } catch (error) {
+        console.error('Error saving pending itinerary:', error);
+        return null;
+      }
+    }
+
+    // Function to get user-friendly error messages
+    function getUserFriendlyError(error) {
+      const errorCode = error.code || error.message;
+      
+      switch (errorCode) {
+        case 'auth/email-already-in-use':
+          return 'Email already in use';
+        case 'auth/weak-password':
+          return 'Password should be at least 6 characters';
+        case 'auth/invalid-email':
+          return 'Please enter a valid email address';
+        case 'auth/user-not-found':
+          return 'No account found with this email address';
+        case 'auth/wrong-password':
+          return 'Incorrect password. Please try again';
+        case 'auth/too-many-requests':
+          return 'Too many failed attempts. Please try again later';
+        case 'auth/network-request-failed':
+          return 'Network error. Please check your connection';
+        default:
+          if (errorCode.includes('email-already-in-use') || errorCode.includes('already in use')) {
+            return 'Email already in use';
+          }
+          if (errorCode.includes('weak-password') || errorCode.includes('6 characters')) {
+            return 'Password should be at least 6 characters';
+          }
+          if (errorCode.includes('invalid-email') || errorCode.includes('badly formatted')) {
+            return 'Please enter a valid email address';
+          }
+          return 'Something went wrong. Please try again';
+      }
+    }
+
+    // Handle signup form submission
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      setLoading(true);
+      hideMessages();
+      
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      
+      try {
+        const result = await signUp(email, password);
+        
+        if (!result.success) {
+          throw new Error(result.error);
+        }
+        
+        // Wait for auth state to be established
+        await new Promise((resolve) => {
+          const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+              unsubscribe();
+              resolve(user);
+            }
+          });
+        });
+        
+        // Check for and save any pending itinerary
+        const savedItinerary = await savePendingItinerary(result.user);
+        
+        if (savedItinerary) {
+          showSuccess('🎉 Account created and your trek has been saved!');
+          setTimeout(() => {
+            window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+          }, 2000);
+        } else {
+          showSuccess('🎉 Welcome to Smart Trails! Your account has been created.');
+          setTimeout(() => {
+            window.location.href = 'customize.html';
+          }, 2000);
+        }
+        
+      } catch (error) {
+        console.error('Signup error:', error);
+        showError(getUserFriendlyError(error));
+      } finally {
+        setLoading(false);
+      }
+    });
+    
+    // Handle login form submission
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      setLoading(true);
+      hideMessages();
+      
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      
+      try {
+        const result = await signIn(email, password);
+        
+        if (!result.success) {
+          throw new Error(result.error);
+        }
+        
+        // Wait for auth state to be established
+        await new Promise((resolve) => {
+          const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+              unsubscribe();
+              resolve(user);
+            }
+          });
+        });
+        
+        // Check for and save any pending itinerary
+        const savedItinerary = await savePendingItinerary(result.user);
+        
+        if (savedItinerary) {
+          showSuccess('🎉 Welcome back! Your trek has been saved.');
+          setTimeout(() => {
+            window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+          }, 2000);
+        } else {
+          showSuccess('🎉 Welcome back!');
+          const returnToCustomize = localStorage.getItem('returnToCustomize');
+          if (returnToCustomize) {
+            localStorage.removeItem('returnToCustomize');
+            setTimeout(() => {
+              window.location.href = 'customize.html';
+            }, 1500);
+          } else {
+            setTimeout(() => {
+              window.location.href = 'my-itineraries.html';
+            }, 1500);
+          }
+        }
+        
+      } catch (error) {
+        console.error('Login error:', error);
+        showError(getUserFriendlyError(error));
+      } finally {
+        setLoading(false);
+      }
+    });
+
+    // Check if user is already authenticated on page load
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const pendingItinerary = localStorage.getItem('pendingItinerary');
+        if (pendingItinerary) {
+          savePendingItinerary(user).then((savedItinerary) => {
+            if (savedItinerary) {
+              window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+            } else {
+              window.location.href = 'my-itineraries.html';
+            }
+          });
+        } else {
+          window.location.href = 'my-itineraries.html';
+        }
       }
     });
   </script>

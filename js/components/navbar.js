@@ -1,6 +1,7 @@
 // js/components/navbar.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { showAuthModal } from './authModal.js';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -39,14 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><a href="${pathPrefix}index.html" class="hover:text-green-200 transition-colors">Home</a></li>
           <li><a href="${pathPrefix}popular-hikes.html" class="hover:text-green-200 transition-colors">Explore</a></li>
           <li><a href="${pathPrefix}my-itineraries.html" class="hover:text-green-200 transition-colors">My Itineraries</a></li>
-          <li id="auth-button"><a href="${pathPrefix}sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a></li>
+          <li id="auth-button"><a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a></li>
         </ul>
       </nav>
 
       <!-- Mobile Navigation -->
       <div class="md:hidden flex items-center space-x-2">
         <div id="mobile-auth-button">
-          <a href="${pathPrefix}sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>
+          <a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>
         </div>
         <button id="mobile-menu-toggle" class="text-white hover:text-green-200 transition-colors p-1">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
   `;
+
+  // Make showAuthModal available globally
+  window.showAuthModal = showAuthModal;
 
   // Get existing header
   const existingHeader = document.querySelector('header');
@@ -221,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <button id="user-menu-button" class="w-10 h-10 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-900">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
             </svg>
           </button>
           <div id="user-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-50 border border-gray-200">
@@ -292,9 +296,9 @@ document.addEventListener('DOMContentLoaded', () => {
           });
       });
     } else {
-      // User is signed out
-      authButton.innerHTML = `<a href="${pathPrefix}sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
-      mobileAuthButton.innerHTML = `<a href="${pathPrefix}sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
+      // User is signed out - use modal instead of direct links
+      authButton.innerHTML = `<a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
+      mobileAuthButton.innerHTML = `<a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
       mobileAuthButton.style.display = 'block';
       
       // Remove user info from mobile menu
