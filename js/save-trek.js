@@ -69,7 +69,7 @@ async function saveTrek(user) {
         console.log('Sending itinerary data:', itineraryData);
         console.log('Trek image path:', trekImage);
         
-        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -134,7 +134,7 @@ function updateButtonState(button, isSaved, isLoading = false) {
 async function checkIfTrekSaved(user, trekId) {
     try {
         const token = await user.getIdToken();
-        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

@@ -913,7 +913,7 @@ async function savePendingItinerary(user) {
     const token = await user.getIdToken();
     const itineraryData = JSON.parse(pendingItinerary);
     
-    const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+    const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
