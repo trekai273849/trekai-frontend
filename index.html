@@ -212,7 +212,7 @@
                 <div id="trek-carousel" class="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4">
                     
                     <!-- Everest Base Camp -->
-                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer" data-trek-url="output/treks/everest-base-camp-trek.html">
                         <div class="h-48 relative overflow-hidden" style="background-image: url('images/treks/covers/everest-base-camp-trek.jpg'); background-size: cover; background-position: center;">
                             <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
                             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
@@ -252,7 +252,7 @@
                     </div>
 
                     <!-- Torres del Paine -->
-                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer" data-trek-url="output/treks/torres-del-paine-w-circuit.html">
                         <div class="h-48 relative overflow-hidden" style="background-image: url('images/treks/covers/torres-del-paine-w-circuit.jpg'); background-size: cover; background-position: center;">
                             <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
                             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
@@ -292,7 +292,7 @@
                     </div>
 
                     <!-- Inca Trail -->
-                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer" data-trek-url="output/treks/inca-trail.html">
                         <div class="h-48 relative overflow-hidden" style="background-image: url('images/treks/covers/inca-trail.jpg'); background-size: cover; background-position: center;">
                             <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
                             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
@@ -332,7 +332,7 @@
                     </div>
 
                     <!-- Tour du Mont Blanc -->
-                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer" data-trek-url="output/treks/tour-du-mont-blanc.html">
                         <div class="h-48 relative overflow-hidden" style="background-image: url('images/treks/covers/tour-du-mont-blanc.jpg'); background-size: cover; background-position: center;">
                             <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
                             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
@@ -372,7 +372,7 @@
                     </div>
 
                     <!-- GR20 Corsica -->
-                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer" data-trek-url="output/treks/gr20-corsica.html">
                         <div class="h-48 relative overflow-hidden" style="background-image: url('images/treks/covers/gr20-corsica.jpg'); background-size: cover; background-position: center;">
                             <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
                             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
@@ -412,7 +412,7 @@
                     </div>
 
                     <!-- Annapurna Circuit -->
-                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="trek-card flex-none w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer" data-trek-url="output/treks/annapurna-circuit-trek.html">
                         <div class="h-48 relative overflow-hidden" style="background-image: url('images/treks/covers/annapurna-circuit-trek.jpg'); background-size: cover; background-position: center;">
                             <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
                             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
@@ -669,10 +669,16 @@
             carousel.addEventListener('scroll', updateScrollButtons);
             updateScrollButtons(); // Initial check
             
-            // Add click handlers to trek cards
+            // Add click handlers to trek cards - UPDATED to use specific trek URLs
             trekCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    window.location.href = 'popular-hikes.html';
+                    const trekUrl = card.getAttribute('data-trek-url');
+                    if (trekUrl) {
+                        window.location.href = trekUrl;
+                    } else {
+                        // Fallback to popular hikes page if no specific URL
+                        window.location.href = 'popular-hikes.html';
+                    }
                 });
             });
             
