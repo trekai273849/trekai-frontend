@@ -16,10 +16,10 @@
   <link rel="stylesheet" href="styles/main.css" />
   
   <style>
-    /* CSS Variables for consistent theming - CHANGED TO BLUE */
+    /* CSS Variables for consistent theming - Blue color scheme */
     :root {
-      --primary: #1e40af;        /* Changed from #2D5016 to blue-800 */
-      --primary-light: #2563eb;  /* Changed from #4A7C28 to blue-600 */
+      --primary: #1e40af;        /* blue-800 */
+      --primary-light: #2563eb;  /* blue-600 */
       --accent: #F39C12;
       --text-dark: #2C3E50;
       --text-light: #5D6D7E;
@@ -156,7 +156,7 @@
 
     .enhanced-filter-btn:active {
       transform: scale(0.98);
-      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2) !important;  /* Changed to blue shadow */
+      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2) !important;
     }
 
     /* Only apply hover effects on devices that support hover */
@@ -166,7 +166,7 @@
         border-color: var(--primary) !important;
         color: var(--primary) !important;
         transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15) !important;  /* Changed to blue shadow */
+        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15) !important;
       }
     }
 
@@ -184,7 +184,7 @@
       background-color: var(--primary) !important;
       color: white !important;
       border-color: var(--primary) !important;
-      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3) !important;  /* Changed to blue shadow */
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3) !important;
       position: relative;
     }
     
@@ -256,7 +256,7 @@
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);  /* Changed to blue shadow */
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -265,7 +265,7 @@
 
     .generate-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);  /* Changed to blue shadow */
+      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
     }
 
     /* Navigation Tabs for Results */
@@ -332,7 +332,7 @@
       background: #E0E0E0;
     }
 
-    /* Enhanced Itinerary Card Layout - Updated */
+    /* Enhanced Itinerary Card Layout */
     .itinerary-day-card {
       position: relative;
       margin-bottom: 40px;
@@ -349,9 +349,9 @@
       box-shadow: 0 6px 30px var(--shadow);
     }
 
-    /* Card Header Section - Simplified */
+    /* Card Header Section */
     .day-card-header {
-      background: linear-gradient(135deg, #f8fafb 0%, #e3ecf7 100%);  /* Changed to blue tint */
+      background: linear-gradient(135deg, #f8fafb 0%, #e3ecf7 100%);
       padding: 25px 30px;
       border-bottom: 1px solid #e5e7eb;
       position: relative;
@@ -409,6 +409,7 @@
 
     .distance-icon {
       font-size: 1.2em;
+      flex-shrink: 0;
     }
 
     .distance-text {
@@ -462,7 +463,7 @@
 
     .detail-item .detail-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
       margin-bottom: 8px;
     }
@@ -471,30 +472,46 @@
       font-size: 1.1em;
       width: 24px;
       text-align: center;
+      flex-shrink: 0;
+      line-height: 1.4;
     }
 
     .detail-item .detail-label {
       font-weight: 600;
       color: var(--text-dark);
       font-size: 0.95em;
+      flex-grow: 1;
+      line-height: 1.4;
     }
 
     .detail-item .detail-content {
       color: var(--text-light);
       line-height: 1.6;
       font-size: 0.95em;
-      padding-left: 34px; /* Align with the text after the icon */
+      padding-left: 34px; /* Align with label text after icon */
     }
 
-    /* Special styling for highlights and tips */
+    /* Special styling for highlights and tips - Simplified box layout */
+    .detail-item.highlights,
+    .detail-item.tips {
+      background: #fef9e7;
+      padding: 16px;
+      border-radius: 8px;
+      border-left: 3px solid #f39c12;
+      margin: 8px 0;
+      border-bottom: none;
+    }
+    
+    .detail-item.highlights .detail-header,
+    .detail-item.tips .detail-header {
+      margin-bottom: 4px; /* Reduce margin for cleaner look */
+    }
+    
     .detail-item.highlights .detail-content,
     .detail-item.tips .detail-content {
-      background: #fef9e7;
-      padding: 12px 16px 12px 16px;
-      border-radius: 8px;
-      margin-left: 34px;
-      border-left: 3px solid #f39c12;
       font-style: italic;
+      color: var(--text-dark);
+      padding-left: 0; /* Override default padding */
     }
 
     /* Collapsible Day Cards */
@@ -545,7 +562,7 @@
       background: white;
       border: 3px solid var(--primary);
       border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);  /* Changed to blue shadow */
+      box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
       z-index: 1;
     }
 
@@ -637,12 +654,12 @@
     .action-btn-primary {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       color: white;
-      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);  /* Changed to blue shadow */
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
     }
 
     .action-btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);  /* Changed to blue shadow */
+      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
     }
 
     .action-btn-secondary {
@@ -680,6 +697,42 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    /* Trail Tips and Highlights Container Styling */
+    .trail-tips-section,
+    .highlights-section {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px var(--shadow);
+      margin-bottom: 30px;
+    }
+    
+    .trail-tips-section h3,
+    .highlights-section h3 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+    
+    /* Individual tip/highlight items */
+    .tip-item,
+    .highlight-item {
+      padding: 16px 20px;
+      background: #fef9e7;
+      border-left: 3px solid #f39c12;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    .tip-item:last-child,
+    .highlight-item:last-child {
+      margin-bottom: 0;
     }
 
     /* Hide the Chat to Pro Guide button */
@@ -799,14 +852,24 @@
         gap: 20px;
       }
       
+      .detail-item {
+        padding: 10px 0;
+      }
+      
+      .detail-item .detail-header {
+        flex-wrap: wrap;
+      }
+      
       .detail-item .detail-content {
-        padding-left: 0;
+        padding-left: 0; /* Remove padding on mobile */
         margin-top: 5px;
       }
       
-      .detail-item.highlights .detail-content,
-      .detail-item.tips .detail-content {
+      .detail-item.highlights,
+      .detail-item.tips {
         margin-left: 0;
+        margin-right: 0;
+        padding: 12px;
       }
       
       .action-buttons-container {
@@ -899,19 +962,19 @@
     .auth-icon {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #2563eb, #1e40af);  /* Changed to blue gradient */
+      background: linear-gradient(135deg, #2563eb, #1e40af);
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 24px;
       animation: iconBounce 0.6s ease-out 0.2s both;
-      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);  /* Changed to blue shadow */
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
     }
     
     .welcome-icon {
-      background: linear-gradient(135deg, #2563eb, #1e40af);  /* Changed to blue gradient */
-      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);  /* Changed to blue shadow */
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
     }
     
     .auth-icon svg {
@@ -958,16 +1021,16 @@
     .auth-benefits {
       margin: 24px 0;
       text-align: left;
-      background: #eff6ff;  /* Changed to blue tint */
+      background: #eff6ff;
       padding: 20px;
       border-radius: 12px;
-      border-left: 4px solid #2563eb;  /* Changed to blue */
+      border-left: 4px solid #2563eb;
     }
     
     .auth-benefits h4 {
       font-size: 14px;
       font-weight: 600;
-      color: #1e3a8a;  /* Changed to blue */
+      color: #1e3a8a;
       margin-bottom: 12px;
     }
     
@@ -976,19 +1039,19 @@
       align-items: center;
       margin-bottom: 12px;
       font-size: 14px;
-      color: #1e3a8a;  /* Changed to blue */
+      color: #1e3a8a;
     }
     
     .benefit-item:before {
       content: "✓";
-      color: #2563eb;  /* Changed to blue */
+      color: #2563eb;
       font-weight: bold;
       margin-right: 10px;
       font-size: 16px;
     }
     
     .button-primary {
-      background: linear-gradient(135deg, #2563eb, #1e40af);  /* Changed to blue gradient */
+      background: linear-gradient(135deg, #2563eb, #1e40af);
       color: white;
       padding: 16px 24px;
       border-radius: 12px;
@@ -1000,19 +1063,19 @@
       text-decoration: none;
       text-align: center;
       display: inline-block;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);  /* Changed to blue shadow */
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
       margin-bottom: 12px;
     }
     
     .button-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);  /* Changed to blue shadow */
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
     }
     
     .button-secondary {
       background: transparent;
-      color: #1e40af;  /* Changed to blue */
-      border: 2px solid #2563eb;  /* Changed to blue */
+      color: #1e40af;
+      border: 2px solid #2563eb;
       padding: 16px 24px;
       border-radius: 12px;
       font-size: 16px;
@@ -1025,7 +1088,7 @@
     }
     
     .button-secondary:hover {
-      background: #2563eb;  /* Changed to blue */
+      background: #2563eb;
       color: white;
       transform: translateY(-1px);
     }
