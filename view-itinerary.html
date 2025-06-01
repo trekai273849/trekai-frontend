@@ -695,7 +695,7 @@
   <script type="module">
     import { auth } from './js/auth/firebase.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-    import { toTitleCase, cleanTrekTitle, extractTrekSubtitle } from './js/utils/trek-title.js';
+    import { toTitleCase, cleanTrekTitle, extractTrekSubtitle, getStructuredTrekTitle } from './js/utils/trek-title.js';
     import { preprocessRawText, extractSection, processSubsections } from './js/utils/itinerary.js';
     
     // Get itinerary ID from URL
@@ -1389,21 +1389,21 @@
         // Show itinerary details
         document.getElementById('itinerary-details').classList.remove('hidden');
         
-        // Process title - use the imported cleaning function
+        // Process title - use the new structured title function
         console.log('Original title:', itinerary.title); // Debug
-        let displayTitle = cleanTrekTitle(itinerary.title);
-        console.log('Cleaned title:', displayTitle); // Debug
         
-        // Apply title case
-        displayTitle = toTitleCase(displayTitle);
+        // Get structured title (location + subtitle)
+        const structuredTitle = getStructuredTrekTitle(itinerary.title);
+        const displayTitle = structuredTitle.title || 'Custom Itinerary';
+        const displaySubtitle = structuredTitle.subtitle || '';
+        
+        // Set the main title
         document.getElementById('itinerary-title').textContent = displayTitle;
         
-        // Handle subtitle using the imported function
-        const subtitle = extractTrekSubtitle(itinerary.title);
-        
-        if (subtitle) {
+        // Always show the subtitle if we have one
+        if (displaySubtitle) {
           const subtitleElement = document.getElementById('itinerary-subtitle');
-          subtitleElement.textContent = subtitle;
+          subtitleElement.textContent = displaySubtitle;
           subtitleElement.classList.remove('hidden');
         }
         
