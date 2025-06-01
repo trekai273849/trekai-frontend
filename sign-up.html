@@ -6,67 +6,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Join Smart Trails Community</title>
   <style>
+    :root {
+      --primary: #2D5016;
+      --primary-light: #4A7C28;
+      --accent: #F39C12;
+      --text-dark: #2C3E50;
+      --text-light: #5D6D7E;
+      --bg-light: #F8F9FA;
+      --white: #FFFFFF;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background-color: var(--bg-light);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hero Section - Matching the site style */
+    .hero-section {
+      position: relative;
+      height: 200px;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('Images/alps.jpg');
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      color: white;
     }
 
-    .signup-container {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      padding: 48px 40px;
-      max-width: 440px;
-      width: 100%;
+    .hero-content {
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0 20px;
     }
 
-    .logo-section {
-      margin-bottom: 32px;
+    .hero-content h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.1em;
+      opacity: 0.95;
+    }
+
+    /* Main Content Area */
+    .main-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .signup-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px var(--shadow);
+      max-width: 900px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      min-height: 500px;
+    }
+
+    /* Left side - Form */
+    .form-section {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Right side - Benefits */
+    .benefits-section {
+      flex: 1;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid #e5e7eb;
+    }
+
+    /* Logo */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
     }
 
     .logo-icon {
-      width: 64px;
-      height: 64px;
+      width: 48px;
+      height: 48px;
       background: linear-gradient(135deg, #16a34a, #15803d);
-      border-radius: 16px;
-      display: inline-flex;
+      border-radius: 12px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
-      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+      box-shadow: 0 4px 8px rgba(21, 128, 61, 0.2);
     }
 
     .logo-text {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
-      color: #1f2937;
-      margin-bottom: 8px;
-      background: linear-gradient(135deg, #1f2937, #4b5563);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--text-dark);
     }
 
-    .welcome-message {
-      font-size: 16px;
-      color: #6b7280;
-      margin-bottom: 32px;
-      line-height: 1.5;
-    }
-
+    /* Tabs */
     .auth-tabs {
       display: flex;
       background: #f3f4f6;
       border-radius: 12px;
       padding: 4px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .auth-tab {
@@ -88,9 +147,9 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    /* Form Elements */
     .form-group {
       margin-bottom: 20px;
-      text-align: left;
     }
 
     .form-label {
@@ -103,10 +162,10 @@
 
     .form-input {
       width: 100%;
-      padding: 16px;
+      padding: 12px 16px;
       border: 2px solid #e5e7eb;
       border-radius: 12px;
-      font-size: 16px;
+      font-size: 15px;
       background: #fafafa;
       transition: all 0.2s ease;
       box-sizing: border-box;
@@ -119,9 +178,10 @@
       box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
     }
 
-    .primary-button {
+    /* Buttons */
+    .submit-button {
       width: 100%;
-      padding: 16px;
+      padding: 14px;
       background: linear-gradient(135deg, #16a34a, #15803d);
       color: white;
       border: none;
@@ -130,140 +190,98 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
-      margin-bottom: 24px;
+      margin-top: 10px;
       box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
     }
 
-    .primary-button:hover:not(:disabled) {
+    .submit-button:hover:not(:disabled) {
       transform: translateY(-1px);
       box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
     }
 
-    .primary-button:active {
+    .submit-button:active {
       transform: translateY(0);
     }
 
-    .secondary-button {
-      width: 100%;
-      padding: 16px;
-      background: transparent;
-      color: #15803d;
-      border: 2px solid #16a34a;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    /* Benefits Styling */
+    .benefits-header {
+      font-size: 20px;
+      font-weight: 700;
+      color: #166534;
       margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .secondary-button:hover:not(:disabled) {
-      background: #16a34a;
-      color: white;
-      transform: translateY(-1px);
-    }
-
-    .disclaimer {
-      font-size: 13px;
-      color: #6b7280;
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: #166534;
       line-height: 1.5;
     }
 
-    .disclaimer a {
+    .benefit-item:before {
+      content: "✓";
+      color: #16a34a;
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* Footer Text */
+    .footer-text {
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 24px;
+      line-height: 1.5;
+    }
+
+    .footer-text a {
       color: #16a34a;
       text-decoration: none;
       font-weight: 600;
     }
 
-    .disclaimer a:hover {
+    .footer-text a:hover {
       text-decoration: underline;
     }
 
-    .benefits {
-      text-align: left;
-      margin: 24px 0;
-      padding: 20px;
-      background: #f0fdf4;
-      border-radius: 12px;
-      border-left: 4px solid #16a34a;
-    }
-
-    .benefits h4 {
+    /* Error/Success Messages */
+    .message {
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
       font-size: 14px;
-      font-weight: 600;
-      color: #166534;
-      margin-bottom: 12px;
-    }
-
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .benefits li {
-      display: flex;
-      align-items: center;
-      font-size: 13px;
-      color: #166534;
-      margin-bottom: 8px;
-    }
-
-    .benefits li:before {
-      content: "✓";
-      color: #16a34a;
-      font-weight: bold;
-      margin-right: 8px;
-    }
-
-    .hidden {
+      text-align: center;
       display: none;
     }
 
     .error-message {
       background: #fee2e2;
       color: #b91c1c;
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      font-size: 14px;
-      text-align: center;
     }
 
     .success-message {
       background: #dcfce7;
       color: #15803d;
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      font-size: 14px;
-      text-align: center;
     }
 
-    @media (max-width: 480px) {
-      .signup-container {
-        padding: 32px 24px;
-        margin: 10px;
-      }
-      
-      .logo-text {
-        font-size: 24px;
-      }
-    }
-
-    /* Loading state */
+    /* Loading State */
     .loading {
       opacity: 0.7;
       pointer-events: none;
     }
 
-    .loading .primary-button,
-    .loading .secondary-button {
+    .loading .submit-button {
       position: relative;
     }
 
-    .loading .primary-button:after,
-    .loading .secondary-button:after {
+    .loading .submit-button:after {
       content: "";
       position: absolute;
       width: 20px;
@@ -282,72 +300,159 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section {
+        height: 150px;
+      }
+
+      .hero-content h1 {
+        font-size: 2em;
+      }
+
+      .signup-card {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .form-section, .benefits-section {
+        padding: 30px 20px;
+      }
+
+      .benefits-section {
+        border-left: none;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .main-container {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.75em;
+      }
+
+      .hero-content p {
+        font-size: 1em;
+      }
+
+      .logo-text {
+        font-size: 20px;
+      }
+
+      .form-section {
+        padding: 24px 16px;
+      }
+
+      .benefits-section {
+        padding: 24px 16px;
+      }
+
+      .benefit-item {
+        font-size: 14px;
+      }
+    }
+
+    /* Hide elements for cleaner layout */
+    .hidden {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
-  <div class="signup-container">
-    <div class="logo-section">
-      <div class="logo-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-          <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
-        </svg>
-      </div>
-      <div class="logo-text">Smart Trails</div>
-      <p class="welcome-message">
-        🏔️ Join thousands of adventurers discovering amazing trails around the world
-      </p>
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1>Join the Adventure</h1>
+      <p>Create your account and start exploring amazing trails</p>
     </div>
-    
-    <div class="auth-tabs">
-      <button id="signup-tab" class="auth-tab active">Create Account</button>
-      <button id="login-tab" class="auth-tab">Welcome Back</button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <div class="signup-card">
+      <!-- Form Section -->
+      <div class="form-section">
+        <div class="logo-container">
+          <div class="logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
+            </svg>
+          </div>
+          <div class="logo-text">Smart Trails</div>
+        </div>
+
+        <div class="auth-tabs">
+          <button id="signup-tab" class="auth-tab active">Create Account</button>
+          <button id="login-tab" class="auth-tab">Welcome Back</button>
+        </div>
+
+        <div id="error-message" class="message error-message"></div>
+        <div id="success-message" class="message success-message"></div>
+
+        <!-- Sign Up Form -->
+        <form id="signup-form">
+          <div class="form-group">
+            <label class="form-label" for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" class="form-input" placeholder="your@email.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="signup-password">Create Password</label>
+            <input type="password" id="signup-password" class="form-input" placeholder="At least 6 characters" required />
+          </div>
+          
+          <button type="submit" class="submit-button">🚀 Join Our Community</button>
+        </form>
+
+        <!-- Login Form -->
+        <form id="login-form" class="hidden">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input type="email" id="login-email" class="form-input" placeholder="your@email.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required />
+          </div>
+          
+          <button type="submit" class="submit-button">🏠 Welcome Back</button>
+        </form>
+
+        <p class="footer-text">
+          By joining, you agree to our <a href="#" onclick="alert('Terms of Service')">Terms of Service</a> and 
+          <a href="#" onclick="alert('Privacy Policy')">Privacy Policy</a>. 
+          We promise to keep your data safe! 🔒
+        </p>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="benefits-section">
+        <h3 class="benefits-header">
+          🎯 What you'll get:
+        </h3>
+        <div class="benefit-item">
+          Personalized trail recommendations based on your preferences
+        </div>
+        <div class="benefit-item">
+          Detailed gear lists and local insights for every adventure
+        </div>
+        <div class="benefit-item">
+          Save and organize your favorite itineraries
+        </div>
+        <div class="benefit-item">
+          Regenerate itineraries with feedback to perfect your trip
+        </div>
+        <div class="benefit-item">
+          Join a community of thousands of fellow adventurers
+        </div>
+      </div>
     </div>
-
-    <div id="error-message" class="error-message hidden"></div>
-    <div id="success-message" class="success-message hidden"></div>
-
-    <form id="signup-form">
-      <div class="form-group">
-        <label class="form-label" for="signup-email">Email Address</label>
-        <input type="email" id="signup-email" class="form-input" placeholder="your@email.com" required />
-      </div>
-      
-      <div class="form-group">
-        <label class="form-label" for="signup-password">Create Password</label>
-        <input type="password" id="signup-password" class="form-input" placeholder="At least 6 characters" required />
-      </div>
-      
-      <div class="benefits">
-        <h4>🎯 What you'll get:</h4>
-        <ul>
-          <li>Personalized trail recommendations</li>
-          <li>Gear lists and local insights</li>
-          <li>Save your favorite itineraries</li>
-          <li>Regenerate itineraries with feedback</li>
-        </ul>
-      </div>
-      
-      <button type="submit" class="primary-button">🚀 Join Our Community</button>
-    </form>
-    
-    <form id="login-form" class="hidden">
-      <div class="form-group">
-        <label class="form-label" for="login-email">Email Address</label>
-        <input type="email" id="login-email" class="form-input" placeholder="your@email.com" required />
-      </div>
-      
-      <div class="form-group">
-        <label class="form-label" for="login-password">Password</label>
-        <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required />
-      </div>
-      
-      <button type="submit" class="secondary-button">🏠 Welcome Back</button>
-    </form>
-
-    <p class="disclaimer">
-      By joining, you agree to our <a href="#" onclick="alert('Terms of Service')">Terms of Service</a> and <a href="#" onclick="alert('Privacy Policy')">Privacy Policy</a>. We promise to keep your data safe! 🔒
-    </p>
-  </div>
+  </main>
 
   <script type="module">
     // Import Firebase auth functions
@@ -366,23 +471,23 @@
     // Utility functions
     function showError(message) {
       errorDiv.textContent = message;
-      errorDiv.classList.remove('hidden');
-      successDiv.classList.add('hidden');
+      errorDiv.style.display = 'block';
+      successDiv.style.display = 'none';
     }
     
     function showSuccess(message) {
       successDiv.textContent = message;
-      successDiv.classList.remove('hidden');
-      errorDiv.classList.add('hidden');
+      successDiv.style.display = 'block';
+      errorDiv.style.display = 'none';
     }
     
     function hideMessages() {
-      errorDiv.classList.add('hidden');
-      successDiv.classList.add('hidden');
+      errorDiv.style.display = 'none';
+      successDiv.style.display = 'none';
     }
     
     function setLoading(loading) {
-      const container = document.querySelector('.signup-container');
+      const container = document.querySelector('.signup-card');
       if (loading) {
         container.classList.add('loading');
       } else {
@@ -390,6 +495,7 @@
       }
     }
     
+    // Tab switching
     signupTab.addEventListener('click', () => {
       signupTab.classList.add('active');
       loginTab.classList.remove('active');
@@ -437,7 +543,6 @@
         return savedItinerary;
       } catch (error) {
         console.error('Error saving pending itinerary:', error);
-        // Don't throw error here - we still want to complete the auth flow
         return null;
       }
     }
@@ -462,7 +567,6 @@
         case 'auth/network-request-failed':
           return 'Network error. Please check your connection';
         default:
-          // If error message contains specific phrases, return friendly versions
           if (errorCode.includes('email-already-in-use') || errorCode.includes('already in use')) {
             return 'Email already in use';
           }
@@ -472,8 +576,6 @@
           if (errorCode.includes('invalid-email') || errorCode.includes('badly formatted')) {
             return 'Please enter a valid email address';
           }
-          
-          // Fallback to a generic friendly message
           return 'Something went wrong. Please try again';
       }
     }
@@ -488,7 +590,6 @@
       const password = document.getElementById('signup-password').value;
       
       try {
-        // Create the user account
         const result = await signUp(email, password);
         
         if (!result.success) {
@@ -510,15 +611,11 @@
         
         if (savedItinerary) {
           showSuccess('🎉 Account created and your trek has been saved!');
-          
-          // Redirect to view the saved itinerary after a short delay
           setTimeout(() => {
             window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
           }, 2000);
         } else {
           showSuccess('🎉 Welcome to Smart Trails! Your account has been created.');
-          
-          // Redirect to customize page after a short delay
           setTimeout(() => {
             window.location.href = 'customize.html';
           }, 2000);
@@ -563,15 +660,11 @@
         
         if (savedItinerary) {
           showSuccess('🎉 Welcome back! Your trek has been saved.');
-          
-          // Redirect to view the saved itinerary after a short delay
           setTimeout(() => {
             window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
           }, 2000);
         } else {
           showSuccess('🎉 Welcome back!');
-          
-          // Check if they came from customize page
           const returnToCustomize = localStorage.getItem('returnToCustomize');
           if (returnToCustomize) {
             localStorage.removeItem('returnToCustomize');
@@ -593,24 +686,11 @@
       }
     });
 
-    // Add some nice focus effects
-    document.querySelectorAll('.form-input').forEach(input => {
-      input.addEventListener('focus', function() {
-        this.parentElement.style.transform = 'translateY(-2px)';
-      });
-      
-      input.addEventListener('blur', function() {
-        this.parentElement.style.transform = 'translateY(0)';
-      });
-    });
-
     // Check if user is already authenticated on page load
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is already signed in, redirect them
         const pendingItinerary = localStorage.getItem('pendingItinerary');
         if (pendingItinerary) {
-          // If there's a pending itinerary, save it first
           savePendingItinerary(user).then((savedItinerary) => {
             if (savedItinerary) {
               window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
