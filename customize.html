@@ -16,10 +16,10 @@
   <link rel="stylesheet" href="styles/main.css" />
   
   <style>
-    /* CSS Variables for consistent theming */
+    /* CSS Variables for consistent theming - CHANGED TO BLUE */
     :root {
-      --primary: #2D5016;
-      --primary-light: #4A7C28;
+      --primary: #1e40af;        /* Changed from #2D5016 to blue-800 */
+      --primary-light: #2563eb;  /* Changed from #4A7C28 to blue-600 */
       --accent: #F39C12;
       --text-dark: #2C3E50;
       --text-light: #5D6D7E;
@@ -156,7 +156,7 @@
 
     .enhanced-filter-btn:active {
       transform: scale(0.98);
-      box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2) !important;
+      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2) !important;  /* Changed to blue shadow */
     }
 
     /* Only apply hover effects on devices that support hover */
@@ -166,7 +166,7 @@
         border-color: var(--primary) !important;
         color: var(--primary) !important;
         transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15) !important;
+        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15) !important;  /* Changed to blue shadow */
       }
     }
 
@@ -184,7 +184,7 @@
       background-color: var(--primary) !important;
       color: white !important;
       border-color: var(--primary) !important;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3) !important;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3) !important;  /* Changed to blue shadow */
       position: relative;
     }
     
@@ -256,7 +256,7 @@
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);  /* Changed to blue shadow */
       display: flex;
       align-items: center;
       gap: 10px;
@@ -265,7 +265,7 @@
 
     .generate-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);  /* Changed to blue shadow */
     }
 
     /* Navigation Tabs for Results */
@@ -351,7 +351,7 @@
 
     /* Card Header Section - Simplified */
     .day-card-header {
-      background: linear-gradient(135deg, #f8fafb 0%, #e8f0e5 100%);
+      background: linear-gradient(135deg, #f8fafb 0%, #e3ecf7 100%);  /* Changed to blue tint */
       padding: 25px 30px;
       border-bottom: 1px solid #e5e7eb;
       position: relative;
@@ -545,7 +545,7 @@
       background: white;
       border: 3px solid var(--primary);
       border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(45, 80, 22, 0.1);
+      box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);  /* Changed to blue shadow */
       z-index: 1;
     }
 
@@ -637,12 +637,12 @@
     .action-btn-primary {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       color: white;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);  /* Changed to blue shadow */
     }
 
     .action-btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);  /* Changed to blue shadow */
     }
 
     .action-btn-secondary {
@@ -899,19 +899,19 @@
     .auth-icon {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #16a34a, #15803d);
+      background: linear-gradient(135deg, #2563eb, #1e40af);  /* Changed to blue gradient */
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 24px;
       animation: iconBounce 0.6s ease-out 0.2s both;
-      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);  /* Changed to blue shadow */
     }
     
     .welcome-icon {
-      background: linear-gradient(135deg, #16a34a, #15803d);
-      box-shadow: 0 8px 16px rgba(21, 128, 61, 0.3);
+      background: linear-gradient(135deg, #2563eb, #1e40af);  /* Changed to blue gradient */
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);  /* Changed to blue shadow */
     }
     
     .auth-icon svg {
@@ -958,16 +958,16 @@
     .auth-benefits {
       margin: 24px 0;
       text-align: left;
-      background: #f0fdf4;
+      background: #eff6ff;  /* Changed to blue tint */
       padding: 20px;
       border-radius: 12px;
-      border-left: 4px solid #16a34a;
+      border-left: 4px solid #2563eb;  /* Changed to blue */
     }
     
     .auth-benefits h4 {
       font-size: 14px;
       font-weight: 600;
-      color: #166534;
+      color: #1e3a8a;  /* Changed to blue */
       margin-bottom: 12px;
     }
     
@@ -976,19 +976,19 @@
       align-items: center;
       margin-bottom: 12px;
       font-size: 14px;
-      color: #166534;
+      color: #1e3a8a;  /* Changed to blue */
     }
     
     .benefit-item:before {
       content: "✓";
-      color: #16a34a;
+      color: #2563eb;  /* Changed to blue */
       font-weight: bold;
       margin-right: 10px;
       font-size: 16px;
     }
     
     .button-primary {
-      background: linear-gradient(135deg, #16a34a, #15803d);
+      background: linear-gradient(135deg, #2563eb, #1e40af);  /* Changed to blue gradient */
       color: white;
       padding: 16px 24px;
       border-radius: 12px;
@@ -1000,19 +1000,19 @@
       text-decoration: none;
       text-align: center;
       display: inline-block;
-      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);  /* Changed to blue shadow */
       margin-bottom: 12px;
     }
     
     .button-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);  /* Changed to blue shadow */
     }
     
     .button-secondary {
       background: transparent;
-      color: #15803d;
-      border: 2px solid #16a34a;
+      color: #1e40af;  /* Changed to blue */
+      border: 2px solid #2563eb;  /* Changed to blue */
       padding: 16px 24px;
       border-radius: 12px;
       font-size: 16px;
@@ -1025,7 +1025,7 @@
     }
     
     .button-secondary:hover {
-      background: #16a34a;
+      background: #2563eb;  /* Changed to blue */
       color: white;
       transform: translateY(-1px);
     }
@@ -1124,6 +1124,17 @@
     <!-- Filters Section -->
     <div class="filters-container">
       <form id="customization-form">
+        <!-- Trek Length - NEW FILTER -->
+        <div class="filter-group">
+          <h3>📅 Trek Length</h3>
+          <div class="filter-buttons-container">
+            <button type="button" class="enhanced-filter-btn" data-category="length" data-value="3-5 days">3-5 days</button>
+            <button type="button" class="enhanced-filter-btn active" data-category="length" data-value="6-8 days">6-8 days</button>
+            <button type="button" class="enhanced-filter-btn" data-category="length" data-value="9-14 days">9-14 days</button>
+            <button type="button" class="enhanced-filter-btn" data-category="length" data-value="15+ days">15+ days</button>
+          </div>
+        </div>
+
         <!-- Accommodation -->
         <div class="filter-group">
           <h3>🏕️ Accommodation Type</h3>
