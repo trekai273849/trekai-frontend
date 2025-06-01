@@ -698,44 +698,6 @@
     import { toTitleCase, cleanTrekTitle, extractTrekSubtitle } from './js/utils/trek-title.js';
     import { preprocessRawText, extractSection, processSubsections } from './js/utils/itinerary.js';
     
-    // Helper function to clean repetitive trek titles
-    function cleanTrekTitle(title) {
-      if (!title) return 'Your Trek';
-      
-      let cleaned = title;
-      
-      // Handle repetitive patterns like "Trek in X that is Y"
-      const patterns = [
-        /^(.+?)\s+(?:that\s+is|which\s+is)\s+(.+)$/i,
-        /^(.+?)\s+(?:for\s+a\s+week|for\s+\d+\s+days?)\s+(.+)$/i
-      ];
-      
-      for (const pattern of patterns) {
-        const match = cleaned.match(pattern);
-        if (match) {
-          cleaned = match[1];
-          break;
-        }
-      }
-      
-      // Remove common prefixes and suffixes
-      cleaned = cleaned
-        .replace(/^trek\s+in\s+the\s+/i, '')
-        .replace(/^trek\s+in\s+/i, '')
-        .replace(/^hike\s+in\s+the\s+/i, '')
-        .replace(/^hike\s+in\s+/i, '')
-        .replace(/\s+trek$/i, '')
-        .replace(/\s+hike$/i, '')
-        .trim();
-      
-      // Ensure we have a valid title
-      if (!cleaned || cleaned.length < 3) {
-        return 'Your Trek';
-      }
-      
-      return cleaned;
-    }
-
     // Get itinerary ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const itineraryId = urlParams.get('id');
@@ -1420,7 +1382,7 @@
         // Show itinerary details
         document.getElementById('itinerary-details').classList.remove('hidden');
         
-        // Process title - use the new cleaning function
+        // Process title - use the imported cleaning function
         console.log('Original title:', itinerary.title); // Debug
         let displayTitle = cleanTrekTitle(itinerary.title);
         console.log('Cleaned title:', displayTitle); // Debug
@@ -1429,20 +1391,13 @@
         displayTitle = toTitleCase(displayTitle);
         document.getElementById('itinerary-title').textContent = displayTitle;
         
-        // Handle subtitle if the title had repetitive pattern
-        const repetitivePattern = /^(.+?)\s+(?:that\s+is|which\s+is|for\s+a\s+week)\s+(.+)$/i;
-        const match = itinerary.title?.match(repetitivePattern);
+        // Handle subtitle using the imported function
+        const subtitle = extractTrekSubtitle(itinerary.title);
         
-        if (match) {
-          const subtitle = match[2];
-          // Only show subtitle if it's meaningful and different from main title
-          if (subtitle && 
-              !subtitle.toLowerCase().includes(displayTitle.toLowerCase()) &&
-              subtitle.length > 5) {
-            const subtitleElement = document.getElementById('itinerary-subtitle');
-            subtitleElement.textContent = toTitleCase(subtitle);
-            subtitleElement.classList.remove('hidden');
-          }
+        if (subtitle) {
+          const subtitleElement = document.getElementById('itinerary-subtitle');
+          subtitleElement.textContent = subtitle;
+          subtitleElement.classList.remove('hidden');
         }
         
         // Update header background with image if available

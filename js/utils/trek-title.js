@@ -1,8 +1,7 @@
-// js/utils/trek-title.js
-// Shared utility for cleaning and formatting trek titles across the application
+// Utility functions for cleaning and formatting trek titles
 
 export function toTitleCase(str) {
-  if (!str) return str;
+  if (!str) return '';
   return str.replace(/\w\S*/g, (txt) => {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
@@ -11,128 +10,70 @@ export function toTitleCase(str) {
 export function cleanTrekTitle(title, isPopularTrek) {
   if (!title || isPopularTrek) return title;
   
-  // Remove redundant "Trek" at the end
-  let cleanTitle = title.replace(/\s+Trek$/i, '');
+  let cleaned = title;
   
-  // Try to extract key information (location, duration, type)
-  let location = null;
-  let duration = null;
-  let trekType = null;
+  // Handle repetitive patterns like "Trek in X that is Y" or "Trek in X for a week Y"
+  const patterns = [
+    /^(.+?)\s+(?:that\s+is|which\s+is)\s+(.+)$/i,
+    /^(.+?)\s+(?:for\s+a\s+week|for\s+\d+\s+days?)\s+(.+)$/i
+  ];
   
-  // Pattern 1: "Trek in [location] for [duration]"
-  const pattern1 = cleanTitle.match(/trek\s+in\s+(?:the\s+)?([^for]+?)(?:\s+for\s+(.+))?/i);
-  if (pattern1) {
-    location = pattern1[1].trim();
-    duration = pattern1[2] ? pattern1[2].trim() : null;
-  }
-  
-  // Pattern 2: "[duration] trek/hike in [location]"
-  if (!location) {
-    const pattern2 = cleanTitle.match(/(\d+\s*(?:day|week|month))s?\s*(?:trek|hike)\s*(?:in|near|at|through)\s*(?:the\s+)?(.+)/i);
-    if (pattern2) {
-      duration = pattern2[1];
-      location = pattern2[2].trim();
+  for (const pattern of patterns) {
+    const match = cleaned.match(pattern);
+    if (match) {
+      cleaned = match[1];
+      break;
     }
   }
   
-  // Pattern 3: Extract location from phrases containing known location indicators
-  if (!location) {
-    const locationMatch = cleanTitle.match(/(?:in|at|near|through|around|across)\s+(?:the\s+)?([A-Z][^\s,]+(?:\s+[A-Z][^\s,]+)*)/i);
-    if (locationMatch) {
-      location = locationMatch[1].trim();
-    }
+  // Remove common prefixes and suffixes
+  cleaned = cleaned
+    .replace(/^trek\s+in\s+the\s+/i, '')
+    .replace(/^trek\s+in\s+/i, '')
+    .replace(/^hike\s+in\s+the\s+/i, '')
+    .replace(/^hike\s+in\s+/i, '')
+    .replace(/\s+trek$/i, '')
+    .replace(/\s+hike$/i, '')
+    .trim();
+  
+  // Extract location-based title if it matches pattern
+  const locationMatch = cleaned.match(/\d+\s*day\s*(?:trek|hike)\s*(?:in|near)\s*(?:the\s+)?(.+)/i);
+  if (locationMatch && locationMatch[1]) {
+    // Return just the location part with "Trek" appended
+    cleaned = locationMatch[1];
   }
   
-  // Pattern 4: Look for duration anywhere in the title
-  if (!duration) {
-    const durationMatch = cleanTitle.match(/(\d+\s*(?:day|week|month))s?/i);
-    if (durationMatch) {
-      duration = durationMatch[1];
-    }
+  // Ensure we have a valid title
+  if (!cleaned || cleaned.length < 3) {
+    return 'Custom Trek';
   }
   
-  // Clean up extracted location
-  if (location) {
-    // Remove common trailing phrases
-    location = location.replace(/\s*(that\s+is|with|for\s+a|trek|hike).*$/i, '').trim();
-    
-    // Handle specific cases
-    location = location.replace(/^the\s+/i, ''); // Remove leading "the"
-    location = location.replace(/\s+for\s+.+$/i, ''); // Remove "for..." phrases
-    
-    // Title case the location
-    location = toTitleCase(location);
+  // Add "Trek" suffix if it doesn't already have it
+  if (!cleaned.toLowerCase().includes('trek') && !cleaned.toLowerCase().includes('hike')) {
+    cleaned = cleaned + ' Trek';
   }
   
-  // Convert duration phrases
-  if (duration) {
-    // Convert "a week" or "one week" to "7 Day"
-    duration = duration.replace(/(?:a|one)\s+week/i, '7 day');
-    // Convert "two weeks" to "14 Day"
-    duration = duration.replace(/two\s+weeks?/i, '14 day');
-    // Normalize format
-    duration = duration.replace(/(\d+)\s*days?/i, '$1 Day');
-  }
-  
-  // Build the clean title
-  if (location) {
-    let finalTitle = location + ' Trek';
-    
-    // Include duration if it's clean and numeric
-    if (duration && duration.match(/^\d+\s*Day/i)) {
-      const days = duration.match(/(\d+)/)[1];
-      finalTitle = location + ' ' + days + ' Day Trek';
-    }
-    
-    return finalTitle;
-  }
-  
-  // Fallback: if no patterns match, try to make it more concise
-  // Remove common verbose phrases
-  cleanTitle = cleanTitle.replace(/that\s+is\s+day\s+hikes?\s+with.*/i, '');
-  cleanTitle = cleanTitle.replace(/for\s+a\s+week/i, '7 Day');
-  cleanTitle = cleanTitle.replace(/\s+hike/i, ' Trek');
-  
-  // Last resort: if still too long, truncate intelligently
-  if (cleanTitle.length > 40) {
-    const words = cleanTitle.split(' ');
-    if (words.length > 5) {
-      // Keep first few important words
-      cleanTitle = words.slice(0, 4).join(' ') + ' Trek';
-    }
-  }
-  
-  return toTitleCase(cleanTitle);
+  return toTitleCase(cleaned);
 }
 
-// Extract subtitle from original title (for trek pages)
-export function extractTrekSubtitle(originalTitle, cleanedTitle) {
-  if (!originalTitle || originalTitle === cleanedTitle) return null;
+export function extractTrekSubtitle(title) {
+  if (!title) return null;
   
-  // Try to extract meaningful subtitle information
-  const dayMatch = originalTitle.match(/(\d+)[-\s]*day/i);
-  const hikeTypeMatch = originalTitle.match(/day\s+hikes?/i);
-  const restDayMatch = originalTitle.match(/(\d+)\s+rest\s+days?/i);
+  // Check for repetitive patterns that might contain a subtitle
+  const repetitivePattern = /^(.+?)\s+(?:that\s+is|which\s+is|for\s+a\s+week)\s+(.+)$/i;
+  const match = title.match(repetitivePattern);
   
-  let subtitle = '';
-  
-  if (dayMatch) {
-    subtitle = `${dayMatch[1]} Day`;
+  if (match) {
+    const mainTitle = match[1];
+    const subtitle = match[2];
+    
+    // Only return subtitle if it's meaningful and different from main title
+    if (subtitle && 
+        !subtitle.toLowerCase().includes(mainTitle.toLowerCase()) &&
+        subtitle.length > 5) {
+      return toTitleCase(subtitle);
+    }
   }
   
-  if (hikeTypeMatch) {
-    subtitle += subtitle ? ' Hike' : 'Day Hikes';
-  }
-  
-  if (restDayMatch) {
-    subtitle += ` with ${restDayMatch[1]} Rest Day${parseInt(restDayMatch[1]) > 1 ? 's' : ''}`;
-  }
-  
-  // If we extracted a subtitle, add location context
-  if (subtitle && !subtitle.toLowerCase().includes(cleanedTitle.toLowerCase().replace(' trek', ''))) {
-    const location = cleanedTitle.replace(' Trek', '');
-    subtitle += ` in ${location}`;
-  }
-  
-  return subtitle || null;
+  return null;
 }
