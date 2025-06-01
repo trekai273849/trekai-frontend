@@ -1,26 +1,17 @@
 {
-  "name": "trekai-frontend",
+  "name": "trek-pages-updater",
   "version": "1.0.0",
-  "main": "customize.js",
+  "description": "Script to update trek pages with save functionality",
+  "main": "update-trek-pages.js",
   "scripts": {
+    "update-treks": "node update-trek-pages.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/trekai273849/trekai-frontend.git"
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
   },
-  "keywords": [],
+  "devDependencies": {},
+  "keywords": ["trek", "update", "html"],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/trekai273849/trekai-frontend/issues"
-  },
-  "homepage": "https://github.com/trekai273849/trekai-frontend#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "cypress": "^14.4.0",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.7"
-  },
-  "description": ""
+  "license": "ISC"
 }

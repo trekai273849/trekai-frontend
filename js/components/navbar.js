@@ -1,6 +1,7 @@
 // js/components/navbar.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { showAuthModal } from './authModal.js';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -19,26 +20,34 @@ const auth = getAuth(app);
 
 // Main navbar functionality
 document.addEventListener('DOMContentLoaded', () => {
+  // Detect if we're in a subdirectory and set appropriate path prefix
+  const isInSubdirectory = window.location.pathname.includes('/treks/') || 
+                          window.location.pathname.includes('/output/');
+  
+  // Set path prefix based on location
+  const pathPrefix = isInSubdirectory ? '../../' : '';
+
   // Create the navbar with mobile-responsive design
   const navbar = document.createElement('div');
   navbar.className = 'bg-green-900 text-white py-3 md:py-4';
   navbar.innerHTML = `
     <div class="container mx-auto flex justify-between items-center px-3 md:px-4">
-      <a href="index.html" class="text-lg md:text-xl font-bold flex-shrink-0">Smart Trails</a>
+      <a href="${pathPrefix}index.html" class="text-lg md:text-xl font-bold flex-shrink-0">Smart Trails</a>
       
       <!-- Desktop Navigation -->
       <nav id="nav-items" class="hidden md:block">
         <ul class="flex space-x-4 items-center">
-          <li><a href="index.html" class="hover:text-green-200 transition-colors">Home</a></li>
-          <li><a href="my-itineraries.html" class="hover:text-green-200 transition-colors">My Itineraries</a></li>
-          <li id="auth-button"><a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a></li>
+          <li><a href="${pathPrefix}index.html" class="hover:text-green-200 transition-colors">Home</a></li>
+          <li><a href="${pathPrefix}popular-hikes.html" class="hover:text-green-200 transition-colors">Explore</a></li>
+          <li><a href="${pathPrefix}my-itineraries.html" class="hover:text-green-200 transition-colors">My Itineraries</a></li>
+          <li id="auth-button"><a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a></li>
         </ul>
       </nav>
 
       <!-- Mobile Navigation -->
       <div class="md:hidden flex items-center space-x-2">
         <div id="mobile-auth-button">
-          <a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>
+          <a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>
         </div>
         <button id="mobile-menu-toggle" class="text-white hover:text-green-200 transition-colors p-1">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="container mx-auto px-4 py-4">
         <ul class="space-y-1" id="mobile-menu-list">
           <li>
-            <a href="index.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
+            <a href="${pathPrefix}index.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
               <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
               </svg>
@@ -61,7 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </a>
           </li>
           <li>
-            <a href="my-itineraries.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
+            <a href="${pathPrefix}popular-hikes.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
+              <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <span class="font-medium group-hover:text-white transition-colors">Explore</span>
+            </a>
+          </li>
+          <li>
+            <a href="${pathPrefix}my-itineraries.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 group">
               <svg class="w-5 h-5 mr-3 text-green-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
@@ -72,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
   `;
+
+  // Make showAuthModal available globally
+  window.showAuthModal = showAuthModal;
 
   // Get existing header
   const existingHeader = document.querySelector('header');
@@ -205,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <button id="user-menu-button" class="w-10 h-10 bg-white text-green-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-900">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
             </svg>
           </button>
           <div id="user-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-50 border border-gray-200">
@@ -213,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <p class="text-sm text-gray-500">Signed in as:</p>
               <p class="text-sm font-medium text-gray-900 truncate">${user.email}</p>
             </div>
-            <a href="my-itineraries.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors">
+            <a href="${pathPrefix}my-itineraries.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors">
               <svg class="w-4 h-4 mr-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                 <polyline points="14,2 14,8 20,8"></polyline>
@@ -276,9 +296,9 @@ document.addEventListener('DOMContentLoaded', () => {
           });
       });
     } else {
-      // User is signed out
-      authButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
-      mobileAuthButton.innerHTML = `<a href="sign-up.html" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
+      // User is signed out - use modal instead of direct links
+      authButton.innerHTML = `<a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
+      mobileAuthButton.innerHTML = `<a href="#" onclick="showAuthModal('signup'); return false;" class="bg-white text-green-900 px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">Sign Up</a>`;
       mobileAuthButton.style.display = 'block';
       
       // Remove user info from mobile menu

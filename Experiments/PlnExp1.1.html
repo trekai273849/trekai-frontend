@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option 1 Design - Additional Information Sections</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom animations */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        
+        /* Gradient overlays */
+        .gradient-overlay-green {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+        }
+        
+        .gradient-overlay-orange {
+            background: linear-gradient(135deg, rgba(251, 146, 60, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+        }
+        
+        .gradient-overlay-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
+        }
+        
+        /* Icon backgrounds matching design 1 */
+        .icon-gradient-green { background: linear-gradient(135deg, #22c55e 0%, #10b981 100%); }
+        .icon-gradient-orange { background: linear-gradient(135deg, #fb923c 0%, #f59e0b 100%); }
+        .icon-gradient-blue { background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%); }
+        
+        /* Smooth accordion transitions */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 2000px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        /* Hover effects */
+        .info-card {
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* List styling */
+        .checklist-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            transition: background-color 0.2s ease;
+        }
+        
+        .checklist-item:hover {
+            background-color: #f9fafb;
+            margin: 0 -1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Category badges */
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .badge-green {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        
+        .badge-orange {
+            background-color: #fed7aa;
+            color: #9a3412;
+        }
+        
+        .badge-blue {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+        
+        /* Icon list styling */
+        .icon-list-item {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+        }
+        
+        .icon-list-item svg {
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- Header to show context -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Italian Alps Trek - 3 Days</h1>
+            <p class="text-gray-600">Additional Information</p>
+        </div>
+        
+        <!-- Additional Information Section Header -->
+        <h2 class="text-2xl font-bold text-gray-800">Additional Information</h2>
+        
+        <!-- Packing List Card -->
+        <div class="info-card bg-white rounded-xl shadow-sm overflow-hidden">
+            <!-- Card Header -->
+            <div class="gradient-overlay-green p-6 cursor-pointer" onclick="toggleAccordion(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full icon-gradient-green flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Packing List</h3>
+                            <div class="flex items-center gap-3 mt-1 text-sm text-gray-600">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                                    </svg>
+                                    Essential Gear
+                                </span>
+                                <span>•</span>
+                                <span>3-Day Trek</span>
+                                <span>•</span>
+                                <span class="text-green-600">Complete Checklist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Card Content -->
+            <div class="accordion-content px-6">
+                <div class="border-t pt-4">
+                    <!-- Category sections -->
+                    <div class="space-y-6">
+                        <!-- Essential Gear -->
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </span>
+                                Essential Gear
+                            </h4>
+                            <div class="space-y-1 ml-10">
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Broken-in hiking boots with ankle support</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Backpack (30-40L)</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Trekking poles</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Headlamp/flashlight with extra batteries</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>First aid kit</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Clothing -->
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M7 12h10m-7 5h4"></path>
+                                    </svg>
+                                </span>
+                                Clothing
+                            </h4>
+                            <div class="space-y-1 ml-10">
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Quick-dry hiking shirts and pants</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Warm layers (fleece, down jacket)</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Waterproof jacket and pants</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Hat and gloves</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Extra socks (3-4 pairs)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Other Items -->
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                <span class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                    </svg>
+                                </span>
+                                Other Items
+                            </h4>
+                            <div class="space-y-1 ml-10">
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Water bottles/hydration system (2L minimum)</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Sunscreen (SPF 30+) and sunglasses</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Camera and extra memory cards</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Trail snacks and energy bars</span>
+                                    </label>
+                                </div>
+                                <div class="checklist-item">
+                                    <label class="flex items-center gap-3 cursor-pointer">
+                                        <input type="checkbox" class="w-4 h-4 text-green-600 rounded">
+                                        <span>Personal medications</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick tip at bottom -->
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-800">
+                            <strong>Pro Tip:</strong> Pack light but don't compromise on safety essentials. Test all gear before your trek!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Local Insights Card -->
+        <div class="info-card bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="gradient-overlay-orange p-6 cursor-pointer" onclick="toggleAccordion(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full icon-gradient-orange flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Local Insights</h3>
+                            <div class="flex items-center gap-3 mt-1 text-sm text-gray-600">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+                                    </svg>
+                                    Culture & Customs
+                                </span>
+                                <span>•</span>
+                                <span>Food & Wildlife</span>
+                                <span>•</span>
+                                <span class="text-orange-600">Local Tips</span>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="accordion-content px-6">
+                <div class="border-t pt-4">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Culture Section -->
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                <span class="text-2xl">🏛️</span>
+                                Culture & Etiquette
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="icon-list-item">
+                                    <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm">Greet locals with "Buongiorno" (morning) or "Buonasera" (evening)</span>
+                                </div>
+                                <div class="icon-list-item">
+                                    <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm">Mountain huts expect quiet hours after 10 PM</span>
+                                </div>
+                                <div class="icon-list-item">
+                                    <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm">Always carry cash - many refuges don't accept cards</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Food Section -->
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                <span class="text-2xl">🍝</span>
+                                Local Cuisine
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="icon-list-item">
+                                    <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm">Try polenta taragna - hearty mountain dish with cheese</span>
+                                </div>
+                                <div class="icon-list-item">
+                                    <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm">Bresaola is the local cured beef specialty</span>
+                                </div>
+                                <div class="icon-list-item">
+                                    <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm">Mountain huts serve filling pasta dishes - perfect after hiking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wildlife Section -->
+                    <div class="mt-6">
+                        <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                            <span class="text-2xl">🦌</span>
+                            Wildlife to Watch For
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="category-badge badge-orange">Alpine Ibex</span>
+                            <span class="category-badge badge-orange">Marmots</span>
+                            <span class="category-badge badge-orange">Golden Eagles</span>
+                            <span class="category-badge badge-orange">Chamois</span>
+                            <span class="category-badge badge-orange">Red Deer</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-3">
+                            Best wildlife viewing is early morning or late afternoon. Keep a respectful distance and never feed wild animals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Practical Information Card -->
+        <div class="info-card bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="gradient-overlay-blue p-6 cursor-pointer" onclick="toggleAccordion(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full icon-gradient-blue flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Practical Information</h3>
+                            <div class="flex items-center gap-3 mt-1 text-sm text-gray-600">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                    Best Season
+                                </span>
+                                <span>•</span>
+                                <span>Permits & Safety</span>
+                                <span>•</span>
+                                <span class="text-blue-600">Essential Info</span>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="accordion-content px-6">
+                <div class="border-t pt-4">
+                    <!-- Key Information Grid -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                Best Time to Visit
+                            </h4>
+                            <p class="text-sm text-gray-700">
+                                <strong>Peak Season:</strong> July - September<br>
+                                <strong>Shoulder:</strong> June & October<br>
+                                <strong>Weather:</strong> Afternoon thunderstorms common
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Permits & Registration
+                            </h4>
+                            <p class="text-sm text-gray-700">
+                                <strong>Required:</strong> No permits for this route<br>
+                                <strong>Recommended:</strong> Register at local tourist office<br>
+                                <strong>Hut Reservations:</strong> Book 2-3 weeks ahead
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Important Information List -->
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">⚠️ Safety Considerations</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500">•</span>
+                                    Always check weather forecasts before setting out
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500">•</span>
+                                    Carry emergency whistle and know the international distress signal (6 blasts)
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500">•</span>
+                                    Download offline maps - cell coverage is limited
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500">•</span>
+                                    Start early to avoid afternoon thunderstorms
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">💧 Water Sources</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500">•</span>
+                                    Refill at mountain huts (potable water available)
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500">•</span>
+                                    Stream water requires purification tablets or filter
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-500">•</span>
+                                    Carry minimum 2L per person per day
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">🏥 Emergency Contacts</h4>
+                            <div class="bg-red-50 rounded-lg p-3">
+                                <p class="text-sm font-semibold text-red-800 mb-1">Mountain Rescue: 118</p>
+                                <p class="text-xs text-red-700">European Emergency Number: 112 (works everywhere)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Altitude Information -->
+                    <div class="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">🏔️ Altitude Considerations</h4>
+                        <p class="text-sm text-gray-700">
+                            Maximum elevation: 2,620m (8,596ft). Most people won't experience altitude sickness below 2,500m, 
+                            but stay hydrated and ascend gradually. If you experience severe headaches, nausea, or dizziness, descend immediately.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Buttons Section -->
+        <div class="mt-8 flex flex-col md:flex-row gap-4">
+            <button class="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Download Complete Itinerary
+            </button>
+            <button class="flex-1 border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:border-gray-400 hover:shadow transition-all duration-300 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m9.032 4.026a9.001 9.001 0 01-7.432 0m7.432 0A8.961 8.961 0 0121 12c0-4.418-3.582-8-8-8a8.961 8.961 0 00-6.284 2.716m0 10.568A8.962 8.962 0 013 12c0-4.418 3.582-8 8-8a8.962 8.962 0 016.284 2.716"></path>
+                </svg>
+                Share Itinerary
+            </button>
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('svg:last-child');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('rotate-180');
+            
+            // Optional: Close other accordions when opening a new one
+            const allCards = document.querySelectorAll('.info-card');
+            allCards.forEach(card => {
+                if (card !== element.closest('.info-card')) {
+                    const otherContent = card.querySelector('.accordion-content');
+                    const otherIcon = card.querySelector('.accordion-toggle svg:last-child');
+                    if (otherContent && otherContent.classList.contains('active')) {
+                        otherContent.classList.remove('active');
+                        otherIcon.classList.remove('rotate-180');
+                    }
+                }
+            });
+        }
+        
+        // Interactive checkbox functionality
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const label = this.closest('label');
+                if (this.checked) {
+                    label.style.opacity = '0.6';
+                    label.style.textDecoration = 'line-through';
+                } else {
+                    label.style.opacity = '1';
+                    label.style.textDecoration = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

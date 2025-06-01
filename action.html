@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Trails - Account Action</title>
+  <script type="module">
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get('mode');
+    const oobCode = urlParams.get('oobCode');
+    const continueUrl = urlParams.get('continueUrl');
+
+    // Route to the appropriate page based on mode
+    switch (mode) {
+      case 'resetPassword':
+        // Redirect to reset password page with parameters
+        window.location.href = `/reset-password.html?mode=${mode}&oobCode=${oobCode}${continueUrl ? '&continueUrl=' + continueUrl : ''}`;
+        break;
+        
+      case 'verifyEmail':
+        // Handle email verification
+        window.location.href = `/verify-email.html?mode=${mode}&oobCode=${oobCode}${continueUrl ? '&continueUrl=' + continueUrl : ''}`;
+        break;
+        
+      case 'recoverEmail':
+        // Handle email recovery
+        window.location.href = `/recover-email.html?mode=${mode}&oobCode=${oobCode}${continueUrl ? '&continueUrl=' + continueUrl : ''}`;
+        break;
+        
+      default:
+        // Invalid mode - redirect to home
+        window.location.href = '/';
+    }
+  </script>
+</head>
+<body>
+  <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif;">
+    <p>Redirecting...</p>
+  </div>
+</body>
+</html>

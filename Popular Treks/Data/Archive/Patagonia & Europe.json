@@ -1,0 +1,3118 @@
+[
+  {
+    "_id": "torres-del-paine-w-circuit",
+    "name": "Torres del Paine 'W' Circuit",
+    "slug": "torres-del-paine-w-circuit",
+    "region": "Patagonia",
+    "country": "Chile",
+    "summary": "Chile's premier trek featuring the iconic granite towers, turquoise lakes, and massive glaciers in one of the world's most spectacular national parks.",
+    "duration": {
+      "min_days": 4,
+      "max_days": 5,
+      "recommended_days": 5
+    },
+    "distance_km": 80,
+    "difficulty": "moderate",
+    "max_elevation_m": 1200,
+    "starting_elevation_m": 100,
+    "airport": "Punta Arenas (PUQ)",
+    "nearest_city": "Puerto Natales",
+    "coordinates": {
+      "start": {
+        "lat": -50.9423,
+        "lng": -73.4068,
+        "location": "Las Torres Hotel"
+      },
+      "end": {
+        "lat": -50.9811,
+        "lng": -73.0765,
+        "location": "Grey Glacier"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Summer",
+        "months": ["December", "January", "February"],
+        "description": "Warmest weather, longest days, but most crowded"
+      },
+      {
+        "name": "Shoulder Season",
+        "months": ["October", "November", "March", "April"],
+        "description": "Fewer crowds, variable weather, stunning autumn colors in March-April"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Las Torres Base Trek",
+        "start_location": "Las Torres Hotel",
+        "end_location": "Las Torres Hotel/Chileno",
+        "distance_km": 22,
+        "duration_hours": 8,
+        "elevation_start_m": 100,
+        "elevation_end_m": 900,
+        "elevation_gain_m": 800,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "refugio/camping",
+          "options": ["Refugio Chileno", "Camping Chileno", "Return to Las Torres"]
+        },
+        "meals_included": ["breakfast", "box lunch", "dinner"],
+        "highlights": [
+          "Iconic three granite towers",
+          "Turquoise glacial lake at base",
+          "Ascenso Valley views",
+          "Beech forest hiking"
+        ],
+        "description": "The classic day hike to the base of the famous Torres. Start early for the steep climb through lenga forest, across mountain streams, and up the final boulder field to reach the stunning viewpoint of the three granite spires reflected in the turquoise lake."
+      },
+      {
+        "day": 2,
+        "title": "Cuernos del Paine",
+        "start_location": "Las Torres/Chileno",
+        "end_location": "Refugio Cuernos",
+        "distance_km": 11,
+        "duration_hours": 5,
+        "elevation_start_m": 100,
+        "elevation_end_m": 350,
+        "elevation_gain_m": 250,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refugio/camping",
+          "options": ["Refugio Cuernos", "Camping Cuernos"]
+        },
+        "meals_included": ["breakfast", "box lunch", "dinner"],
+        "highlights": [
+          "Views of Cuernos del Paine horns",
+          "Nordenskjöld Lake shoreline",
+          "Varied terrain and ecosystems",
+          "Potential condor sightings"
+        ],
+        "description": "Scenic traverse along the turquoise waters of Nordenskjöld Lake with constantly changing views of the distinctive Cuernos (Horns) del Paine. The trail winds through diverse landscapes from grasslands to forests."
+      },
+      {
+        "day": 3,
+        "title": "French Valley",
+        "start_location": "Refugio Cuernos",
+        "end_location": "Refugio Paine Grande",
+        "distance_km": 25,
+        "duration_hours": 10,
+        "elevation_start_m": 350,
+        "elevation_end_m": 550,
+        "elevation_gain_m": 600,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "refugio/camping",
+          "options": ["Refugio Paine Grande", "Camping Paine Grande"]
+        },
+        "meals_included": ["breakfast", "box lunch", "dinner"],
+        "highlights": [
+          "French Valley hanging glaciers",
+          "360-degree mountain amphitheater",
+          "Avalanche sounds from glaciers",
+          "Británico viewpoint option"
+        ],
+        "description": "The longest day includes a detour into the spectacular French Valley. Hike up the valley surrounded by granite spires and hanging glaciers, with the option to reach Británico viewpoint for panoramic views, before continuing to Paine Grande."
+      },
+      {
+        "day": 4,
+        "title": "Grey Glacier Viewpoint",
+        "start_location": "Refugio Paine Grande",
+        "end_location": "Refugio Grey",
+        "distance_km": 11,
+        "duration_hours": 4,
+        "elevation_start_m": 550,
+        "elevation_end_m": 300,
+        "elevation_gain_m": 200,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refugio/camping",
+          "options": ["Refugio Grey", "Camping Grey"]
+        },
+        "meals_included": ["breakfast", "box lunch", "dinner"],
+        "highlights": [
+          "Grey Glacier views",
+          "Icebergs in Grey Lake",
+          "Suspension bridges",
+          "Southern Ice Field connection"
+        ],
+        "description": "Trek along Grey Lake's shoreline through burned and regenerating forest areas. Cross suspension bridges with views of floating icebergs and the massive Grey Glacier flowing from the Southern Patagonian Ice Field."
+      },
+      {
+        "day": 5,
+        "title": "Return via Catamaran",
+        "start_location": "Refugio Grey",
+        "end_location": "Puerto Natales",
+        "distance_km": 0,
+        "duration_hours": 3,
+        "elevation_start_m": 300,
+        "elevation_end_m": 20,
+        "elevation_gain_m": -280,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotel in Puerto Natales"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Catamaran across Grey Lake",
+          "Close views of icebergs",
+          "Glacier perspectives from water",
+          "Return to civilization"
+        ],
+        "description": "Morning catamaran ride across Grey Lake among the icebergs, followed by bus transfer back to Puerto Natales. Alternatively, hike back to Paine Grande and take catamaran across Pehoé Lake."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Hiking boots",
+          "description": "Waterproof with ankle support for varied terrain",
+          "rental_available": true
+        },
+        {
+          "item": "Windproof/waterproof jacket",
+          "description": "Patagonia winds can exceed 100km/h",
+          "rental_available": true
+        },
+        {
+          "item": "Windproof pants",
+          "description": "Essential for exposed sections",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "0°C rated if camping",
+          "rental_available": true
+        },
+        {
+          "item": "Backpack",
+          "description": "40-60L with rain cover",
+          "rental_available": true
+        },
+        {
+          "item": "Layering system",
+          "description": "Base layer, insulating layer, shell",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Sunglasses, hat, SPF 50+ sunscreen",
+          "rental_available": false
+        },
+        {
+          "item": "Trekking poles",
+          "description": "Helpful for river crossings and wind",
+          "rental_available": true
+        },
+        {
+          "item": "Water bottles",
+          "description": "2L capacity, water is drinkable from streams",
+          "rental_available": false
+        },
+        {
+          "item": "Headlamp",
+          "description": "For early starts and refugio use",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Gaiters",
+          "description": "For muddy sections and stream crossings",
+          "rental_available": true
+        },
+        {
+          "item": "Buff or balaclava",
+          "description": "Wind and sun protection",
+          "rental_available": false
+        },
+        {
+          "item": "Camera rain cover",
+          "description": "Weather changes quickly",
+          "rental_available": false
+        },
+        {
+          "item": "Dry bags",
+          "description": "Keep essentials dry",
+          "rental_available": false
+        },
+        {
+          "item": "Blister kit",
+          "description": "Long days require foot care",
+          "rental_available": false
+        }
+      ],
+      "optional": [
+        {
+          "item": "Camping gear",
+          "description": "Tent, mat, stove if not using refugios",
+          "rental_available": true
+        },
+        {
+          "item": "Binoculars",
+          "description": "For wildlife viewing",
+          "rental_available": false
+        },
+        {
+          "item": "Portable charger",
+          "description": "Limited electricity in refugios",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Park Entry Fee",
+        "cost_usd": 35,
+        "cost_clp": 28000,
+        "where_to_obtain": "Park entrance or online",
+        "validity": "3 consecutive days"
+      },
+      {
+        "name": "Camping/Refugio Reservations",
+        "cost_usd": 0,
+        "cost_clp": 0,
+        "where_to_obtain": "Must book in advance through Vertice or Fantastico Sur",
+        "validity": "Specific dates only",
+        "notes": "Booking required far in advance, especially Dec-Feb"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 35,
+      "guide_daily_usd": 150,
+      "porter_daily_usd": 0,
+      "accommodation_daily_usd": 80,
+      "meals_daily_usd": 60,
+      "transportation_usd": 100,
+      "catamaran_usd": 35,
+      "total_budget_range_usd": {
+        "min": 600,
+        "max": 1500
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Chilean", "Argentine", "Indigenous Tehuelche/Aonikenk heritage"],
+      "primary_religion": "Secular/Catholic",
+      "languages": ["Spanish", "English widely spoken in tourism"],
+      "customs_etiquette": [
+        "Pack out all trash - leave no trace",
+        "Respect refugio quiet hours (10pm-7am)",
+        "Share trail information with other hikers",
+        "Don't feed wildlife (especially foxes)",
+        "Stay on marked trails to prevent erosion",
+        "Respect private estancia property boundaries"
+      ],
+      "local_foods": [
+        {
+          "name": "Cordero al Palo",
+          "description": "Patagonian lamb roasted over open fire"
+        },
+        {
+          "name": "Calafate berry",
+          "description": "Local berry - legend says you'll return to Patagonia"
+        },
+        {
+          "name": "King Crab (Centolla)",
+          "description": "Fresh from the Magellan Strait"
+        },
+        {
+          "name": "Mate",
+          "description": "Traditional herbal tea drunk throughout the day"
+        }
+      ],
+      "festivals": [
+        {
+          "name": "Festival de la Esquila",
+          "when": "January",
+          "description": "Sheep shearing festival"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "none",
+        "notes": "Maximum elevation only 1,200m"
+      },
+      "main_concerns": {
+        "weather": {
+          "risk_level": "high",
+          "description": "Extreme winds, rapid weather changes",
+          "prevention": [
+            "Check weather forecasts daily",
+            "Be prepared to wait out storms",
+            "Carry emergency shelter/bivy",
+            "Know escape routes"
+          ]
+        },
+        "river_crossings": {
+          "risk_level": "moderate",
+          "description": "Streams can rise rapidly after rain",
+          "prevention": [
+            "Use trekking poles for stability",
+            "Unbuckle pack waist belt",
+            "Cross early in the day when water is lower"
+          ]
+        },
+        "sun_exposure": {
+          "risk_level": "high",
+          "description": "Intense UV due to ozone hole",
+          "prevention": [
+            "Apply sunscreen every 2 hours",
+            "Wear protective clothing",
+            "Use quality sunglasses"
+          ]
+        }
+      },
+      "medical_facilities": [
+        {
+          "location": "Park ranger stations",
+          "type": "Basic first aid"
+        },
+        {
+          "location": "Puerto Natales",
+          "type": "Hospital with emergency services"
+        },
+        {
+          "location": "Punta Arenas",
+          "type": "Regional hospital (3 hours away)"
+        }
+      ],
+      "evacuation": {
+        "method": "Helicopter or horseback",
+        "cost_usd": "2000-5000",
+        "insurance_required": true,
+        "response_time": "Weather dependent, can be days"
+      },
+      "vaccinations_recommended": [
+        "Routine vaccinations up to date",
+        "Hepatitis A",
+        "Typhoid"
+      ]
+    },
+    "weather_patterns": {
+      "summer": {
+        "months": ["December", "January", "February"],
+        "day_temp_c": "10 to 20",
+        "night_temp_c": "2 to 8",
+        "precipitation": "Moderate, expect rain",
+        "wind": "Strong, 50-100 km/h common",
+        "daylight_hours": "17-18",
+        "notes": "Peak season, book far in advance"
+      },
+      "autumn": {
+        "months": ["March", "April", "May"],
+        "day_temp_c": "5 to 15",
+        "night_temp_c": "-2 to 5",
+        "precipitation": "Increasing, possible snow",
+        "wind": "Very strong",
+        "daylight_hours": "10-14",
+        "notes": "Beautiful fall colors, fewer crowds"
+      },
+      "winter": {
+        "months": ["June", "July", "August"],
+        "day_temp_c": "0 to 8",
+        "night_temp_c": "-5 to 0",
+        "precipitation": "Snow likely",
+        "wind": "Extreme",
+        "daylight_hours": "8-9",
+        "notes": "Many facilities closed, experienced hikers only"
+      },
+      "spring": {
+        "months": ["September", "October", "November"],
+        "day_temp_c": "5 to 15",
+        "night_temp_c": "0 to 5",
+        "precipitation": "Variable",
+        "wind": "Strong to extreme",
+        "daylight_hours": "11-16",
+        "notes": "Wildflowers bloom, weather improving"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Fly + Bus",
+          "from": "Santiago",
+          "to": "Punta Arenas + Puerto Natales",
+          "duration": "5-6 hours total",
+          "cost_usd": 200,
+          "frequency": "Multiple daily flights",
+          "notes": "3-hour flight + 3-hour bus"
+        },
+        {
+          "method": "Bus",
+          "from": "Puerto Natales",
+          "to": "Torres del Paine",
+          "duration": "2 hours",
+          "cost_usd": 15,
+          "frequency": "2-3 daily in season"
+        },
+        {
+          "method": "Transfer service",
+          "from": "Puerto Natales",
+          "to": "Torres del Paine",
+          "duration": "2 hours",
+          "cost_usd": 30,
+          "frequency": "Multiple daily"
+        }
+      ],
+      "from_end": "Similar options in reverse"
+    },
+    "accommodation": {
+      "type": "Refugios and camping",
+      "description": "Mountain huts with beds or camping platforms",
+      "refugio_amenities": [
+        "Bunk beds with bedding (bring sleep sheet)",
+        "Hot meals available for purchase",
+        "Hot showers (sometimes paid)",
+        "Electricity for charging (limited hours)",
+        "Small shops with basic supplies",
+        "Drying rooms"
+      ],
+      "camping_amenities": [
+        "Designated platforms or areas",
+        "Cooking shelters at some sites",
+        "Bathroom facilities",
+        "Cold water only at most sites"
+      ],
+      "booking": "Essential to book months in advance",
+      "cost_per_night_usd": {
+        "refugio_bed": "60-80",
+        "refugio_full_board": "140-160",
+        "camping": "8-15"
+      }
+    },
+    "difficulty_details": {
+      "physical_demands": "Moderate fitness required, long days",
+      "technical_skills": "None required",
+      "altitude_challenge": "None",
+      "trail_conditions": "Well-marked but can be muddy, rocky",
+      "weather_challenge": "Primary difficulty - extreme winds",
+      "daily_hiking_hours": "4-10 hours",
+      "total_elevation_gain": 2850,
+      "total_elevation_loss": 2850
+    },
+    "sustainability": {
+      "environmental_concerns": [
+        "Trail erosion from high traffic",
+        "Waste management",
+        "Wildlife disturbance"
+      ],
+      "responsible_practices": [
+        "Strict leave no trace principles",
+        "Stay on designated trails",
+        "Use established campsites only",
+        "Pack out all waste",
+        "Respect wildlife viewing distances"
+      ],
+      "local_initiatives": [
+        "Trail maintenance programs",
+        "Visitor limits being considered",
+        "Ranger education programs"
+      ]
+    },
+    "connectivity": {
+      "mobile_coverage": [
+        {
+          "location": "Refugios",
+          "quality": "Limited to none",
+          "providers": ["Entel", "Movistar"]
+        },
+        {
+          "location": "Trail",
+          "quality": "None",
+          "providers": []
+        }
+      ],
+      "internet": {
+        "availability": "Some refugios have paid WiFi",
+        "cost_usd": "5-10 per day",
+        "speed": "Very slow, weather dependent"
+      }
+    },
+    "booking_recommendations": {
+      "advance_booking": "3-6 months for high season",
+      "group_size": "Individual bookings easier than groups",
+      "guide_requirement": "Not required but helpful",
+      "porter_recommendation": "Not available/necessary",
+      "insurance_essential": true,
+      "fitness_preparation": "3 months cardio and hiking training"
+    },
+    "alternative_routes": [
+      {
+        "name": "O Circuit",
+        "variation": "Complete circuit including backside",
+        "extra_days": 3,
+        "highlights": ["More solitude", "John Gardner Pass", "Complete park experience"]
+      },
+      {
+        "name": "Day trips from refugios",
+        "variation": "Base yourself and day hike",
+        "extra_days": 0,
+        "highlights": ["Lighter pack", "More flexibility", "Same highlights"]
+      },
+      {
+        "name": "Q Circuit",
+        "variation": "Extended O with Pingo Valley",
+        "extra_days": 5,
+        "highlights": ["Ultimate Torres experience", "Remote valleys", "Wildlife"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Base Torres",
+        "best_time": "Sunrise",
+        "subjects": ["Tower reflections", "Alpenglow on granite"]
+      },
+      {
+        "location": "Mirador Británico",
+        "best_time": "Midday",
+        "subjects": ["360-degree amphitheater", "Hanging glaciers"]
+      },
+      {
+        "location": "Grey Glacier viewpoint",
+        "best_time": "Evening",
+        "subjects": ["Blue ice", "Icebergs", "Sunset colors"]
+      },
+      {
+        "location": "Nordenskjöld Lake",
+        "best_time": "Morning",
+        "subjects": ["Turquoise water", "Cuernos reflection"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How far in advance should I book?",
+        "answer": "For December-February, book refugios/campsites 5-6 months ahead. Shoulder seasons 2-3 months. The park has strict capacity limits."
+      },
+      {
+        "question": "Can I trek independently?",
+        "answer": "Yes, the trails are well-marked and guides aren't required. However, weather can change rapidly, so experience with multi-day treks is recommended."
+      },
+      {
+        "question": "Camping or refugios?",
+        "answer": "Refugios offer comfort and meals but are expensive. Camping is cheaper but means carrying more gear in challenging weather. Many do a mix."
+      },
+      {
+        "question": "What about the wind?",
+        "answer": "Patagonian wind is legendary. Gusts can exceed 100km/h. Bring proper windproof gear and trekking poles for stability. Be prepared to wait out extreme conditions."
+      },
+      {
+        "question": "Is water safe to drink?",
+        "answer": "Yes, water from streams and lakes is generally safe to drink without treatment, though some prefer to purify as a precaution."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 96,
+    "seo": {
+      "meta_title": "Torres del Paine W Circuit Trek Guide 2024 | Complete 5-Day Itinerary",
+      "meta_description": "Complete guide to hiking the W Circuit in Torres del Paine. Detailed itinerary, booking tips, gear list, and insider advice for Patagonia's most iconic trek.",
+      "keywords": ["torres del paine", "w circuit", "patagonia trek", "chile hiking", "torres del paine itinerary"]
+    }
+  },
+  {
+    "_id": "fitz-roy-trek",
+    "name": "Fitz Roy Trek",
+    "slug": "fitz-roy-trek",
+    "region": "Patagonia",
+    "country": "Argentina",
+    "summary": "Dramatic granite spires and pristine alpine lakes around El Chaltén, Argentina's trekking capital, offering flexible day hikes and multi-day options.",
+    "duration": {
+      "min_days": 3,
+      "max_days": 4,
+      "recommended_days": 4
+    },
+    "distance_km": 40,
+    "difficulty": "moderate",
+    "max_elevation_m": 1200,
+    "starting_elevation_m": 400,
+    "airport": "El Calafate (FTE)",
+    "nearest_city": "El Chaltén",
+    "coordinates": {
+      "start": {
+        "lat": -49.3314,
+        "lng": -72.8861,
+        "location": "El Chaltén"
+      },
+      "end": {
+        "lat": -49.3314,
+        "lng": -72.8861,
+        "location": "El Chaltén"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Summer",
+        "months": ["December", "January", "February"],
+        "description": "Warmest weather, longest days, most services open"
+      },
+      {
+        "name": "Autumn",
+        "months": ["March", "April"],
+        "description": "Spectacular fall colors, fewer crowds, crisp weather"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Laguna de los Tres",
+        "start_location": "El Chaltén",
+        "end_location": "El Chaltén",
+        "distance_km": 20,
+        "duration_hours": 8,
+        "elevation_start_m": 400,
+        "elevation_end_m": 1170,
+        "elevation_gain_m": 770,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "hostel/hotel",
+          "options": ["Rancho Grande", "Aylen-Aike", "Los Cerros"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Fitz Roy sunrise at Laguna de los Tres",
+          "Glacial lake with icebergs",
+          "360-degree granite spire views",
+          "Rio Blanco base camp"
+        ],
+        "description": "The classic Fitz Roy viewpoint hike. Start before dawn to catch sunrise illuminating the granite spires. Steep final kilometer leads to the glacial lake beneath Fitz Roy's east face."
+      },
+      {
+        "day": 2,
+        "title": "Laguna Torre",
+        "start_location": "El Chaltén",
+        "end_location": "El Chaltén",
+        "distance_km": 18,
+        "duration_hours": 6,
+        "elevation_start_m": 400,
+        "elevation_end_m": 700,
+        "elevation_gain_m": 300,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hostel/hotel",
+          "options": ["Same as previous"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Cerro Torre views",
+          "Grande Glacier",
+          "Laguna Torre with icebergs",
+          "Forest and valley hiking"
+        ],
+        "description": "Gentler hike to the base of the impossibly steep Cerro Torre. The trail follows the river valley through lenga forests to a stunning glacial lake surrounded by peaks."
+      },
+      {
+        "day": 3,
+        "title": "Pliegue Tumbado",
+        "start_location": "El Chaltén",
+        "end_location": "El Chaltén",
+        "distance_km": 19,
+        "duration_hours": 7,
+        "elevation_start_m": 400,
+        "elevation_end_m": 1490,
+        "elevation_gain_m": 1090,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "hostel/hotel",
+          "options": ["Same as previous"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Panoramic views of entire range",
+          "Southern Patagonian Ice Field views",
+          "Condor sightings common",
+          "Less crowded trail"
+        ],
+        "description": "Often overlooked but spectacular viewpoint offering the best panoramic views of the entire Fitz Roy and Torre ranges, plus the Southern Ice Field on clear days."
+      },
+      {
+        "day": 4,
+        "title": "Loma del Pliegue Tumbado or Rest Day",
+        "start_location": "El Chaltén",
+        "end_location": "El Chaltén",
+        "distance_km": 0,
+        "duration_hours": 0,
+        "elevation_start_m": 400,
+        "elevation_end_m": 400,
+        "elevation_gain_m": 0,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hostel/hotel",
+          "options": ["Same as previous"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Rest and recovery",
+          "Explore El Chaltén town",
+          "Visit Chorrillo del Salto waterfall",
+          "Gear shopping and restaurants"
+        ],
+        "description": "Optional rest day or shorter hikes like Chorrillo del Salto (4km). Enjoy El Chaltén's cafes, microbreweries, and gear shops. Good weather backup day."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Hiking boots",
+          "description": "Sturdy with good traction",
+          "rental_available": true
+        },
+        {
+          "item": "Wind/rain jacket",
+          "description": "Essential for Patagonian weather",
+          "rental_available": true
+        },
+        {
+          "item": "Layering system",
+          "description": "Weather changes rapidly",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "High UV exposure",
+          "rental_available": false
+        },
+        {
+          "item": "Day pack",
+          "description": "20-30L capacity",
+          "rental_available": true
+        },
+        {
+          "item": "Water bottles",
+          "description": "2L capacity minimum",
+          "rental_available": false
+        },
+        {
+          "item": "Trekking poles",
+          "description": "Helpful for steep sections",
+          "rental_available": true
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Gaiters",
+          "description": "For muddy/snowy conditions",
+          "rental_available": false
+        },
+        {
+          "item": "Headlamp",
+          "description": "For pre-dawn starts",
+          "rental_available": false
+        },
+        {
+          "item": "Binoculars",
+          "description": "Condor and wildlife viewing",
+          "rental_available": false
+        }
+      ],
+      "optional": [
+        {
+          "item": "Camping gear",
+          "description": "For multi-day options",
+          "rental_available": true
+        },
+        {
+          "item": "Crampons",
+          "description": "For early/late season snow",
+          "rental_available": true
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "National Park Registration",
+        "cost_usd": 0,
+        "cost_ars": 0,
+        "where_to_obtain": "Visitor center in El Chaltén",
+        "validity": "Duration of stay",
+        "notes": "Free but mandatory registration"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 0,
+      "guide_daily_usd": 100,
+      "porter_daily_usd": 0,
+      "accommodation_daily_usd": 30,
+      "meals_daily_usd": 25,
+      "transportation_usd": 80,
+      "total_budget_range_usd": {
+        "min": 300,
+        "max": 800
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Argentine", "International climbing community"],
+      "primary_religion": "Secular/Catholic",
+      "languages": ["Spanish", "English in tourist areas"],
+      "customs_etiquette": [
+        "Respect the climbing community culture",
+        "Share trail conditions with others",
+        "Town has relaxed, outdoorsy vibe",
+        "Support local businesses",
+        "Respect private property near trails"
+      ],
+      "local_foods": [
+        {
+          "name": "Asado",
+          "description": "Argentine BBQ - beef is king"
+        },
+        {
+          "name": "Empanadas",
+          "description": "Meat or cheese-filled pastries"
+        },
+        {
+          "name": "Craft beer",
+          "description": "Several microbreweries in town"
+        },
+        {
+          "name": "Locro",
+          "description": "Hearty stew perfect after hiking"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "none",
+        "notes": "Maximum elevation only 1,490m"
+      },
+      "main_concerns": {
+        "weather": {
+          "risk_level": "high",
+          "description": "Sudden storms, high winds",
+          "prevention": [
+            "Check forecasts at visitor center",
+            "Start hikes early",
+            "Carry extra layers always",
+            "Know when to turn back"
+          ]
+        },
+        "river_crossings": {
+          "risk_level": "low",
+          "description": "Most trails have bridges",
+          "prevention": ["Use established crossings only"]
+        }
+      },
+      "medical_facilities": [
+        {
+          "location": "El Chaltén",
+          "type": "Basic medical post"
+        },
+        {
+          "location": "El Calafate",
+          "type": "Hospital (3 hours away)"
+        }
+      ],
+      "evacuation": {
+        "method": "Road ambulance or helicopter",
+        "cost_usd": "1000-3000",
+        "insurance_required": true
+      }
+    },
+    "weather_patterns": {
+      "summer": {
+        "months": ["December", "January", "February"],
+        "day_temp_c": "15 to 22",
+        "night_temp_c": "5 to 10",
+        "precipitation": "Low to moderate",
+        "wind": "Moderate to strong",
+        "daylight_hours": "17-18",
+        "notes": "Best weather but most crowded"
+      },
+      "autumn": {
+        "months": ["March", "April"],
+        "day_temp_c": "8 to 15",
+        "night_temp_c": "0 to 5",
+        "precipitation": "Moderate",
+        "wind": "Strong",
+        "daylight_hours": "11-14",
+        "notes": "Beautiful colors, good weather windows"
+      },
+      "winter": {
+        "months": ["May", "June", "July", "August"],
+        "day_temp_c": "-2 to 8",
+        "night_temp_c": "-10 to 0",
+        "precipitation": "Snow common",
+        "wind": "Very strong",
+        "daylight_hours": "8-10",
+        "notes": "Most services closed, experienced only"
+      },
+      "spring": {
+        "months": ["September", "October", "November"],
+        "day_temp_c": "5 to 15",
+        "night_temp_c": "0 to 5",
+        "precipitation": "Variable",
+        "wind": "Very strong",
+        "daylight_hours": "12-16",
+        "notes": "Unpredictable, possible snow"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Bus",
+          "from": "El Calafate",
+          "to": "El Chaltén",
+          "duration": "3 hours",
+          "cost_usd": 40,
+          "frequency": "3-4 daily in season",
+          "notes": "Scenic drive, book ahead in summer"
+        },
+        {
+          "method": "Rental car",
+          "from": "El Calafate",
+          "to": "El Chaltén",
+          "duration": "3 hours",
+          "cost_usd": 80,
+          "notes": "More flexibility, can visit Perito Moreno too"
+        },
+        {
+          "method": "Fly",
+          "from": "Buenos Aires",
+          "to": "El Calafate",
+          "duration": "3 hours",
+          "cost_usd": 200,
+          "frequency": "Multiple daily"
+        }
+      ],
+      "from_end": "Same options in reverse"
+    },
+    "accommodation": {
+      "type": "Town-based",
+      "description": "Range from camping to luxury lodges",
+      "amenities": [
+        "Hot showers",
+        "Kitchens in hostels",
+        "WiFi widely available",
+        "Laundry services",
+        "Gear storage"
+      ],
+      "booking": "Recommended in high season",
+      "cost_per_night_usd": {
+        "camping": "10-15",
+        "hostel_dorm": "20-30",
+        "hostel_private": "50-80",
+        "hotel": "80-200"
+      }
+    },
+    "difficulty_details": {
+      "physical_demands": "Good fitness for long days",
+      "technical_skills": "None required",
+      "altitude_challenge": "None",
+      "trail_conditions": "Well-marked, some steep sections",
+      "daily_hiking_hours": "6-8 hours",
+      "total_elevation_gain": 2160,
+      "total_elevation_loss": 2160
+    },
+    "alternative_routes": [
+      {
+        "name": "Huemul Circuit",
+        "variation": "4-day camping circuit",
+        "extra_days": 0,
+        "highlights": ["Remote backcountry", "Southern Ice Field views", "Challenging terrain"]
+      },
+      {
+        "name": "Paso del Viento",
+        "variation": "Connect to Chilean side",
+        "extra_days": 2,
+        "highlights": ["Cross into Chile", "Remote wilderness", "Glaciers"]
+      },
+      {
+        "name": "Multi-day camping",
+        "variation": "Connect all viewpoints",
+        "extra_days": 1,
+        "highlights": ["Fewer day packs", "Sunrise/sunset at lakes", "Backcountry experience"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Laguna de los Tres",
+        "best_time": "Sunrise",
+        "subjects": ["Fitz Roy alpenglow", "Reflection in lake", "Ice formations"]
+      },
+      {
+        "location": "Mirador del Torre",
+        "best_time": "Late afternoon",
+        "subjects": ["Cerro Torre", "Glacier", "Forest framing"]
+      },
+      {
+        "location": "Pliegue Tumbado",
+        "best_time": "All day",
+        "subjects": ["Panoramic range views", "Condors", "Ice field"]
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 92,
+    "seo": {
+      "meta_title": "Fitz Roy Trek Guide 2024 | El Chaltén Day Hikes & Multi-Day Options",
+      "meta_description": "Complete guide to trekking around Fitz Roy and Cerro Torre from El Chaltén. Best day hikes, multi-day routes, and expert tips for Argentine Patagonia.",
+      "keywords": ["fitz roy trek", "el chalten hiking", "cerro torre", "patagonia argentina", "laguna de los tres"]
+    }
+  },
+  {
+    "_id": "huemul-circuit",
+    "name": "Huemul Circuit",
+    "slug": "huemul-circuit",
+    "region": "Patagonia",
+    "country": "Argentina",
+    "summary": "A challenging 4-day wilderness circuit offering solitude, ice field views, and technical terrain including a famous tyrolean traverse.",
+    "duration": {
+      "min_days": 4,
+      "max_days": 4,
+      "recommended_days": 4
+    },
+    "distance_km": 65,
+    "difficulty": "challenging",
+    "max_elevation_m": 1600,
+    "starting_elevation_m": 400,
+    "airport": "El Calafate (FTE)",
+    "nearest_city": "El Chaltén",
+    "coordinates": {
+      "start": {
+        "lat": -49.3314,
+        "lng": -72.8861,
+        "location": "El Chaltén"
+      },
+      "end": {
+        "lat": -49.3314,
+        "lng": -72.8861,
+        "location": "El Chaltén"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Summer",
+        "months": ["December", "January", "February", "March"],
+        "description": "Only viable season due to river crossings and weather"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "El Chaltén to Laguna Toro",
+        "start_location": "El Chaltén",
+        "end_location": "Laguna Toro",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 400,
+        "elevation_end_m": 900,
+        "elevation_gain_m": 500,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "camping",
+          "options": ["Laguna Toro designated campsite"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Laguna Torre views",
+          "Enter remote backcountry",
+          "Glacial valley hiking",
+          "First wilderness camp"
+        ],
+        "description": "Begin at standard Laguna Torre trailhead, then diverge onto less-traveled Huemul route. Set up camp at beautiful Laguna Toro with views of surrounding peaks."
+      },
+      {
+        "day": 2,
+        "title": "Paso del Viento and Descent",
+        "start_location": "Laguna Toro",
+        "end_location": "Refugio Paso del Viento",
+        "distance_km": 18,
+        "duration_hours": 8,
+        "elevation_start_m": 900,
+        "elevation_end_m": 600,
+        "elevation_gain_m": 700,
+        "difficulty": "very challenging",
+        "accommodation": {
+          "type": "camping/refugio",
+          "options": ["Refugio Paso del Viento (basic shelter)"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Paso del Viento crossing",
+          "Southern Ice Field views",
+          "Technical descent with ropes",
+          "Remote wilderness"
+        ],
+        "description": "Most challenging day crossing Paso del Viento (1,600m) with incredible ice field views. Technical descent using fixed ropes. Camp near basic refugio shelter."
+      },
+      {
+        "day": 3,
+        "title": "Tyrolean Traverse Day",
+        "start_location": "Refugio Paso del Viento",
+        "end_location": "Campamento Loma del Diablo",
+        "distance_km": 20,
+        "duration_hours": 9,
+        "elevation_start_m": 600,
+        "elevation_end_m": 750,
+        "elevation_gain_m": 400,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "camping",
+          "options": ["Loma del Diablo campsite"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Famous tyrolean traverse",
+          "Multiple river crossings",
+          "Viedma Glacier views",
+          "True wilderness experience"
+        ],
+        "description": "Adventure-filled day including the famous tyrolean traverse across a gorge (harness provided at site). Multiple river crossings and route-finding challenges."
+      },
+      {
+        "day": 4,
+        "title": "Return to El Chaltén",
+        "start_location": "Campamento Loma del Diablo",
+        "end_location": "El Chaltén",
+        "distance_km": 13,
+        "duration_hours": 5,
+        "elevation_start_m": 750,
+        "elevation_end_m": 400,
+        "elevation_gain_m": -350,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "town",
+          "options": ["Return to El Chaltén accommodation"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Final river crossing",
+          "Return to civilization",
+          "Completion celebration",
+          "Hot shower awaits"
+        ],
+        "description": "Final day includes one more river crossing before easier trail back to El Chaltén. Celebrate completion of one of Patagonia's most challenging circuits."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "4-season tent",
+          "description": "Wind-resistant, must withstand storms",
+          "rental_available": true
+        },
+        {
+          "item": "Warm sleeping bag",
+          "description": "-10°C rated minimum",
+          "rental_available": true
+        },
+        {
+          "item": "Full rain gear",
+          "description": "Jacket and pants, high quality",
+          "rental_available": true
+        },
+        {
+          "item": "River crossing shoes",
+          "description": "Sandals or extra shoes for crossings",
+          "rental_available": false
+        },
+        {
+          "item": "Trekking poles",
+          "description": "Essential for river crossings",
+          "rental_available": true
+        },
+        {
+          "item": "Camping stove and fuel",
+          "description": "No wood fires allowed",
+          "rental_available": true
+        },
+        {
+          "item": "First aid kit",
+          "description": "Comprehensive for remote areas",
+          "rental_available": false
+        },
+        {
+          "item": "Emergency shelter",
+          "description": "Bivy or emergency blanket",
+          "rental_available": false
+        },
+        {
+          "item": "GPS device",
+          "description": "Trail can be hard to follow",
+          "rental_available": true
+        },
+        {
+          "item": "Rope",
+          "description": "30m for river crossings",
+          "rental_available": true
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Gaiters",
+          "description": "For river crossings and mud",
+          "rental_available": false
+        },
+        {
+          "item": "Neoprene socks",
+          "description": "For cold river crossings",
+          "rental_available": false
+        },
+        {
+          "item": "Satellite communicator",
+          "description": "For emergencies",
+          "rental_available": true
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Huemul Circuit Registration",
+        "cost_usd": 0,
+        "cost_ars": 0,
+        "where_to_obtain": "National Park office El Chaltén",
+        "validity": "Specific dates",
+        "notes": "Must show gear list and experience"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 0,
+      "guide_daily_usd": 200,
+      "porter_daily_usd": 0,
+      "accommodation_daily_usd": 0,
+      "meals_daily_usd": 15,
+      "transportation_usd": 80,
+      "total_budget_range_usd": {
+        "min": 200,
+        "max": 1000
+      }
+    },
+    "health_safety": {
+      "main_concerns": {
+        "river_crossings": {
+          "risk_level": "very high",
+          "description": "Multiple dangerous crossings",
+          "prevention": [
+            "Never cross alone",
+            "Use poles and rope",
+            "Cross early morning when water is lower",
+            "Be prepared to wait if levels are high",
+            "Know when to turn back"
+          ]
+        },
+        "weather": {
+          "risk_level": "very high",
+          "description": "Extreme conditions possible",
+          "prevention": [
+            "Monitor forecasts closely",
+            "Be prepared for snow any time",
+            "Carry emergency shelter",
+            "Know escape routes"
+          ]
+        },
+        "remoteness": {
+          "risk_level": "very high",
+          "description": "No easy evacuation",
+          "prevention": [
+            "Travel with experienced partners",
+            "Carry comprehensive first aid",
+            "Consider satellite communicator",
+            "Leave detailed itinerary with rangers"
+          ]
+        }
+      },
+      "evacuation": {
+        "method": "Helicopter only",
+        "cost_usd": "5000+",
+        "insurance_required": true,
+        "response_time": "24-48 hours weather permitting"
+      }
+    },
+    "difficulty_details": {
+      "physical_demands": "Excellent fitness required",
+      "technical_skills": "Route-finding, river crossing experience",
+      "altitude_challenge": "None",
+      "trail_conditions": "Often unclear, GPS recommended",
+      "weather_challenge": "Extreme - primary hazard",
+      "daily_hiking_hours": "6-9 hours",
+      "total_elevation_gain": 2250,
+      "total_elevation_loss": 2250
+    },
+    "special_considerations": {
+      "experience_required": "Previous multi-day trekking essential",
+      "group_size": "Minimum 2, recommended 3-4",
+      "solo_hiking": "Strongly discouraged",
+      "guide_recommendation": "Highly recommended unless very experienced",
+      "season_critical": "December-March only"
+    },
+    "faqs": [
+      {
+        "question": "Is the Huemul Circuit safe?",
+        "answer": "It's one of Patagonia's most challenging treks with real risks. Proper preparation, experience, and weather windows are critical. Many experienced hikers hire guides."
+      },
+      {
+        "question": "What about the tyrolean traverse?",
+        "answer": "A cable crosses a gorge that you clip into with a harness (provided). It's exciting but safe if you follow instructions. Not technical but can be intimidating."
+      },
+      {
+        "question": "Can I do it without camping experience?",
+        "answer": "No. You need solid backcountry camping skills including in severe weather. This is not a trek to learn on."
+      },
+      {
+        "question": "What if rivers are too high?",
+        "answer": "You may need to wait or turn back. Never risk dangerous crossings. This is why flexible schedules are important."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 78,
+    "seo": {
+      "meta_title": "Huemul Circuit Trek Guide 2024 | Patagonia's Most Challenging Circuit",
+      "meta_description": "Complete guide to the remote Huemul Circuit from El Chaltén. Technical 4-day trek with ice field views, river crossings, and tyrolean traverse.",
+      "keywords": ["huemul circuit", "el chalten circuit", "patagonia challenging trek", "tyrolean traverse", "southern ice field trek"]
+    }
+  },
+  {
+    "_id": "tour-du-mont-blanc",
+    "name": "Tour du Mont Blanc",
+    "slug": "tour-du-mont-blanc",
+    "region": "European Alps",
+    "country": "France/Italy/Switzerland",
+    "summary": "The classic Alpine circuit around Western Europe's highest peak, passing through three countries with spectacular mountain scenery and charming villages.",
+    "duration": {
+      "min_days": 9,
+      "max_days": 12,
+      "recommended_days": 11
+    },
+    "distance_km": 170,
+    "difficulty": "moderate",
+    "max_elevation_m": 2665,
+    "starting_elevation_m": 1035,
+    "airport": "Geneva (GVA)",
+    "nearest_city": "Chamonix",
+    "coordinates": {
+      "start": {
+        "lat": 45.9237,
+        "lng": 6.8694,
+        "location": "Chamonix"
+      },
+      "end": {
+        "lat": 45.9237,
+        "lng": 6.8694,
+        "location": "Chamonix"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Summer",
+        "months": ["July", "August"],
+        "description": "All passes open, warmest weather, busiest time"
+      },
+      {
+        "name": "Early Autumn",
+        "months": ["September"],
+        "description": "Cooler weather, fewer crowds, stunning colors"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Chamonix to Les Houches",
+        "start_location": "Chamonix",
+        "end_location": "Les Houches",
+        "distance_km": 16,
+        "duration_hours": 6,
+        "elevation_start_m": 1035,
+        "elevation_end_m": 1012,
+        "elevation_gain_m": 680,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "gite/hotel",
+          "options": ["Gîte Michel Fagot", "Hotel Le Prarion", "Camping"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Views of Mont Blanc massif",
+          "Aiguilles de Chamonix",
+          "Traditional Alpine villages",
+          "Forest trails"
+        ],
+        "description": "Start the tour with a warm-up day, choosing between the high balcony route via Le Brévent or the valley route. Both offer stunning views of the Mont Blanc massif."
+      },
+      {
+        "day": 2,
+        "title": "Les Houches to Les Contamines",
+        "start_location": "Les Houches",
+        "end_location": "Les Contamines",
+        "distance_km": 17,
+        "duration_hours": 7,
+        "elevation_start_m": 1012,
+        "elevation_end_m": 1164,
+        "elevation_gain_m": 900,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "gite/hotel",
+          "options": ["Gîte le Pontet", "Hotel la Chemenaz", "CAF Refuge"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Col de Voza views",
+          "Bionnassay Glacier",
+          "Alpine meadows",
+          "Historic Roman bridge"
+        ],
+        "description": "Cross the Col de Voza with views of the Bionnassay Glacier, then descend through alpine pastures to the charming village of Les Contamines."
+      },
+      {
+        "day": 3,
+        "title": "Les Contamines to Les Chapieux",
+        "start_location": "Les Contamines",
+        "end_location": "Les Chapieux",
+        "distance_km": 18,
+        "duration_hours": 8,
+        "elevation_start_m": 1164,
+        "elevation_end_m": 1554,
+        "elevation_gain_m": 1120,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "refuge/auberge",
+          "options": ["Refuge de la Nova", "Auberge de la Nova"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Col du Bonhomme (2,483m)",
+          "Remote mountain landscapes",
+          "Possible wildlife sightings",
+          "Traditional refuges"
+        ],
+        "description": "A challenging day crossing the Col du Bonhomme and Col de la Croix du Bonhomme. Long ascent rewarded with spectacular views and remote mountain scenery."
+      },
+      {
+        "day": 4,
+        "title": "Les Chapieux to Courmayeur",
+        "start_location": "Les Chapieux",
+        "end_location": "Courmayeur",
+        "distance_km": 19,
+        "duration_hours": 7,
+        "elevation_start_m": 1554,
+        "elevation_end_m": 1224,
+        "elevation_gain_m": 820,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel/b&b",
+          "options": ["Hotel Courmayeur", "Pensione Venezia", "Various B&Bs"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Enter Italy",
+          "Col de la Seigne (2,516m)",
+          "South side Mont Blanc views",
+          "Italian cuisine"
+        ],
+        "description": "Cross into Italy via the Col de la Seigne. The landscape changes dramatically as you enter the Val Veny with new perspectives of Mont Blanc's south face."
+      },
+      {
+        "day": 5,
+        "title": "Courmayeur to Val Ferret",
+        "start_location": "Courmayeur",
+        "end_location": "Val Ferret",
+        "distance_km": 20,
+        "duration_hours": 8,
+        "elevation_start_m": 1224,
+        "elevation_end_m": 1780,
+        "elevation_gain_m": 800,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "rifugio/hotel",
+          "options": ["Rifugio Bonatti", "Hotel Lavachey", "Rifugio Elena"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Grandes Jorasses views",
+          "Mont Dolent",
+          "Italian Val Ferret",
+          "Alpine architecture"
+        ],
+        "description": "Spectacular high route above Val Ferret with close views of the Grandes Jorasses. Option to stay at the beautifully positioned Rifugio Bonatti."
+      },
+      {
+        "day": 6,
+        "title": "Val Ferret to Champex",
+        "start_location": "Val Ferret",
+        "end_location": "Champex",
+        "distance_km": 16,
+        "duration_hours": 6,
+        "elevation_start_m": 1780,
+        "elevation_end_m": 1466,
+        "elevation_gain_m": 680,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel/pension",
+          "options": ["Hotel du Glacier", "Pension en Plein Air", "Au Club Alpin"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Grand Col Ferret (2,537m)",
+          "Enter Switzerland",
+          "Champex lake",
+          "Swiss hospitality"
+        ],
+        "description": "Cross the Grand Col Ferret into Switzerland. Descend through Swiss alpine pastures to the pretty resort of Champex with its beautiful lake."
+      },
+      {
+        "day": 7,
+        "title": "Champex to Trient",
+        "start_location": "Champex",
+        "end_location": "Trient",
+        "distance_km": 16,
+        "duration_hours": 6,
+        "elevation_start_m": 1466,
+        "elevation_end_m": 1279,
+        "elevation_gain_m": 600,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "auberge/refuge",
+          "options": ["Auberge du Mont-Blanc", "Refuge du Peuty"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Fenêtre d'Arpette option",
+          "Trient Glacier",
+          "Alpine pastures",
+          "Traditional villages"
+        ],
+        "description": "Choose between the high route via Fenêtre d'Arpette (challenging) or the easier Bovine route. Both offer great views and pass through scenic alpine terrain."
+      },
+      {
+        "day": 8,
+        "title": "Trient to Argentière",
+        "start_location": "Trient",
+        "end_location": "Argentière",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 1279,
+        "elevation_end_m": 1252,
+        "elevation_gain_m": 720,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel/gite",
+          "options": ["Hotel de la Couronne", "Gîte le Belvedere", "Various hotels"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Col de Balme (2,191m)",
+          "Return to France",
+          "360-degree views",
+          "Argentière Glacier"
+        ],
+        "description": "Cross back into France via the Col de Balme with panoramic views. Descend to the village of Argentière in the Chamonix valley."
+      },
+      {
+        "day": 9,
+        "title": "Argentière to La Flégère",
+        "start_location": "Argentière",
+        "end_location": "La Flégère",
+        "distance_km": 13,
+        "duration_hours": 6,
+        "elevation_start_m": 1252,
+        "elevation_end_m": 1877,
+        "elevation_gain_m": 900,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de la Flégère", "Hotel in valley"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Lac Blanc option",
+          "Aiguilles Rouges",
+          "Classic Mont Blanc views",
+          "Alpine lakes"
+        ],
+        "description": "Climb into the Aiguilles Rouges for classic views of the entire Mont Blanc massif. Option to visit the stunning Lac Blanc."
+      },
+      {
+        "day": 10,
+        "title": "La Flégère to Chamonix",
+        "start_location": "La Flégère",
+        "end_location": "Chamonix",
+        "distance_km": 10,
+        "duration_hours": 4,
+        "elevation_start_m": 1877,
+        "elevation_end_m": 1035,
+        "elevation_gain_m": 200,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotels in Chamonix"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Final descent",
+          "Complete the circuit",
+          "Celebration in Chamonix",
+          "Sense of achievement"
+        ],
+        "description": "Final descent back to Chamonix, completing the circuit. Gentle morning walk with time to reflect on the journey and celebrate your achievement."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Hiking boots",
+          "description": "Well broken-in, waterproof",
+          "rental_available": false
+        },
+        {
+          "item": "Backpack",
+          "description": "30-40L for hut-to-hut hiking",
+          "rental_available": true
+        },
+        {
+          "item": "Rain gear",
+          "description": "Jacket and pants/poncho",
+          "rental_available": false
+        },
+        {
+          "item": "Layering system",
+          "description": "Base, insulation, shell layers",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Hat, sunglasses, sunscreen",
+          "rental_available": false
+        },
+        {
+          "item": "First aid kit",
+          "description": "Blister treatment essential",
+          "rental_available": false
+        },
+        {
+          "item": "Water bottles",
+          "description": "2L capacity",
+          "rental_available": false
+        },
+        {
+          "item": "Headlamp",
+          "description": "For early starts",
+          "rental_available": false
+        },
+        {
+          "item": "Trekking poles",
+          "description": "Highly recommended",
+          "rental_available": true
+        },
+        {
+          "item": "Sleep sheet",
+          "description": "Required in refuges",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Gaiters",
+          "description": "For snow patches",
+          "rental_available": false
+        },
+        {
+          "item": "Lightweight shoes",
+          "description": "For evenings in refuges",
+          "rental_available": false
+        },
+        {
+          "item": "Cash (Euros)",
+          "description": "Many refuges don't take cards",
+          "rental_available": false
+        },
+        {
+          "item": "Plug adapter",
+          "description": "European standard",
+          "rental_available": false
+        }
+      ],
+      "optional": [
+        {
+          "item": "Camera",
+          "description": "Spectacular photo opportunities",
+          "rental_available": false
+        },
+        {
+          "item": "Guidebook",
+          "description": "Detailed route information",
+          "rental_available": false
+        },
+        {
+          "item": "Altitude sickness medication",
+          "description": "If susceptible",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "None required",
+        "cost_usd": 0,
+        "cost_eur": 0,
+        "where_to_obtain": "N/A",
+        "validity": "N/A",
+        "notes": "No permits needed but accommodation must be booked in advance"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 0,
+      "guide_daily_usd": 200,
+      "porter_daily_usd": 0,
+      "accommodation_daily_usd": 70,
+      "meals_daily_usd": 50,
+      "transportation_usd": 150,
+      "total_budget_range_usd": {
+        "min": 1200,
+        "max": 2500
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["French", "Italian", "Swiss"],
+      "primary_religion": "Catholic/Secular",
+      "languages": ["French", "Italian", "German", "English widely spoken"],
+      "customs_etiquette": [
+        "Greet everyone with 'Bonjour/Buongiorno/Grüezi'",
+        "Respect refuge rules and quiet hours",
+        "Remove boots when entering refuges",
+        "Share tables at busy refuges",
+        "Pack out all trash",
+        "Yield to uphill hikers"
+      ],
+      "local_foods": [
+        {
+          "name": "Tartiflette",
+          "description": "Potato, cheese, and bacon gratin (Savoy)"
+        },
+        {
+          "name": "Polenta",
+          "description": "Cornmeal dish popular in Italian valleys"
+        },
+        {
+          "name": "Rösti",
+          "description": "Swiss potato pancake"
+        },
+        {
+          "name": "Génépy",
+          "description": "Alpine herb liqueur"
+        }
+      ],
+      "festivals": [
+        {
+          "name": "Ultra-Trail du Mont-Blanc",
+          "when": "Late August",
+          "description": "Famous trail running race"
+        },
+        {
+          "name": "Fête des Guides",
+          "when": "August 15",
+          "description": "Chamonix guides festival"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "low",
+        "prevention": [
+          "Gradual ascent built into route",
+          "Stay hydrated",
+          "Don't rush the first days"
+        ],
+        "notes": "Maximum elevation 2,665m rarely causes issues"
+      },
+      "main_concerns": {
+        "weather": {
+          "risk_level": "moderate",
+          "description": "Afternoon thunderstorms common",
+          "prevention": [
+            "Start early each day",
+            "Check weather forecasts",
+            "Carry rain gear always",
+            "Know refuge locations"
+          ]
+        },
+        "trail_conditions": {
+          "risk_level": "low",
+          "description": "Well-maintained paths",
+          "prevention": [
+            "Watch for wet rocks",
+            "Use poles for stability",
+            "Take care on steep sections"
+          ]
+        }
+      },
+      "medical_facilities": [
+        {
+          "location": "Chamonix",
+          "type": "Hospital with mountain medicine unit"
+        },
+        {
+          "location": "Courmayeur",
+          "type": "Medical center"
+        },
+        {
+          "location": "Mountain refuges",
+          "type": "Basic first aid"
+        }
+      ],
+      "evacuation": {
+        "method": "Helicopter",
+        "cost_usd": "3000-5000",
+        "insurance_required": true,
+        "response_time": "Usually within hours"
+      },
+      "vaccinations_recommended": [
+        "Routine vaccinations",
+        "Tick-borne encephalitis (if camping)"
+      ]
+    },
+    "weather_patterns": {
+      "summer": {
+        "months": ["July", "August"],
+        "day_temp_c": "15 to 25",
+        "night_temp_c": "5 to 15",
+        "precipitation": "Afternoon thunderstorms common",
+        "snow_level": "Above 3000m usually",
+        "notes": "Busiest period, book well ahead"
+      },
+      "early_summer": {
+        "months": ["June"],
+        "day_temp_c": "10 to 20",
+        "night_temp_c": "0 to 10",
+        "precipitation": "Variable",
+        "snow_level": "Can be at pass level",
+        "notes": "Snow possible on high passes"
+      },
+      "autumn": {
+        "months": ["September"],
+        "day_temp_c": "10 to 18",
+        "night_temp_c": "0 to 8",
+        "precipitation": "Generally stable",
+        "snow_level": "First snows possible",
+        "notes": "Often best weather, fewer crowds"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Train",
+          "from": "Geneva",
+          "to": "Chamonix",
+          "duration": "2.5 hours",
+          "cost_usd": 35,
+          "frequency": "Multiple daily"
+        },
+        {
+          "method": "Bus",
+          "from": "Geneva Airport",
+          "to": "Chamonix",
+          "duration": "2 hours",
+          "cost_usd": 30,
+          "frequency": "Hourly shuttles"
+        },
+        {
+          "method": "Car",
+          "from": "Geneva",
+          "to": "Chamonix",
+          "duration": "1.5 hours",
+          "cost_usd": 50,
+          "notes": "Parking available in Chamonix"
+        }
+      ],
+      "during_trek": [
+        {
+          "method": "Cable cars",
+          "description": "Optional to skip sections",
+          "cost_usd": "20-40 per ride"
+        },
+        {
+          "method": "Local buses",
+          "description": "Connect valley towns",
+          "cost_usd": "5-15"
+        }
+      ]
+    },
+    "accommodation": {
+      "type": "Mountain refuges and valley hotels",
+      "description": "Mix of staffed refuges, gîtes, and hotels",
+      "refuge_amenities": [
+        "Dormitory sleeping",
+        "Evening meal and breakfast",
+        "Hot showers (often paid)",
+        "Packed lunch available",
+        "Basic supplies shop"
+      ],
+      "booking": "Essential, especially July-August",
+      "cost_per_night_usd": {
+        "refuge_half_board": "60-80",
+        "gite_half_board": "50-70",
+        "hotel_b&b": "80-150",
+        "camping": "10-20"
+      }
+    },
+    "difficulty_details": {
+      "physical_demands": "Good fitness for consecutive long days",
+      "technical_skills": "None required",
+      "altitude_challenge": "Minimal",
+      "trail_conditions": "Well-marked and maintained",
+      "daily_hiking_hours": "5-8 hours",
+      "total_elevation_gain": 10000,
+      "total_elevation_loss": 10000
+    },
+    "sustainability": {
+      "environmental_concerns": [
+        "Trail erosion",
+        "Overcrowding in peak season",
+        "Waste management"
+      ],
+      "responsible_practices": [
+        "Use refuges instead of wild camping",
+        "Stay on marked trails",
+        "Pack out all waste",
+        "Use public transport when possible",
+        "Support local businesses"
+      ],
+      "local_initiatives": [
+        "Espace Mont-Blanc conservation",
+        "Trail maintenance programs",
+        "Sustainable tourism initiatives"
+      ]
+    },
+    "connectivity": {
+      "mobile_coverage": [
+        {
+          "location": "Valleys",
+          "quality": "Excellent",
+          "providers": ["Orange", "SFR", "Swisscom", "TIM"]
+        },
+        {
+          "location": "Mountain passes",
+          "quality": "Limited to none",
+          "providers": ["Emergency calls only"]
+        }
+      ],
+      "internet": {
+        "availability": "WiFi in most refuges and hotels",
+        "cost_usd": "Often free in hotels, paid in refuges",
+        "speed": "Variable, basic in refuges"
+      }
+    },
+    "booking_recommendations": {
+      "advance_booking": "2-4 months for peak season",
+      "group_size": "Easier for small groups",
+      "guide_requirement": "Not required, trail well-marked",
+      "luggage_transfer": "Available between valley stops",
+      "insurance_essential": true,
+      "fitness_preparation": "3 months hiking training"
+    },
+    "alternative_routes": [
+      {
+        "name": "TMB Shorter Version",
+        "variation": "7-day highlights tour",
+        "fewer_days": 4,
+        "highlights": ["Hit main highlights", "Use transport for valleys"]
+      },
+      {
+        "name": "Walker's Haute Route",
+        "variation": "Continue to Zermatt",
+        "extra_days": 7,
+        "highlights": ["Chamonix to Zermatt", "More glaciers", "Matterhorn finale"]
+      },
+      {
+        "name": "Trail Running TMB",
+        "variation": "Fast and light",
+        "fewer_days": 7,
+        "highlights": ["4-7 day running tour", "Ultralight approach"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Lac Blanc",
+        "best_time": "Sunrise",
+        "subjects": ["Mont Blanc reflection", "Alpenglow", "Ibex"]
+      },
+      {
+        "location": "Col de la Seigne",
+        "best_time": "Morning",
+        "subjects": ["South face Mont Blanc", "Val Veny views"]
+      },
+      {
+        "location": "Rifugio Bonatti",
+        "best_time": "Sunset",
+        "subjects": ["Grandes Jorasses", "Val Ferret", "Alpine glow"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need to book refuges in advance?",
+        "answer": "Yes, absolutely essential in July-August. Book 2-4 months ahead. June and September are easier but still recommended to book ahead."
+      },
+      {
+        "question": "Can I wild camp?",
+        "answer": "Wild camping is generally prohibited except at high altitude (above 2500m) and only sunset to sunrise. Most hikers use the excellent refuge system."
+      },
+      {
+        "question": "Which direction should I go?",
+        "answer": "Most go counter-clockwise for gentler start and to get major climbs done while fresh. Both directions have merits."
+      },
+      {
+        "question": "Can I do it without a guide?",
+        "answer": "Yes, the trail is well-marked and most hikers go independently. Maps and basic navigation skills are sufficient."
+      },
+      {
+        "question": "What about language barriers?",
+        "answer": "English is widely spoken in tourist areas. Basic French phrases are appreciated and helpful in remote areas."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 97,
+    "seo": {
+      "meta_title": "Tour du Mont Blanc Complete Guide 2024 | 11-Day TMB Trek Itinerary",
+      "meta_description": "Ultimate guide to hiking the Tour du Mont Blanc through France, Italy & Switzerland. Detailed TMB itinerary, refuges booking, costs, and expert tips.",
+      "keywords": ["tour du mont blanc", "tmb trek", "mont blanc circuit", "alpine hiking", "tmb itinerary"]
+    }
+  },
+  {
+    "_id": "haute-route-chamonix-zermatt",
+    "name": "Walker's Haute Route",
+    "slug": "haute-route-chamonix-zermatt",
+    "region": "European Alps",
+    "country": "France/Switzerland",
+    "summary": "The classic high-level route from Chamonix to Zermatt, linking Mont Blanc to the Matterhorn through spectacular Alpine terrain.",
+    "duration": {
+      "min_days": 10,
+      "max_days": 14,
+      "recommended_days": 12
+    },
+    "distance_km": 180,
+    "difficulty": "challenging",
+    "max_elevation_m": 3000,
+    "starting_elevation_m": 1035,
+    "airport": "Geneva (GVA)",
+    "nearest_city": "Chamonix/Zermatt",
+    "coordinates": {
+      "start": {
+        "lat": 45.9237,
+        "lng": 6.8694,
+        "location": "Chamonix"
+      },
+      "end": {
+        "lat": 46.0207,
+        "lng": 7.7491,
+        "location": "Zermatt"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Summer",
+        "months": ["July", "August", "early September"],
+        "description": "Snow-free passes, all routes open, stable weather"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Chamonix to Argentière",
+        "start_location": "Chamonix",
+        "end_location": "Argentière",
+        "distance_km": 10,
+        "duration_hours": 4,
+        "elevation_start_m": 1035,
+        "elevation_end_m": 1252,
+        "elevation_gain_m": 700,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel/gite",
+          "options": ["Hotel Montana", "Gîte Le Belvedere", "Hotel La Couronne"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Warm-up day",
+          "Petit Balcon Sud trail",
+          "Mont Blanc views",
+          "Argentière glacier"
+        ],
+        "description": "Gentle start along the Petit Balcon Sud with views across to the Mont Blanc massif. Good acclimatization day before the challenging days ahead."
+      },
+      {
+        "day": 2,
+        "title": "Argentière to Trient",
+        "start_location": "Argentière",
+        "end_location": "Trient",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 1252,
+        "elevation_end_m": 1279,
+        "elevation_gain_m": 900,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge/auberge",
+          "options": ["Refuge du Peuty", "Auberge du Mont-Blanc", "Hotel du Glacier"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Col de Balme crossing",
+          "Enter Switzerland",
+          "Trient Glacier views",
+          "Alpine meadows"
+        ],
+        "description": "Cross into Switzerland via Col de Balme. Beautiful ridge walking with panoramic views before descending to the remote Trient valley."
+      },
+      {
+        "day": 3,
+        "title": "Trient to Champex",
+        "start_location": "Trient",
+        "end_location": "Champex",
+        "distance_km": 16,
+        "duration_hours": 6,
+        "elevation_start_m": 1279,
+        "elevation_end_m": 1466,
+        "elevation_gain_m": 800,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel/b&b",
+          "options": ["Hotel du Glacier", "Au Club Alpin", "Pension en Plein Air"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Fenêtre d'Arpette option",
+          "Bovine alternative route",
+          "Champex lake",
+          "Swiss villages"
+        ],
+        "description": "Choose between the spectacular but challenging Fenêtre d'Arpette or the easier Bovine route. Both lead to charming Champex-Lac."
+      },
+      {
+        "day": 4,
+        "title": "Champex to Le Châble",
+        "start_location": "Champex",
+        "end_location": "Le Châble",
+        "distance_km": 16,
+        "duration_hours": 5,
+        "elevation_start_m": 1466,
+        "elevation_end_m": 821,
+        "elevation_gain_m": 200,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotel de la Poste", "Hotel Gietroz", "B&B options"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Val de Bagnes descent",
+          "Traditional villages",
+          "Verbier option",
+          "Rest day possibility"
+        ],
+        "description": "Easier day descending through forests and pastures to Le Châble. Option to take cable car to Verbier for supplies and comfort."
+      },
+      {
+        "day": 5,
+        "title": "Le Châble to Cabane du Mont Fort",
+        "start_location": "Le Châble",
+        "end_location": "Cabane du Mont Fort",
+        "distance_km": 14,
+        "duration_hours": 7,
+        "elevation_start_m": 821,
+        "elevation_end_m": 2457,
+        "elevation_gain_m": 1636,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "mountain hut",
+          "options": ["Cabane du Mont Fort"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Major ascent day",
+          "Spectacular hut location",
+          "Sunset views",
+          "Grand Combin views"
+        ],
+        "description": "Big climbing day to reach the spectacularly positioned Cabane du Mont Fort. The effort is rewarded with incredible sunset views."
+      },
+      {
+        "day": 6,
+        "title": "Cabane du Mont Fort to Cabane de Prafleuri",
+        "start_location": "Cabane du Mont Fort",
+        "end_location": "Cabane de Prafleuri",
+        "distance_km": 17,
+        "duration_hours": 7,
+        "elevation_start_m": 2457,
+        "elevation_end_m": 2662,
+        "elevation_gain_m": 600,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "mountain hut",
+          "options": ["Cabane de Prafleuri"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Remote high mountain day",
+          "Three cols crossing",
+          "Rosablanche views",
+          "Wild alpine terrain"
+        ],
+        "description": "Remote and spectacular high mountain day crossing three cols. This is the heart of the Haute Route with incredible mountain scenery."
+      },
+      {
+        "day": 7,
+        "title": "Cabane de Prafleuri to Arolla",
+        "start_location": "Cabane de Prafleuri",
+        "end_location": "Arolla",
+        "distance_km": 16,
+        "duration_hours": 6,
+        "elevation_start_m": 2662,
+        "elevation_end_m": 1998,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotel Kurhaus", "Hotel du Pigne", "Hotel du Glacier"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Descent to civilization",
+          "Arolla valley",
+          "Glacier views",
+          "Traditional mountain village"
+        ],
+        "description": "Descend from the high mountains to the traditional mountain village of Arolla. Good place for rest or resupply."
+      },
+      {
+        "day": 8,
+        "title": "Arolla to La Sage",
+        "start_location": "Arolla",
+        "end_location": "La Sage",
+        "distance_km": 12,
+        "duration_hours": 5,
+        "elevation_start_m": 1998,
+        "elevation_end_m": 1667,
+        "elevation_gain_m": 500,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel/gite",
+          "options": ["Hotel de la Sage", "Gîte de la Sage"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Pas de Chèvres",
+          "Traditional villages",
+          "Val d'Hérens culture",
+          "Mountain views"
+        ],
+        "description": "Cross the Pas de Chèvres with optional ladder section. Descend through traditional Valaisan villages to La Sage."
+      },
+      {
+        "day": 9,
+        "title": "La Sage to Cabane de Moiry",
+        "start_location": "La Sage",
+        "end_location": "Cabane de Moiry",
+        "distance_km": 14,
+        "duration_hours": 7,
+        "elevation_start_m": 1667,
+        "elevation_end_m": 2825,
+        "elevation_gain_m": 1400,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "mountain hut",
+          "options": ["Cabane de Moiry"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Col du Tsaté crossing",
+          "Moiry Glacier",
+          "Spectacular hut location",
+          "High mountain environment"
+        ],
+        "description": "Another big day climbing to Col du Tsaté then traversing to the spectacular Cabane de Moiry beside the glacier."
+      },
+      {
+        "day": 10,
+        "title": "Cabane de Moiry to Zinal",
+        "start_location": "Cabane de Moiry",
+        "end_location": "Zinal",
+        "distance_km": 14,
+        "duration_hours": 5,
+        "elevation_start_m": 2825,
+        "elevation_end_m": 1675,
+        "elevation_gain_m": 0,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotel le Besso", "Hotel Pointe de Zinal", "Hotel Europe"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Glacier descent",
+          "Zinal valley",
+          "4000m peaks views",
+          "Traditional village"
+        ],
+        "description": "Descend alongside the Moiry Glacier to reach the beautiful Zinal valley, surrounded by 4000m peaks."
+      },
+      {
+        "day": 11,
+        "title": "Zinal to Gruben",
+        "start_location": "Zinal",
+        "end_location": "Gruben",
+        "distance_km": 17,
+        "duration_hours": 9,
+        "elevation_start_m": 1675,
+        "elevation_end_m": 1822,
+        "elevation_gain_m": 1300,
+        "difficulty": "very challenging",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotel Schwarzhorn"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Forcletta Pass (2,874m)",
+          "Enter German-speaking region",
+          "Remote Turtmanntal",
+          "Cultural transition"
+        ],
+        "description": "One of the toughest days crossing the high Forcletta Pass into the German-speaking Turtmanntal. Remote and spectacular."
+      },
+      {
+        "day": 12,
+        "title": "Gruben to Zermatt",
+        "start_location": "Gruben",
+        "end_location": "Zermatt",
+        "distance_km": 18,
+        "duration_hours": 8,
+        "elevation_start_m": 1822,
+        "elevation_end_m": 1608,
+        "elevation_gain_m": 1000,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotels in Zermatt"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Augstbord Pass (2,894m)",
+          "First Matterhorn views",
+          "Arrival in Zermatt",
+          "Journey complete"
+        ],
+        "description": "Final challenging day over Augstbord Pass. The first views of the Matterhorn signal journey's end as you descend to Zermatt."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Mountain boots",
+          "description": "Sturdy with good ankle support",
+          "rental_available": false
+        },
+        {
+          "item": "Crampons",
+          "description": "Light crampons for snow patches",
+          "rental_available": true
+        },
+        {
+          "item": "Ice axe",
+          "description": "For glacier sections (optional)",
+          "rental_available": true
+        },
+        {
+          "item": "Backpack",
+          "description": "40-50L capacity",
+          "rental_available": true
+        },
+        {
+          "item": "4-season clothing",
+          "description": "Including warm layers",
+          "rental_available": false
+        },
+        {
+          "item": "Waterproofs",
+          "description": "High quality essential",
+          "rental_available": false
+        },
+        {
+          "item": "Navigation tools",
+          "description": "Map, compass, GPS",
+          "rental_available": false
+        },
+        {
+          "item": "Emergency shelter",
+          "description": "Bivy or group shelter",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Trekking poles",
+          "description": "Essential for stability",
+          "rental_available": true
+        },
+        {
+          "item": "Gaiters",
+          "description": "For snow and scree",
+          "rental_available": false
+        },
+        {
+          "item": "Glacier glasses",
+          "description": "Category 4 protection",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "None required",
+        "cost_usd": 0,
+        "notes": "But hut reservations essential"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 0,
+      "guide_daily_usd": 300,
+      "accommodation_daily_usd": 80,
+      "meals_daily_usd": 60,
+      "transportation_usd": 200,
+      "total_budget_range_usd": {
+        "min": 1500,
+        "max": 3500
+      }
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "moderate",
+        "prevention": [
+          "Gradual ascent profile",
+          "Stay hydrated",
+          "Consider acetazolamide",
+          "Know symptoms"
+        ]
+      },
+      "main_concerns": {
+        "weather": {
+          "risk_level": "high",
+          "description": "Rapid changes, snow possible",
+          "prevention": [
+            "Check forecasts daily",
+            "Start early",
+            "Carry emergency gear",
+            "Know escape routes"
+          ]
+        },
+        "glacier_travel": {
+          "risk_level": "moderate",
+          "description": "Some routes cross glaciers",
+          "prevention": [
+            "Consider guide for glacier days",
+            "Rope up if necessary",
+            "Know crevasse rescue",
+            "Check conditions"
+          ]
+        }
+      },
+      "evacuation": {
+        "method": "Helicopter",
+        "cost_usd": "3000-5000",
+        "insurance_required": true
+      }
+    },
+    "weather_patterns": {
+      "summer": {
+        "months": ["July", "August"],
+        "day_temp_c": "10 to 20",
+        "night_temp_c": "0 to 10",
+        "precipitation": "Afternoon storms possible",
+        "snow_level": "Above 3000m usually",
+        "notes": "Most stable period"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Train/Bus",
+          "from": "Geneva",
+          "to": "Chamonix",
+          "duration": "2.5 hours",
+          "cost_usd": 35
+        }
+      ],
+      "from_end": [
+        {
+          "method": "Train",
+          "from": "Zermatt",
+          "to": "Geneva",
+          "duration": "4 hours",
+          "cost_usd": 80
+        }
+      ]
+    },
+    "difficulty_details": {
+      "physical_demands": "Excellent fitness required",
+      "technical_skills": "Basic mountaineering helpful",
+      "altitude_challenge": "Moderate, max 3000m",
+      "trail_conditions": "Variable, some route-finding",
+      "daily_hiking_hours": "6-9 hours",
+      "total_elevation_gain": 12000,
+      "total_elevation_loss": 12000
+    },
+    "alternative_routes": [
+      {
+        "name": "Classic Glacier Route",
+        "variation": "Original high glacier route",
+        "extra_days": 0,
+        "highlights": ["More glaciers", "Requires mountaineering skills", "More remote"]
+      },
+      {
+        "name": "Valley Route",
+        "variation": "Lower altitude alternative",
+        "extra_days": -2,
+        "highlights": ["Easier", "More villages", "Less weather dependent"]
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 88,
+    "seo": {
+      "meta_title": "Walker's Haute Route Guide 2024 | Chamonix to Zermatt Trek",
+      "meta_description": "Complete guide to hiking the Haute Route from Chamonix to Zermatt. 12-day alpine trek itinerary, costs, gear list, and expert tips.",
+      "keywords": ["haute route", "chamonix to zermatt", "walkers haute route", "alpine traverse", "haute route trek"]
+    }
+  },
+  {
+    "_id": "dolomites-alta-via-1",
+    "name": "Dolomites Alta Via 1",
+    "slug": "dolomites-alta-via-1",
+    "region": "European Alps",
+    "country": "Italy",
+    "summary": "Classic high route through the dramatic limestone peaks of the Dolomites, staying in traditional rifugios with incredible Italian mountain cuisine.",
+    "duration": {
+      "min_days": 8,
+      "max_days": 12,
+      "recommended_days": 10
+    },
+    "distance_km": 120,
+    "difficulty": "moderate",
+    "max_elevation_m": 2950,
+    "starting_elevation_m": 1530,
+    "airport": "Venice (VCE) or Innsbruck (INN)",
+    "nearest_city": "Cortina d'Ampezzo",
+    "coordinates": {
+      "start": {
+        "lat": 46.6580,
+        "lng": 11.7790,
+        "location": "Lago di Braies"
+      },
+      "end": {
+        "lat": 46.4373,
+        "lng": 11.7732,
+        "location": "Belluno/Passo Duran"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Summer",
+        "months": ["July", "August", "September"],
+        "description": "Rifugios open, snow-free passes, stable weather"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Lago di Braies to Rifugio Biella",
+        "start_location": "Lago di Braies",
+        "end_location": "Rifugio Biella",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 1496,
+        "elevation_end_m": 2327,
+        "elevation_gain_m": 850,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Biella"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Lago di Braies (Pragser Wildsee)",
+          "Croda del Becco views",
+          "Alpine meadows",
+          "First rifugio experience"
+        ],
+        "description": "Start at the stunning Lago di Braies, famous for its emerald waters. Climb through forests and meadows to reach the welcoming Rifugio Biella."
+      },
+      {
+        "day": 2,
+        "title": "Rifugio Biella to Rifugio Lavarella",
+        "start_location": "Rifugio Biella",
+        "end_location": "Rifugio Lavarella",
+        "distance_km": 11,
+        "duration_hours": 5,
+        "elevation_start_m": 2327,
+        "elevation_end_m": 2042,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Lavarella", "Rifugio Fanes"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Alpe di Fanes plateau",
+          "Limestone pinnacles",
+          "Marmot sightings",
+          "Traditional Ladin culture"
+        ],
+        "description": "Traverse the otherworldly Fanes plateau, surrounded by towering limestone peaks. Choose between two excellent rifugios for the night."
+      },
+      {
+        "day": 3,
+        "title": "Rifugio Lavarella to Rifugio Lagazuoi",
+        "start_location": "Rifugio Lavarella",
+        "end_location": "Rifugio Lagazuoi",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 2042,
+        "elevation_end_m": 2752,
+        "elevation_gain_m": 900,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Lagazuoi"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Forcella del Lago",
+          "WWI tunnels and positions",
+          "360-degree summit views",
+          "Cable car option down"
+        ],
+        "description": "Climb to one of the most spectacular rifugios in the Dolomites. Explore WWI history and enjoy incredible views from Lagazuoi summit."
+      },
+      {
+        "day": 4,
+        "title": "Rifugio Lagazuoi to Rifugio Averau",
+        "start_location": "Rifugio Lagazuoi",
+        "end_location": "Rifugio Averau",
+        "distance_km": 10,
+        "duration_hours": 4,
+        "elevation_start_m": 2752,
+        "elevation_end_m": 2413,
+        "elevation_gain_m": 200,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Averau", "Rifugio Nuvolau"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Cinque Torri rock formations",
+          "Nuvolau summit option",
+          "Cortina valley views",
+          "Easier hiking day"
+        ],
+        "description": "Shorter day with options to explore the famous Cinque Torri climbing area or summit Nuvolau for panoramic views."
+      },
+      {
+        "day": 5,
+        "title": "Rifugio Averau to Rifugio Città di Fiume",
+        "start_location": "Rifugio Averau",
+        "end_location": "Rifugio Città di Fiume",
+        "distance_km": 13,
+        "duration_hours": 5,
+        "elevation_start_m": 2413,
+        "elevation_end_m": 1918,
+        "elevation_gain_m": 300,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Città di Fiume", "Rifugio Croda da Lago"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Lago di Federa",
+          "Croda da Lago circuit option",
+          "Forest trails",
+          "Wildlife viewing"
+        ],
+        "description": "Descend through beautiful forests with optional detour around the scenic Lago di Croda da Lago. More intimate rifugio experience."
+      },
+      {
+        "day": 6,
+        "title": "Rifugio Città di Fiume to Rifugio Tissi",
+        "start_location": "Rifugio Città di Fiume",
+        "end_location": "Rifugio Tissi",
+        "distance_km": 15,
+        "duration_hours": 7,
+        "elevation_start_m": 1918,
+        "elevation_end_m": 2250,
+        "elevation_gain_m": 800,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Tissi"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Remote mountain valleys",
+          "Pelmo massif views",
+          "Traditional shepherding areas",
+          "Quiet trails"
+        ],
+        "description": "Leave the busier routes for a more remote section. Long but rewarding day reaching the small and atmospheric Rifugio Tissi."
+      },
+      {
+        "day": 7,
+        "title": "Rifugio Tissi to Rifugio Vázzoler",
+        "start_location": "Rifugio Tissi",
+        "end_location": "Rifugio Vázzoler",
+        "distance_km": 12,
+        "duration_hours": 6,
+        "elevation_start_m": 2250,
+        "elevation_end_m": 1714,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Vázzoler"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Civetta north face views",
+          "Alpine botanical variety",
+          "Historical rifugio",
+          "Dramatic mountain amphitheater"
+        ],
+        "description": "Spectacular approach to Rifugio Vázzoler beneath the imposing north face of Civetta, one of the Dolomites' most impressive walls."
+      },
+      {
+        "day": 8,
+        "title": "Rifugio Vázzoler to Rifugio Carestiato",
+        "start_location": "Rifugio Vázzoler",
+        "end_location": "Rifugio Carestiato",
+        "distance_km": 14,
+        "duration_hours": 7,
+        "elevation_start_m": 1714,
+        "elevation_end_m": 1834,
+        "elevation_gain_m": 900,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Carestiato"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Forcella Col Negro",
+          "Moiazza group traverse",
+          "Remote valleys",
+          "Sense of accomplishment"
+        ],
+        "description": "Challenging day crossing high passes through the Moiazza group. Remote and wild mountain scenery."
+      },
+      {
+        "day": 9,
+        "title": "Rifugio Carestiato to Rifugio Pian de Fontana",
+        "start_location": "Rifugio Carestiato",
+        "end_location": "Rifugio Pian de Fontana",
+        "distance_km": 10,
+        "duration_hours": 4,
+        "elevation_start_m": 1834,
+        "elevation_end_m": 1632,
+        "elevation_gain_m": 300,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "rifugio",
+          "options": ["Rifugio Pian de Fontana"]
+        },
+        "meals_included": ["dinner", "breakfast"],
+        "highlights": [
+          "Easier walking day",
+          "Forest trails",
+          "Traditional farming areas",
+          "Final rifugio night"
+        ],
+        "description": "Gentler day through forests and meadows. Last night in a rifugio before completing the Alta Via 1."
+      },
+      {
+        "day": 10,
+        "title": "Rifugio Pian de Fontana to Passo Duran/Belluno",
+        "start_location": "Rifugio Pian de Fontana",
+        "end_location": "Passo Duran/Belluno",
+        "distance_km": 8,
+        "duration_hours": 3,
+        "elevation_start_m": 1632,
+        "elevation_end_m": 1601,
+        "elevation_gain_m": 100,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel/end",
+          "options": ["Bus to Belluno or Agordo"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Alta Via completion",
+          "Final mountain views",
+          "Sense of achievement",
+          "Return to civilization"
+        ],
+        "description": "Final descent to Passo Duran where you can catch a bus to Belluno or Agordo. Celebrate completing one of Italy's classic treks!"
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Mountain boots",
+          "description": "Good ankle support for rocky terrain",
+          "rental_available": false
+        },
+        {
+          "item": "Via ferrata kit",
+          "description": "For optional protected sections",
+          "rental_available": true
+        },
+        {
+          "item": "Daypack",
+          "description": "25-35L sufficient for rifugio trek",
+          "rental_available": false
+        },
+        {
+          "item": "Sleeping bag liner",
+          "description": "Required in rifugios",
+          "rental_available": false
+        },
+        {
+          "item": "Layered clothing",
+          "description": "Mountain weather changeable",
+          "rental_available": false
+        },
+        {
+          "item": "Rain gear",
+          "description": "Afternoon storms common",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "High altitude sun intense",
+          "rental_available": false
+        },
+        {
+          "item": "First aid kit",
+          "description": "Basic supplies",
+          "rental_available": false
+        },
+        {
+          "item": "Cash (Euros)",
+          "description": "Many rifugios cash only",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Trekking poles",
+          "description": "Helpful on descents",
+          "rental_available": true
+        },
+        {
+          "item": "Hut shoes",
+          "description": "Crocs or slippers for rifugios",
+          "rental_available": false
+        },
+        {
+          "item": "Earplugs",
+          "description": "For dormitory sleeping",
+          "rental_available": false
+        },
+        {
+          "item": "Quick-dry towel",
+          "description": "Small and lightweight",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "None required",
+        "cost_usd": 0,
+        "notes": "Just rifugio reservations needed"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 0,
+      "guide_daily_usd": 200,
+      "accommodation_daily_usd": 60,
+      "meals_daily_usd": 50,
+      "transportation_usd": 100,
+      "total_budget_range_usd": {
+        "min": 1000,
+        "max": 2000
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Italian", "Ladin (local minority)"],
+      "primary_religion": "Catholic",
+      "languages": ["Italian", "German", "Ladin", "English in tourist areas"],
+      "customs_etiquette": [
+        "Greet with 'Buongiorno' or 'Grüß Gott'",
+        "Remove boots when entering rifugios",
+        "Quiet hours 10pm-6am strictly observed",
+        "Share tables at busy times",
+        "Tip not expected but appreciated"
+      ],
+      "local_foods": [
+        {
+          "name": "Canederli",
+          "description": "Bread dumplings in broth"
+        },
+        {
+          "name": "Speck",
+          "description": "Smoked ham specialty"
+        },
+        {
+          "name": "Kaiserschmarrn",
+          "description": "Shredded pancake dessert"
+        },
+        {
+          "name": "Grappa",
+          "description": "Traditional digestif"
+        },
+        {
+          "name": "Strudel",
+          "description": "Apple strudel is a rifugio staple"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "low",
+        "notes": "Maximum elevation under 3000m"
+      },
+      "main_concerns": {
+        "weather": {
+          "risk_level": "moderate",
+          "description": "Afternoon thunderstorms common",
+          "prevention": [
+            "Start early",
+            "Check forecasts",
+            "Carry waterproofs",
+            "Know rifugio locations"
+          ]
+        },
+        "via_ferrata": {
+          "risk_level": "moderate",
+          "description": "Some exposed sections",
+          "prevention": [
+            "Use proper equipment",
+            "Check conditions",
+            "Know your limits",
+            "Consider guide"
+          ]
+        }
+      },
+      "evacuation": {
+        "method": "Helicopter",
+        "cost_usd": "2000-4000",
+        "insurance_required": true
+      }
+    },
+    "weather_patterns": {
+      "summer": {
+        "months": ["July", "August"],
+        "day_temp_c": "15 to 25",
+        "night_temp_c": "5 to 10",
+        "precipitation": "Afternoon storms",
+        "notes": "Busiest period"
+      },
+      "early_autumn": {
+        "months": ["September"],
+        "day_temp_c": "10 to 20",
+        "night_temp_c": "0 to 8",
+        "precipitation": "More stable",
+        "notes": "Often best weather"
+      }
+    },
+    "accommodation": {
+      "type": "Mountain rifugios",
+      "description": "Traditional mountain huts with meals",
+      "amenities": [
+        "Dormitory rooms (4-20 beds)",
+        "Half-board (dinner and breakfast)",
+        "Hot showers (sometimes paid)",
+        "Bar service",
+        "Packed lunch available",
+        "Blankets provided (bring liner)"
+      ],
+      "booking": "Essential in high season",
+      "cost_per_night_usd": {
+        "half_board": "50-70",
+        "bed_only": "25-35"
+      }
+    },
+    "difficulty_details": {
+      "physical_demands": "Good fitness for long days",
+      "technical_skills": "Some exposed sections",
+      "altitude_challenge": "Minimal",
+      "trail_conditions": "Rocky, well-marked",
+      "daily_hiking_hours": "5-7 hours",
+      "total_elevation_gain": 7000,
+      "total_elevation_loss": 7000
+    },
+    "alternative_routes": [
+      {
+        "name": "Alta Via 2",
+        "variation": "More challenging route",
+        "extra_days": 0,
+        "highlights": ["More technical", "Fewer crowds", "Wilder terrain"]
+      },
+      {
+        "name": "Alta Via 3-4",
+        "variation": "Eastern Dolomites",
+        "extra_days": "Various",
+        "highlights": ["Less developed", "More remote", "Cultural variety"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Lago di Braies",
+        "best_time": "Early morning",
+        "subjects": ["Lake reflections", "Emerald waters", "Seekofel peak"]
+      },
+      {
+        "location": "Lagazuoi summit",
+        "best_time": "Sunset",
+        "subjects": ["360-degree views", "Marmolada glacier", "Tofane group"]
+      },
+      {
+        "location": "Civetta north face",
+        "best_time": "Morning",
+        "subjects": ["Massive rock wall", "Alpine glow", "Climbers on route"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need via ferrata experience?",
+        "answer": "No, the main route avoids technical sections. Optional via ferratas are available but can be bypassed. Basic scrambling comfort helpful."
+      },
+      {
+        "question": "How far ahead should I book rifugios?",
+        "answer": "For July-August, book 2-3 months ahead. September is easier but still book 1 month ahead for weekends."
+      },
+      {
+        "question": "What's the food like in rifugios?",
+        "answer": "Excellent! Expect hearty multi-course dinners with local specialties. Vegetarian options available if requested in advance."
+      },
+      {
+        "question": "Can I do it without speaking Italian?",
+        "answer": "Yes, English is widely spoken in rifugios. Basic Italian phrases are appreciated and enhance the experience."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 90,
+    "seo": {
+      "meta_title": "Dolomites Alta Via 1 Complete Guide 2024 | 10-Day Trek Itinerary",
+      "meta_description": "Ultimate guide to hiking Alta Via 1 through the Italian Dolomites. Detailed itinerary, rifugio bookings, costs, and insider tips for this classic trek.",
+      "keywords": ["alta via 1", "dolomites trek", "italian alps hiking", "rifugio to rifugio", "dolomites alta via"]
+    }
+  }
+]

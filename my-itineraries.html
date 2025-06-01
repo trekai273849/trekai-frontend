@@ -51,6 +51,76 @@
       transform: scale(1);
     }
     
+    /* Create modal specific styles */
+    #create-modal .modal-content {
+      border-radius: 1rem;
+    }
+    
+    #create-modal a {
+      text-decoration: none;
+      display: block;
+    }
+    
+    #create-modal .group:hover {
+      transform: translateY(-2px);
+    }
+    
+    /* Button styling for modal CTAs */
+    #create-modal span[class*="bg-"] {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+    
+    #create-modal .group:hover span[class*="bg-"] {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transform: translateY(-1px);
+    }
+    
+    /* Close button styles for create modal */
+    #create-modal button[onclick*="closeCreateModal"] {
+      outline: none;
+      border: none;
+      background: none;
+      padding: 4px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+    
+    #create-modal button[onclick*="closeCreateModal"]:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Responsive adjustments for create modal */
+    @media (max-width: 640px) {
+      #create-modal .modal-content {
+        max-width: calc(100% - 2rem);
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+      }
+      
+      /* Ensure modal is vertically centered even on small screens */
+      #create-modal.modal-backdrop {
+        align-items: center;
+        padding: 1rem;
+      }
+    }
+    
+    /* Very small screens - ensure no scrolling needed */
+    @media (max-height: 600px) {
+      #create-modal .modal-content {
+        max-height: calc(100vh - 1rem);
+      }
+      
+      #create-modal h2 {
+        font-size: 1.125rem;
+        margin-bottom: 0.25rem;
+      }
+      
+      #create-modal p {
+        margin-bottom: 0.75rem;
+      }
+    }
+    
     /* Button hover effect */
     .delete-btn {
       position: relative;
@@ -179,6 +249,60 @@
     </div>
   </main>
   
+  <!-- Create Itinerary Options Modal -->
+  <div id="create-modal" class="modal-backdrop">
+    <div class="modal-content" style="max-width: 600px;">
+      <div class="p-4 md:p-5">
+        <button class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors" onclick="closeCreateModal()">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <h2 class="text-xl font-bold text-center mb-1">Start Your Adventure</h2>
+        <p class="text-gray-600 text-center text-sm mb-4">Choose how you'd like to plan your next trek</p>
+        
+        <div class="grid grid-cols-2 gap-3">
+          <!-- Explore Popular Hikes Option -->
+          <a href="popular-hikes.html" class="block p-3 md:p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-lg transition-all duration-200 group">
+            <div class="flex flex-col items-center text-center">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-full flex items-center justify-center mb-2 md:mb-3 group-hover:bg-blue-200 transition-colors">
+                <svg class="w-6 h-6 md:w-7 md:h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                </svg>
+              </div>
+              <h3 class="text-sm md:text-base font-semibold mb-1">Explore Popular Hikes</h3>
+              <p class="text-xs text-gray-600 mb-2 md:mb-3 hidden md:block">Browse our curated collection of the world's most spectacular treks</p>
+              <div class="w-full">
+                <span class="block w-full py-1.5 md:py-2 px-3 md:px-4 bg-blue-600 text-white rounded-md text-xs md:text-sm font-medium group-hover:bg-blue-700 transition-colors">
+                  Browse Treks
+                </span>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Build Custom Itinerary Option -->
+          <a href="index.html" class="block p-3 md:p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:shadow-lg transition-all duration-200 group">
+            <div class="flex flex-col items-center text-center">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-3 group-hover:bg-green-200 transition-colors">
+                <svg class="w-6 h-6 md:w-7 md:h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                </svg>
+              </div>
+              <h3 class="text-sm md:text-base font-semibold mb-1">Build My Own Hike</h3>
+              <p class="text-xs text-gray-600 mb-2 md:mb-3 hidden md:block">Create a personalized itinerary tailored to your preferences</p>
+              <div class="w-full">
+                <span class="block w-full py-1.5 md:py-2 px-3 md:px-4 bg-green-600 text-white rounded-md text-xs md:text-sm font-medium group-hover:bg-green-700 transition-colors">
+                  Customize Trek
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Delete Confirmation Modal -->
   <div id="delete-modal" class="modal-backdrop">
     <div class="modal-content">
@@ -208,6 +332,7 @@
     import { auth } from './js/auth/firebase.js';
     import { getCurrentUser, logOut } from './js/auth/auth.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    import { toTitleCase, cleanTrekTitle, extractTrekSubtitle, getStructuredTrekTitle } from './js/utils/trek-title.js';
 
     // Loading skeleton HTML template
     const createLoadingSkeleton = (count = 3) => {
@@ -257,23 +382,49 @@
       container.classList.add('fade-in');
     }
 
-    // Function to convert text to title case
-    function toTitleCase(str) {
-      return str.replace(/\w\S*/g, (txt) => {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-      });
+    // Modal functions
+    window.openCreateModal = function() {
+      const modal = document.getElementById('create-modal');
+      modal.classList.add('active');
     }
+    
+    window.closeCreateModal = function() {
+      const modal = document.getElementById('create-modal');
+      modal.classList.remove('active');
+    }
+    
+    // Close create modal when clicking outside
+    document.getElementById('create-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeCreateModal();
+      }
+    });
+    
+    // Add keyboard support for Escape key on create modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const createModal = document.getElementById('create-modal');
+        const deleteModal = document.getElementById('delete-modal');
+        
+        if (createModal.classList.contains('active')) {
+          closeCreateModal();
+        }
+        if (deleteModal.classList.contains('active')) {
+          deleteModal.classList.remove('active');
+        }
+      }
+    });
 
     // Check if user is logged in
     onAuthStateChanged(auth, (user) => {
       const authStatusDiv = document.getElementById('auth-status');
       
       if (user) {
-        // User is signed in - MODIFIED to remove the "Signed in as" text
+        // User is signed in
         authStatusDiv.innerHTML = `
           <div class="flex justify-end items-center mb-8">
             <div>
-              <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Create New Itinerary</a>
+              <button onclick="openCreateModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Create New Itinerary</button>
             </div>
           </div>
         `;
@@ -294,79 +445,85 @@
       }
     });
 
-    // Location-specific data for images and gradients
+    // Enhanced location-specific data for images and gradients
     const locationData = [
+      {
+        keywords: ["nepal", "nepalese", "kathmandu", "everest base camp", "annapurna", "himalaya"],
+        image: "Images/nepal.jpg", // Try the main images folder first
+        gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        icon: "🏔️"
+      },
       {
         keywords: ["london", "uk", "england", "british", "britain"],
         image: "Images/locations/london.jpg", 
-        gradient: "linear-gradient(135deg, #3c70b4 0%, #63a4ff 100%)",
+        gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         icon: "🏰"
       },
       {
         keywords: ["french alps", "france", "chamonix", "mont blanc"],
-        image: "Images/locations/french-alps.jpg",
-        gradient: "linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)",
+        image: "Images/french-alps.jpg",
+        gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
         icon: "🏔️"
       },
       {
-        keywords: ["italian alps", "italy", "dolomites"],
-        image: "Images/locations/italian-alps.jpg",
-        gradient: "linear-gradient(135deg, #38ef7d 0%, #11998e 100%)",
+        keywords: ["italian alps", "italy", "dolomites", "italian dolomites"],
+        image: "Images/alps.jpg",
+        gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
         icon: "🏔️"
       },
       {
         keywords: ["alps", "alpine"],
-        image: "Images/locations/alps.jpg",
-        gradient: "linear-gradient(135deg, #00c6fb 0%, #005bea 100%)",
+        image: "Images/alps.jpg",
+        gradient: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
         icon: "⛰️"
       },
       {
         keywords: ["new york", "ny", "usa", "united states", "america"],
         image: "Images/locations/new-york.jpg",
-        gradient: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
+        gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
         icon: "🗽"
       },
       {
         keywords: ["andes", "peru", "south america", "machu picchu", "cusco"],
         image: "Images/locations/peru.jpg",
-        gradient: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)",
+        gradient: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%)",
         icon: "🌄"
       },
       {
-        keywords: ["himalayas", "nepal", "tibet", "everest"],
-        image: "Images/locations/himalayas.jpg",
-        gradient: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+        keywords: ["himalayas", "tibet"],
+        image: "Images/himalayas.jpg",
+        gradient: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
         icon: "🏔️"
       },
       {
         keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
         image: "Images/locations/japan.jpg",
-        gradient: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
+        gradient: "linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%)",
         icon: "🗻"
       },
       {
         keywords: ["norway", "norwegian", "scandinavia", "fjords"],
         image: "Images/locations/norway.jpg",
-        gradient: "linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%)",
+        gradient: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
         icon: "⛰️"
       },
       {
         keywords: ["scotland", "scottish", "highlands"],
         image: "Images/locations/scotland.jpg",
-        gradient: "linear-gradient(135deg, #3e5151 0%, #decba4 100%)",
+        gradient: "linear-gradient(135deg, #d9afd9 0%, #97d9e1 100%)",
         icon: "🏞️"
       },
       {
         keywords: ["switzerland", "swiss"],
         image: "Images/locations/switzerland.jpg",
-        gradient: "linear-gradient(135deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%)",
+        gradient: "linear-gradient(135deg, #93a5cf 0%, #e4efe9 100%)",
         icon: "🏔️"
       }
     ];
     
-    // Default gradient for when no match is found
+    // Default gradient for when no match is found - more attractive gradient
     const defaultLocationData = {
-      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       icon: "🥾"
     };
     
@@ -390,76 +547,116 @@
       return defaultLocationData;
     }
     
-    // Function to create a header for an itinerary card
-    function createCardHeader(itinerary) {
-      const locationInfo = getLocationData(itinerary.location);
-      // Apply title case formatting to the location
-      const formattedLocation = toTitleCase(itinerary.location);
+    // Function to parse trek metadata from comments
+    function parseTrekMetadata(comments) {
+      if (!comments) return {};
       
-      // Check if the image exists
-      if (locationInfo.image) {
-        // Try to load the image first to check if it exists
-        const img = new Image();
-        img.src = locationInfo.image;
-        
-        return new Promise((resolve) => {
-          img.onload = () => {
-            // Image loaded successfully, use it
-            resolve(`
-              <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center" 
-                   style="background-image: url('${locationInfo.image}')">
-                <h3 class="text-xl font-bold p-4 bg-black bg-opacity-50 text-white rounded">${formattedLocation}</h3>
-              </div>
-            `);
-          };
-          
-          img.onerror = () => {
-            // Image failed to load, use gradient fallback
-            resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
-          };
-          
-          // If neither success nor error events fire after a timeout, use gradient
-          setTimeout(() => {
-            if (!img.complete) {
-              resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
-            }
-          }, 1000);
-        });
-      } else {
-        // No image specified, use gradient
-        return Promise.resolve(createGradientHeader(itinerary, locationInfo, formattedLocation));
+      const metadata = {};
+      
+      // Extract trek ID
+      const trekIdMatch = comments.match(/Trek ID: ([^.]+)/);
+      if (trekIdMatch) metadata.trekId = trekIdMatch[1].trim();
+      
+      // Extract image URL
+      const imageMatch = comments.match(/Image: ([^\s]+\.jpg)/);
+      if (imageMatch) {
+        metadata.trekImage = imageMatch[1].trim();
       }
+      
+      // Check if it's a popular trek
+      if (comments.includes('Popular trek saved from:')) {
+        metadata.isPopularTrek = true;
+        const nameMatch = comments.match(/Popular trek saved from: ([^.]+)/);
+        if (nameMatch) metadata.trekName = nameMatch[1].trim();
+      }
+      
+      return metadata;
     }
     
-    // Function to create a gradient header when no image is available
-    function createGradientHeader(itinerary, locationInfo, formattedLocation) {
+    // UPDATED Function to create a header for an itinerary card
+    function createCardHeader(itinerary) {
+      // Parse trek metadata from comments
+      const trekMeta = parseTrekMetadata(itinerary.comments);
+      const isPopularTrek = trekMeta.isPopularTrek || false;
+      
+      // Get structured title (location + subtitle)
+      const structuredTitle = getStructuredTrekTitle(itinerary.title, isPopularTrek);
+      const displayTitle = structuredTitle.title || 'Custom Itinerary';
+      const displaySubtitle = structuredTitle.subtitle || '';
+      
+      // Check for image in multiple possible fields
+      const imageUrl = itinerary.imageUrl || 
+                      itinerary.image || 
+                      itinerary.coverImage || 
+                      itinerary.cover_image ||
+                      itinerary.backgroundImage ||
+                      (isPopularTrek ? trekMeta.trekImage : null);
+      
+      // 1. If we have an image URL from any source, use it
+      if (imageUrl) {
+        return `
+          <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
+               style="background-image: url('${imageUrl}')">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="relative z-10 text-center">
+              <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
+              ${displaySubtitle ? `<p class="text-sm text-gray-200 opacity-90">${displaySubtitle}</p>` : ''}
+            </div>
+          </div>
+        `;
+      }
+      
+      // 2. For custom treks without saved images, try location-based images
+      const locationInfo = getLocationData(itinerary.location);
+      
+      if (!isPopularTrek && locationInfo.image) {
+        return `
+          <div class="h-32 bg-blue-100 flex items-center justify-center bg-cover bg-center relative" 
+               style="background-image: url('${locationInfo.image}')">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="relative z-10 text-center">
+              <h3 class="text-xl font-bold text-white mb-1">${displayTitle}</h3>
+              ${displaySubtitle ? `<p class="text-sm text-gray-200 opacity-90">${displaySubtitle}</p>` : ''}
+            </div>
+          </div>
+        `;
+      }
+      
+      // 3. Fallback to gradient
+      return createGradientHeader(itinerary, locationInfo, displayTitle, displaySubtitle, isPopularTrek);
+    }
+    
+    // Updated gradient header function to include subtitle
+    function createGradientHeader(itinerary, locationInfo, displayTitle, displaySubtitle, isPopularTrek) {
       return `
         <div class="h-32 flex items-center justify-center text-white relative overflow-hidden"
              style="background: ${locationInfo.gradient}">
           <div class="absolute right-3 bottom-3 text-4xl opacity-30">${locationInfo.icon}</div>
-          <h3 class="text-xl font-bold p-4 bg-black bg-opacity-30 rounded z-10">${formattedLocation}</h3>
+          <div class="z-10 text-center">
+            <h3 class="text-xl font-bold mb-1">${displayTitle}</h3>
+            ${displaySubtitle ? `<p class="text-sm opacity-90">${displaySubtitle}</p>` : ''}
+          </div>
         </div>
       `;
     }
 
-    // ✅ FIXED: Function to fetch itineraries with proper response handling
+    // Function to fetch itineraries
     async function fetchItineraries(user) {
       try {
         // First check if the API health endpoint is responding
         try {
-          const healthResponse = await fetch('https://trekai-api-staging.onrender.com/api/health');
+          const healthResponse = await fetch('https://trekai-api.onrender.com/api/health');
           if (!healthResponse.ok) {
             console.warn('API health check failed, continuing anyway...');
           }
         } catch (healthError) {
           console.error('API health check error:', healthError);
-          // Continue anyway - we'll try the main request
         }
 
         // Get fresh token
         const token = await user.getIdToken(true);
         
-        const response = await fetch('https://trekai-api-staging.onrender.com/api/itineraries', {
+        const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Accept': 'application/json'
@@ -476,20 +673,17 @@
           }
         }
         
-        // ✅ FIX: Handle the new response format with pagination
+        // Handle the new response format with pagination
         const responseData = await response.json();
         console.log('Raw response:', responseData); // Debug log
         
-        // Extract itineraries array from response - handle both old and new formats
+        // Extract itineraries array from response
         let itineraries;
         if (responseData.itineraries && Array.isArray(responseData.itineraries)) {
-          // New format with pagination
           itineraries = responseData.itineraries;
         } else if (Array.isArray(responseData)) {
-          // Old format - direct array
           itineraries = responseData;
         } else {
-          // Fallback
           itineraries = [];
         }
         
@@ -504,8 +698,8 @@
           // Clear loading skeletons
           container.innerHTML = '';
           
-          // Process itineraries with async/await to handle the image checking
-          for (const itinerary of itineraries) {
+          // Process itineraries
+          itineraries.forEach(itinerary => {
             // Create a date formatter
             const dateFormatter = new Intl.DateTimeFormat('en-US', {
               year: 'numeric',
@@ -516,28 +710,110 @@
             // Format the date
             const createdDate = dateFormatter.format(new Date(itinerary.createdAt));
             
-            // Get the card header (which may include an image check)
-            const cardHeader = await createCardHeader(itinerary);
+            // Get the card header
+            const cardHeader = createCardHeader(itinerary);
             
             // Create card for itinerary
             const card = document.createElement('div');
             card.className = 'bg-white rounded-lg shadow-md overflow-hidden itinerary-card';
+            
+            // Parse trek metadata from comments
+            const trekMeta = parseTrekMetadata(itinerary.comments);
+            const isPopularTrek = trekMeta.isPopularTrek || false;
+
+            // Determine the view URL based on type
+            let viewUrl;
+            if (isPopularTrek && trekMeta.trekId) {
+              viewUrl = `/output/treks/${trekMeta.trekId}.html`;
+            } else {
+              viewUrl = `view-itinerary.html?id=${itinerary._id}`;
+            }
+
+            // Parse trek details from content if available
+            let trekDetails = {};
+            if (itinerary.content) {
+              const durationMatch = itinerary.content.match(/Duration:\*\* (\d+)/);
+              const distanceMatch = itinerary.content.match(/Distance:\*\* (\d+)/);
+              const elevationMatch = itinerary.content.match(/Max Elevation:\*\* (\d+)/);
+              
+              if (durationMatch) trekDetails.duration = durationMatch[1];
+              if (distanceMatch) trekDetails.distance = distanceMatch[1];
+              if (elevationMatch) trekDetails.maxElevation = elevationMatch[1];
+            }
+
+            // Build card HTML with proper badge logic
             card.innerHTML = `
               ${cardHeader}
               <div class="p-4">
-                <p class="text-gray-600 text-sm mb-3">Created: ${createdDate}</p>
+                ${isPopularTrek ? `
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium flex items-center gap-1">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                      Popular Trek
+                    </span>
+                  </div>
+                ` : `
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium flex items-center gap-1">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                      </svg>
+                      Custom Trek
+                    </span>
+                  </div>
+                `}
+                
+                <p class="text-gray-600 text-sm mb-3">
+                  ${isPopularTrek ? 'Saved' : 'Created'}: ${createdDate}
+                </p>
+                
+                ${Object.keys(trekDetails).length > 0 ? `
+                  <div class="text-sm text-gray-600 mb-3 grid grid-cols-2 gap-2">
+                    ${trekDetails.duration ? `
+                      <div class="flex items-center gap-1">
+                        <span>📅</span>
+                        <span>${trekDetails.duration} days</span>
+                      </div>
+                    ` : ''}
+                    ${trekDetails.distance ? `
+                      <div class="flex items-center gap-1">
+                        <span>🥾</span>
+                        <span>${trekDetails.distance}km</span>
+                      </div>
+                    ` : ''}
+                    ${trekDetails.maxElevation ? `
+                      <div class="flex items-center gap-1">
+                        <span>🏔️</span>
+                        <span>${trekDetails.maxElevation}m</span>
+                      </div>
+                    ` : ''}
+                    ${itinerary.location ? `
+                      <div class="flex items-center gap-1">
+                        <span>📍</span>
+                        <span>${toTitleCase(itinerary.location)}</span>
+                      </div>
+                    ` : ''}
+                  </div>
+                ` : ''}
+                
                 <div class="flex flex-wrap gap-2 mb-4">
-                  ${itinerary.filters?.difficulty ? `<span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">${itinerary.filters.difficulty}</span>` : ''}
-                  ${itinerary.filters?.accommodation ? `<span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">${itinerary.filters.accommodation}</span>` : ''}
-                  ${itinerary.filters?.technical ? `<span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">${itinerary.filters.technical}</span>` : ''}
+                  ${itinerary.filters?.difficulty && itinerary.filters.difficulty !== 'none' ? `
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+                      ${itinerary.filters.difficulty}
+                    </span>
+                  ` : ''}
                 </div>
+                
                 <div class="flex gap-2">
-                  <a href="view-itinerary.html?id=${itinerary._id}" class="flex-1 flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                  <a href="${viewUrl}" 
+                     class="flex-1 flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                     </svg>
-                    View
+                    ${isPopularTrek ? 'View Trek' : 'View Itinerary'}
                   </a>
                   <button class="delete-btn flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 rounded-md transition-colors duration-200" data-id="${itinerary._id}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -549,7 +825,7 @@
             `;
             
             container.appendChild(card);
-          }
+          });
           
           // Add fade-in animation after all cards are loaded
           hideLoadingSkeletons();
@@ -574,21 +850,10 @@
             }
           });
           
-          // Add keyboard support for Escape key
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-              modal.classList.remove('active');
-              currentItineraryId = null;
-            }
-          });
-          
           // Set up delete buttons to show modal
           document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-              // Get the itinerary ID from the button's data attribute
               currentItineraryId = e.currentTarget.dataset.id;
-              
-              // Show the modal
               modal.classList.add('active');
             });
           });
@@ -600,7 +865,7 @@
             try {
               const token = await user.getIdToken();
               
-              const response = await fetch(`https://trekai-api-staging.onrender.com/api/itineraries/${currentItineraryId}`, {
+              const response = await fetch(`https://trekai-api.onrender.com/api/itineraries/${currentItineraryId}`, {
                 method: 'DELETE',
                 headers: {
                   'Authorization': `Bearer ${token}`
@@ -652,14 +917,12 @@
         });
       }
     }
-
   </script>
 
- <!-- Footer Container - This is where the footer will be inserted -->
+  <!-- Footer Container -->
   <div id="footer-container"></div>
 
   <script src="js/components/navbar.js" type="module"></script>
-    <!-- Add the Footer Component Script -->
   <script src="js/components/footer.js" type="module"></script>
 </body>
 </html>

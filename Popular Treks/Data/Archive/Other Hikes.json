@@ -1,0 +1,2806 @@
+[
+  {
+    "_id": "santa-cruz-trek",
+    "name": "Santa Cruz Trek",
+    "slug": "santa-cruz-trek",
+    "region": "Peru/Andes",
+    "country": "Peru",
+    "summary": "The crown jewel of the Cordillera Blanca, offering spectacular views of Peru's highest peaks, turquoise alpine lakes, and a challenging high-altitude pass through pristine wilderness.",
+    "duration": {
+      "min_days": 4,
+      "max_days": 5,
+      "recommended_days": 4
+    },
+    "distance_km": 50,
+    "difficulty": "moderate",
+    "max_elevation_m": 4750,
+    "starting_elevation_m": 3900,
+    "airport": "Lima (LIM)",
+    "nearest_city": "Huaraz",
+    "coordinates": {
+      "start": {
+        "lat": -8.9689,
+        "lng": -77.3928,
+        "location": "Cashapampa"
+      },
+      "end": {
+        "lat": -8.8681,
+        "lng": -77.7089,
+        "location": "Vaqueria"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Dry Season",
+        "months": ["May", "June", "July", "August", "September"],
+        "description": "Clear skies, stable weather, cold nights at altitude"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Cashapampa to Llamacorral",
+        "start_location": "Cashapampa",
+        "end_location": "Llamacorral",
+        "distance_km": 12,
+        "duration_hours": 5,
+        "elevation_start_m": 3900,
+        "elevation_end_m": 3760,
+        "elevation_gain_m": 100,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "camping",
+          "options": ["Llamacorral campsite"]
+        },
+        "meals_included": ["lunch", "dinner"],
+        "highlights": [
+          "Santa Cruz valley entrance",
+          "Alpamayo views",
+          "River valley hiking",
+          "Acclimatization day"
+        ],
+        "description": "Drive from Huaraz to Cashapampa (3 hours). Begin gentle valley walk along the Santa Cruz river with first views of surrounding peaks including the perfect pyramid of Alpamayo."
+      },
+      {
+        "day": 2,
+        "title": "Llamacorral to Taullipampa",
+        "start_location": "Llamacorral",
+        "end_location": "Taullipampa",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 3760,
+        "elevation_end_m": 4250,
+        "elevation_gain_m": 490,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "camping",
+          "options": ["Taullipampa campsite"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Laguna Jatuncocha",
+          "Taulliraju views (5,830m)",
+          "Alpine meadows",
+          "360-degree mountain panorama"
+        ],
+        "description": "Steady climb through the valley passing beautiful Jatuncocha lake. Camp at Taullipampa with incredible views of Taulliraju, Paria, and surrounding peaks."
+      },
+      {
+        "day": 3,
+        "title": "Taullipampa to Paria Valley via Punta Union",
+        "start_location": "Taullipampa",
+        "end_location": "Paria Valley",
+        "distance_km": 15,
+        "duration_hours": 8,
+        "elevation_start_m": 4250,
+        "elevation_end_m": 3850,
+        "elevation_gain_m": 500,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "camping",
+          "options": ["Paria campsite"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Punta Union Pass (4,750m)",
+          "Spectacular 360° views",
+          "Laguna Morococha",
+          "Dramatic descent"
+        ],
+        "description": "Early start for the challenging climb to Punta Union Pass. Breathtaking panoramic views from the top before descending into the remote Paria valley."
+      },
+      {
+        "day": 4,
+        "title": "Paria Valley to Vaqueria",
+        "start_location": "Paria Valley",
+        "end_location": "Vaqueria",
+        "distance_km": 9,
+        "duration_hours": 3,
+        "elevation_start_m": 3850,
+        "elevation_end_m": 3700,
+        "elevation_gain_m": -150,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "end point",
+          "options": ["Return to Huaraz"]
+        },
+        "meals_included": ["breakfast", "lunch"],
+        "highlights": [
+          "Gentle valley descent",
+          "Rural Andean life",
+          "Trek completion",
+          "Transport to Huaraz"
+        ],
+        "description": "Easy final morning through pastoral landscapes to Vaqueria. Meet transport for return to Huaraz (3 hours), arriving mid-afternoon."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "4-season tent",
+          "description": "Wind-resistant for exposed camps",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "-15°C rated for cold nights",
+          "rental_available": true
+        },
+        {
+          "item": "Waterproof boots",
+          "description": "Stream crossings common",
+          "rental_available": true
+        },
+        {
+          "item": "Layers for all weather",
+          "description": "Can snow at pass anytime",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Intense at altitude",
+          "rental_available": false
+        },
+        {
+          "item": "Water purification",
+          "description": "Tablets or filter",
+          "rental_available": false
+        },
+        {
+          "item": "Trekking poles",
+          "description": "Very helpful for pass day",
+          "rental_available": true
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Gaiters",
+          "description": "For stream crossings",
+          "rental_available": false
+        },
+        {
+          "item": "Down jacket",
+          "description": "Cold at camps",
+          "rental_available": true
+        },
+        {
+          "item": "Camera with extra batteries",
+          "description": "Spectacular scenery",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Huascaran National Park Entry",
+        "cost_usd": 30,
+        "cost_pen": 90,
+        "where_to_obtain": "Park office in Huaraz or entrance",
+        "validity": "Valid for 21 days"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 30,
+      "guide_daily_usd": 50,
+      "cook_daily_usd": 30,
+      "muleteer_daily_usd": 25,
+      "pack_animal_daily_usd": 15,
+      "accommodation_daily_usd": 5,
+      "meals_daily_usd": 20,
+      "transportation_usd": 60,
+      "total_budget_range_usd": {
+        "min": 200,
+        "max": 600
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Quechua", "Mestizo"],
+      "primary_religion": "Catholic with Andean traditions",
+      "languages": ["Spanish", "Quechua", "Limited English"],
+      "customs_etiquette": [
+        "Respect mountain spirits (Apus)",
+        "Ask permission before photographing locals",
+        "Support local economy",
+        "Participate in coca leaf offerings if invited"
+      ],
+      "local_foods": [
+        {
+          "name": "Pachamanca",
+          "description": "Earth oven cooked feast"
+        },
+        {
+          "name": "Cuy",
+          "description": "Guinea pig delicacy"
+        },
+        {
+          "name": "Quinoa soup",
+          "description": "High-altitude superfood"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "high",
+        "prevention": [
+          "Acclimatize in Huaraz (3,100m) for 2-3 days",
+          "Consider day hikes first",
+          "Climb slowly on pass day",
+          "Stay hydrated",
+          "Consider Diamox"
+        ],
+        "critical_points": ["Punta Union Pass day"]
+      },
+      "medical_facilities": [
+        {
+          "location": "Trail",
+          "type": "None - remote area"
+        },
+        {
+          "location": "Huaraz",
+          "type": "Good hospitals and clinics"
+        }
+      ],
+      "evacuation": {
+        "method": "Horse/mule to road, then vehicle",
+        "cost_usd": "1000-3000",
+        "insurance_required": true,
+        "response_time": "6-12 hours"
+      }
+    },
+    "weather_patterns": {
+      "dry_season": {
+        "months": ["May", "June", "July", "August", "September"],
+        "day_temp_c": "15 to 20",
+        "night_temp_c": "-5 to 5",
+        "precipitation": "Minimal",
+        "notes": "Can snow at pass anytime"
+      },
+      "wet_season": {
+        "months": ["October", "November", "December", "January", "February", "March", "April"],
+        "day_temp_c": "10 to 18",
+        "night_temp_c": "0 to 8",
+        "precipitation": "Daily afternoon rain",
+        "notes": "Trail muddy, clouds obscure views"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Private transport",
+          "from": "Huaraz",
+          "to": "Cashapampa",
+          "duration": "3 hours",
+          "cost_usd": 30,
+          "notes": "Usually arranged with guide/agency"
+        }
+      ],
+      "from_end": [
+        {
+          "method": "Private transport",
+          "from": "Vaqueria",
+          "to": "Huaraz",
+          "duration": "3 hours",
+          "cost_usd": 30,
+          "notes": "Pre-arranged pickup essential"
+        }
+      ]
+    },
+    "accommodation": {
+      "type": "Camping only",
+      "description": "Designated camping areas",
+      "amenities": [
+        "Flat tent sites",
+        "Water sources nearby",
+        "Basic toilet facilities at some sites",
+        "No showers on trail",
+        "Pack out all waste"
+      ],
+      "booking": "First come, first served",
+      "cost_per_night_usd": {
+        "camping": "5"
+      }
+    },
+    "difficulty_details": {
+      "physical_demands": "Good fitness for altitude and pass day",
+      "technical_skills": "None required",
+      "altitude_challenge": "Significant - proper acclimatization essential",
+      "trail_conditions": "Well-defined path, rocky on pass",
+      "daily_hiking_hours": "5-8 hours",
+      "total_elevation_gain": 1200,
+      "total_elevation_loss": 1350
+    },
+    "alternative_routes": [
+      {
+        "name": "Alpamayo Circuit",
+        "variation": "Extended version via Alpamayo base camp",
+        "extra_days": 3,
+        "highlights": ["See Alpamayo up close", "More remote", "Additional passes"]
+      },
+      {
+        "name": "Santa Cruz-Llanganuco",
+        "variation": "Exit via Llanganuco",
+        "extra_days": 0,
+        "highlights": ["Different exit valley", "Laguna 69 option", "Transport flexibility"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Taullipampa camp",
+        "best_time": "Sunrise/sunset",
+        "subjects": ["Taulliraju", "Alpenglow on peaks", "Star photography"]
+      },
+      {
+        "location": "Punta Union Pass",
+        "best_time": "Morning",
+        "subjects": ["360° panorama", "Both valleys", "Achievement shots"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How does this compare to the Inca Trail?",
+        "answer": "More focused on mountain scenery than culture. Higher altitude, more remote, arguably more spectacular peaks. No permits needed, less crowded."
+      },
+      {
+        "question": "Can I do it independently?",
+        "answer": "Yes, but most hire arrieros (muleteers) for gear transport. Solo trekkers should be experienced with navigation and altitude."
+      },
+      {
+        "question": "Is acclimatization really necessary?",
+        "answer": "Absolutely. The pass is nearly 4,800m. Spend at least 2-3 days in Huaraz first, ideally doing day hikes like Laguna 69."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 85,
+    "seo": {
+      "meta_title": "Santa Cruz Trek Guide 2024 | Cordillera Blanca Peru Trekking",
+      "meta_description": "Complete guide to Peru's Santa Cruz Trek in the Cordillera Blanca. 4-day alpine trek through spectacular mountain scenery with Punta Union Pass.",
+      "keywords": ["santa cruz trek", "cordillera blanca", "peru trekking", "huaraz hiking", "punta union pass"]
+    }
+  },
+  {
+    "_id": "gr20-corsica",
+    "name": "GR20",
+    "slug": "gr20-corsica",
+    "region": "European Alps",
+    "country": "France",
+    "summary": "Europe's toughest long-distance trail, crossing Corsica from north to south through rugged mountains, offering spectacular scenery and a true wilderness challenge.",
+    "duration": {
+      "min_days": 12,
+      "max_days": 16,
+      "recommended_days": 15
+    },
+    "distance_km": 180,
+    "difficulty": "very challenging",
+    "max_elevation_m": 2706,
+    "starting_elevation_m": 580,
+    "airport": "Calvi (CLY) or Bastia (BIA)",
+    "nearest_city": "Calenzana/Conca",
+    "coordinates": {
+      "start": {
+        "lat": 42.5075,
+        "lng": 8.9486,
+        "location": "Calenzana"
+      },
+      "end": {
+        "lat": 41.7669,
+        "lng": 9.3453,
+        "location": "Conca"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Summer",
+        "months": ["June", "July", "August", "September"],
+        "description": "Snow-free passes, all refuges open, can be very hot"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Calenzana to Refuge Ortu di u Piobbu",
+        "start_location": "Calenzana",
+        "end_location": "Refuge Ortu di u Piobbu",
+        "distance_km": 11,
+        "duration_hours": 7,
+        "elevation_start_m": 275,
+        "elevation_end_m": 1520,
+        "elevation_gain_m": 1245,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge Ortu di u Piobbu", "Wild camping"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Steep ascent from sea level",
+          "First mountain views",
+          "Introduction to GR20 terrain",
+          "Mediterranean to alpine transition"
+        ],
+        "description": "Tough first day with major elevation gain. The trail climbs steeply through maquis scrubland and forest to reach the first mountain refuge."
+      },
+      {
+        "day": 2,
+        "title": "Ortu di u Piobbu to Refuge de Carozzu",
+        "start_location": "Refuge Ortu di u Piobbu",
+        "end_location": "Refuge de Carozzu",
+        "distance_km": 8,
+        "duration_hours": 6,
+        "elevation_start_m": 1520,
+        "elevation_end_m": 1270,
+        "elevation_gain_m": 600,
+        "difficulty": "very challenging",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de Carozzu"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Technical rocky terrain",
+          "Scrambling sections",
+          "Mountain ridges",
+          "Spectacular views"
+        ],
+        "description": "Technical day with scrambling over granite slabs and boulders. The infamous Spasimata slabs require careful footwork, especially when wet."
+      },
+      {
+        "day": 3,
+        "title": "Carozzu to Refuge d'Asco Stagnu",
+        "start_location": "Refuge de Carozzu",
+        "end_location": "Refuge d'Asco Stagnu",
+        "distance_km": 6,
+        "duration_hours": 7,
+        "elevation_start_m": 1270,
+        "elevation_end_m": 1422,
+        "elevation_gain_m": 850,
+        "difficulty": "very challenging",
+        "accommodation": {
+          "type": "refuge/hotel",
+          "options": ["Refuge d'Asco Stagnu", "Hotel le Chalet"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Suspension bridge crossing",
+          "Muvrella summit option",
+          "Cirque de Bonifatu",
+          "Supply point at Asco"
+        ],
+        "description": "Short but intense day featuring a swinging suspension bridge and steep climbs. Haut Asco offers chance to resupply and rest."
+      },
+      {
+        "day": 4,
+        "title": "Asco to Refuge Tighjettu",
+        "start_location": "Refuge d'Asco Stagnu",
+        "end_location": "Refuge Tighjettu",
+        "distance_km": 9,
+        "duration_hours": 8,
+        "elevation_start_m": 1422,
+        "elevation_end_m": 1683,
+        "elevation_gain_m": 1000,
+        "difficulty": "extremely challenging",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge Tighjettu"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Monte Cinto ascent option",
+          "Highest point of GR20",
+          "Technical terrain",
+          "Alpine environment"
+        ],
+        "description": "One of the toughest stages with technical scrambling. Option to climb Monte Cinto (2,706m), Corsica's highest peak."
+      },
+      {
+        "day": 5,
+        "title": "Tighjettu to Refuge de Ciottulu",
+        "start_location": "Refuge Tighjettu",
+        "end_location": "Refuge de Ciottulu",
+        "distance_km": 7,
+        "duration_hours": 4,
+        "elevation_start_m": 1683,
+        "elevation_end_m": 1991,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de Ciottulu"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Easier day for recovery",
+          "Beautiful ridge walking",
+          "Paglia Orba views",
+          "Alpine lakes"
+        ],
+        "description": "Welcome easier stage along ridges with spectacular views. Good for recovery before challenging days ahead."
+      },
+      {
+        "day": 6,
+        "title": "Ciottulu to Refuge de Manganu",
+        "start_location": "Refuge de Ciottulu",
+        "end_location": "Refuge de Manganu",
+        "distance_km": 24,
+        "duration_hours": 8,
+        "elevation_start_m": 1991,
+        "elevation_end_m": 1601,
+        "elevation_gain_m": 600,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de Manganu"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Longest stage",
+          "Lac de Nino",
+          "Pozzi (mountain pools)",
+          "Varied terrain"
+        ],
+        "description": "Long but less technical day passing beautiful Lac de Nino with its pozzi - grassy areas with mountain pools where horses graze."
+      },
+      {
+        "day": 7,
+        "title": "Manganu to Refuge de Petra Piana",
+        "start_location": "Refuge de Manganu",
+        "end_location": "Refuge de Petra Piana",
+        "distance_km": 9,
+        "duration_hours": 5,
+        "elevation_start_m": 1601,
+        "elevation_end_m": 1842,
+        "elevation_gain_m": 600,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de Petra Piana"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Breche de Capitellu",
+          "Ridge walking",
+          "Mountain lakes",
+          "Easier terrain"
+        ],
+        "description": "Pleasant stage with beautiful ridge sections and mountain lakes. More straightforward walking compared to northern stages."
+      },
+      {
+        "day": 8,
+        "title": "Petra Piana to Refuge de l'Onda",
+        "start_location": "Refuge de Petra Piana",
+        "end_location": "Refuge de l'Onda",
+        "distance_km": 10,
+        "duration_hours": 5,
+        "elevation_start_m": 1842,
+        "elevation_end_m": 1430,
+        "elevation_gain_m": 300,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de l'Onda"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Mount Rotondo views",
+          "Alpine meadows",
+          "Swimming holes",
+          "Vizzavona approach"
+        ],
+        "description": "Scenic descent towards Vizzavona, the halfway point. Beautiful swimming holes for a refreshing dip."
+      },
+      {
+        "day": 9,
+        "title": "L'Onda to Vizzavona",
+        "start_location": "Refuge de l'Onda",
+        "end_location": "Vizzavona",
+        "distance_km": 11,
+        "duration_hours": 5,
+        "elevation_start_m": 1430,
+        "elevation_end_m": 910,
+        "elevation_gain_m": 200,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel/gite",
+          "options": ["Hotel I Larici", "Gite d'etape", "Casa Natura"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Cascade des Anglais",
+          "Forest walking",
+          "Vizzavona village",
+          "Resupply opportunity"
+        ],
+        "description": "Descent through beautiful forests to Vizzavona village. Major resupply point and chance for comfort at halfway mark."
+      },
+      {
+        "day": 10,
+        "title": "Vizzavona to Refuge de Capannelle",
+        "start_location": "Vizzavona",
+        "end_location": "Refuge de Capannelle",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 910,
+        "elevation_end_m": 1586,
+        "elevation_gain_m": 900,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de Capannelle"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Monte d'Oro views",
+          "Beech forests",
+          "Alpine plateaus",
+          "Southern GR20 begins"
+        ],
+        "description": "Begin the southern section with steady climb through forests to alpine plateaus. Generally easier terrain than the north."
+      },
+      {
+        "day": 11,
+        "title": "Capannelle to Refuge de Prati",
+        "start_location": "Refuge de Capannelle",
+        "end_location": "Refuge de Prati",
+        "distance_km": 17,
+        "duration_hours": 7,
+        "elevation_start_m": 1586,
+        "elevation_end_m": 1820,
+        "elevation_gain_m": 700,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge de Prati"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Plateau de Cuscione",
+          "Pozzi areas",
+          "Vast open landscapes",
+          "Wild horses"
+        ],
+        "description": "Beautiful stage across high plateaus with pozzi and possible wild horse sightings. Very different character from the north."
+      },
+      {
+        "day": 12,
+        "title": "Prati to Refuge d'Usciolu",
+        "start_location": "Refuge de Prati",
+        "end_location": "Refuge d'Usciolu",
+        "distance_km": 11,
+        "duration_hours": 6,
+        "elevation_start_m": 1820,
+        "elevation_end_m": 1750,
+        "elevation_gain_m": 600,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge d'Usciolu"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Monte Furmicula option",
+          "Ridge walking",
+          "Coastal views appear",
+          "Dramatic position"
+        ],
+        "description": "Spectacular ridge walking with first views of both coasts. Refuge d'Usciolu has one of the best positions on the trail."
+      },
+      {
+        "day": 13,
+        "title": "Usciolu to Refuge d'Asinau",
+        "start_location": "Refuge d'Usciolu",
+        "end_location": "Refuge d'Asinau",
+        "distance_km": 11,
+        "duration_hours": 7,
+        "elevation_start_m": 1750,
+        "elevation_end_m": 1530,
+        "elevation_gain_m": 700,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "refuge",
+          "options": ["Refuge d'Asinau"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Arête a Monda ridge",
+          "Technical sections return",
+          "Monte Alcudina",
+          "Alpine environment"
+        ],
+        "description": "Return of technical terrain with exposed ridge sections. Beautiful but demanding day through high mountains."
+      },
+      {
+        "day": 14,
+        "title": "Asinau to Refuge de Paliri",
+        "start_location": "Refuge d'Asinau",
+        "end_location": "Refuge de Paliri",
+        "distance_km": 15,
+        "duration_hours": 8,
+        "elevation_start_m": 1530,
+        "elevation_end_m": 1055,
+        "elevation_gain_m": 600,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "refuge/gite",
+          "options": ["Refuge de Paliri", "Village de Bavella option"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Aiguilles de Bavella",
+          "Alpine variant option",
+          "Dramatic rock formations",
+          "Last mountain refuge"
+        ],
+        "description": "Spectacular day passing the famous Bavella needles. Technical alpine variant available for experienced hikers."
+      },
+      {
+        "day": 15,
+        "title": "Paliri to Conca",
+        "start_location": "Refuge de Paliri",
+        "end_location": "Conca",
+        "distance_km": 12,
+        "duration_hours": 5,
+        "elevation_start_m": 1055,
+        "elevation_end_m": 252,
+        "elevation_gain_m": 100,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "gite/hotel",
+          "options": ["Gite d'etape Conca", "Hotels in Porto-Vecchio"]
+        },
+        "meals_included": [],
+        "highlights": [
+          "Final descent",
+          "Mediterranean vegetation",
+          "Trail completion",
+          "Celebration in Conca"
+        ],
+        "description": "Final descent through maquis to Conca village. Celebrate completing one of Europe's toughest trails!"
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Sturdy hiking boots",
+          "description": "Ankle support crucial for rocky terrain",
+          "rental_available": false
+        },
+        {
+          "item": "Lightweight tent",
+          "description": "If camping to save money",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "Summer weight sufficient",
+          "rental_available": true
+        },
+        {
+          "item": "Trekking poles",
+          "description": "Essential for technical sections",
+          "rental_available": true
+        },
+        {
+          "item": "First aid kit",
+          "description": "Comprehensive for remote areas",
+          "rental_available": false
+        },
+        {
+          "item": "Water capacity 3L",
+          "description": "Sources can be far apart",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Intense exposure on ridges",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Gaiters",
+          "description": "Protection from scratchy maquis",
+          "rental_available": false
+        },
+        {
+          "item": "Lightweight shoes",
+          "description": "For refuge/camp",
+          "rental_available": false
+        },
+        {
+          "item": "Duct tape",
+          "description": "Gear repairs",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "None required",
+        "cost_usd": 0,
+        "notes": "But refuge bookings essential in peak season"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 0,
+      "guide_daily_usd": 150,
+      "accommodation_daily_usd": 15,
+      "meals_daily_usd": 40,
+      "transportation_usd": 100,
+      "total_budget_range_usd": {
+        "min": 600,
+        "max": 1500
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Corsican", "French"],
+      "primary_religion": "Catholic",
+      "languages": ["French", "Corsican", "Limited English"],
+      "customs_etiquette": [
+        "Respect refuge rules",
+        "Help with communal tasks",
+        "Quiet hours strictly observed",
+        "Pack out all trash",
+        "Yield to uphill hikers"
+      ],
+      "local_foods": [
+        {
+          "name": "Brocciu",
+          "description": "Fresh sheep/goat cheese"
+        },
+        {
+          "name": "Figatellu",
+          "description": "Corsican liver sausage"
+        },
+        {
+          "name": "Pietra beer",
+          "description": "Local chestnut beer"
+        },
+        {
+          "name": "Canistrelli",
+          "description": "Traditional cookies"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "low",
+        "notes": "Maximum 2,706m rarely causes issues"
+      },
+      "main_concerns": {
+        "technical_terrain": {
+          "risk_level": "very high",
+          "description": "Scrambling, exposure, loose rock",
+          "prevention": [
+            "Take your time",
+            "Use poles for balance",
+            "Proper footwear essential",
+            "Consider guide if inexperienced"
+          ]
+        },
+        "heat": {
+          "risk_level": "high",
+          "description": "Can be very hot in summer",
+          "prevention": [
+            "Start very early",
+            "Carry 3L water minimum",
+            "Electrolyte replacement",
+            "Rest in shade during hottest hours"
+          ]
+        },
+        "weather": {
+          "risk_level": "high",
+          "description": "Violent thunderstorms possible",
+          "prevention": [
+            "Check forecasts at refuges",
+            "Start early to avoid afternoon storms",
+            "Know escape routes",
+            "Carry emergency shelter"
+          ]
+        }
+      },
+      "evacuation": {
+        "method": "Helicopter",
+        "cost_usd": "2000-4000",
+        "insurance_required": true,
+        "response_time": "Several hours"
+      }
+    },
+    "weather_patterns": {
+      "summer": {
+        "months": ["June", "July", "August", "September"],
+        "day_temp_c": "25 to 35",
+        "night_temp_c": "10 to 20",
+        "precipitation": "Afternoon storms common",
+        "notes": "Very hot at low elevations"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Bus",
+          "from": "Calvi",
+          "to": "Calenzana",
+          "duration": "15 minutes",
+          "cost_usd": 5,
+          "frequency": "Several daily"
+        }
+      ],
+      "from_end": [
+        {
+          "method": "Shuttle/Bus",
+          "from": "Conca",
+          "to": "Porto-Vecchio",
+          "duration": "1 hour",
+          "cost_usd": 20,
+          "frequency": "Pre-arrange"
+        }
+      ]
+    },
+    "accommodation": {
+      "type": "Mountain refuges and camping",
+      "description": "Basic refuges or wild camping",
+      "amenities": [
+        "Bunk beds in refuges",
+        "Basic meals available",
+        "Cold showers (maybe)",
+        "Camping near refuges allowed",
+        "Very basic facilities"
+      ],
+      "booking": "Essential for refuges in summer",
+      "cost_per_night_usd": {
+        "refuge_bed": "15-20",
+        "camping": "7-10",
+        "half_board": "45-55"
+      }
+    },
+    "difficulty_details": {
+      "physical_demands": "Excellent fitness essential",
+      "technical_skills": "Scrambling experience helpful",
+      "altitude_challenge": "Minimal",
+      "trail_conditions": "Rocky, technical, exposed sections",
+      "daily_hiking_hours": "6-8 hours",
+      "total_elevation_gain": 13000,
+      "total_elevation_loss": 13000
+    },
+    "alternative_routes": [
+      {
+        "name": "North-South sections",
+        "variation": "Do only north or south",
+        "fewer_days": 7,
+        "highlights": ["More manageable", "North is harder", "South more scenic"]
+      },
+      {
+        "name": "Mare a Mare",
+        "variation": "Easier coast-to-coast",
+        "fewer_days": 8,
+        "highlights": ["Less technical", "Village stays", "Cultural focus"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Cirque de la Solitude",
+        "best_time": "Morning",
+        "subjects": ["Technical terrain", "Dramatic cirque", "Achievement shots"]
+      },
+      {
+        "location": "Aiguilles de Bavella",
+        "best_time": "Sunset",
+        "subjects": ["Rock spires", "Alpine glow", "Dramatic formations"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is it really that difficult?",
+        "answer": "Yes. The GR20 is extremely challenging with technical scrambling, long days, and basic facilities. Many underestimate it and quit. Proper fitness and experience essential."
+      },
+      {
+        "question": "North to south or south to north?",
+        "answer": "North to south is traditional and recommended. The north is harder, so you tackle it while fresh. South has easier escape options if needed."
+      },
+      {
+        "question": "Refuges or camping?",
+        "answer": "Refuges book up but guarantee a bed and meals. Camping is cheaper and always available but means carrying more gear on tough terrain."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 89,
+    "seo": {
+      "meta_title": "GR20 Corsica Complete Guide 2024 | Europe's Toughest Trek",
+      "meta_description": "Complete guide to hiking the GR20 across Corsica. Detailed 15-day itinerary for Europe's most challenging trek through rugged mountain wilderness.",
+      "keywords": ["gr20 corsica", "corsica hiking", "gr20 trail", "europe toughest trek", "corsica mountains"]
+    }
+  },
+  {
+    "_id": "gokyo-lakes-trek",
+    "name": "Gokyo Lakes Trek",
+    "slug": "gokyo-lakes-trek",
+    "region": "Nepal/Himalayas",
+    "country": "Nepal",
+    "summary": "A stunning alternative to Everest Base Camp, featuring turquoise glacial lakes, the challenging Gokyo Ri viewpoint, and incredible views of four 8,000m peaks.",
+    "duration": {
+      "min_days": 12,
+      "max_days": 14,
+      "recommended_days": 12
+    },
+    "distance_km": 90,
+    "difficulty": "moderate",
+    "max_elevation_m": 5357,
+    "starting_elevation_m": 2860,
+    "airport": "Lukla (LUA)",
+    "nearest_city": "Kathmandu",
+    "coordinates": {
+      "start": {
+        "lat": 27.6870,
+        "lng": 86.7319,
+        "location": "Lukla"
+      },
+      "end": {
+        "lat": 27.9538,
+        "lng": 86.6936,
+        "location": "Gokyo"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Autumn",
+        "months": ["September", "October", "November"],
+        "description": "Clear skies, best mountain views, stable weather"
+      },
+      {
+        "name": "Spring",
+        "months": ["March", "April", "May"],
+        "description": "Rhododendrons bloom, good weather, busier trails"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Fly to Lukla, Trek to Phakding",
+        "start_location": "Kathmandu",
+        "end_location": "Phakding",
+        "distance_km": 8,
+        "duration_hours": 3,
+        "elevation_start_m": 2860,
+        "elevation_end_m": 2610,
+        "elevation_gain_m": -250,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Sherpa Guide Lodge", "Buddha Lodge", "Himalaya Lodge"]
+        },
+        "meals_included": ["lunch", "dinner"],
+        "highlights": [
+          "Thrilling Lukla flight",
+          "Dudh Koshi valley",
+          "Prayer wheels and mani walls",
+          "Gentle introduction"
+        ],
+        "description": "Fly to Lukla early morning. Easy descent through villages along the Dudh Koshi river to Phakding."
+      },
+      {
+        "day": 2,
+        "title": "Phakding to Namche Bazaar",
+        "start_location": "Phakding",
+        "end_location": "Namche Bazaar",
+        "distance_km": 11,
+        "duration_hours": 6,
+        "elevation_start_m": 2610,
+        "elevation_end_m": 3440,
+        "elevation_gain_m": 830,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Khumbu Lodge", "Namche Hotel", "Himalaya Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Hillary Bridge crossing",
+          "First Everest views",
+          "Enter Sagarmatha National Park",
+          "Namche Bazaar"
+        ],
+        "description": "Cross several suspension bridges before steep climb to Namche. First glimpses of Everest if weather permits."
+      },
+      {
+        "day": 3,
+        "title": "Acclimatization Day in Namche",
+        "start_location": "Namche Bazaar",
+        "end_location": "Namche Bazaar",
+        "distance_km": 0,
+        "duration_hours": 0,
+        "elevation_start_m": 3440,
+        "elevation_end_m": 3440,
+        "elevation_gain_m": 0,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Hike to Everest View Hotel",
+          "Visit Sherpa Museum",
+          "Explore markets",
+          "Acclimatization walks"
+        ],
+        "description": "Important acclimatization day. Options include hiking to Everest View Hotel or exploring Khumjung village."
+      },
+      {
+        "day": 4,
+        "title": "Namche to Dole",
+        "start_location": "Namche Bazaar",
+        "end_location": "Dole",
+        "distance_km": 10,
+        "duration_hours": 6,
+        "elevation_start_m": 3440,
+        "elevation_end_m": 4200,
+        "elevation_gain_m": 760,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Dole Guest House", "Himalaya Lodge", "Basic lodges"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Leave main EBC trail",
+          "Quieter paths",
+          "Mongla pass views",
+          "Rhododendron forests"
+        ],
+        "description": "Climb steeply out of Namche to Mongla pass, then traverse to Dole. Much quieter than main EBC route."
+      },
+      {
+        "day": 5,
+        "title": "Dole to Machhermo",
+        "start_location": "Dole",
+        "end_location": "Machhermo",
+        "distance_km": 8,
+        "duration_hours": 5,
+        "elevation_start_m": 4200,
+        "elevation_end_m": 4470,
+        "elevation_gain_m": 270,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Machhermo Guest House", "Himalaya Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Alpine scenery",
+          "Yak pastures",
+          "Mountain views expanding",
+          "HRA health post"
+        ],
+        "description": "Steady climb through beautiful alpine terrain. Machhermo has a health post with altitude talks."
+      },
+      {
+        "day": 6,
+        "title": "Machhermo to Gokyo",
+        "start_location": "Machhermo",
+        "end_location": "Gokyo",
+        "distance_km": 7,
+        "duration_hours": 4,
+        "elevation_start_m": 4470,
+        "elevation_end_m": 4800,
+        "elevation_gain_m": 330,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Gokyo Resort", "Namaste Lodge", "Cho Oyu Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "First Gokyo lake",
+          "Ngozumpa Glacier",
+          "Arrival at Gokyo",
+          "Turquoise lakes"
+        ],
+        "description": "Pass the first two Gokyo lakes before reaching Gokyo village on the shore of the third lake."
+      },
+      {
+        "day": 7,
+        "title": "Gokyo Ri Climb",
+        "start_location": "Gokyo",
+        "end_location": "Gokyo",
+        "distance_km": 4,
+        "duration_hours": 5,
+        "elevation_start_m": 4800,
+        "elevation_end_m": 5357,
+        "elevation_gain_m": 557,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Gokyo Ri summit",
+          "Four 8000m peaks visible",
+          "Everest views",
+          "Sunrise option"
+        ],
+        "description": "Pre-dawn start to climb Gokyo Ri for sunrise. Spectacular 360° views including Everest, Lhotse, Makalu, and Cho Oyu."
+      },
+      {
+        "day": 8,
+        "title": "Explore 4th and 5th Lakes",
+        "start_location": "Gokyo",
+        "end_location": "Gokyo",
+        "distance_km": 12,
+        "duration_hours": 6,
+        "elevation_start_m": 4800,
+        "elevation_end_m": 5000,
+        "elevation_gain_m": 200,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "4th and 5th Gokyo lakes",
+          "Cho Oyu base camp views",
+          "Ngozumpa Glacier",
+          "Remote scenery"
+        ],
+        "description": "Optional day hike to the upper lakes. The 5th lake offers incredible views of Cho Oyu and the glacier."
+      },
+      {
+        "day": 9,
+        "title": "Gokyo to Dole",
+        "start_location": "Gokyo",
+        "end_location": "Dole",
+        "distance_km": 15,
+        "duration_hours": 6,
+        "elevation_start_m": 4800,
+        "elevation_end_m": 4200,
+        "elevation_gain_m": -600,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Dole Guest House", "Himalaya Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Rapid descent",
+          "Retracing steps",
+          "Easier breathing",
+          "Familiar terrain"
+        ],
+        "description": "Retrace steps down valley, enjoying easier breathing at lower altitude. Long but mostly downhill day."
+      },
+      {
+        "day": 10,
+        "title": "Dole to Namche Bazaar",
+        "start_location": "Dole",
+        "end_location": "Namche Bazaar",
+        "distance_km": 10,
+        "duration_hours": 5,
+        "elevation_start_m": 4200,
+        "elevation_end_m": 3440,
+        "elevation_gain_m": -760,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Khumbu Lodge", "Namche Hotel"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Return to civilization",
+          "Hot showers",
+          "Bakeries and cafes",
+          "Internet access"
+        ],
+        "description": "Descend through forests back to bustling Namche Bazaar. Celebrate with good food and comfort."
+      },
+      {
+        "day": 11,
+        "title": "Namche to Lukla",
+        "start_location": "Namche Bazaar",
+        "end_location": "Lukla",
+        "distance_km": 19,
+        "duration_hours": 7,
+        "elevation_start_m": 3440,
+        "elevation_end_m": 2860,
+        "elevation_gain_m": -580,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Numbur Lodge", "Buddha Lodge", "Lukla Resort"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Final trekking day",
+          "Cross Hillary Bridge",
+          "Celebration in Lukla",
+          "Trek completion"
+        ],
+        "description": "Long final day retracing steps to Lukla. Traditional celebration with trekking crew in evening."
+      },
+      {
+        "day": 12,
+        "title": "Fly to Kathmandu",
+        "start_location": "Lukla",
+        "end_location": "Kathmandu",
+        "distance_km": 0,
+        "duration_hours": 0.5,
+        "elevation_start_m": 2860,
+        "elevation_end_m": 1400,
+        "elevation_gain_m": -1460,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Return to Kathmandu hotel"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Mountain flight",
+          "Return to Kathmandu",
+          "Hot shower",
+          "Celebration dinner"
+        ],
+        "description": "Morning flight back to Kathmandu, weather permitting. Rest of day free to relax and celebrate."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Trekking boots",
+          "description": "Waterproof with good ankle support",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "-15°C rated for cold nights",
+          "rental_available": true
+        },
+        {
+          "item": "Down jacket",
+          "description": "Essential for mornings/evenings",
+          "rental_available": true
+        },
+        {
+          "item": "Base layers",
+          "description": "Thermal underwear sets",
+          "rental_available": false
+        },
+        {
+          "item": "Waterproof jacket/pants",
+          "description": "Weather can change quickly",
+          "rental_available": true
+        },
+        {
+          "item": "Daypack",
+          "description": "25-35 liters",
+          "rental_available": true
+        },
+        {
+          "item": "Water bottles/hydration",
+          "description": "3 liter capacity",
+          "rental_available": false
+        },
+        {
+          "item": "Headlamp",
+          "description": "For early morning starts",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Hat, sunglasses, sunscreen",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Trekking poles",
+          "description": "Very helpful for descents",
+          "rental_available": true
+        },
+        {
+          "item": "Buff/neck warmer",
+          "description": "Versatile protection",
+          "rental_available": false
+        },
+        {
+          "item": "Camera",
+          "description": "Incredible photo opportunities",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Sagarmatha National Park Permit",
+        "cost_usd": 30,
+        "cost_npr": 3000,
+        "where_to_obtain": "Monjo entrance or Kathmandu",
+        "validity": "Single entry"
+      },
+      {
+        "name": "Khumbu Local Area Permit",
+        "cost_usd": 20,
+        "cost_npr": 2000,
+        "where_to_obtain": "Lukla",
+        "validity": "Duration of trek"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 50,
+      "guide_daily_usd": 25,
+      "porter_daily_usd": 18,
+      "accommodation_daily_usd": 5,
+      "meals_daily_usd": 25,
+      "flight_lukla_usd": 360,
+      "total_budget_range_usd": {
+        "min": 1200,
+        "max": 2500
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Sherpa"],
+      "primary_religion": "Tibetan Buddhism",
+      "languages": ["Sherpa", "Nepali", "English"],
+      "customs_etiquette": [
+        "Walk clockwise around religious sites",
+        "Remove shoes in monasteries",
+        "Don't touch religious artifacts",
+        "Respect local customs",
+        "No public displays of affection"
+      ],
+      "local_foods": [
+        {
+          "name": "Sherpa stew",
+          "description": "Hearty potato-based stew"
+        },
+        {
+          "name": "Tsampa porridge",
+          "description": "Roasted barley flour breakfast"
+        },
+        {
+          "name": "Yak cheese",
+          "description": "Local delicacy"
+        },
+        {
+          "name": "Dal bhat",
+          "description": "Traditional Nepali meal"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "high",
+        "prevention": [
+          "Acclimatization day in Namche mandatory",
+          "Ascend slowly above 3000m",
+          "Stay hydrated",
+          "Consider Diamox",
+          "Listen to your body"
+        ],
+        "critical_points": ["Above Namche", "Gokyo Ri day"]
+      },
+      "medical_facilities": [
+        {
+          "location": "Namche Bazaar",
+          "type": "Hospital with altitude chamber"
+        },
+        {
+          "location": "Machhermo",
+          "type": "HRA aid post"
+        },
+        {
+          "location": "Gokyo",
+          "type": "Basic first aid"
+        }
+      ],
+      "evacuation": {
+        "method": "Helicopter",
+        "cost_usd": "4000-6000",
+        "insurance_required": true,
+        "response_time": "Weather dependent"
+      }
+    },
+    "weather_patterns": {
+      "autumn": {
+        "months": ["September", "October", "November"],
+        "day_temp_c": "10 to 15",
+        "night_temp_c": "-10 to 0",
+        "precipitation": "Very low",
+        "visibility": "Excellent",
+        "notes": "Best season, cold nights"
+      },
+      "spring": {
+        "months": ["March", "April", "May"],
+        "day_temp_c": "10 to 15",
+        "night_temp_c": "-5 to 5",
+        "precipitation": "Low to moderate",
+        "visibility": "Good, some clouds",
+        "notes": "Rhododendrons bloom"
+      },
+      "winter": {
+        "months": ["December", "January", "February"],
+        "day_temp_c": "0 to 8",
+        "night_temp_c": "-20 to -10",
+        "precipitation": "Low, some snow",
+        "visibility": "Excellent when clear",
+        "notes": "Very cold, some lodges closed"
+      },
+      "monsoon": {
+        "months": ["June", "July", "August"],
+        "day_temp_c": "10 to 18",
+        "night_temp_c": "0 to 10",
+        "precipitation": "High",
+        "visibility": "Poor",
+        "notes": "Not recommended"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Flight",
+          "from": "Kathmandu",
+          "to": "Lukla",
+          "duration": "30 minutes",
+          "cost_usd": 180,
+          "frequency": "Multiple daily (weather dependent)"
+        }
+      ],
+      "from_end": "Same as to start"
+    },
+    "accommodation": {
+      "type": "Teahouses",
+      "description": "Basic mountain lodges",
+      "amenities": [
+        "Twin-bed rooms",
+        "Shared bathrooms",
+        "Dining room with stove",
+        "Basic meals available",
+        "Charging for devices (paid)",
+        "Hot showers (paid, not always available)"
+      ],
+      "booking": "Not required except peak season",
+      "cost_per_night_usd": "3-8"
+    },
+    "difficulty_details": {
+      "physical_demands": "Good fitness for consecutive days",
+      "technical_skills": "None required",
+      "altitude_challenge": "Significant - proper acclimatization essential",
+      "trail_conditions": "Well-marked, some steep sections",
+      "daily_hiking_hours": "4-7 hours",
+      "total_elevation_gain": 3400,
+      "total_elevation_loss": 3400
+    },
+    "alternative_routes": [
+      {
+        "name": "Gokyo via Cho La Pass",
+        "variation": "Connect to EBC",
+        "extra_days": 3,
+        "highlights": ["Technical pass crossing", "Visit both Gokyo and EBC", "More challenging"]
+      },
+      {
+        "name": "Renjo La Pass",
+        "variation": "Alternative exit route",
+        "extra_days": 1,
+        "highlights": ["Additional high pass", "Great views", "Complete circuit"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Gokyo Ri",
+        "best_time": "Sunrise",
+        "subjects": ["Four 8000m peaks", "Ngozumpa Glacier", "Gokyo Lakes from above"]
+      },
+      {
+        "location": "5th Lake",
+        "best_time": "Morning",
+        "subjects": ["Cho Oyu reflection", "Turquoise waters", "Glacier views"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How does this compare to EBC trek?",
+        "answer": "Less crowded, arguably better views from Gokyo Ri, sees multiple lakes instead of base camp. Similar difficulty but different highlights."
+      },
+      {
+        "question": "Can I combine with EBC?",
+        "answer": "Yes, via Cho La Pass (5,420m). Adds 3-4 days and requires good weather and fitness. Technical but rewarding."
+      },
+      {
+        "question": "Are the lakes always turquoise?",
+        "answer": "Best color in autumn when skies are clear. Can appear more grey in cloudy weather. Still beautiful regardless."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 88,
+    "seo": {
+      "meta_title": "Gokyo Lakes Trek Guide 2024 | Nepal's Turquoise Lake Trek",
+      "meta_description": "Complete guide to the Gokyo Lakes Trek in Nepal. 12-day itinerary to turquoise lakes, Gokyo Ri viewpoint, and spectacular Everest region scenery.",
+      "keywords": ["gokyo lakes trek", "gokyo ri", "nepal trekking", "everest region", "turquoise lakes nepal"]
+    }
+  },
+  {
+    "_id": "upper-mustang-trek",
+    "name": "Upper Mustang Trek",
+    "slug": "upper-mustang-trek",
+    "region": "Nepal/Himalayas",
+    "country": "Nepal",
+    "summary": "Journey to the ancient forbidden kingdom of Lo, a hidden Tibetan culture preserved behind the Himalayas with desert landscapes, cave monasteries, and medieval walled cities.",
+    "duration": {
+      "min_days": 10,
+      "max_days": 14,
+      "recommended_days": 12
+    },
+    "distance_km": 160,
+    "difficulty": "moderate",
+    "max_elevation_m": 4230,
+    "starting_elevation_m": 2720,
+    "airport": "Jomsom (JMO) or Pokhara (PKR)",
+    "nearest_city": "Pokhara",
+    "coordinates": {
+      "start": {
+        "lat": 28.7816,
+        "lng": 83.7274,
+        "location": "Jomsom"
+      },
+      "end": {
+        "lat": 29.1778,
+        "lng": 83.9542,
+        "location": "Lo Manthang"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Spring",
+        "months": ["March", "April", "May"],
+        "description": "Clear skies, moderate temperatures, some wind"
+      },
+      {
+        "name": "Autumn",
+        "months": ["September", "October", "November"],
+        "description": "Best weather, clear mountain views, harvest season"
+      },
+      {
+        "name": "Monsoon",
+        "months": ["June", "July", "August"],
+        "description": "Possible due to rain shadow, but some rain occurs"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Fly Pokhara to Jomsom, Trek to Kagbeni",
+        "start_location": "Pokhara",
+        "end_location": "Kagbeni",
+        "distance_km": 11,
+        "duration_hours": 3,
+        "elevation_start_m": 2720,
+        "elevation_end_m": 2858,
+        "elevation_gain_m": 138,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Red House Lodge", "Hotel YacDonalds", "Nilgiri View"]
+        },
+        "meals_included": ["lunch", "dinner"],
+        "highlights": [
+          "Mountain flight",
+          "Kali Gandaki valley",
+          "Medieval Kagbeni village",
+          "Gateway to Mustang"
+        ],
+        "description": "Spectacular 20-minute flight between Dhaulagiri and Annapurna. Walk along the Kali Gandaki riverbed to ancient Kagbeni, the gateway to Upper Mustang."
+      },
+      {
+        "day": 2,
+        "title": "Kagbeni to Chele",
+        "start_location": "Kagbeni",
+        "end_location": "Chele",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 2858,
+        "elevation_end_m": 3050,
+        "elevation_gain_m": 350,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Himalaya Lodge", "Local guesthouses"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Enter restricted area",
+          "Tangbe village",
+          "Desert landscapes begin",
+          "Ancient chortens"
+        ],
+        "description": "Check permits and enter Upper Mustang. The landscape transforms into high desert with red cliffs and eroded canyons."
+      },
+      {
+        "day": 3,
+        "title": "Chele to Syangboche",
+        "start_location": "Chele",
+        "end_location": "Syangboche",
+        "distance_km": 16,
+        "duration_hours": 7,
+        "elevation_start_m": 3050,
+        "elevation_end_m": 3475,
+        "elevation_gain_m": 850,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Local lodges", "Basic teahouses"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Multiple pass crossings",
+          "Ramchung cave monastery",
+          "Painted cliffs",
+          "Remote valleys"
+        ],
+        "description": "Cross several passes with stunning views. Optional visit to Ramchung cave monastery with ancient Buddhist art."
+      },
+      {
+        "day": 4,
+        "title": "Syangboche to Ghami",
+        "start_location": "Syangboche",
+        "end_location": "Ghami",
+        "distance_km": 13,
+        "duration_hours": 6,
+        "elevation_start_m": 3475,
+        "elevation_end_m": 3520,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Dhakmar Lodge", "Local guesthouses"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Nyi La pass (4,010m)",
+          "Ghami village",
+          "Longest mani wall",
+          "Red cliffs of Dhakmar"
+        ],
+        "description": "Pass through Dhakmar with its dramatic red cliffs. Ghami has one of the longest mani walls in Nepal."
+      },
+      {
+        "day": 5,
+        "title": "Ghami to Charang",
+        "start_location": "Ghami",
+        "end_location": "Charang",
+        "distance_km": 12,
+        "duration_hours": 5,
+        "elevation_start_m": 3520,
+        "elevation_end_m": 3500,
+        "elevation_gain_m": 300,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Charang Lodge", "Local homestays"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Tsarang monastery",
+          "Medieval fortress",
+          "Traditional architecture",
+          "Approaching Lo Manthang"
+        ],
+        "description": "Visit the impressive Tsarang monastery and fortress. The architecture becomes more Tibetan as you near the capital."
+      },
+      {
+        "day": 6,
+        "title": "Charang to Lo Manthang",
+        "start_location": "Charang",
+        "end_location": "Lo Manthang",
+        "distance_km": 12,
+        "duration_hours": 5,
+        "elevation_start_m": 3500,
+        "elevation_end_m": 3840,
+        "elevation_gain_m": 340,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Lotus Holiday Inn", "Royal Mustang Resort", "Local lodges"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Lo La pass (3,950m)",
+          "First view of Lo Manthang",
+          "Walled city entrance",
+          "Medieval atmosphere"
+        ],
+        "description": "Exciting arrival at the walled city of Lo Manthang, capital of the former Kingdom of Lo. Explore the medieval streets."
+      },
+      {
+        "day": 7,
+        "title": "Explore Lo Manthang",
+        "start_location": "Lo Manthang",
+        "end_location": "Lo Manthang",
+        "distance_km": 0,
+        "duration_hours": 0,
+        "elevation_start_m": 3840,
+        "elevation_end_m": 3840,
+        "elevation_gain_m": 0,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Royal palace",
+          "Three main monasteries",
+          "Amchi museum",
+          "Local culture"
+        ],
+        "description": "Full day exploring Lo Manthang's monasteries, palace, and unique culture. Visit Jampa, Thubchen, and Chodey monasteries."
+      },
+      {
+        "day": 8,
+        "title": "Day Trip to Chhoser",
+        "start_location": "Lo Manthang",
+        "end_location": "Lo Manthang",
+        "distance_km": 16,
+        "duration_hours": 6,
+        "elevation_start_m": 3840,
+        "elevation_end_m": 3840,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Chhoser cave monastery",
+          "Ancient sky caves",
+          "Garphu monastery",
+          "Remote landscapes"
+        ],
+        "description": "Optional day trip to Chhoser village with its remarkable cave monastery and ancient sky caves carved into cliffs."
+      },
+      {
+        "day": 9,
+        "title": "Lo Manthang to Yara",
+        "start_location": "Lo Manthang",
+        "end_location": "Yara",
+        "distance_km": 18,
+        "duration_hours": 7,
+        "elevation_start_m": 3840,
+        "elevation_end_m": 3650,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "basic lodge",
+          "options": ["Local homestay", "Basic lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Different return route",
+          "Remote villages",
+          "Spectacular erosion",
+          "Authentic experience"
+        ],
+        "description": "Take alternative route back through remote areas. Yara is a small village with unique geological formations."
+      },
+      {
+        "day": 10,
+        "title": "Yara to Tangge",
+        "start_location": "Yara",
+        "end_location": "Tangge",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 3650,
+        "elevation_end_m": 3240,
+        "elevation_gain_m": 200,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "basic lodge",
+          "options": ["Village homestay", "Basic lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Remote trail",
+          "Desert canyon",
+          "Traditional village",
+          "Few tourists"
+        ],
+        "description": "Continue through remote terrain to Tangge, one of the most isolated villages in Mustang."
+      },
+      {
+        "day": 11,
+        "title": "Tangge to Chhusang",
+        "start_location": "Tangge",
+        "end_location": "Chhusang",
+        "distance_km": 16,
+        "duration_hours": 7,
+        "elevation_start_m": 3240,
+        "elevation_end_m": 2980,
+        "elevation_gain_m": 300,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Hotel Nilgiri", "Local lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Pa pass (4,200m)",
+          "Rejoin main trail",
+          "Spectacular views",
+          "Nearly complete"
+        ],
+        "description": "Cross high pass before descending to rejoin the main trail at Chhusang. Long but rewarding day."
+      },
+      {
+        "day": 12,
+        "title": "Chhusang to Jomsom",
+        "start_location": "Chhusang",
+        "end_location": "Jomsom",
+        "distance_km": 16,
+        "duration_hours": 5,
+        "elevation_start_m": 2980,
+        "elevation_end_m": 2720,
+        "elevation_gain_m": -260,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Om's Home", "Hotel Majesty", "Marco Polo"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Return to Kagbeni",
+          "Complete circuit",
+          "Jomsom facilities",
+          "Trek completion"
+        ],
+        "description": "Final walk back through Kagbeni to Jomsom. Celebrate completing the journey to the forbidden kingdom."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Wind-proof jacket",
+          "description": "Strong winds common",
+          "rental_available": true
+        },
+        {
+          "item": "Sun protection",
+          "description": "Intense high-altitude sun",
+          "rental_available": false
+        },
+        {
+          "item": "Dust mask/buff",
+          "description": "For windy, dusty conditions",
+          "rental_available": false
+        },
+        {
+          "item": "Warm layers",
+          "description": "Cold nights despite lower altitude",
+          "rental_available": false
+        },
+        {
+          "item": "Good hiking boots",
+          "description": "Rocky, dusty terrain",
+          "rental_available": true
+        },
+        {
+          "item": "Daypack",
+          "description": "20-30L sufficient",
+          "rental_available": true
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Lip balm with SPF",
+          "description": "Very dry conditions",
+          "rental_available": false
+        },
+        {
+          "item": "Moisturizer",
+          "description": "Combat dry air",
+          "rental_available": false
+        },
+        {
+          "item": "Camera gear",
+          "description": "Unique landscapes",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Restricted Area Permit",
+        "cost_usd": 500,
+        "cost_npr": 50000,
+        "where_to_obtain": "Only through registered agency in Kathmandu",
+        "validity": "10 days",
+        "notes": "Additional days $50/day"
+      },
+      {
+        "name": "Annapurna Conservation Area Permit",
+        "cost_usd": 30,
+        "cost_npr": 3000,
+        "where_to_obtain": "Kathmandu or Pokhara",
+        "validity": "Duration of trek"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 530,
+      "guide_daily_usd": 30,
+      "porter_daily_usd": 0,
+      "accommodation_daily_usd": 15,
+      "meals_daily_usd": 25,
+      "transportation_usd": 300,
+      "total_budget_range_usd": {
+        "min": 1500,
+        "max": 3000
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Loba (Tibetan origin)"],
+      "primary_religion": "Tibetan Buddhism",
+      "languages": ["Loba", "Tibetan", "Nepali"],
+      "customs_etiquette": [
+        "Photography restrictions in monasteries",
+        "Respect the former king if met",
+        "Conservative dress required",
+        "Remove shoes when entering homes",
+        "Walk clockwise around religious sites",
+        "Don't touch religious artifacts"
+      ],
+      "local_foods": [
+        {
+          "name": "Tsampa",
+          "description": "Roasted barley flour staple"
+        },
+        {
+          "name": "Butter tea",
+          "description": "Traditional Tibetan tea"
+        },
+        {
+          "name": "Tingmo",
+          "description": "Steamed Tibetan bread"
+        },
+        {
+          "name": "Local apple brandy",
+          "description": "Mustang specialty"
+        }
+      ],
+      "festivals": [
+        {
+          "name": "Tiji Festival",
+          "when": "May",
+          "description": "Three-day festival in Lo Manthang"
+        },
+        {
+          "name": "Yartung Festival",
+          "when": "August",
+          "description": "Horse racing and celebrations"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "moderate",
+        "prevention": [
+          "Gradual ascent built in",
+          "Maximum altitude only 4,230m",
+          "Stay hydrated in dry climate",
+          "Rest days in Lo Manthang"
+        ]
+      },
+      "main_concerns": {
+        "wind_and_dust": {
+          "risk_level": "high",
+          "description": "Strong afternoon winds",
+          "prevention": [
+            "Start trekking early",
+            "Protect eyes and face",
+            "Stay hydrated",
+            "Use lip balm"
+          ]
+        },
+        "dehydration": {
+          "risk_level": "high",
+          "description": "Very dry climate",
+          "prevention": [
+            "Drink 4-5 liters daily",
+            "Avoid alcohol",
+            "Use moisturizer",
+            "Monitor urine color"
+          ]
+        }
+      },
+      "medical_facilities": [
+        {
+          "location": "Jomsom",
+          "type": "Basic health post"
+        },
+        {
+          "location": "Lo Manthang",
+          "type": "Amchi traditional medicine"
+        }
+      ]
+    },
+    "weather_patterns": {
+      "spring": {
+        "months": ["March", "April", "May"],
+        "day_temp_c": "10 to 20",
+        "night_temp_c": "-5 to 5",
+        "precipitation": "Minimal",
+        "wind": "Strong afternoon winds",
+        "notes": "Can be dusty"
+      },
+      "monsoon": {
+        "months": ["June", "July", "August"],
+        "day_temp_c": "15 to 25",
+        "night_temp_c": "5 to 10",
+        "precipitation": "Some rain (rain shadow)",
+        "wind": "Less wind",
+        "notes": "Possible to trek"
+      },
+      "autumn": {
+        "months": ["September", "October", "November"],
+        "day_temp_c": "10 to 18",
+        "night_temp_c": "-5 to 5",
+        "precipitation": "Very low",
+        "wind": "Moderate",
+        "notes": "Best season"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Flight",
+          "from": "Pokhara",
+          "to": "Jomsom",
+          "duration": "20 minutes",
+          "cost_usd": 120,
+          "frequency": "Morning flights only"
+        },
+        {
+          "method": "Drive + Trek",
+          "from": "Pokhara",
+          "to": "Jomsom",
+          "duration": "2 days",
+          "cost_usd": 50,
+          "notes": "Via Beni and Ghasa"
+        }
+      ],
+      "from_end": "Same options in reverse"
+    },
+    "accommodation": {
+      "type": "Basic lodges",
+      "description": "Simple but adequate",
+      "amenities": [
+        "Basic rooms",
+        "Shared bathrooms mostly",
+        "Solar hot water (limited)",
+        "Charging available",
+        "Basic meals",
+        "No WiFi in most places"
+      ],
+      "booking": "Not required but limited options",
+      "cost_per_night_usd": "10-20"
+    },
+    "difficulty_details": {
+      "physical_demands": "Moderate fitness sufficient",
+      "technical_skills": "None required",
+      "altitude_challenge": "Moderate",
+      "trail_conditions": "Dusty, rocky, well-defined",
+      "daily_hiking_hours": "5-7 hours",
+      "total_elevation_gain": 5000,
+      "total_elevation_loss": 5000
+    },
+    "alternative_routes": [
+      {
+        "name": "Eastern Mustang",
+        "variation": "Via Luri Gompa",
+        "extra_days": 2,
+        "highlights": ["Remote monasteries", "Fewer tourists", "Challenging terrain"]
+      },
+      {
+        "name": "Teri La Pass",
+        "variation": "High route option",
+        "extra_days": 1,
+        "highlights": ["5,595m pass", "Connects to Nar Phu", "Technical"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Lo Manthang walls",
+        "best_time": "Sunrise/sunset",
+        "subjects": ["Medieval architecture", "Mountain backdrop", "Daily life"]
+      },
+      {
+        "location": "Red cliffs of Dhakmar",
+        "best_time": "Late afternoon",
+        "subjects": ["Eroded landscapes", "Color contrasts", "Geological formations"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is the permit so expensive?",
+        "answer": "Upper Mustang was closed until 1992 and remains restricted to preserve its unique Tibetan culture. The high permit fee limits visitors and funds conservation."
+      },
+      {
+        "question": "Can I trek independently?",
+        "answer": "No, you must be with a registered guide due to restricted area regulations. This helps preserve the culture and ensures proper permits."
+      },
+      {
+        "question": "Is it worth the cost?",
+        "answer": "For those interested in Tibetan culture, unique landscapes, and off-beaten paths, absolutely. It's unlike anywhere else in Nepal."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 82,
+    "seo": {
+      "meta_title": "Upper Mustang Trek Guide 2024 | Nepal's Forbidden Kingdom",
+      "meta_description": "Complete guide to trekking Upper Mustang, the former forbidden kingdom. 12-day journey through Tibetan culture, desert landscapes, and ancient monasteries.",
+      "keywords": ["upper mustang trek", "forbidden kingdom", "lo manthang", "nepal restricted area", "tibetan culture trek"]
+    }
+  },
+  {
+    "_id": "annapurna-base-camp-trek",
+    "name": "Annapurna Base Camp Trek",
+    "slug": "annapurna-base-camp-trek",
+    "region": "Nepal/Himalayas",
+    "country": "Nepal",
+    "summary": "Journey to the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by towering peaks, offering diverse landscapes from bamboo forests to alpine meadows.",
+    "duration": {
+      "min_days": 7,
+      "max_days": 12,
+      "recommended_days": 10
+    },
+    "distance_km": 110,
+    "difficulty": "moderate",
+    "max_elevation_m": 4130,
+    "starting_elevation_m": 1070,
+    "airport": "Pokhara (PKR)",
+    "nearest_city": "Pokhara",
+    "coordinates": {
+      "start": {
+        "lat": 28.3784,
+        "lng": 83.7284,
+        "location": "Nayapul"
+      },
+      "end": {
+        "lat": 28.5300,
+        "lng": 83.8783,
+        "location": "Annapurna Base Camp"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Autumn",
+        "months": ["September", "October", "November"],
+        "description": "Clear views, stable weather, peak season"
+      },
+      {
+        "name": "Spring",
+        "months": ["March", "April", "May"],
+        "description": "Rhododendron blooms, good weather, warmer"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Pokhara to Ghandruk",
+        "start_location": "Pokhara",
+        "end_location": "Ghandruk",
+        "distance_km": 42,
+        "duration_hours": 6,
+        "elevation_start_m": 820,
+        "elevation_end_m": 2012,
+        "elevation_gain_m": 1192,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Himalaya Lodge", "Gurung Cottage", "Mountain View Lodge"]
+        },
+        "meals_included": ["lunch", "dinner"],
+        "highlights": [
+          "Drive to Nayapul",
+          "Gurung village culture",
+          "Annapurna South views",
+          "Traditional architecture"
+        ],
+        "description": "Drive from Pokhara to Nayapul (1.5 hours), then trek to the beautiful Gurung village of Ghandruk with stunning mountain views."
+      },
+      {
+        "day": 2,
+        "title": "Ghandruk to Chhomrong",
+        "start_location": "Ghandruk",
+        "end_location": "Chhomrong",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 2012,
+        "elevation_end_m": 2170,
+        "elevation_gain_m": 500,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Chhomrong Guest House", "Annapurna Lodge", "Panorama Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Cross Kimrong Khola",
+          "Terraced fields",
+          "Machhapuchhre views",
+          "Gateway to sanctuary"
+        ],
+        "description": "Descend to Kimrong Khola, then climb to Chhomrong, the last major village before entering the Annapurna Sanctuary."
+      },
+      {
+        "day": 3,
+        "title": "Chhomrong to Bamboo",
+        "start_location": "Chhomrong",
+        "end_location": "Bamboo",
+        "distance_km": 10,
+        "duration_hours": 5,
+        "elevation_start_m": 2170,
+        "elevation_end_m": 2310,
+        "elevation_gain_m": 400,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Bamboo Lodge", "Forest Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Enter sanctuary",
+          "Bamboo forests",
+          "Modi Khola gorge",
+          "Changing vegetation"
+        ],
+        "description": "Steep descent to Chhomrong Khola, then into the Modi Khola gorge. Trek through bamboo and rhododendron forests."
+      },
+      {
+        "day": 4,
+        "title": "Bamboo to Deurali",
+        "start_location": "Bamboo",
+        "end_location": "Deurali",
+        "distance_km": 11,
+        "duration_hours": 6,
+        "elevation_start_m": 2310,
+        "elevation_end_m": 3230,
+        "elevation_gain_m": 920,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Deurali Guest House", "Himalaya Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Himalaya Hotel",
+          "Alpine environment",
+          "Avalanche areas",
+          "Mountain views emerging"
+        ],
+        "description": "Steady climb through changing vegetation. Pass Himalaya Hotel and continue to Deurali as the valley opens up."
+      },
+      {
+        "day": 5,
+        "title": "Deurali to Annapurna Base Camp",
+        "start_location": "Deurali",
+        "end_location": "Annapurna Base Camp",
+        "distance_km": 6,
+        "duration_hours": 4,
+        "elevation_start_m": 3230,
+        "elevation_end_m": 4130,
+        "elevation_gain_m": 900,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["ABC Lodge", "Annapurna Sanctuary Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Machhapuchhre Base Camp",
+          "360-degree mountain views",
+          "Annapurna Sanctuary",
+          "Sunset on peaks"
+        ],
+        "description": "Pass through MBC before final climb to ABC. Arrive in the spectacular natural amphitheater surrounded by peaks."
+      },
+      {
+        "day": 6,
+        "title": "ABC Sunrise and Descend to Bamboo",
+        "start_location": "Annapurna Base Camp",
+        "end_location": "Bamboo",
+        "distance_km": 17,
+        "duration_hours": 7,
+        "elevation_start_m": 4130,
+        "elevation_end_m": 2310,
+        "elevation_gain_m": -1820,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Bamboo Lodge", "Forest Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Sunrise on Annapurna I",
+          "Last sanctuary views",
+          "Rapid descent",
+          "Return through forests"
+        ],
+        "description": "Early morning for spectacular sunrise. Begin long descent back through the sanctuary to Bamboo."
+      },
+      {
+        "day": 7,
+        "title": "Bamboo to Jhinu Danda",
+        "start_location": "Bamboo",
+        "end_location": "Jhinu Danda",
+        "distance_km": 13,
+        "duration_hours": 6,
+        "elevation_start_m": 2310,
+        "elevation_end_m": 1780,
+        "elevation_gain_m": 200,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Jhinu Guest House", "Hot Spring Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Return to Chhomrong",
+          "Natural hot springs",
+          "Relaxation",
+          "Modi Khola riverside"
+        ],
+        "description": "Trek back to Chhomrong, then descend to Jhinu Danda. Relax in natural hot springs by the river."
+      },
+      {
+        "day": 8,
+        "title": "Jhinu to Ghandruk",
+        "start_location": "Jhinu Danda",
+        "end_location": "Ghandruk",
+        "distance_km": 8,
+        "duration_hours": 4,
+        "elevation_start_m": 1780,
+        "elevation_end_m": 2012,
+        "elevation_gain_m": 232,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Himalaya Lodge", "Gurung Cottage"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Alternative route",
+          "Village life",
+          "Cultural immersion",
+          "Mountain views"
+        ],
+        "description": "Take alternative route back to Ghandruk through villages and terraced fields."
+      },
+      {
+        "day": 9,
+        "title": "Ghandruk to Pokhara",
+        "start_location": "Ghandruk",
+        "end_location": "Pokhara",
+        "distance_km": 20,
+        "duration_hours": 4,
+        "elevation_start_m": 2012,
+        "elevation_end_m": 820,
+        "elevation_gain_m": -1192,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Return to Pokhara hotel"]
+        },
+        "meals_included": ["breakfast", "lunch"],
+        "highlights": [
+          "Final mountain views",
+          "Descent to Nayapul",
+          "Drive to Pokhara",
+          "Trek completion"
+        ],
+        "description": "Descend to Nayapul through villages and terraces. Drive back to Pokhara for lakeside celebration."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Trekking boots",
+          "description": "Comfortable and waterproof",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "-10°C rated",
+          "rental_available": true
+        },
+        {
+          "item": "Down jacket",
+          "description": "Cold at base camp",
+          "rental_available": true
+        },
+        {
+          "item": "Rain gear",
+          "description": "Essential any season",
+          "rental_available": true
+        },
+        {
+          "item": "Layers",
+          "description": "Temperature varies greatly",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Hat, sunglasses, sunscreen",
+          "rental_available": false
+        },
+        {
+          "item": "Basic first aid",
+          "description": "Including blister kit",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Trekking poles",
+          "description": "Very helpful on stairs",
+          "rental_available": true
+        },
+        {
+          "item": "Water purification",
+          "description": "Tablets or SteriPen",
+          "rental_available": false
+        },
+        {
+          "item": "Snacks",
+          "description": "Energy bars, nuts",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "ACAP (Annapurna Conservation)",
+        "cost_usd": 30,
+        "cost_npr": 3000,
+        "where_to_obtain": "Pokhara or Kathmandu",
+        "validity": "Single entry"
+      },
+      {
+        "name": "TIMS Card",
+        "cost_usd": 10,
+        "cost_npr": 1000,
+        "where_to_obtain": "Pokhara or Kathmandu",
+        "validity": "Trek duration"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 40,
+      "guide_daily_usd": 25,
+      "porter_daily_usd": 18,
+      "accommodation_daily_usd": 5,
+      "meals_daily_usd": 20,
+      "transportation_usd": 30,
+      "total_budget_range_usd": {
+        "min": 400,
+        "max": 1000
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Gurung", "Magar"],
+      "primary_religion": "Buddhism and Hinduism",
+      "languages": ["Nepali", "Gurung", "English"],
+      "customs_etiquette": [
+        "Remove shoes when entering homes",
+        "Use right hand for eating/giving",
+        "Walk clockwise around mani walls",
+        "Dress modestly in villages",
+        "Ask permission for photos"
+      ],
+      "local_foods": [
+        {
+          "name": "Dal bhat",
+          "description": "Traditional meal available everywhere"
+        },
+        {
+          "name": "Gurung bread",
+          "description": "Local specialty"
+        },
+        {
+          "name": "Raksi",
+          "description": "Local millet alcohol"
+        },
+        {
+          "name": "Dhindo",
+          "description": "Traditional porridge"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "moderate",
+        "prevention": [
+          "Gradual ascent built into itinerary",
+          "Stay hydrated",
+          "Rest day can be added",
+          "Don't rush to ABC"
+        ],
+        "critical_points": ["Above 3000m", "Especially approaching ABC"]
+      },
+      "medical_facilities": [
+        {
+          "location": "Chhomrong",
+          "type": "Basic health post"
+        },
+        {
+          "location": "Pokhara",
+          "type": "Good hospitals"
+        }
+      ],
+      "evacuation": {
+        "method": "Helicopter from most points",
+        "cost_usd": "3000-5000",
+        "insurance_required": true
+      }
+    },
+    "weather_patterns": {
+      "autumn": {
+        "months": ["September", "October", "November"],
+        "day_temp_c": "10 to 20",
+        "night_temp_c": "-5 to 5",
+        "precipitation": "Low",
+        "visibility": "Excellent",
+        "notes": "Best views, busy season"
+      },
+      "spring": {
+        "months": ["March", "April", "May"],
+        "day_temp_c": "15 to 25",
+        "night_temp_c": "0 to 10",
+        "precipitation": "Moderate",
+        "visibility": "Good mornings",
+        "notes": "Rhododendrons bloom"
+      },
+      "winter": {
+        "months": ["December", "January", "February"],
+        "day_temp_c": "5 to 15",
+        "night_temp_c": "-10 to 0",
+        "precipitation": "Low, possible snow",
+        "visibility": "Excellent",
+        "notes": "Very cold at ABC"
+      },
+      "monsoon": {
+        "months": ["June", "July", "August"],
+        "day_temp_c": "15 to 20",
+        "night_temp_c": "5 to 15",
+        "precipitation": "Very high",
+        "visibility": "Poor",
+        "notes": "Not recommended, leeches"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Tourist bus",
+          "from": "Pokhara",
+          "to": "Nayapul",
+          "duration": "1.5 hours",
+          "cost_usd": 10,
+          "frequency": "Multiple daily"
+        },
+        {
+          "method": "Private taxi",
+          "from": "Pokhara",
+          "to": "Nayapul",
+          "duration": "1.5 hours",
+          "cost_usd": 30,
+          "frequency": "Any time"
+        }
+      ],
+      "from_end": "Same options in reverse"
+    },
+    "accommodation": {
+      "type": "Teahouses",
+      "description": "Basic but comfortable lodges",
+      "amenities": [
+        "Twin-bed rooms",
+        "Shared bathrooms mostly",
+        "Hot showers (lower elevations)",
+        "Charging for devices (paid)",
+        "WiFi in some lodges (paid)",
+        "Meals available"
+      ],
+      "booking": "Not required except peak season",
+      "cost_per_night_usd": "3-8"
+    },
+    "difficulty_details": {
+      "physical_demands": "Moderate fitness required",
+      "technical_skills": "None needed",
+      "altitude_challenge": "Moderate - max 4,130m",
+      "trail_conditions": "Well-maintained, many stone steps",
+      "daily_hiking_hours": "5-7 hours",
+      "total_elevation_gain": 4500,
+      "total_elevation_loss": 4500
+    },
+    "alternative_routes": [
+      {
+        "name": "ABC via Poon Hill",
+        "variation": "Add Poon Hill sunrise",
+        "extra_days": 2,
+        "highlights": ["Famous sunrise viewpoint", "Different villages", "More variety"]
+      },
+      {
+        "name": "Mardi Himal addition",
+        "variation": "Combine with Mardi Himal",
+        "extra_days": 4,
+        "highlights": ["Less crowded ridge trek", "Different perspective", "Forest camps"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Annapurna Base Camp",
+        "best_time": "Sunrise",
+        "subjects": ["360° amphitheater", "Annapurna I south face", "Alpenglow"]
+      },
+      {
+        "location": "Machhapuchhre Base Camp",
+        "best_time": "Sunset",
+        "subjects": ["Fishtail mountain", "Sacred peak", "Evening colors"]
+      },
+      {
+        "location": "Ghandruk village",
+        "best_time": "Morning",
+        "subjects": ["Traditional architecture", "Mountain backdrop", "Village life"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "ABC or EBC - which is better?",
+        "answer": "ABC is shorter, lower altitude, more varied scenery (forests to alpine), and reaches a dramatic amphitheater. EBC is longer, higher, more challenging, with Sherpa culture. Both are incredible."
+      },
+      {
+        "question": "Can I do it independently?",
+        "answer": "Yes, the trail is well-marked and teahouses are frequent. Many solo trekkers. A guide adds cultural insights and safety."
+      },
+      {
+        "question": "How cold is base camp?",
+        "answer": "Can be -10°C at night in autumn/spring, colder in winter. Teahouses have blankets but bring a good sleeping bag."
+      },
+      {
+        "question": "Is altitude a problem?",
+        "answer": "At 4,130m, some people feel mild symptoms. The itinerary allows gradual acclimatization. Going slower helps."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 95,
+    "seo": {
+      "meta_title": "Annapurna Base Camp Trek Guide 2024 | 10-Day ABC Trek Nepal",
+      "meta_description": "Complete guide to the Annapurna Base Camp trek. Detailed 10-day itinerary through diverse landscapes to the heart of the Annapurna Sanctuary.",
+      "keywords": ["annapurna base camp", "abc trek", "nepal trekking", "annapurna sanctuary", "pokhara trekking"]
+    }
+  }
+]

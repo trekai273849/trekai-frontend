@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everest Base Camp Trek - The Ultimate Bucket-List Adventure | SmartTrails</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D5016;
+            --primary-light: #4A7C28;
+            --accent: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #27AE60;
+            --warning: #E74C3C;
+            --info: #3498DB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%235B86E5;stop-opacity:1" /><stop offset="100%" style="stop-color:%2336D1DC;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="1200" height="600"/><path fill="%23fff" opacity="0.1" d="M0 400L50 350L100 450L150 300L200 400L250 250L300 350L350 200L400 300L450 150L500 250L550 100L600 200L650 50L700 150L750 0L800 100L850 50L900 150L950 100L1000 200L1050 150L1100 250L1150 200L1200 300L1200 600L0 600Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: white;
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-tab {
+            padding: 20px 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-tab:hover {
+            color: var(--primary);
+        }
+
+        .nav-tab.active {
+            color: var(--primary);
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .overview-main h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .overview-description {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .highlights-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .highlight-icon {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+
+        .highlight-text {
+            flex: 1;
+        }
+
+        .highlight-text h4 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .highlight-text p {
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+
+        /* Quick Info Card */
+        .quick-info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .quick-info-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .info-value {
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            background: var(--accent);
+            color: white;
+        }
+
+        .price-range {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* CTA Buttons */
+        .cta-section {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Itinerary Section */
+        .itinerary-timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #E0E0E0;
+        }
+
+        .itinerary-day {
+            position: relative;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .itinerary-day::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #E0E0E0;
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .day-number {
+            font-size: 0.9em;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .day-title {
+            font-size: 1.3em;
+            margin: 5px 0;
+            color: var(--text-dark);
+        }
+
+        .day-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        .day-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .day-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .day-highlight {
+            background: var(--bg-light);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: var(--text-dark);
+        }
+
+        /* Gear Section */
+        .gear-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gear-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .gear-category h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gear-list {
+            list-style: none;
+        }
+
+        .gear-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #F0F0F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gear-item:last-child {
+            border-bottom: none;
+        }
+
+        .gear-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .gear-description {
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+
+        .rental-badge {
+            background: var(--success);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        /* Season & Weather */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .season-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+            text-align: center;
+        }
+
+        .season-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .season-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .season-months {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Cost Breakdown */
+        .cost-breakdown {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: var(--primary);
+            padding-top: 20px;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .photo-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
+
+        .photo-info {
+            padding: 20px;
+        }
+
+        .photo-location {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .photo-time {
+            color: var(--primary);
+            font-size: 0.9em;
+        }
+
+        /* FAQs */
+        .faq-list {
+            max-width: 800px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-toggle {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: var(--text-light);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Health & Safety */
+        .safety-alerts {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .alert {
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .alert-icon {
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .alert-warning {
+            background: #FEF5E7;
+            border: 1px solid #F9E79F;
+        }
+
+        .alert-warning .alert-icon {
+            color: var(--warning);
+        }
+
+        .alert-info {
+            background: #EBF5FB;
+            border: 1px solid #AED6F1;
+        }
+
+        .alert-info .alert-icon {
+            color: var(--info);
+        }
+
+        /* Transportation */
+        .transport-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .transport-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .transport-method {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .transport-details {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .transport-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs-container {
+                justify-content: start;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section.active > * {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Everest Base Camp Trek</h1>
+            <p class="hero-tagline">The ultimate bucket-list trek to the base of the world's highest peak</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value">14</span>
+                    <span class="hero-stat-label">Days</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">5,364m</span>
+                    <span class="hero-stat-label">Max Elevation</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">130km</span>
+                    <span class="hero-stat-label">Total Distance</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">Moderate</span>
+                    <span class="hero-stat-label">Difficulty</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="nav-tabs-container">
+            <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+            <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
+            <button class="nav-tab" onclick="showSection('gear')">What to Pack</button>
+            <button class="nav-tab" onclick="showSection('seasons')">Best Time to Go</button>
+            <button class="nav-tab" onclick="showSection('costs')">Costs & Permits</button>
+            <button class="nav-tab" onclick="showSection('health')">Health & Safety</button>
+            <button class="nav-tab" onclick="showSection('transport')">Getting There</button>
+            <button class="nav-tab" onclick="showSection('culture')">Culture & Food</button>
+            <button class="nav-tab" onclick="showSection('photos')">Photo Spots</button>
+            <button class="nav-tab" onclick="showSection('faqs')">FAQs</button>
+        </div>
+    </nav>
+
+    <!-- Overview Section -->
+    <section id="overview" class="content-section active">
+        <div class="overview-grid">
+            <div class="overview-main">
+                <h2>Journey to the Roof of the World</h2>
+                <p class="overview-description">
+                    The Everest Base Camp Trek is more than just a hike – it's a pilgrimage to the base of the world's highest peak. 
+                    This iconic journey takes you through the heart of the Sherpa homeland, past ancient Buddhist monasteries, 
+                    and into a landscape of soaring peaks and glaciers. You'll walk in the footsteps of legendary mountaineers 
+                    while experiencing the unique culture and warm hospitality of the Khumbu region.
+                </p>
+                
+                <div class="highlights-list">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏔️</span>
+                        <div class="highlight-text">
+                            <h4>Everest Views</h4>
+                            <p>Stand at the base of the world's highest mountain</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏛️</span>
+                        <div class="highlight-text">
+                            <h4>Tengboche Monastery</h4>
+                            <p>Visit the spiritual heart of the Khumbu region</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🌅</span>
+                        <div class="highlight-text">
+                            <h4>Kala Patthar Sunrise</h4>
+                            <p>Watch dawn break over Everest from 5,545m</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">👥</span>
+                        <div class="highlight-text">
+                            <h4>Sherpa Culture</h4>
+                            <p>Experience authentic mountain hospitality</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn btn-primary">
+                        <span>🤖</span>
+                        <span>Customize This Trek with AI</span>
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span>💾</span>
+                        <span>Save to My Trips</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="quick-info-card">
+                <h3>Quick Facts</h3>
+                <div class="info-row">
+                    <span class="info-label">Duration</span>
+                    <span class="info-value">12-14 days</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Distance</span>
+                    <span class="info-value">130 km round trip</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Max Altitude</span>
+                    <span class="info-value">5,364m (EBC)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Difficulty</span>
+                    <span class="info-value">
+                        <span class="difficulty-badge">Moderate</span>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Best Seasons</span>
+                    <span class="info-value">Mar-May, Sep-Nov</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Starting Point</span>
+                    <span class="info-value">Lukla</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Permits Required</span>
+                    <span class="info-value">2 permits</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Estimated Cost</span>
+                    <span class="info-value">
+                        <span class="price-range">$1,500 - $3,000</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="content-section">
+        <h2>14-Day Detailed Itinerary</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Follow the classic route through Sherpa villages, acclimatizing properly as you journey to Everest Base Camp
+        </p>
+
+        <div class="itinerary-timeline">
+            <div class="itinerary-day">
+                <div class="day-header">
+                    <div>
+                        <div class="day-number">Day 1</div>
+                        <h3 class="day-title">Fly to Lukla, Trek to Phakding</h3>
+                        <div class="day-stats">
+                            <span>📏 8km</span>
+                            <span>⏱️ 3 hours</span>
+                            <span>📈 -250m</span>
+                            <span>🏔️ 2,610m</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="day-description">
+                    After an exciting mountain flight to Lukla, begin your trek with an easy walk down to Phakding. 
+                    The trail descends through pine forests and small Sherpa settlements, crossing several suspension 
+                    bridges adorned with prayer flags.
+                </p>
+                <div class="day-highlights">
+                    <span class="day-highlight">Thrilling Lukla flight</span>
+                    <span class="day-highlight">Dudh Koshi valley</span>
+                    <span class="day-highlight">Prayer wheels</span>
+                    <span class="day-highlight">Gentle introduction</span>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-header">
+                    <div>
+                        <div class="day-number">Day 2</div>
+                        <h3 class="day-title">Phakding to Namche Bazaar</h3>
+                        <div class="day-stats">
+                            <span>📏 11km</span>
+                            <span>⏱️ 6 hours</span>
+                            <span>📈 +830m</span>
+                            <span>🏔️ 3,440m</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="day-description">
+                    Today's trek involves a steady climb to Namche Bazaar. After entering Sagarmatha National Park 
+                    at Monjo, the trail climbs steeply through pine forests. If the weather is clear, catch your 
+                    first glimpse of Everest!
+                </p>
+                <div class="day-highlights">
+                    <span class="day-highlight">Hillary Bridge crossing</span>
+                    <span class="day-highlight">First Everest views</span>
+                    <span class="day-highlight">Enter national park</span>
+                    <span class="day-highlight">Namche Bazaar</span>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-header">
+                    <div>
+                        <div class="day-number">Day 3</div>
+                        <h3 class="day-title">Acclimatization Day in Namche</h3>
+                        <div class="day-stats">
+                            <span>📏 0km (optional hikes)</span>
+                            <span>⏱️ Rest day</span>
+                            <span>📈 0m</span>
+                            <span>🏔️ 3,440m</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="day-description">
+                    Essential acclimatization day. Hike to the Everest View Hotel for panoramic mountain views, 
+                    visit the Sherpa Cultural Museum, or explore the bustling market streets of Namche.
+                </p>
+                <div class="day-highlights">
+                    <span class="day-highlight">Everest View Hotel</span>
+                    <span class="day-highlight">Sherpa Museum</span>
+                    <span class="day-highlight">Namche market</span>
+                    <span class="day-highlight">Acclimatization</span>
+                </div>
+            </div>
+
+            <!-- Continue with remaining days... -->
+            <p style="text-align: center; margin-top: 40px;">
+                <em>Full 14-day itinerary continues with Tengboche, Dingboche, Lobuche, EBC, and return journey...</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- Gear Section -->
+    <section id="gear" class="content-section">
+        <h2>Essential Gear & Packing List</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Proper gear is crucial for a safe and comfortable trek. Many items can be rented in Kathmandu or Namche.
+        </p>
+
+        <div class="gear-categories">
+            <div class="gear-category">
+                <h3>
+                    <span>🎒</span>
+                    <span>Essential Items</span>
+                </h3>
+                <ul class="gear-list">
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Trekking boots</div>
+                            <div class="gear-description">Waterproof with good ankle support</div>
+                        </div>
+                        <span class="rental-badge">Rental available</span>
+                    </li>
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Sleeping bag</div>
+                            <div class="gear-description">-15°C rated for shoulder seasons</div>
+                        </div>
+                        <span class="rental-badge">Rental available</span>
+                    </li>
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Down jacket</div>
+                            <div class="gear-description">Lightweight but warm, compressible</div>
+                        </div>
+                        <span class="rental-badge">Rental available</span>
+                    </li>
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Base layers</div>
+                            <div class="gear-description">Merino wool or synthetic, 2-3 sets</div>
+                        </div>
+                    </li>
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Rain jacket and pants</div>
+                            <div class="gear-description">Waterproof and breathable</div>
+                        </div>
+                        <span class="rental-badge">Rental available</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="gear-category">
+                <h3>
+                    <span>👍</span>
+                    <span>Recommended Items</span>
+                </h3>
+                <ul class="gear-list">
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Trekking poles</div>
+                            <div class="gear-description">Very helpful for descents</div>
+                        </div>
+                        <span class="rental-badge">Rental available</span>
+                    </li>
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Buff or neck warmer</div>
+                            <div class="gear-description">Versatile protection</div>
+                        </div>
+                    </li>
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Camera</div>
+                            <div class="gear-description">Incredible photo opportunities</div>
+                        </div>
+                    </li>
+                    <li class="gear-item">
+                        <div>
+                            <div class="gear-name">Portable charger</div>
+                            <div class="gear-description">Solar chargers work well</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasons Section -->
+    <section id="seasons" class="content-section">
+        <h2>Best Time to Trek</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Weather plays a crucial role in your Everest Base Camp experience. Choose your season wisely.
+        </p>
+
+        <div class="seasons-grid">
+            <div class="season-card">
+                <div class="season-icon">🌸</div>
+                <h3 class="season-name">Spring</h3>
+                <p class="season-months">March - May</p>
+                <p>Rhododendrons in full bloom, clear mornings with afternoon clouds. This is peak climbing season, 
+                   so you might see expeditions preparing for summit attempts.</p>
+            </div>
+
+            <div class="season-card">
+                <div class="season-icon">🍂</div>
+                <h3 class="season-name">Autumn</h3>
+                <p class="season-months">September - November</p>
+                <p>Crystal clear skies and stable weather make this the most popular trekking season. 
+                   Expect busy trails but spectacular mountain views.</p>
+            </div>
+
+            <div class="season-card">
+                <div class="season-icon">❄️</div>
+                <h3 class="season-name">Winter</h3>
+                <p class="season-months">December - February</p>
+                <p>Very cold but clear skies and fewer trekkers. Some lodges may be closed higher up. 
+                   Only for experienced cold-weather trekkers.</p>
+            </div>
+
+            <div class="season-card">
+                <div class="season-icon">🌧️</div>
+                <h3 class="season-name">Monsoon</h3>
+                <p class="season-months">June - August</p>
+                <p>Not recommended due to daily rain, cloudy skies obscuring views, and muddy, leech-infested trails. 
+                   Flights to Lukla often cancelled.</p>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 2px 10px var(--shadow);">
+            <h3 style="margin-bottom: 20px;">Monthly Weather Overview</h3>
+            <p><strong>Day Temperatures:</strong> 10°C to 15°C (lower at higher altitudes)</p>
+            <p><strong>Night Temperatures:</strong> -10°C to 0°C at Base Camp</p>
+            <p><strong>Precipitation:</strong> Minimal in autumn, occasional snow in spring</p>
+            <p><strong>Visibility:</strong> Best in autumn, good in spring mornings</p>
+        </div>
+    </section>
+
+    <!-- Costs Section -->
+    <section id="costs" class="content-section">
+        <h2>Costs & Permits</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Understanding the costs helps you budget appropriately for your adventure.
+        </p>
+
+        <div class="cost-breakdown">
+            <h3 style="margin-bottom: 20px;">Typical Cost Breakdown (per person)</h3>
+            
+            <div class="cost-item">
+                <span>Permits (National Park + TIMS)</span>
+                <span>$50</span>
+            </div>
+            <div class="cost-item">
+                <span>Round-trip flight to Lukla</span>
+                <span>$360</span>
+            </div>
+            <div class="cost-item">
+                <span>Guide (optional but recommended)</span>
+                <span>$25-30/day</span>
+            </div>
+            <div class="cost-item">
+                <span>Porter (optional)</span>
+                <span>$18-20/day</span>
+            </div>
+            <div class="cost-item">
+                <span>Accommodation</span>
+                <span>$5/night</span>
+            </div>
+            <div class="cost-item">
+                <span>Meals</span>
+                <span>$25/day</span>
+            </div>
+            <div class="cost-item">
+                <span>Miscellaneous (hot showers, charging, wifi)</span>
+                <span>$10/day</span>
+            </div>
+            <div class="cost-item">
+                <span>Total Budget Range</span>
+                <span>$1,500 - $3,000</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h3>Required Permits</h3>
+            <div style="display: grid; gap: 20px; margin-top: 20px;">
+                <div style="background: var(--bg-light); padding: 20px; border-radius: 12px;">
+                    <h4>Sagarmatha National Park Entry Permit</h4>
+                    <p><strong>Cost:</strong> $30 USD / NPR 3,000</p>
+                    <p><strong>Where to obtain:</strong> Monjo entrance gate or Kathmandu</p>
+                    <p><strong>Validity:</strong> Single entry for your trek duration</p>
+                </div>
+                <div style="background: var(--bg-light); padding: 20px; border-radius: 12px;">
+                    <h4>Khumbu Pasang Lhamu Rural Municipality Permit</h4>
+                    <p><strong>Cost:</strong> $20 USD / NPR 2,000</p>
+                    <p><strong>Where to obtain:</strong> Lukla or Monjo</p>
+                    <p><strong>Validity:</strong> Duration of trek</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health & Safety Section -->
+    <section id="health" class="content-section">
+        <h2>Health & Safety</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Your safety is paramount. Understanding the risks and proper preparation is essential.
+        </p>
+
+        <div class="safety-alerts">
+            <div class="alert alert-warning">
+                <span class="alert-icon">⚠️</span>
+                <div>
+                    <h4>Altitude Sickness Risk - High</h4>
+                    <p>The trek reaches 5,364m. Proper acclimatization is essential. Symptoms include headache, 
+                       nausea, fatigue, and dizziness. Ascend slowly, stay hydrated, and descend if symptoms worsen.</p>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <span class="alert-icon">ℹ️</span>
+                <div>
+                    <h4>Medical Facilities</h4>
+                    <p>Basic health posts in Lukla and Namche. HRA Aid Post in Pheriche offers altitude sickness 
+                       treatment. Helicopter evacuation available (ensure your insurance covers up to 6,000m).</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+            <div>
+                <h3>Recommended Vaccinations</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0;">✓ Hepatitis A & B</li>
+                    <li style="padding: 10px 0;">✓ Typhoid</li>
+                    <li style="padding: 10px 0;">✓ Japanese Encephalitis</li>
+                    <li style="padding: 10px 0;">✓ Rabies (if extended stay)</li>
+                    <li style="padding: 10px 0;">✓ Routine vaccinations up to date</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Common Health Issues</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0;">• Khumbu cough (dry cough from altitude)</li>
+                    <li style="padding: 10px 0;">• GI problems (traveler's diarrhea)</li>
+                    <li style="padding: 10px 0;">• Sun exposure (intense UV at altitude)</li>
+                    <li style="padding: 10px 0;">• Dehydration</li>
+                    <li style="padding: 10px 0;">• Blisters</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transportation Section -->
+    <section id="transport" class="content-section">
+        <h2>Getting There</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            The journey to Everest Base Camp begins with one of the world's most thrilling flights.
+        </p>
+
+        <div class="transport-options">
+            <div class="transport-card">
+                <h3 class="transport-method">✈️ Flight to Lukla</h3>
+                <p style="margin-bottom: 15px;">The most common way to start the trek</p>
+                <div class="transport-details">
+                    <div class="transport-detail">
+                        <span>From</span>
+                        <span>Kathmandu</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Duration</span>
+                        <span>30-45 minutes</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Cost</span>
+                        <span>$180 one-way</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Frequency</span>
+                        <span>Multiple daily (weather dependent)</span>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: var(--warning);">
+                    ⚠️ Weather delays common - allow buffer days
+                </p>
+            </div>
+
+            <div class="transport-card">
+                <h3 class="transport-method">🚁 Helicopter Option</h3>
+                <p style="margin-bottom: 15px;">Faster but more expensive alternative</p>
+                <div class="transport-details">
+                    <div class="transport-detail">
+                        <span>From</span>
+                        <span>Kathmandu</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Duration</span>
+                        <span>45 minutes</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Cost</span>
+                        <span>$500+ per person</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Availability</span>
+                        <span>Charter basis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transport-card">
+                <h3 class="transport-method">🚌 Overland Route</h3>
+                <p style="margin-bottom: 15px;">Budget option via Salleri/Phaplu</p>
+                <div class="transport-details">
+                    <div class="transport-detail">
+                        <span>From</span>
+                        <span>Kathmandu</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Duration</span>
+                        <span>2-3 days to Lukla</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Cost</span>
+                        <span>$30 bus fare</span>
+                    </div>
+                    <div class="transport-detail">
+                        <span>Notes</span>
+                        <span>More reliable, adds trekking days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="content-section">
+        <h2>Sherpa Culture & Local Cuisine</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Immerse yourself in the rich Tibetan Buddhist culture of the Khumbu region.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div>
+                <h3>Cultural Etiquette</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0;">🔄 Always walk clockwise around mani stones and stupas</li>
+                    <li style="padding: 10px 0;">👟 Remove shoes before entering monasteries</li>
+                    <li style="padding: 10px 0;">🚫 Don't touch religious artifacts or paintings</li>
+                    <li style="padding: 10px 0;">📸 Ask permission before photographing people</li>
+                    <li style="padding: 10px 0;">👔 Dress modestly, especially in religious sites</li>
+                    <li style="padding: 10px 0;">🤝 Use right hand for giving and receiving</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Local Foods to Try</h3>
+                <div style="display: grid; gap: 15px;">
+                    <div style="background: var(--bg-light); padding: 15px; border-radius: 8px;">
+                        <strong>Dal Bhat</strong>
+                        <p style="font-size: 0.9em; color: var(--text-light);">Traditional meal of lentil soup, rice, vegetables, and pickles</p>
+                    </div>
+                    <div style="background: var(--bg-light); padding: 15px; border-radius: 8px;">
+                        <strong>Momos</strong>
+                        <p style="font-size: 0.9em; color: var(--text-light);">Steamed or fried dumplings with meat or vegetables</p>
+                    </div>
+                    <div style="background: var(--bg-light); padding: 15px; border-radius: 8px;">
+                        <strong>Sherpa Stew</strong>
+                        <p style="font-size: 0.9em; color: var(--text-light);">Hearty potato-based stew with vegetables</p>
+                    </div>
+                    <div style="background: var(--bg-light); padding: 15px; border-radius: 8px;">
+                        <strong>Butter Tea</strong>
+                        <p style="font-size: 0.9em; color: var(--text-light);">Traditional salty tea with yak butter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Spots Section -->
+    <section id="photos" class="content-section">
+        <h2>Best Photography Locations</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Capture unforgettable moments at these iconic viewpoints along the trail.
+        </p>
+
+        <div class="photo-gallery">
+            <div class="photo-card">
+                <div class="photo-placeholder">📸</div>
+                <div class="photo-info">
+                    <h4 class="photo-location">Kala Patthar</h4>
+                    <p class="photo-time">Best at: Sunrise</p>
+                    <p>The ultimate Everest viewpoint at 5,545m. Arrive before dawn for magical alpenglow on Everest, Nuptse, and Pumori.</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-placeholder">📸</div>
+                <div class="photo-info">
+                    <h4 class="photo-location">Tengboche Monastery</h4>
+                    <p class="photo-time">Best at: Late afternoon</p>
+                    <p>Frame the monastery with Ama Dablam in the background. Prayer flags add colorful foreground elements.</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-placeholder">📸</div>
+                <div class="photo-info">
+                    <h4 class="photo-location">Everest Base Camp</h4>
+                    <p class="photo-time">Best at: Midday</p>
+                    <p>Capture the iconic prayer flags, Khumbu Icefall, and if in season, colorful expedition tents.</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-placeholder">📸</div>
+                <div class="photo-info">
+                    <h4 class="photo-location">Namche Bazaar</h4>
+                    <p class="photo-time">Best at: Morning</p>
+                    <p>Photograph the amphitheater-like town with Kongde Ri backdrop. Great for capturing local life and markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">
+            Get answers to the most common questions about the Everest Base Camp trek.
+        </p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do I need previous trekking experience?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    No, but good physical fitness is essential. The trek is non-technical but demanding due to altitude and duration. 
+                    If you can hike 6-8 hours daily and have good cardiovascular fitness, you can complete this trek. 
+                    Consider doing some practice hikes with a loaded backpack before you go.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I trek independently?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, it's allowed, but hiring a guide is highly recommended for safety, navigation, and cultural insights. 
+                    The trail is well-marked, but altitude sickness is a real risk, and having an experienced guide who can 
+                    recognize symptoms and know when to descend can be lifesaving. Guides also handle logistics and provide 
+                    valuable cultural context.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What about altitude sickness?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    It's a real risk above 3,000m. Follow the itinerary's acclimatization days, stay hydrated (3-4 liters daily), 
+                    and descend if symptoms worsen. Common symptoms include headache, nausea, fatigue, and difficulty sleeping. 
+                    Consider taking Diamox (consult your doctor first). The key is to ascend slowly - the trek itinerary is 
+                    designed with proper acclimatization in mind.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is travel insurance mandatory?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    While not legally required, it's essential. Ensure it covers trekking up to 6,000m and helicopter evacuation. 
+                    Many standard travel insurance policies exclude high-altitude trekking, so read the fine print. Helicopter 
+                    evacuation can cost $4,000-6,000, so proper coverage is crucial. Some companies specialize in adventure 
+                    travel insurance.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What if I can't get a flight to/from Lukla?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Weather delays are common. Budget 2-3 buffer days in Kathmandu. During peak season, flights sometimes get 
+                    diverted to Ramechhap (4 hours from Kathmandu by road). Helicopter shuttles are available but expensive. 
+                    The overland route via Salleri/Phaplu is more reliable but adds 2-3 days each way to your trek.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Scroll to top of content
+            window.scrollTo({ top: document.querySelector('.nav-tabs').offsetTop - 20, behavior: 'smooth' });
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

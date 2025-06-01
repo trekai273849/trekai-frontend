@@ -1,0 +1,516 @@
+/* styles/pages/itinerary.css - Complete file with all fixes */
+
+/* ===== Day Card Base Styles ===== */
+.itinerary-day-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.itinerary-day-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+/* Day Card Header */
+.day-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+  position: relative;
+}
+
+.day-number {
+  background: #557a3e;  /* Dark green color */
+  color: white !important;  /* Force white text */
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.day-title-enhanced {
+  flex: 1;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.day-card-toggle {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #718096;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.day-card-toggle:hover {
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.day-card-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.itinerary-day-card.collapsed .day-card-toggle svg {
+  transform: rotate(-90deg);
+}
+
+.itinerary-day-card.collapsed .day-card-content {
+  display: none;
+}
+
+/* Day Card Content */
+.day-card-content {
+  animation: fadeIn 0.3s ease;
+  padding-top: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Day Description Box ===== */
+.day-description-box {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #557a3e;  /* Green to match day number */
+}
+
+.day-description-enhanced {
+  color: #4a5568;
+  line-height: 1.8;
+  margin: 0;
+  font-size: 0.98em;
+}
+
+/* Hide standalone elevation text with green border styling */
+.day-card-content > :not(.day-description-box):not(.distance-section):not(.grouped-details-container)[style*="border-left"] {
+  display: none !important;
+}
+
+/* Hide any direct p tags that contain elevation info outside proper containers */
+.day-card-content > p {
+  display: none !important;
+}
+
+/* More specific rules to catch elevation text in various formats */
+.day-card-content > div[style*="border-left"]:not(.day-description-box):not(.distance-section):not(.grouped-details-container) {
+  display: none !important;
+}
+
+/* Hide elements with specific inline styles that indicate elevation content */
+.day-card-content > [style*="border-left: 4px"],
+.day-card-content > [style*="border-left:4px"],
+.day-card-content > [style*="color: #10b981"],
+.day-card-content > [style*="color:#10b981"] {
+  display: none !important;
+}
+
+/* Hide any first-level children that aren't our expected containers */
+.day-card-content > *:not(.day-description-box):not(.distance-section):not(.grouped-details-container):not(button) {
+  /* This will catch any unexpected elements */
+  display: none !important;
+}
+
+/* Ensure all properly structured content remains visible */
+.day-description-box,
+.day-description-box *,
+.distance-section,
+.distance-section *,
+.grouped-details-container,
+.grouped-details-container *,
+.detail-group,
+.detail-group * {
+  display: revert !important;
+}
+
+/* ===== Distance Section ===== */
+.distance-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: #f0f4f8;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.distance-icon {
+  font-size: 1.2em;
+}
+
+.distance-text {
+  color: #4a5568;
+}
+
+/* ===== Grouped Details Container ===== */
+.grouped-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 10px;
+}
+
+/* ===== Detail Groups ===== */
+.detail-group {
+  background: linear-gradient(to bottom, #fafbfc 0%, #f8f9fa 100%);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.detail-group:last-child {
+  margin-bottom: 0;
+}
+
+.detail-group-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+  letter-spacing: 0.025em;
+}
+
+.detail-group-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Individual Detail Items ===== */
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e8eef5;
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-item:hover {
+  border-color: #cbd5e0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.detail-icon {
+  font-size: 1.2em;
+  min-width: 24px;
+  text-align: center;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.98em;
+  letter-spacing: 0.01em;
+}
+
+.detail-content {
+  padding-left: 36px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-top: 2px;
+  font-size: 0.95em;
+}
+
+/* Special styling for highlights in Trail Tips section */
+.detail-item.highlights {
+  background: #fffbeb;
+  border: 1px solid #fbbf24;
+  padding: 18px;
+  margin-top: 8px;
+}
+
+.detail-item.highlights .detail-content {
+  font-style: italic;
+  color: #92400e;
+  font-size: 0.95em;
+}
+
+/* Tips styling */
+.detail-item.tips {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+}
+
+.detail-item.tips:hover {
+  border-color: #4ade80;
+}
+
+/* Terrain box special styling */
+.detail-item.terrain {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* Difficulty-specific styling */
+.detail-item.difficulty .detail-content {
+  font-weight: 500;
+  color: #f59e0b;
+}
+
+/* Ensure elevation is properly styled when in Essential Information */
+.detail-item.elevation .detail-icon::before {
+  content: "📈";
+}
+
+/* Route & Accommodation special styling */
+.detail-item.route {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  padding: 18px;
+}
+
+.detail-item.route .detail-content {
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+/* ===== Timeline Styles ===== */
+.itinerary-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+@media (min-width: 769px) {
+  /* Only apply timeline styles on desktop */
+  .itinerary-timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 40px;
+    bottom: 40px;
+    width: 2px;
+    background: #e2e8f0;
+  }
+
+  .itinerary-day-card::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 40px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid #557a3e;  /* Green to match day number */
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+/* ===== Info Cards (for other sections) ===== */
+.info-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.info-card h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-card-icon {
+  font-size: 1.2em;
+}
+
+.enhanced-content {
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .grouped-details-container {
+    gap: 25px;
+  }
+  
+  .detail-group {
+    padding: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-group-content {
+    gap: 16px;
+  }
+  
+  .detail-item {
+    padding: 14px;
+  }
+  
+  .detail-content {
+    padding-left: 32px;
+  }
+  
+  /* Hide timeline elements on mobile and expand content */
+  .itinerary-timeline {
+    padding-left: 0 !important;  /* Remove left padding since timeline is hidden */
+    margin-left: 0 !important;   /* Ensure no left margin */
+  }
+  
+  .itinerary-timeline::before {
+    display: none !important;  /* Hide the vertical line */
+  }
+  
+  .itinerary-day-card::before {
+    display: none !important;  /* Hide the dots */
+  }
+  
+  /* Ensure day cards use full width on mobile */
+  .itinerary-day-card {
+    margin-left: 0 !important;   /* Remove any left margin */
+    margin-right: 0 !important;  /* Remove any right margin */
+    width: 100%;                 /* Use full width */
+    max-width: 100%;             /* Ensure it can expand fully */
+  }
+  
+  .day-card-header {
+    flex-wrap: wrap;
+  }
+  
+  .day-title-enhanced {
+    font-size: 1.1em;
+  }
+  
+  .distance-section {
+    padding: 12px 16px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .itinerary-day-card {
+    padding: 18px;
+  }
+  
+  .detail-group {
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  
+  .detail-group-content {
+    gap: 12px;
+  }
+  
+  .detail-item {
+    padding: 12px;
+  }
+  
+  .detail-content {
+    padding-left: 0;
+    margin-top: 6px;
+  }
+  
+  .day-number {
+    font-size: 0.85em;
+    padding: 6px 12px;
+  }
+  
+  .grouped-details-container {
+    gap: 20px;
+  }
+}
+
+/* ===== Additional Styles to Ensure Proper Layout ===== */
+
+/* Hide any elevation elements outside the grouped layout */
+.elevation-box,
+.elevation-section,
+div[class*="elevation"]:not(.detail-item) {
+  display: none !important;
+}
+
+/* Make sure day number is always visible */
+.day-number:empty::before {
+  content: "Day";
+}
+
+/* Ensure proper spacing in grouped layout */
+.grouped-details-container:empty {
+  display: none;
+}
+
+/* Hide any duplicate distance displays */
+.distance-section + .distance-section {
+  display: none;
+}
+
+/* Ensure detail items are properly formatted */
+.detail-item .detail-content:empty {
+  display: none;
+}
+
+/* ===== Additional Responsive Fixes for Full Width on Mobile ===== */
+@media (max-width: 768px) {
+  /* Ensure all parent containers use full width */
+  .results-wrapper,
+  .content-sections,
+  .content-section-result {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Reset any container max-widths on mobile */
+  .max-w-5xl {
+    max-width: 100% !important;
+  }
+}

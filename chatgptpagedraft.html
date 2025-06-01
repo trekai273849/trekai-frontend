@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trek Details</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; margin:0; padding:0; background:#f8f9fa; color:#2c3e50; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    .hero { background: #2d5016; color: white; padding: 60px 20px; text-align: center; }
+    .hero h1 { margin-bottom: 10px; font-size: 2.5em; }
+    .hero p { font-size: 1.1em; opacity: 0.9; }
+    .metrics { display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0; }
+    .metric { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex: 1; min-width: 120px; text-align: center; }
+    .metric h4 { margin-bottom: 5px; font-size: 0.9em; color: #7f8c8d; }
+    .metric p { font-size: 1.2em; font-weight: 600; }
+    section { margin-bottom: 40px; }
+    section h2 { border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-bottom: 20px; }
+    .itinerary table { width: 100%; border-collapse: collapse; }
+    .itinerary th, .itinerary td { padding: 10px; border: 1px solid #ddd; }
+    .gear-list, .permits, .faqs { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .gear-list ul, .permits ul, .faqs ul { list-style: none; padding: 0; }
+    .gear-list li, .permits li, .faqs li { margin-bottom: 10px; }
+    .faq-item { margin-bottom: 15px; }
+    .faq-item h4 { margin-bottom: 5px; font-size: 1em; }
+    .faq-item p { margin:0; color:#5d6d7e; }
+    a.back { display:inline-block; margin:20px 0; text-decoration:none; color:#2d5016; }
+    a.back:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="index.html">&larr; Back to Explore</a>
+    <div class="hero">
+      <h1 id="trek-name">Loading...</h1>
+      <p id="trek-summary"></p>
+    </div>
+    <div class="metrics">
+      <div class="metric">
+        <h4>Region</h4>
+        <p id="trek-region"></p>
+      </div>
+      <div class="metric">
+        <h4>Country</h4>
+        <p id="trek-country"></p>
+      </div>
+      <div class="metric">
+        <h4>Duration (days)</h4>
+        <p id="trek-duration"></p>
+      </div>
+      <div class="metric">
+        <h4>Distance (km)</h4>
+        <p id="trek-distance"></p>
+      </div>
+      <div class="metric">
+        <h4>Max Elevation (m)</h4>
+        <p id="trek-elevation"></p>
+      </div>
+    </div>
+
+    <section class="itinerary">
+      <h2>Itinerary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Title</th>
+            <th>Distance (km)</th>
+            <th>Duration (hrs)</th>
+            <th>Highlights</th>
+          </tr>
+        </thead>
+        <tbody id="itinerary-body">
+        </tbody>
+      </table>
+    </section>
+
+    <section class="gear-list">
+      <h2>Gear List</h2>
+      <h3>Essential</h3>
+      <ul id="gear-essential"></ul>
+      <h3>Recommended</h3>
+      <ul id="gear-recommended"></ul>
+    </section>
+
+    <section class="permits">
+      <h2>Permits Required</h2>
+      <ul id="permits-list"></ul>
+    </section>
+
+    <section class="faqs">
+      <h2>FAQs</h2>
+      <div id="faqs-list"></div>
+    </section>
+  </div>
+
+  <script>
+    // Utility to get query param
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    const slug = getQueryParam('slug');
+    if (!slug) {
+      document.body.innerHTML = '<p style="padding:20px;">No trek specified.</p>';
+    } else {
+      fetch('all-treks-combined.json')
+        .then(res => res.json())
+        .then(data => {
+          const trek = data.find(t => t.slug === slug || t._id === slug);
+          if (!trek) {
+            document.body.innerHTML = '<p style="padding:20px;">Trek not found.</p>';
+            return;
+          }
+          document.title = trek.seo?.meta_title || trek.name;
+          document.getElementById('trek-name').textContent = trek.name;
+          document.getElementById('trek-summary').textContent = trek.summary;
+          document.getElementById('trek-region').textContent = trek.region;
+          document.getElementById('trek-country').textContent = trek.country;
+          document.getElementById('trek-duration').textContent = trek.duration.recommended_days || trek.duration.min_days + '-' + trek.duration.max_days;
+          document.getElementById('trek-distance').textContent = trek.distance_km;
+          document.getElementById('trek-elevation').textContent = trek.max_elevation_m;
+
+          // Itinerary
+          const itinBody = document.getElementById('itinerary-body');
+          trek.detailed_itinerary.forEach(day => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${day.day}</td>
+              <td>${day.title}</td>
+              <td>${day.distance_km}</td>
+              <td>${day.duration_hours}</td>
+              <td>${day.highlights.join(', ')}</td>
+            `;
+            itinBody.appendChild(tr);
+          });
+
+          // Gear
+          const gearEss = document.getElementById('gear-essential');
+          trek.gear_list.essential.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.item}: ${item.description}`;
+            gearEss.appendChild(li);
+          });
+          const gearRec = document.getElementById('gear-recommended');
+          trek.gear_list.recommended.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.item}: ${item.description}`;
+            gearRec.appendChild(li);
+          });
+
+          // Permits
+          const permList = document.getElementById('permits-list');
+          trek.permits_required.forEach(p => {
+            const li = document.createElement('li');
+            li.textContent = `${p.name}: $${p.cost_usd} USD (${p.validity}) - Obtain at ${p.where_to_obtain}`;
+            permList.appendChild(li);
+          });
+
+          // FAQs
+          const faqContainer = document.getElementById('faqs-list');
+          trek.faqs.forEach(q => {
+            const div = document.createElement('div');
+            div.className = 'faq-item';
+            div.innerHTML = `<h4>Q: ${q.question}</h4><p>A: ${q.answer}</p>`;
+            faqContainer.appendChild(div);
+          });
+        })
+        .catch(err => {
+          console.error(err);
+          document.body.innerHTML = '<p style="padding:20px;">Error loading trek data.</p>';
+        });
+    }
+  </script>
+</body>
+</html>

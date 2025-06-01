@@ -1,0 +1,1979 @@
+[
+  {
+    "_id": "everest-base-camp-trek",
+    "name": "Everest Base Camp Trek",
+    "slug": "everest-base-camp-trek",
+    "region": "Nepal/Himalayas",
+    "country": "Nepal",
+    "summary": "The ultimate bucket-list trek to the base of the world's highest peak, through Sherpa villages and Buddhist monasteries.",
+    "duration": {
+      "min_days": 12,
+      "max_days": 14,
+      "recommended_days": 14
+    },
+    "distance_km": 130,
+    "difficulty": "moderate",
+    "max_elevation_m": 5364,
+    "starting_elevation_m": 2860,
+    "airport": "Lukla (LUA)",
+    "nearest_city": "Kathmandu",
+    "coordinates": {
+      "start": {
+        "lat": 27.6870,
+        "lng": 86.7319,
+        "location": "Lukla"
+      },
+      "end": {
+        "lat": 28.0026,
+        "lng": 86.8528,
+        "location": "Everest Base Camp"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Spring",
+        "months": ["March", "April", "May"],
+        "description": "Clear mountain views, rhododendrons in bloom, busier trails"
+      },
+      {
+        "name": "Autumn",
+        "months": ["September", "October", "November"],
+        "description": "Crystal clear skies, perfect weather, peak season"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Fly to Lukla, Trek to Phakding",
+        "start_location": "Lukla",
+        "end_location": "Phakding",
+        "distance_km": 8,
+        "duration_hours": 3,
+        "elevation_start_m": 2860,
+        "elevation_end_m": 2610,
+        "elevation_gain_m": -250,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Sherpa Guide Lodge", "Phakding Resort", "Buddha Lodge"]
+        },
+        "meals_included": ["lunch", "dinner"],
+        "highlights": [
+          "Thrilling flight to Lukla airport",
+          "First views of Kusum Kanguru",
+          "Cross suspension bridges over Dudh Koshi",
+          "Prayer wheels and mani stones"
+        ],
+        "description": "After an exciting mountain flight to Lukla, begin your trek with an easy walk down to Phakding. The trail descends through pine forests and small Sherpa settlements, crossing several suspension bridges adorned with prayer flags."
+      },
+      {
+        "day": 2,
+        "title": "Trek to Namche Bazaar",
+        "start_location": "Phakding",
+        "end_location": "Namche Bazaar",
+        "distance_km": 11,
+        "duration_hours": 6,
+        "elevation_start_m": 2610,
+        "elevation_end_m": 3440,
+        "elevation_gain_m": 830,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Everest View", "Khumbu Lodge", "Namche Hotel"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "First view of Everest (if clear)",
+          "Hillary Suspension Bridge",
+          "Enter Sagarmatha National Park",
+          "Namche Bazaar - Sherpa capital"
+        ],
+        "description": "Today's trek involves a steady climb to Namche Bazaar. After entering Sagarmatha National Park at Monjo, the trail climbs steeply through pine forests. If the weather is clear, catch your first glimpse of Everest!"
+      },
+      {
+        "day": 3,
+        "title": "Acclimatization Day in Namche",
+        "start_location": "Namche Bazaar",
+        "end_location": "Namche Bazaar",
+        "distance_km": 4,
+        "duration_hours": 3,
+        "elevation_start_m": 3440,
+        "elevation_end_m": 3440,
+        "elevation_gain_m": 400,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Hike to Everest View Hotel",
+          "Visit Sherpa Museum",
+          "Explore Namche market",
+          "Views of Everest, Lhotse, Ama Dablam"
+        ],
+        "description": "Essential acclimatization day. Hike to the Everest View Hotel for panoramic mountain views, visit the Sherpa Cultural Museum, or explore the bustling market streets of Namche."
+      },
+      {
+        "day": 4,
+        "title": "Trek to Tengboche",
+        "start_location": "Namche Bazaar",
+        "end_location": "Tengboche",
+        "distance_km": 10,
+        "duration_hours": 5,
+        "elevation_start_m": 3440,
+        "elevation_end_m": 3860,
+        "elevation_gain_m": 420,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Tengboche Guest House", "Himalayan Lodge", "Tashi Delek Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Tengboche Monastery",
+          "Spectacular Ama Dablam views",
+          "Rhododendron forests (spring)",
+          "Possible wildlife sightings"
+        ],
+        "description": "Contour along the hillside with magnificent views of Everest, Nuptse, Lhotse, and Ama Dablam. After crossing the Dudh Koshi, climb through rhododendron forests to Tengboche Monastery."
+      },
+      {
+        "day": 5,
+        "title": "Trek to Dingboche",
+        "start_location": "Tengboche",
+        "end_location": "Dingboche",
+        "distance_km": 11,
+        "duration_hours": 5,
+        "elevation_start_m": 3860,
+        "elevation_end_m": 4410,
+        "elevation_gain_m": 550,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Good Luck", "Dingboche Resort", "Bright Star Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Cross Imja Khola",
+          "Views of Island Peak",
+          "Traditional stone-walled fields",
+          "Stunning mountain panoramas"
+        ],
+        "description": "Descend through forests to Deboche, cross the Imja Khola, and climb gradually to the village of Dingboche. The landscape becomes more barren as you gain altitude."
+      },
+      {
+        "day": 6,
+        "title": "Acclimatization Day in Dingboche",
+        "start_location": "Dingboche",
+        "end_location": "Dingboche",
+        "distance_km": 5,
+        "duration_hours": 3,
+        "elevation_start_m": 4410,
+        "elevation_end_m": 4410,
+        "elevation_gain_m": 400,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Hike to Nagarjun Hill (5100m)",
+          "360-degree mountain views",
+          "Spot climbing routes on Ama Dablam",
+          "Rest and prepare for higher altitudes"
+        ],
+        "description": "Another crucial acclimatization day. Hike to Nagarjun Hill or Chukhung Valley for spectacular views and better altitude adaptation."
+      },
+      {
+        "day": 7,
+        "title": "Trek to Lobuche",
+        "start_location": "Dingboche",
+        "end_location": "Lobuche",
+        "distance_km": 11,
+        "duration_hours": 5,
+        "elevation_start_m": 4410,
+        "elevation_end_m": 4940,
+        "elevation_gain_m": 530,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Eco Lodge", "Himalayan Lodge", "New EBC Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Thukla Pass memorial area",
+          "Views of Pumori and Nuptse",
+          "Alpine desert landscape",
+          "Memorial stupas for climbers"
+        ],
+        "description": "Trek through the terminal moraine of the Khumbu Glacier. After a steep climb to Thukla Pass, visit memorials dedicated to climbers who lost their lives on Everest."
+      },
+      {
+        "day": 8,
+        "title": "Trek to Gorak Shep, Visit Everest Base Camp",
+        "start_location": "Lobuche",
+        "end_location": "Gorak Shep",
+        "distance_km": 15,
+        "duration_hours": 8,
+        "elevation_start_m": 4940,
+        "elevation_end_m": 5164,
+        "elevation_gain_m": 224,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Buddha Lodge", "Himalayan Lodge", "Snow Land Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Everest Base Camp achievement",
+          "Khumbu Icefall views",
+          "Glacier walking experience",
+          "Prayer flags at base camp"
+        ],
+        "description": "The big day! Trek to Gorak Shep for lunch, then continue to Everest Base Camp. Celebrate at 5,364m before returning to Gorak Shep for the night."
+      },
+      {
+        "day": 9,
+        "title": "Hike to Kala Patthar, Descend to Pheriche",
+        "start_location": "Gorak Shep",
+        "end_location": "Pheriche",
+        "distance_km": 13,
+        "duration_hours": 7,
+        "elevation_start_m": 5164,
+        "elevation_end_m": 4280,
+        "elevation_gain_m": 386,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Himalayan Hotel", "Pheriche Resort", "Edelweiss Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Sunrise from Kala Patthar",
+          "Best views of Everest summit",
+          "360-degree Himalayan panorama",
+          "Rapid descent for recovery"
+        ],
+        "description": "Early morning climb to Kala Patthar (5,545m) for sunrise over Everest - the best views of the entire trek. Descend all the way to Pheriche."
+      },
+      {
+        "day": 10,
+        "title": "Trek to Namche Bazaar",
+        "start_location": "Pheriche",
+        "end_location": "Namche Bazaar",
+        "distance_km": 20,
+        "duration_hours": 7,
+        "elevation_start_m": 4280,
+        "elevation_end_m": 3440,
+        "elevation_gain_m": -840,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Everest View", "Khumbu Lodge", "Namche Hotel"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Rapid descent through villages",
+          "Return to thicker air",
+          "Celebrate in Namche",
+          "Hot shower and good food"
+        ],
+        "description": "Long but easier day descending through Tengboche and Phunki Thenga back to Namche Bazaar. Enjoy the thicker air and celebrate your achievement!"
+      },
+      {
+        "day": 11,
+        "title": "Trek to Lukla",
+        "start_location": "Namche Bazaar",
+        "end_location": "Lukla",
+        "distance_km": 19,
+        "duration_hours": 7,
+        "elevation_start_m": 3440,
+        "elevation_end_m": 2860,
+        "elevation_gain_m": -580,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Numbur Lodge", "Buddha Lodge", "La Villa Sherpani"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Final mountain views",
+          "Celebrate with trekking crew",
+          "Traditional farewell party",
+          "Prepare for flight out"
+        ],
+        "description": "Final trekking day! Descend through Monjo and Phakding back to Lukla. Traditional celebration with your trekking crew in the evening."
+      },
+      {
+        "day": 12,
+        "title": "Fly to Kathmandu",
+        "start_location": "Lukla",
+        "end_location": "Kathmandu",
+        "distance_km": 0,
+        "duration_hours": 0.5,
+        "elevation_start_m": 2860,
+        "elevation_end_m": 1400,
+        "elevation_gain_m": -1460,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Return to Kathmandu hotel"]
+        },
+        "meals_included": ["breakfast"],
+        "highlights": [
+          "Scenic mountain flight",
+          "Return to civilization",
+          "Hot shower and city comforts",
+          "Celebration dinner in Thamel"
+        ],
+        "description": "Weather permitting, take an early morning flight back to Kathmandu. Rest of the day free to relax, shop for souvenirs, or explore the city."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Trekking boots",
+          "description": "Waterproof, broken in, ankle support",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "-15°C rated for shoulder seasons",
+          "rental_available": true
+        },
+        {
+          "item": "Down jacket",
+          "description": "Lightweight but warm, compressible",
+          "rental_available": true
+        },
+        {
+          "item": "Base layers",
+          "description": "Merino wool or synthetic, 2-3 sets",
+          "rental_available": false
+        },
+        {
+          "item": "Trekking pants",
+          "description": "Quick-dry, zip-off legs optional",
+          "rental_available": false
+        },
+        {
+          "item": "Fleece jacket",
+          "description": "Mid-layer insulation",
+          "rental_available": true
+        },
+        {
+          "item": "Rain jacket and pants",
+          "description": "Waterproof and breathable",
+          "rental_available": true
+        },
+        {
+          "item": "Sun hat and warm hat",
+          "description": "Wide brim and wool/fleece beanie",
+          "rental_available": false
+        },
+        {
+          "item": "Gloves",
+          "description": "Liner gloves plus insulated gloves",
+          "rental_available": false
+        },
+        {
+          "item": "Daypack",
+          "description": "25-35 liters with rain cover",
+          "rental_available": true
+        },
+        {
+          "item": "Water bottles or hydration system",
+          "description": "2-3 liters capacity total",
+          "rental_available": false
+        },
+        {
+          "item": "Headlamp",
+          "description": "With extra batteries",
+          "rental_available": false
+        },
+        {
+          "item": "Sunglasses",
+          "description": "UV protection, glacier rated",
+          "rental_available": false
+        },
+        {
+          "item": "First aid kit",
+          "description": "Including altitude sickness medication",
+          "rental_available": false
+        },
+        {
+          "item": "Water purification",
+          "description": "Tablets, drops, or SteriPen",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Trekking poles",
+          "description": "Reduce knee strain on descents",
+          "rental_available": true
+        },
+        {
+          "item": "Gaiters",
+          "description": "Keep snow and debris out",
+          "rental_available": true
+        },
+        {
+          "item": "Buff or neck warmer",
+          "description": "Versatile protection",
+          "rental_available": false
+        },
+        {
+          "item": "Camp shoes",
+          "description": "Sandals or lightweight shoes",
+          "rental_available": false
+        },
+        {
+          "item": "Dry bags",
+          "description": "Keep electronics and clothes dry",
+          "rental_available": false
+        },
+        {
+          "item": "Snacks",
+          "description": "Energy bars, nuts, chocolate",
+          "rental_available": false
+        },
+        {
+          "item": "Camera with extra batteries",
+          "description": "Cold weather drains batteries",
+          "rental_available": false
+        },
+        {
+          "item": "Book or e-reader",
+          "description": "For rest days and evenings",
+          "rental_available": false
+        }
+      ],
+      "optional": [
+        {
+          "item": "Portable charger/power bank",
+          "description": "Solar chargers work well",
+          "rental_available": false
+        },
+        {
+          "item": "Satellite phone",
+          "description": "For emergencies (guides usually carry)",
+          "rental_available": true
+        },
+        {
+          "item": "Pulse oximeter",
+          "description": "Monitor oxygen saturation",
+          "rental_available": false
+        },
+        {
+          "item": "Down pants",
+          "description": "For extremely cold conditions",
+          "rental_available": true
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Sagarmatha National Park Entry Permit",
+        "cost_usd": 30,
+        "cost_npr": 3000,
+        "where_to_obtain": "Monjo entrance gate or Kathmandu",
+        "validity": "Single entry"
+      },
+      {
+        "name": "Khumbu Pasang Lhamu Rural Municipality Permit",
+        "cost_usd": 20,
+        "cost_npr": 2000,
+        "where_to_obtain": "Lukla or Monjo",
+        "validity": "Duration of trek"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 50,
+      "guide_daily_usd": 30,
+      "porter_daily_usd": 20,
+      "accommodation_daily_usd": 5,
+      "meals_daily_usd": 25,
+      "flight_lukla_usd": 360,
+      "miscellaneous_daily_usd": 10,
+      "total_budget_range_usd": {
+        "min": 1500,
+        "max": 3000
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Sherpa", "Rai", "Tamang"],
+      "primary_religion": "Tibetan Buddhism",
+      "languages": ["Nepali", "Sherpa", "English (widely spoken)"],
+      "customs_etiquette": [
+        "Always walk clockwise around mani stones and stupas",
+        "Remove shoes before entering monasteries",
+        "Don't touch religious artifacts or paintings",
+        "Ask permission before photographing people",
+        "Dress modestly, especially in religious sites",
+        "Use right hand for giving and receiving",
+        "Don't point with your index finger at sacred objects"
+      ],
+      "local_foods": [
+        {
+          "name": "Dal Bhat",
+          "description": "Traditional meal of lentil soup, rice, vegetables, and pickles"
+        },
+        {
+          "name": "Momos",
+          "description": "Steamed or fried dumplings with meat or vegetables"
+        },
+        {
+          "name": "Sherpa Stew",
+          "description": "Hearty potato-based stew with vegetables"
+        },
+        {
+          "name": "Tibetan Bread",
+          "description": "Fried bread served with honey or jam"
+        },
+        {
+          "name": "Butter Tea",
+          "description": "Traditional salty tea with yak butter"
+        }
+      ],
+      "festivals": [
+        {
+          "name": "Mani Rimdu",
+          "when": "October/November",
+          "description": "Buddhist festival at Tengboche Monastery with masked dances"
+        },
+        {
+          "name": "Dumji",
+          "when": "May/June",
+          "description": "Sherpa festival celebrating harvest"
+        },
+        {
+          "name": "Losar",
+          "when": "February/March",
+          "description": "Tibetan New Year celebration"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "high",
+        "prevention": [
+          "Ascend slowly, no more than 300-500m per day above 3000m",
+          "Stay hydrated, drink 3-4 liters daily",
+          "Avoid alcohol and sleeping pills",
+          "Consider Diamox (consult doctor first)",
+          "Follow acclimatization days in itinerary"
+        ],
+        "symptoms": [
+          "Headache",
+          "Nausea",
+          "Fatigue",
+          "Dizziness",
+          "Loss of appetite"
+        ],
+        "treatment": "Descend immediately if symptoms worsen"
+      },
+      "medical_facilities": [
+        {
+          "location": "Lukla",
+          "type": "Basic health post"
+        },
+        {
+          "location": "Namche Bazaar",
+          "type": "Hospital with altitude sickness treatment"
+        },
+        {
+          "location": "Pheriche",
+          "type": "HRA Aid Post (Himalayan Rescue Association)"
+        },
+        {
+          "location": "Gorak Shep",
+          "type": "Basic first aid only"
+        }
+      ],
+      "evacuation": {
+        "method": "Helicopter",
+        "cost_usd": "4000-6000",
+        "insurance_required": true,
+        "response_time": "Weather dependent, 30min-24hrs"
+      },
+      "vaccinations_recommended": [
+        "Hepatitis A & B",
+        "Typhoid",
+        "Japanese Encephalitis",
+        "Rabies (if extended stay)",
+        "Routine vaccinations up to date"
+      ],
+      "common_health_issues": [
+        "Khumbu cough (dry cough from altitude)",
+        "GI problems (traveler's diarrhea)",
+        "Sun exposure (intense UV at altitude)",
+        "Dehydration",
+        "Blisters"
+      ]
+    },
+    "weather_patterns": {
+      "spring": {
+        "months": ["March", "April", "May"],
+        "day_temp_c": "10 to 15",
+        "night_temp_c": "-5 to 5",
+        "precipitation": "Low to moderate",
+        "visibility": "Good, occasional afternoon clouds",
+        "notes": "Rhododendrons bloom, busier trails"
+      },
+      "summer_monsoon": {
+        "months": ["June", "July", "August"],
+        "day_temp_c": "15 to 20",
+        "night_temp_c": "0 to 10",
+        "precipitation": "High, daily rain",
+        "visibility": "Poor, cloudy",
+        "notes": "Not recommended, trails muddy and views obscured"
+      },
+      "autumn": {
+        "months": ["September", "October", "November"],
+        "day_temp_c": "10 to 15",
+        "night_temp_c": "-10 to 0",
+        "precipitation": "Very low",
+        "visibility": "Excellent, crystal clear",
+        "notes": "Best season, stable weather, cold nights"
+      },
+      "winter": {
+        "months": ["December", "January", "February"],
+        "day_temp_c": "0 to 5",
+        "night_temp_c": "-20 to -10",
+        "precipitation": "Low, occasional snow",
+        "visibility": "Good, very clear",
+        "notes": "Very cold, some lodges closed, fewer trekkers"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Flight",
+          "from": "Kathmandu",
+          "to": "Lukla",
+          "duration": "30-45 minutes",
+          "cost_usd": 180,
+          "frequency": "Multiple daily (weather dependent)",
+          "booking": "Book through trekking agency or airline",
+          "notes": "Weather delays common, allow buffer days"
+        },
+        {
+          "method": "Helicopter",
+          "from": "Kathmandu",
+          "to": "Lukla",
+          "duration": "45 minutes",
+          "cost_usd": 500,
+          "frequency": "Charter basis",
+          "notes": "Alternative during flight delays"
+        },
+        {
+          "method": "Drive + Trek",
+          "from": "Kathmandu",
+          "to": "Salleri/Phaplu",
+          "duration": "2-3 days to Lukla",
+          "cost_usd": 30,
+          "frequency": "Daily buses",
+          "notes": "Longer but more reliable option"
+        }
+      ],
+      "from_end": "Same as to_start"
+    },
+    "accommodation": {
+      "type": "Teahouses/Lodges",
+      "description": "Basic mountain lodges with twin-bedded rooms",
+      "amenities": [
+        "Basic bedding (bring sleeping bag)",
+        "Shared bathrooms (mostly)",
+        "Dining room with heating stove",
+        "Charging facilities (paid)",
+        "Hot showers (paid, not always available higher up)",
+        "WiFi (paid, sporadic)"
+      ],
+      "booking": "Not required except peak season",
+      "cost_per_night_usd": "3-10 depending on altitude"
+    },
+    "difficulty_details": {
+      "physical_demands": "Moderate to high cardiovascular fitness required",
+      "technical_skills": "None required, basic trekking experience helpful",
+      "altitude_challenge": "Significant - proper acclimatization essential",
+      "trail_conditions": "Well-marked paths, some rocky sections",
+      "daily_hiking_hours": "5-8 hours average",
+      "total_elevation_gain": 3800,
+      "total_elevation_loss": 3800
+    },
+    "sustainability": {
+      "environmental_concerns": [
+        "Waste management issues",
+        "Deforestation for fuel",
+        "Trail erosion"
+      ],
+      "responsible_practices": [
+        "Carry out all non-biodegradable waste",
+        "Use water purification instead of buying bottles",
+        "Stay in eco-friendly lodges when possible",
+        "Respect wildlife and don't feed animals",
+        "Use established toilet facilities"
+      ],
+      "local_initiatives": [
+        "Sagarmatha Pollution Control Committee",
+        "Everest Base Camp cleanup campaigns",
+        "Solar power adoption in lodges"
+      ]
+    },
+    "connectivity": {
+      "mobile_coverage": [
+        {
+          "location": "Lukla to Namche",
+          "quality": "Good",
+          "providers": ["Ncell", "NTC"]
+        },
+        {
+          "location": "Namche to Dingboche",
+          "quality": "Intermittent",
+          "providers": ["Ncell", "NTC"]
+        },
+        {
+          "location": "Above Dingboche",
+          "quality": "Poor to none",
+          "providers": ["Satellite only"]
+        }
+      ],
+      "internet": {
+        "availability": "Most lodges up to Dingboche",
+        "cost_usd": "3-5 per hour",
+        "speed": "Very slow, basic messaging only"
+      }
+    },
+    "booking_recommendations": {
+      "advance_booking": "2-3 months for peak season",
+      "group_size": "2-12 people typical",
+      "guide_requirement": "Recommended but not mandatory",
+      "porter_recommendation": "Highly recommended",
+      "insurance_essential": true,
+      "fitness_preparation": "3-6 months cardio training"
+    },
+    "alternative_routes": [
+      {
+        "name": "Gokyo Lakes Trek",
+        "variation": "Include Gokyo Ri instead of Kala Patthar",
+        "extra_days": 2,
+        "highlights": ["Turquoise lakes", "Less crowded", "Cho Oyu views"]
+      },
+      {
+        "name": "Three Passes Trek",
+        "variation": "Cross Kongma La, Cho La, and Renjo La",
+        "extra_days": 5,
+        "highlights": ["Ultimate EBC challenge", "Remote valleys", "Technical passes"]
+      },
+      {
+        "name": "EBC via Jiri",
+        "variation": "Classic approach from Jiri",
+        "extra_days": 7,
+        "highlights": ["Traditional route", "Cultural immersion", "Gradual acclimatization"]
+      }
+    ],
+    "photography_highlights": [
+      {
+        "location": "Kala Patthar",
+        "best_time": "Sunrise",
+        "subjects": ["Everest summit", "Nuptse", "Pumori"]
+      },
+      {
+        "location": "Tengboche",
+        "best_time": "Late afternoon",
+        "subjects": ["Ama Dablam", "Monastery", "Prayer flags"]
+      },
+      {
+        "location": "Namche Bazaar",
+        "best_time": "Morning",
+        "subjects": ["Town overview", "Kongde Ri", "Market life"]
+      },
+      {
+        "location": "EBC",
+        "best_time": "Midday",
+        "subjects": ["Khumbu Icefall", "Base camp tents", "Prayer flags"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need previous trekking experience?",
+        "answer": "No, but good physical fitness is essential. The trek is non-technical but demanding due to altitude and duration."
+      },
+      {
+        "question": "Can I trek independently?",
+        "answer": "Yes, it's allowed, but hiring a guide is highly recommended for safety, navigation, and cultural insights."
+      },
+      {
+        "question": "What about altitude sickness?",
+        "answer": "It's a real risk above 3,000m. Follow the itinerary's acclimatization days, stay hydrated, and descend if symptoms worsen."
+      },
+      {
+        "question": "Is travel insurance mandatory?",
+        "answer": "While not legally required, it's essential. Ensure it covers trekking up to 6,000m and helicopter evacuation."
+      },
+      {
+        "question": "What if I can't get a flight to/from Lukla?",
+        "answer": "Weather delays are common. Budget 2-3 buffer days. Helicopter shuttles or the overland route via Salleri are alternatives."
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 98,
+    "seo": {
+      "meta_title": "Everest Base Camp Trek Complete Guide 2024 | 14-Day Itinerary",
+      "meta_description": "Complete guide to trekking Everest Base Camp. Detailed 14-day itinerary, gear list, costs, permits, and expert tips for reaching 5,364m safely.",
+      "keywords": ["everest base camp trek", "EBC trek", "nepal trekking", "himalaya trek", "everest trek itinerary"]
+    }
+  },
+  {
+    "_id": "annapurna-circuit-trek",
+    "name": "Annapurna Circuit Trek",
+    "slug": "annapurna-circuit-trek",
+    "region": "Nepal/Himalayas",
+    "country": "Nepal",
+    "summary": "A diverse journey through varied landscapes, from tropical forests to high-altitude deserts, crossing the challenging Thorong La Pass at 5,416m.",
+    "duration": {
+      "min_days": 15,
+      "max_days": 21,
+      "recommended_days": 18
+    },
+    "distance_km": 230,
+    "difficulty": "challenging",
+    "max_elevation_m": 5416,
+    "starting_elevation_m": 760,
+    "airport": "Kathmandu (KTM)",
+    "nearest_city": "Kathmandu/Pokhara",
+    "coordinates": {
+      "start": {
+        "lat": 28.4222,
+        "lng": 84.4291,
+        "location": "Besisahar"
+      },
+      "end": {
+        "lat": 28.5167,
+        "lng": 83.8000,
+        "location": "Nayapul"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Autumn",
+        "months": ["October", "November"],
+        "description": "Clear skies, stable weather, best mountain views"
+      },
+      {
+        "name": "Spring",
+        "months": ["March", "April"],
+        "description": "Rhododendrons bloom, warmer temperatures, occasional clouds"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Drive from Kathmandu to Besisahar",
+        "start_location": "Kathmandu",
+        "end_location": "Besisahar",
+        "distance_km": 175,
+        "duration_hours": 6,
+        "elevation_start_m": 1400,
+        "elevation_end_m": 760,
+        "elevation_gain_m": -640,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Hotel Besisahar", "Trekkers Lodge", "Mountain View Lodge"]
+        },
+        "meals_included": ["lunch", "dinner"],
+        "highlights": [
+          "Scenic drive through rural Nepal",
+          "Views of Ganesh Himal",
+          "Cross Trishuli River",
+          "Traditional villages"
+        ],
+        "description": "Early morning departure from Kathmandu for a scenic drive to Besisahar. The journey follows the Prithvi Highway before turning north along the Marsyangdi River valley."
+      },
+      {
+        "day": 2,
+        "title": "Trek to Bahundanda",
+        "start_location": "Besisahar",
+        "end_location": "Bahundanda",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 760,
+        "elevation_end_m": 1310,
+        "elevation_gain_m": 550,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Himalaya Lodge", "Rainbow Lodge", "Peaceful Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "First day of trekking",
+          "Marsyangdi River valley",
+          "Terraced fields",
+          "Mixed Hindu and Buddhist villages"
+        ],
+        "description": "Begin trekking along the Marsyangdi River through subtropical forests and terraced fields. Pass through several Gurung and Brahmin villages."
+      },
+      {
+        "day": 3,
+        "title": "Trek to Chamje",
+        "start_location": "Bahundanda",
+        "end_location": "Chamje",
+        "distance_km": 15,
+        "duration_hours": 6,
+        "elevation_start_m": 1310,
+        "elevation_end_m": 1410,
+        "elevation_gain_m": 100,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Tashi Delek Lodge", "River View Lodge", "Namaste Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Dramatic gorge sections",
+          "Suspension bridges",
+          "Waterfalls",
+          "Changing vegetation"
+        ],
+        "description": "Trek through narrow gorge sections with the trail carved into cliff faces. Cross several suspension bridges and enjoy views of cascading waterfalls."
+      },
+      {
+        "day": 4,
+        "title": "Trek to Dharapani",
+        "start_location": "Chamje",
+        "end_location": "Dharapani",
+        "distance_km": 16,
+        "duration_hours": 7,
+        "elevation_start_m": 1410,
+        "elevation_end_m": 1960,
+        "elevation_gain_m": 550,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Tibet Lodge", "Mountain Lodge", "Eagle Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Enter Manang district",
+          "Views of Annapurna II",
+          "Pine forests",
+          "Tibetan influenced architecture"
+        ],
+        "description": "Steady climb through bamboo and rhododendron forests. Enter the Manang district at Koto, where Tibetan cultural influence becomes apparent."
+      },
+      {
+        "day": 5,
+        "title": "Trek to Chame",
+        "start_location": "Dharapani",
+        "end_location": "Chame",
+        "distance_km": 15,
+        "duration_hours": 6,
+        "elevation_start_m": 1960,
+        "elevation_end_m": 2710,
+        "elevation_gain_m": 750,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["New Tibet Lodge", "Marshyangdi Hotel", "Karma Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Annapurna II close-up views",
+          "Hot springs at Koto",
+          "Chame - district headquarters",
+          "Apple orchards"
+        ],
+        "description": "Trek through dense forests with occasional clearings offering stunning views of Annapurna II. Chame is the administrative center of Manang district."
+      },
+      {
+        "day": 6,
+        "title": "Trek to Pisang",
+        "start_location": "Chame",
+        "end_location": "Pisang",
+        "distance_km": 14,
+        "duration_hours": 5,
+        "elevation_start_m": 2710,
+        "elevation_end_m": 3300,
+        "elevation_gain_m": 590,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Pisang Peak", "Mountain View Lodge", "Annapurna Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Paungda Danda rock face",
+          "First views of Annapurna III",
+          "Upper and Lower Pisang",
+          "Traditional Buddhist monastery"
+        ],
+        "description": "Spectacular day walking through deep forests with the massive Paungda Danda rock face rising 1,500m above. Choose between Upper or Lower Pisang routes."
+      },
+      {
+        "day": 7,
+        "title": "Trek to Manang",
+        "start_location": "Pisang",
+        "end_location": "Manang",
+        "distance_km": 19,
+        "duration_hours": 7,
+        "elevation_start_m": 3300,
+        "elevation_end_m": 3519,
+        "elevation_gain_m": 219,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Yak Hotel", "Himalaya Lodge", "Tilicho Hotel"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Upper route via Ghyaru",
+          "360-degree mountain panorama",
+          "Tibetan Buddhist culture",
+          "Manang village exploration"
+        ],
+        "description": "Choose between the upper route through Ghyaru and Ngawal (highly recommended for views) or the lower valley route. Both converge at Manang."
+      },
+      {
+        "day": 8,
+        "title": "Acclimatization Day in Manang",
+        "start_location": "Manang",
+        "end_location": "Manang",
+        "distance_km": 0,
+        "duration_hours": 0,
+        "elevation_start_m": 3519,
+        "elevation_end_m": 3519,
+        "elevation_gain_m": 0,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Hike to Gangapurna Lake",
+          "Visit 500-year-old monastery",
+          "HRA health post lecture",
+          "Explore Manang village"
+        ],
+        "description": "Essential acclimatization day. Options include hiking to Gangapurna Lake, visiting the monastery, or climbing to viewpoints above the village."
+      },
+      {
+        "day": 9,
+        "title": "Trek to Yak Kharka",
+        "start_location": "Manang",
+        "end_location": "Yak Kharka",
+        "distance_km": 10,
+        "duration_hours": 4,
+        "elevation_start_m": 3519,
+        "elevation_end_m": 4110,
+        "elevation_gain_m": 591,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Yak Kharka Lodge", "Himalayan Lodge", "Sun Rise Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Alpine terrain begins",
+          "Yak pastures",
+          "Stunning mountain views",
+          "Shorter day for acclimatization"
+        ],
+        "description": "Leave the last major village behind as you enter high alpine terrain. The landscape becomes more barren with scattered juniper bushes."
+      },
+      {
+        "day": 10,
+        "title": "Trek to Thorong Phedi",
+        "start_location": "Yak Kharka",
+        "end_location": "Thorong Phedi",
+        "distance_km": 7,
+        "duration_hours": 4,
+        "elevation_start_m": 4110,
+        "elevation_end_m": 4600,
+        "elevation_gain_m": 490,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Thorong Base Camp Lodge", "Thorong Phedi Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Base of Thorong La Pass",
+          "Dramatic mountain amphitheater",
+          "Final preparations for pass crossing",
+          "Early rest for summit day"
+        ],
+        "description": "Short but steady climb to the base of Thorong La Pass. Rest early as tomorrow requires a very early start for the pass crossing."
+      },
+      {
+        "day": 11,
+        "title": "Cross Thorong La Pass to Muktinath",
+        "start_location": "Thorong Phedi",
+        "end_location": "Muktinath",
+        "distance_km": 16,
+        "duration_hours": 9,
+        "elevation_start_m": 4600,
+        "elevation_end_m": 3800,
+        "elevation_gain_m": 816,
+        "difficulty": "very challenging",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Bob Marley", "Hotel North Pole", "New Plaza Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Thorong La Pass at 5,416m",
+          "Sunrise over the Himalayas",
+          "Achievement of highest point",
+          "Descent to Muktinath temple"
+        ],
+        "description": "The big day! Start at 3-4 AM for the challenging climb to Thorong La Pass. Celebrate at the top before the long descent to Muktinath."
+      },
+      {
+        "day": 12,
+        "title": "Trek to Kagbeni",
+        "start_location": "Muktinath",
+        "end_location": "Kagbeni",
+        "distance_km": 16,
+        "duration_hours": 5,
+        "elevation_start_m": 3800,
+        "elevation_end_m": 2810,
+        "elevation_gain_m": -990,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Red House Lodge", "Hotel Nilgiri View", "YacDonalds"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Visit Muktinath temple",
+          "Enter Mustang region",
+          "Medieval village of Kagbeni",
+          "Kali Gandaki valley views"
+        ],
+        "description": "Morning visit to the sacred Muktinath temple before descending through the dramatic landscape to the ancient village of Kagbeni."
+      },
+      {
+        "day": 13,
+        "title": "Trek to Marpha",
+        "start_location": "Kagbeni",
+        "end_location": "Marpha",
+        "distance_km": 16,
+        "duration_hours": 5,
+        "elevation_start_m": 2810,
+        "elevation_end_m": 2670,
+        "elevation_gain_m": -140,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Paradise", "Dhaulagiri Lodge", "Hotel Marpha Palace"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Walk through world's deepest gorge",
+          "Apple orchards of Marpha",
+          "Traditional whitewashed village",
+          "Apple products and brandy"
+        ],
+        "description": "Follow the Kali Gandaki River through the world's deepest gorge between Dhaulagiri and Annapurna. Marpha is famous for its apples."
+      },
+      {
+        "day": 14,
+        "title": "Trek to Kalopani",
+        "start_location": "Marpha",
+        "end_location": "Kalopani",
+        "distance_km": 17,
+        "duration_hours": 6,
+        "elevation_start_m": 2670,
+        "elevation_end_m": 2530,
+        "elevation_gain_m": -140,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["See You Lodge", "Annapurna Lodge", "Green Forest Hotel"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Pass through Tukuche",
+          "Views of Dhaulagiri",
+          "Traditional Thakali villages",
+          "Pine forests return"
+        ],
+        "description": "Continue down the valley passing through traditional Thakali villages. The landscape transitions back to pine forests as you descend."
+      },
+      {
+        "day": 15,
+        "title": "Trek to Tatopani",
+        "start_location": "Kalopani",
+        "end_location": "Tatopani",
+        "distance_km": 18,
+        "duration_hours": 6,
+        "elevation_start_m": 2530,
+        "elevation_end_m": 1190,
+        "elevation_gain_m": -1340,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Tatopani", "Dhaulagiri Lodge", "Hot Spring Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Dramatic descent",
+          "Natural hot springs",
+          "Subtropical vegetation",
+          "Relax sore muscles"
+        ],
+        "description": "Long descent through changing vegetation zones. Tatopani means 'hot water' - enjoy the natural hot springs to soothe tired muscles."
+      },
+      {
+        "day": 16,
+        "title": "Trek to Ghorepani",
+        "start_location": "Tatopani",
+        "end_location": "Ghorepani",
+        "distance_km": 15,
+        "duration_hours": 7,
+        "elevation_start_m": 1190,
+        "elevation_end_m": 2860,
+        "elevation_gain_m": 1670,
+        "difficulty": "challenging",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Hotel Sunny", "Fishtail Lodge", "Super View Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Steep climb through villages",
+          "Rhododendron forests",
+          "Magar and Gurung culture",
+          "Prepare for Poon Hill sunrise"
+        ],
+        "description": "Challenging climb up stone steps through terraced fields and rhododendron forests to reach Ghorepani, gateway to Poon Hill."
+      },
+      {
+        "day": 17,
+        "title": "Poon Hill Sunrise, Trek to Nayapul, Drive to Pokhara",
+        "start_location": "Ghorepani",
+        "end_location": "Pokhara",
+        "distance_km": 20,
+        "duration_hours": 8,
+        "elevation_start_m": 2860,
+        "elevation_end_m": 822,
+        "elevation_gain_m": -2038,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Hotel in Pokhara"]
+        },
+        "meals_included": ["breakfast", "lunch"],
+        "highlights": [
+          "Sunrise from Poon Hill (3,210m)",
+          "Panoramic mountain views",
+          "Final descent to road",
+          "Arrive in Pokhara"
+        ],
+        "description": "Pre-dawn hike to Poon Hill for spectacular sunrise over the Himalayas. Descend to Nayapul and drive to Pokhara to complete the circuit."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Trekking boots",
+          "description": "Waterproof with good ankle support",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "-20°C rated for Thorong La Pass",
+          "rental_available": true
+        },
+        {
+          "item": "Down jacket",
+          "description": "Essential for pass crossing",
+          "rental_available": true
+        },
+        {
+          "item": "Thermal layers",
+          "description": "Top and bottom, 2 sets minimum",
+          "rental_available": false
+        },
+        {
+          "item": "Waterproof jacket and pants",
+          "description": "Good quality rain gear",
+          "rental_available": true
+        },
+        {
+          "item": "Trekking poles",
+          "description": "Highly recommended for pass day",
+          "rental_available": true
+        },
+        {
+          "item": "Warm gloves",
+          "description": "Insulated for high altitude",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Hat, sunglasses, sunscreen SPF 50+",
+          "rental_available": false
+        },
+        {
+          "item": "First aid kit",
+          "description": "Including altitude medication",
+          "rental_available": false
+        },
+        {
+          "item": "Water purification",
+          "description": "Tablets or SteriPen",
+          "rental_available": false
+        }
+      ],
+      "recommended": [
+        {
+          "item": "Gaiters",
+          "description": "For potential snow on pass",
+          "rental_available": true
+        },
+        {
+          "item": "Down pants",
+          "description": "For extreme cold on pass day",
+          "rental_available": true
+        },
+        {
+          "item": "Buff/neck warmer",
+          "description": "Wind protection",
+          "rental_available": false
+        },
+        {
+          "item": "Headlamp",
+          "description": "Essential for pass day start",
+          "rental_available": false
+        },
+        {
+          "item": "Crampons",
+          "description": "If crossing in winter/spring",
+          "rental_available": true
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Annapurna Conservation Area Permit (ACAP)",
+        "cost_usd": 30,
+        "cost_npr": 3000,
+        "where_to_obtain": "ACAP office in Kathmandu or Pokhara",
+        "validity": "Single entry"
+      },
+      {
+        "name": "Trekkers' Information Management System (TIMS)",
+        "cost_usd": 10,
+        "cost_npr": 1000,
+        "where_to_obtain": "Tourism Board offices",
+        "validity": "Duration of trek"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 40,
+      "guide_daily_usd": 25,
+      "porter_daily_usd": 18,
+      "accommodation_daily_usd": 5,
+      "meals_daily_usd": 20,
+      "transportation_usd": 50,
+      "miscellaneous_daily_usd": 5,
+      "total_budget_range_usd": {
+        "min": 800,
+        "max": 2000
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Gurung", "Thakali", "Manangi", "Tibetan"],
+      "primary_religion": "Buddhism and Hinduism",
+      "languages": ["Nepali", "Gurung", "Tibetan dialects", "English"],
+      "customs_etiquette": [
+        "Walk clockwise around mani walls and stupas",
+        "Remove shoes in monasteries and homes",
+        "Don't eat beef in Hindu areas",
+        "Respect local dress codes",
+        "Ask permission before photographing"
+      ],
+      "local_foods": [
+        {
+          "name": "Thakali Thali",
+          "description": "Traditional set meal from the Thakali people"
+        },
+        {
+          "name": "Yak cheese",
+          "description": "Local specialty in higher regions"
+        },
+        {
+          "name": "Apple products",
+          "description": "From Marpha - pie, brandy, cider"
+        },
+        {
+          "name": "Buckwheat pancakes",
+          "description": "Traditional in Manang region"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "very high",
+        "prevention": [
+          "Mandatory acclimatization day in Manang",
+          "Consider additional day if needed",
+          "Hydrate constantly",
+          "Avoid alcohol before pass crossing",
+          "Consider Diamox prescription"
+        ],
+        "critical_points": ["Manang", "Thorong Phedi", "Pass day"]
+      },
+      "medical_facilities": [
+        {
+          "location": "Chame",
+          "type": "Health post"
+        },
+        {
+          "location": "Manang",
+          "type": "HRA clinic with daily lectures"
+        },
+        {
+          "location": "Jomsom",
+          "type": "Hospital with basic facilities"
+        }
+      ],
+      "evacuation": {
+        "method": "Helicopter from most points",
+        "cost_usd": "3000-5000",
+        "challenging_areas": "Thorong La Pass area"
+      }
+    },
+    "weather_patterns": {
+      "pre_monsoon": {
+        "months": ["March", "April", "May"],
+        "pass_conditions": "May have snow, crampons possibly needed",
+        "temperatures": "Moderate days, cold nights",
+        "notes": "Rhododendrons bloom, dustier conditions"
+      },
+      "monsoon": {
+        "months": ["June", "July", "August", "September"],
+        "pass_conditions": "Not recommended",
+        "temperatures": "Warm and wet",
+        "notes": "Trails muddy, leeches in lower sections"
+      },
+      "post_monsoon": {
+        "months": ["October", "November"],
+        "pass_conditions": "Best conditions, usually snow-free",
+        "temperatures": "Clear days, very cold nights",
+        "notes": "Peak season, clearest mountain views"
+      },
+      "winter": {
+        "months": ["December", "January", "February"],
+        "pass_conditions": "Often blocked by snow",
+        "temperatures": "Very cold, especially at altitude",
+        "notes": "Many lodges closed, experienced trekkers only"
+      }
+    },
+    "transportation": {
+      "to_start": [
+        {
+          "method": "Public bus",
+          "from": "Kathmandu",
+          "to": "Besisahar",
+          "duration": "6-7 hours",
+          "cost_usd": 10,
+          "comfort": "Basic"
+        },
+        {
+          "method": "Private jeep",
+          "from": "Kathmandu",
+          "to": "Besisahar",
+          "duration": "5-6 hours",
+          "cost_usd": 150,
+          "comfort": "Comfortable"
+        },
+        {
+          "method": "Local jeep",
+          "from": "Besisahar",
+          "to": "Chame/Manang",
+          "duration": "Variable",
+          "cost_usd": 50,
+          "notes": "Can skip lower section if short on time"
+        }
+      ],
+      "from_end": [
+        {
+          "method": "Bus",
+          "from": "Pokhara",
+          "to": "Kathmandu",
+          "duration": "6-7 hours",
+          "cost_usd": 10
+        },
+        {
+          "method": "Flight",
+          "from": "Pokhara",
+          "to": "Kathmandu",
+          "duration": "25 minutes",
+          "cost_usd": 100
+        }
+      ]
+    },
+    "alternative_routes": [
+      {
+        "name": "Annapurna Circuit with Tilicho Lake",
+        "variation": "Add side trip to Tilicho Lake",
+        "extra_days": 2,
+        "highlights": ["World's highest lake", "Additional acclimatization"]
+      },
+      {
+        "name": "Circuit via Nar Phu Valley",
+        "variation": "Include restricted Nar Phu Valley",
+        "extra_days": 4,
+        "highlights": ["Remote Tibetan villages", "Requires special permit"]
+      },
+      {
+        "name": "Shorter Circuit",
+        "variation": "Drive to Manang, skip lower section",
+        "fewer_days": 4,
+        "highlights": ["Focus on high altitude sections", "Good for time-limited"]
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 95,
+    "seo": {
+      "meta_title": "Annapurna Circuit Trek Guide 2024 | Complete 18-Day Itinerary",
+      "meta_description": "Complete guide to the Annapurna Circuit Trek including Thorong La Pass. Detailed itinerary, gear list, cultural insights, and expert tips.",
+      "keywords": ["annapurna circuit", "thorong la pass", "nepal trekking", "annapurna trek", "himalaya circuit trek"]
+    }
+  },
+  {
+    "_id": "langtang-valley-trek",
+    "name": "Langtang Valley Trek",
+    "slug": "langtang-valley-trek",
+    "region": "Nepal/Himalayas",
+    "country": "Nepal",
+    "summary": "A shorter trek with stunning mountain views, glaciers, and authentic Tamang culture, perfect for those with limited time.",
+    "duration": {
+      "min_days": 7,
+      "max_days": 10,
+      "recommended_days": 9
+    },
+    "distance_km": 77,
+    "difficulty": "moderate",
+    "max_elevation_m": 4984,
+    "starting_elevation_m": 1470,
+    "airport": "Kathmandu (KTM)",
+    "nearest_city": "Kathmandu",
+    "coordinates": {
+      "start": {
+        "lat": 28.2142,
+        "lng": 85.3606,
+        "location": "Syabrubesi"
+      },
+      "end": {
+        "lat": 28.2100,
+        "lng": 85.5300,
+        "location": "Kyanjin Gompa"
+      }
+    },
+    "best_seasons": [
+      {
+        "name": "Spring",
+        "months": ["March", "April", "May"],
+        "description": "Rhododendrons in full bloom, clear mornings"
+      },
+      {
+        "name": "Autumn", 
+        "months": ["September", "October", "November"],
+        "description": "Crystal clear views, stable weather"
+      }
+    ],
+    "detailed_itinerary": [
+      {
+        "day": 1,
+        "title": "Drive from Kathmandu to Syabrubesi",
+        "start_location": "Kathmandu",
+        "end_location": "Syabrubesi",
+        "distance_km": 117,
+        "duration_hours": 7,
+        "elevation_start_m": 1400,
+        "elevation_end_m": 1470,
+        "elevation_gain_m": 70,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Hotel Langtang View", "Buddha Guest House", "Peaceful Lodge"]
+        },
+        "meals_included": ["lunch", "dinner"],
+        "highlights": [
+          "Scenic mountain drive",
+          "Views of Ganesh Himal",
+          "Trishuli River valley",
+          "Traditional villages"
+        ],
+        "description": "Early morning drive through scenic countryside following the Trishuli River north. The road winds through terraced hillsides to Syabrubesi."
+      },
+      {
+        "day": 2,
+        "title": "Trek to Lama Hotel",
+        "start_location": "Syabrubesi",
+        "end_location": "Lama Hotel",
+        "distance_km": 11,
+        "duration_hours": 6,
+        "elevation_start_m": 1470,
+        "elevation_end_m": 2380,
+        "elevation_gain_m": 910,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Lama Hotel", "Woodland Lodge", "Himalayan Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Cross Bhote Koshi River",
+          "Dense forests",
+          "Wildlife possibilities",
+          "Hot springs detour option"
+        ],
+        "description": "Begin trekking along the Langtang Khola. The trail climbs gradually through forests where you might spot red pandas, monkeys, and various bird species."
+      },
+      {
+        "day": 3,
+        "title": "Trek to Langtang Village",
+        "start_location": "Lama Hotel",
+        "end_location": "Langtang Village",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 2380,
+        "elevation_end_m": 3430,
+        "elevation_gain_m": 1050,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Moonlight Guest House", "Himalaya Guest House", "Yeti Guest House"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Views of Langtang Lirung",
+          "Traditional Tamang village",
+          "Prayer wheels and mani walls",
+          "2015 earthquake memorial"
+        ],
+        "description": "Steady climb through forests opening to views of Langtang Lirung. The village was rebuilt after the devastating 2015 earthquake."
+      },
+      {
+        "day": 4,
+        "title": "Trek to Kyanjin Gompa",
+        "start_location": "Langtang Village",
+        "end_location": "Kyanjin Gompa",
+        "distance_km": 7,
+        "duration_hours": 3,
+        "elevation_start_m": 3430,
+        "elevation_end_m": 3870,
+        "elevation_gain_m": 440,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Yala Peak Hotel", "Himalaya Lodge", "Snow Lion Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Ancient Buddhist monastery",
+          "Yak cheese factory",
+          "Panoramic mountain views",
+          "Base for day hikes"
+        ],
+        "description": "Shorter day through yak pastures to Kyanjin Gompa, spiritual center of the valley with its ancient monastery and cheese factory."
+      },
+      {
+        "day": 5,
+        "title": "Acclimatization and Exploration Day",
+        "start_location": "Kyanjin Gompa",
+        "end_location": "Kyanjin Gompa",
+        "distance_km": 10,
+        "duration_hours": 5,
+        "elevation_start_m": 3870,
+        "elevation_end_m": 3870,
+        "elevation_gain_m": 600,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Kyanjin Ri viewpoint (4,773m)",
+          "Or Tserko Ri (4,984m)",
+          "360-degree mountain panorama",
+          "Glacier exploration"
+        ],
+        "description": "Day for altitude acclimatization with options to climb Kyanjin Ri or the more challenging Tserko Ri for spectacular panoramic views."
+      },
+      {
+        "day": 6,
+        "title": "Optional: Langshisa Kharka",
+        "start_location": "Kyanjin Gompa",
+        "end_location": "Kyanjin Gompa",
+        "distance_km": 14,
+        "duration_hours": 6,
+        "elevation_start_m": 3870,
+        "elevation_end_m": 3870,
+        "elevation_gain_m": 330,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Same as previous night"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Langshisa Glacier",
+          "Yak herding grounds",
+          "Moraine landscapes",
+          "Wildlife spotting"
+        ],
+        "description": "Optional day hike to Langshisa Kharka for close-up glacier views, or rest day in Kyanjin Gompa."
+      },
+      {
+        "day": 7,
+        "title": "Trek to Lama Hotel",
+        "start_location": "Kyanjin Gompa",
+        "end_location": "Lama Hotel",
+        "distance_km": 21,
+        "duration_hours": 7,
+        "elevation_start_m": 3870,
+        "elevation_end_m": 2380,
+        "elevation_gain_m": -1490,
+        "difficulty": "moderate",
+        "accommodation": {
+          "type": "teahouse",
+          "options": ["Lama Hotel", "Woodland Lodge", "Himalayan Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Rapid descent",
+          "Different perspective on views",
+          "Return to forests",
+          "Easier breathing"
+        ],
+        "description": "Retrace your steps down the valley, enjoying different perspectives of the landscape and easier breathing at lower altitude."
+      },
+      {
+        "day": 8,
+        "title": "Trek to Syabrubesi",
+        "start_location": "Lama Hotel",
+        "end_location": "Syabrubesi",
+        "distance_km": 11,
+        "duration_hours": 5,
+        "elevation_start_m": 2380,
+        "elevation_end_m": 1470,
+        "elevation_gain_m": -910,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "lodge",
+          "options": ["Hotel Langtang View", "Buddha Guest House", "Peaceful Lodge"]
+        },
+        "meals_included": ["breakfast", "lunch", "dinner"],
+        "highlights": [
+          "Complete the circuit",
+          "Hot springs option",
+          "Farewell dinner",
+          "Prepare for departure"
+        ],
+        "description": "Final day of trekking back to Syabrubesi. Option to visit hot springs at Tatopani before reaching the village."
+      },
+      {
+        "day": 9,
+        "title": "Drive to Kathmandu",
+        "start_location": "Syabrubesi",
+        "end_location": "Kathmandu",
+        "distance_km": 117,
+        "duration_hours": 7,
+        "elevation_start_m": 1470,
+        "elevation_end_m": 1400,
+        "elevation_gain_m": -70,
+        "difficulty": "easy",
+        "accommodation": {
+          "type": "hotel",
+          "options": ["Return to Kathmandu accommodation"]
+        },
+        "meals_included": ["breakfast", "lunch"],
+        "highlights": [
+          "Return journey",
+          "Rural Nepal views",
+          "Arrival in Kathmandu",
+          "Celebration dinner"
+        ],
+        "description": "Drive back to Kathmandu through the scenic countryside, arriving in the afternoon with time to rest and celebrate."
+      }
+    ],
+    "gear_list": {
+      "essential": [
+        {
+          "item": "Trekking boots",
+          "description": "Comfortable and broken in",
+          "rental_available": true
+        },
+        {
+          "item": "Sleeping bag",
+          "description": "-10°C rated sufficient",
+          "rental_available": true
+        },
+        {
+          "item": "Down jacket",
+          "description": "Lightweight warmth layer",
+          "rental_available": true
+        },
+        {
+          "item": "Rain gear",
+          "description": "Jacket and pants/poncho",
+          "rental_available": true
+        },
+        {
+          "item": "Warm layers",
+          "description": "Fleece, thermals",
+          "rental_available": false
+        },
+        {
+          "item": "Sun protection",
+          "description": "Hat, sunglasses, sunscreen",
+          "rental_available": false
+        },
+        {
+          "item": "Basic first aid",
+          "description": "Personal medications",
+          "rental_available": false
+        },
+        {
+          "item": "Water bottles",
+          "description": "2 liters capacity",
+          "rental_available": false
+        }
+      ]
+    },
+    "permits_required": [
+      {
+        "name": "Langtang National Park Entry",
+        "cost_usd": 30,
+        "cost_npr": 3000,
+        "where_to_obtain": "Dhunche checkpoint or Kathmandu",
+        "validity": "Single entry"
+      },
+      {
+        "name": "TIMS Card",
+        "cost_usd": 10,
+        "cost_npr": 1000,
+        "where_to_obtain": "Tourism Board Kathmandu",
+        "validity": "Trek duration"
+      }
+    ],
+    "costs": {
+      "permit_total_usd": 40,
+      "guide_daily_usd": 25,
+      "porter_daily_usd": 18,
+      "accommodation_daily_usd": 5,
+      "meals_daily_usd": 20,
+      "transportation_usd": 40,
+      "total_budget_range_usd": {
+        "min": 500,
+        "max": 1000
+      }
+    },
+    "cultural_information": {
+      "ethnic_groups": ["Tamang", "Tibetan"],
+      "primary_religion": "Tibetan Buddhism",
+      "languages": ["Tamang", "Nepali", "Basic English"],
+      "customs_etiquette": [
+        "Clockwise around religious sites",
+        "Remove shoes in homes/monasteries",
+        "Right hand for giving/receiving",
+        "Modest dress appreciated"
+      ],
+      "local_foods": [
+        {
+          "name": "Yak cheese",
+          "description": "Fresh from Kyanjin factory"
+        },
+        {
+          "name": "Tibetan bread",
+          "description": "Fried flatbread"
+        },
+        {
+          "name": "Tsampa",
+          "description": "Roasted barley flour"
+        },
+        {
+          "name": "Local raksi",
+          "description": "Traditional distilled alcohol"
+        }
+      ]
+    },
+    "health_safety": {
+      "altitude_sickness": {
+        "risk_level": "moderate",
+        "prevention": [
+          "Gradual ascent built into itinerary",
+          "Rest day at Kyanjin",
+          "Stay hydrated",
+          "Monitor symptoms"
+        ]
+      },
+      "medical_facilities": [
+        {
+          "location": "Dhunche",
+          "type": "District hospital"
+        },
+        {
+          "location": "Kyanjin Gompa",
+          "type": "Basic health post"
+        }
+      ],
+      "evacuation": {
+        "method": "Helicopter",
+        "cost_usd": "3000-4000",
+        "availability": "Weather dependent"
+      }
+    },
+    "special_considerations": {
+      "earthquake_impact": "The 2015 earthquake severely affected this region. The trail and villages have been rebuilt, but some scars remain visible.",
+      "wildlife": "Part of Langtang National Park - chance to see red pandas, Himalayan black bears, and various bird species.",
+      "closeness_to_kathmandu": "Nearest major trekking area to the capital, making it ideal for shorter trips.",
+      "fewer_crowds": "Less crowded than Everest or Annapurna regions, offering a more peaceful experience."
+    },
+    "alternative_routes": [
+      {
+        "name": "Langtang-Gosainkunda",
+        "variation": "Combine with sacred lakes",
+        "extra_days": 4,
+        "highlights": ["Sacred lakes", "High passes", "Hindu pilgrimage site"]
+      },
+      {
+        "name": "Langtang-Helambu",
+        "variation": "Connect to Helambu region",
+        "extra_days": 6,
+        "highlights": ["Cultural diversity", "Lower elevations", "Circuit trek"]
+      },
+      {
+        "name": "Ganja La Pass",
+        "variation": "Technical pass to Helambu",
+        "extra_days": 5,
+        "highlights": ["5,122m pass", "Technical challenge", "Remote trek"]
+      }
+    ],
+    "created_at": "2024-01-15T10:00:00Z",
+    "updated_at": "2024-01-15T10:00:00Z",
+    "status": "active",
+    "popularity_score": 85,
+    "seo": {
+      "meta_title": "Langtang Valley Trek Guide 2024 | 9-Day Itinerary with Kyanjin Ri",
+      "meta_description": "Complete guide to Langtang Valley Trek - the closest Himalayan trek to Kathmandu. Detailed itinerary, Tamang culture, and glacier views.",
+      "keywords": ["langtang valley trek", "langtang trek", "kyanjin gompa", "nepal short trek", "kathmandu trek"]
+    }
+  }
+]

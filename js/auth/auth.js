@@ -3,7 +3,8 @@ import { auth } from './firebase.js';
 import { 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
-  signOut 
+  signOut,
+  sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
 // Sign up function
@@ -35,6 +36,17 @@ export async function logOut() {
     return { success: true };
   } catch (error) {
     console.error("Logout error:", error);
+    return { success: false, error: error.message };
+  }
+}
+
+// Password reset function
+export async function resetPassword(email) {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    return { success: true };
+  } catch (error) {
+    console.error("Password reset error:", error);
     return { success: false, error: error.message };
   }
 }
