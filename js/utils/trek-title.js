@@ -7,71 +7,74 @@ export function toTitleCase(str) {
   });
 }
 
-export function cleanTrekTitle(title, isPopularTrek) {
-  if (!title || isPopularTrek) return title;
+// Enhanced trek title cleanup function
+export function cleanTrekTitle(title, isPopularTrek = false) {
+  if (!title) return 'Custom Itinerary';
   
-  let cleaned = title;
+  // For popular treks, preserve the original title
+  if (isPopularTrek) {
+    return title;
+  }
   
-  // Handle repetitive patterns like "Trek in X that is Y" or "Trek in X for a week Y"
-  const patterns = [
-    /^(.+?)\s+(?:that\s+is|which\s+is)\s+(.+)$/i,
-    /^(.+?)\s+(?:for\s+a\s+week|for\s+\d+\s+days?)\s+(.+)$/i
+  // Common patterns to remove from custom trek titles
+  const patternsToRemove = [
+    // Remove descriptive phrases about altitude and facilities
+    /\s*in\s+low\s+altitude\s+with\s+the\s+ability\s+to\s+shower\s+most\s+nights?\s*/gi,
+    /\s*with\s+the\s+ability\s+to\s+shower\s+most\s+nights?\s*/gi,
+    /\s*in\s+low\s+altitude\s*/gi,
+    
+    // Remove duration patterns
+    /\s*\d+\s*day\s*(trek|hike|trail|tour|trip|walk|itinerary)?\s*/gi,
+    /\s*\(\s*\d+\s*days?\s*\)\s*/gi,
+    
+    // Remove generic trek/hike words at the end
+    /\s*(trek|hike|trail|tour|trip|walk|itinerary)\s*$/gi,
+    
+    // Remove "in the" patterns
+    /\s*in\s+the\s*/gi,
+    
+    // Remove extra whitespace
+    /\s+/g
   ];
   
-  for (const pattern of patterns) {
-    const match = cleaned.match(pattern);
-    if (match) {
-      cleaned = match[1];
-      break;
+  let cleanedTitle = title;
+  
+  // Apply all removal patterns
+  patternsToRemove.forEach(pattern => {
+    cleanedTitle = cleanedTitle.replace(pattern, ' ');
+  });
+  
+  // Trim and handle edge cases
+  cleanedTitle = cleanedTitle.trim();
+  
+  // If we've removed everything or left with just articles, return a default
+  if (!cleanedTitle || cleanedTitle.match(/^(the|a|an)$/i)) {
+    // Try to extract location from original title
+    const locationMatch = title.match(/(?:in\s+)?([\w\s]+?)(?:\s+in\s+|\s+with\s+|\s+trek|\s+hike|$)/i);
+    if (locationMatch && locationMatch[1]) {
+      return locationMatch[1].trim();
     }
-  }
-  
-  // Remove common prefixes and suffixes
-  cleaned = cleaned
-    .replace(/^trek\s+in\s+the\s+/i, '')
-    .replace(/^trek\s+in\s+/i, '')
-    .replace(/^hike\s+in\s+the\s+/i, '')
-    .replace(/^hike\s+in\s+/i, '')
-    .replace(/\s+trek$/i, '')
-    .replace(/\s+hike$/i, '')
-    .trim();
-  
-  // Extract location-based title if it matches pattern
-  const locationMatch = cleaned.match(/\d+\s*day\s*(?:trek|hike)\s*(?:in|near)\s*(?:the\s+)?(.+)/i);
-  if (locationMatch && locationMatch[1]) {
-    // Return just the location part with "Trek" appended
-    cleaned = locationMatch[1];
-  }
-  
-  // Ensure we have a valid title
-  if (!cleaned || cleaned.length < 3) {
     return 'Custom Trek';
   }
   
-  // Add "Trek" suffix if it doesn't already have it
-  if (!cleaned.toLowerCase().includes('trek') && !cleaned.toLowerCase().includes('hike')) {
-    cleaned = cleaned + ' Trek';
-  }
-  
-  return toTitleCase(cleaned);
+  return cleanedTitle;
 }
 
+// Extract subtitle from title (for view-itinerary page)
 export function extractTrekSubtitle(title) {
   if (!title) return null;
   
-  // Check for repetitive patterns that might contain a subtitle
-  const repetitivePattern = /^(.+?)\s+(?:that\s+is|which\s+is|for\s+a\s+week)\s+(.+)$/i;
-  const match = title.match(repetitivePattern);
+  // Check for patterns that indicate a subtitle
+  const subtitlePatterns = [
+    /in\s+low\s+altitude\s+with\s+the\s+ability\s+to\s+shower\s+most\s+nights?/i,
+    /with\s+the\s+ability\s+to\s+shower\s+most\s+nights?/i,
+    /\d+\s*day\s*(trek|hike|trail|tour|trip|walk)/i
+  ];
   
-  if (match) {
-    const mainTitle = match[1];
-    const subtitle = match[2];
-    
-    // Only return subtitle if it's meaningful and different from main title
-    if (subtitle && 
-        !subtitle.toLowerCase().includes(mainTitle.toLowerCase()) &&
-        subtitle.length > 5) {
-      return toTitleCase(subtitle);
+  for (const pattern of subtitlePatterns) {
+    const match = title.match(pattern);
+    if (match) {
+      return match[0];
     }
   }
   

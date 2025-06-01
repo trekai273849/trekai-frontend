@@ -69,7 +69,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -1101,7 +1101,7 @@
       const header = document.getElementById('itinerary-header');
       const heroBg = document.getElementById('hero-bg');
       
-      // Check if it's a URL (starts with http or /)
+      // Check if it's a URL
       if (locationOrImageUrl && (locationOrImageUrl.startsWith('http') || locationOrImageUrl.startsWith('/'))) {
         heroBg.style.backgroundImage = `url('${locationOrImageUrl}')`;
         heroBg.style.backgroundSize = 'cover';
@@ -1109,20 +1109,28 @@
         return;
       }
       
-      // Otherwise treat as location
-      const gradient = 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)';
-      heroBg.style.background = gradient;
-      
-      // You can add location-specific images here
+      // Enhanced location images with Nepal
       const locationImages = {
+        'nepal': 'Images/nepal.jpg',
+        'nepalese': 'Images/nepal.jpg',
+        'kathmandu': 'Images/nepal.jpg',
+        'everest': 'Images/nepal.jpg',
+        'annapurna': 'Images/nepal.jpg',
+        'himalaya': 'Images/nepal.jpg',
         'french alps': 'Images/alps.jpg',
         'italian alps': 'Images/alps.jpg',
         'italian dolomites': 'Images/alps.jpg',
         'dolomites': 'Images/alps.jpg',
         'alps': 'Images/alps.jpg',
         'himalayas': 'Images/himalayas.jpg',
-        // Add more location mappings as needed
+        'switzerland': 'Images/alps.jpg',
+        'norway': 'Images/norway.jpg',
+        'scotland': 'Images/scotland.jpg'
       };
+      
+      // Better default gradient
+      const gradient = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+      heroBg.style.background = gradient;
       
       // Find matching location
       let imageUrl = null;
@@ -1137,15 +1145,14 @@
       }
       
       if (imageUrl) {
-        // Check if image exists before setting
         const img = new Image();
         img.onload = () => {
           heroBg.style.backgroundImage = `url('${imageUrl}')`;
           heroBg.style.backgroundSize = 'cover';
           heroBg.style.backgroundPosition = 'center';
+          heroBg.style.background = ''; // Clear gradient
         };
         img.onerror = () => {
-          // Keep gradient if image fails
           console.log('Location image not found, using gradient');
         };
         img.src = imageUrl;

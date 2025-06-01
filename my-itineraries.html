@@ -282,7 +282,7 @@
           </a>
           
           <!-- Build Custom Itinerary Option -->
-          <a href="customize.html" class="block p-3 md:p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:shadow-lg transition-all duration-200 group">
+          <a href="index.html" class="block p-3 md:p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:shadow-lg transition-all duration-200 group">
             <div class="flex flex-col items-center text-center">
               <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-3 group-hover:bg-green-200 transition-colors">
                 <svg class="w-6 h-6 md:w-7 md:h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -445,79 +445,85 @@
       }
     });
 
-    // Location-specific data for images and gradients
+    // Enhanced location-specific data for images and gradients
     const locationData = [
+      {
+        keywords: ["nepal", "nepalese", "kathmandu", "everest base camp", "annapurna", "himalaya"],
+        image: "Images/nepal.jpg", // Try the main images folder first
+        gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        icon: "🏔️"
+      },
       {
         keywords: ["london", "uk", "england", "british", "britain"],
         image: "Images/locations/london.jpg", 
-        gradient: "linear-gradient(135deg, #3c70b4 0%, #63a4ff 100%)",
+        gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         icon: "🏰"
       },
       {
         keywords: ["french alps", "france", "chamonix", "mont blanc"],
-        image: "Images/locations/french-alps.jpg",
-        gradient: "linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)",
+        image: "Images/french-alps.jpg",
+        gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
         icon: "🏔️"
       },
       {
-        keywords: ["italian alps", "italy", "dolomites"],
-        image: "Images/locations/italian-alps.jpg",
-        gradient: "linear-gradient(135deg, #38ef7d 0%, #11998e 100%)",
+        keywords: ["italian alps", "italy", "dolomites", "italian dolomites"],
+        image: "Images/alps.jpg",
+        gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
         icon: "🏔️"
       },
       {
         keywords: ["alps", "alpine"],
-        image: "Images/locations/alps.jpg",
-        gradient: "linear-gradient(135deg, #00c6fb 0%, #005bea 100%)",
+        image: "Images/alps.jpg",
+        gradient: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
         icon: "⛰️"
       },
       {
         keywords: ["new york", "ny", "usa", "united states", "america"],
         image: "Images/locations/new-york.jpg",
-        gradient: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
+        gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
         icon: "🗽"
       },
       {
         keywords: ["andes", "peru", "south america", "machu picchu", "cusco"],
         image: "Images/locations/peru.jpg",
-        gradient: "linear-gradient(135deg, #f83600 0%, #f9d423 100%)",
+        gradient: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%)",
         icon: "🌄"
       },
       {
-        keywords: ["himalayas", "nepal", "tibet", "everest"],
-        image: "Images/locations/himalayas.jpg",
-        gradient: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+        keywords: ["himalayas", "tibet"],
+        image: "Images/himalayas.jpg",
+        gradient: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
         icon: "🏔️"
       },
       {
         keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
         image: "Images/locations/japan.jpg",
-        gradient: "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
+        gradient: "linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%)",
         icon: "🗻"
       },
       {
         keywords: ["norway", "norwegian", "scandinavia", "fjords"],
         image: "Images/locations/norway.jpg",
-        gradient: "linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%)",
+        gradient: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
         icon: "⛰️"
       },
       {
         keywords: ["scotland", "scottish", "highlands"],
         image: "Images/locations/scotland.jpg",
-        gradient: "linear-gradient(135deg, #3e5151 0%, #decba4 100%)",
+        gradient: "linear-gradient(135deg, #d9afd9 0%, #97d9e1 100%)",
         icon: "🏞️"
       },
       {
         keywords: ["switzerland", "swiss"],
         image: "Images/locations/switzerland.jpg",
-        gradient: "linear-gradient(135deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%)",
+        gradient: "linear-gradient(135deg, #93a5cf 0%, #e4efe9 100%)",
         icon: "🏔️"
       }
     ];
     
-    // Default gradient for when no match is found
+    // Default gradient for when no match is found - more attractive gradient
     const defaultLocationData = {
-      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       icon: "🥾"
     };
     
