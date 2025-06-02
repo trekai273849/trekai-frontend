@@ -735,11 +735,19 @@ function setupFormHandlers() {
           window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
         }, 2000);
       } else {
-        showSuccess('🎉 Welcome to Smart Trails! Your account has been created.');
-        setTimeout(() => {
-          window.closeAuthModal();
-          window.location.reload();
-        }, 2000);
+        // Check if there was a pending itinerary that couldn't be saved
+        const hasPendingItinerary = localStorage.getItem('pendingItinerary');
+        if (hasPendingItinerary) {
+          showSuccess('🎉 Welcome to Smart Trails! Please save your itinerary from the customize page.');
+          setTimeout(() => {
+            window.location.href = 'customize.html';
+          }, 2000);
+        } else {
+          showSuccess('🎉 Welcome to Smart Trails! Your account has been created.');
+          setTimeout(() => {
+            window.location.href = 'customize.html';
+          }, 2000);
+        }
       }
       
     } catch (error) {
@@ -905,12 +913,21 @@ function getUserFriendlyError(error) {
   return 'Something went wrong. Please try again.';
 }
 
+// UPDATED savePendingItinerary function with better error handling for new users
 async function savePendingItinerary(user) {
   const pendingItinerary = localStorage.getItem('pendingItinerary');
   if (!pendingItinerary) return null;
   
   try {
-    const token = await user.getIdToken();
+    // Add a small delay for new users to ensure backend sync
+    if (user.metadata && user.metadata.creationTime === user.metadata.lastSignInTime) {
+      // This is a new user - wait a bit for backend to sync
+      console.log('New user detected - waiting for backend sync...');
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+    
+    // Force token refresh to ensure it's valid
+    const token = await user.getIdToken(true); // true forces refresh
     const itineraryData = JSON.parse(pendingItinerary);
     
     const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
@@ -923,18 +940,46 @@ async function savePendingItinerary(user) {
     });
     
     if (!response.ok) {
-      throw new Error(`Failed to save itinerary: ${response.status}`);
+      // If it's a new user and we get 401, don't throw - just return null
+      if (response.status === 401 && user.metadata && 
+          user.metadata.creationTime === user.metadata.lastSignInTime) {
+        console.log('New user - skipping immediate itinerary save (backend may not be synced yet)');
+        // Keep the pending itinerary for later
+        return null;
+      }
+      
+      // For existing users or other errors, log but don't throw
+      console.error(`Failed to save itinerary: ${response.status}`);
+      
+      // Try to get error details
+      try {
+        const errorData = await response.json();
+        console.error('API Error details:', errorData);
+      } catch (e) {
+        console.error('Could not parse error response');
+      }
+      
+      return null;
     }
     
     const savedItinerary = await response.json();
     
-    // Clear the pending data
+    // Clear the pending data only on success
     localStorage.removeItem('pendingItinerary');
     localStorage.removeItem('returnToCustomize');
     
     return savedItinerary;
   } catch (error) {
     console.error('Error saving pending itinerary:', error);
+    
+    // For new users, don't treat this as a critical error
+    if (user.metadata && user.metadata.creationTime === user.metadata.lastSignInTime) {
+      console.log('Keeping pending itinerary for new user to save later');
+      // Keep the pending itinerary for later
+      return null;
+    }
+    
+    // For existing users, still return null instead of throwing
     return null;
   }
 }
