@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth Debug Test</title>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <h1>Authentication Debug Test</h1>
+    <div id="status">Initializing...</div>
+    <button id="test-api" disabled>Test API Call</button>
+    <pre id="output"></pre>
+
+    <script>
+        const output = document.getElementById('output');
+        const status = document.getElementById('status');
+        const testBtn = document.getElementById('test-api');
+        
+        function log(message, data = null) {
+            const timestamp = new Date().toISOString();
+            output.textContent += `[${timestamp}] ${message}\n`;
+            if (data) {
+                output.textContent += JSON.stringify(data, null, 2) + '\n';
+            }
+            output.textContent += '\n';
+        }
+
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCWPKZR5cXWqIjVE9ovapN3HRFsW-oqvC8",
+            authDomain: "smart-trek.firebaseapp.com",
+            projectId: "smart-trek",
+            storageBucket: "smart-trek.appspot.com",
+            messagingSenderId: "522175038661",
+            appId: "1:522175038661:web:c8b6f8c3e48871e1f29b2e"
+        };
+
+        try {
+            firebase.initializeApp(firebaseConfig);
+            log('Firebase initialized successfully');
+            status.textContent = 'Firebase initialized';
+        } catch (error) {
+            log('Firebase initialization error:', error);
+            status.textContent = 'Firebase initialization failed';
+        }
+
+        // Check auth state
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (user) {
+                log('User detected:', {
+                    uid: user.uid,
+                    email: user.email,
+                    emailVerified: user.emailVerified,
+                    createdAt: user.metadata.creationTime,
+                    lastSignIn: user.metadata.lastSignInTime
+                });
+                
+                status.textContent = `Logged in as: ${user.email}`;
+                testBtn.disabled = false;
+                
+                try {
+                    const token = await user.getIdToken(true); // Force refresh
+                    log('Token obtained successfully', {
+                        length: token.length,
+                        preview: token.substring(0, 50) + '...'
+                    });
+                    
+                    // Decode token to check claims (without verification)
+                    const base64Url = token.split('.')[1];
+                    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                    const claims = JSON.parse(window.atob(base64));
+                    log('Token claims:', {
+                        iss: claims.iss,
+                        aud: claims.aud,
+                        exp: new Date(claims.exp * 1000).toISOString(),
+                        iat: new Date(claims.iat * 1000).toISOString(),
+                        sub: claims.sub,
+                        email: claims.email
+                    });
+                } catch (error) {
+                    log('Token error:', error.message);
+                }
+            } else {
+                log('No user logged in');
+                status.textContent = 'Not logged in - Please log in first';
+                testBtn.disabled = true;
+            }
+        });
+
+        // Test API call
+        testBtn.addEventListener('click', async () => {
+            log('Starting API test...');
+            
+            try {
+                const user = firebase.auth().currentUser;
+                if (!user) {
+                    log('No user found');
+                    return;
+                }
+                
+                const token = await user.getIdToken(true);
+                log('Got fresh token for API call');
+                
+                // Test the API
+                const apiUrl = 'https://trekai-api.onrender.com/api/itineraries';
+                log(`Calling API: ${apiUrl}`);
+                
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    credentials: 'include'
+                });
+                
+                log('Response received:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: Object.fromEntries(response.headers.entries())
+                });
+                
+                const responseText = await response.text();
+                try {
+                    const responseData = JSON.parse(responseText);
+                    log('Response data:', responseData);
+                } catch {
+                    log('Response text:', responseText);
+                }
+                
+            } catch (error) {
+                log('API test error:', {
+                    message: error.message,
+                    stack: error.stack
+                });
+            }
+        });
+    </script>
+</body>
+</html>
