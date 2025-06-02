@@ -2,6 +2,10 @@
 import { auth } from './auth/firebase.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
+// Track when auth is ready
+let authReady = false;
+let currentUser = null;
+
 // Function to get trek image from the page
 function getTrekImage() {
     // Try to get the image from the hero section
@@ -35,7 +39,8 @@ function getTrekImage() {
 // Function to save trek
 async function saveTrek(user) {
     try {
-        const token = await user.getIdToken();
+        // Force token refresh to avoid OAuth errors
+        const token = await user.getIdToken(true);
         
         // Get the trek image
         const trekImage = getTrekImage();
@@ -133,7 +138,8 @@ function updateButtonState(button, isSaved, isLoading = false) {
 // Check if trek is already saved
 async function checkIfTrekSaved(user, trekId) {
     try {
-        const token = await user.getIdToken();
+        // Force token refresh here too
+        const token = await user.getIdToken(true);
         const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -169,10 +175,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    let currentUser = null;
-    
     // Monitor auth state
     onAuthStateChanged(auth, async (user) => {
+        authReady = true; // Mark auth as ready
         currentUser = user;
         
         if (user && window.trekData) {
@@ -186,6 +191,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle save button click
     saveButton.addEventListener('click', async function(e) {
         e.preventDefault();
+        
+        // Wait for auth to be ready
+        if (!authReady) {
+            console.log('Waiting for auth to initialize...');
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
         
         if (!currentUser) {
             // Redirect to sign-in page with return URL
@@ -243,4 +254,6 @@ window.debugTrekSave = function() {
     console.log('Trek Data:', window.trekData);
     console.log('Trek Image:', getTrekImage());
     console.log('Trek ID:', window.trekData?._id || window.trekData?.slug);
+    console.log('Auth Ready:', authReady);
+    console.log('Current User:', currentUser);
 };
