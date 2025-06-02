@@ -218,6 +218,29 @@
     .fade-in {
       animation: fadeIn 0.5s ease-out;
     }
+
+    /* New user welcome styles */
+    .welcome-message {
+      background: linear-gradient(135deg, #e6f7ed 0%, #d1f2e1 100%);
+      border: 2px solid #16a34a;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .welcome-icon {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -383,6 +406,35 @@
     function hideLoadingSkeletons() {
       const container = document.getElementById('itineraries-container');
       container.classList.add('fade-in');
+    }
+
+    // Function to show welcome message for new users
+    function showNewUserWelcome() {
+      const container = document.getElementById('itineraries-container');
+      container.innerHTML = `
+        <div class="col-span-full">
+          <div class="welcome-message">
+            <div class="welcome-icon">
+              <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Welcome to Smart Trails! 🎉</h2>
+            <p class="text-lg text-gray-600 mb-6">Your account has been created successfully.</p>
+            <p class="text-gray-500 mb-8">Your adventure library is being set up. In the meantime, why not create your first trek?</p>
+            <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+              Plan Your First Adventure
+            </button>
+          </div>
+        </div>
+      `;
+      container.classList.remove('hidden');
+      
+      // Try fetching again after 5 seconds
+      setTimeout(() => {
+        console.log('Retrying to fetch itineraries for new user...');
+        window.location.reload();
+      }, 5000);
     }
 
     // Modal functions
@@ -643,9 +695,37 @@
       `;
     }
 
-    // Function to fetch itineraries
+    // Updated function to fetch itineraries with better new user handling
     async function fetchItineraries(user) {
       try {
+        // Check if this is a new user
+        const isNewUser = user.metadata && user.metadata.creationTime === user.metadata.lastSignInTime;
+        
+        // For new users, add a delay to ensure backend sync
+        if (isNewUser) {
+          console.log('New user detected - waiting for backend sync...');
+          // Show a special loading message for new users
+          const container = document.getElementById('itineraries-container');
+          container.innerHTML = `
+            <div class="col-span-full">
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+                <div class="animate-pulse">
+                  <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <p class="text-blue-800 font-semibold mb-2">Setting up your account...</p>
+                  <p class="text-blue-600 text-sm">This will just take a moment</p>
+                </div>
+              </div>
+            </div>
+          `;
+          container.classList.remove('hidden');
+          
+          await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 3 seconds
+        }
+        
         // First check if the API health endpoint is responding
         try {
           const healthResponse = await fetch(`${API_BASE_URL}/api/health`);
@@ -656,8 +736,8 @@
           console.error('API health check error:', healthError);
         }
 
-        // Get fresh token
-        const token = await user.getIdToken(true);
+        // Get fresh token with force refresh for new users
+        const token = await user.getIdToken(isNewUser); // Force refresh for new users
         
         const response = await fetch(`${API_BASE_URL}/api/itineraries`, {
           headers: {
@@ -668,6 +748,12 @@
         
         if (!response.ok) {
           if (response.status === 401 || response.status === 403) {
+            // For new users, show a special welcome message instead of error
+            if (isNewUser) {
+              console.log('New user 401 - showing welcome message');
+              showNewUserWelcome();
+              return;
+            }
             throw new Error('Authentication failed. Please sign out and sign in again.');
           } else if (response.status === 500) {
             throw new Error('The server is currently experiencing issues. Please try again later.');
@@ -906,6 +992,13 @@
       } catch (error) {
         console.error('Error fetching itineraries:', error);
         const container = document.getElementById('itineraries-container');
+        
+        // Check if this was a new user error
+        if (error.message && error.message.includes('New user')) {
+          showNewUserWelcome();
+          return;
+        }
+        
         container.innerHTML = `
           <div class="col-span-full bg-red-100 text-red-700 p-4 rounded-md">
             <p>Failed to load itineraries. Please try again later.</p>
