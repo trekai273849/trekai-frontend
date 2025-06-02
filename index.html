@@ -93,6 +93,58 @@
         .trek-card:hover {
             transform: translateY(-4px);
         }
+
+        /* NEW: Hero Section with Dark Overlay */
+        .hero-section {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        /* Dark gradient overlay */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, 
+                rgba(0,0,0,0.6) 0%, 
+                rgba(0,0,0,0.5) 30%, 
+                rgba(0,0,0,0.3) 60%, 
+                rgba(0,0,0,0.2) 100%
+            );
+            z-index: 1;
+        }
+
+        /* Ensure all hero content is above the overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        /* Enhanced text for better readability */
+        .hero-section h1 {
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+            font-weight: 500;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -103,28 +155,30 @@
 
     <main>
 
-    <!-- Hero Section -->
-    <section class="bg-cover bg-center h-screen text-white flex flex-col justify-center items-center px-4 text-center" style="background-image: url('images/trekkingheader.jpg');">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Personalised Trekking Itineraries</h1>
-      <p class="text-lg md:text-xl mb-6">Generate custom trekking plans tailored to your preferences with AI.</p>
-      
-      <form id="itinerary-form" class="w-full max-w-2xl mx-auto">
-        <div class="flex items-stretch sm:flex-row flex-col gap-3">
-          <input 
-            type="text" 
-            id="user-input" 
-            placeholder="e.g. 5-day trek in the Alps, moderate difficulty" 
-            class="flex-1 px-4 py-3 rounded-lg text-gray-900 border border-gray-300 focus:border-blue-500 focus:outline-none shadow-sm text-base min-h-[56px]"
-          />
-          <button 
-            type="submit" 
-            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium whitespace-nowrap shadow-sm transition-colors text-base min-h-[56px] sm:w-auto w-full flex-shrink-0"
-          >
-            Generate Itinerary
-          </button>
-        </div>
-      </form>
-      <div id="itinerary-output" class="mt-4"></div>
+    <!-- Hero Section with Dark Overlay -->
+    <section class="hero-section" style="background-image: url('images/flowerfield.jpg');">
+      <div class="hero-content">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Personalised Trekking Itineraries</h1>
+        <p class="text-lg md:text-xl mb-6">Generate custom trekking plans tailored to your preferences with AI.</p>
+        
+        <form id="itinerary-form" class="w-full max-w-2xl mx-auto">
+          <div class="flex items-stretch sm:flex-row flex-col gap-3">
+            <input 
+              type="text" 
+              id="user-input" 
+              placeholder="e.g. 5-day trek in the Alps, moderate difficulty" 
+              class="flex-1 px-4 py-3 rounded-lg text-gray-900 border border-gray-300 focus:border-blue-500 focus:outline-none shadow-sm text-base min-h-[56px]"
+            />
+            <button 
+              type="submit" 
+              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium whitespace-nowrap shadow-sm transition-colors text-base min-h-[56px] sm:w-auto w-full flex-shrink-0"
+            >
+              Generate Itinerary
+            </button>
+          </div>
+        </form>
+        <div id="itinerary-output" class="mt-4"></div>
+      </div>
     </section>
 
     
