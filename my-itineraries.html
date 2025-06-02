@@ -421,7 +421,7 @@
             </div>
             <h2 class="text-2xl font-bold text-gray-800 mb-3">Welcome to Smart Trails! 🎉</h2>
             <p class="text-lg text-gray-600 mb-6">Your account has been created successfully.</p>
-            <p class="text-gray-500 mb-8">Your adventure library is being set up. In the meantime, why not create your first trek?</p>
+            <p class="text-gray-500 mb-8">Your adventure library is being set up. You can start creating your first trek while we finish preparing everything!</p>
             <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
               Plan Your First Adventure
             </button>
@@ -430,11 +430,11 @@
       `;
       container.classList.remove('hidden');
       
-      // Try fetching again after 5 seconds
+      // Try fetching again after 10 seconds
       setTimeout(() => {
         console.log('Retrying to fetch itineraries for new user...');
         window.location.reload();
-      }, 5000);
+      }, 10000); // Increased from 5 to 10 seconds
     }
 
     // Modal functions
@@ -695,14 +695,14 @@
       `;
     }
 
-    // Updated function to fetch itineraries with better new user handling
-    async function fetchItineraries(user) {
+    // Updated function to fetch itineraries with better new user handling and retry logic
+    async function fetchItineraries(user, retryCount = 0) {
       try {
         // Check if this is a new user
         const isNewUser = user.metadata && user.metadata.creationTime === user.metadata.lastSignInTime;
         
         // For new users, add a delay to ensure backend sync
-        if (isNewUser) {
+        if (isNewUser && retryCount === 0) {
           console.log('New user detected - waiting for backend sync...');
           // Show a special loading message for new users
           const container = document.getElementById('itineraries-container');
@@ -723,7 +723,7 @@
           `;
           container.classList.remove('hidden');
           
-          await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 3 seconds
+          await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds instead of 3
         }
         
         // First check if the API health endpoint is responding
@@ -748,9 +748,16 @@
         
         if (!response.ok) {
           if (response.status === 401 || response.status === 403) {
-            // For new users, show a special welcome message instead of error
+            // For new users, retry a few times before showing welcome
+            if (isNewUser && retryCount < 3) {
+              console.log(`New user 401 - retrying (attempt ${retryCount + 1}/3)...`);
+              await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 3 more seconds
+              return fetchItineraries(user, retryCount + 1); // Retry
+            }
+            
+            // After retries, show welcome for new users
             if (isNewUser) {
-              console.log('New user 401 - showing welcome message');
+              console.log('New user 401 after retries - showing welcome message');
               showNewUserWelcome();
               return;
             }
