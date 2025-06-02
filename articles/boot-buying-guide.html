@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete Boot Buying Guide | Hiking Handbook</title>
+    <meta name="description" content="Find your perfect hiking boots with our comprehensive guide covering fit, materials, terrain matching, and expert recommendations for every budget.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --primary-dark: #2563EB;
+            --green: #16a34a;
+            --green-dark: #15803d;
+            --accent: #F39C12;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Reading progress bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #f3f4f6;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--green);
+            width: 0%;
+            transition: width 0.2s;
+        }
+
+        /* Article content styling */
+        .article-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+            line-height: 1.75;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            margin-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        .article-content ul li {
+            list-style-type: disc;
+        }
+
+        .article-content ol li {
+            list-style-type: decimal;
+        }
+
+        .article-content a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        .article-content a:hover {
+            color: #1d4ed8;
+        }
+
+        .article-content strong {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Boot comparison table */
+        .comparison-table {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background-color: #f3f4f6;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Pros and cons styling */
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .pros, .cons {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .pros {
+            background-color: #dcfce7;
+            border: 1px solid #86efac;
+        }
+
+        .cons {
+            background-color: #fee2e2;
+            border: 1px solid #fca5a5;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Progress Bar -->
+    <div class="progress-container fixed top-0 left-0 w-full z-50">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-1 z-40">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="text-green-600 hover:text-green-700 font-semibold flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> Back to Knowledge Center
+            </a>
+            <div class="flex items-center gap-4">
+                <button onclick="window.print()" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-print"></i>
+                </button>
+                <button onclick="shareArticle()" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Article Container -->
+    <article class="max-w-4xl mx-auto px-6 py-8">
+        <div class="bg-white rounded-2xl shadow-lg">
+            <!-- Article Header -->
+            <div class="p-8 md:p-12 pb-6">
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+                    <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-semibold">
+                        Gear Guide
+                    </span>
+                    <span class="bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-semibold">
+                        Essential Reading
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                    The Complete Boot Buying Guide
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-6 italic">
+                    Your boots are your foundation on every trek. Learn how to choose the perfect pair 
+                    for your feet, terrain, and adventures with this comprehensive guide.
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-6 text-gray-500 text-sm">
+                    <span><i class="far fa-clock"></i> 20 min read</span>
+                    <span><i class="far fa-calendar"></i> Last updated: January 2025</span>
+                    <span><i class="far fa-bookmark"></i> 3,421 saves</span>
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="mx-8 md:mx-12 mb-8 p-6 bg-gray-50 rounded-xl">
+                <h3 class="font-bold text-lg mb-4 text-gray-900">Quick Navigation</h3>
+                <div class="grid md:grid-cols-2 gap-2">
+                    <a href="#anatomy" class="text-gray-600 hover:text-blue-600 block py-1">• Anatomy of a Hiking Boot</a>
+                    <a href="#types" class="text-gray-600 hover:text-blue-600 block py-1">• Types of Hiking Footwear</a>
+                    <a href="#terrain-matching" class="text-gray-600 hover:text-blue-600 block py-1">• Matching Boots to Terrain</a>
+                    <a href="#fitting" class="text-gray-600 hover:text-blue-600 block py-1">• The Perfect Fit Process</a>
+                    <a href="#materials" class="text-gray-600 hover:text-blue-600 block py-1">• Materials & Construction</a>
+                    <a href="#features" class="text-gray-600 hover:text-blue-600 block py-1">• Key Features Explained</a>
+                    <a href="#breaking-in" class="text-gray-600 hover:text-blue-600 block py-1">• Breaking In Your Boots</a>
+                    <a href="#recommendations" class="text-gray-600 hover:text-blue-600 block py-1">• Top Recommendations</a>
+                    <a href="#care" class="text-gray-600 hover:text-blue-600 block py-1">• Care & Maintenance</a>
+                    <a href="#troubleshooting" class="text-gray-600 hover:text-blue-600 block py-1">• Troubleshooting Common Issues</a>
+                </div>
+            </div>
+
+            <hr class="mx-8 md:mx-12 mb-8">
+
+            <!-- Article Content -->
+            <div class="article-content px-8 md:px-12 pb-12">
+                <p>After 15 years of trekking and watching countless hikers suffer through trips with the wrong footwear, I've learned one truth: <strong>your boots can make or break your adventure</strong>. I've seen $300 boots cause agony and $80 boots carry hikers thousands of miles in comfort. The difference? Understanding what you actually need.</p>
+
+                <p>This guide will teach you to choose boots like a pro, avoid costly mistakes, and find the perfect match for your feet and trails. Whether you're planning gentle day hikes or rugged mountain expeditions, you'll learn exactly what to look for and why.</p>
+
+                <h2 id="anatomy">Anatomy of a Hiking Boot</h2>
+
+                <p>Understanding boot construction helps you evaluate quality and choose features that matter. Let's dissect a boot from bottom to top:</p>
+
+                <h3>The Outsole: Your Connection to Earth</h3>
+
+                <p>The rubber bottom that grips the ground. Look for:</p>
+
+                <ul>
+                    <li><strong>Lug Pattern:</strong> Deeper (4-5mm) for mud/loose terrain, shallower (2-3mm) for hard surfaces</li>
+                    <li><strong>Heel Brake:</strong> Distinct heel pattern for downhill control</li>
+                    <li><strong>Rubber Compound:</strong> Softer = better grip, harder = longer lasting</li>
+                    <li><strong>Brand Indicators:</strong> Vibram is gold standard, but proprietary compounds can excel</li>
+                </ul>
+
+                <h3>The Midsole: Your Shock Absorber</h3>
+
+                <p>The layer between outsole and upper that provides cushioning and support:</p>
+
+                <ul>
+                    <li><strong>EVA Foam:</strong> Lightweight, good cushioning, compresses over time</li>
+                    <li><strong>Polyurethane:</strong> Heavier, more durable, better support</li>
+                    <li><strong>Plates/Shanks:</strong> Plastic or fiberglass inserts for rigidity</li>
+                    <li><strong>Rock Plates:</strong> Thin protective layer against sharp objects</li>
+                </ul>
+
+                <h3>The Upper: Your Foot's Home</h3>
+
+                <p>Everything above the sole that wraps your foot:</p>
+
+                <ul>
+                    <li><strong>Materials:</strong> Leather, synthetic, mesh, or combinations</li>
+                    <li><strong>Reinforcements:</strong> Toe caps, heel counters, rand (rubber wrapping)</li>
+                    <li><strong>Lacing System:</strong> Eyelets, hooks, locking mechanisms</li>
+                    <li><strong>Tongue:</strong> Gusseted (attached to sides) prevents debris entry</li>
+                    <li><strong>Collar:</strong> Ankle padding and height</li>
+                </ul>
+
+                <h2 id="types">Types of Hiking Footwear</h2>
+
+                <p>Choose your weapon based on terrain, load, and personal preference:</p>
+
+                <h3>Trail Runners</h3>
+
+                <p><strong>Best For:</strong> Fast hiking, maintained trails, ultralight backpacking</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4 class="font-bold mb-2">✓ Pros</h4>
+                        <ul>
+                            <li>Lightweight (8-12 oz)</li>
+                            <li>Breathable and quick-drying</li>
+                            <li>No break-in period</li>
+                            <li>Nimble on technical terrain</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4 class="font-bold mb-2">✗ Cons</h4>
+                        <ul>
+                            <li>Minimal ankle support</li>
+                            <li>Less protection</li>
+                            <li>Wear out faster (300-500 miles)</li>
+                            <li>Poor in snow/water</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Low-Cut Hiking Shoes</h3>
+
+                <p><strong>Best For:</strong> Day hikes, light loads, mixed terrain</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4 class="font-bold mb-2">✓ Pros</h4>
+                        <ul>
+                            <li>Balance of protection and weight</li>
+                            <li>More durable than runners</li>
+                            <li>Better toe protection</li>
+                            <li>Good for most conditions</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4 class="font-bold mb-2">✗ Cons</h4>
+                        <ul>
+                            <li>No ankle support</li>
+                            <li>Debris can enter easily</li>
+                            <li>Limited waterproofing effectiveness</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Mid-Height Boots</h3>
+
+                <p><strong>Best For:</strong> Most hikers, varied terrain, moderate loads</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4 class="font-bold mb-2">✓ Pros</h4>
+                        <ul>
+                            <li>Ankle support and protection</li>
+                            <li>Keeps debris out</li>
+                            <li>Good stability with packs</li>
+                            <li>Versatile for most conditions</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4 class="font-bold mb-2">✗ Cons</h4>
+                        <ul>
+                            <li>Heavier than low-cuts</li>
+                            <li>Can be hot in summer</li>
+                            <li>Requires break-in period</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Backpacking Boots</h3>
+
+                <p><strong>Best For:</strong> Heavy loads, rough terrain, multi-day trips</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4 class="font-bold mb-2">✓ Pros</h4>
+                        <ul>
+                            <li>Maximum support and protection</li>
+                            <li>Durable construction</li>
+                            <li>Excellent for heavy loads</li>
+                            <li>Superior ankle stability</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4 class="font-bold mb-2">✗ Cons</h4>
+                        <ul>
+                            <li>Heavy (2-3 lbs per pair)</li>
+                            <li>Long break-in required</li>
+                            <li>Overkill for easy trails</li>
+                            <li>Expensive</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Mountaineering Boots</h3>
+
+                <p><strong>Best For:</strong> Alpine conditions, crampon use, extreme terrain</p>
+
+                <p>Specialized boots with rigid soles, insulation, and crampon compatibility. Unless you're doing technical climbing or glacier travel, you don't need these.</p>
+
+                <h2 id="terrain-matching">Matching Boots to Your Terrain</h2>
+
+                <p>Your local trails dictate your ideal boot. Here's how to match:</p>
+
+                <h3>Desert & Canyon Country</h3>
+                <p><strong>Challenges:</strong> Heat, sand, slickrock, flash flood potential</p>
+                <p><strong>Boot Choice:</strong> Low-cut with sticky rubber, breathable mesh panels</p>
+                <p><strong>Key Features:</strong> Vibram Megagrip or similar, dust-resistant construction</p>
+                <p><strong>Recommended:</strong> La Sportiva TX3, Merrell Moab 3 Ventilator</p>
+
+                <h3>Forest & Woodland Trails</h3>
+                <p><strong>Challenges:</strong> Roots, mud, stream crossings, variable weather</p>
+                <p><strong>Boot Choice:</strong> Mid-height waterproof boots</p>
+                <p><strong>Key Features:</strong> Aggressive tread, protective toe cap, gusseted tongue</p>
+                <p><strong>Recommended:</strong> Salomon X Ultra 3 Mid GTX, Keen Targhee III</p>
+
+                <h3>Mountain & Alpine Terrain</h3>
+                <p><strong>Challenges:</strong> Scree, talus, steep grades, altitude, weather</p>
+                <p><strong>Boot Choice:</strong> Sturdy mid or high boots with rigid sole</p>
+                <p><strong>Key Features:</strong> Full shank, rubber rand, secure lacing</p>
+                <p><strong>Recommended:</strong> Scarpa Zodiac Plus GTX, Lowa Renegade GTX</p>
+
+                <h3>Coastal & Rainforest</h3>
+                <p><strong>Challenges:</strong> Constant moisture, slippery surfaces, mud</p>
+                <p><strong>Boot Choice:</strong> Quick-drying trail runners or non-waterproof boots</p>
+                <p><strong>Key Features:</strong> Drainage, anti-microbial treatment, aggressive tread</p>
+                <p><strong>Recommended:</strong> Altra Lone Peak 6, Salomon XA Pro 3D v8</p>
+
+                <h2 id="fitting">The Perfect Fit: A Step-by-Step Process</h2>
+
+                <p>Poor fit causes 90% of boot problems. Follow this process for happy feet:</p>
+
+                <h3>Before You Go Shopping</h3>
+
+                <ol>
+                    <li><strong>Time it right:</strong> Shop in the afternoon when feet are swollen</li>
+                    <li><strong>Bring your gear:</strong> Hiking socks, custom insoles, ankle braces</li>
+                    <li><strong>Know your size:</strong> Measure both feet - they're often different</li>
+                    <li><strong>Research beforehand:</strong> Have 3-5 models in mind</li>
+                </ol>
+
+                <h3>The Fitting Process</h3>
+
+                <p><strong>Step 1: Initial Sizing</strong></p>
+                <ul>
+                    <li>Start with your street shoe size</li>
+                    <li>Try both feet - fit to the larger one</li>
+                    <li>Wear your hiking socks</li>
+                </ul>
+
+                <p><strong>Step 2: The Toe Test</strong></p>
+                <ul>
+                    <li>Stand up and push foot forward</li>
+                    <li>You should fit one finger behind your heel</li>
+                    <li>Toes shouldn't touch the front</li>
+                    <li>Wiggle room is essential</li>
+                </ul>
+
+                <p><strong>Step 3: Width Check</strong></p>
+                <ul>
+                    <li>Foot should feel secure but not squeezed</li>
+                    <li>No pressure points on sides</li>
+                    <li>Ball of foot at widest part of boot</li>
+                </ul>
+
+                <p><strong>Step 4: The Walk Test</strong></p>
+                <ul>
+                    <li>Walk on incline/decline if available</li>
+                    <li>Heel should not lift more than 1/4 inch</li>
+                    <li>No sliding forward on downhills</li>
+                    <li>Ankle bones shouldn't rub</li>
+                </ul>
+
+                <p><strong>Step 5: The Time Test</strong></p>
+                <ul>
+                    <li>Wear boots for 15-20 minutes</li>
+                    <li>Note any hot spots or pressure</li>
+                    <li>Comfort should improve, not worsen</li>
+                </ul>
+
+                <h3>Common Fit Mistakes</h3>
+
+                <ul>
+                    <li><strong>Buying too small:</strong> "They'll stretch" rarely ends well</li>
+                    <li><strong>Ignoring width:</strong> Length isn't everything</li>
+                    <li><strong>Wrong socks:</strong> Always fit with hiking socks</li>
+                    <li><strong>Morning shopping:</strong> Feet expand during the day</li>
+                    <li><strong>Rushing:</strong> Take time to test properly</li>
+                </ul>
+
+                <h2 id="materials">Materials & Construction Deep Dive</h2>
+
+                <h3>Upper Materials Compared</h3>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Durability</th>
+                                <th>Breathability</th>
+                                <th>Water Resistance</th>
+                                <th>Break-in Time</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Full-Grain Leather</strong></td>
+                                <td>Excellent</td>
+                                <td>Poor</td>
+                                <td>Good</td>
+                                <td>Long (80+ miles)</td>
+                                <td>$$$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nubuck Leather</strong></td>
+                                <td>Very Good</td>
+                                <td>Fair</td>
+                                <td>Good</td>
+                                <td>Moderate (40 miles)</td>
+                                <td>$$$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Split-Grain Leather</strong></td>
+                                <td>Good</td>
+                                <td>Good</td>
+                                <td>Fair</td>
+                                <td>Short (20 miles)</td>
+                                <td>$$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Synthetic</strong></td>
+                                <td>Fair-Good</td>
+                                <td>Excellent</td>
+                                <td>Varies</td>
+                                <td>Minimal</td>
+                                <td>$-$$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mesh Panels</strong></td>
+                                <td>Fair</td>
+                                <td>Excellent</td>
+                                <td>Poor</td>
+                                <td>None</td>
+                                <td>$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Waterproofing Technologies</h3>
+
+                <p><strong>Gore-Tex:</strong> The gold standard</p>
+                <ul>
+                    <li>Excellent waterproofing and breathability</li>
+                    <li>Multiple versions (Performance, Surround, Invisible Fit)</li>
+                    <li>Adds $20-40 to boot cost</li>
+                    <li>Requires proper care to maintain performance</li>
+                </ul>
+
+                <p><strong>eVent:</strong> High-performance alternative</p>
+                <ul>
+                    <li>Superior breathability to standard Gore-Tex</li>
+                    <li>Direct venting technology</li>
+                    <li>Found in premium boots</li>
+                </ul>
+
+                <p><strong>Proprietary Membranes:</strong> Brand-specific options</p>
+                <ul>
+                    <li>Keen.Dry, Omni-Tech, M-Select Dry</li>
+                    <li>Generally good performance</li>
+                    <li>Often more affordable</li>
+                    <li>Varies by manufacturer</li>
+                </ul>
+
+                <p><strong>The Waterproofing Debate:</strong></p>
+                <p>Waterproof boots keep water out but also trap moisture in. Consider:</p>
+                <ul>
+                    <li>Climate: Wet regions benefit from waterproofing</li>
+                    <li>Season: Less important in dry summer conditions</li>
+                    <li>Crossing style: Do you ford streams or rock-hop?</li>
+                    <li>Sweat factor: Heavy sweaters may prefer breathable</li>
+                </ul>
+
+                <h2 id="features">Key Features Explained</h2>
+
+                <h3>Lacing Systems</h3>
+
+                <p><strong>Traditional Eyelets:</strong></p>
+                <ul>
+                    <li>Most durable option</li>
+                    <li>Easy to replace laces</li>
+                    <li>Can create pressure points</li>
+                </ul>
+
+                <p><strong>Speed Hooks:</strong></p>
+                <ul>
+                    <li>Quick lacing/unlacing</li>
+                    <li>Easy tension adjustment</li>
+                    <li>Can catch on brush</li>
+                </ul>
+
+                <p><strong>Locking Eyelets:</strong></p>
+                <ul>
+                    <li>Secure different zones independently</li>
+                    <li>Prevent heel lift</li>
+                    <li>Customize fit</li>
+                </ul>
+
+                <p><strong>Webbing Loops:</strong></p>
+                <ul>
+                    <li>Reduce pressure points</li>
+                    <li>Even tension distribution</li>
+                    <li>Less precise adjustment</li>
+                </ul>
+
+                <h3>Protective Features</h3>
+
+                <p><strong>Toe Caps:</strong></p>
+                <ul>
+                    <li>Rubber or synthetic reinforcement</li>
+                    <li>Essential for rocky terrain</li>
+                    <li>Prevents stubbed toe injuries</li>
+                    <li>Extends boot life significantly</li>
+                </ul>
+
+                <p><strong>Heel Counters:</strong></p>
+                <ul>
+                    <li>Internal or external support structure</li>
+                    <li>Prevents ankle roll</li>
+                    <li>Should be firm but not uncomfortable</li>
+                </ul>
+
+                <p><strong>Rand:</strong></p>
+                <ul>
+                    <li>Rubber wrapping around lower boot</li>
+                    <li>Protects against abrasion</li>
+                    <li>Common on approach shoes</li>
+                    <li>Adds weight but increases durability</li>
+                </ul>
+
+                <h3>Insole Considerations</h3>
+
+                <p>Stock insoles are often inadequate. Consider aftermarket options:</p>
+
+                <p><strong>Superfeet (Green or Blue):</strong> $50</p>
+                <ul>
+                    <li>Structured heel cup</li>
+                    <li>High arch support</li>
+                    <li>Improves efficiency</li>
+                </ul>
+
+                <p><strong>Sole Active Insoles:</strong> $40</p>
+                <ul>
+                    <li>Heat moldable</li>
+                    <li>Customizable arch</li>
+                    <li>Good for problem feet</li>
+                </ul>
+
+                <p><strong>Dr. Scholl's Work Insoles:</strong> $15</p>
+                <ul>
+                    <li>Budget option</li>
+                    <li>Extra cushioning</li>
+                    <li>Replace frequently</li>
+                </ul>
+
+                <h2 id="breaking-in">Breaking In Your Boots Properly</h2>
+
+                <p>New boots need gradual introduction to prevent blisters and ensure longevity:</p>
+
+                <h3>Week 1: Indoor Introduction</h3>
+                <ul>
+                    <li>Wear around house for 1-2 hours daily</li>
+                    <li>Use your hiking socks</li>
+                    <li>Note any pressure points</li>
+                    <li>Adjust lacing for comfort</li>
+                </ul>
+
+                <h3>Week 2: Short Walks</h3>
+                <ul>
+                    <li>Walk 1-2 miles on pavement</li>
+                    <li>Include some hills</li>
+                    <li>Carry light daypack</li>
+                    <li>Address hot spots immediately</li>
+                </ul>
+
+                <h3>Week 3: Easy Trails</h3>
+                <ul>
+                    <li>Hike 3-5 miles on maintained trails</li>
+                    <li>Vary terrain types</li>
+                    <li>Test in light rain if possible</li>
+                    <li>Bring backup shoes just in case</li>
+                </ul>
+
+                <h3>Week 4: Full Testing</h3>
+                <ul>
+                    <li>Attempt your typical hike distance</li>
+                    <li>Carry normal pack weight</li>
+                    <li>Include technical terrain</li>
+                    <li>Boots should feel natural by now</li>
+                </ul>
+
+                <p><strong>Fast Break-In Tips:</strong></p>
+                <ul>
+                    <li>Wear damp socks for 30 minutes (softens leather)</li>
+                    <li>Use leather conditioner on full-grain boots</li>
+                    <li>Focus on problem areas with boot stretcher</li>
+                    <li>Hair dryer on tight spots (careful with synthetics)</li>
+                </ul>
+
+                <h2 id="recommendations">Top Recommendations by Category</h2>
+
+                <h3>Best Overall Hiking Boot</h3>
+                <p><strong>Salomon Quest 4 GTX</strong> ($230)</p>
+                <ul>
+                    <li>Perfect balance of support and agility</li>
+                    <li>4D Advanced Chassis for stability</li>
+                    <li>Contragrip sole excels on all surfaces</li>
+                    <li>Generous toe box fits most feet</li>
+                    <li>500+ mile durability</li>
+                </ul>
+
+                <h3>Best Budget Boot</h3>
+                <p><strong>Columbia Newton Ridge Plus II</strong> ($80-100)</p>
+                <ul>
+                    <li>Surprisingly capable for the price</li>
+                    <li>Omni-Grip traction works well</li>
+                    <li>Comfortable from day one</li>
+                    <li>Great starter boot</li>
+                    <li>Watch for frequent sales</li>
+                </ul>
+
+                <h3>Best Lightweight Boot</h3>
+                <p><strong>Arc'teryx Aerios FL 2 Mid GTX</strong> ($200)</p>
+                <ul>
+                    <li>Only 1.5 lbs per pair</li>
+                    <li>Feels like a trail runner with ankle support</li>
+                    <li>Vibram Megagrip outsole</li>
+                    <li>Minimal break-in required</li>
+                    <li>Not for heavy loads</li>
+                </ul>
+
+                <h3>Best for Wide Feet</h3>
+                <p><strong>Keen Targhee III Mid</strong> ($165)</p>
+                <ul>
+                    <li>Famously roomy toe box</li>
+                    <li>Available in wide sizes</li>
+                    <li>Keen.Dry waterproofing</li>
+                    <li>All-terrain traction</li>
+                    <li>Metatomical footbed design</li>
+                </ul>
+
+                <h3>Best for Narrow Feet</h3>
+                <p><strong>La Sportiva Nucleo High II GTX</strong> ($190)</p>
+                <ul>
+                    <li>European fit suits narrow feet</li>
+                    <li>Exceptional grip on rock</li>
+                    <li>Impact Brake System</li>
+                    <li>Breathable despite waterproofing</li>
+                    <li>Technical performance</li>
+                </ul>
+
+                <h3>Best Heavy-Duty Boot</h3>
+                <p><strong>Lowa Camino GTX</strong> ($285)</p>
+                <ul>
+                    <li>Full-grain leather construction</li>
+                    <li>Perfect for heavy loads</li>
+                    <li>Resoleable for longevity</li>
+                    <li>Superior ankle support</li>
+                    <li>1000+ mile lifespan</li>
+                </ul>
+
+                <h3>Best Trail Runner</h3>
+                <p><strong>Hoka Speedgoat 5</strong> ($155)</p>
+                <ul>
+                    <li>Maximum cushioning</li>
+                    <li>Vibram Megagrip traction</li>
+                    <li>Wide platform stability</li>
+                    <li>Great for long distances</li>
+                    <li>Quick-drying materials</li>
+                </ul>
+
+                <h3>Best Approach Shoe</h3>
+                <p><strong>La Sportiva TX4</strong> ($139)</p>
+                <ul>
+                    <li>Climbing shoe heritage</li>
+                    <li>Sticky rubber for scrambling</li>
+                    <li>Protective but nimble</li>
+                    <li>Leather upper durability</li>
+                    <li>Excellent for technical terrain</li>
+                </ul>
+
+                <h2 id="care">Care & Maintenance</h2>
+
+                <p>Proper care doubles boot lifespan. Here's your maintenance routine:</p>
+
+                <h3>After Each Hike</h3>
+                <ol>
+                    <li><strong>Remove debris:</strong> Bang boots together, brush off dirt</li>
+                    <li><strong>Dry properly:</strong> Remove insoles, stuff with newspaper</li>
+                    <li><strong>Air dry:</strong> Never use direct heat</li>
+                    <li><strong>Check for damage:</strong> Address issues early</li>
+                </ol>
+
+                <h3>Monthly Maintenance</h3>
+                <ol>
+                    <li><strong>Deep clean:</strong> Soft brush with mild soap</li>
+                    <li><strong>Condition leather:</strong> Use appropriate treatment</li>
+                    <li><strong>Waterproof:</strong> Reapply DWR spray/wax</li>
+                    <li><strong>Check laces:</strong> Replace if fraying</li>
+                </ol>
+
+                <h3>Seasonal Care</h3>
+                <ul>
+                    <li><strong>Spring:</strong> Full inspection after winter storage</li>
+                    <li><strong>Summer:</strong> Extra cleaning for dust/salt</li>
+                    <li><strong>Fall:</strong> Waterproofing refresh</li>
+                    <li><strong>Winter:</strong> Dry thoroughly between uses</li>
+                </ul>
+
+                <h3>Storage Tips</h3>
+                <ul>
+                    <li>Store in cool, dry place</li>
+                    <li>Stuff with paper to maintain shape</li>
+                    <li>Loosen laces completely</li>
+                    <li>Keep away from heat sources</li>
+                    <li>Cedar shoe trees prevent odor</li>
+                </ul>
+
+                <h3>When to Resole</h3>
+                <p>Worth it for boots over $200 when:</p>
+                <ul>
+                    <li>Tread worn smooth in high-wear areas</li>
+                    <li>Upper still in good condition</li>
+                    <li>Midsole compression minimal</li>
+                    <li>Cost is 25-40% of new boots</li>
+                </ul>
+
+                <p><strong>Resoling Services:</strong></p>
+                <ul>
+                    <li>Local cobblers (verify experience)</li>
+                    <li>Dave Page Cobbler (Seattle)</li>
+                    <li>Rock & Resole (Boulder)</li>
+                    <li>NuShoe (San Diego)</li>
+                </ul>
+
+                <h2 id="troubleshooting">Troubleshooting Common Boot Problems</h2>
+
+                <h3>Problem: Heel Blisters</h3>
+                <p><strong>Causes:</strong> Heel lift, wrong size, inadequate break-in</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Lock lacing technique at ankle</li>
+                    <li>Heel lock inserts</li>
+                    <li>Different sock thickness</li>
+                    <li>Leukotape preemptively</li>
+                </ul>
+
+                <h3>Problem: Toe Bang on Downhills</h3>
+                <p><strong>Causes:</strong> Boots too small, poor lacing, worn out midsole</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Size up half size</li>
+                    <li>Tighten laces before descents</li>
+                    <li>Trim toenails short</li>
+                    <li>Consider toe caps</li>
+                </ul>
+
+                <h3>Problem: Arch Pain</h3>
+                <p><strong>Causes:</strong> Inadequate support, wrong arch type</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Quality aftermarket insoles</li>
+                    <li>Arch support inserts</li>
+                    <li>Different lacing over arch</li>
+                    <li>Consider custom orthotics</li>
+                </ul>
+
+                <h3>Problem: Hot Spots</h3>
+                <p><strong>Causes:</strong> Pressure points, moisture, friction</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Address immediately with moleskin</li>
+                    <li>Adjust lacing pattern</li>
+                    <li>Boot stretching for persistent spots</li>
+                    <li>Double sock system</li>
+                </ul>
+
+                <h3>Problem: Wet Feet Despite Waterproofing</h3>
+                <p><strong>Causes:</strong> Failed membrane, water over boot top, sweat</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Check and refresh DWR coating</li>
+                    <li>Gaiters for deep water/snow</li>
+                    <li>Moisture-wicking sock liners</li>
+                    <li>Accept that feet get wet sometimes</li>
+                </ul>
+
+                <h2>The Decision Tree</h2>
+
+                <p>Still unsure? Follow this flow:</p>
+
+                <ol>
+                    <li><strong>What's your typical hike?</strong>
+                        <ul>
+                            <li>Under 5 miles, maintained trails → Low hiking shoes</li>
+                            <li>5-10 miles, mixed terrain → Mid-height boots</li>
+                            <li>10+ miles or rough terrain → Sturdy mid boots</li>
+                            <li>Multi-day with heavy pack → Backpacking boots</li>
+                        </ul>
+                    </li>
+                    <li><strong>What's your budget?</strong>
+                        <ul>
+                            <li>Under $100 → Columbia or Merrell</li>
+                            <li>$100-200 → Salomon, Keen, or REI brand</li>
+                            <li>$200+ → Premium brands for specific needs</li>
+                        </ul>
+                    </li>
+                    <li><strong>Any foot issues?</strong>
+                        <ul>
+                            <li>Wide feet → Keen or Merrell</li>
+                            <li>Narrow feet → La Sportiva or Scarpa</li>
+                            <li>Plantar fasciitis → Hoka or heavily cushioned</li>
+                            <li>Ankle problems → High-top support</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2>Final Wisdom</h2>
+
+                <p>After thousands of trail miles and hundreds of boot conversations, here's what matters most: <strong>the best boot is the one that fits YOUR feet and matches YOUR trails</strong>. Don't buy based on reviews alone or what your friend loves.</p>
+
+                <p>Take time to find your perfect match. Your feet will thank you for every mile. When you find boots that work, buy a second pair – models change, but happy feet are forever.</p>
+
+                <p>Remember: It's not about having the most expensive boots on the trail. It's about having the right boots that let you focus on the journey instead of your feet.</p>
+
+                <hr class="my-8">
+
+                <p><em>Questions about specific boots or fit issues? Share them below – our community of hikers has tested just about everything out there. Happy trails!</em></p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="max-w-4xl mx-auto px-6 pb-12">
+        <h3 class="text-2xl font-bold mb-6">Related Articles</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <h4 class="font-bold text-lg mb-2">Sock Science: Preventing Blisters</h4>
+                <p class="text-gray-600 text-sm mb-4">The right socks are half the equation for happy feet.</p>
+                <span class="text-blue-600 font-semibold text-sm">Read More →</span>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <h4 class="font-bold text-lg mb-2">Trail Runner vs Boot Showdown</h4>
+                <p class="text-gray-600 text-sm mb-4">We tested both for 500 miles. Here's what we learned.</p>
+                <span class="text-blue-600 font-semibold text-sm">Read More →</span>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer">
+                <h4 class="font-bold text-lg mb-2">Gear Review: 2024's Best Boots</h4>
+                <p class="text-gray-600 text-sm mb-4">Our annual test of 20+ popular hiking boots.</p>
+                <span class="text-blue-600 font-semibold text-sm">Read More →</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Reading progress bar
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        });
+
+        // Share functionality
+        function shareArticle() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'The Complete Boot Buying Guide',
+                    text: 'Learn how to choose the perfect hiking boots!',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>

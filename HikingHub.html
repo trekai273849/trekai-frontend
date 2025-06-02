@@ -61,6 +61,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            padding: 0;
         }
 
         .category-card::before {
@@ -73,6 +74,7 @@
             background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2));
             transform: translateX(-100%);
             transition: transform 0.3s ease;
+            z-index: 1;
         }
 
         .category-card:hover::before {
@@ -84,24 +86,40 @@
             box-shadow: 0 16px 32px rgba(0,0,0,0.15);
         }
 
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+        .category-image-container {
+            width: 100%;
+            height: 240px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            margin: 0 auto 20px auto;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Category gradients */
-        .gear-gradient { background: linear-gradient(135deg, #3B82F6, #2563EB); }
-        .fitness-gradient { background: linear-gradient(135deg, #EF4444, #DC2626); }
-        .navigation-gradient { background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
-        .safety-gradient { background: linear-gradient(135deg, #F59E0B, #D97706); }
-        .camping-gradient { background: linear-gradient(135deg, #10B981, #059669); }
-        .weather-gradient { background: linear-gradient(135deg, #06B6D4, #0891B2); }
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .category-image {
+            transform: scale(1.05);
+        }
+
+        .category-content {
+            padding: 32px;
+        }
+
+        /* Category specific backgrounds */
+        .gear-bg { background: linear-gradient(135deg, #EBF5FF 0%, #DBEAFE 100%); }
+        .fitness-bg { background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%); }
+        .navigation-bg { background: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%); }
+        .safety-bg { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
+        .camping-bg { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+        .weather-bg { background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%); }
 
         /* Guide Cards */
         .guide-card {
@@ -161,19 +179,6 @@
             font-weight: 600;
         }
 
-        /* Interactive Tools */
-        .tool-card {
-            background: white;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .tool-card:hover {
-            border-color: var(--primary);
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
         /* Popular articles */
         .popular-article {
             transition: all 0.2s ease;
@@ -210,12 +215,65 @@
         .pulse-dot {
             animation: pulse 2s infinite;
         }
+
+        /* NEW STYLES FOR INTERACTIVE TOOLS SECTION */
+        /* Updated tool card styles to match existing design */
+        .tool-card-updated {
+            background: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .tool-card-updated:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Icon container matching page style */
+        .tool-icon-container {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-icon-green {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .tool-icon-blue {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .tool-icon-purple {
+            background: #E9D5FF;
+            color: #6B21A8;
+        }
+
+        .tool-card-updated:hover .tool-icon-container {
+            transform: scale(1.1);
+        }
+
+        .tool-icon-container i {
+            font-size: 28px;
+        }
     </style>
 </head>
 <body>
 
 <!-- Hero Section: Centered Title with Background Image -->
-<section class="relative text-white py-32 bg-cover bg-center" style="background-image: url('andes.jpg');">
+<section class="relative text-white py-32 bg-cover bg-center" style="background-image: url('images/andes.jpg');">
     <!-- Optional: light gradient overlay to improve text readability -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
 
@@ -236,7 +294,7 @@
     <div class="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-lg">
         
         <!-- Image on the left -->
-        <div class="md:w-1/2 bg-cover bg-center" style="background-image: url('Illustration2.jpg'); min-height: 300px;"></div>
+        <div class="md:w-1/2 bg-cover bg-center" style="background-image: url('images/Illustration2.jpg'); min-height: 300px;"></div>
         
         <!-- Text content on the right -->
         <div class="md:w-1/2 p-8 flex flex-col justify-center">
@@ -299,198 +357,193 @@
     </section>
 
     <!-- Visual Category Grid -->
-    <section class="max-w-6xl mx-auto px-6 py-12">
+    <section class="max-w-6xl mx-auto px-6 py-12" id="categories">
         <h2 class="text-3xl font-bold mb-8">Browse by Category</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Gear Category -->
-            <div class="category-card bg-white rounded-2xl p-8 shadow-lg">
-                <div class="category-icon gear-gradient text-white">
-                    🎒
+            <div class="category-card bg-white rounded-2xl shadow-lg">
+                <div class="category-image-container gear-bg">
+                    <img src="images/illustrations/gear-equipment.jpg" alt="Gear & Equipment" class="category-image">
                 </div>
-                <h3 class="text-2xl font-bold mb-3">Gear & Equipment</h3>
-                <p class="text-gray-600 mb-6">Everything about choosing, using, and maintaining trek gear</p>
-                <div class="space-y-3">
-                    <div class="article-pill">
-                        <span class="flex items-center gap-2">
-                            <span class="beginner-badge">Beginner</span>
-                            Essential Gear Checklist
-                        </span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Boot Buying Guide</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span class="flex items-center gap-2">
-                            <span class="trending-tag">Trending</span>
-                            Ultralight Packing
-                        </span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
+                <div class="category-content">
+                    <h3 class="text-2xl font-bold mb-3">Gear & Equipment</h3>
+                    <p class="text-gray-600 mb-6">Everything about choosing, using, and maintaining trek gear</p>
+                    <div class="space-y-3">
+                        <div class="article-pill">
+                            <span class="flex items-center gap-2">
+                                <span class="beginner-badge">Beginner</span>
+                                Essential Gear Checklist
+                            </span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Boot Buying Guide</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span class="flex items-center gap-2">
+                                <span class="trending-tag">Trending</span>
+                                Ultralight Packing
+                            </span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
                     </div>
                 </div>
-                <button class="mt-6 text-blue-600 font-semibold hover:text-blue-700">
-                    View all 12 guides →
-                </button>
+            </div>
+
+            <!-- Camping Category (moved to 2nd position) -->
+            <div class="category-card bg-white rounded-2xl shadow-lg">
+                <div class="category-image-container camping-bg">
+                    <img src="images/illustrations/camping-skills.png" alt="Camping Skills" class="category-image">
+                </div>
+                <div class="category-content">
+                    <h3 class="text-2xl font-bold mb-3">Camping Skills</h3>
+                    <p class="text-gray-600 mb-6">Master the art of comfortable wilderness camping</p>
+                    <div class="space-y-3">
+                        <div class="article-pill">
+                            <span>Campsite Selection</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span class="flex items-center gap-2">
+                                <span class="beginner-badge">Beginner</span>
+                                Tent Setup Guide
+                            </span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Leave No Trace</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safety Category (moved to 3rd position) -->
+            <div class="category-card bg-white rounded-2xl shadow-lg">
+                <div class="category-image-container safety-bg">
+                    <img src="images/illustrations/safety.jpg" alt="Safety & First Aid" class="category-image">
+                </div>
+                <div class="category-content">
+                    <h3 class="text-2xl font-bold mb-3">Safety & First Aid</h3>
+                    <p class="text-gray-600 mb-6">Stay safe and handle emergencies on the trail</p>
+                    <div class="space-y-3">
+                        <div class="article-pill">
+                            <span class="flex items-center gap-2">
+                                <span class="trending-tag">Must Read</span>
+                                Basic First Aid
+                            </span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Wildlife Safety</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Emergency Protocols</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Fitness Category -->
-            <div class="category-card bg-white rounded-2xl p-8 shadow-lg">
-                <div class="category-icon fitness-gradient text-white">
-                    💪
+            <div class="category-card bg-white rounded-2xl shadow-lg">
+                <div class="category-image-container fitness-bg">
+                    <img src="images/illustrations/fitness-training.jpg" alt="Fitness & Training" class="category-image">
                 </div>
-                <h3 class="text-2xl font-bold mb-3">Fitness & Training</h3>
-                <p class="text-gray-600 mb-6">Build strength and endurance for any trek challenge</p>
-                <div class="space-y-3">
-                    <div class="article-pill">
-                        <span class="flex items-center gap-2">
-                            <span class="beginner-badge">Beginner</span>
-                            6-Week Starter Plan
-                        </span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Altitude Training Tips</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Trail Nutrition Guide</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
+                <div class="category-content">
+                    <h3 class="text-2xl font-bold mb-3">Fitness & Training</h3>
+                    <p class="text-gray-600 mb-6">Build strength and endurance for any trek challenge</p>
+                    <div class="space-y-3">
+                        <div class="article-pill">
+                            <span class="flex items-center gap-2">
+                                <span class="beginner-badge">Beginner</span>
+                                6-Week Starter Plan
+                            </span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Altitude Training Tips</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Trail Nutrition Guide</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
                     </div>
                 </div>
-                <button class="mt-6 text-blue-600 font-semibold hover:text-blue-700">
-                    View all 8 guides →
-                </button>
             </div>
 
             <!-- Navigation Category -->
-            <div class="category-card bg-white rounded-2xl p-8 shadow-lg">
-                <div class="category-icon navigation-gradient text-white">
-                    🧭
+            <div class="category-card bg-white rounded-2xl shadow-lg">
+                <div class="category-image-container navigation-bg">
+                    <img src="images/illustrations/navigation.jpg" alt="Navigation" class="category-image">
                 </div>
-                <h3 class="text-2xl font-bold mb-3">Navigation</h3>
-                <p class="text-gray-600 mb-6">Never get lost with map, compass, and GPS skills</p>
-                <div class="space-y-3">
-                    <div class="article-pill">
-                        <span class="flex items-center gap-2">
-                            <span class="beginner-badge">Beginner</span>
-                            Map Reading 101
-                        </span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>GPS vs Compass</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Trail Markers Guide</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                </div>
-                <button class="mt-6 text-blue-600 font-semibold hover:text-blue-700">
-                    View all 6 guides →
-                </button>
-            </div>
-
-            <!-- Safety Category -->
-            <div class="category-card bg-white rounded-2xl p-8 shadow-lg">
-                <div class="category-icon safety-gradient text-white">
-                    ⛑️
-                </div>
-                <h3 class="text-2xl font-bold mb-3">Safety & First Aid</h3>
-                <p class="text-gray-600 mb-6">Stay safe and handle emergencies on the trail</p>
-                <div class="space-y-3">
-                    <div class="article-pill">
-                        <span class="flex items-center gap-2">
-                            <span class="trending-tag">Must Read</span>
-                            Basic First Aid
-                        </span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Wildlife Safety</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Emergency Protocols</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
+                <div class="category-content">
+                    <h3 class="text-2xl font-bold mb-3">Navigation</h3>
+                    <p class="text-gray-600 mb-6">Never get lost with map, compass, and GPS skills</p>
+                    <div class="space-y-3">
+                        <div class="article-pill">
+                            <span class="flex items-center gap-2">
+                                <span class="beginner-badge">Beginner</span>
+                                Map Reading 101
+                            </span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>GPS vs Compass</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Trail Markers Guide</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
                     </div>
                 </div>
-                <button class="mt-6 text-blue-600 font-semibold hover:text-blue-700">
-                    View all 7 guides →
-                </button>
-            </div>
-
-            <!-- Camping Category -->
-            <div class="category-card bg-white rounded-2xl p-8 shadow-lg">
-                <div class="category-icon camping-gradient text-white">
-                    🏕️
-                </div>
-                <h3 class="text-2xl font-bold mb-3">Camping Skills</h3>
-                <p class="text-gray-600 mb-6">Master the art of comfortable wilderness camping</p>
-                <div class="space-y-3">
-                    <div class="article-pill">
-                        <span>Campsite Selection</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span class="flex items-center gap-2">
-                            <span class="beginner-badge">Beginner</span>
-                            Tent Setup Guide
-                        </span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Leave No Trace</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                </div>
-                <button class="mt-6 text-blue-600 font-semibold hover:text-blue-700">
-                    View all 5 guides →
-                </button>
             </div>
 
             <!-- Weather Category -->
-            <div class="category-card bg-white rounded-2xl p-8 shadow-lg">
-                <div class="category-icon weather-gradient text-white">
-                    🌦️
+            <div class="category-card bg-white rounded-2xl shadow-lg">
+                <div class="category-image-container weather-bg">
+                    <img src="images/illustrations/weather-seasons.jpg" alt="Weather & Seasons" class="category-image">
                 </div>
-                <h3 class="text-2xl font-bold mb-3">Weather & Seasons</h3>
-                <p class="text-gray-600 mb-6">Understand and prepare for mountain weather</p>
-                <div class="space-y-3">
-                    <div class="article-pill">
-                        <span>Reading Weather Signs</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span>Seasonal Gear Guide</span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                    <div class="article-pill">
-                        <span class="flex items-center gap-2">
-                            <span class="trending-tag">Hot Topic</span>
-                            Monsoon Trekking
-                        </span>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
+                <div class="category-content">
+                    <h3 class="text-2xl font-bold mb-3">Weather & Seasons</h3>
+                    <p class="text-gray-600 mb-6">Understand and prepare for mountain weather</p>
+                    <div class="space-y-3">
+                        <div class="article-pill">
+                            <span>Reading Weather Signs</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span>Seasonal Gear Guide</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
+                        <div class="article-pill">
+                            <span class="flex items-center gap-2">
+                                <span class="trending-tag">Hot Topic</span>
+                                Monsoon Trekking
+                            </span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                        </div>
                     </div>
                 </div>
-                <button class="mt-6 text-blue-600 font-semibold hover:text-blue-700">
-                    View all 4 guides →
-                </button>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Tools -->
-    <section class="bg-gradient-to-br from-blue-50 to-green-50 py-16">
+    <!-- Interactive Tools Section - UPDATED DESIGN -->
+    <section class="bg-gradient-to-br from-blue-50 to-green-50 py-16" id="tools">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold mb-4">Interactive Tools & Resources</h2>
                 <p class="text-gray-600">Practical tools to plan and prepare for your trek</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Fitness Assessment -->
                 <div class="tool-card p-6 rounded-xl text-center cursor-pointer">
                     <div class="text-4xl mb-3">📊</div>
                     <h4 class="font-bold mb-2">Fitness Assessment</h4>
@@ -498,6 +551,7 @@
                     <span class="text-blue-600 font-semibold">Start Test →</span>
                 </div>
                 
+                <!-- Trek Matcher Quiz -->
                 <div class="tool-card p-6 rounded-xl text-center cursor-pointer">
                     <div class="text-4xl mb-3">🎯</div>
                     <h4 class="font-bold mb-2">Trek Matcher Quiz</h4>
@@ -505,24 +559,16 @@
                     <span class="text-blue-600 font-semibold">Take Quiz →</span>
                 </div>
                 
+                <!-- Custom Packing List -->
                 <div class="tool-card p-6 rounded-xl text-center cursor-pointer">
                     <div class="text-4xl mb-3">📋</div>
                     <h4 class="font-bold mb-2">Custom Packing List</h4>
                     <p class="text-sm text-gray-600 mb-4">Generate lists based on trek type & season</p>
                     <span class="text-blue-600 font-semibold">Build List →</span>
                 </div>
-                
-                <div class="tool-card p-6 rounded-xl text-center cursor-pointer">
-                    <div class="text-4xl mb-3">🧮</div>
-                    <h4 class="font-bold mb-2">Budget Calculator</h4>
-                    <p class="text-sm text-gray-600 mb-4">Estimate total costs for gear and trips</p>
-                    <span class="text-blue-600 font-semibold">Calculate →</span>
-                </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- Newsletter CTA -->
     <section class="bg-gray-900 text-white py-16">
