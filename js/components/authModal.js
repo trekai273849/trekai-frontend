@@ -1,5 +1,5 @@
 // js/components/authModal.js
-import { signUp, signIn, resetPassword } from '../auth/auth.js';
+import { signUp, signIn, resetPassword, signInWithGoogle, signInWithFacebook, handleRedirectResult } from '../auth/auth.js';
 import { auth } from '../auth/firebase.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
@@ -29,6 +29,8 @@ export function injectAuthModal() {
         --text-light: #6b7280;
         --bg-light: #f3f4f6;
         --white: #FFFFFF;
+        --google-blue: #4285f4;
+        --facebook-blue: #1877f2;
       }
 
       /* Modal Overlay */
@@ -151,7 +153,7 @@ export function injectAuthModal() {
         background: var(--bg-light);
         border-radius: 12px;
         padding: 4px;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
         transition: all 0.3s ease;
       }
 
@@ -177,6 +179,72 @@ export function injectAuthModal() {
         background: white;
         color: var(--text-dark);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* OAuth Buttons */
+      .auth-oauth-section {
+        margin-bottom: 24px;
+      }
+
+      .auth-oauth-button {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        background: white;
+        font-family: inherit;
+      }
+
+      .auth-oauth-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .auth-oauth-button.google {
+        border-color: var(--google-blue);
+        color: var(--google-blue);
+      }
+
+      .auth-oauth-button.google:hover {
+        background: rgba(66, 133, 244, 0.05);
+      }
+
+      .auth-oauth-button.facebook {
+        border-color: var(--facebook-blue);
+        color: var(--facebook-blue);
+      }
+
+      .auth-oauth-button.facebook:hover {
+        background: rgba(24, 119, 242, 0.05);
+      }
+
+      /* Divider */
+      .auth-divider {
+        display: flex;
+        align-items: center;
+        margin: 24px 0;
+      }
+
+      .auth-divider-line {
+        flex: 1;
+        height: 1px;
+        background: #e5e7eb;
+      }
+
+      .auth-divider-text {
+        padding: 0 16px;
+        font-size: 13px;
+        color: var(--text-light);
+        font-weight: 500;
       }
 
       /* Form Elements */
@@ -489,6 +557,30 @@ export function injectAuthModal() {
 
             <!-- Sign Up Form -->
             <form id="auth-signup-form" class="auth-form">
+              <!-- OAuth Section -->
+              <div class="auth-oauth-section">
+                <button type="button" class="auth-oauth-button google" onclick="window.handleGoogleSignIn()">
+                  <svg width="20" height="20" viewBox="0 0 488 512">
+                    <path fill="#4285F4" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                  </svg>
+                  Continue with Google
+                </button>
+                
+                <button type="button" class="auth-oauth-button facebook" onclick="window.handleFacebookSignIn()">
+                  <svg width="20" height="20" viewBox="0 0 320 512">
+                    <path fill="#1877F2" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                  </svg>
+                  Continue with Facebook
+                </button>
+              </div>
+
+              <!-- Divider -->
+              <div class="auth-divider">
+                <div class="auth-divider-line"></div>
+                <div class="auth-divider-text">or</div>
+                <div class="auth-divider-line"></div>
+              </div>
+
               <div class="auth-form-group">
                 <label class="auth-form-label" for="auth-signup-email">Email Address</label>
                 <input type="email" id="auth-signup-email" class="auth-form-input" placeholder="your@email.com" required />
@@ -514,6 +606,30 @@ export function injectAuthModal() {
 
             <!-- Login Form -->
             <form id="auth-login-form" class="auth-form auth-hidden">
+              <!-- OAuth Section -->
+              <div class="auth-oauth-section">
+                <button type="button" class="auth-oauth-button google" onclick="window.handleGoogleSignIn()">
+                  <svg width="20" height="20" viewBox="0 0 488 512">
+                    <path fill="#4285F4" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                  </svg>
+                  Continue with Google
+                </button>
+                
+                <button type="button" class="auth-oauth-button facebook" onclick="window.handleFacebookSignIn()">
+                  <svg width="20" height="20" viewBox="0 0 320 512">
+                    <path fill="#1877F2" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                  </svg>
+                  Continue with Facebook
+                </button>
+              </div>
+
+              <!-- Divider -->
+              <div class="auth-divider">
+                <div class="auth-divider-line"></div>
+                <div class="auth-divider-text">or</div>
+                <div class="auth-divider-line"></div>
+              </div>
+
               <div class="auth-form-group">
                 <label class="auth-form-label" for="auth-login-email">Email Address</label>
                 <input type="email" id="auth-login-email" class="auth-form-input" placeholder="your@email.com" required />
@@ -605,6 +721,9 @@ export function injectAuthModal() {
   
   // Setup form handlers
   setupFormHandlers();
+  
+  // Check for OAuth redirect result on page load
+  checkOAuthRedirect();
 }
 
 function setupGlobalFunctions() {
@@ -697,6 +816,123 @@ function setupGlobalFunctions() {
       `;
     }
   };
+
+  // Google Sign In Handler
+  window.handleGoogleSignIn = async function() {
+    hideAllMessages();
+    showInfo('Signing in with Google...');
+    
+    try {
+      const result = await signInWithGoogle();
+      
+      if (result.pending) {
+        // Redirect flow initiated, page will reload
+        return;
+      }
+      
+      if (!result.success) {
+        throw new Error(result.error);
+      }
+      
+      await handleOAuthSuccess(result.user);
+    } catch (error) {
+      console.error('Google sign-in error:', error);
+      showError(getOAuthFriendlyError(error));
+    }
+  };
+
+  // Facebook Sign In Handler
+  window.handleFacebookSignIn = async function() {
+    hideAllMessages();
+    showInfo('Signing in with Facebook...');
+    
+    try {
+      const result = await signInWithFacebook();
+      
+      if (result.pending) {
+        // Redirect flow initiated, page will reload
+        return;
+      }
+      
+      if (!result.success) {
+        throw new Error(result.error);
+      }
+      
+      await handleOAuthSuccess(result.user);
+    } catch (error) {
+      console.error('Facebook sign-in error:', error);
+      showError(getOAuthFriendlyError(error));
+    }
+  };
+}
+
+// Check for OAuth redirect result on page load
+async function checkOAuthRedirect() {
+  try {
+    const result = await handleRedirectResult();
+    if (result.success && result.user) {
+      // Show modal with success message
+      const modal = document.getElementById('auth-modal');
+      if (modal) {
+        modal.classList.add('active');
+        await handleOAuthSuccess(result.user);
+      }
+    }
+  } catch (error) {
+    console.error('OAuth redirect error:', error);
+  }
+}
+
+// Handle successful OAuth authentication
+async function handleOAuthSuccess(user) {
+  // Wait for auth state to be established
+  await new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        unsubscribe();
+        resolve(user);
+      }
+    });
+  });
+  
+  // Check for and save any pending itinerary
+  const savedItinerary = await savePendingItinerary(user);
+  
+  if (savedItinerary) {
+    showSuccess('🎉 Welcome! Your trek has been saved.');
+    setTimeout(() => {
+      window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+    }, 2000);
+  } else {
+    showSuccess('🎉 Welcome to Smart Trails!');
+    setTimeout(() => {
+      window.closeAuthModal();
+      window.location.reload();
+    }, 1500);
+  }
+}
+
+// OAuth-specific error messages
+function getOAuthFriendlyError(error) {
+  const errorCode = error.message || error.code;
+  
+  const errorMap = {
+    'popup-closed-by-user': 'Sign-in cancelled. Please try again.',
+    'auth/popup-blocked': 'Pop-up blocked. Please allow pop-ups for this site.',
+    'auth/cancelled-popup-request': 'Another sign-in is in progress.',
+    'auth/network-request-failed': 'Network error. Please check your connection.',
+    'auth/account-exists-with-different-credential': 'An account already exists with the same email address.',
+    'auth/user-cancelled': 'Sign-in cancelled.'
+  };
+  
+  // Check for partial matches
+  for (const [key, value] of Object.entries(errorMap)) {
+    if (errorCode.includes(key.replace('auth/', ''))) {
+      return value;
+    }
+  }
+  
+  return 'Sign-in failed. Please try again.';
 }
 
 function setupFormHandlers() {
@@ -862,6 +1098,13 @@ function showError(message) {
 }
 
 function showSuccess(message) {
+  const successDiv = document.getElementById('auth-success-message');
+  successDiv.textContent = message;
+  successDiv.classList.add('show');
+  document.getElementById('auth-error-message').classList.remove('show');
+}
+
+function showInfo(message) {
   const successDiv = document.getElementById('auth-success-message');
   successDiv.textContent = message;
   successDiv.classList.add('show');
