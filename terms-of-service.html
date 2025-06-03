@@ -14,29 +14,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Terms of Service for Smart Trails - AI-powered trekking itinerary platform" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css" />
   
   <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    .legal-content {
+      line-height: 1.8;
+      color: #374151;
+    }
+    
     .legal-content h2 {
-      @apply text-2xl font-bold text-gray-800 mt-8 mb-4;
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #111827;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid #e5e7eb;
     }
+    
+    .legal-content h2:first-of-type {
+      margin-top: 0;
+    }
+    
+    .section-number {
+      display: inline-block;
+      background-color: #1f2937;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      margin-right: 0.75rem;
+    }
+    
     .legal-content h3 {
-      @apply text-xl font-semibold text-gray-700 mt-6 mb-3;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #374151;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
     }
+    
     .legal-content h4 {
-      @apply text-lg font-medium text-gray-600 mt-4 mb-2;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #4b5563;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      padding-left: 2rem;
     }
+    
     .legal-content p {
-      @apply mb-4 text-gray-600 leading-relaxed;
+      margin-bottom: 1.25rem;
+      color: #4b5563;
+      font-size: 1.0625rem;
     }
-    .legal-content ul, .legal-content ol {
-      @apply mb-4 ml-6 text-gray-600;
+    
+    .legal-content ul,
+    .legal-content ol {
+      margin-bottom: 1.5rem;
+      margin-left: 2rem;
+      color: #4b5563;
     }
+    
     .legal-content li {
-      @apply mb-2;
+      margin-bottom: 0.75rem;
+      line-height: 1.75;
     }
-    .legal-content strong {
-      @apply font-semibold text-gray-800;
+    
+    .legal-content li strong {
+      color: #1f2937;
+      font-weight: 600;
+    }
+    
+    .warning-box {
+      background-color: #fef2f2;
+      border-left: 4px solid #ef4444;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0.375rem;
+    }
+    
+    .warning-box p {
+      margin-bottom: 0.5rem;
+      color: #991b1b;
+    }
+    
+    .warning-box strong {
+      color: #dc2626;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    .info-box {
+      background-color: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0.375rem;
+    }
+    
+    .info-box p {
+      margin-bottom: 0.5rem;
+      color: #1e40af;
+    }
+    
+    .contact-box {
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .contact-box p {
+      margin-bottom: 0.5rem;
+      color: #374151;
+    }
+    
+    @media (max-width: 768px) {
+      .legal-content h2 { font-size: 1.5rem; }
+      .legal-content h3 { font-size: 1.25rem; }
+      .legal-content h4 { font-size: 1.125rem; }
     }
   </style>
 </head>
@@ -63,31 +165,33 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="max-w-4xl mx-auto py-12 px-6">
+  <main class="max-w-5xl mx-auto py-12 px-6">
     <!-- Header -->
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
-      <p class="text-lg text-gray-600">Effective Date: 24 May 2025</p>
-      <p class="text-sm text-gray-500 mt-2">Last Updated: 24 May 2025</p>
+    <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-8 rounded-lg shadow-lg mb-12 text-center">
+      <h1 class="text-4xl font-bold mb-4">Terms of Service</h1>
+      <p class="text-xl text-green-100">Effective Date: May 24, 2025</p>
+      <p class="text-sm text-green-200 mt-2">Last Updated: May 24, 2025</p>
     </div>
 
     <!-- Legal Content -->
     <div class="legal-content bg-white rounded-lg shadow-sm p-8">
       
-      <h2>1. Acceptance of Terms</h2>
+      <h2><span class="section-number">1</span>Acceptance of Terms</h2>
       <p>By accessing and using Smart Trails ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by these Terms of Service, you are not authorized to use or access the Service.</p>
 
-      <h2>2. Description of Service</h2>
+      <h2><span class="section-number">2</span>Description of Service</h2>
       <p>Smart Trails is an AI-powered web application that generates personalized trekking and hiking itineraries. The Service uses artificial intelligence technology to create detailed, location-specific outdoor adventure plans based on user preferences and requirements.</p>
 
-      <h2>3. User Accounts and Registration</h2>
+      <h2><span class="section-number">3</span>User Accounts and Registration</h2>
+      
       <h3>3.1 Account Creation</h3>
       <p>To access certain features of the Service, you must register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.</p>
       
       <h3>3.2 Account Security</h3>
       <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to immediately notify Smart Trails of any unauthorized use of your account.</p>
 
-      <h2>4. Subscription and Payment Terms</h2>
+      <h2><span class="section-number">4</span>Subscription and Payment Terms</h2>
+      
       <h3>4.1 Subscription Tiers</h3>
       <ul>
         <li><strong>Free Tier:</strong> Limited to 5 itinerary generations per month, maximum 3 saved itineraries</li>
@@ -100,13 +204,14 @@
       <h3>4.3 Billing and Cancellation</h3>
       <p>Subscriptions automatically renew until cancelled. You may cancel your subscription at any time through your account dashboard. Cancellations take effect at the end of the current billing period.</p>
 
-      <h2>5. Content Disclaimer and Limitation of Liability</h2>
+      <h2><span class="section-number">5</span>Content Disclaimer and Limitation of Liability</h2>
+      
       <h3>5.1 Nature of AI-Generated Content</h3>
       <p>All trekking itineraries, route suggestions, accommodation recommendations, and related content provided through the Service are generated by artificial intelligence technology and are intended solely for informational and planning purposes. Such content does not constitute professional advice, guidance, or recommendations from qualified outdoor recreation professionals, travel agents, or local experts.</p>
 
       <h3>5.2 User Responsibility and Assumption of Risk</h3>
       <p>You expressly acknowledge and agree that:</p>
-      <ol>
+      <ol style="list-style-type: decimal;">
         <li>You are solely responsible for independently verifying all aspects of any proposed itinerary, including but not limited to route safety, weather conditions, required permits, local regulations, accommodation availability, and current trail conditions;</li>
         <li>Outdoor recreational activities, including hiking, trekking, and mountaineering, carry inherent and significant risks of injury, property damage, or death;</li>
         <li>You voluntarily assume all risks associated with your use of any information provided by the Service;</li>
@@ -118,9 +223,12 @@
       <p>The Service may include references to or suggestions for third-party accommodations, transportation providers, guide services, equipment suppliers, or other vendors. Smart Trails does not endorse, guarantee, warrant, or assume any responsibility for the quality, safety, reliability, or availability of any third-party services.</p>
 
       <h3>5.4 Limitation of Liability</h3>
-      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SMART TRAILS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO YOUR USE OF THE SERVICE OR ANY ITINERARY CONTENT, INCLUDING BUT NOT LIMITED TO PERSONAL INJURY, PROPERTY DAMAGE, LOST PROFITS, OR DAMAGES RESULTING FROM OUTDOOR ACTIVITIES, TRAVEL, OR RELIANCE ON AI-GENERATED CONTENT.</strong></p>
+      <div class="warning-box">
+        <p><strong>Important Legal Notice:</strong></p>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SMART TRAILS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO YOUR USE OF THE SERVICE OR ANY ITINERARY CONTENT, INCLUDING BUT NOT LIMITED TO PERSONAL INJURY, PROPERTY DAMAGE, LOST PROFITS, OR DAMAGES RESULTING FROM OUTDOOR ACTIVITIES, TRAVEL, OR RELIANCE ON AI-GENERATED CONTENT.</p>
+      </div>
 
-      <h2>6. User Conduct and Prohibited Uses</h2>
+      <h2><span class="section-number">6</span>User Conduct and Prohibited Uses</h2>
       <p>You agree not to use the Service to:</p>
       <ul>
         <li>Generate content for illegal activities or purposes</li>
@@ -128,37 +236,48 @@
         <li>Attempt to reverse engineer or extract proprietary algorithms</li>
         <li>Violate any applicable local, state, national, or international law</li>
         <li>Infringe upon intellectual property rights of others</li>
+        <li>Harass, abuse, or harm another person or group</li>
+        <li>Use the Service for any commercial purpose without our express written consent</li>
       </ul>
 
-      <h2>7. Intellectual Property Rights</h2>
+      <h2><span class="section-number">7</span>Intellectual Property Rights</h2>
+      
       <h3>7.1 Service Content</h3>
       <p>The Service, including its original content, features, and functionality, is owned by Smart Trails and is protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
       
       <h3>7.2 User-Generated Content</h3>
       <p>You retain ownership of any content you input into the Service. By using the Service, you grant Smart Trails a limited license to process your inputs to generate itineraries and improve the Service.</p>
 
-      <h2>8. Privacy and Data Protection</h2>
+      <h2><span class="section-number">8</span>Privacy and Data Protection</h2>
       <p>Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the Service, to understand our practices regarding the collection and use of your personal information.</p>
 
-      <h2>9. Indemnification</h2>
+      <h2><span class="section-number">9</span>Indemnification</h2>
       <p>You agree to indemnify, defend, and hold harmless Smart Trails, its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising from or related to your use of the Service, your participation in any outdoor activities, or your breach of these Terms.</p>
 
-      <h2>10. Termination</h2>
+      <h2><span class="section-number">10</span>Termination</h2>
       <p>We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+      <p>Upon termination, your right to use the Service will immediately cease. All provisions of the Terms which by their nature should survive termination shall survive termination.</p>
 
-      <h2>11. Changes to Terms</h2>
-      <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect.</p>
+      <h2><span class="section-number">11</span>Changes to Terms</h2>
+      <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+      <p>By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms.</p>
 
-      <h2>12. Governing Law and Jurisdiction</h2>
-      <p>These Terms shall be governed by and construed in accordance with the laws of [JURISDICTION], without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of [JURISDICTION].</p>
+      <h2><span class="section-number">12</span>Governing Law and Jurisdiction</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of the United States.</p>
 
-      <h2>13. Contact Information</h2>
+      <h2><span class="section-number">13</span>Contact Information</h2>
       <p>If you have any questions about these Terms of Service, please contact us at:</p>
-      <p>
-        <strong>Smart Trails</strong><br>
-        Email: legal@smarttrails.pro<br>
-        Website: https://smarttrails.pro
-      </p>
+      
+      <div class="contact-box">
+        <p><strong>Smart Trails</strong></p>
+        <p>Email: legal@smarttrails.pro</p>
+        <p>Website: https://smarttrails.pro</p>
+        <p>Support: support@smarttrails.pro</p>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Note:</strong> These Terms of Service constitute the entire agreement between you and Smart Trails regarding the use of the Service and supersede any prior agreements between you and Smart Trails relating to the Service.</p>
+      </div>
 
     </div>
   </main>
