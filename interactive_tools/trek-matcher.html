@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trek Matcher Quiz - Find Your Perfect Adventure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3B82F6;
+            --primary-dark: #2563EB;
+            --green: #16a34a;
+            --green-dark: #15803d;
+            --purple: #764ba2;
+            --purple-light: #667eea;
+            --accent: #F39C12;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #F8F9FA;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Background gradient matching the site */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            z-index: -1;
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            max-width: 700px;
+            width: 100%;
+            overflow: hidden;
+            animation: slideIn 0.5s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--purple-light) 0%, var(--purple) 100%);
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .quiz-content {
+            padding: 48px 40px;
+        }
+
+        .question-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .question-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.15);
+        }
+
+        .question-icon i {
+            background: linear-gradient(135deg, var(--purple-light) 0%, var(--purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .question-number {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .question-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .options-container {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .option {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .option:hover::before {
+            left: 100%;
+        }
+
+        .option:hover {
+            background: linear-gradient(135deg, #ede9fe 0%, #f3f4f6 100%);
+            border-color: var(--purple-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.15);
+        }
+
+        .option-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .option-content {
+            flex: 1;
+        }
+
+        .option-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        .option-description {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-button {
+            background: white;
+            border: 1px solid #e5e7eb;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background: #f3f4f6;
+            color: var(--text-dark);
+            border-color: #d1d5db;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .dots-container {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--purple);
+            transform: scale(1.25);
+        }
+
+        /* Results Styles */
+        .results-container {
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        .results-header {
+            margin-bottom: 40px;
+        }
+
+        .results-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 8px 16px rgba(22, 163, 74, 0.25);
+        }
+
+        .results-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .results-subtitle {
+            color: var(--text-light);
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .trek-recommendations {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .trek-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 24px;
+            text-align: left;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trek-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--purple-light) 0%, var(--purple) 100%);
+        }
+
+        .trek-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+            border-color: var(--purple-light);
+        }
+
+        .trek-card:nth-child(1) { animation-delay: 0.1s; }
+        .trek-card:nth-child(2) { animation-delay: 0.2s; }
+        .trek-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .trek-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .trek-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .trek-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .trek-detail i {
+            color: var(--purple-light);
+            font-size: 16px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .button-secondary {
+            background: #f3f4f6;
+            color: var(--text-dark);
+            border: 1px solid #e5e7eb;
+        }
+
+        .button-secondary:hover {
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        .button-primary {
+            background: linear-gradient(135deg, var(--purple-light) 0%, var(--purple) 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            .quiz-content {
+                padding: 32px 24px;
+            }
+            
+            .question-text {
+                font-size: 24px;
+            }
+            
+            .option {
+                padding: 16px 20px;
+            }
+            
+            .trek-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Fade animations */
+        .fade-out {
+            animation: fadeOut 0.3s ease forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(-20px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar" style="width: 10%"></div>
+        </div>
+        
+        <div class="quiz-content" id="quizContent">
+            <!-- Quiz content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        const quizData = {
+            questions: [
+                {
+                    id: 'experience',
+                    icon: 'fa-chart-line',
+                    question: "What's your trekking experience level?",
+                    options: [
+                        { value: 'beginner', label: 'Beginner', description: 'New to trekking or done 1-2 easy treks' },
+                        { value: 'intermediate', label: 'Intermediate', description: 'Completed 3-10 treks of varying difficulty' },
+                        { value: 'advanced', label: 'Advanced', description: 'Regular trekker with 10+ treks experience' },
+                        { value: 'expert', label: 'Expert', description: 'Mountaineer with technical climbing skills' }
+                    ]
+                },
+                {
+                    id: 'location',
+                    icon: 'fa-globe',
+                    question: "Where would you like to explore?",
+                    options: [
+                        { value: 'anywhere', label: 'Anywhere Amazing', description: "I'm flexible on destination" },
+                        { value: 'asia', label: 'Asia', description: 'Himalayas, Japan Alps, Southeast Asia' },
+                        { value: 'europe', label: 'Europe', description: 'Alps, Pyrenees, Scandinavia' },
+                        { value: 'americas', label: 'Americas', description: 'Rockies, Andes, Patagonia' },
+                        { value: 'africa', label: 'Africa', description: 'Atlas, Kilimanjaro, Drakensberg' },
+                        { value: 'oceania', label: 'Oceania', description: 'New Zealand, Tasmania, PNG' }
+                    ]
+                },
+                {
+                    id: 'fitness',
+                    icon: 'fa-dumbbell',
+                    question: "How would you rate your current fitness level?",
+                    options: [
+                        { value: 'basic', label: 'Basic', description: 'Can walk 5km without getting tired' },
+                        { value: 'moderate', label: 'Moderate', description: 'Regular exercise, can jog 5-10km' },
+                        { value: 'good', label: 'Good', description: 'Very active, exercise 4-5 days/week' },
+                        { value: 'excellent', label: 'Excellent', description: 'Athlete-level fitness, daily training' }
+                    ]
+                },
+                {
+                    id: 'duration',
+                    icon: 'fa-calendar-days',
+                    question: "How many days can you dedicate to trekking?",
+                    options: [
+                        { value: 'day', label: '1 day', description: 'Day hike adventure' },
+                        { value: 'weekend', label: '2-3 days', description: 'Weekend getaway' },
+                        { value: 'short', label: '4-6 days', description: 'Short vacation' },
+                        { value: 'week', label: '7-10 days', description: 'Full week adventure' },
+                        { value: 'extended', label: '10+ days', description: 'Extended expedition' }
+                    ]
+                },
+                {
+                    id: 'altitude',
+                    icon: 'fa-mountain',
+                    question: "What altitude are you comfortable trekking at?",
+                    options: [
+                        { value: 'low', label: 'Below 3,000m', description: 'Sea level to moderate elevation' },
+                        { value: 'moderate', label: '3,000-4,000m', description: 'Moderate altitude' },
+                        { value: 'high', label: '4,000-5,000m', description: 'High altitude requiring acclimatization' },
+                        { value: 'extreme', label: 'Above 5,000m', description: 'Very high altitude, experienced only' }
+                    ]
+                },
+                {
+                    id: 'budget',
+                    icon: 'fa-wallet',
+                    question: "What's your budget per person for the trek?",
+                    options: [
+                        { value: 'budget', label: '$200-500', description: 'Budget-friendly options' },
+                        { value: 'moderate', label: '$500-1,500', description: 'Mid-range comfort' },
+                        { value: 'premium', label: '$1,500-3,000', description: 'Premium experience' },
+                        { value: 'luxury', label: '$3,000+', description: 'Luxury expeditions' }
+                    ]
+                },
+                {
+                    id: 'season',
+                    icon: 'fa-cloud-sun',
+                    question: "When are you planning to trek?",
+                    options: [
+                        { value: 'summer', label: 'Summer (Apr-Jun)', description: 'Warm weather, clear skies' },
+                        { value: 'monsoon', label: 'Monsoon (Jul-Sep)', description: 'Lush greenery, some rain' },
+                        { value: 'autumn', label: 'Autumn (Oct-Nov)', description: 'Best weather, clear views' },
+                        { value: 'winter', label: 'Winter (Dec-Mar)', description: 'Snow treks, cold weather' }
+                    ]
+                },
+                {
+                    id: 'terrain',
+                    icon: 'fa-tree',
+                    question: "What type of terrain excites you most?",
+                    options: [
+                        { value: 'forest', label: 'Dense Forests', description: 'Lush green trails, wildlife' },
+                        { value: 'meadow', label: 'Alpine Meadows', description: 'Flower valleys, grasslands' },
+                        { value: 'rocky', label: 'Rocky Mountains', description: 'Challenging climbs, peaks' },
+                        { value: 'snow', label: 'Snow & Glaciers', description: 'White landscapes, ice' }
+                    ]
+                },
+                {
+                    id: 'group',
+                    icon: 'fa-users',
+                    question: "What's your preferred group size?",
+                    options: [
+                        { value: 'solo', label: 'Solo', description: 'Independent adventure' },
+                        { value: 'couple', label: 'Couple/Duo', description: 'With partner or friend' },
+                        { value: 'small', label: 'Small Group (3-6)', description: 'Close friends/family' },
+                        { value: 'large', label: 'Large Group (7-15)', description: 'Social trekking experience' }
+                    ]
+                },
+                {
+                    id: 'accommodation',
+                    icon: 'fa-campground',
+                    question: "What type of accommodation do you prefer?",
+                    options: [
+                        { value: 'camping', label: 'Camping', description: 'Tents under the stars' },
+                        { value: 'homestay', label: 'Homestays', description: 'Local village houses' },
+                        { value: 'huts', label: 'Mountain Huts', description: 'Basic lodges/tea houses' },
+                        { value: 'mixed', label: 'Mixed', description: 'Combination of all' }
+                    ]
+                },
+                {
+                    id: 'scenery',
+                    icon: 'fa-image',
+                    question: "What scenery appeals to you most?",
+                    options: [
+                        { value: 'peaks', label: 'Mountain Peaks', description: 'Panoramic summit views' },
+                        { value: 'lakes', label: 'Alpine Lakes', description: 'Crystal clear waters' },
+                        { value: 'valleys', label: 'Hidden Valleys', description: 'Remote, untouched beauty' },
+                        { value: 'cultural', label: 'Cultural Sites', description: 'Monasteries, villages' }
+                    ]
+                }
+            ],
+
+            trekDatabase: {
+                // Comprehensive trek recommendations based on multiple factors
+                treks: [
+                    {
+                        name: 'Kedarkantha Trek',
+                        location: 'Uttarakhand',
+                        continent: 'asia',
+                        duration: '6 days',
+                        altitude: '3,800m',
+                        difficulty: 'Easy-Moderate',
+                        bestSeason: 'winter',
+                        budget: 'budget',
+                        terrain: 'snow',
+                        experience: 'beginner',
+                        fitness: 'moderate',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Valley of Flowers',
+                        location: 'Uttarakhand',
+                        continent: 'asia',
+                        duration: '6 days',
+                        altitude: '3,658m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'monsoon',
+                        budget: 'moderate',
+                        terrain: 'meadow',
+                        experience: 'intermediate',
+                        fitness: 'moderate',
+                        scenery: 'valleys'
+                    },
+                    {
+                        name: 'Roopkund Trek',
+                        location: 'Uttarakhand',
+                        continent: 'asia',
+                        duration: '8 days',
+                        altitude: '4,800m',
+                        difficulty: 'Difficult',
+                        bestSeason: 'autumn',
+                        budget: 'moderate',
+                        terrain: 'rocky',
+                        experience: 'intermediate',
+                        fitness: 'good',
+                        scenery: 'lakes'
+                    },
+                    {
+                        name: 'Hampta Pass',
+                        location: 'Himachal Pradesh',
+                        continent: 'asia',
+                        duration: '5 days',
+                        altitude: '4,270m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'summer',
+                        budget: 'budget',
+                        terrain: 'meadow',
+                        experience: 'beginner',
+                        fitness: 'moderate',
+                        scenery: 'valleys'
+                    },
+                    {
+                        name: 'Everest Base Camp',
+                        location: 'Nepal',
+                        continent: 'asia',
+                        duration: '14 days',
+                        altitude: '5,364m',
+                        difficulty: 'Difficult',
+                        bestSeason: 'autumn',
+                        budget: 'premium',
+                        terrain: 'rocky',
+                        experience: 'advanced',
+                        fitness: 'excellent',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Annapurna Circuit',
+                        location: 'Nepal',
+                        continent: 'asia',
+                        duration: '16 days',
+                        altitude: '5,416m',
+                        difficulty: 'Difficult',
+                        bestSeason: 'autumn',
+                        budget: 'premium',
+                        terrain: 'rocky',
+                        experience: 'advanced',
+                        fitness: 'excellent',
+                        scenery: 'cultural'
+                    },
+                    {
+                        name: 'Triund Trek',
+                        location: 'Himachal Pradesh',
+                        continent: 'asia',
+                        duration: '2 days',
+                        altitude: '2,850m',
+                        difficulty: 'Easy',
+                        bestSeason: 'summer',
+                        budget: 'budget',
+                        terrain: 'forest',
+                        experience: 'beginner',
+                        fitness: 'basic',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Chadar Trek',
+                        location: 'Ladakh',
+                        continent: 'asia',
+                        duration: '9 days',
+                        altitude: '3,800m',
+                        difficulty: 'Very Difficult',
+                        bestSeason: 'winter',
+                        budget: 'premium',
+                        terrain: 'snow',
+                        experience: 'expert',
+                        fitness: 'excellent',
+                        scenery: 'valleys'
+                    },
+                    {
+                        name: 'Tour du Mont Blanc',
+                        location: 'Alps',
+                        continent: 'europe',
+                        duration: '11 days',
+                        altitude: '2,665m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'summer',
+                        budget: 'premium',
+                        terrain: 'meadow',
+                        experience: 'intermediate',
+                        fitness: 'good',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Camino de Santiago',
+                        location: 'Spain',
+                        continent: 'europe',
+                        duration: '30 days',
+                        altitude: '1,500m',
+                        difficulty: 'Easy',
+                        bestSeason: 'autumn',
+                        budget: 'moderate',
+                        terrain: 'forest',
+                        experience: 'beginner',
+                        fitness: 'moderate',
+                        scenery: 'cultural'
+                    },
+                    {
+                        name: 'Torres del Paine',
+                        location: 'Chile',
+                        continent: 'americas',
+                        duration: '5 days',
+                        altitude: '1,200m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'summer',
+                        budget: 'premium',
+                        terrain: 'rocky',
+                        experience: 'intermediate',
+                        fitness: 'good',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Inca Trail',
+                        location: 'Peru',
+                        continent: 'americas',
+                        duration: '4 days',
+                        altitude: '4,200m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'autumn',
+                        budget: 'moderate',
+                        terrain: 'rocky',
+                        experience: 'intermediate',
+                        fitness: 'moderate',
+                        scenery: 'cultural'
+                    },
+                    {
+                        name: 'Half Dome Day Hike',
+                        location: 'California, USA',
+                        continent: 'americas',
+                        duration: '1 day',
+                        altitude: '2,695m',
+                        difficulty: 'Difficult',
+                        bestSeason: 'summer',
+                        budget: 'budget',
+                        terrain: 'rocky',
+                        experience: 'intermediate',
+                        fitness: 'excellent',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Milford Track',
+                        location: 'New Zealand',
+                        continent: 'oceania',
+                        duration: '4 days',
+                        altitude: '1,154m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'summer',
+                        budget: 'premium',
+                        terrain: 'forest',
+                        experience: 'intermediate',
+                        fitness: 'moderate',
+                        scenery: 'valleys'
+                    },
+                    {
+                        name: 'Kilimanjaro',
+                        location: 'Tanzania',
+                        continent: 'africa',
+                        duration: '7 days',
+                        altitude: '5,895m',
+                        difficulty: 'Difficult',
+                        bestSeason: 'autumn',
+                        budget: 'premium',
+                        terrain: 'rocky',
+                        experience: 'advanced',
+                        fitness: 'excellent',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Table Mountain Day Hike',
+                        location: 'South Africa',
+                        continent: 'africa',
+                        duration: '1 day',
+                        altitude: '1,086m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'autumn',
+                        budget: 'budget',
+                        terrain: 'rocky',
+                        experience: 'beginner',
+                        fitness: 'moderate',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Tongariro Alpine Crossing',
+                        location: 'New Zealand',
+                        continent: 'oceania',
+                        duration: '1 day',
+                        altitude: '1,886m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'summer',
+                        budget: 'budget',
+                        terrain: 'rocky',
+                        experience: 'intermediate',
+                        fitness: 'good',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'GR20 Corsica',
+                        location: 'France',
+                        continent: 'europe',
+                        duration: '15 days',
+                        altitude: '2,706m',
+                        difficulty: 'Very Difficult',
+                        bestSeason: 'summer',
+                        budget: 'moderate',
+                        terrain: 'rocky',
+                        experience: 'expert',
+                        fitness: 'excellent',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Dolomites Alta Via 1',
+                        location: 'Italy',
+                        continent: 'europe',
+                        duration: '10 days',
+                        altitude: '2,752m',
+                        difficulty: 'Moderate',
+                        bestSeason: 'summer',
+                        budget: 'moderate',
+                        terrain: 'rocky',
+                        experience: 'intermediate',
+                        fitness: 'good',
+                        scenery: 'peaks'
+                    },
+                    {
+                        name: 'Angels Landing',
+                        location: 'Utah, USA',
+                        continent: 'americas',
+                        duration: '1 day',
+                        altitude: '1,488m',
+                        difficulty: 'Difficult',
+                        bestSeason: 'autumn',
+                        budget: 'budget',
+                        terrain: 'rocky',
+                        experience: 'intermediate',
+                        fitness: 'good',
+                        scenery: 'peaks'
+                    }
+                ]
+            }
+        };
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        function renderQuestion() {
+            const question = quizData.questions[currentQuestion];
+            const quizContent = document.getElementById('quizContent');
+            
+            const html = `
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas ${question.icon}"></i>
+                    </div>
+                    <div class="question-number">Question ${currentQuestion + 1} of ${quizData.questions.length}</div>
+                    <h2 class="question-text">${question.question}</h2>
+                </div>
+                
+                <div class="options-container">
+                    ${question.options.map(option => `
+                        <div class="option" onclick="selectAnswer('${option.value}')">
+                            <div class="option-icon">${getOptionIcon(option.value)}</div>
+                            <div class="option-content">
+                                <div class="option-label">${option.label}</div>
+                                <div class="option-description">${option.description}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="navigation">
+                    <button class="nav-button" onclick="previousQuestion()" ${currentQuestion === 0 ? 'disabled' : ''}>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    
+                    <div class="dots-container">
+                        ${quizData.questions.map((_, index) => `
+                            <div class="dot ${index <= currentQuestion ? 'active' : ''}"></div>
+                        `).join('')}
+                    </div>
+                    
+                    <div></div>
+                </div>
+            `;
+            
+            quizContent.innerHTML = html;
+            updateProgressBar();
+        }
+
+        function getOptionIcon(value) {
+            const icons = {
+                beginner: '🌱', intermediate: '🥾', advanced: '🏔️', expert: '🧗',
+                basic: '🚶', moderate: '🏃', good: '💪', excellent: '🏆',
+                day: '🌅', weekend: '🌄', short: '🗓️', week: '📆', extended: '🗺️',
+                low: '🏕️', high: '🏔️', extreme: '🚀',
+                budget: '💵', premium: '💎', luxury: '👑',
+                summer: '☀️', monsoon: '🌧️', autumn: '🍂', winter: '❄️',
+                forest: '🌲', meadow: '🌻', rocky: '🪨', snow: '🏔️',
+                solo: '🚶', couple: '👫', small: '👨‍👩‍👦', large: '👥',
+                camping: '⛺', homestay: '🏠', huts: '🛖', mixed: '🏘️',
+                peaks: '⛰️', lakes: '🏞️', valleys: '🌄', cultural: '🏛️',
+                anywhere: '🌍', asia: '🏯', europe: '🏰', americas: '🗽', africa: '🦁', oceania: '🏝️'
+            };
+            return icons[value] || '•';
+        }
+
+        function selectAnswer(value) {
+            userAnswers[quizData.questions[currentQuestion].id] = value;
+            
+            if (currentQuestion < quizData.questions.length - 1) {
+                document.querySelector('.quiz-content').classList.add('fade-out');
+                setTimeout(() => {
+                    currentQuestion++;
+                    renderQuestion();
+                    document.querySelector('.quiz-content').classList.remove('fade-out');
+                    document.querySelector('.quiz-content').classList.add('fade-in');
+                }, 300);
+            } else {
+                showResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        function calculateTrekScore(trek, answers) {
+            let score = 0;
+            
+            // Match based on location preference
+            if (answers.location === 'anywhere' || trek.continent === answers.location) {
+                score += 3;
+            }
+            
+            // Match based on experience level
+            if (trek.experience === answers.experience) score += 3;
+            
+            // Match based on fitness
+            if (trek.fitness === answers.fitness) score += 2;
+            
+            // Match based on season
+            if (trek.bestSeason === answers.season) score += 3;
+            
+            // Match based on budget
+            if (trek.budget === answers.budget) score += 2;
+            
+            // Match based on terrain
+            if (trek.terrain === answers.terrain) score += 2;
+            
+            // Match based on scenery
+            if (trek.scenery === answers.scenery) score += 2;
+            
+            // Duration compatibility (give bonus points for exact matches)
+            const durationMap = {
+                'day': [1, 1],
+                'weekend': [2, 3],
+                'short': [4, 6],
+                'week': [7, 10],
+                'extended': [11, 50]
+            };
+            
+            const trekDays = parseInt(trek.duration);
+            const [minDays, maxDays] = durationMap[answers.duration] || [1, 50];
+            
+            // Give more points for exact duration matches
+            if (trekDays >= minDays && trekDays <= maxDays) {
+                score += 3; // Increased from 2
+            } else if (trekDays === maxDays + 1) {
+                score += 1; // Small bonus for being just 1 day over
+            }
+            
+            // Altitude compatibility
+            const altitudeMap = {
+                'low': [0, 3000],
+                'moderate': [3000, 4000],
+                'high': [4000, 5000],
+                'extreme': [5000, 9000]
+            };
+            
+            const trekAltitude = parseInt(trek.altitude.replace(/[^0-9]/g, ''));
+            const [minAlt, maxAlt] = altitudeMap[answers.altitude] || [0, 9000];
+            if (trekAltitude >= minAlt && trekAltitude <= maxAlt) score += 2;
+            
+            return score;
+        }
+
+        function getTopRecommendations(answers) {
+            // Define max days allowed for each duration option (selected range + 1 day)
+            const maxDaysMap = {
+                'day': 2,        // 1 day → max 2 days
+                'weekend': 4,    // 2-3 days → max 4 days
+                'short': 7,      // 4-6 days → max 7 days
+                'week': 11,      // 7-10 days → max 11 days
+                'extended': 999  // 10+ days → no limit
+            };
+            
+            const maxDays = maxDaysMap[answers.duration] || 999;
+            
+            // First, filter treks by hard duration limit
+            const eligibleTreks = quizData.trekDatabase.treks.filter(trek => {
+                const trekDays = parseInt(trek.duration);
+                return trekDays <= maxDays;
+            });
+            
+            // Then score the eligible treks
+            const scoredTreks = eligibleTreks.map(trek => ({
+                ...trek,
+                score: calculateTrekScore(trek, answers)
+            }));
+            
+            // Sort by score and return top 3
+            return scoredTreks
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 3);
+        }
+
+        function showResults() {
+            const recommendations = getTopRecommendations(userAnswers);
+            const quizContent = document.getElementById('quizContent');
+            
+            const html = `
+                <div class="results-container">
+                    <div class="results-header">
+                        <div class="results-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h2 class="results-title">Your Perfect Trek Matches!</h2>
+                        <p class="results-subtitle">Based on your preferences, we've found these amazing treks for you</p>
+                    </div>
+                    
+                    <div class="trek-recommendations">
+                        ${recommendations.map((trek, index) => `
+                            <div class="trek-card" style="animation-delay: ${index * 0.1}s">
+                                <h3 class="trek-name">${trek.name}</h3>
+                                <div class="trek-details">
+                                    <div class="trek-detail">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>${trek.location}</span>
+                                    </div>
+                                    <div class="trek-detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>${trek.duration}</span>
+                                    </div>
+                                    <div class="trek-detail">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>${trek.altitude}</span>
+                                    </div>
+                                    <div class="trek-detail">
+                                        <i class="fas fa-hiking"></i>
+                                        <span>${trek.difficulty}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="button button-secondary" onclick="resetQuiz()">
+                            <i class="fas fa-redo"></i> Take Quiz Again
+                        </button>
+                        <button class="button button-primary">
+                            View All Treks <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            quizContent.innerHTML = html;
+            document.getElementById('progressBar').style.width = '100%';
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            userAnswers = {};
+            renderQuestion();
+        }
+
+        // Initialize quiz on page load
+        window.onload = function() {
+            renderQuestion();
+        };
+    </script>
+</body>
+</html>

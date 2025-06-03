@@ -13,6 +13,8 @@
       --text-light: #6b7280;
       --bg-light: #f3f4f6;
       --white: #FFFFFF;
+      --google-blue: #4285f4;
+      /* --facebook-blue: #1877f2; -- commented out for later */
     }
 
     body {
@@ -127,7 +129,7 @@
       background: var(--bg-light);
       border-radius: 12px;
       padding: 4px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
     .auth-tab {
@@ -147,6 +149,73 @@
       background: white;
       color: var(--text-dark);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* OAuth Buttons */
+    .oauth-section {
+      margin-bottom: 24px;
+    }
+
+    .oauth-button {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      background: white;
+    }
+
+    .oauth-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .oauth-button.google {
+      border-color: var(--google-blue);
+      color: var(--google-blue);
+    }
+
+    .oauth-button.google:hover {
+      background: rgba(66, 133, 244, 0.05);
+    }
+
+    /* Facebook styles - commented out for later implementation
+    .oauth-button.facebook {
+      border-color: var(--facebook-blue);
+      color: var(--facebook-blue);
+    }
+
+    .oauth-button.facebook:hover {
+      background: rgba(24, 119, 242, 0.05);
+    }
+    */
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .divider-text {
+      padding: 0 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 500;
     }
 
     /* Form Elements */
@@ -479,6 +548,30 @@
 
         <!-- Sign Up Form -->
         <form id="signup-form">
+          <!-- OAuth Section -->
+          <div class="oauth-section">
+            <button type="button" class="oauth-button google" onclick="handleGoogleSignIn()">
+              <svg width="20" height="20" viewBox="0 0 488 512">
+                <path fill="#4285F4" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+              </svg>
+              Continue with Google
+            </button>
+            
+            <button type="button" class="oauth-button facebook" onclick="handleFacebookSignIn()">
+              <svg width="20" height="20" viewBox="0 0 320 512">
+                <path fill="#1877F2" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+              </svg>
+              Continue with Facebook
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-text">or</div>
+            <div class="divider-line"></div>
+          </div>
+
           <div class="form-group">
             <label class="form-label" for="signup-email">Email Address</label>
             <input type="email" id="signup-email" class="form-input" placeholder="your@email.com" required />
@@ -504,6 +597,30 @@
 
         <!-- Login Form -->
         <form id="login-form" class="hidden">
+          <!-- OAuth Section -->
+          <div class="oauth-section">
+            <button type="button" class="oauth-button google" onclick="handleGoogleSignIn()">
+              <svg width="20" height="20" viewBox="0 0 488 512">
+                <path fill="#4285F4" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+              </svg>
+              Continue with Google
+            </button>
+            
+            <button type="button" class="oauth-button facebook" onclick="handleFacebookSignIn()">
+              <svg width="20" height="20" viewBox="0 0 320 512">
+                <path fill="#1877F2" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+              </svg>
+              Continue with Facebook
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-text">or</div>
+            <div class="divider-line"></div>
+          </div>
+
           <div class="form-group">
             <label class="form-label" for="login-email">Email Address</label>
             <input type="email" id="login-email" class="form-input" placeholder="your@email.com" required />
@@ -586,7 +703,7 @@
 
   <script type="module">
     // Import Firebase auth functions
-    import { signUp, signIn, resetPassword } from './js/auth/auth.js';
+    import { signUp, signIn, resetPassword, signInWithGoogle, handleRedirectResult } from './js/auth/auth.js';
     import { auth } from './js/auth/firebase.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
@@ -706,6 +823,106 @@
       authTabs.style.display = 'flex';
       hideMessages();
     });
+
+    // OAuth Sign-In Handlers
+    window.handleGoogleSignIn = async function() {
+      hideMessages();
+      showSuccess('Signing in with Google...');
+      
+      try {
+        const result = await signInWithGoogle();
+        
+        if (result.pending) {
+          // Redirect flow initiated, page will reload
+          return;
+        }
+        
+        if (!result.success) {
+          throw new Error(result.error);
+        }
+        
+        await handleOAuthSuccess(result.user);
+      } catch (error) {
+        console.error('Google sign-in error:', error);
+        showError(getOAuthFriendlyError(error));
+      }
+    };
+
+    /* Facebook sign-in handler - commented out for later implementation
+    window.handleFacebookSignIn = async function() {
+      hideMessages();
+      showSuccess('Signing in with Facebook...');
+      
+      try {
+        const result = await signInWithFacebook();
+        
+        if (result.pending) {
+          // Redirect flow initiated, page will reload
+          return;
+        }
+        
+        if (!result.success) {
+          throw new Error(result.error);
+        }
+        
+        await handleOAuthSuccess(result.user);
+      } catch (error) {
+        console.error('Facebook sign-in error:', error);
+        showError(getOAuthFriendlyError(error));
+      }
+    };
+    */
+
+    // Handle successful OAuth authentication
+    async function handleOAuthSuccess(user) {
+      // Wait for auth state to be established
+      await new Promise((resolve) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          if (user) {
+            unsubscribe();
+            resolve(user);
+          }
+        });
+      });
+      
+      // Check for and save any pending itinerary
+      const savedItinerary = await savePendingItinerary(user);
+      
+      if (savedItinerary) {
+        showSuccess('🎉 Welcome! Your trek has been saved.');
+        setTimeout(() => {
+          window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+        }, 2000);
+      } else {
+        showSuccess('🎉 Welcome to Smart Trails!');
+        setTimeout(() => {
+          window.location.href = 'my-itineraries.html';
+        }, 1500);
+      }
+    }
+
+    // OAuth-specific error messages
+    function getOAuthFriendlyError(error) {
+      const errorCode = error.message || error.code;
+      
+      const errorMap = {
+        'popup-closed-by-user': 'Sign-in cancelled. Please try again.',
+        'auth/popup-blocked': 'Pop-up blocked. Please allow pop-ups for this site.',
+        'auth/cancelled-popup-request': 'Another sign-in is in progress.',
+        'auth/network-request-failed': 'Network error. Please check your connection.',
+        'auth/account-exists-with-different-credential': 'An account already exists with the same email address.',
+        'auth/user-cancelled': 'Sign-in cancelled.'
+      };
+      
+      // Check for partial matches
+      for (const [key, value] of Object.entries(errorMap)) {
+        if (errorCode.includes(key.replace('auth/', ''))) {
+          return value;
+        }
+      }
+      
+      return 'Sign-in failed. Please try again.';
+    }
 
     // Function to save pending itinerary after authentication
     async function savePendingItinerary(user) {
@@ -913,6 +1130,19 @@
       }
     });
 
+    // Check for OAuth redirect result on page load
+    async function checkOAuthRedirect() {
+      try {
+        const result = await handleRedirectResult();
+        if (result.success && result.user) {
+          showSuccess('🎉 Welcome to Smart Trails!');
+          await handleOAuthSuccess(result.user);
+        }
+      } catch (error) {
+        console.error('OAuth redirect error:', error);
+      }
+    }
+
     // Check if user is already authenticated on page load
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -928,6 +1158,9 @@
         } else {
           window.location.href = 'my-itineraries.html';
         }
+      } else {
+        // Check for OAuth redirect when not authenticated
+        checkOAuthRedirect();
       }
     });
   </script>

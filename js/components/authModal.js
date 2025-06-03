@@ -1,5 +1,5 @@
 // js/components/authModal.js
-import { signUp, signIn, resetPassword } from '../auth/auth.js';
+import { signUp, signIn, resetPassword, signInWithGoogle, handleRedirectResult } from '../auth/auth.js';
 import { auth } from '../auth/firebase.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
@@ -29,6 +29,7 @@ export function injectAuthModal() {
         --text-light: #6b7280;
         --bg-light: #f3f4f6;
         --white: #FFFFFF;
+        --google-blue: #4285f4;
       }
 
       /* Modal Overlay */
@@ -151,7 +152,7 @@ export function injectAuthModal() {
         background: var(--bg-light);
         border-radius: 12px;
         padding: 4px;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
         transition: all 0.3s ease;
       }
 
@@ -177,6 +178,86 @@ export function injectAuthModal() {
         background: white;
         color: var(--text-dark);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* OAuth Buttons */
+      .auth-oauth-section {
+        margin-bottom: 20px;
+      }
+
+      .auth-oauth-button {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-family: inherit;
+        position: relative;
+      }
+
+      .auth-oauth-button:hover {
+        transform: translateY(-1px);
+      }
+
+      .auth-oauth-button.google {
+        background: #4285f4;
+        color: white;
+        border: none;
+        font-weight: 500;
+        padding-left: 52px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+      }
+
+      .auth-oauth-button.google:hover {
+        background: #3367d6;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.25);
+      }
+
+      .auth-oauth-button.google::before {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        background: white;
+        border-radius: 3px;
+      }
+
+      .auth-oauth-button.google svg {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Divider */
+      .auth-divider {
+        display: flex;
+        align-items: center;
+        margin: 20px 0 24px 0;
+      }
+
+      .auth-divider-line {
+        flex: 1;
+        height: 1px;
+        background: #e5e7eb;
+      }
+
+      .auth-divider-text {
+        padding: 0 16px;
+        font-size: 13px;
+        color: var(--text-light);
+        font-weight: 500;
       }
 
       /* Form Elements */
@@ -489,6 +570,26 @@ export function injectAuthModal() {
 
             <!-- Sign Up Form -->
             <form id="auth-signup-form" class="auth-form">
+              <!-- OAuth Section -->
+              <div class="auth-oauth-section">
+                <button type="button" class="auth-oauth-button google" onclick="window.handleGoogleSignIn()">
+                  <svg width="20" height="20" viewBox="0 0 48 48">
+                    <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                    <path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                    <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                    <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                  </svg>
+                  Continue with Google
+                </button>
+              </div>
+
+              <!-- Divider -->
+              <div class="auth-divider">
+                <div class="auth-divider-line"></div>
+                <div class="auth-divider-text">or</div>
+                <div class="auth-divider-line"></div>
+              </div>
+
               <div class="auth-form-group">
                 <label class="auth-form-label" for="auth-signup-email">Email Address</label>
                 <input type="email" id="auth-signup-email" class="auth-form-input" placeholder="your@email.com" required />
@@ -514,6 +615,26 @@ export function injectAuthModal() {
 
             <!-- Login Form -->
             <form id="auth-login-form" class="auth-form auth-hidden">
+              <!-- OAuth Section -->
+              <div class="auth-oauth-section">
+                <button type="button" class="auth-oauth-button google" onclick="window.handleGoogleSignIn()">
+                  <svg width="20" height="20" viewBox="0 0 48 48">
+                    <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                    <path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                    <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                    <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                  </svg>
+                  Continue with Google
+                </button>
+              </div>
+
+              <!-- Divider -->
+              <div class="auth-divider">
+                <div class="auth-divider-line"></div>
+                <div class="auth-divider-text">or</div>
+                <div class="auth-divider-line"></div>
+              </div>
+
               <div class="auth-form-group">
                 <label class="auth-form-label" for="auth-login-email">Email Address</label>
                 <input type="email" id="auth-login-email" class="auth-form-input" placeholder="your@email.com" required />
@@ -605,6 +726,9 @@ export function injectAuthModal() {
   
   // Setup form handlers
   setupFormHandlers();
+  
+  // Check for OAuth redirect result on page load
+  checkOAuthRedirect();
 }
 
 function setupGlobalFunctions() {
@@ -697,6 +821,99 @@ function setupGlobalFunctions() {
       `;
     }
   };
+
+  // Google Sign In Handler
+  window.handleGoogleSignIn = async function() {
+    hideAllMessages();
+    showInfo('Signing in with Google...');
+    
+    try {
+      const result = await signInWithGoogle();
+      
+      if (result.pending) {
+        // Redirect flow initiated, page will reload
+        return;
+      }
+      
+      if (!result.success) {
+        throw new Error(result.error);
+      }
+      
+      await handleOAuthSuccess(result.user);
+    } catch (error) {
+      console.error('Google sign-in error:', error);
+      showError(getOAuthFriendlyError(error));
+    }
+  };
+}
+
+// Check for OAuth redirect result on page load
+async function checkOAuthRedirect() {
+  try {
+    const result = await handleRedirectResult();
+    if (result.success && result.user) {
+      // Show modal with success message
+      const modal = document.getElementById('auth-modal');
+      if (modal) {
+        modal.classList.add('active');
+        await handleOAuthSuccess(result.user);
+      }
+    }
+  } catch (error) {
+    console.error('OAuth redirect error:', error);
+  }
+}
+
+// Handle successful OAuth authentication
+async function handleOAuthSuccess(user) {
+  // Wait for auth state to be established
+  await new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        unsubscribe();
+        resolve(user);
+      }
+    });
+  });
+  
+  // Check for and save any pending itinerary
+  const savedItinerary = await savePendingItinerary(user);
+  
+  if (savedItinerary) {
+    showSuccess('🎉 Welcome! Your trek has been saved.');
+    setTimeout(() => {
+      window.location.href = `view-itinerary.html?id=${savedItinerary._id || savedItinerary.id}`;
+    }, 2000);
+  } else {
+    showSuccess('🎉 Welcome to Smart Trails!');
+    setTimeout(() => {
+      window.closeAuthModal();
+      window.location.reload();
+    }, 1500);
+  }
+}
+
+// OAuth-specific error messages
+function getOAuthFriendlyError(error) {
+  const errorCode = error.message || error.code;
+  
+  const errorMap = {
+    'popup-closed-by-user': 'Sign-in cancelled. Please try again.',
+    'auth/popup-blocked': 'Pop-up blocked. Please allow pop-ups for this site.',
+    'auth/cancelled-popup-request': 'Another sign-in is in progress.',
+    'auth/network-request-failed': 'Network error. Please check your connection.',
+    'auth/account-exists-with-different-credential': 'An account already exists with the same email address.',
+    'auth/user-cancelled': 'Sign-in cancelled.'
+  };
+  
+  // Check for partial matches
+  for (const [key, value] of Object.entries(errorMap)) {
+    if (errorCode.includes(key.replace('auth/', ''))) {
+      return value;
+    }
+  }
+  
+  return 'Sign-in failed. Please try again.';
 }
 
 function setupFormHandlers() {
@@ -862,6 +1079,13 @@ function showError(message) {
 }
 
 function showSuccess(message) {
+  const successDiv = document.getElementById('auth-success-message');
+  successDiv.textContent = message;
+  successDiv.classList.add('show');
+  document.getElementById('auth-error-message').classList.remove('show');
+}
+
+function showInfo(message) {
   const successDiv = document.getElementById('auth-success-message');
   successDiv.textContent = message;
   successDiv.classList.add('show');

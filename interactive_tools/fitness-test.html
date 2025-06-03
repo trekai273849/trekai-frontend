@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Fitness Assessment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .assessment-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header */
+        .assessment-header {
+            background: linear-gradient(135deg, #2D5016 0%, #4A7C28 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .assessment-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .assessment-header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(255,255,255,0.2);
+            height: 6px;
+            margin-top: 20px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: #FDB813;
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 3px;
+        }
+
+        /* Content Area */
+        .assessment-content {
+            padding: 40px 30px;
+            min-height: 400px;
+            position: relative;
+        }
+
+        /* Question Styles */
+        .question-container {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-number {
+            color: #4A7C28;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 22px;
+            color: #2C3E50;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        /* Multiple Choice Options */
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 18px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            color: #495057;
+        }
+
+        .option:hover {
+            border-color: #4A7C28;
+            background: #f0f8f0;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: #e8f5e9;
+            border-color: #4A7C28;
+            color: #2D5016;
+            font-weight: 600;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            margin: 20px 0;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #e9ecef;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4A7C28;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: #3A6C18;
+        }
+
+        .slider-value {
+            text-align: center;
+            font-size: 32px;
+            color: #4A7C28;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Icon Grid for Activity Level */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .activity-option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .activity-option:hover {
+            border-color: #4A7C28;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .activity-option.selected {
+            background: #e8f5e9;
+            border-color: #4A7C28;
+        }
+
+        .activity-icon {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+        }
+
+        .activity-icon img {
+            transition: transform 0.3s ease;
+        }
+
+        .activity-option:hover .activity-icon img {
+            transform: scale(1.1);
+        }
+
+        .activity-option.selected .activity-icon img {
+            transform: scale(1.15);
+        }
+
+        .activity-label {
+            font-size: 14px;
+            color: #495057;
+            font-weight: 500;
+        }
+
+        /* Yes/No Buttons */
+        .yes-no-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .yes-no-btn {
+            flex: 1;
+            padding: 18px;
+            border: 2px solid #e9ecef;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .yes-no-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .yes-no-btn.yes:hover {
+            border-color: #4A7C28;
+            background: #e8f5e9;
+            color: #2D5016;
+        }
+
+        .yes-no-btn.no:hover {
+            border-color: #dc3545;
+            background: #fee;
+            color: #dc3545;
+        }
+
+        .yes-no-btn.selected.yes {
+            background: #4A7C28;
+            border-color: #4A7C28;
+            color: white;
+        }
+
+        .yes-no-btn.selected.no {
+            background: #dc3545;
+            border-color: #dc3545;
+            color: white;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .prev-btn {
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .prev-btn:hover {
+            background: #dee2e6;
+            transform: translateX(-3px);
+        }
+
+        .next-btn {
+            background: #4A7C28;
+            color: white;
+            margin-left: auto;
+        }
+
+        .next-btn:hover {
+            background: #3A6C18;
+            transform: translateX(3px);
+        }
+
+        .next-btn:disabled {
+            background: #c3c3c3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+            padding: 20px 40px 40px;
+        }
+
+        .start-icon {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .start-icon img {
+            filter: drop-shadow(0 5px 15px rgba(74, 124, 40, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .start-screen:hover .start-icon img {
+            transform: translateY(-5px);
+        }
+
+        .start-btn {
+            background: #4A7C28;
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .start-btn:hover {
+            background: #3A6C18;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(74, 124, 40, 0.3);
+        }
+
+        /* Results Screen */
+        .results-container {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            padding: 40px;
+        }
+
+        .fitness-score {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-svg {
+            transform: rotate(-90deg);
+        }
+
+        .score-bg {
+            fill: none;
+            stroke: #e9ecef;
+            stroke-width: 12;
+        }
+
+        .score-fill {
+            fill: none;
+            stroke: #4A7C28;
+            stroke-width: 12;
+            stroke-linecap: round;
+            transition: stroke-dasharray 1s ease;
+        }
+
+        .score-number {
+            position: absolute;
+            font-size: 48px;
+            font-weight: bold;
+            color: #2D5016;
+        }
+
+        .fitness-level {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 10px;
+        }
+
+        .level-description {
+            color: #6c757d;
+            font-size: 16px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .recommendations {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .recommendations h3 {
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        .trek-suggestions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .trek-suggestion {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .trek-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .trek-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .trek-details h4 {
+            color: #2D5016;
+            margin-bottom: 3px;
+            font-size: 16px;
+        }
+
+        .trek-details p {
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 12px 24px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .primary-action {
+            background: #4A7C28;
+            color: white;
+        }
+
+        .primary-action:hover {
+            background: #3A6C18;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 124, 40, 0.3);
+        }
+
+        .secondary-action {
+            background: white;
+            color: #4A7C28;
+            border: 2px solid #4A7C28;
+        }
+
+        .secondary-action:hover {
+            background: #e8f5e9;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .assessment-content {
+                padding: 30px 20px;
+            }
+
+            .question-text {
+                font-size: 18px;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="assessment-container">
+        <div class="assessment-header">
+            <h1>Fitness Assessment</h1>
+            <p>Test if you're ready for different trek levels</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="assessment-content">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
+                <div class="start-icon">
+                    <img src="../images/illustrations/fitness-tool.png" alt="Fitness Assessment" style="width: 300px; height: 300px; object-fit: contain;">
+                </div>
+                <h2>Ready to Find Your Trek Level?</h2>
+                <p style="color: #6c757d; margin-top: 15px; line-height: 1.6;">
+                    This quick assessment will help us understand your current fitness level 
+                    and recommend the perfect treks for you. It takes just 2-3 minutes!
+                </p>
+                <button class="start-btn" onclick="startAssessment()">
+                    Start Assessment →
+                </button>
+            </div>
+
+            <!-- Questions -->
+            <div class="questions-container" id="questionsContainer" style="display: none;">
+                <!-- Question 1: Current Activity Level -->
+                <div class="question-container active" data-question="1">
+                    <div class="question-number">Question 1 of 7</div>
+                    <h2 class="question-text">What's your current activity level?</h2>
+                    <div class="activity-grid">
+                        <div class="activity-option" onclick="selectActivity(this, 1, 10)">
+                            <div class="activity-icon">
+                                <img src="../images/illustrations/very-active.png" alt="Very Active" style="width: 80px; height: 80px; object-fit: contain;">
+                            </div>
+                            <div class="activity-label">Very Active</div>
+                            <small style="color: #6c757d;">Exercise 5+ days/week</small>
+                        </div>
+                        <div class="activity-option" onclick="selectActivity(this, 2, 7)">
+                            <div class="activity-icon">
+                                <img src="../images/illustrations/moderately-active.png" alt="Moderately Active" style="width: 80px; height: 80px; object-fit: contain;">
+                            </div>
+                            <div class="activity-label">Moderately Active</div>
+                            <small style="color: #6c757d;">Exercise 3-4 days/week</small>
+                        </div>
+                        <div class="activity-option" onclick="selectActivity(this, 3, 4)">
+                            <div class="activity-icon">
+                                <img src="../images/illustrations/lightly-active.png" alt="Lightly Active" style="width: 80px; height: 80px; object-fit: contain;">
+                            </div>
+                            <div class="activity-label">Lightly Active</div>
+                            <small style="color: #6c757d;">Exercise 1-2 days/week</small>
+                        </div>
+                        <div class="activity-option" onclick="selectActivity(this, 4, 1)">
+                            <div class="activity-icon">
+                                <img src="../images/illustrations/sedentary.png" alt="Sedentary" style="width: 80px; height: 80px; object-fit: contain;">
+                            </div>
+                            <div class="activity-label">Sedentary</div>
+                            <small style="color: #6c757d;">Little to no exercise</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2: Stairs/Hills -->
+                <div class="question-container" data-question="2">
+                    <div class="question-number">Question 2 of 7</div>
+                    <h2 class="question-text">How many flights of stairs can you climb without stopping?</h2>
+                    <div class="options-container">
+                        <div class="option" onclick="selectOption(this, 2, 2)">Less than 2 flights</div>
+                        <div class="option" onclick="selectOption(this, 2, 5)">2-4 flights</div>
+                        <div class="option" onclick="selectOption(this, 2, 8)">5-8 flights</div>
+                        <div class="option" onclick="selectOption(this, 2, 10)">More than 8 flights</div>
+                    </div>
+                </div>
+
+                <!-- Question 3: Hiking Experience -->
+                <div class="question-container" data-question="3">
+                    <div class="question-number">Question 3 of 7</div>
+                    <h2 class="question-text">What's your hiking experience level?</h2>
+                    <div class="options-container">
+                        <div class="option" onclick="selectOption(this, 3, 2)">Never hiked before</div>
+                        <div class="option" onclick="selectOption(this, 3, 5)">Occasional day hikes (< 5 times/year)</div>
+                        <div class="option" onclick="selectOption(this, 3, 8)">Regular hiker (monthly)</div>
+                        <div class="option" onclick="selectOption(this, 3, 10)">Experienced hiker (weekly/multi-day treks)</div>
+                    </div>
+                </div>
+
+                <!-- Question 4: Weight Carrying -->
+                <div class="question-container" data-question="4">
+                    <div class="question-number">Question 4 of 7</div>
+                    <h2 class="question-text">How comfortable are you carrying a backpack?</h2>
+                    <div class="slider-container">
+                        <div class="slider-labels">
+                            <span>Can't carry weight</span>
+                            <span>Light daypack only</span>
+                            <span>15-20kg is fine</span>
+                        </div>
+                        <input type="range" class="slider" id="weightSlider" min="0" max="10" value="5" 
+                               oninput="updateSliderValue(this, 4)">
+                        <div class="slider-value" id="sliderValue4">5</div>
+                    </div>
+                </div>
+
+                <!-- Question 5: Recovery -->
+                <div class="question-container" data-question="5">
+                    <div class="question-number">Question 5 of 7</div>
+                    <h2 class="question-text">How quickly do you recover after physical activity?</h2>
+                    <div class="options-container">
+                        <div class="option" onclick="selectOption(this, 5, 3)">Need 2-3 days to recover</div>
+                        <div class="option" onclick="selectOption(this, 5, 6)">Feel good the next day</div>
+                        <div class="option" onclick="selectOption(this, 5, 9)">Ready to go again same day</div>
+                    </div>
+                </div>
+
+                <!-- Question 6: Health Issues -->
+                <div class="question-container" data-question="6">
+                    <div class="question-number">Question 6 of 7</div>
+                    <h2 class="question-text">Do you have any knee, ankle, or back issues?</h2>
+                    <div class="yes-no-container">
+                        <button class="yes-no-btn yes" onclick="selectYesNo(this, 6, 3)">Yes</button>
+                        <button class="yes-no-btn no" onclick="selectYesNo(this, 6, 10)">No</button>
+                    </div>
+                </div>
+
+                <!-- Question 7: Altitude Experience -->
+                <div class="question-container" data-question="7">
+                    <div class="question-number">Question 7 of 7</div>
+                    <h2 class="question-text">Have you hiked at high altitude before (above 3,000m)?</h2>
+                    <div class="options-container">
+                        <div class="option" onclick="selectOption(this, 7, 2)">Never been above 2,000m</div>
+                        <div class="option" onclick="selectOption(this, 7, 5)">Been to 2,000-3,000m</div>
+                        <div class="option" onclick="selectOption(this, 7, 8)">Comfortable at 3,000-4,000m</div>
+                        <div class="option" onclick="selectOption(this, 7, 10)">Experienced above 4,000m</div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <button class="nav-btn prev-btn" id="prevBtn" onclick="previousQuestion()" style="display: none;">
+                        ← Previous
+                    </button>
+                    <button class="nav-btn next-btn" id="nextBtn" onclick="nextQuestion()" disabled>
+                        Next →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results-container" id="resultsContainer">
+                <div class="fitness-score">
+                    <div class="score-circle">
+                        <svg width="200" height="200" class="score-svg">
+                            <circle cx="100" cy="100" r="90" class="score-bg"></circle>
+                            <circle cx="100" cy="100" r="90" class="score-fill" id="scoreCircle"
+                                    stroke-dasharray="565" stroke-dashoffset="565"></circle>
+                        </svg>
+                        <div class="score-number" id="scoreNumber">0</div>
+                    </div>
+                    <h2 class="fitness-level" id="fitnessLevel">Calculating...</h2>
+                    <p class="level-description" id="levelDescription">
+                        Analyzing your responses...
+                    </p>
+                </div>
+
+                <div class="recommendations">
+                    <h3>Recommended Treks for You</h3>
+                    <div class="trek-suggestions" id="trekSuggestions">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+
+                    <h3>Tips to Improve Your Fitness</h3>
+                    <div id="fitnessTips" style="line-height: 1.6; color: #495057;">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn primary-action" onclick="window.location.reload()">
+                        Retake Assessment
+                    </button>
+                    <button class="action-btn secondary-action" onclick="shareResults()">
+                        Share Results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Assessment data
+        let currentQuestion = 1;
+        const totalQuestions = 7;
+        const answers = {};
+
+        // Start assessment
+        function startAssessment() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('questionsContainer').style.display = 'block';
+            updateProgress();
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const progress = ((currentQuestion - 1) / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // Select activity level (Question 1)
+        function selectActivity(element, questionNum, score) {
+            // Clear previous selection
+            document.querySelectorAll('.activity-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            element.classList.add('selected');
+            answers[questionNum] = score;
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        // Select option
+        function selectOption(element, questionNum, score) {
+            // Clear previous selection
+            const container = element.parentElement;
+            container.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            element.classList.add('selected');
+            answers[questionNum] = score;
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        // Select Yes/No
+        function selectYesNo(element, questionNum, score) {
+            // Clear previous selection
+            const container = element.parentElement;
+            container.querySelectorAll('.yes-no-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            element.classList.add('selected');
+            answers[questionNum] = score;
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        // Update slider value
+        function updateSliderValue(slider, questionNum) {
+            const value = slider.value;
+            document.getElementById(`sliderValue${questionNum}`).textContent = value;
+            answers[questionNum] = parseInt(value);
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        // Navigate to next question
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                // Hide current question
+                document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('active');
+                
+                // Show next question
+                currentQuestion++;
+                document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('active');
+                
+                // Update navigation
+                updateProgress();
+                document.getElementById('prevBtn').style.display = 'block';
+                
+                // Check if answer exists for new question
+                if (!answers[currentQuestion]) {
+                    document.getElementById('nextBtn').disabled = true;
+                }
+                
+                // Change button text for last question
+                if (currentQuestion === totalQuestions) {
+                    document.getElementById('nextBtn').textContent = 'Get Results →';
+                }
+            } else {
+                // Show results
+                showResults();
+            }
+        }
+
+        // Navigate to previous question
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                // Hide current question
+                document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('active');
+                
+                // Show previous question
+                currentQuestion--;
+                document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('active');
+                
+                // Update navigation
+                updateProgress();
+                
+                if (currentQuestion === 1) {
+                    document.getElementById('prevBtn').style.display = 'none';
+                }
+                
+                // Reset button text
+                document.getElementById('nextBtn').textContent = 'Next →';
+                document.getElementById('nextBtn').disabled = false;
+            }
+        }
+
+        // Calculate and show results
+        function showResults() {
+            // Hide questions
+            document.getElementById('questionsContainer').style.display = 'none';
+            
+            // Calculate score
+            let totalScore = 0;
+            for (let key in answers) {
+                totalScore += answers[key];
+            }
+            
+            // Calculate percentage (max possible score is 70)
+            const percentage = Math.round((totalScore / 70) * 100);
+            
+            // Determine fitness level
+            let level, description, treks, tips;
+            
+            if (percentage >= 80) {
+                level = "Advanced Trekker";
+                description = "You're in excellent shape for challenging high-altitude treks and technical climbs!";
+                treks = [
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 18L12 9L17 18M9.5 14.5H14.5" stroke="#2c3e50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="6" r="2" fill="#f39c12"/></svg>', name: "Everest Base Camp", difficulty: "17 days, 5,364m altitude" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17L6 10L9 14L12 8L15 12L18 7L21 17" stroke="#e74c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>', name: "Annapurna Circuit", difficulty: "16-21 days, 5,416m pass" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14 3V7M14 3L10 3M14 3L18 3" stroke="#f39c12" stroke-width="2" stroke-linecap="round"/><rect x="10" y="7" width="8" height="14" stroke="#f39c12" stroke-width="2"/></svg>', name: "Kilimanjaro Summit", difficulty: "7-9 days, 5,895m summit" }
+                ];
+                tips = `
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ Maintain your excellent fitness with regular high-intensity training</li>
+                        <li>✓ Focus on altitude acclimatization for extreme treks</li>
+                        <li>✓ Consider technical climbing courses for more challenging routes</li>
+                        <li>✓ Work on mental endurance for multi-week expeditions</li>
+                    </ul>
+                `;
+            } else if (percentage >= 60) {
+                level = "Intermediate Hiker";
+                description = "You're ready for moderate multi-day treks with some altitude challenges!";
+                treks = [
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 20L12 9L21 20H3Z" stroke="#27ae60" stroke-width="2" stroke-linejoin="round"/><path d="M9 20V16H15V20" stroke="#27ae60" stroke-width="2"/></svg>', name: "ABC Trek", difficulty: "7-10 days, 4,130m altitude" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="6" r="2" fill="#3498db"/><path d="M13 7L16 4M16 4L19 7M16 4V12L14 20M7 20L9 12L6 10M9 12H14" stroke="#3498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>', name: "Langtang Valley", difficulty: "7-8 days, moderate altitude" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#9b59b6"/><path d="M12 2V9M12 15V22M22 12H15M9 12H2M18.36 5.64L13.76 10.24M10.24 13.76L5.64 18.36M18.36 18.36L13.76 13.76M10.24 10.24L5.64 5.64" stroke="#9b59b6" stroke-width="2" stroke-linecap="round"/></svg>', name: "Torres del Paine W", difficulty: "4-5 days, moderate difficulty" }
+                ];
+                tips = `
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ Increase cardio workouts to 4-5 times per week</li>
+                        <li>✓ Practice hiking with a loaded backpack (10-12kg)</li>
+                        <li>✓ Add stair climbing or hill repeats to your routine</li>
+                        <li>✓ Build up to longer weekend hikes (15-20km)</li>
+                    </ul>
+                `;
+            } else if (percentage >= 40) {
+                level = "Beginner Hiker";
+                description = "Perfect for easy to moderate day hikes and short overnight treks!";
+                treks = [
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><ellipse cx="8" cy="20" rx="3" ry="1.5" fill="#16a085"/><ellipse cx="16" cy="16" rx="3" ry="1.5" fill="#16a085"/><path d="M8 18V14M16 14V10" stroke="#16a085" stroke-width="2"/></svg>', name: "Poon Hill Trek", difficulty: "4-5 days, easy altitude" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14 8L10 8L12 2Z" fill="#27ae60"/><rect x="11" y="8" width="2" height="10" fill="#27ae60"/><path d="M7 14L12 11L17 14M5 18L12 14L19 18" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/></svg>', name: "Tiger's Nest Day Hike", difficulty: "Full day, moderate climb" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#f39c12"/><path d="M12 2V6M12 18V22M22 12H18M6 12H2M19 5L16 8M8 16L5 19M19 19L16 16M8 8L5 5" stroke="#f39c12" stroke-width="2" stroke-linecap="round"/></svg>', name: "Ghorepani Loop", difficulty: "3-4 days, beginner friendly" }
+                ];
+                tips = `
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ Start with regular 30-minute walks, 3-4 times per week</li>
+                        <li>✓ Gradually increase distance and elevation in your walks</li>
+                        <li>✓ Add basic strength training 2 times per week</li>
+                        <li>✓ Join local hiking groups for motivation and guidance</li>
+                    </ul>
+                `;
+            } else {
+                level = "Trek Curious";
+                description = "Time to start your fitness journey! Begin with easy nature walks and build up gradually.";
+                treks = [
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 14L9 11L12 2L15 11L12 14Z" fill="#27ae60"/><path d="M12 14C16 18 20 18 20 22H4C4 18 8 18 12 14Z" fill="#27ae60"/></svg>', name: "Nature Trail Walks", difficulty: "2-3 hours, flat terrain" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22V12" stroke="#2ecc71" stroke-width="2"/><path d="M12 8C12 8 9 8 9 5C9 3 10.5 2 12 2C13.5 2 15 3 15 5C15 8 12 8 12 8Z" fill="#2ecc71"/><path d="M7 12L12 9L17 12" stroke="#2ecc71" stroke-width="2" stroke-linecap="round"/></svg>', name: "Botanical Garden Treks", difficulty: "Half day, minimal elevation" },
+                    { icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="4" height="10" fill="#95a5a6"/><rect x="9" y="6" width="4" height="14" fill="#95a5a6"/><rect x="15" y="8" width="4" height="12" fill="#95a5a6"/><path d="M3 20H21" stroke="#95a5a6" stroke-width="2"/></svg>', name: "Urban Hill Walks", difficulty: "1-2 hours, gentle slopes" }
+                ];
+                tips = `
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ Start with 20-minute walks, 3 times per week</li>
+                        <li>✓ Focus on building a consistent exercise habit</li>
+                        <li>✓ Try yoga or stretching for flexibility</li>
+                        <li>✓ Set small, achievable goals and celebrate progress</li>
+                    </ul>
+                `;
+            }
+            
+            // Show results container
+            document.getElementById('resultsContainer').style.display = 'block';
+            
+            // Animate score
+            setTimeout(() => {
+                // Update score circle
+                const circumference = 2 * Math.PI * 90;
+                const offset = circumference - (percentage / 100) * circumference;
+                document.getElementById('scoreCircle').style.strokeDashoffset = offset;
+                
+                // Animate number
+                animateScore(percentage);
+                
+                // Update content
+                document.getElementById('fitnessLevel').textContent = level;
+                document.getElementById('levelDescription').textContent = description;
+                
+                // Add trek suggestions
+                const trekContainer = document.getElementById('trekSuggestions');
+                trekContainer.innerHTML = treks.map(trek => `
+                    <div class="trek-suggestion">
+                        <div class="trek-icon">${trek.icon}</div>
+                        <div class="trek-details">
+                            <h4>${trek.name}</h4>
+                            <p>${trek.difficulty}</p>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Add fitness tips
+                document.getElementById('fitnessTips').innerHTML = tips;
+                
+                // Update progress to 100%
+                document.getElementById('progressBar').style.width = '100%';
+            }, 300);
+        }
+
+        // Animate score number
+        function animateScore(target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                document.getElementById('scoreNumber').textContent = Math.round(current);
+            }, 20);
+        }
+
+        // Share results
+        function shareResults() {
+            const score = document.getElementById('scoreNumber').textContent;
+            const level = document.getElementById('fitnessLevel').textContent;
+            const text = `I just took the Hiking Fitness Assessment and scored ${score}% - ${level}!`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Hiking Fitness Results',
+                    text: text
+                });
+            } else {
+                // Fallback - copy to clipboard
+                navigator.clipboard.writeText(text);
+                alert('Results copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>

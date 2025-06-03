@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Packing List Generator | AI-Powered Trek Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --primary-dark: #2563EB;
+            --green: #16a34a;
+            --green-dark: #15803d;
+            --accent: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --bg-light: #F8F9FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: #374151;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            background: linear-gradient(135deg, #D1FAE5 0%, #DBEAFE 100%);
+            border-radius: 16px;
+            padding: 48px 32px;
+            margin-bottom: 48px;
+        }
+
+        .hero-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        .hero-icon i {
+            font-size: 40px;
+            color: var(--green);
+        }
+
+        .hero-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #6B7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Steps */
+        .progress-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #D1D5DB;
+            background: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .step-circle.active {
+            border-color: var(--green);
+            background: var(--green);
+            color: white;
+        }
+
+        .step-label {
+            margin-left: 12px;
+            font-weight: 500;
+            color: #9CA3AF;
+            transition: color 0.3s ease;
+        }
+
+        .step-label.active {
+            color: var(--green);
+        }
+
+        .step-connector {
+            width: 40px;
+            height: 2px;
+            background: #D1D5DB;
+            margin: 0 16px;
+            transition: background 0.3s ease;
+        }
+
+        .step-connector.active {
+            background: var(--green);
+        }
+
+        /* Form Sections */
+        .form-section {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 32px;
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 32px;
+            color: #111827;
+        }
+
+        .form-group {
+            margin-bottom: 32px;
+        }
+
+        .form-label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+
+        .form-label i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* Button Grid */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .button-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .button-grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .option-button {
+            padding: 16px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            background: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .option-button:hover {
+            border-color: #D1D5DB;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .option-button.selected {
+            border-color: var(--green);
+            background: #D1FAE5;
+            color: #065F46;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Checkbox Options */
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 12px;
+        }
+
+        .checkbox-option:hover {
+            border-color: #D1D5DB;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .checkbox-option.selected {
+            border-color: var(--green);
+            background: #D1FAE5;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .checkbox-icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        /* Input Field */
+        .input-field {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+        }
+
+        /* Action Buttons */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transform: scale(1.05);
+        }
+
+        .btn-primary:disabled {
+            background: #9CA3AF;
+            cursor: not-allowed;
+            transform: scale(1);
+            box-shadow: none;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 2px solid #E5E7EB;
+        }
+
+        .btn-secondary:hover {
+            background: #F9FAFB;
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--green);
+            border: 2px solid var(--green);
+        }
+
+        .btn-outline:hover {
+            background: #D1FAE5;
+        }
+
+        /* Loading Animation */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-icon {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Packing List Summary */
+        .summary-card {
+            background: linear-gradient(135deg, #D1FAE5 0%, #DBEAFE 100%);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .summary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .summary-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .summary-subtitle {
+            color: #6B7280;
+        }
+
+        .summary-badges {
+            display: flex;
+            gap: 8px;
+        }
+
+        .badge {
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .badge-orange {
+            background: #FED7AA;
+            color: #C2410C;
+        }
+
+        .badge-green {
+            background: #BBF7D0;
+            color: #14532D;
+        }
+
+        /* Progress Bar */
+        .progress-bar-container {
+            margin-top: 24px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .progress-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .progress-value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #059669;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: white;
+            border-radius: 9999px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, #10B981, #059669);
+            border-radius: 9999px;
+            transition: width 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Category Cards */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .category-card {
+            border: 2px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+
+        .category-icon {
+            font-size: 28px;
+        }
+
+        /* Packing Items */
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item-checkbox {
+            display: flex;
+            align-items: flex-start;
+            background: white;
+            padding: 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .item-checkbox:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .item-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .item-text {
+            flex: 1;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+
+        .item-text.checked {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        /* Category Colors */
+        .category-clothing { background: #EFF6FF; border-color: #DBEAFE; }
+        .category-footwear { background: #FFFBEB; border-color: #FEF3C7; }
+        .category-camping { background: #F0FDF4; border-color: #D1FAE5; }
+        .category-navigation { background: #FAF5FF; border-color: #F3E8FF; }
+        .category-safety { background: #FEF2F2; border-color: #FEE2E2; }
+        .category-personal { background: #EEF2FF; border-color: #E0E7FF; }
+        .category-food { background: #FFF7ED; border-color: #FED7AA; }
+        .category-optional { background: #F9FAFB; border-color: #F3F4F6; }
+
+        /* Action Card */
+        .action-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 24px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .step-label {
+                display: none;
+            }
+            
+            .button-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            
+            .button-grid-3 {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+            
+            .summary-header {
+                flex-direction: column;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-group {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Hide elements */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-icon">
+                <i class="fas fa-backpack"></i>
+            </div>
+            <h1 class="hero-title">AI-Powered Packing List Generator</h1>
+            <p class="hero-subtitle">
+                Get a personalized packing list in seconds. Our AI analyzes your trek details to create the perfect gear list for your adventure.
+            </p>
+        </div>
+
+        <!-- Progress Steps -->
+        <div class="progress-container">
+            <div class="progress-step">
+                <div class="step-circle active" id="step1-circle">1</div>
+                <span class="step-label active" id="step1-label">Trek Details</span>
+            </div>
+            <div class="step-connector" id="connector1"></div>
+            <div class="progress-step">
+                <div class="step-circle" id="step2-circle">2</div>
+                <span class="step-label" id="step2-label">Preferences</span>
+            </div>
+            <div class="step-connector" id="connector2"></div>
+            <div class="progress-step">
+                <div class="step-circle" id="step3-circle">3</div>
+                <span class="step-label" id="step3-label">Your List</span>
+            </div>
+        </div>
+
+        <!-- Step 1: Trek Details -->
+        <div class="form-section active" id="step1">
+            <h2 class="form-title">Tell us about your trek</h2>
+            
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-mountain" style="color: #16a34a;"></i>
+                    Trek Type
+                </label>
+                <div class="button-grid">
+                    <button class="option-button" data-trek-type="day-hike">Day Hike</button>
+                    <button class="option-button" data-trek-type="multi-day">Multi Day</button>
+                    <button class="option-button" data-trek-type="high-altitude">High Altitude</button>
+                    <button class="option-button" data-trek-type="wilderness">Wilderness</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-thermometer-half" style="color: #f97316;"></i>
+                    Season
+                </label>
+                <div class="button-grid">
+                    <button class="option-button" data-season="spring">Spring</button>
+                    <button class="option-button" data-season="summer">Summer</button>
+                    <button class="option-button" data-season="monsoon">Monsoon</button>
+                    <button class="option-button" data-season="winter">Winter</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-calendar" style="color: #3b82f6;"></i>
+                    Duration (days)
+                </label>
+                <input type="number" class="input-field" id="duration" min="1" max="30" placeholder="Enter number of days">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-map-marker-alt" style="color: #ef4444;"></i>
+                    Difficulty Level
+                </label>
+                <div class="button-grid button-grid-3">
+                    <button class="option-button" data-difficulty="easy">Easy</button>
+                    <button class="option-button" data-difficulty="moderate">Moderate</button>
+                    <button class="option-button" data-difficulty="difficult">Difficult</button>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <div></div>
+                <button class="btn btn-primary" id="nextStep1" disabled>
+                    Next Step
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Preferences -->
+        <div class="form-section" id="step2">
+            <h2 class="form-title">Your trekking preferences</h2>
+            
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-users" style="color: #7c3aed;"></i>
+                    Group Size
+                </label>
+                <div class="button-grid">
+                    <button class="option-button" data-group="solo">Solo</button>
+                    <button class="option-button" data-group="2-3">2-3 people</button>
+                    <button class="option-button" data-group="4-6">4-6 people</button>
+                    <button class="option-button" data-group="7+">7+ people</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Will you have a guide/porter service?</label>
+                <div class="button-grid button-grid-2">
+                    <button class="option-button" data-guide="yes">✅ Yes, with guide</button>
+                    <button class="option-button" data-guide="no">❌ No, self-guided</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Special Requirements (select all that apply)</label>
+                <div>
+                    <div class="checkbox-option" data-special="photography">
+                        <input type="checkbox" id="photography">
+                        <span class="checkbox-icon">📸</span>
+                        <label for="photography" style="cursor: pointer;">Photography equipment</label>
+                    </div>
+                    <div class="checkbox-option" data-special="medical">
+                        <input type="checkbox" id="medical">
+                        <span class="checkbox-icon">🏥</span>
+                        <label for="medical" style="cursor: pointer;">Medical conditions</label>
+                    </div>
+                    <div class="checkbox-option" data-special="dietary">
+                        <input type="checkbox" id="dietary">
+                        <span class="checkbox-icon">🥗</span>
+                        <label for="dietary" style="cursor: pointer;">Special dietary needs</label>
+                    </div>
+                    <div class="checkbox-option" data-special="ultralight">
+                        <input type="checkbox" id="ultralight">
+                        <span class="checkbox-icon">🪶</span>
+                        <label for="ultralight" style="cursor: pointer;">Ultralight trekking</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="btn btn-secondary" id="backStep2">Back</button>
+                <button class="btn btn-primary" id="generateList" disabled>
+                    <i class="fas fa-magic"></i>
+                    Generate List
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Generated Packing List -->
+        <div class="form-section" id="step3">
+            <!-- Summary Card -->
+            <div class="summary-card">
+                <div class="summary-header">
+                    <div>
+                        <h2 class="summary-title">Your Custom Packing List</h2>
+                        <p class="summary-subtitle" id="summaryText"></p>
+                    </div>
+                    <div class="summary-badges">
+                        <span class="badge badge-orange">AI Generated</span>
+                        <span class="badge badge-green" id="itemCount">0 items</span>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="progress-header">
+                        <span class="progress-label">Packing Progress</span>
+                        <span class="progress-value" id="progressText">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Packing List Categories -->
+            <div class="categories-grid" id="packingListContent"></div>
+
+            <!-- Action Buttons -->
+            <div class="action-card">
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="startNew">
+                        <i class="fas fa-file-alt"></i>
+                        Start New List
+                    </button>
+                    <div class="action-group">
+                        <button class="btn btn-outline" id="copyList">
+                            <i class="fas fa-copy"></i>
+                            Copy List
+                        </button>
+                        <button class="btn btn-primary" id="printList">
+                            <i class="fas fa-print"></i>
+                            Print List
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        const state = {
+            currentStep: 1,
+            formData: {
+                trekType: '',
+                season: '',
+                duration: '',
+                difficulty: '',
+                groupSize: '',
+                hasGuide: '',
+                specialNeeds: []
+            },
+            packingList: null,
+            checkedItems: new Set()
+        };
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEventListeners();
+        });
+
+        function initializeEventListeners() {
+            // Step 1 - Trek Type
+            document.querySelectorAll('[data-trek-type]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    selectOption('trekType', this.dataset.trekType, '[data-trek-type]');
+                    checkStep1Completion();
+                });
+            });
+
+            // Step 1 - Season
+            document.querySelectorAll('[data-season]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    selectOption('season', this.dataset.season, '[data-season]');
+                    checkStep1Completion();
+                });
+            });
+
+            // Step 1 - Duration
+            document.getElementById('duration').addEventListener('input', function() {
+                state.formData.duration = this.value;
+                checkStep1Completion();
+            });
+
+            // Step 1 - Difficulty
+            document.querySelectorAll('[data-difficulty]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    selectOption('difficulty', this.dataset.difficulty, '[data-difficulty]');
+                    checkStep1Completion();
+                });
+            });
+
+            // Step 2 - Group Size
+            document.querySelectorAll('[data-group]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    selectOption('groupSize', this.dataset.group, '[data-group]');
+                    checkStep2Completion();
+                });
+            });
+
+            // Step 2 - Guide
+            document.querySelectorAll('[data-guide]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    selectOption('hasGuide', this.dataset.guide, '[data-guide]');
+                    checkStep2Completion();
+                });
+            });
+
+            // Step 2 - Special Needs
+            document.querySelectorAll('.checkbox-option').forEach(option => {
+                option.addEventListener('click', function(e) {
+                    if (e.target.type !== 'checkbox') {
+                        const checkbox = this.querySelector('input[type="checkbox"]');
+                        checkbox.checked = !checkbox.checked;
+                    }
+                    updateSpecialNeeds();
+                });
+            });
+
+            document.querySelectorAll('.checkbox-option input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', updateSpecialNeeds);
+            });
+
+            // Navigation buttons
+            document.getElementById('nextStep1').addEventListener('click', () => goToStep(2));
+            document.getElementById('backStep2').addEventListener('click', () => goToStep(1));
+            document.getElementById('generateList').addEventListener('click', generatePackingList);
+            document.getElementById('startNew').addEventListener('click', resetForm);
+            document.getElementById('copyList').addEventListener('click', copyListToClipboard);
+            document.getElementById('printList').addEventListener('click', () => window.print());
+        }
+
+        function selectOption(field, value, selector) {
+            state.formData[field] = value;
+            
+            // Update UI
+            document.querySelectorAll(selector).forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            event.target.classList.add('selected');
+        }
+
+        function updateSpecialNeeds() {
+            state.formData.specialNeeds = [];
+            document.querySelectorAll('.checkbox-option').forEach(option => {
+                const checkbox = option.querySelector('input[type="checkbox"]');
+                if (checkbox.checked) {
+                    state.formData.specialNeeds.push(option.dataset.special);
+                    option.classList.add('selected');
+                } else {
+                    option.classList.remove('selected');
+                }
+            });
+        }
+
+        function checkStep1Completion() {
+            const isComplete = state.formData.trekType && 
+                             state.formData.season && 
+                             state.formData.duration && 
+                             state.formData.difficulty;
+            
+            document.getElementById('nextStep1').disabled = !isComplete;
+        }
+
+        function checkStep2Completion() {
+            const isComplete = state.formData.groupSize && state.formData.hasGuide;
+            document.getElementById('generateList').disabled = !isComplete;
+        }
+
+        function goToStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show current step
+            document.getElementById(`step${step}`).classList.add('active');
+            
+            // Update progress indicators
+            updateProgressIndicators(step);
+            
+            state.currentStep = step;
+        }
+
+        function updateProgressIndicators(step) {
+            // Update circles
+            for (let i = 1; i <= 3; i++) {
+                const circle = document.getElementById(`step${i}-circle`);
+                const label = document.getElementById(`step${i}-label`);
+                
+                if (i <= step) {
+                    circle.classList.add('active');
+                    label.classList.add('active');
+                } else {
+                    circle.classList.remove('active');
+                    label.classList.remove('active');
+                }
+            }
+            
+            // Update connectors
+            document.getElementById('connector1').classList.toggle('active', step > 1);
+            document.getElementById('connector2').classList.toggle('active', step > 2);
+        }
+
+        function generatePackingList() {
+            const btn = document.getElementById('generateList');
+            btn.innerHTML = '<i class="fas fa-spinner loading-icon"></i> Generating...';
+            btn.disabled = true;
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                const packingList = buildPackingList();
+                state.packingList = packingList;
+                renderPackingList();
+                goToStep(3);
+                
+                btn.innerHTML = '<i class="fas fa-magic"></i> Generate List';
+                btn.disabled = false;
+            }, 1500);
+        }
+
+        function buildPackingList() {
+            const list = {
+                clothing: [],
+                footwear: [],
+                camping: [],
+                navigation: [],
+                safety: [],
+                personal: [],
+                food: [],
+                optional: []
+            };
+
+            // Base clothing
+            list.clothing = [
+                'Base layer top and bottom (moisture-wicking)',
+                'Trekking pants (2 pairs)',
+                'Quick-dry t-shirts (2-3)',
+                'Underwear (trek duration + 1 extra)',
+                'Trekking socks (duration + 2 extra pairs)',
+                'Sun hat with brim',
+                'Buff or neck gaiter'
+            ];
+
+            // Season-specific clothing
+            if (state.formData.season === 'winter') {
+                list.clothing.push(
+                    'Insulated jacket (down or synthetic)',
+                    'Fleece jacket (mid-layer)',
+                    'Thermal underwear (2 sets)',
+                    'Winter gloves and liner gloves',
+                    'Warm beanie/winter hat',
+                    'Hardshell jacket (waterproof)',
+                    'Hardshell pants (waterproof)'
+                );
+            } else if (state.formData.season === 'monsoon') {
+                list.clothing.push(
+                    'Rain jacket (waterproof/breathable)',
+                    'Rain pants',
+                    'Pack rain cover',
+                    'Dry bags for electronics',
+                    'Extra quick-dry clothing',
+                    'Waterproof gloves'
+                );
+            } else if (state.formData.season === 'summer') {
+                list.clothing.push(
+                    'Lightweight long-sleeve shirts (sun protection)',
+                    'Shorts (2 pairs)',
+                    'Light fleece or jacket (for evenings)',
+                    'Sunglasses with UV protection',
+                    'Light rain jacket'
+                );
+            }
+
+            // Footwear
+            list.footwear = ['Trekking boots (broken in)', 'Camp shoes/sandals'];
+            if (state.formData.trekType === 'high-altitude' || state.formData.season === 'winter') {
+                list.footwear.push('Gaiters', 'Microspikes or crampons (if icy)');
+            }
+
+            // Camping gear
+            if (state.formData.hasGuide === 'no') {
+                list.camping = [
+                    'Tent (appropriate for season)',
+                    'Sleeping bag (rated for expected temps)',
+                    'Sleeping pad/mat',
+                    'Camping stove and fuel',
+                    'Cookware and utensils',
+                    'Water filter or purification tablets',
+                    'Lighter/matches (waterproof)'
+                ];
+            } else {
+                list.camping = [
+                    'Sleeping bag (check if provided)',
+                    'Sleeping bag liner',
+                    'Inflatable pillow'
+                ];
+            }
+
+            // Backpack
+            const days = parseInt(state.formData.duration) || 1;
+            list.camping.push(
+                `Backpack (${days <= 3 ? '40-50L' : '60-70L'})`,
+                'Daypack (20-30L) for side trips',
+                'Dry bags/stuff sacks',
+                'Carabiners'
+            );
+
+            // Navigation
+            list.navigation = [
+                'Map and compass',
+                'GPS device or smartphone with offline maps',
+                'Headlamp with extra batteries',
+                'Backup flashlight',
+                'Power bank (10,000+ mAh)',
+                'Charging cables'
+            ];
+
+            // Safety
+            list.safety = [
+                'First aid kit (comprehensive)',
+                'Personal medications',
+                'Sunscreen (SPF 50+)',
+                'Lip balm with SPF',
+                'Insect repellent',
+                'Water bottles or hydration system (3L capacity)',
+                'Emergency whistle',
+                'Multi-tool or knife'
+            ];
+
+            if (state.formData.difficulty === 'difficult' || state.formData.trekType === 'high-altitude') {
+                list.safety.push(
+                    'Altitude sickness medication',
+                    'Emergency shelter/bivy',
+                    'Rope (20-30m)'
+                );
+            }
+
+            // Personal care
+            list.personal = [
+                'Toiletries (biodegradable soap)',
+                'Toilet paper and trowel',
+                'Hand sanitizer',
+                'Wet wipes',
+                'Towel (quick-dry)',
+                'Prescription glasses/contacts',
+                'Duct tape (small roll)',
+                'Plastic bags (various sizes)'
+            ];
+
+            // Food
+            list.food = [
+                `Breakfast items (${days} days + 1 extra)`,
+                `Lunch/snacks (${days} days + extra)`,
+                `Dinner items (${days} days + 1 extra)`,
+                'Energy bars and trail mix',
+                'Electrolyte powder/tablets',
+                'Instant coffee/tea bags'
+            ];
+
+            // Optional
+            list.optional = [
+                'Trekking poles',
+                'Camera with extra batteries',
+                'Kindle/book',
+                'Playing cards',
+                'Journal and pen',
+                'Portable solar charger'
+            ];
+
+            // Special needs
+            if (state.formData.specialNeeds.includes('photography')) {
+                list.optional.push('Camera gear bag', 'Lens cleaning kit', 'Tripod (lightweight)');
+            }
+            if (state.formData.specialNeeds.includes('medical')) {
+                list.safety.push('Advanced first aid supplies', 'Emergency medications');
+            }
+            if (state.formData.specialNeeds.includes('dietary')) {
+                list.food.push('Special dietary foods', 'Food allergy medications');
+            }
+
+            return list;
+        }
+
+        function renderPackingList() {
+            // Update summary
+            const summaryText = `${state.formData.duration}-day ${state.formData.difficulty} ${state.formData.trekType.replace('-', ' ')} trek in ${state.formData.season}`;
+            document.getElementById('summaryText').textContent = summaryText;
+            
+            // Count total items
+            const totalItems = Object.values(state.packingList).flat().length;
+            document.getElementById('itemCount').textContent = `${totalItems} items`;
+            
+            // Render categories
+            const container = document.getElementById('packingListContent');
+            container.innerHTML = '';
+            
+            const categoryInfo = {
+                clothing: { icon: '👕', name: 'Clothing' },
+                footwear: { icon: '🥾', name: 'Footwear' },
+                camping: { icon: '🏕️', name: 'Camping' },
+                navigation: { icon: '🧭', name: 'Navigation' },
+                safety: { icon: '⛑️', name: 'Safety & First Aid' },
+                personal: { icon: '🧴', name: 'Personal Care' },
+                food: { icon: '🍲', name: 'Food & Water' },
+                optional: { icon: '✨', name: 'Optional' }
+            };
+            
+            Object.entries(state.packingList).forEach(([category, items]) => {
+                if (items.length === 0) return;
+                
+                const card = document.createElement('div');
+                card.className = `category-card category-${category}`;
+                
+                const info = categoryInfo[category];
+                card.innerHTML = `
+                    <div class="category-header">
+                        <span class="category-icon">${info.icon}</span>
+                        <span>${info.name}</span>
+                    </div>
+                    <div class="item-list" id="${category}-items"></div>
+                `;
+                
+                container.appendChild(card);
+                
+                // Add items
+                const itemList = card.querySelector(`#${category}-items`);
+                items.forEach((item, index) => {
+                    const itemId = `${category}-${index}`;
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'item-checkbox';
+                    itemDiv.innerHTML = `
+                        <input type="checkbox" id="${itemId}" data-item="${item}">
+                        <label for="${itemId}" class="item-text">${item}</label>
+                    `;
+                    
+                    itemList.appendChild(itemDiv);
+                    
+                    // Add event listener
+                    const checkbox = itemDiv.querySelector('input');
+                    checkbox.addEventListener('change', function() {
+                        updateItemCheck(item, this.checked);
+                    });
+                });
+            });
+            
+            updateProgress();
+        }
+
+        function updateItemCheck(item, checked) {
+            if (checked) {
+                state.checkedItems.add(item);
+            } else {
+                state.checkedItems.delete(item);
+            }
+            
+            // Update text style
+            document.querySelectorAll(`[data-item="${item}"]`).forEach(checkbox => {
+                const label = checkbox.nextElementSibling;
+                label.classList.toggle('checked', checked);
+            });
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const totalItems = Object.values(state.packingList).flat().length;
+            const checkedCount = state.checkedItems.size;
+            const progress = Math.round((checkedCount / totalItems) * 100);
+            
+            document.getElementById('progressText').textContent = `${progress}%`;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        function copyListToClipboard() {
+            const listText = `PACKING LIST\n${'='.repeat(50)}\n` +
+                `Trek: ${state.formData.duration}-day ${state.formData.difficulty} ${state.formData.trekType.replace('-', ' ')}\n` +
+                `Season: ${state.formData.season}\n` +
+                `Group: ${state.formData.groupSize}\n` +
+                `${'='.repeat(50)}\n\n` +
+                Object.entries(state.packingList)
+                    .filter(([_, items]) => items.length > 0)
+                    .map(([category, items]) => 
+                        `${category.toUpperCase()}:\n${items.map(item => `□ ${item}`).join('\n')}`
+                    )
+                    .join('\n\n');
+            
+            navigator.clipboard.writeText(listText).then(() => {
+                alert('✅ Packing list copied to clipboard!');
+            });
+        }
+
+        function resetForm() {
+            // Reset state
+            state.currentStep = 1;
+            state.formData = {
+                trekType: '',
+                season: '',
+                duration: '',
+                difficulty: '',
+                groupSize: '',
+                hasGuide: '',
+                specialNeeds: []
+            };
+            state.packingList = null;
+            state.checkedItems = new Set();
+            
+            // Reset UI
+            document.querySelectorAll('.option-button').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            document.querySelectorAll('.checkbox-option').forEach(option => {
+                option.classList.remove('selected');
+                option.querySelector('input[type="checkbox"]').checked = false;
+            });
+            
+            document.getElementById('duration').value = '';
+            document.getElementById('nextStep1').disabled = true;
+            document.getElementById('generateList').disabled = true;
+            
+            goToStep(1);
+        }
+    </script>
+</body>
+</html>
