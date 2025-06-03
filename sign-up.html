@@ -14,7 +14,7 @@
       --bg-light: #f3f4f6;
       --white: #FFFFFF;
       --google-blue: #4285f4;
-      --facebook-blue: #1877f2;
+      /* --facebook-blue: #1877f2; -- commented out for later */
     }
 
     body {
@@ -187,6 +187,7 @@
       background: rgba(66, 133, 244, 0.05);
     }
 
+    /* Facebook styles - commented out for later implementation
     .oauth-button.facebook {
       border-color: var(--facebook-blue);
       color: var(--facebook-blue);
@@ -195,6 +196,7 @@
     .oauth-button.facebook:hover {
       background: rgba(24, 119, 242, 0.05);
     }
+    */
 
     /* Divider */
     .divider {
@@ -555,14 +557,13 @@
               Continue with Google
             </button>
             
-            <!-- <button type="button" class="oauth-button facebook" onclick="handleFacebookSignIn()">
+            <button type="button" class="oauth-button facebook" onclick="handleFacebookSignIn()">
               <svg width="20" height="20" viewBox="0 0 320 512">
                 <path fill="#1877F2" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
               </svg>
               Continue with Facebook
             </button>
           </div>
-          -->
 
           <!-- Divider -->
           <div class="divider">
@@ -605,7 +606,6 @@
               Continue with Google
             </button>
             
-            <!--
             <button type="button" class="oauth-button facebook" onclick="handleFacebookSignIn()">
               <svg width="20" height="20" viewBox="0 0 320 512">
                 <path fill="#1877F2" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
@@ -613,7 +613,6 @@
               Continue with Facebook
             </button>
           </div>
-          -->
 
           <!-- Divider -->
           <div class="divider">
@@ -704,7 +703,7 @@
 
   <script type="module">
     // Import Firebase auth functions
-    import { signUp, signIn, resetPassword, signInWithGoogle, signInWithFacebook, handleRedirectResult } from './js/auth/auth.js';
+    import { signUp, signIn, resetPassword, signInWithGoogle, handleRedirectResult } from './js/auth/auth.js';
     import { auth } from './js/auth/firebase.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
@@ -849,6 +848,7 @@
       }
     };
 
+    /* Facebook sign-in handler - commented out for later implementation
     window.handleFacebookSignIn = async function() {
       hideMessages();
       showSuccess('Signing in with Facebook...');
@@ -871,6 +871,7 @@
         showError(getOAuthFriendlyError(error));
       }
     };
+    */
 
     // Handle successful OAuth authentication
     async function handleOAuthSuccess(user) {
