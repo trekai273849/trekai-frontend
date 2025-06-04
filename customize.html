@@ -102,6 +102,14 @@
       z-index: 10;
       padding: 0 20px 40px;
     }
+    
+    /* Background for results mode */
+    .main-content-area.results-mode {
+      margin-top: 0;
+      padding-top: 40px;
+      min-height: 100vh;
+      background-color: var(--bg-light);
+    }
 
     /* Quiz Container Styles */
     .quiz-container {
@@ -772,10 +780,14 @@
 
     /* Results Container */
     #itinerary-cards {
-      margin-top: 40px;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 20px;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+      position: relative;
+      z-index: 10;
     }
 
     #itinerary-cards.show {
@@ -1305,42 +1317,56 @@
       </div>
     </div>
 
-    <!-- Loading Overlay (moved outside quiz container) -->
-    <div class="loading-overlay" id="loadingOverlay">
-      <div class="loading-content">
-        <div class="loading-spinner"></div>
-        
-        <div class="loading-stages">
-          <div class="stage active" data-stage="1">
-            <div class="stage-icon">🗺️</div>
-            <div class="stage-label">Analyzing preferences</div>
-          </div>
-          <div class="stage" data-stage="2">
-            <div class="stage-icon">🏔️</div>
-            <div class="stage-label">Finding perfect trails</div>
-          </div>
-          <div class="stage" data-stage="3">
-            <div class="stage-icon">🏕️</div>
-            <div class="stage-label">Planning accommodations</div>
-          </div>
-          <div class="stage" data-stage="4">
-            <div class="stage-icon">✨</div>
-            <div class="stage-label">Crafting your itinerary</div>
-          </div>
-        </div>
-        
-        <div class="loading-text">Creating your perfect trek...</div>
-        
-        <div class="hiking-fact-container">
-          <div class="fact-icon">💡</div>
-          <div class="hiking-fact" id="hikingFact">Did you know? The Appalachian Trail spans 2,190 miles across 14 states!</div>
-        </div>
-      </div>
-    </div>
-
     <!-- Results Container -->
     <div id="itinerary-cards"></div>
   </main>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      
+      <div class="loading-stages">
+        <div class="stage active" data-stage="1">
+          <div class="stage-icon">🗺️</div>
+          <div class="stage-label">Analyzing preferences</div>
+        </div>
+        <div class="stage" data-stage="2">
+          <div class="stage-icon">🏔️</div>
+          <div class="stage-label">Finding perfect trails</div>
+        </div>
+        <div class="stage" data-stage="3">
+          <div class="stage-icon">🏕️</div>
+          <div class="stage-label">Planning accommodations</div>
+        </div>
+        <div class="stage" data-stage="4">
+          <div class="stage-icon">✨</div>
+          <div class="stage-label">Crafting your itinerary</div>
+        </div>
+      </div>
+      
+      <div class="loading-text">Creating your perfect trek...</div>
+      
+      <div class="hiking-fact-container">
+        <div class="fact-icon">💡</div>
+        <div class="hiking-fact" id="hikingFact">Did you know? The Appalachian Trail spans 2,190 miles across 14 states!</div>
+      </div>
+      
+      <div id="loadingError" style="display: none; margin-top: 24px; text-align: center;">
+        <p style="color: var(--warning); margin-bottom: 16px;">Taking longer than expected...</p>
+        <button onclick="window.location.reload()" style="
+          background: var(--primary);
+          color: white;
+          padding: 12px 24px;
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+        ">Try Again</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Success Modal -->
   <div class="modal-overlay" id="itinerary-success-modal" style="display: none;">
@@ -1542,6 +1568,8 @@
     }
 
     async function generateItinerary() {
+      console.log('Starting itinerary generation...');
+      
       // Show loading overlay
       document.getElementById('loadingOverlay').classList.add('active');
       
@@ -1589,39 +1617,151 @@
           // In production, this would call your API
           // For now, we'll simulate the API response
           setTimeout(() => {
+            console.log('Loading complete, showing results...');
+            
             // Stop loading animation
             stopLoadingAnimation();
             
             // Hide loading overlay
             document.getElementById('loadingOverlay').classList.remove('active');
             
+            // Hide hero section and update main content area
+            document.querySelector('.hero-enhanced').style.display = 'none';
+            document.querySelector('.main-content-area').classList.add('results-mode');
+            
+            // Make sure main content area is visible
+            document.querySelector('.main-content-area').style.display = 'block';
+            
             // Show results container
             const resultsContainer = document.getElementById('itinerary-cards');
+            resultsContainer.style.display = 'block';
             resultsContainer.classList.add('show');
+            
+            console.log('Results container:', resultsContainer);
+            console.log('Results HTML being set...');
             
             // Here you would normally display the generated itinerary
             resultsContainer.innerHTML = `
+              <div style="text-align: center; margin-bottom: 40px;">
+                <h1 style="font-size: 2.5em; color: var(--text-dark); margin-bottom: 16px;">Your Custom Trek Itinerary</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1em;">Based on your preferences, we've created the perfect adventure for you!</p>
+              </div>
+              
               <div class="itinerary-day-card">
                 <div class="day-card-header">
-                  <div class="day-number">Your Custom Itinerary</div>
-                  <h3 class="day-title-enhanced">Trek Generated Successfully!</h3>
+                  <div class="day-number">YOUR PREFERENCES</div>
+                  <h3 class="day-title-enhanced">Trek Summary</h3>
                 </div>
                 <div class="day-card-content">
-                  <p style="color: var(--text-dark); line-height: 1.8;">
-                    In production, this would display your AI-generated itinerary based on:<br><br>
-                    <strong>Trek Type:</strong> ${formData.trekType}<br>
-                    <strong>Duration:</strong> ${formData.trekLength || 'Day hike'}<br>
-                    <strong>Location:</strong> ${formData.location}<br>
-                    <strong>Difficulty:</strong> ${formData.difficulty}<br>
-                    <strong>Season:</strong> ${formData.season}<br>
-                    ${formData.accommodation ? `<strong>Accommodation:</strong> ${formData.accommodation}<br>` : ''}
-                    ${formData.interests.length > 0 ? `<strong>Interests:</strong> ${formData.interests.join(', ')}<br>` : ''}
-                    ${formData.details ? `<strong>Special Requirements:</strong> ${formData.details}` : ''}
-                  </p>
+                  <div style="display: grid; gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Trek Type:</span>
+                      <span>${formData.trekType === 'day-hike' ? 'Day Hike' : 'Multi-Day Trek'}</span>
+                    </div>
+                    ${formData.trekLength ? `
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Duration:</span>
+                      <span>${formData.trekLength} days</span>
+                    </div>` : ''}
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Location:</span>
+                      <span>${formData.location.charAt(0).toUpperCase() + formData.location.slice(1)}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Difficulty:</span>
+                      <span>${formData.difficulty.charAt(0).toUpperCase() + formData.difficulty.slice(1)}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Season:</span>
+                      <span>${formData.season.charAt(0).toUpperCase() + formData.season.slice(1)}</span>
+                    </div>
+                    ${formData.accommodation ? `
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Accommodation:</span>
+                      <span>${formData.accommodation.charAt(0).toUpperCase() + formData.accommodation.slice(1)}</span>
+                    </div>` : ''}
+                    ${formData.interests.length > 0 ? `
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Interests:</span>
+                      <span>${formData.interests.map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(', ')}</span>
+                    </div>` : ''}
+                    ${formData.details ? `
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <span style="font-weight: 600; color: var(--primary);">Special Requirements:</span>
+                      <span>${formData.details}</span>
+                    </div>` : ''}
+                  </div>
                 </div>
               </div>
+              
+              <div class="itinerary-day-card" style="background: #FFF8E1; border: 2px solid var(--orange);">
+                <div class="day-card-header" style="background: linear-gradient(135deg, #FFF3C4 0%, #FFE082 100%);">
+                  <div class="day-number" style="color: var(--orange);">DEMO VERSION</div>
+                  <h3 class="day-title-enhanced">Coming Soon: Full Itinerary</h3>
+                </div>
+                <div class="day-card-content">
+                  <p style="color: var(--text-dark); line-height: 1.8; margin-bottom: 16px;">
+                    In the full version of Smart Trails, you'll receive:
+                  </p>
+                  <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px;">
+                      <span style="color: var(--orange);">✓</span> Complete day-by-day itinerary with detailed trail descriptions
+                    </li>
+                    <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px;">
+                      <span style="color: var(--orange);">✓</span> Elevation profiles and distance calculations
+                    </li>
+                    <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px;">
+                      <span style="color: var(--orange);">✓</span> Accommodation recommendations and booking links
+                    </li>
+                    <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px;">
+                      <span style="color: var(--orange);">✓</span> Points of interest and photo opportunities
+                    </li>
+                    <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px;">
+                      <span style="color: var(--orange);">✓</span> Weather considerations and packing lists
+                    </li>
+                    <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px;">
+                      <span style="color: var(--orange);">✓</span> GPS coordinates and downloadable maps
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div style="text-align: center; margin-top: 40px;">
+                <button onclick="location.reload()" style="
+                  background: var(--primary);
+                  color: white;
+                  padding: 14px 32px;
+                  border: none;
+                  border-radius: 8px;
+                  font-size: 16px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  margin-right: 16px;
+                " onmouseover="this.style.background='var(--primary-light)'" onmouseout="this.style.background='var(--primary)'">
+                  Create Another Trek
+                </button>
+                <button onclick="window.location.href='/'" style="
+                  background: white;
+                  color: var(--primary);
+                  padding: 14px 32px;
+                  border: 2px solid var(--primary);
+                  border-radius: 8px;
+                  font-size: 16px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                " onmouseover="this.style.background='#f0f7ed'" onmouseout="this.style.background='white'">
+                  Back to Home
+                </button>
+              </div>
             `;
-          }, 12000); // Simulate 12 second loading time
+            
+            // Scroll to top of results
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            console.log('Results display complete!');
+          }, 3000); // Reduced to 3 seconds for testing - change back to 12000 for production
         }, 500);
       }, 300);
 
@@ -1633,6 +1773,7 @@
     let loadingInterval;
     let factInterval;
     let stageInterval;
+    let errorTimeout;
     let currentStage = 1;
 
     const hikingFacts = [
@@ -1652,6 +1793,11 @@
 
     function startLoadingAnimation() {
       currentStage = 1;
+      
+      // Show error message if loading takes too long (15 seconds)
+      errorTimeout = setTimeout(() => {
+        document.getElementById('loadingError').style.display = 'block';
+      }, 15000);
       
       // Update stages every 3 seconds
       stageInterval = setInterval(() => {
@@ -1682,6 +1828,7 @@
     function stopLoadingAnimation() {
       clearInterval(stageInterval);
       clearInterval(factInterval);
+      clearTimeout(errorTimeout);
       
       // Reset stages
       document.querySelectorAll('.stage').forEach(stage => {
