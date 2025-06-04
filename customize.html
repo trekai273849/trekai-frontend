@@ -89,15 +89,9 @@
 
     .hero-content-enhanced h1 {
       font-size: 3em;
-      margin-bottom: 20px;
+      margin-bottom: 0;
       font-weight: 700;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-
-    .hero-content-enhanced h2 {
-      font-size: 1.5em;
-      font-weight: 400;
-      opacity: 0.95;
     }
 
     /* Main content area */
@@ -613,51 +607,167 @@
       }
     }
 
-    /* Loading State */
+    /* Loading State - Enhanced */
     .loading-overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
       display: none;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      z-index: 100;
-      border-radius: var(--radius);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
     }
 
     .loading-overlay.active {
       display: flex;
     }
 
+    .loading-content {
+      text-align: center;
+      max-width: 500px;
+      padding: 20px;
+    }
+
     .loading-spinner {
-      width: 48px;
-      height: 48px;
+      width: 60px;
+      height: 60px;
       border: 3px solid #E8F5E9;
       border-top-color: var(--primary);
       border-right-color: var(--primary-light);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      margin-bottom: 24px;
+      margin: 0 auto 32px;
     }
 
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
 
-    .loading-text {
-      font-size: 16px;
-      color: var(--text-primary);
-      font-weight: 500;
-      margin-bottom: 8px;
+    .loading-stages {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
     }
 
-    .loading-subtext {
+    .stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.3;
+      transition: all 0.5s ease;
+    }
+
+    .stage.active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .stage.completed {
+      opacity: 0.7;
+    }
+
+    .stage-icon {
+      font-size: 28px;
+      filter: grayscale(1);
+      transition: all 0.5s ease;
+    }
+
+    .stage.active .stage-icon {
+      filter: grayscale(0);
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    .stage.completed .stage-icon {
+      filter: grayscale(0);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .stage-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .stage.active .stage-label {
+      color: var(--primary);
+    }
+
+    .loading-text {
+      font-size: 18px;
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hiking-fact-container {
+      background: #F0F7ED;
+      border: 1px solid #E8F5E9;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+      min-height: 60px;
+    }
+
+    .fact-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .hiking-fact {
       font-size: 14px;
       color: var(--text-secondary);
+      line-height: 1.5;
+      text-align: left;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .loading-stages {
+        gap: 16px;
+      }
+
+      .stage-icon {
+        font-size: 24px;
+      }
+
+      .stage-label {
+        font-size: 11px;
+      }
+
+      .hiking-fact {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .loading-stages {
+        gap: 12px;
+      }
+
+      .stage {
+        flex: 0 0 45%;
+      }
     }
 
     /* Results Container */
@@ -920,7 +1030,6 @@
     <div class="hero-bg" style="background-image: url('Images/alps.jpg');"></div>
     <div class="hero-content-enhanced">
       <h1>Create Your Perfect Trek</h1>
-      <h2 id="greeting">Design your personalized adventure</h2>
     </div>
   </header>
 
@@ -1194,12 +1303,38 @@
           </button>
         </div>
       </div>
+    </div>
 
-      <!-- Loading Overlay -->
-      <div class="loading-overlay" id="loadingOverlay">
+    <!-- Loading Overlay (moved outside quiz container) -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-content">
         <div class="loading-spinner"></div>
+        
+        <div class="loading-stages">
+          <div class="stage active" data-stage="1">
+            <div class="stage-icon">🗺️</div>
+            <div class="stage-label">Analyzing preferences</div>
+          </div>
+          <div class="stage" data-stage="2">
+            <div class="stage-icon">🏔️</div>
+            <div class="stage-label">Finding perfect trails</div>
+          </div>
+          <div class="stage" data-stage="3">
+            <div class="stage-icon">🏕️</div>
+            <div class="stage-label">Planning accommodations</div>
+          </div>
+          <div class="stage" data-stage="4">
+            <div class="stage-icon">✨</div>
+            <div class="stage-label">Crafting your itinerary</div>
+          </div>
+        </div>
+        
         <div class="loading-text">Creating your perfect trek...</div>
-        <div class="loading-subtext">This usually takes 10-15 seconds</div>
+        
+        <div class="hiking-fact-container">
+          <div class="fact-icon">💡</div>
+          <div class="hiking-fact" id="hikingFact">Did you know? The Appalachian Trail spans 2,190 miles across 14 states!</div>
+        </div>
       </div>
     </div>
 
@@ -1280,13 +1415,6 @@
 
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      // Update greeting with location
-      const location = localStorage.getItem('userLocation') || 'the mountains';
-      const greeting = document.getElementById('greeting');
-      if (greeting) {
-        greeting.innerText = `Design a personalized adventure in ${location}`;
-      }
-
       updateProgress();
       setupEventListeners();
     });
@@ -1416,6 +1544,9 @@
     async function generateItinerary() {
       // Show loading overlay
       document.getElementById('loadingOverlay').classList.add('active');
+      
+      // Initialize loading stages
+      startLoadingAnimation();
 
       // Prepare the data
       const formData = {
@@ -1448,46 +1579,115 @@
       }
 
       // Fade out quiz with elegant animation
-      const quizContainer = document.getElementById('quizContainer');
-      quizContainer.classList.add('fade-out');
-      
       setTimeout(() => {
-        quizContainer.style.display = 'none';
+        const quizContainer = document.getElementById('quizContainer');
+        quizContainer.classList.add('fade-out');
         
-        // In production, this would call your API
-        // For now, we'll simulate the API response
         setTimeout(() => {
-          // Show results container
-          const resultsContainer = document.getElementById('itinerary-cards');
-          resultsContainer.classList.add('show');
+          quizContainer.style.display = 'none';
           
-          // Here you would normally display the generated itinerary
-          resultsContainer.innerHTML = `
-            <div class="itinerary-day-card">
-              <div class="day-card-header">
-                <div class="day-number">Your Custom Itinerary</div>
-                <h3 class="day-title-enhanced">Trek Generated Successfully!</h3>
+          // In production, this would call your API
+          // For now, we'll simulate the API response
+          setTimeout(() => {
+            // Stop loading animation
+            stopLoadingAnimation();
+            
+            // Hide loading overlay
+            document.getElementById('loadingOverlay').classList.remove('active');
+            
+            // Show results container
+            const resultsContainer = document.getElementById('itinerary-cards');
+            resultsContainer.classList.add('show');
+            
+            // Here you would normally display the generated itinerary
+            resultsContainer.innerHTML = `
+              <div class="itinerary-day-card">
+                <div class="day-card-header">
+                  <div class="day-number">Your Custom Itinerary</div>
+                  <h3 class="day-title-enhanced">Trek Generated Successfully!</h3>
+                </div>
+                <div class="day-card-content">
+                  <p style="color: var(--text-dark); line-height: 1.8;">
+                    In production, this would display your AI-generated itinerary based on:<br><br>
+                    <strong>Trek Type:</strong> ${formData.trekType}<br>
+                    <strong>Duration:</strong> ${formData.trekLength || 'Day hike'}<br>
+                    <strong>Location:</strong> ${formData.location}<br>
+                    <strong>Difficulty:</strong> ${formData.difficulty}<br>
+                    <strong>Season:</strong> ${formData.season}<br>
+                    ${formData.accommodation ? `<strong>Accommodation:</strong> ${formData.accommodation}<br>` : ''}
+                    ${formData.interests.length > 0 ? `<strong>Interests:</strong> ${formData.interests.join(', ')}<br>` : ''}
+                    ${formData.details ? `<strong>Special Requirements:</strong> ${formData.details}` : ''}
+                  </p>
+                </div>
               </div>
-              <div class="day-card-content">
-                <p style="color: var(--text-dark); line-height: 1.8;">
-                  In production, this would display your AI-generated itinerary based on:<br><br>
-                  <strong>Trek Type:</strong> ${formData.trekType}<br>
-                  <strong>Duration:</strong> ${formData.trekLength || 'Day hike'}<br>
-                  <strong>Location:</strong> ${formData.location}<br>
-                  <strong>Difficulty:</strong> ${formData.difficulty}<br>
-                  <strong>Season:</strong> ${formData.season}<br>
-                  ${formData.accommodation ? `<strong>Accommodation:</strong> ${formData.accommodation}<br>` : ''}
-                  ${formData.interests.length > 0 ? `<strong>Interests:</strong> ${formData.interests.join(', ')}<br>` : ''}
-                  ${formData.details ? `<strong>Special Requirements:</strong> ${formData.details}` : ''}
-                </p>
-              </div>
-            </div>
-          `;
-        }, 1500);
-      }, 500);
+            `;
+          }, 12000); // Simulate 12 second loading time
+        }, 500);
+      }, 300);
 
       console.log('Generated prompt:', prompt);
       console.log('Form data:', formData);
+    }
+
+    // Loading animation functions
+    let loadingInterval;
+    let factInterval;
+    let stageInterval;
+    let currentStage = 1;
+
+    const hikingFacts = [
+      "Did you know? The Appalachian Trail spans 2,190 miles across 14 states!",
+      "Fun fact: Mount Everest grows about 4 millimeters each year due to geological forces.",
+      "Hiking tip: The 'Leave No Trace' principles help preserve trails for future generations.",
+      "Did you know? The Inca Trail to Machu Picchu limits visitors to 500 per day to protect the path.",
+      "Trail wisdom: 'Cotton kills' - synthetic fabrics dry faster and keep you warmer when wet.",
+      "Fun fact: The Pacific Crest Trail crosses through 7 national parks and 25 national forests.",
+      "Did you know? Norway's 'allemannsretten' law gives everyone the right to roam freely in nature.",
+      "Hiking burns about 400-700 calories per hour depending on terrain and pack weight.",
+      "The longest hiking trail in the world is Canada's Trans Canada Trail at 24,000 km!",
+      "Did you know? Studies show that hiking can increase creative problem-solving by 50%.",
+      "Fun fact: The Swiss have over 65,000 km of marked hiking trails - that's 1.5x Earth's circumference!",
+      "Trail tip: Trekking poles can reduce stress on knees by up to 25% on descents."
+    ];
+
+    function startLoadingAnimation() {
+      currentStage = 1;
+      
+      // Update stages every 3 seconds
+      stageInterval = setInterval(() => {
+        // Mark current stage as completed
+        document.querySelector(`.stage[data-stage="${currentStage}"]`).classList.remove('active');
+        document.querySelector(`.stage[data-stage="${currentStage}"]`).classList.add('completed');
+        
+        // Move to next stage
+        currentStage++;
+        if (currentStage <= 4) {
+          document.querySelector(`.stage[data-stage="${currentStage}"]`).classList.add('active');
+        }
+      }, 3000);
+      
+      // Rotate facts every 4 seconds
+      let factIndex = 0;
+      factInterval = setInterval(() => {
+        factIndex = (factIndex + 1) % hikingFacts.length;
+        const factElement = document.getElementById('hikingFact');
+        factElement.style.animation = 'none';
+        setTimeout(() => {
+          factElement.textContent = hikingFacts[factIndex];
+          factElement.style.animation = 'fadeIn 0.5s ease';
+        }, 10);
+      }, 4000);
+    }
+
+    function stopLoadingAnimation() {
+      clearInterval(stageInterval);
+      clearInterval(factInterval);
+      
+      // Reset stages
+      document.querySelectorAll('.stage').forEach(stage => {
+        stage.classList.remove('active', 'completed');
+      });
+      document.querySelector('.stage[data-stage="1"]').classList.add('active');
     }
   </script>
 </body>
