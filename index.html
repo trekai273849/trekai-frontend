@@ -217,6 +217,7 @@
             justify-content: center;
             transition: all 0.2s ease;
             color: #6b7280;
+            font-size: 16px;
         }
 
         .quiz-close:hover {
@@ -282,13 +283,23 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
+        .option-button:hover .option-icon {
+            color: var(--primary);
+        }
+
         .option-button.selected {
             border-color: var(--primary);
             background: #F0F7ED;
             box-shadow: 0 0 0 1px var(--primary);
         }
 
+        .option-button.selected .option-icon {
+            color: var(--primary);
+        }
+
         .option-icon {
+            font-size: 20px;
+            width: 24px;
             flex-shrink: 0;
             color: var(--primary-light);
         }
@@ -329,14 +340,27 @@
             text-align: center;
         }
 
+        .interest-button i {
+            font-size: 20px;
+            color: var(--primary-light);
+        }
+
         .interest-button:hover {
             border-color: var(--primary-light);
+        }
+
+        .interest-button:hover i {
+            color: var(--primary);
         }
 
         .interest-button.selected {
             border-color: var(--primary);
             background: #F0F7ED;
             box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        .interest-button.selected i {
+            color: var(--primary);
         }
 
         .quiz-navigation {
@@ -359,6 +383,10 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .nav-button i {
+            font-size: 14px;
         }
 
         .nav-button.back {
@@ -466,10 +494,7 @@
                 <h2 class="text-2xl font-bold">Complete Your Trek Details</h2>
                 <p class="text-gray-600 mt-2">We just need a few more details to create your perfect itinerary</p>
                 <button class="quiz-close" onclick="closeQuizModal()">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
             
@@ -487,12 +512,10 @@
                 <!-- Navigation -->
                 <div class="quiz-navigation">
                     <button class="nav-button back" id="backBtn" onclick="previousQuestion()" style="visibility: hidden;">
-                        <i data-lucide="arrow-left" size="20"></i>
-                        Back
+                        <i class="fas fa-arrow-left"></i> Back
                     </button>
                     <button class="nav-button next" id="nextBtn" onclick="nextQuestion()">
-                        Next
-                        <i data-lucide="arrow-right" size="20"></i>
+                        Next <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
@@ -946,73 +969,73 @@
                 title: "What type of adventure are you planning?",
                 type: 'single',
                 options: [
-                    { value: 'day-hike', icon: 'clock', title: 'Day Hike', description: 'Return to comfort each evening' },
-                    { value: 'multi-day', icon: 'tent', title: 'Multi-Day Trek', description: 'Immerse yourself in nature for days' }
+                    { value: 'day-hike', icon: 'fa-clock', title: 'Day Hike', description: 'Return to comfort each evening' },
+                    { value: 'multi-day', icon: 'fa-tent', title: 'Multi-Day Trek', description: 'Immerse yourself in nature for days' }
                 ]
             },
             'trek-length': {
                 title: "How many days will you be trekking?",
                 type: 'single',
                 options: [
-                    { value: '3-5', title: '3-5 days', description: 'Long weekend escape' },
-                    { value: '6-8', title: '6-8 days', description: 'Full week adventure' },
-                    { value: '9-14', title: '9-14 days', description: 'Extended journey' },
-                    { value: '15+', title: '15+ days', description: 'Epic expedition' }
+                    { value: '3-5', icon: 'fa-calendar-day', title: '3-5 days', description: 'Long weekend escape' },
+                    { value: '6-8', icon: 'fa-calendar-week', title: '6-8 days', description: 'Full week adventure' },
+                    { value: '9-14', icon: 'fa-calendar-days', title: '9-14 days', description: 'Extended journey' },
+                    { value: '15+', icon: 'fa-calendar-plus', title: '15+ days', description: 'Epic expedition' }
                 ]
             },
             'location': {
                 title: "Where would you like to explore?",
                 type: 'single',
                 options: [
-                    { value: 'any', icon: 'globe', title: 'Anywhere' },
-                    { value: 'europe', icon: 'mountain', title: 'Europe' },
-                    { value: 'asia', icon: 'mountain-snow', title: 'Asia' },
-                    { value: 'americas', icon: 'compass', title: 'Americas' },
-                    { value: 'oceania', icon: 'map', title: 'Oceania' },
-                    { value: 'africa', icon: 'palmtree', title: 'Africa' }
+                    { value: 'any', icon: 'fa-globe', title: 'Anywhere' },
+                    { value: 'europe', icon: 'fa-mountain', title: 'Europe' },
+                    { value: 'asia', icon: 'fa-mountain-sun', title: 'Asia' },
+                    { value: 'americas', icon: 'fa-compass', title: 'Americas' },
+                    { value: 'oceania', icon: 'fa-map', title: 'Oceania' },
+                    { value: 'africa', icon: 'fa-tree', title: 'Africa' }
                 ]
             },
             'difficulty': {
                 title: "What's your fitness level?",
                 type: 'single',
                 options: [
-                    { value: 'easy', icon: 'smile', title: 'Easy', description: 'Gentle paths, minimal elevation gain' },
-                    { value: 'moderate', icon: 'trending-up', title: 'Moderate', description: 'Some challenging sections, good fitness needed' },
-                    { value: 'challenging', icon: 'zap', title: 'Challenging', description: 'Steep terrain, high altitude, excellent fitness' }
+                    { value: 'easy', icon: 'fa-smile', title: 'Easy', description: 'Gentle paths, minimal elevation gain' },
+                    { value: 'moderate', icon: 'fa-chart-line', title: 'Moderate', description: 'Some challenging sections, good fitness needed' },
+                    { value: 'challenging', icon: 'fa-bolt', title: 'Challenging', description: 'Steep terrain, high altitude, excellent fitness' }
                 ]
             },
             'accommodation': {
                 title: "Where do you want to sleep?",
                 type: 'single',
                 options: [
-                    { value: 'camping', icon: 'tent', title: 'Camping', description: 'Under the stars' },
-                    { value: 'huts', icon: 'home', title: 'Mountain Huts', description: 'Basic shelter' },
-                    { value: 'lodges', icon: 'bed-double', title: 'Lodges', description: 'Comfortable stays' },
-                    { value: 'mixed', icon: 'layers', title: 'Mixed', description: 'Variety of options' }
+                    { value: 'camping', icon: 'fa-campground', title: 'Camping', description: 'Under the stars' },
+                    { value: 'huts', icon: 'fa-house', title: 'Mountain Huts', description: 'Basic shelter' },
+                    { value: 'lodges', icon: 'fa-bed', title: 'Lodges', description: 'Comfortable stays' },
+                    { value: 'mixed', icon: 'fa-layer-group', title: 'Mixed', description: 'Variety of options' }
                 ]
             },
             'season': {
                 title: "When are you planning to go?",
                 type: 'single',
                 options: [
-                    { value: 'spring', icon: 'flower', title: 'Spring', description: 'Wildflowers & mild weather' },
-                    { value: 'summer', icon: 'sun', title: 'Summer', description: 'Long days & warm weather' },
-                    { value: 'autumn', icon: 'leaf', title: 'Autumn', description: 'Fall colors & crisp air' },
-                    { value: 'winter', icon: 'snowflake', title: 'Winter', description: 'Snow-covered landscapes' }
+                    { value: 'spring', icon: 'fa-seedling', title: 'Spring', description: 'Wildflowers & mild weather' },
+                    { value: 'summer', icon: 'fa-sun', title: 'Summer', description: 'Long days & warm weather' },
+                    { value: 'autumn', icon: 'fa-leaf', title: 'Autumn', description: 'Fall colors & crisp air' },
+                    { value: 'winter', icon: 'fa-snowflake', title: 'Winter', description: 'Snow-covered landscapes' }
                 ]
             },
             'interests': {
                 title: "What excites you most?",
                 type: 'multi',
                 options: [
-                    { value: 'wildlife', icon: 'binoculars', title: 'Wildlife' },
-                    { value: 'photography', icon: 'camera', title: 'Photography' },
-                    { value: 'culture', icon: 'landmark', title: 'Culture' },
-                    { value: 'solitude', icon: 'user', title: 'Solitude' },
-                    { value: 'peaks', icon: 'triangle', title: 'Peak Bagging' },
-                    { value: 'lakes', icon: 'waves', title: 'Lakes & Rivers' },
-                    { value: 'forests', icon: 'trees', title: 'Forests' },
-                    { value: 'glaciers', icon: 'mountain-snow', title: 'Glaciers' }
+                    { value: 'wildlife', icon: 'fa-binoculars', title: 'Wildlife' },
+                    { value: 'photography', icon: 'fa-camera', title: 'Photography' },
+                    { value: 'culture', icon: 'fa-landmark', title: 'Culture' },
+                    { value: 'solitude', icon: 'fa-person', title: 'Solitude' },
+                    { value: 'peaks', icon: 'fa-mountain', title: 'Peak Bagging' },
+                    { value: 'lakes', icon: 'fa-water', title: 'Lakes & Rivers' },
+                    { value: 'forests', icon: 'fa-tree', title: 'Forests' },
+                    { value: 'glaciers', icon: 'fa-icicles', title: 'Glaciers' }
                 ]
             },
             'details': {
@@ -1604,15 +1627,11 @@
             
             const isLastQuestion = currentQuestion === questionsToShow.length - 1;
             if (isLastQuestion) {
-                nextBtn.innerHTML = '<i data-lucide="sparkles" size="20"></i> Generate Itinerary';
+                nextBtn.innerHTML = '<i class="fas fa-sparkles"></i> Generate Itinerary';
                 nextBtn.classList.add('generate');
             } else {
-                nextBtn.innerHTML = 'Next <i data-lucide="arrow-right" size="20"></i>';
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
                 nextBtn.classList.remove('generate');
-            }
-            
-            if (window.lucide) {
-                window.lucide.createIcons();
             }
         }
 
