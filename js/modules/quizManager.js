@@ -1,0 +1,350 @@
+// js/modules/quizManager.js
+
+import { LocationParser } from './locationParser.js';
+
+export class QuizManager {
+    constructor() {
+        this.locationParser = new LocationParser();
+        this.currentQuestion = 0;
+        this.quizAnswers = {};
+        this.parsedData = {};
+        this.questionsToShow = [];
+        this.originalInput = '';
+        
+        // Question templates
+        this.questionTemplates = {
+            'trek-type': {
+                title: "What type of adventure are you planning?",
+                type: 'single',
+                options: [
+                    { value: 'day-hike', icon: 'fa-clock', title: 'Day Hike', description: 'Return to comfort each evening' },
+                    { value: 'multi-day', icon: 'fa-tent', title: 'Multi-Day Trek', description: 'Immerse yourself in nature for days' }
+                ]
+            },
+            'trek-length': {
+                title: "How many days will you be trekking?",
+                type: 'single',
+                options: [
+                    { value: '3-5', icon: 'fa-calendar-day', title: '3-5 days', description: 'Long weekend escape' },
+                    { value: '6-8', icon: 'fa-calendar-week', title: '6-8 days', description: 'Full week adventure' },
+                    { value: '9-14', icon: 'fa-calendar-days', title: '9-14 days', description: 'Extended journey' },
+                    { value: '15+', icon: 'fa-calendar-plus', title: '15+ days', description: 'Epic expedition' }
+                ]
+            },
+            'location': {
+                title: "Where would you like to explore?",
+                type: 'single',
+                options: [
+                    { value: 'any', icon: 'fa-globe', title: 'Anywhere' },
+                    { value: 'europe', icon: 'fa-mountain', title: 'Europe' },
+                    { value: 'asia', icon: 'fa-mountain-sun', title: 'Asia' },
+                    { value: 'americas', icon: 'fa-compass', title: 'Americas' },
+                    { value: 'oceania', icon: 'fa-map', title: 'Oceania' },
+                    { value: 'africa', icon: 'fa-tree', title: 'Africa' }
+                ]
+            },
+            'difficulty': {
+                title: "What's your fitness level?",
+                type: 'single',
+                options: [
+                    { value: 'easy', icon: 'fa-smile', title: 'Easy', description: 'Gentle paths, minimal elevation gain' },
+                    { value: 'moderate', icon: 'fa-chart-line', title: 'Moderate', description: 'Some challenging sections, good fitness needed' },
+                    { value: 'challenging', icon: 'fa-bolt', title: 'Challenging', description: 'Steep terrain, high altitude, excellent fitness' }
+                ]
+            },
+            'accommodation': {
+                title: "Where do you want to sleep?",
+                type: 'single',
+                options: [
+                    { value: 'camping', icon: 'fa-campground', title: 'Camping', description: 'Under the stars' },
+                    { value: 'huts', icon: 'fa-house', title: 'Mountain Huts', description: 'Basic shelter' },
+                    { value: 'lodges', icon: 'fa-bed', title: 'Lodges', description: 'Comfortable stays' },
+                    { value: 'mixed', icon: 'fa-layer-group', title: 'Mixed', description: 'Variety of options' }
+                ]
+            },
+            'season': {
+                title: "When are you planning to go?",
+                type: 'single',
+                options: [
+                    { value: 'spring', icon: 'fa-seedling', title: 'Spring', description: 'Wildflowers & mild weather' },
+                    { value: 'summer', icon: 'fa-sun', title: 'Summer', description: 'Long days & warm weather' },
+                    { value: 'autumn', icon: 'fa-leaf', title: 'Autumn', description: 'Fall colors & crisp air' },
+                    { value: 'winter', icon: 'fa-snowflake', title: 'Winter', description: 'Snow-covered landscapes' }
+                ]
+            },
+            'interests': {
+                title: "What excites you most?",
+                type: 'multi',
+                options: [
+                    { value: 'wildlife', icon: 'fa-binoculars', title: 'Wildlife' },
+                    { value: 'photography', icon: 'fa-camera', title: 'Photography' },
+                    { value: 'culture', icon: 'fa-landmark', title: 'Culture' },
+                    { value: 'solitude', icon: 'fa-person', title: 'Solitude' },
+                    { value: 'peaks', icon: 'fa-mountain', title: 'Peak Bagging' },
+                    { value: 'lakes', icon: 'fa-water', title: 'Lakes & Rivers' },
+                    { value: 'forests', icon: 'fa-tree', title: 'Forests' },
+                    { value: 'glaciers', icon: 'fa-icicles', title: 'Glaciers' }
+                ]
+            },
+            'details': {
+                title: "Anything else we should know?",
+                type: 'text'
+            }
+        };
+    }
+    
+    /**
+     * Parse user input to extract trek information
+     */
+    parseUserInput(input) {
+        const parsed = {
+            trekType: null,
+            duration: null,
+            location: null,
+            locationDetails: null,
+            difficulty: null,
+            season: null,
+            accommodation: null
+        };
+        
+        const lowerInput = input.toLowerCase();
+        
+        // Parse location using the LocationParser
+        const locationResult = this.locationParser.parseLocation(input);
+        if (locationResult.region) {
+            parsed.location = locationResult.region;
+            parsed.locationDetails = locationResult;
+        }
+        
+        // Duration and trek type detection
+        const durationPatterns = [
+            { regex: /(\d+)\s*day(?:s)?\s*(?:hike|trek|trip|tour|walk)/i, type: 'days' },
+            { regex: /(\d+)\s*night(?:s)?/i, type: 'nights' },
+            { regex: /(\d+)\s*week(?:s)?/i, type: 'weeks' },
+            { regex: /week[\s-]?long/i, type: 'week' },
+            { regex: /fortnight/i, type: 'fortnight' },
+            { regex: /month[\s-]?long/i, type: 'month' },
+            { regex: /weekend/i, type: 'weekend' },
+            { regex: /long weekend/i, type: 'long-weekend' }
+        ];
+        
+        let durationFound = false;
+        for (const pattern of durationPatterns) {
+            const match = lowerInput.match(pattern.regex);
+            if (match) {
+                durationFound = true;
+                
+                if (pattern.type === 'days') {
+                    const days = parseInt(match[1]);
+                    if (days === 1) {
+                        parsed.trekType = 'day-hike';
+                    } else {
+                        parsed.trekType = 'multi-day';
+                        if (days <= 5) parsed.duration = '3-5';
+                        else if (days <= 8) parsed.duration = '6-8';
+                        else if (days <= 14) parsed.duration = '9-14';
+                        else parsed.duration = '15+';
+                    }
+                } else if (pattern.type === 'nights') {
+                    const nights = parseInt(match[1]);
+                    parsed.trekType = 'multi-day';
+                    const days = nights + 1;
+                    if (days <= 5) parsed.duration = '3-5';
+                    else if (days <= 8) parsed.duration = '6-8';
+                    else if (days <= 14) parsed.duration = '9-14';
+                    else parsed.duration = '15+';
+                } else if (pattern.type === 'weeks') {
+                    const weeks = parseInt(match[1]);
+                    parsed.trekType = 'multi-day';
+                    if (weeks === 1) parsed.duration = '6-8';
+                    else if (weeks === 2) parsed.duration = '9-14';
+                    else parsed.duration = '15+';
+                } else if (pattern.type === 'week') {
+                    parsed.trekType = 'multi-day';
+                    parsed.duration = '6-8';
+                } else if (pattern.type === 'fortnight') {
+                    parsed.trekType = 'multi-day';
+                    parsed.duration = '9-14';
+                } else if (pattern.type === 'month') {
+                    parsed.trekType = 'multi-day';
+                    parsed.duration = '15+';
+                } else if (pattern.type === 'weekend') {
+                    parsed.trekType = 'multi-day';
+                    parsed.duration = '3-5';
+                } else if (pattern.type === 'long-weekend') {
+                    parsed.trekType = 'multi-day';
+                    parsed.duration = '3-5';
+                }
+                break;
+            }
+        }
+        
+        // Only check for day hike if no duration was found
+        if (!durationFound) {
+            if (lowerInput.match(/day\s*(?:hike|trip|trek|tour|walk)/i) && 
+                !lowerInput.match(/\d+\s*day/i)) {
+                parsed.trekType = 'day-hike';
+            }
+        }
+        
+        // Additional country/region detection (fallback for places not in city database)
+        const regionPatterns = {
+            'europe': ['alps', 'alpine', 'pyrenees', 'dolomites', 'scotland', 'norway', 'iceland', 
+                      'corsica', 'tatras', 'carpathians', 'balkans'],
+            'asia': ['himalayas', 'nepal', 'tibet', 'ladakh', 'bhutan', 'japan', 'japanese alps'],
+            'americas': ['rockies', 'andes', 'patagonia', 'appalachian', 'sierra', 'cascade'],
+            'oceania': ['new zealand', 'tasmania', 'australia'],
+            'africa': ['kilimanjaro', 'atlas', 'drakensberg', 'simien']
+        };
+        
+        if (!parsed.location) {
+            for (const [region, patterns] of Object.entries(regionPatterns)) {
+                for (const pattern of patterns) {
+                    if (lowerInput.includes(pattern)) {
+                        parsed.location = region;
+                        break;
+                    }
+                }
+                if (parsed.location) break;
+            }
+        }
+        
+        // Difficulty detection
+        const difficultyPatterns = {
+            easy: ['easy', 'beginner', 'gentle', 'leisurely', 'relaxed', 'simple', 'light', 'casual'],
+            moderate: ['moderate', 'intermediate', 'medium', 'average', 'normal'],
+            challenging: ['challenging', 'difficult', 'hard', 'strenuous', 'tough', 'demanding', 
+                         'advanced', 'expert', 'extreme', 'technical', 'arduous']
+        };
+        
+        for (const [level, patterns] of Object.entries(difficultyPatterns)) {
+            for (const pattern of patterns) {
+                if (lowerInput.includes(pattern)) {
+                    parsed.difficulty = level;
+                    break;
+                }
+            }
+            if (parsed.difficulty) break;
+        }
+        
+        // Season detection
+        const seasonPatterns = {
+            spring: ['spring', 'april', 'may', 'march'],
+            summer: ['summer', 'june', 'july', 'august', 'warm season', 'hot season'],
+            autumn: ['autumn', 'fall', 'september', 'october', 'november'],
+            winter: ['winter', 'december', 'january', 'february', 'cold season', 'snow season']
+        };
+        
+        for (const [season, patterns] of Object.entries(seasonPatterns)) {
+            for (const pattern of patterns) {
+                if (lowerInput.includes(pattern)) {
+                    parsed.season = season;
+                    break;
+                }
+            }
+            if (parsed.season) break;
+        }
+        
+        // Accommodation detection
+        const accommodationPatterns = {
+            camping: ['camping', 'tent', 'camp', 'bivouac', 'wild camping'],
+            huts: ['hut', 'refuge', 'rifugio', 'mountain hut', 'alpine hut', 'bothies', 'cabins'],
+            lodges: ['lodge', 'hotel', 'guesthouse', 'inn', 'teahouse', 'accommodation', 'stay'],
+            mixed: ['mixed accommodation', 'variety of accommodation', 'huts and camping']
+        };
+        
+        for (const [type, patterns] of Object.entries(accommodationPatterns)) {
+            for (const pattern of patterns) {
+                if (lowerInput.includes(pattern)) {
+                    parsed.accommodation = type;
+                    break;
+                }
+            }
+            if (parsed.accommodation) break;
+        }
+        
+        return parsed;
+    }
+    
+    /**
+     * Generate dynamic quiz based on parsed data
+     */
+    generateDynamicQuiz(parsed) {
+        const allQuestions = [
+            'trek-type',
+            'trek-length',
+            'location',
+            'difficulty',
+            'accommodation',
+            'season',
+            'interests',
+            'details'
+        ];
+        
+        // Filter out questions we already have answers for
+        const questions = allQuestions.filter(q => {
+            if (q === 'trek-type' && parsed.trekType) return false;
+            if (q === 'trek-length' && parsed.duration) return false;
+            if (q === 'location' && parsed.location) return false;
+            if (q === 'difficulty' && parsed.difficulty) return false;
+            if (q === 'season' && parsed.season) return false;
+            if (q === 'accommodation' && parsed.accommodation) return false;
+            return true;
+        });
+        
+        // Skip trek-length if day hike
+        if (parsed.trekType === 'day-hike') {
+            const lengthIndex = questions.indexOf('trek-length');
+            if (lengthIndex > -1) questions.splice(lengthIndex, 1);
+            
+            // Also skip accommodation for day hikes
+            const accomIndex = questions.indexOf('accommodation');
+            if (accomIndex > -1) questions.splice(accomIndex, 1);
+        }
+        
+        return questions;
+    }
+    
+    /**
+     * Initialize quiz with user input
+     */
+    initializeQuiz(input) {
+        this.originalInput = input;
+        this.currentQuestion = 0;
+        this.quizAnswers = {};
+        
+        if (!input) {
+            // No input - show full quiz
+            this.parsedData = {};
+            this.questionsToShow = Object.keys(this.questionTemplates);
+        } else {
+            // Parse input and show adaptive quiz
+            this.parsedData = this.parseUserInput(input);
+            this.questionsToShow = this.generateDynamicQuiz(this.parsedData);
+        }
+        
+        return {
+            parsedData: this.parsedData,
+            questionsToShow: this.questionsToShow,
+            needsQuiz: this.questionsToShow.length > 0
+        };
+    }
+    
+    /**
+     * Get combined data for submission
+     */
+    getCombinedData() {
+        return {
+            originalInput: this.originalInput,
+            trekType: this.quizAnswers['trek-type'] || this.parsedData.trekType || 'multi-day',
+            trekLength: this.quizAnswers['trek-length'] || this.parsedData.duration || '6-8',
+            location: this.quizAnswers.location || this.parsedData.location || 'any',
+            locationDetails: this.parsedData.locationDetails || {},
+            difficulty: this.quizAnswers.difficulty || this.parsedData.difficulty || 'moderate',
+            accommodation: this.quizAnswers.accommodation || this.parsedData.accommodation || 'mixed',
+            season: this.quizAnswers.season || this.parsedData.season || 'summer',
+            interests: this.quizAnswers.interests || [],
+            details: this.quizAnswers.details || ''
+        };
+    }
+}
