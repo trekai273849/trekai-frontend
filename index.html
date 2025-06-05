@@ -435,21 +435,302 @@
             box-shadow: 0 0 0 1px var(--primary);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .quiz-modal {
-                padding: 0;
-            }
+        /* Add these styles to your index.html in the Quiz Modal Styles section */
 
-            .quiz-container {
-                max-height: 100vh;
-                border-radius: 0;
-            }
+/* Location Input Styles */
+.location-input-container {
+    margin-top: 20px;
+    position: relative;
+}
 
-            .interests-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+.location-text-input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background: var(--white);
+}
+
+.location-text-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+}
+
+.location-text-input.recognized {
+    border-color: var(--success);
+    background: #f0f9f0;
+}
+
+.location-helper-text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Autocomplete Suggestions */
+.location-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-top: 4px;
+    display: none;
+}
+
+.suggestions-dropdown {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
+.suggestion-item:hover,
+.suggestion-item.highlighted {
+    background: #f8f9fa;
+}
+
+.suggestion-item i {
+    color: var(--primary-light);
+    width: 16px;
+    text-align: center;
+}
+
+.suggestion-item i.fa-fire {
+    color: var(--accent);
+}
+
+.recognition-message {
+    padding: 8px 12px;
+    background: #f0f9f0;
+    border: 1px solid #27ae60;
+    border-radius: var(--radius-sm);
+    color: #27ae60;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Divider */
+.divider-with-text {
+    text-align: center;
+    margin: 24px 0;
+    position: relative;
+}
+
+.divider-with-text::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+    transform: translateY(-50%);
+}
+
+.divider-with-text span {
+    background: var(--white);
+    padding: 0 16px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Surprise Me Button */
+.surprise-me-button {
+    width: 100%;
+    padding: 20px 24px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.surprise-me-button:hover {
+    border-color: var(--primary);
+    background: linear-gradient(145deg, #fcfcfc 0%, #f8fdf6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.surprise-me-button:hover i {
+    color: var(--primary);
+}
+
+.surprise-me-button.selected {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.surprise-me-button.selected i {
+    color: white;
+}
+
+.surprise-me-button i:first-child {
+    font-size: 20px;
+    color: var(--primary-light);
+}
+
+.surprise-me-button i:last-child {
+    font-size: 16px;
+    color: var(--accent);
+    position: absolute;
+    right: 24px;
+}
+
+.surprise-me-button.selected i:last-child {
+    color: white;
+    animation: sparkle 0.6s ease-out;
+}
+
+@keyframes sparkle {
+    0% { transform: scale(0) rotate(0deg); opacity: 0; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+    100% { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+/* Trending Destinations */
+.trending-destinations {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.trending-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.trend-tag {
+    padding: 8px 16px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.trend-tag:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2);
+}
+
+.trend-tag:hover::after {
+    content: '✈️';
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    font-size: 12px;
+    animation: fly 0.5s ease-out;
+}
+
+@keyframes fly {
+    0% { transform: translate(0, 0) scale(0); opacity: 0; }
+    50% { transform: translate(10px, -10px) scale(1.2); opacity: 1; }
+    100% { transform: translate(20px, -20px) scale(0); opacity: 0; }
+}
+
+/* Animation for fade in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar for suggestions dropdown */
+.suggestions-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .location-text-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .surprise-me-button {
+        padding: 18px 20px;
+    }
+    
+    .surprise-me-button i:last-child {
+        position: static;
+        margin-left: auto;
+    }
+    
+    .trending-destinations {
+        justify-content: center;
+    }
+    
+    .trending-label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 4px;
+    }
+}
+
+    
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">

@@ -11,6 +11,23 @@ export class QuizManager {
         this.questionsToShow = [];
         this.originalInput = '';
         
+        // Popular destinations for autocomplete
+        this.popularDestinations = [
+            // Europe
+            'Swiss Alps', 'Dolomites', 'Tour du Mont Blanc', 'Chamonix', 'Zermatt',
+            'Norway', 'Iceland', 'Scotland', 'Pyrenees', 'Corsica',
+            // Americas  
+            'Patagonia', 'Peru', 'Inca Trail', 'Colorado', 'Yosemite',
+            'Grand Canyon', 'Canadian Rockies', 'Alaska', 'Torres del Paine',
+            // Asia
+            'Nepal', 'Everest Base Camp', 'Annapurna', 'Japan', 'Japanese Alps',
+            'Bhutan', 'Ladakh', 'Kashmir', 'Vietnam', 'Thailand',
+            // Oceania
+            'New Zealand', 'Milford Track', 'Tasmania', 'Australia', 'Fiji',
+            // Africa
+            'Kilimanjaro', 'Morocco', 'Atlas Mountains', 'South Africa', 'Kenya'
+        ];
+        
         // Question templates
         this.questionTemplates = {
             'trek-type': {
@@ -33,15 +50,11 @@ export class QuizManager {
             },
             'location': {
                 title: "Where would you like to explore?",
-                type: 'single',
-                options: [
-                    { value: 'any', icon: 'fa-globe', title: 'Anywhere' },
-                    { value: 'europe', icon: 'fa-mountain', title: 'Europe' },
-                    { value: 'asia', icon: 'fa-mountain-sun', title: 'Asia' },
-                    { value: 'americas', icon: 'fa-compass', title: 'Americas' },
-                    { value: 'oceania', icon: 'fa-map', title: 'Oceania' },
-                    { value: 'africa', icon: 'fa-tree', title: 'Africa' }
-                ]
+                type: 'location-input',
+                placeholder: "Enter a continent, country, region, or city...",
+                examples: ["Swiss Alps", "Peru", "New Zealand", "Patagonia", "Iceland", "Colorado"],
+                surpriseText: "Surprise me - I'm open to anywhere!",
+                trendingDestinations: ["Patagonia", "Dolomites", "Iceland", "Japan Alps", "Torres del Paine"]
             },
             'difficulty': {
                 title: "What's your fitness level?",
@@ -80,10 +93,8 @@ export class QuizManager {
                     { value: 'photography', icon: 'fa-camera', title: 'Photography' },
                     { value: 'culture', icon: 'fa-landmark', title: 'Culture' },
                     { value: 'solitude', icon: 'fa-person', title: 'Solitude' },
-                    { value: 'peaks', icon: 'fa-mountain', title: 'Peak Bagging' },
                     { value: 'lakes', icon: 'fa-water', title: 'Lakes & Rivers' },
-                    { value: 'forests', icon: 'fa-tree', title: 'Forests' },
-                    { value: 'glaciers', icon: 'fa-icicles', title: 'Glaciers' }
+                    { value: 'forests', icon: 'fa-tree', title: 'Forests' }
                 ]
             },
             'details': {
@@ -91,6 +102,43 @@ export class QuizManager {
                 type: 'text'
             }
         };
+    }
+    
+    /**
+     * Get autocomplete suggestions for location input
+     */
+    getLocationSuggestions(input) {
+        if (!input || input.length < 2) return [];
+        
+        const lowerInput = input.toLowerCase();
+        const suggestions = [];
+        
+        // Check popular destinations
+        this.popularDestinations.forEach(dest => {
+            if (dest.toLowerCase().includes(lowerInput)) {
+                suggestions.push({
+                    type: 'popular',
+                    value: dest,
+                    display: dest
+                });
+            }
+        });
+        
+        // Check cities from location parser
+        const cities = Object.keys(this.locationParser.cities);
+        cities.forEach(city => {
+            if (city.includes(lowerInput) && suggestions.length < 8) {
+                const cityData = this.locationParser.cities[city];
+                suggestions.push({
+                    type: 'city',
+                    value: city,
+                    display: `${city.charAt(0).toUpperCase() + city.slice(1)}, ${cityData.country}`
+                });
+            }
+        });
+        
+        // Limit suggestions
+        return suggestions.slice(0, 8);
     }
     
     /**
@@ -334,12 +382,30 @@ export class QuizManager {
      * Get combined data for submission
      */
     getCombinedData() {
+        const locationAnswer = this.quizAnswers.location || this.parsedData.location;
+        let finalLocation = 'any';
+        let specificLocation = null;
+        let parsedLocationDetails = null;
+        
+        if (locationAnswer && locationAnswer !== 'anywhere') {
+            if (typeof locationAnswer === 'string') {
+                // Parse the user's location input
+                parsedLocationDetails = this.locationParser.parseLocation(locationAnswer);
+                finalLocation = parsedLocationDetails.region || 'any';
+                specificLocation = locationAnswer; // Keep their exact input
+            } else {
+                // Already parsed
+                finalLocation = locationAnswer;
+            }
+        }
+        
         return {
             originalInput: this.originalInput,
             trekType: this.quizAnswers['trek-type'] || this.parsedData.trekType || 'multi-day',
             trekLength: this.quizAnswers['trek-length'] || this.parsedData.duration || '6-8',
-            location: this.quizAnswers.location || this.parsedData.location || 'any',
-            locationDetails: this.parsedData.locationDetails || {},
+            location: finalLocation,
+            specificLocation: specificLocation,
+            locationDetails: this.parsedData.locationDetails || parsedLocationDetails || {},
             difficulty: this.quizAnswers.difficulty || this.parsedData.difficulty || 'moderate',
             accommodation: this.quizAnswers.accommodation || this.parsedData.accommodation || 'mixed',
             season: this.quizAnswers.season || this.parsedData.season || 'summer',

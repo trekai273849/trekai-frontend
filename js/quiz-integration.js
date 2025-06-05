@@ -5,6 +5,10 @@ import { QuizManager } from './modules/quizManager.js';
 // Initialize quiz manager
 const quizManager = new QuizManager();
 
+// Autocomplete state
+let autocompleteTimeout = null;
+let selectedSuggestionIndex = -1;
+
 // Global functions that need to be accessible from HTML
 window.selectOption = function(question, value) {
     quizManager.quizAnswers[question] = value;
@@ -27,6 +31,111 @@ window.updateTextAnswer = function(question) {
     quizManager.quizAnswers[question] = textarea.value;
 };
 
+// Location-specific functions
+window.updateLocationAnswer = function(question) {
+    const input = document.getElementById('locationInput');
+    const value = input.value.trim();
+    
+    if (value) {
+        // Parse the location to see if we recognize it
+        const locationResult = quizManager.locationParser.parseLocation(value);
+        quizManager.quizAnswers[question] = value;
+        
+        // Show a subtle indicator if we recognized the location
+        if (locationResult.region) {
+            input.classList.add('recognized');
+            showLocationRecognition(locationResult);
+        } else {
+            input.classList.remove('recognized');
+            hideSuggestions();
+        }
+    } else {
+        input.classList.remove('recognized');
+        hideSuggestions();
+    }
+};
+
+window.handleLocationInput = function(event) {
+    const value = event.target.value;
+    
+    // Clear previous timeout
+    clearTimeout(autocompleteTimeout);
+    
+    // Reset suggestion selection
+    selectedSuggestionIndex = -1;
+    
+    if (value.length >= 2) {
+        // Debounce autocomplete
+        autocompleteTimeout = setTimeout(() => {
+            showAutocompleteSuggestions(value);
+        }, 200);
+    } else {
+        hideSuggestions();
+    }
+    
+    // Update the answer
+    updateLocationAnswer('location');
+};
+
+window.handleLocationKeydown = function(event) {
+    const suggestionsContainer = document.getElementById('locationSuggestions');
+    const suggestions = suggestionsContainer.querySelectorAll('.suggestion-item');
+    
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        if (selectedSuggestionIndex >= 0 && suggestions[selectedSuggestionIndex]) {
+            // Select the highlighted suggestion
+            selectLocationSuggestion(suggestions[selectedSuggestionIndex].dataset.value);
+        } else {
+            // Just go to next question with current value
+            const value = event.target.value.trim();
+            if (value) {
+                nextQuestion();
+            }
+        }
+    } else if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (suggestions.length > 0) {
+            selectedSuggestionIndex = Math.min(selectedSuggestionIndex + 1, suggestions.length - 1);
+            updateSuggestionHighlight(suggestions);
+        }
+    } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (suggestions.length > 0) {
+            selectedSuggestionIndex = Math.max(selectedSuggestionIndex - 1, -1);
+            updateSuggestionHighlight(suggestions);
+        }
+    } else if (event.key === 'Escape') {
+        hideSuggestions();
+        selectedSuggestionIndex = -1;
+    }
+};
+
+window.selectSurpriseMe = function(question) {
+    quizManager.quizAnswers[question] = 'anywhere';
+    document.getElementById('locationInput').value = '';
+    document.getElementById('locationInput').classList.remove('recognized');
+    hideSuggestions();
+    renderQuestion(); // Re-render to show selected state
+    setTimeout(nextQuestion, 300);
+};
+
+window.selectTrendingDestination = function(destination) {
+    document.getElementById('locationInput').value = destination;
+    updateLocationAnswer('location');
+    hideSuggestions();
+    // Small delay for visual feedback
+    setTimeout(nextQuestion, 200);
+};
+
+window.selectLocationSuggestion = function(value) {
+    document.getElementById('locationInput').value = value;
+    updateLocationAnswer('location');
+    hideSuggestions();
+    // Small delay for visual feedback
+    setTimeout(nextQuestion, 200);
+};
+
 window.nextQuestion = function() {
     if (quizManager.currentQuestion < quizManager.questionsToShow.length - 1) {
         quizManager.currentQuestion++;
@@ -47,6 +156,80 @@ window.closeQuizModal = function() {
     document.getElementById('quizModal').classList.remove('active');
     document.body.style.overflow = 'auto';
 };
+
+// Helper functions
+function showAutocompleteSuggestions(input) {
+    const suggestions = quizManager.getLocationSuggestions(input);
+    const container = document.getElementById('locationSuggestions');
+    
+    if (suggestions.length > 0) {
+        let html = '<div class="suggestions-dropdown">';
+        suggestions.forEach((suggestion, index) => {
+            const icon = suggestion.type === 'popular' ? 'fa-fire' : 'fa-map-marker-alt';
+            html += `
+                <div class="suggestion-item ${index === selectedSuggestionIndex ? 'highlighted' : ''}" 
+                     data-value="${suggestion.value}"
+                     onmouseover="highlightSuggestion(${index})"
+                     onclick="selectLocationSuggestion('${suggestion.value}')">
+                    <i class="fas ${icon}"></i>
+                    <span>${suggestion.display}</span>
+                </div>
+            `;
+        });
+        html += '</div>';
+        container.innerHTML = html;
+        container.style.display = 'block';
+    } else {
+        hideSuggestions();
+    }
+}
+
+window.highlightSuggestion = function(index) {
+    selectedSuggestionIndex = index;
+    const suggestions = document.querySelectorAll('.suggestion-item');
+    updateSuggestionHighlight(suggestions);
+};
+
+function updateSuggestionHighlight(suggestions) {
+    suggestions.forEach((item, index) => {
+        if (index === selectedSuggestionIndex) {
+            item.classList.add('highlighted');
+        } else {
+            item.classList.remove('highlighted');
+        }
+    });
+}
+
+function hideSuggestions() {
+    const container = document.getElementById('locationSuggestions');
+    container.style.display = 'none';
+    container.innerHTML = '';
+}
+
+function showLocationRecognition(locationResult) {
+    const suggestionsDiv = document.getElementById('locationSuggestions');
+    let message = '';
+    
+    if (locationResult.city) {
+        message = `✓ Found ${locationResult.city}, ${locationResult.country}`;
+    } else if (locationResult.country) {
+        message = `✓ Found ${locationResult.country}`;
+    } else if (locationResult.region) {
+        const regionNames = {
+            'europe': 'Europe',
+            'asia': 'Asia',
+            'americas': 'The Americas',
+            'oceania': 'Oceania',
+            'africa': 'Africa'
+        };
+        message = `✓ Found in ${regionNames[locationResult.region] || locationResult.region}`;
+    }
+    
+    if (message) {
+        suggestionsDiv.innerHTML = `<div class="recognition-message">${message}</div>`;
+        suggestionsDiv.style.display = 'block';
+    }
+}
 
 // Render current question
 function renderQuestion() {
@@ -95,12 +278,69 @@ function renderQuestion() {
             <textarea class="text-input" 
                       id="detailsInput" 
                       placeholder="Share any other preferences: budget, group size, must-see places, fitness level, dietary needs, or special interests..."
-                      onchange="updateTextAnswer('${questionKey}')"></textarea>
+                      onchange="updateTextAnswer('${questionKey}')">${quizManager.quizAnswers[questionKey] || ''}</textarea>
+        `;
+    } else if (question.type === 'location-input') {
+        const randomExample = question.examples[Math.floor(Math.random() * question.examples.length)];
+        const currentValue = quizManager.quizAnswers[questionKey] || '';
+        const isAnywhere = currentValue === 'anywhere';
+        
+        html += `
+            <div class="location-input-container">
+                <input 
+                    type="text" 
+                    id="locationInput" 
+                    class="location-text-input" 
+                    placeholder="${question.placeholder}"
+                    value="${isAnywhere ? '' : currentValue}"
+                    oninput="handleLocationInput(event)"
+                    onkeydown="handleLocationKeydown(event)"
+                    onfocus="handleLocationInput(event)"
+                />
+                <div class="location-helper-text">
+                    <i class="fas fa-lightbulb text-gray-400"></i>
+                    <span>Try "${randomExample}" or be as specific as you like</span>
+                </div>
+                
+                <div id="locationSuggestions" class="location-suggestions"></div>
+                
+                <div class="divider-with-text">
+                    <span>OR</span>
+                </div>
+                
+                <button 
+                    class="surprise-me-button ${isAnywhere ? 'selected' : ''}"
+                    onclick="selectSurpriseMe('${questionKey}')"
+                >
+                    <i class="fas fa-globe-americas"></i>
+                    <span>${question.surpriseText}</span>
+                    <i class="fas fa-sparkles"></i>
+                </button>
+                
+                ${question.trendingDestinations ? `
+                    <div class="trending-destinations">
+                        <span class="trending-label">Trending:</span>
+                        ${question.trendingDestinations.map(dest => `
+                            <button class="trend-tag" onclick="selectTrendingDestination('${dest}')">
+                                ${dest}
+                            </button>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
         `;
     }
     
     html += '</div>';
     container.innerHTML = html;
+    
+    // Focus on location input if it's a location question
+    if (question.type === 'location-input') {
+        setTimeout(() => {
+            const input = document.getElementById('locationInput');
+            if (input) input.focus();
+        }, 100);
+    }
     
     // Update navigation
     updateNavigation();
