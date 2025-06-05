@@ -1,4 +1,4 @@
-// js/utils/itinerary.js - Fixed version with proper accordion styling
+// js/utils/itinerary.js - Updated with extractDays export for map functionality
 // This file contains utility functions for processing and displaying itineraries
 
 /**
@@ -153,11 +153,11 @@ function extractIntroduction(text) {
 }
 
 /**
- * Extracts the day sections from the content
+ * Extracts the day sections from the content - NOW EXPORTED FOR MAP FUNCTIONALITY
  * @param {string} text 
  * @returns {Array<Object>}
  */
-function extractDays(text) {
+export function extractDays(text) {
   const days = [];
   const dayRegex = /(?:(?:\*\*\*|\#{1,3}|\*\*|\*)?\s*Day\s+(\d+)[:\s]+([^\n]*?)(?:\*\*\*|\*\*|\*)?)(?:\n)([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+[:\s]|#{1,3}\s*Packing List|#{1,3}\s*Local Insights|#{1,3}\s*Practical Information|$)/gi;
   
@@ -194,7 +194,12 @@ function extractDays(text) {
       dayNum,
       title,
       bodyText,
-      fields
+      fields,
+      // Add structured data for map functionality
+      start: fields.Start || null,
+      end: fields.End || null,
+      distance: fields.Distance || null,
+      elevation: fields['Elevation gain'] || fields['Elevation gain/loss'] || fields.Elevation || null
     });
   }
   
@@ -448,4 +453,65 @@ function renderDayContent(day) {
     // If no structured fields were found, return the raw body text
     return `<p>${day.bodyText}</p>`;
   }
+}
+
+/**
+ * Enhanced version of processSubsections specifically for the customize page
+ * @param {string} content 
+ * @returns {string}
+ */
+export function processSubsectionsEnhanced(content) {
+  const lines = content.split('\n');
+  let html = '';
+  let currentSubsection = null;
+  let currentItems = [];
+
+  lines.forEach(line => {
+    const trimmedLine = line.trim();
+    
+    if (trimmedLine.match(/^\*(.+?):\*$/) || trimmedLine.match(/^(.+?):$/)) {
+      if (currentSubsection) {
+        html += createSubsection(currentSubsection, currentItems);
+      }
+      
+      currentSubsection = trimmedLine.replace(/^\*|\*$/g, '').replace(/:$/, '');
+      currentItems = [];
+    } else if (trimmedLine.startsWith('-') || trimmedLine.startsWith('•')) {
+      currentItems.push(trimmedLine.substring(1).trim());
+    } else if (trimmedLine) {
+      if (currentSubsection) {
+        currentItems.push(trimmedLine);
+      } else {
+        html += `<p style="margin-bottom: 15px; line-height: 1.8;">${trimmedLine}</p>`;
+      }
+    }
+  });
+
+  if (currentSubsection) {
+    html += createSubsection(currentSubsection, currentItems);
+  }
+
+  return html || `<div style="white-space: pre-wrap; line-height: 1.8;">${content}</div>`;
+}
+
+/**
+ * Helper to create subsection HTML for enhanced version
+ * @param {string} title 
+ * @param {Array} items 
+ * @returns {string}
+ */
+function createSubsection(title, items) {
+  return `
+    <div style="margin-bottom: 25px;">
+      <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 15px; font-size: 1.1em;">${title}</h4>
+      <ul style="list-style: none; padding: 0;">
+        ${items.map(item => `
+          <li style="padding: 8px 0; padding-left: 20px; position: relative; color: var(--text-light);">
+            <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+            ${item}
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+  `;
 }
