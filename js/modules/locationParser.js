@@ -177,6 +177,53 @@ export class LocationParser {
             'antananarivo': { country: 'Madagascar', region: 'africa', aliases: ['tana'] }
         };
         
+        // Geographic features (mountain ranges, regions, etc.)
+        this.geographicFeatures = {
+            // Mountain ranges
+            'alps': { region: 'europe', country: 'Multiple', specificArea: 'European Alps' },
+            'swiss alps': { region: 'europe', country: 'Switzerland', specificArea: 'Swiss Alps' },
+            'french alps': { region: 'europe', country: 'France', specificArea: 'French Alps' },
+            'italian alps': { region: 'europe', country: 'Italy', specificArea: 'Italian Alps' },
+            'austrian alps': { region: 'europe', country: 'Austria', specificArea: 'Austrian Alps' },
+            'dolomites': { region: 'europe', country: 'Italy', specificArea: 'Dolomites' },
+            'pyrenees': { region: 'europe', country: 'France/Spain', specificArea: 'Pyrenees' },
+            'himalayas': { region: 'asia', country: 'Multiple', specificArea: 'Himalayas' },
+            'rockies': { region: 'americas', country: 'USA/Canada', specificArea: 'Rocky Mountains' },
+            'rocky mountains': { region: 'americas', country: 'USA/Canada', specificArea: 'Rocky Mountains' },
+            'andes': { region: 'americas', country: 'Multiple', specificArea: 'Andes Mountains' },
+            'appalachian': { region: 'americas', country: 'USA', specificArea: 'Appalachian Mountains' },
+            'sierra nevada': { region: 'americas', country: 'USA', specificArea: 'Sierra Nevada' },
+            'cascade range': { region: 'americas', country: 'USA', specificArea: 'Cascade Range' },
+            'atlas mountains': { region: 'africa', country: 'Morocco', specificArea: 'Atlas Mountains' },
+            'drakensberg': { region: 'africa', country: 'South Africa', specificArea: 'Drakensberg' },
+            'japanese alps': { region: 'asia', country: 'Japan', specificArea: 'Japanese Alps' },
+            'southern alps': { region: 'oceania', country: 'New Zealand', specificArea: 'Southern Alps' },
+            
+            // Specific trekking regions
+            'tour du mont blanc': { region: 'europe', country: 'France/Italy/Switzerland', specificArea: 'Tour du Mont Blanc' },
+            'patagonia': { region: 'americas', country: 'Argentina/Chile', specificArea: 'Patagonia' },
+            'torres del paine': { region: 'americas', country: 'Chile', specificArea: 'Torres del Paine' },
+            'inca trail': { region: 'americas', country: 'Peru', specificArea: 'Inca Trail' },
+            'everest base camp': { region: 'asia', country: 'Nepal', specificArea: 'Everest Base Camp' },
+            'annapurna circuit': { region: 'asia', country: 'Nepal', specificArea: 'Annapurna Circuit' },
+            'milford track': { region: 'oceania', country: 'New Zealand', specificArea: 'Milford Track' },
+            'kilimanjaro': { region: 'africa', country: 'Tanzania', specificArea: 'Mount Kilimanjaro' },
+            'mont blanc': { region: 'europe', country: 'France', specificArea: 'Mont Blanc' },
+            'matterhorn': { region: 'europe', country: 'Switzerland', specificArea: 'Matterhorn' },
+            
+            // Countries that are often used as locations
+            'scotland': { region: 'europe', country: 'Scotland', specificArea: 'Scottish Highlands' },
+            'iceland': { region: 'europe', country: 'Iceland', specificArea: 'Iceland' },
+            'norway': { region: 'europe', country: 'Norway', specificArea: 'Norwegian Fjords' },
+            'corsica': { region: 'europe', country: 'France', specificArea: 'Corsica' },
+            'tasmania': { region: 'oceania', country: 'Australia', specificArea: 'Tasmania' },
+            'ladakh': { region: 'asia', country: 'India', specificArea: 'Ladakh' },
+            'bhutan': { region: 'asia', country: 'Bhutan', specificArea: 'Bhutan' },
+            'nepal': { region: 'asia', country: 'Nepal', specificArea: 'Nepal' },
+            'peru': { region: 'americas', country: 'Peru', specificArea: 'Peru' },
+            'colorado': { region: 'americas', country: 'USA', specificArea: 'Colorado' }
+        };
+        
         // States/Provinces mapped to their countries
         this.states = {
             // US States
@@ -241,8 +288,21 @@ export class LocationParser {
             city: null,
             country: null,
             state: null,
-            isSpecific: false
+            specificArea: null,
+            isSpecific: false,
+            originalInput: input // ALWAYS preserve original input
         };
+        
+        // First check geographic features (alps, himalayas, etc.)
+        for (const [feature, data] of Object.entries(this.geographicFeatures)) {
+            if (lowerInput.includes(feature)) {
+                result.specificArea = data.specificArea;
+                result.country = data.country;
+                result.region = data.region;
+                result.isSpecific = true;
+                return result;
+            }
+        }
         
         // Check for cities (including aliases)
         for (const [city, data] of Object.entries(this.cities)) {
@@ -277,20 +337,31 @@ export class LocationParser {
             }
         }
         
-        // Check if location prepositions are used with any word
-        // This helps catch cases like "near [unknown city]"
+        // Try to extract location name after prepositions
         for (const prep of this.locationPrepositions) {
-            const regex = new RegExp(`${prep}\\s+(\\w+(?:\\s+\\w+)?)`, 'i');
+            const regex = new RegExp(`${prep}\\s+([\\w\\s]+?)(?:\\s+with\\s+|\\s+in\\s+|\\.|,|$)`, 'i');
             const match = lowerInput.match(regex);
             if (match) {
+                const locationName = match[1].trim();
                 // Even if we don't recognize the city, we know they specified a location
                 result.isSpecific = true;
-                // Try to extract the location name
-                const locationName = match[1];
+                result.originalInput = locationName;
+                
                 // Check if it might be a city we don't have in our database
                 if (locationName.length > 2 && !this.isCommonWord(locationName)) {
                     result.city = locationName;
                 }
+                break;
+            }
+        }
+        
+        // If nothing found, preserve the original input
+        if (!result.isSpecific) {
+            // Try to extract any location-like phrase
+            const locationMatch = lowerInput.match(/(?:in|at|near|around)\s+([a-zA-Z\s]+?)(?:\s+in\s+|\s+with\s+|$)/);
+            if (locationMatch) {
+                result.originalInput = locationMatch[1].trim();
+                result.isSpecific = true;
             }
         }
         

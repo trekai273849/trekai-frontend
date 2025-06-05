@@ -379,7 +379,7 @@ export class QuizManager {
     }
     
     /**
-     * Get combined data for submission
+     * Get combined data for submission - CRITICAL FIX HERE
      */
     getCombinedData() {
         const locationAnswer = this.quizAnswers.location || this.parsedData.location;
@@ -391,11 +391,41 @@ export class QuizManager {
             if (typeof locationAnswer === 'string') {
                 // Parse the user's location input
                 parsedLocationDetails = this.locationParser.parseLocation(locationAnswer);
-                finalLocation = parsedLocationDetails.region || 'any';
-                specificLocation = locationAnswer; // Keep their exact input
+                
+                // CRITICAL FIX: Use specific location, not just region
+                if (parsedLocationDetails.city) {
+                    finalLocation = `${parsedLocationDetails.city}, ${parsedLocationDetails.country}`;
+                    specificLocation = finalLocation;
+                } else if (parsedLocationDetails.state) {
+                    finalLocation = `${parsedLocationDetails.state}, ${parsedLocationDetails.country}`;
+                    specificLocation = finalLocation;
+                } else if (parsedLocationDetails.country) {
+                    finalLocation = parsedLocationDetails.country;
+                    specificLocation = finalLocation;
+                } else if (parsedLocationDetails.specificArea) {
+                    finalLocation = parsedLocationDetails.specificArea;
+                    specificLocation = finalLocation;
+                } else if (parsedLocationDetails.region) {
+                    // Only fall back to region if nothing more specific
+                    finalLocation = parsedLocationDetails.region;
+                    specificLocation = parsedLocationDetails.originalInput || locationAnswer;
+                } else {
+                    // If parsing completely failed, use the original input
+                    finalLocation = locationAnswer;
+                    specificLocation = locationAnswer;
+                }
             } else {
                 // Already parsed
                 finalLocation = locationAnswer;
+            }
+        }
+        
+        // Also pass the original input if we have it from initial parsing
+        if (this.parsedData.locationDetails && !specificLocation) {
+            if (this.parsedData.locationDetails.city) {
+                specificLocation = `${this.parsedData.locationDetails.city}, ${this.parsedData.locationDetails.country}`;
+            } else if (this.parsedData.locationDetails.specificArea) {
+                specificLocation = this.parsedData.locationDetails.specificArea;
             }
         }
         
@@ -404,8 +434,8 @@ export class QuizManager {
             trekType: this.quizAnswers['trek-type'] || this.parsedData.trekType || 'multi-day',
             trekLength: this.quizAnswers['trek-length'] || this.parsedData.duration || '6-8',
             location: finalLocation,
-            specificLocation: specificLocation,
-            locationDetails: this.parsedData.locationDetails || parsedLocationDetails || {},
+            specificLocation: specificLocation || finalLocation, // Ensure we always have specific location
+            locationDetails: parsedLocationDetails || this.parsedData.locationDetails || {},
             difficulty: this.quizAnswers.difficulty || this.parsedData.difficulty || 'moderate',
             accommodation: this.quizAnswers.accommodation || this.parsedData.accommodation || 'mixed',
             season: this.quizAnswers.season || this.parsedData.season || 'summer',

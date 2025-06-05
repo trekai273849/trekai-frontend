@@ -301,6 +301,85 @@
             width: 24px;
             flex-shrink: 0;
             color: var(--primary-light);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Season-specific icon colors */
+        .option-icon.icon-spring {
+            color: #10B981; /* Green */
+        }
+        
+        .option-icon.icon-summer {
+            color: #F59E0B; /* Orange */
+        }
+        
+        .option-icon.icon-autumn {
+            color: #DC2626; /* Red */
+        }
+        
+        .option-icon.icon-winter {
+            color: #3B82F6; /* Blue */
+        }
+        
+        /* Difficulty-specific icon colors */
+        .option-icon.icon-easy {
+            color: #10B981; /* Green */
+        }
+        
+        .option-icon.icon-moderate {
+            color: #F59E0B; /* Orange */
+        }
+        
+        .option-icon.icon-challenging {
+            color: #EF4444; /* Red */
+        }
+        
+        /* Location icon colors */
+        .option-icon.icon-globe {
+            color: #14B8A6; /* Teal - Anywhere */
+        }
+        
+        .option-icon.icon-mountain {
+            color: #8B5CF6; /* Purple */
+        }
+        
+        .option-icon.icon-compass {
+            color: #06B6D4; /* Cyan */
+        }
+        
+        .option-icon.icon-tree {
+            color: #059669; /* Forest green */
+        }
+        
+        /* Trek type icon colors */
+        .option-icon.icon-dayhike {
+            color: #F59E0B; /* Orange for day */
+        }
+        
+        .option-icon.icon-multiday {
+            color: #6366F1; /* Indigo for multi-day */
+        }
+        
+        /* Trek length icon colors */
+        .option-icon.icon-calendar {
+            color: #2563EB; /* Blue */
+        }
+        
+        /* Accommodation icon colors */
+        .option-icon.icon-camping {
+            color: #059669; /* Forest green */
+        }
+        
+        .option-icon.icon-huts {
+            color: #92400E; /* Brown */
+        }
+        
+        .option-icon.icon-bed {
+            color: #7C3AED; /* Purple */
+        }
+        
+        .option-icon.icon-mixed {
+            color: #2563EB; /* Blue */
         }
 
         .option-content {
@@ -342,6 +421,32 @@
         .interest-button i {
             font-size: 20px;
             color: var(--primary-light);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Interest-specific icon colors */
+        .interest-button .fa-binoculars {
+            color: #8B5CF6; /* Purple - Wildlife */
+        }
+        
+        .interest-button .fa-camera {
+            color: #EC4899; /* Pink - Photography */
+        }
+        
+        .interest-button .fa-landmark {
+            color: #7C3AED; /* Violet - Culture */
+        }
+        
+        .interest-button .fa-person {
+            color: #2563EB; /* Blue - Solitude */
+        }
+        
+        .interest-button .fa-water {
+            color: #06B6D4; /* Cyan - Lakes */
+        }
+        
+        .interest-button .fa-tree {
+            color: #059669; /* Forest green - Forests */
         }
 
         .interest-button:hover {
@@ -350,6 +455,7 @@
 
         .interest-button:hover i {
             color: var(--primary);
+            transform: scale(1.15);
         }
 
         .interest-button.selected {

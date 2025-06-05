@@ -165,13 +165,12 @@ function showAutocompleteSuggestions(input) {
     if (suggestions.length > 0) {
         let html = '<div class="suggestions-dropdown">';
         suggestions.forEach((suggestion, index) => {
-            const icon = suggestion.type === 'popular' ? 'fa-fire' : 'fa-map-marker-alt';
+            // Remove icons from dropdown suggestions
             html += `
                 <div class="suggestion-item ${index === selectedSuggestionIndex ? 'highlighted' : ''}" 
                      data-value="${suggestion.value}"
                      onmouseover="highlightSuggestion(${index})"
                      onclick="selectLocationSuggestion('${suggestion.value}')">
-                    <i class="fas ${icon}"></i>
                     <span>${suggestion.display}</span>
                 </div>
             `;
@@ -210,8 +209,12 @@ function showLocationRecognition(locationResult) {
     const suggestionsDiv = document.getElementById('locationSuggestions');
     let message = '';
     
-    if (locationResult.city) {
+    if (locationResult.specificArea) {
+        message = `✓ Found ${locationResult.specificArea}`;
+    } else if (locationResult.city) {
         message = `✓ Found ${locationResult.city}, ${locationResult.country}`;
+    } else if (locationResult.state) {
+        message = `✓ Found ${locationResult.state}, ${locationResult.country}`;
     } else if (locationResult.country) {
         message = `✓ Found ${locationResult.country}`;
     } else if (locationResult.region) {
@@ -223,6 +226,8 @@ function showLocationRecognition(locationResult) {
             'africa': 'Africa'
         };
         message = `✓ Found in ${regionNames[locationResult.region] || locationResult.region}`;
+    } else if (locationResult.originalInput) {
+        message = `✓ Will search for treks near "${locationResult.originalInput}"`;
     }
     
     if (message) {
@@ -248,10 +253,30 @@ function renderQuestion() {
         html += '<div class="options-grid">';
         question.options.forEach(option => {
             const isSelected = quizManager.quizAnswers[questionKey] === option.value;
+            // Determine icon color class based on value
+            let iconColorClass = '';
+            if (option.value === 'day-hike') iconColorClass = 'icon-dayhike';
+            else if (option.value === 'multi-day') iconColorClass = 'icon-multiday';
+            else if (option.value === '3-5' || option.value === '6-8' || option.value === '9-14' || option.value === '15+') iconColorClass = 'icon-calendar';
+            else if (option.value === 'spring') iconColorClass = 'icon-spring';
+            else if (option.value === 'summer') iconColorClass = 'icon-summer';
+            else if (option.value === 'autumn') iconColorClass = 'icon-autumn';
+            else if (option.value === 'winter') iconColorClass = 'icon-winter';
+            else if (option.value === 'easy') iconColorClass = 'icon-easy';
+            else if (option.value === 'moderate') iconColorClass = 'icon-moderate';
+            else if (option.value === 'challenging') iconColorClass = 'icon-challenging';
+            else if (option.value === 'any') iconColorClass = 'icon-globe';
+            else if (option.value === 'europe' || option.value === 'asia' || option.value === 'americas' || option.value === 'oceania') iconColorClass = 'icon-mountain';
+            else if (option.value === 'africa') iconColorClass = 'icon-tree';
+            else if (option.value === 'camping') iconColorClass = 'icon-camping';
+            else if (option.value === 'huts') iconColorClass = 'icon-huts';
+            else if (option.value === 'lodges') iconColorClass = 'icon-bed';
+            else if (option.value === 'mixed') iconColorClass = 'icon-mixed';
+            
             html += `
                 <button class="option-button ${isSelected ? 'selected' : ''}" 
                         onclick="selectOption('${questionKey}', '${option.value}')">
-                    ${option.icon ? `<i class="option-icon fas ${option.icon}"></i>` : ''}
+                    ${option.icon ? `<i class="option-icon fas ${option.icon} ${iconColorClass}"></i>` : ''}
                     <div class="option-content">
                         <div class="option-title">${option.title}</div>
                         ${option.description ? `<div class="option-description">${option.description}</div>` : ''}

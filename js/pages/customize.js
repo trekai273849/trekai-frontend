@@ -1,4 +1,4 @@
-// js/pages/customize.js - Updated for Quiz Interface
+// js/pages/customize.js - Updated for Quiz Interface with Location Fixes
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
@@ -140,29 +140,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Make generateItinerary available globally for the quiz
+  // Make generateItinerary available globally for the quiz - WITH LOCATION FIXES
   window.generateItineraryFromQuiz = async function(quizData) {
     currentQuizData = quizData; // Store for later use
     
-    // Format the prompt based on quiz data
-    let location = quizData.location === 'any' ? 'beautiful mountain region' : quizData.location;
+    // CRITICAL FIX: Use specificLocation if available
+    let location = quizData.specificLocation || quizData.location;
+    if (location === 'any' || location === 'anywhere') {
+        location = 'a beautiful mountain region';
+    }
+    
     let duration = quizData.trekType === 'day-hike' ? 'day hike' : `${quizData.trekLength} day trek`;
     
-    // Build comprehensive prompt
-    let prompt = `Create a ${duration} itinerary in ${location} with the following preferences:
-    - Difficulty: ${quizData.difficulty}
-    - Season: ${quizData.season}`;
+    // Build comprehensive prompt with specific location instructions
+    let prompt = `Create a ${duration} itinerary specifically for ${location}. 
+IMPORTANT: The itinerary MUST be in ${location}, not any other location.
+
+Preferences:
+- Difficulty: ${quizData.difficulty}
+- Season: ${quizData.season}`;
     
     if (quizData.trekType === 'multi-day') {
-      prompt += `\n    - Accommodation: ${quizData.accommodation}`;
+      prompt += `\n- Accommodation: ${quizData.accommodation}`;
     }
     
     if (quizData.interests && quizData.interests.length > 0) {
-      prompt += `\n    - Interests: ${quizData.interests.join(', ')}`;
+      prompt += `\n- Interests: ${quizData.interests.join(', ')}`;
+    }
+    
+    // Add location context if we have it
+    if (quizData.locationDetails) {
+      if (quizData.locationDetails.specificArea) {
+        prompt += `\n- Specific area: ${quizData.locationDetails.specificArea}`;
+      }
+      if (quizData.locationDetails.originalInput) {
+        prompt += `\n- User specified: "${quizData.locationDetails.originalInput}"`;
+      }
     }
     
     if (quizData.details) {
-      prompt += `\n    - Special requirements: ${quizData.details}`;
+      prompt += `\n- Special requirements: ${quizData.details}`;
     }
     
     // Add specific format requirements
@@ -176,8 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const outputDiv = document.getElementById('itinerary-cards');
     
-    // Show enhanced loading
-    showProgressiveLoading(outputDiv, quizData.location);
+    // Show enhanced loading with the specific location
+    showProgressiveLoading(outputDiv, location);
 
     try {
       let useMockData = false;
@@ -188,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            location: quizData.location,
+            location: location, // Use the specific location
             filters: {
               difficulty: quizData.difficulty,
               accommodation: quizData.accommodation || 'Not applicable',
@@ -224,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dayCount = quizData.trekType === 'day-hike' ? 1 : 
                         parseInt(quizData.trekLength.split('-')[0]) || 3;
         
-        let mockItinerary = '';
+        let mockItinerary = `# ${location} ${duration} Itinerary\n\n`;
         
         // Generate mock days based on quiz data
         for (let i = 1; i <= dayCount; i++) {
@@ -240,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 - **Water Sources**: Stream at ${Math.floor(i * 2.5)}km mark
 - **Tips**: ${quizData.season === 'winter' ? 'Check snow conditions before departure' : quizData.season === 'summer' ? 'Start early to avoid afternoon heat' : 'Layer clothing for changing conditions'}
 
-${i === 1 ? 'Begin your adventure with gradual elevation gain through beautiful landscapes.' : `Continue through diverse terrain with ${quizData.interests.includes('forests') ? 'ancient forest paths' : 'alpine meadows'}.`}
+Begin your adventure in ${location} with gradual elevation gain through beautiful landscapes.
 
 `;
         }
@@ -261,7 +278,7 @@ ${i === 1 ? 'Begin your adventure with gradual elevation gain through beautiful 
 
 ### Local Insights
 *Culture:*
-- Respect local customs
+- Respect local customs in ${location}
 - Learn basic greetings in local language
 
 *Food:*
@@ -273,7 +290,7 @@ ${i === 1 ? 'Begin your adventure with gradual elevation gain through beautiful 
 - ${quizData.season} offers ${quizData.season === 'spring' ? 'wildflowers and mild weather' : quizData.season === 'summer' ? 'long days and warm conditions' : quizData.season === 'autumn' ? 'stunning fall colors' : 'snow-covered landscapes'}
 
 *Permits:*
-- Check local requirements
+- Check local requirements for ${location}
 - Book accommodations in advance for ${quizData.season} season`;
         
         data = { reply: mockItinerary };
@@ -923,7 +940,7 @@ ${i === 1 ? 'Begin your adventure with gradual elevation gain through beautiful 
 
       const token = await auth.currentUser.getIdToken();
       
-      const location = currentQuizData?.location || 'Trek Location';
+      const location = currentQuizData?.specificLocation || currentQuizData?.location || 'Trek Location';
       const title = `${location} Trek`;
       const itineraryData = {
         title,
@@ -960,7 +977,7 @@ ${i === 1 ? 'Begin your adventure with gradual elevation gain through beautiful 
 
   // Store itinerary for later saving
   function storeItineraryForLater() {
-    const location = currentQuizData?.location || 'Trek Location';
+    const location = currentQuizData?.specificLocation || currentQuizData?.location || 'Trek Location';
     const title = `${location} Trek`;
     const itineraryData = {
       title,
