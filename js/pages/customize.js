@@ -1,4 +1,4 @@
-// js/pages/customize.js - Final Complete Version with Fixed Grouped Layout
+// js/pages/customize.js - Updated for Quiz Interface with Location Fixes
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
@@ -24,267 +24,23 @@ let firebase = {
   auth
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Update greeting
-document.getElementById('greeting').innerText = 'Design your personalized adventure';
+// Store quiz data globally
+let currentQuizData = null;
 
+document.addEventListener('DOMContentLoaded', () => {
   let cachedPackingList = '';
   let cachedInsights = '';
   let cachedPracticalInfo = '';
   let rawItineraryText = '';
 
-  // Fix mobile filter spacing immediately on load
-  function fixMobileFilterSpacing() {
-    const isMobile = window.innerWidth <= 768;
-    
-    // Try multiple selectors to find button containers
-    const selectors = [
-      '.filter-buttons-container',
-      '.filter-group .flex',
-      '.filter-group div:has(.enhanced-filter-btn)',
-      'div.flex.gap-3:has(.enhanced-filter-btn)'
-    ];
-    
-    let filterContainers = [];
-    for (const selector of selectors) {
-      const found = document.querySelectorAll(selector);
-      if (found.length > 0) {
-        filterContainers = found;
-        console.log(`Found button containers using selector: ${selector}`);
-        break;
-      }
-    }
-    
-    filterContainers.forEach(container => {
-      if (isMobile) {
-        // Apply mobile styles
-        container.style.cssText = `
-          display: flex !important;
-          flex-direction: column !important;
-          gap: 10px !important;
-          width: 100% !important;
-        `;
-        
-        // Style all buttons in this container
-        container.querySelectorAll('.enhanced-filter-btn, button[data-category]').forEach(btn => {
-          btn.style.cssText = `
-            width: 100% !important;
-            min-height: 48px !important;
-            margin: 0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 16px 20px !important;
-          `;
-        });
-      } else {
-        // Reset desktop styles
-        container.style.cssText = '';
-        container.querySelectorAll('.enhanced-filter-btn, button[data-category]').forEach(btn => {
-          btn.style.cssText = '';
-        });
-      }
-    });
-    
-    // Also ensure filter groups have proper spacing
-    if (isMobile) {
-      document.querySelectorAll('.filter-group').forEach((group, index, groups) => {
-        group.style.marginBottom = '24px';
-        group.style.paddingBottom = '24px';
-        group.style.borderBottom = index < groups.length - 1 ? '1px solid #e5e7eb' : 'none';
-        if (index === groups.length - 1) {
-          group.style.marginBottom = '0';
-          group.style.paddingBottom = '0';
-        }
-      });
-    } else {
-      document.querySelectorAll('.filter-group').forEach(group => {
-        group.style.marginBottom = '';
-        group.style.paddingBottom = '';
-        group.style.borderBottom = '';
-      });
-    }
-  }
-
-  // Inject critical mobile CSS if needed
-  function injectMobileCSSFix() {
-    const styleId = 'mobile-filter-fix';
-    if (!document.getElementById(styleId)) {
-      const style = document.createElement('style');
-      style.id = styleId;
-      
-      // Check if browser supports :has() selector
-      const supportsHas = CSS.supports('selector(:has(*))');
-      
-      style.textContent = `
-        @media (max-width: 768px) {
-          .filter-group .flex,
-          .filter-buttons-container,
-          .filter-group > div:has(.enhanced-filter-btn)${!supportsHas ? ', .filter-group > div' : ''} {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 10px !important;
-            width: 100% !important;
-          }
-          
-          .enhanced-filter-btn,
-          button[data-category],
-          .filter-group button {
-            width: 100% !important;
-            min-height: 48px !important;
-            margin: 0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 16px 20px !important;
-          }
-          
-          .filter-group {
-            margin-bottom: 24px !important;
-            padding-bottom: 24px !important;
-            border-bottom: 1px solid #e5e7eb !important;
-          }
-          
-          .filter-group:last-child {
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-            border-bottom: none !important;
-          }
-          
-          /* Override Tailwind gap utilities */
-          .gap-3 {
-            gap: 10px !important;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-      console.log('Injected mobile CSS fix' + (!supportsHas ? ' (without :has() selector)' : ''));
-    }
-  }
-
-  // Nuclear option: Force fix by removing conflicting classes and applying inline styles
-  function forceFixMobileSpacing() {
-    console.log('Applying force fix for mobile spacing...');
-    const isMobile = window.innerWidth <= 768;
-    
-    document.querySelectorAll('.filter-group').forEach((group, groupIndex, groups) => {
-      // Find the button container
-      let container = group.querySelector('.flex');
-      if (!container) {
-        container = group.querySelector('div:has(button), div:has(.enhanced-filter-btn)');
-      }
-      if (!container) {
-        // Find div that contains buttons
-        const buttons = group.querySelectorAll('button, .enhanced-filter-btn');
-        if (buttons.length > 0) {
-          container = buttons[0].parentElement;
-        }
-      }
-      
-      if (container && isMobile) {
-        // Remove Tailwind classes that might interfere
-        container.classList.remove('flex', 'gap-3', 'gap-2', 'gap-4', 'flex-row', 'flex-wrap');
-        
-        // Apply inline styles with !important
-        container.setAttribute('style', `
-          display: flex !important;
-          flex-direction: column !important;
-          gap: 12px !important;
-          width: 100% !important;
-          align-items: stretch !important;
-        `);
-        
-        // Fix all buttons in this container
-        const buttons = container.querySelectorAll('button, .enhanced-filter-btn');
-        buttons.forEach(btn => {
-          // Remove any width-limiting classes
-          btn.classList.remove('w-auto', 'w-fit', 'flex-1', 'flex-none');
-          
-          btn.setAttribute('style', `
-            width: 100% !important;
-            min-height: 50px !important;
-            margin: 0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 16px 24px !important;
-            white-space: nowrap !important;
-            box-sizing: border-box !important;
-          `);
-        });
-        
-        // Fix group spacing
-        group.setAttribute('style', `
-          margin-bottom: ${groupIndex < groups.length - 1 ? '28px' : '0'} !important;
-          padding-bottom: ${groupIndex < groups.length - 1 ? '28px' : '0'} !important;
-          border-bottom: ${groupIndex < groups.length - 1 ? '1px solid #e5e7eb' : 'none'} !important;
-        `);
-      } else if (!isMobile) {
-        // Reset for desktop
-        if (container) {
-          container.removeAttribute('style');
-          container.classList.add('flex', 'gap-3');
-        }
-        group.removeAttribute('style');
-        const buttons = group.querySelectorAll('button, .enhanced-filter-btn');
-        buttons.forEach(btn => {
-          btn.removeAttribute('style');
-        });
-      }
-    });
-    
-    console.log('Force fix applied!');
-  }
-  
-  // Apply all fixes
-  injectMobileCSSFix();
-  fixMobileFilterSpacing();
-  
-  // Apply force fix after a delay to ensure DOM is ready
-  if (window.innerWidth <= 768) {
-    setTimeout(forceFixMobileSpacing, 200);
-  }
-
-  // Apply fix after a short delay to ensure DOM is fully rendered
-  setTimeout(fixMobileFilterSpacing, 100);
-
-  // Re-apply on window resize
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      fixMobileFilterSpacing();
-      if (window.innerWidth <= 768) {
-        forceFixMobileSpacing();
-      }
-      
-      // Update tab scroll indicators on resize
-      const navContainer = document.querySelector('.results-nav-container');
-      if (navContainer) {
-        const event = new Event('scroll');
-        navContainer.dispatchEvent(event);
-      }
-    }, 250);
-  });
-
   // Function to get location-specific tips
   function getLocationTip(location) {
     const tips = {
-      'french alps': 'The French Alps contain Mont Blanc, Western Europe\'s highest peak at 4,809m!',
-      'italian alps': 'The Dolomites\' unique pale rock formations are made of ancient coral reefs.',
-      'alps': 'Alpine glaciers carved these valleys over millions of years, creating dramatic landscapes.',
-      'himalayas': 'The Himalayas contain 14 peaks over 8,000m, formed by tectonic plate collision.',
-      'himalaya': 'The Himalayas are still growing about 1cm per year due to continental drift.',
-      'andes': 'The Andes stretch 7,000km - longer than the distance from New York to Paris!',
-      'patagonia': 'Patagonia\'s weather can change from sun to snow in minutes due to its unique geography.',
-      'kilimanjaro': 'Kilimanjaro has three distinct climate zones: tropical, temperate, and arctic.',
-      'norway': 'Norwegian fjords were carved by glaciers that were over 1km thick.',
-      'scotland': 'Scotland\'s highlands were formed 400 million years ago during mountain-building events.',
-      'switzerland': 'Switzerland generates 60% of its electricity from hydropower thanks to alpine geography.',
-      'japan': 'Japan sits on four tectonic plates, creating its mountainous terrain and hot springs.',
-      'new zealand': 'New Zealand was the last landmass on Earth to be discovered by humans.',
-      'rockies': 'The Rocky Mountains contain ecosystems ranging from prairie to alpine tundra.',
-      'appalachian': 'The Appalachian Mountains are among Earth\'s oldest, formed 480 million years ago.',
+      'europe': 'The Alps contain Mont Blanc, Western Europe\'s highest peak at 4,809m!',
+      'asia': 'The Himalayas contain 14 peaks over 8,000m, formed by tectonic plate collision.',
+      'americas': 'The Andes stretch 7,000km - longer than the distance from New York to Paris!',
+      'oceania': 'New Zealand was the last landmass on Earth to be discovered by humans.',
+      'africa': 'Kilimanjaro has three distinct climate zones: tropical, temperate, and arctic.',
       'default': 'Mountain air contains less oxygen, which is why you might feel breathless at first.'
     };
     
@@ -306,7 +62,7 @@ document.getElementById('greeting').innerText = 'Design your personalized advent
   function showProgressiveLoading(container, location) {
     const stages = [
       { 
-        message: "🗺️ Analyzing your destination...", 
+        message: "🗺️ Analyzing your preferences...", 
         tip: getLocationTip(location),
         duration: 4000
       },
@@ -384,139 +140,60 @@ document.getElementById('greeting').innerText = 'Design your personalized advent
     }
   }
 
-  // Diagnostic function to check the DOM structure
-  function debugFilterStructure() {
-    console.log('=== Filter Structure Debug ===');
+  // Make generateItinerary available globally for the quiz - WITH LOCATION FIXES
+  window.generateItineraryFromQuiz = async function(quizData) {
+    currentQuizData = quizData; // Store for later use
     
-    // Check filter groups
-    const filterGroups = document.querySelectorAll('.filter-group');
-    console.log(`Found ${filterGroups.length} filter groups`);
-    
-    filterGroups.forEach((group, index) => {
-      const heading = group.querySelector('h3');
-      const buttonContainer = group.querySelector('.flex, .filter-buttons-container, div');
-      const buttons = group.querySelectorAll('.enhanced-filter-btn, button');
-      
-      console.log(`\nGroup ${index + 1}: ${heading?.textContent || 'No heading'}`);
-      console.log(`  Container classes: ${buttonContainer?.className || 'No container found'}`);
-      console.log(`  Container HTML: ${buttonContainer?.outerHTML.substring(0, 100)}...`);
-      console.log(`  Number of buttons: ${buttons.length}`);
-      
-      buttons.forEach((btn, btnIndex) => {
-        console.log(`    Button ${btnIndex + 1}: "${btn.textContent.trim()}" - Classes: ${btn.className}`);
-      });
-    });
-    
-    console.log('\n=== Current Styles Applied ===');
-    const firstContainer = document.querySelector('.filter-group .flex, .filter-group > div');
-    if (firstContainer) {
-      console.log('Container computed styles:');
-      const styles = window.getComputedStyle(firstContainer);
-      console.log(`  display: ${styles.display}`);
-      console.log(`  flex-direction: ${styles.flexDirection}`);
-      console.log(`  gap: ${styles.gap}`);
-      console.log(`  width: ${styles.width}`);
+    // CRITICAL FIX: Use specificLocation if available
+    let location = quizData.specificLocation || quizData.location;
+    if (location === 'any' || location === 'anywhere') {
+        location = 'a beautiful mountain region';
     }
     
-    const firstButton = document.querySelector('.enhanced-filter-btn, .filter-group button');
-    if (firstButton) {
-      console.log('\nFirst button computed styles:');
-      const styles = window.getComputedStyle(firstButton);
-      console.log(`  width: ${styles.width}`);
-      console.log(`  min-height: ${styles.minHeight}`);
-      console.log(`  display: ${styles.display}`);
+    let duration = quizData.trekType === 'day-hike' ? 'day hike' : `${quizData.trekLength} day trek`;
+    
+    // Build comprehensive prompt with specific location instructions
+    let prompt = `Create a ${duration} itinerary specifically for ${location}. 
+IMPORTANT: The itinerary MUST be in ${location}, not any other location.
+
+Preferences:
+- Difficulty: ${quizData.difficulty}
+- Season: ${quizData.season}`;
+    
+    if (quizData.trekType === 'multi-day') {
+      prompt += `\n- Accommodation: ${quizData.accommodation}`;
     }
-  }
-  
-  // Run debug after page loads
-  setTimeout(() => {
-    debugFilterStructure();
-    console.log('\nTo manually fix spacing, run: fixMobileFilterSpacing()');
-  }, 500);
-
-  // Initialize filter buttons
-  const setupFilterButtons = () => {
-    document.querySelectorAll('.enhanced-filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const group = btn.dataset.category;
-        document.querySelectorAll(`.enhanced-filter-btn[data-category="${group}"]`).forEach(el => {
-          el.classList.remove('active');
-        });
-        btn.classList.add('active');
-      });
-    });
-  };
-
-  setupFilterButtons();
-  
-  // Ensure mobile spacing is maintained after any DOM changes
-  const observer = new MutationObserver(() => {
-    if (window.innerWidth <= 768) {
-      fixMobileFilterSpacing();
+    
+    if (quizData.interests && quizData.interests.length > 0) {
+      prompt += `\n- Interests: ${quizData.interests.join(', ')}`;
     }
-  });
-  
-  // Observe the filter containers for any changes
-  const filtersContainer = document.querySelector('.filters-container');
-  if (filtersContainer) {
-    observer.observe(filtersContainer, { childList: true, subtree: true });
-  }
-
-  document.getElementById('customization-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    generateItinerary();
-  });
-
-  async function generateItinerary(additionalFeedback = '') {
-    const location = localStorage.getItem('userLocation') || 'Mountains';
-    if (!location) {
-      console.error('No location specified');
-      return;
-    }
-
-    // Get selected filters
-    const filters = {};
-    document.querySelectorAll('.enhanced-filter-btn.active').forEach(btn => {
-      const category = btn.dataset.category;
-      filters[category] = btn.dataset.value;
-    });
-
-    // Provide defaults if no filters selected
-    if (Object.keys(filters).length === 0) {
-      const defaultDifficultyBtn = document.querySelector('.enhanced-filter-btn[data-category="difficulty"][data-value="Moderate"]');
-      const defaultAccommodationBtn = document.querySelector('.enhanced-filter-btn[data-category="accommodation"][data-value="Camping"]');
-      
-      if (defaultDifficultyBtn) {
-        defaultDifficultyBtn.classList.add('active');
-        filters.difficulty = 'Moderate';
+    
+    // Add location context if we have it
+    if (quizData.locationDetails) {
+      if (quizData.locationDetails.specificArea) {
+        prompt += `\n- Specific area: ${quizData.locationDetails.specificArea}`;
       }
-      
-      if (defaultAccommodationBtn) {
-        defaultAccommodationBtn.classList.add('active');
-        filters.accommodation = 'Camping';
+      if (quizData.locationDetails.originalInput) {
+        prompt += `\n- User specified: "${quizData.locationDetails.originalInput}"`;
       }
-      
-      filters.technical = 'None';
     }
-
-    let userComment = document.getElementById('comments').value.trim();
-    let baseText = `${userComment} ${location}`;
-
-    const dayMatch = baseText.match(/(\d+)[-\s]*day/i);
-    const requestedDays = dayMatch ? parseInt(dayMatch[1]) : null;
-
-    let comments = userComment;
-    if (requestedDays) {
-      comments += ` Please generate a ${requestedDays}-day itinerary.`;
-    } else {
-      comments += ' Please generate a 3-day trekking itinerary.';
+    
+    if (quizData.details) {
+      prompt += `\n- Special requirements: ${quizData.details}`;
     }
-
-    console.log({ location, filters, comments });
+    
+    // Add specific format requirements
+    prompt += `\n\nPlease format the itinerary with:
+    - Day-by-day breakdown with clear titles
+    - Distance, elevation gain/loss, terrain, difficulty, accommodation for each day
+    - Highlights, tips, water sources, and lunch suggestions
+    - A packing list section
+    - Local insights section
+    - Practical information section`;
 
     const outputDiv = document.getElementById('itinerary-cards');
     
-    // Show enhanced loading
+    // Show enhanced loading with the specific location
     showProgressiveLoading(outputDiv, location);
 
     try {
@@ -528,13 +205,15 @@ document.getElementById('greeting').innerText = 'Design your personalized advent
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            location,
+            location: location, // Use the specific location
             filters: {
-              ...filters,
+              difficulty: quizData.difficulty,
+              accommodation: quizData.accommodation || 'Not applicable',
+              technical: 'None',
               altitude: "2000–3000m"
             },
-            comments,
-            title: `${location} Trek`
+            comments: prompt,
+            title: `${location} ${duration}`
           })
         });
 
@@ -554,88 +233,67 @@ document.getElementById('greeting').innerText = 'Design your personalized advent
         useMockData = true;
       }
       
-      // Mock data fallback
+      // Mock data fallback based on quiz selections
       if (useMockData) {
         console.log("Using mock data for development");
         await new Promise(resolve => setTimeout(resolve, 2000));
         
-        const locationName = location.toLowerCase();
-        const trekName = locationName.includes('french alps') ? 'Tour du Mont Blanc' : 
-                         locationName.includes('himalaya') ? 'Annapurna Circuit' :
-                         locationName.includes('andes') ? 'Inca Trail' :
-                         locationName.includes('patagonia') ? 'Torres del Paine W Trek' :
-                         locationName.includes('kilimanjaro') ? 'Machame Route' :
-                         `${location} Trek`;
+        const dayCount = quizData.trekType === 'day-hike' ? 1 : 
+                        parseInt(quizData.trekLength.split('-')[0]) || 3;
         
-        data = {
-          reply: `### Day 1: Starting Point to First Camp
-- Start: Dobbiaco, 1,256m - End: Mountain Hut, 2,100m
-- **Distance**: 8 km (5 miles)
-- **Elevation Gain**: 600m (1,970ft)
-- **Terrain**: Alpine meadows and forest trails
-- **Accommodation**: ${filters.accommodation || 'Mountain hut'}
-- **Difficulty**: ${filters.difficulty || 'Moderate'}
-- **Highlights**: Panoramic views, local wildlife, acclimatization
-- **Lunch**: Pack picnic with local specialties
-- **Water Sources**: Stream at 2km, fountain at hut
-- **Tips**: Start early to avoid afternoon thunderstorms
+        let mockItinerary = `# ${location} ${duration} Itinerary\n\n`;
+        
+        // Generate mock days based on quiz data
+        for (let i = 1; i <= dayCount; i++) {
+          mockItinerary += `### Day ${i}: ${i === 1 ? 'Starting Point' : 'Continuing Journey'} to ${i === dayCount ? 'Final Destination' : `Camp ${i}`}
+- Start: Village at 1,200m - End: ${quizData.accommodation || 'Scenic viewpoint'} at ${1200 + (i * 400)}m
+- **Distance**: ${8 + (i * 2)} km (${5 + (i * 1.2)} miles)
+- **Elevation Gain**: ${400 + (i * 100)}m
+- **Terrain**: ${quizData.difficulty === 'easy' ? 'Well-marked paths' : quizData.difficulty === 'challenging' ? 'Rocky alpine terrain' : 'Mixed forest and meadow trails'}
+- **Accommodation**: ${quizData.accommodation || 'Not applicable'}
+- **Difficulty**: ${quizData.difficulty}
+- **Highlights**: ${quizData.interests.includes('wildlife') ? 'Wildlife viewing opportunities, ' : ''}${quizData.interests.includes('photography') ? 'Stunning photo spots, ' : ''}panoramic mountain views
+- **Lunch**: Pack lunch with local specialties
+- **Water Sources**: Stream at ${Math.floor(i * 2.5)}km mark
+- **Tips**: ${quizData.season === 'winter' ? 'Check snow conditions before departure' : quizData.season === 'summer' ? 'Start early to avoid afternoon heat' : 'Layer clothing for changing conditions'}
 
-Begin your journey in the picturesque village, gradually ascending through beautiful landscapes. Take time to acclimatize to the altitude and enjoy the panoramic views of surrounding peaks.
+Begin your adventure in ${location} with gradual elevation gain through beautiful landscapes.
 
-### Day 2: First Camp to Mountain Pass
-- Start: Mountain Hut, 2,100m - End: Alpine Lodge, 2,500m
-- **Distance**: 12 km (7.5 miles)
-- **Elevation Gain**: 800m (2,625ft)
-- **Terrain**: Rocky paths and alpine terrain
-- **Difficulty**: ${filters.difficulty || 'Moderate'}
-- **Accommodation**: ${filters.accommodation || 'Mountain hut'}
-- **Highlights**: Mountain pass views, changing ecosystems, wildflowers
-- **Water Sources**: Limited - carry sufficient water
-- **Tips**: Use trekking poles for stability on rocky sections
-
-Today features the most challenging hiking of your trek. The trail climbs steadily through changing ecosystems before reaching the dramatic mountain pass.
-
-### Day 3: Mountain Pass to Endpoint
-- Start: Alpine Lodge, 2,500m - End: Valley Town, 1,200m
-- **Distance**: 10 km (6.2 miles)
-- **Elevation Loss**: 900m (2,950ft)
-- **Terrain**: Scenic descent with river crossings
-- **Accommodation**: Return to trailhead
-- **Highlights**: Waterfalls, alpine lakes, celebration dinner
-
-The final day offers a gentle descent with spectacular views throughout.
-
+`;
+        }
+        
+        // Add other sections
+        mockItinerary += `
 ### Packing List
 *Essentials:*
-- Broken-in hiking boots with ankle support
-- Backpack (30-40L)
+- Hiking boots${quizData.season === 'winter' ? ' (waterproof)' : ''}
+- Backpack (${quizData.trekType === 'day-hike' ? '20-30L' : '40-60L'})
 - Trekking poles
 - First aid kit
 
 *Clothing:*
-- Quick-dry hiking shirts and pants
-- Warm layers (fleece, down jacket)
-- Waterproof jacket and pants
-- Hat and gloves
+- Quick-dry layers
+- ${quizData.season === 'winter' ? 'Insulated jacket' : quizData.season === 'summer' ? 'Sun protection clothing' : 'Waterproof jacket'}
+- Hat and gloves${quizData.season === 'summer' ? ' (for high altitude)' : ''}
 
 ### Local Insights
 *Culture:*
-- Respect local customs and traditions
-- Greet locals with a smile
+- Respect local customs in ${location}
+- Learn basic greetings in local language
 
 *Food:*
-- Try regional specialties
-- Stay hydrated at altitude
+- Try regional mountain specialties
+- Carry energy snacks
 
 ### Practical Information
 *Best Season:*
-- June to September for most alpine regions
-- Check local conditions
+- ${quizData.season} offers ${quizData.season === 'spring' ? 'wildflowers and mild weather' : quizData.season === 'summer' ? 'long days and warm conditions' : quizData.season === 'autumn' ? 'stunning fall colors' : 'snow-covered landscapes'}
 
 *Permits:*
-- Check if permits are required in advance
-- Consider hiring a local guide`
-        };
+- Check local requirements for ${location}
+- Book accommodations in advance for ${quizData.season} season`;
+        
+        data = { reply: mockItinerary };
       }
       
       clearLoadingIntervals(outputDiv);
@@ -648,7 +306,9 @@ The final day offers a gentle descent with spectacular views throughout.
       cachedInsights = extractSection(preprocessedText, 'Local Insights');
       cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
 
+      // Show results after a brief delay
       setTimeout(() => {
+        outputDiv.classList.add('show');
         processAndRenderEnhancedItinerary(preprocessedText);
       }, 500);
 
@@ -657,9 +317,9 @@ The final day offers a gentle descent with spectacular views throughout.
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
       console.error('Error generating itinerary:', error);
     }
-  }
+  };
 
-  // Helper function to create individual detail items - UPDATED to hide "Not applicable"
+  // Helper function to create individual detail items
   function createDetailItem(icon, label, content, className = '', customStyle = '') {
     // Check if content contains "Not applicable" (case insensitive)
     if (content && content.toString().toLowerCase().includes('not applicable')) {
@@ -859,7 +519,7 @@ The final day offers a gentle descent with spectacular views throughout.
       // Debug: Log the details to see what we're working with
       console.log('Day details:', details);
       
-      // Updated day card HTML with grouped sections - UPDATED to conditionally show distance
+      // Updated day card HTML with grouped sections
       dayCard.innerHTML = `
         <!-- Card Header -->
         <div class="day-card-header">
@@ -938,7 +598,7 @@ The final day offers a gentle descent with spectacular views throughout.
     }, 100);
   }
 
-  // Enhanced helper function to parse day details - UPDATED to filter out "Not applicable"
+  // Enhanced helper function to parse day details
   function parseDayDetails(bodyText) {
     const details = {
       distance: null,
@@ -1254,7 +914,14 @@ The final day offers a gentle descent with spectacular views throughout.
     // Re-attach event listeners
     document.getElementById('regenerate-itinerary')?.addEventListener('click', () => {
       const feedback = document.getElementById('feedback').value;
-      if (feedback) generateItinerary(feedback);
+      if (feedback && currentQuizData) {
+        // Modify the quiz data with feedback
+        const updatedQuizData = {
+          ...currentQuizData,
+          details: (currentQuizData.details || '') + ' ' + feedback
+        };
+        window.generateItineraryFromQuiz(updatedQuizData);
+      }
     });
 
     document.getElementById('save-itinerary')?.addEventListener('click', async () => {
@@ -1273,20 +940,20 @@ The final day offers a gentle descent with spectacular views throughout.
 
       const token = await auth.currentUser.getIdToken();
       
-      const location = localStorage.getItem('userLocation') || 'Trek Location';
+      const location = currentQuizData?.specificLocation || currentQuizData?.location || 'Trek Location';
       const title = `${location} Trek`;
       const itineraryData = {
         title,
         location,
         content: rawItineraryText,
-        comments: document.getElementById('comments').value || '',
-        filters: {}
+        comments: currentQuizData?.details || '',
+        filters: {
+          difficulty: currentQuizData?.difficulty || 'Moderate',
+          accommodation: currentQuizData?.accommodation || 'Not applicable',
+          trekType: currentQuizData?.trekType || 'multi-day',
+          season: currentQuizData?.season || 'Summer'
+        }
       };
-      
-      document.querySelectorAll('.enhanced-filter-btn.active').forEach(btn => {
-        const category = btn.dataset.category;
-        itineraryData.filters[category] = btn.dataset.value;
-      });
       
       const response = await fetch('https://trekai-api.onrender.com/api/itineraries', {
         method: 'POST',
@@ -1310,20 +977,20 @@ The final day offers a gentle descent with spectacular views throughout.
 
   // Store itinerary for later saving
   function storeItineraryForLater() {
-    const location = localStorage.getItem('userLocation') || 'Trek Location';
+    const location = currentQuizData?.specificLocation || currentQuizData?.location || 'Trek Location';
     const title = `${location} Trek`;
     const itineraryData = {
       title,
       location,
       content: rawItineraryText,
-      comments: document.getElementById('comments').value || '',
-      filters: {}
+      comments: currentQuizData?.details || '',
+      filters: {
+        difficulty: currentQuizData?.difficulty || 'Moderate',
+        accommodation: currentQuizData?.accommodation || 'Not applicable',
+        trekType: currentQuizData?.trekType || 'multi-day',
+        season: currentQuizData?.season || 'Summer'
+      }
     };
-    
-    document.querySelectorAll('.enhanced-filter-btn.active').forEach(btn => {
-      const category = btn.dataset.category;
-      itineraryData.filters[category] = btn.dataset.value;
-    });
     
     localStorage.setItem('pendingItinerary', JSON.stringify(itineraryData));
     localStorage.setItem('returnToCustomize', 'true');
@@ -1393,10 +1060,6 @@ The final day offers a gentle descent with spectacular views throughout.
   window.showSuccessModal = showSuccessModal;
   window.showAuthModal = showAuthModal;
   window.showWelcomeModal = showWelcomeModal;
-  window.fixMobileFilterSpacing = fixMobileFilterSpacing;
-  window.debugFilterStructure = debugFilterStructure;
-  window.injectMobileCSSFix = injectMobileCSSFix;
-  window.forceFixMobileSpacing = forceFixMobileSpacing;
   window.centerTabInView = centerTabInView;
   window.toggleDayCard = function(button) {
     const dayCard = button.closest('.itinerary-day-card');

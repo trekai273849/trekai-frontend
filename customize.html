@@ -10,17 +10,19 @@
   <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8" />
-  <title>Customize Your Trek - Smart Trails</title>
+  <title>Your Custom Trek Itinerary - Smart Trails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css" />
   
   <style>
-    /* CSS Variables for consistent theming - Green color scheme matching Smart Trails brand */
+    /* CSS Variables for consistent theming */
     :root {
-      --primary: #2D5016;        /* Original Smart Trails green */
-      --primary-light: #4A7C28;  /* Lighter green */
+      --primary: #2D5016;
+      --primary-light: #4A7C28;
+      --primary-lighter: #6B9A3C;
       --accent: #F39C12;
+      --orange: #F39C12;
       --text-dark: #2C3E50;
       --text-light: #5D6D7E;
       --bg-light: #F8F9FA;
@@ -29,6 +31,15 @@
       --success: #27AE60;
       --warning: #E74C3C;
       --info: #3498DB;
+      --text-primary: #222222;
+      --text-secondary: #717171;
+      --border: #DDDDDD;
+      --background-secondary: #F7F7F7;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: rgba(0, 0, 0, 0.04) 0px 6px 16px;
+      --shadow-md: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+      --shadow-lg: rgba(0, 0, 0, 0.12) 0px 6px 20px;
     }
 
     body {
@@ -36,236 +47,310 @@
       background-color: var(--bg-light);
     }
 
-    /* Main content padding */
-    .main-content-padding {
-      padding: 24px;
+    /* Main content area */
+    .main-content-area {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
-    
-    @media (max-width: 768px) {
-      .main-content-padding {
-        padding: 16px;
+
+    /* Professional Loading State */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: opacity 0.6s ease;
+    }
+
+    .loading-overlay.active {
+      display: flex;
+    }
+
+    .loading-overlay.fade-out {
+      opacity: 0;
+    }
+
+    .loading-content {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      animation: contentFadeIn 0.6s ease;
+    }
+
+    @keyframes contentFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
-    }
-    
-    @media (max-width: 480px) {
-      .main-content-padding {
-        padding: 12px;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    /* Enhanced Hero Section */
-    .hero-enhanced {
+    /* Professional Loading Animation */
+    .loading-animation {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 40px;
       position: relative;
-      height: 50vh;
-      min-height: 400px;
+    }
+
+    .loading-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    .loading-circle-outer {
+      border: 3px solid #e9ecef;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .loading-circle-inner {
+      border: 3px solid transparent;
+      border-top-color: var(--primary);
+      animation: rotate 1.5s linear infinite;
+    }
+
+    .loading-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: white;
-      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
+    .loading-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
     }
 
-    .hero-bg::after {
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { 
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% { 
+        transform: scale(1.1);
+        opacity: 0.5;
+      }
+    }
+
+    /* Progress Steps */
+    .loading-progress {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .loading-progress::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, 
-        rgba(0,0,0,0.2) 0%, 
-        rgba(0,0,0,0.4) 50%, 
-        rgba(0,0,0,0.6) 100%);
+      top: 20px;
+      left: 60px;
+      right: 60px;
+      height: 2px;
+      background: #e9ecef;
+      z-index: 0;
     }
 
-    .hero-content-enhanced {
-      position: relative;
+    .progress-line {
+      position: absolute;
+      top: 20px;
+      left: 60px;
+      right: 60px;
+      height: 2px;
+      background: var(--primary);
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 5s ease;
       z-index: 1;
-      max-width: 800px;
-      padding: 0 20px;
     }
 
-    .hero-content-enhanced h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    .loading-overlay.active .progress-line {
+      animation: progressFill 20s ease-out;
     }
 
-    .hero-content-enhanced h2 {
-      font-size: 1.5em;
-      font-weight: 400;
-      opacity: 0.95;
+    @keyframes progressFill {
+      0% { transform: scaleX(0); }
+      25% { transform: scaleX(0.25); }
+      50% { transform: scaleX(0.5); }
+      75% { transform: scaleX(0.75); }
+      100% { transform: scaleX(1); }
     }
 
-    /* Filter Section Enhancement */
-    .filters-container {
+    .progress-step {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       background: white;
-      box-shadow: 0 2px 10px var(--shadow);
-      border-radius: 16px;
-      padding: 30px;
-      margin-bottom: 40px;
-    }
-
-    .filter-group {
-      margin-bottom: 30px;
-    }
-
-    .filter-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .filter-group h3 {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-      color: var(--text-dark);
-      font-weight: 600;
+      border: 2px solid #e9ecef;
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      transition: all 0.4s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .filter-buttons-container {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: stretch;
+    .step-circle svg {
+      width: 20px;
+      height: 20px;
+      stroke: #cbd5e1;
+      stroke-width: 2;
+      fill: none;
+      transition: all 0.4s ease;
     }
 
-    .enhanced-filter-btn {
-      padding: 12px 24px !important;
-      border-radius: 30px !important;
-      font-weight: 600 !important;
-      font-size: 0.95em !important;
-      transition: all 0.3s ease !important;
-      background-color: var(--bg-light) !important;
-      border: 2px solid transparent !important;
-      color: var(--text-dark) !important;
-      cursor: pointer !important;
-      white-space: nowrap;
-      flex: 1;
-      min-width: 120px;
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
+    .progress-step.active .step-circle {
+      border-color: var(--primary);
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
     }
 
-    .enhanced-filter-btn:active {
-      transform: scale(0.98);
-      box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2) !important;
+    .progress-step.active .step-circle svg {
+      stroke: var(--primary);
     }
 
-    /* Only apply hover effects on devices that support hover */
-    @media (hover: hover) {
-      .enhanced-filter-btn:hover {
-        background-color: var(--white) !important;
-        border-color: var(--primary) !important;
-        color: var(--primary) !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15) !important;
-      }
-    }
-
-    .enhanced-filter-btn:focus {
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
-    }
-
-    .enhanced-filter-btn:focus-visible {
-      outline: 3px solid var(--primary);
-      outline-offset: 2px;
-    }
-
-    .enhanced-filter-btn.active {
-      background-color: var(--primary) !important;
-      color: white !important;
-      border-color: var(--primary) !important;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3) !important;
-      position: relative;
-    }
-    
-    /* Add checkmark for active state on mobile */
-    @media (max-width: 768px) {
-      .enhanced-filter-btn.active::after {
-        content: "✓";
-        position: absolute;
-        right: 16px;
-        font-weight: bold;
-        font-size: 1.1em;
-      }
-    }
-
-    /* Comments Section Enhancement */
-    .comments-container {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 2px 10px var(--shadow);
-      margin-bottom: 30px;
-    }
-    
-    @media (max-width: 768px) {
-      .comments-container {
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .comments-container {
-        padding: 16px;
-        border-radius: 12px;
-      }
-    }
-
-    .comments-container label {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .comments-container textarea {
-      width: 100%;
-      padding: 15px;
-      border: 2px solid #E0E0E0;
-      border-radius: 12px;
-      font-size: 1em;
-      transition: border-color 0.3s ease;
-      resize: vertical;
-    }
-
-    .comments-container textarea:focus {
-      outline: none;
+    .progress-step.completed .step-circle {
+      background: var(--primary);
       border-color: var(--primary);
     }
 
-    /* Generate Button Enhancement */
-    .generate-btn {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      color: white;
-      padding: 18px 40px;
-      border-radius: 30px;
-      font-size: 1.1em;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 30px auto;
+    .progress-step.completed .step-circle svg {
+      stroke: white;
+      fill: white;
     }
 
-    .generate-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+    .step-label {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 500;
+      text-align: center;
+      transition: color 0.4s ease;
+    }
+
+    .progress-step.active .step-label {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .progress-step.completed .step-label {
+      color: var(--text-primary);
+    }
+
+    /* Loading Text */
+    .loading-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .loading-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    /* Trek Facts */
+    .trek-fact-card {
+      background: linear-gradient(135deg, #f0f7ed 0%, #e8f5e9 100%);
+      border: 1px solid #d4e4d0;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+      min-height: 80px;
+      transition: all 0.4s ease;
+    }
+
+    .fact-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
+    }
+
+    .fact-icon-wrapper svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--primary);
+    }
+
+    .trek-fact-text {
+      font-size: 15px;
+      color: var(--text-primary);
+      line-height: 1.6;
+      text-align: left;
+      opacity: 0;
+      animation: factFadeIn 0.6s ease forwards;
+    }
+
+    @keyframes factFadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Results Container */
+    #itinerary-cards {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 10;
+    }
+
+    #itinerary-cards.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Navigation Tabs for Results */
@@ -281,6 +366,11 @@
       display: flex;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .results-nav-container::-webkit-scrollbar {
+      display: none;
     }
 
     .results-nav-tab {
@@ -290,7 +380,7 @@
       cursor: pointer;
       font-size: 1em;
       font-weight: 600;
-      color: var(--text-light);
+      color: var(--text-secondary);
       white-space: nowrap;
       transition: all 0.3s ease;
       position: relative;
@@ -332,7 +422,7 @@
       background: #E0E0E0;
     }
 
-    /* Enhanced Itinerary Card Layout */
+    /* Day Cards */
     .itinerary-day-card {
       position: relative;
       margin-bottom: 40px;
@@ -349,7 +439,6 @@
       box-shadow: 0 6px 30px var(--shadow);
     }
 
-    /* Card Header Section */
     .day-card-header {
       background: linear-gradient(135deg, #f8fafb 0%, #e8f0e5 100%);
       padding: 25px 30px;
@@ -395,7 +484,7 @@
       font-size: 0.95em;
     }
 
-    /* Distance section at the top */
+    /* Distance section */
     .distance-section {
       display: flex;
       align-items: center;
@@ -450,14 +539,14 @@
       gap: 16px;
     }
 
-    /* Individual detail items - FIXED ALIGNMENT AND STYLING */
+    /* Individual detail items */
     .detail-item {
-      padding: 12px 16px; /* Added horizontal padding for better alignment */
+      padding: 12px 16px;
       border-bottom: 1px solid #f0f0f0;
-      margin: 0; /* Ensure no margin */
-      background: white; /* Ensure white background */
-      border-radius: 8px; /* Slight rounding */
-      margin-bottom: 8px; /* Space between items */
+      margin: 0;
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 8px;
     }
 
     .detail-item:last-child {
@@ -468,7 +557,7 @@
 
     .detail-item .detail-header {
       display: flex;
-      align-items: flex-start; /* Align to top for better icon positioning */
+      align-items: flex-start;
       gap: 10px;
       margin-bottom: 8px;
     }
@@ -476,14 +565,14 @@
     .detail-item .detail-icon {
       font-size: 1.1em;
       width: 24px;
-      min-width: 24px; /* Ensure consistent width */
+      min-width: 24px;
       text-align: center;
       flex-shrink: 0;
-      display: inline-flex; /* Better alignment */
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 24px; /* Fixed height for consistency */
-      line-height: 1; /* Reset line height */
+      height: 24px;
+      line-height: 1;
     }
 
     .detail-item .detail-label {
@@ -493,23 +582,23 @@
     }
 
     .detail-item .detail-content {
-      color: var(--text-light);
+      color: var(--text-secondary);
       line-height: 1.6;
       font-size: 0.95em;
-      padding-left: 34px; /* Align with the text after the icon */
-      margin: 0; /* Reset margin */
+      padding-left: 34px;
+      margin: 0;
     }
 
-    /* Regular detail items (not highlights/tips) - cleaner styling */
+    /* Regular detail items */
     .detail-item:not(.highlights):not(.tips) {
       background: transparent;
       border-radius: 0;
       margin-bottom: 0;
-      border: none; /* Remove border for regular items */
-      padding: 12px 0; /* Vertical padding only */
+      border: none;
+      padding: 12px 0;
     }
 
-    /* Special styling for highlights - CREATES BOX WITHIN BOX */
+    /* Special styling for highlights */
     .detail-item.highlights {
       background: white;
       border: 1px solid #fcd34d;
@@ -526,14 +615,14 @@
       background: #fef9e7;
       padding: 12px 16px;
       border-radius: 6px;
-      margin-left: 0; /* Reset for box within box */
-      padding-left: 16px; /* Just internal padding */
+      margin-left: 0;
+      padding-left: 16px;
       border-left: 3px solid #f39c12;
       font-style: italic;
       color: #92400e;
     }
 
-    /* Special styling for tips - CREATES BOX WITHIN BOX */
+    /* Special styling for tips */
     .detail-item.tips {
       background: white;
       border: 1px solid #86efac;
@@ -550,8 +639,8 @@
       background: #f0fdf4;
       padding: 12px 16px;
       border-radius: 6px;
-      margin-left: 0; /* Reset for box within box */
-      padding-left: 16px; /* Just internal padding */
+      margin-left: 0;
+      padding-left: 16px;
       border-left: 3px solid #4ade80;
       font-style: italic;
       color: #166534;
@@ -559,7 +648,7 @@
 
     /* Special styling for difficulty color */
     .detail-item.difficulty .detail-content {
-      font-weight: 600; /* Make it bolder */
+      font-weight: 600;
     }
 
     /* Collapsible Day Cards */
@@ -588,7 +677,7 @@
       width: 20px;
       height: 20px;
       transition: transform 0.3s ease;
-      color: var(--text-light);
+      color: var(--text-secondary);
     }
 
     .itinerary-day-card.collapsed .day-card-toggle svg {
@@ -647,34 +736,26 @@
 
     .section-subtitle {
       font-size: 1.1em;
-      color: var(--text-light);
+      color: var(--text-secondary);
       margin-bottom: 40px;
     }
 
-    /* Enhanced Loading Animation */
-    .loading-card {
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 4px 20px var(--shadow);
-      text-align: center;
+    /* Content Sections */
+    .content-section-result {
+      display: none;
     }
 
-    .loading-spinner {
-      width: 60px;
-      height: 60px;
-      border: 3px solid var(--bg-light);
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 30px;
+    .content-section-result.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .enhanced-content {
+      color: var(--text-secondary);
+      line-height: 1.8;
     }
 
-    /* Action Buttons Enhancement */
+    /* Action Buttons */
     .action-buttons-container {
       display: flex;
       gap: 20px;
@@ -721,290 +802,35 @@
       color: white;
     }
 
-    /* Content Sections */
-    .content-section-result {
-      display: none;
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
     }
 
-    .content-section-result.active {
-      display: block;
-      animation: fadeIn 0.5s ease-out;
+    .modal {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 480px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: scale(1);
+      animation: modalAppear 0.3s ease-out;
     }
 
-    .enhanced-content {
-      color: var(--text-light);
-      line-height: 1.8;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Trail Tips and Highlights Container Styling */
-    .trail-tips-section,
-    .highlights-section {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 4px 20px var(--shadow);
-      margin-bottom: 30px;
-    }
-    
-    .trail-tips-section h3,
-    .highlights-section h3 {
-      font-size: 1.8em;
-      margin-bottom: 25px;
-      color: var(--text-dark);
-      font-weight: 700;
-    }
-    
-    /* Individual tip/highlight items */
-    .tip-item,
-    .highlight-item {
-      padding: 16px 20px;
-      background: #fef9e7;
-      border-left: 3px solid #f39c12;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      font-style: italic;
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-    
-    .tip-item:last-child,
-    .highlight-item:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Hide the Chat to Pro Guide button */
-    #talk-to-guide {
-      display: none !important;
-    }
-
-    /* Tablet view - stack buttons in pairs */
-    @media (max-width: 900px) and (min-width: 769px) {
-      .filters-container {
-        max-width: 700px;
-        margin: 0 auto 40px auto;
-      }
-      
-      .filter-buttons-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      
-      .enhanced-filter-btn {
-        min-width: unset !important;
-      }
-      
-      /* Make the third button span full width if there are 3 buttons */
-      .filter-buttons-container:has(button:nth-child(3):last-child) button:last-child {
-        grid-column: 1 / -1;
-      }
-    }
-
-    /* Large phones and small tablets (481px to 768px) */
-    @media (min-width: 481px) and (max-width: 768px) {
-      .filters-container {
-        max-width: 600px;
-        margin: 0 auto 40px auto;
-      }
-      
-      .filter-buttons-container {
-        max-width: 450px;
-        margin: 0 auto;
-      }
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .hero-content-enhanced h1 {
-        font-size: 2em;
-      }
-      
-      .hero-content-enhanced h2 {
-        font-size: 1.2em;
-      }
-      
-      .filters-container {
-        padding: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      
-      .filter-group {
-        margin-bottom: 25px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid #e5e7eb;
-      }
-      
-      .filter-group:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-      }
-      
-      .filter-group h3 {
-        font-size: 1.1em;
-        margin-bottom: 12px;
-      }
-      
-      .filter-buttons-container {
-        flex-direction: column;
-        gap: 8px;
-      }
-      
-      .enhanced-filter-btn {
-        flex: none !important;
-        width: 100% !important;
-        min-width: unset !important;
-        padding: 16px 20px !important;
-        font-size: 0.95em !important;
-        min-height: 50px !important;
-        height: auto !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-      }
-      
-      .enhanced-filter-btn.active {
-        font-weight: 700 !important;
-      }
-      
-      .day-card-header {
-        padding: 20px;
-      }
-      
-      .day-card-content {
-        padding: 20px;
-      }
-      
-      .detail-group {
-        padding: 18px;
-      }
-      
-      .detail-group-title {
-        font-size: 1em;
-        margin-bottom: 15px;
-      }
-      
-      .grouped-details-container {
-        gap: 20px;
-      }
-      
-      /* Updated mobile styles to preserve alignment */
-      .detail-item {
-        padding: 12px; /* Keep some padding on mobile */
-      }
-      
-      .detail-item .detail-content {
-        padding-left: 0;
-        margin-top: 5px;
-      }
-      
-      /* Keep special styling for highlights/tips on mobile */
-      .detail-item.highlights .detail-content,
-      .detail-item.tips .detail-content {
-        margin-left: 0;
-        margin-top: 10px; /* Add top margin instead */
-        padding: 12px 16px;
-      }
-      
-      .action-buttons-container {
-        flex-direction: column;
-      }
-      
-      .action-btn {
-        width: 100%;
-      }
-    }
-
-    /* Small devices (phones under 480px) */
-    @media (max-width: 480px) {
-      .filters-container {
-        padding: 16px;
-      }
-      
-      .filter-group {
-        margin-bottom: 20px;
-      }
-      
-      .filter-group h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
-      }
-      
-      .enhanced-filter-btn {
-        padding: 14px 16px !important;
-        font-size: 0.9em !important;
-        min-height: 46px !important;
-      }
-      
-      .comments-container {
-        padding: 20px;
-      }
-      
-      .comments-container textarea {
-        padding: 12px;
-        font-size: 16px; /* Prevents zoom on iOS */
-        min-height: 100px;
-      }
-      
-      .generate-btn {
-        padding: 16px 30px;
-        font-size: 1em;
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-
-    /* Very small devices (phones under 380px) */
-    @media (max-width: 380px) {
-      .enhanced-filter-btn {
-        font-size: 0.85em !important;
-        padding: 14px 12px !important;
-      }
-      
-      .filter-group h3 {
-        font-size: 0.95em;
-      }
-      
-      .comments-container label {
-        font-size: 1em;
-      }
-    }
-
-    /* Landscape mode for mobile */
-    @media (max-width: 768px) and (orientation: landscape) {
-      .hero-enhanced {
-        height: 70vh;
-        min-height: 300px;
-      }
-      
-      .filter-buttons-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-      
-      .filter-buttons-container:has(button:nth-child(3):last-child) button:last-child {
-        grid-column: 1 / -1;
-      }
-      
-      .enhanced-filter-btn {
-        min-height: 44px !important;
-      }
-    }
-
-    /* Modal styles from original */
     .auth-icon {
       width: 80px;
       height: 80px;
@@ -1029,20 +855,6 @@
       stroke: white;
       stroke-width: 2;
       fill: white;
-    }
-    
-    .modal {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      padding: 40px;
-      max-width: 480px;
-      width: 90%;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transform: scale(1);
-      animation: modalAppear 0.3s ease-out;
     }
     
     .modal-title {
@@ -1111,6 +923,7 @@
       display: inline-block;
       box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
       margin-bottom: 12px;
+      width: 100%;
     }
     
     .button-primary:hover {
@@ -1131,6 +944,7 @@
       text-decoration: none;
       text-align: center;
       display: inline-block;
+      width: 100%;
     }
     
     .button-secondary:hover {
@@ -1168,20 +982,6 @@
       transform: scale(1.1);
     }
     
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      backdrop-filter: blur(4px);
-    }
-    
     @keyframes iconBounce {
       0% {
         opacity: 0;
@@ -1207,9 +1007,130 @@
       }
     }
     
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
     @keyframes fadeOut {
       from { opacity: 1; }
       to { opacity: 0; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-content-area {
+        padding: 20px 16px;
+      }
+
+      .loading-content {
+        padding: 30px 20px;
+      }
+
+      .loading-animation {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 30px;
+      }
+
+      .loading-title {
+        font-size: 20px;
+      }
+
+      .loading-subtitle {
+        font-size: 14px;
+      }
+
+      .loading-progress {
+        gap: 0;
+      }
+
+      .step-circle {
+        width: 32px;
+        height: 32px;
+      }
+
+      .step-circle svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .step-label {
+        font-size: 11px;
+      }
+
+      .section-header {
+        font-size: 2em;
+      }
+
+      .results-nav-tab {
+        padding: 16px 20px;
+        font-size: 0.9em;
+      }
+
+      .day-card-header {
+        padding: 20px;
+      }
+
+      .day-card-content {
+        padding: 20px;
+      }
+
+      .detail-group {
+        padding: 18px;
+      }
+
+      .detail-group-title {
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+
+      .grouped-details-container {
+        gap: 20px;
+      }
+
+      .detail-item {
+        padding: 12px;
+      }
+
+      .detail-item .detail-content {
+        padding-left: 0;
+        margin-top: 5px;
+      }
+
+      .detail-item.highlights .detail-content,
+      .detail-item.tips .detail-content {
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 12px 16px;
+      }
+
+      .action-buttons-container {
+        flex-direction: column;
+      }
+
+      .action-btn {
+        width: 100%;
+      }
+
+      .info-card {
+        padding: 20px;
+      }
+
+      .info-card h3 {
+        font-size: 1.5em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .loading-progress::before,
+      .progress-line {
+        display: none;
+      }
+
+      .progress-step {
+        flex: 0 0 45%;
+      }
     }
   </style>
 </head>
@@ -1219,85 +1140,84 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Enhanced Hero Header -->
-  <header class="hero-enhanced">
-    <div class="hero-bg" style="background-image: url('Images/alps.jpg');"></div>
-    <div class="hero-content-enhanced">
-      <h1>Create Your Perfect Trek</h1>
-      <h2 id="greeting">Design your personalized adventure</h2>
-    </div>
-  </header>
-
-  <!-- Main Content with Enhanced Styling -->
-  <main class="max-w-5xl mx-auto main-content-padding">
-    <!-- Filters Section -->
-    <div class="filters-container">
-      <form id="customization-form">
-        <!-- Trek Length - NEW FILTER -->
-        <div class="filter-group">
-          <h3>📅 Trek Length</h3>
-          <div class="filter-buttons-container">
-            <button type="button" class="enhanced-filter-btn" data-category="length" data-value="3-5 days">3-5 days</button>
-            <button type="button" class="enhanced-filter-btn active" data-category="length" data-value="6-8 days">6-8 days</button>
-            <button type="button" class="enhanced-filter-btn" data-category="length" data-value="9-14 days">9-14 days</button>
-            <button type="button" class="enhanced-filter-btn" data-category="length" data-value="15+ days">15+ days</button>
-          </div>
-        </div>
-
-        <!-- Accommodation -->
-        <div class="filter-group">
-          <h3>🏕️ Accommodation Type</h3>
-          <div class="filter-buttons-container">
-            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Camping">Camping</button>
-            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Hut-to-Hut">Hut-to-Hut</button>
-            <button type="button" class="enhanced-filter-btn" data-category="accommodation" data-value="Lodges">Lodges</button>
-          </div>
-        </div>
-
-        <!-- Difficulty -->
-        <div class="filter-group">
-          <h3>🏔️ Difficulty Level</h3>
-          <div class="filter-buttons-container">
-            <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Easy">Easy</button>
-            <button type="button" class="enhanced-filter-btn active" data-category="difficulty" data-value="Moderate">Moderate</button>
-            <button type="button" class="enhanced-filter-btn" data-category="difficulty" data-value="Challenging">Challenging</button>
-          </div>
-        </div>
-
-        <!-- Technical -->
-        <div class="filter-group">
-          <h3>🧗 Technical Requirements</h3>
-          <div class="filter-buttons-container">
-            <button type="button" class="enhanced-filter-btn active" data-category="technical" data-value="None">None</button>
-            <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Scrambling">Scrambling</button>
-            <button type="button" class="enhanced-filter-btn" data-category="technical" data-value="Mountaineering">Mountaineering</button>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <!-- Comments Section -->
-    <div class="comments-container">
-      <label for="comments">Describe Your Dream Trek</label>
-      <textarea 
-        id="comments" 
-        name="comments" 
-        rows="4" 
-        placeholder="e.g., 8-day hike in Peru with scenic views, not too steep, local food stops, stay in eco-lodges..."
-      ></textarea>
-    </div>
-
-    <!-- Generate Button -->
-    <button type="submit" form="customization-form" class="generate-btn">
-      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-      </svg>
-      Generate Custom Itinerary
-    </button>
-
+  <!-- Main Content Area -->
+  <main class="main-content-area">
     <!-- Results Container -->
     <div id="itinerary-cards"></div>
   </main>
+
+  <!-- Professional Loading Overlay -->
+  <div class="loading-overlay active" id="loadingOverlay">
+    <div class="loading-content">
+      <!-- Loading Animation -->
+      <div class="loading-animation">
+        <div class="loading-circle loading-circle-outer"></div>
+        <div class="loading-circle loading-circle-inner"></div>
+        <div class="loading-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Progress Steps -->
+      <div class="loading-progress">
+        <div class="progress-line"></div>
+        
+        <div class="progress-step active" data-stage="1">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+            </svg>
+          </div>
+          <div class="step-label">Analyzing preferences</div>
+        </div>
+        
+        <div class="progress-step" data-stage="2">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+            </svg>
+          </div>
+          <div class="step-label">Finding trails</div>
+        </div>
+        
+        <div class="progress-step" data-stage="3">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+            </svg>
+          </div>
+          <div class="step-label">Planning stays</div>
+        </div>
+        
+        <div class="progress-step" data-stage="4">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z" />
+            </svg>
+          </div>
+          <div class="step-label">Finalizing details</div>
+        </div>
+      </div>
+      
+      <!-- Loading Text -->
+      <h2 class="loading-title">Crafting Your Perfect Trek</h2>
+      <p class="loading-subtitle">It can take up to a minute to create an adventure just for you</p>
+      
+      <!-- Trek Facts -->
+      <div class="trek-fact-card">
+        <div class="fact-icon-wrapper">
+          <svg viewBox="0 0 24 24">
+            <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+          </svg>
+        </div>
+        <div class="trek-fact-text" id="hikingFact">
+          Did you know? The Appalachian Trail spans 2,190 miles across 14 states!
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Success Modal -->
   <div class="modal-overlay" id="itinerary-success-modal" style="display: none;">
@@ -1407,32 +1327,101 @@
   <script src="js/components/navbar.js" type="module"></script>
   <script src="js/components/footer.js" type="module"></script>
   
-  <!-- Override script for enhanced functionality -->
+  <!-- Initialize Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Update greeting with location
-      const location = localStorage.getItem('userLocation') || 'the mountains';
-      const greeting = document.getElementById('greeting');
-      if (greeting) {
-        greeting.innerText = `Design a personalized adventure in ${location}`;
-      }
-      
-      // Enhanced filter button functionality
-      document.querySelectorAll('.enhanced-filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const group = btn.dataset.category;
-          document.querySelectorAll(`.enhanced-filter-btn[data-category="${group}"]`).forEach(el => {
-            el.classList.remove('active');
-          });
-          btn.classList.add('active');
-        });
-      });
-    });
+    // Loading animation functions
+    let stageInterval;
+    let factInterval;
+    let currentStage = 1;
 
-    // Toggle day card function
-    function toggleDayCard(button) {
-      const dayCard = button.closest('.itinerary-day-card');
-      dayCard.classList.toggle('collapsed');
+    const hikingFacts = [
+      "Did you know? The Appalachian Trail spans 2,190 miles across 14 states!",
+      "Fun fact: Mount Everest grows about 4 millimeters each year due to geological forces.",
+      "Hiking tip: The 'Leave No Trace' principles help preserve trails for future generations.",
+      "Did you know? The Inca Trail to Machu Picchu limits visitors to 500 per day to protect the path.",
+      "Trail wisdom: 'Cotton kills' - synthetic fabrics dry faster and keep you warmer when wet.",
+      "Fun fact: The Pacific Crest Trail crosses through 7 national parks and 25 national forests.",
+      "Did you know? Norway's 'allemannsretten' law gives everyone the right to roam freely in nature.",
+      "Hiking burns about 400-700 calories per hour depending on terrain and pack weight.",
+      "The longest hiking trail in the world is Canada's Trans Canada Trail at 24,000 km!",
+      "Did you know? Studies show that hiking can increase creative problem-solving by 50%.",
+      "Fun fact: The Swiss have over 65,000 km of marked hiking trails - that's 1.5x Earth's circumference!",
+      "Trail tip: Trekking poles can reduce stress on knees by up to 25% on descents."
+    ];
+
+    function startLoadingAnimation() {
+      currentStage = 1;
+      
+      // Update stages every 5 seconds (increased from 3)
+      stageInterval = setInterval(() => {
+        const currentStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
+        if (currentStageEl) {
+          currentStageEl.classList.remove('active');
+          currentStageEl.classList.add('completed');
+        }
+        
+        currentStage++;
+        if (currentStage <= 4) {
+          const nextStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
+          if (nextStageEl) {
+            nextStageEl.classList.add('active');
+          }
+        }
+      }, 5000);
+      
+      // Rotate facts every 6 seconds (increased from 4)
+      let factIndex = 0;
+      factInterval = setInterval(() => {
+        factIndex = (factIndex + 1) % hikingFacts.length;
+        const factElement = document.getElementById('hikingFact');
+        if (factElement) {
+          // Fade out
+          factElement.style.opacity = '0';
+          setTimeout(() => {
+            factElement.textContent = hikingFacts[factIndex];
+            // Fade in with new animation
+            factElement.style.animation = 'none';
+            setTimeout(() => {
+              factElement.style.animation = 'factFadeIn 0.6s ease forwards';
+              factElement.style.opacity = '1';
+            }, 10);
+          }, 300);
+        }
+      }, 6000);
+    }
+
+    function stopLoadingAnimation() {
+      clearInterval(stageInterval);
+      clearInterval(factInterval);
+      
+      // Reset stages
+      document.querySelectorAll('.progress-step').forEach(stage => {
+        stage.classList.remove('active', 'completed');
+      });
+      const firstStage = document.querySelector('.progress-step[data-stage="1"]');
+      if (firstStage) {
+        firstStage.classList.add('active');
+      }
+    }
+
+    // Smooth transition to itinerary
+    function transitionToItinerary() {
+      const overlay = document.getElementById('loadingOverlay');
+      
+      // Add fade-out class
+      overlay.classList.add('fade-out');
+      
+      // Wait for fade animation then hide
+      setTimeout(() => {
+        overlay.classList.remove('active');
+        overlay.classList.remove('fade-out');
+        
+        // Show itinerary with fade-in
+        const itineraryCards = document.getElementById('itinerary-cards');
+        if (itineraryCards) {
+          itineraryCards.classList.add('show');
+        }
+      }, 600);
     }
 
     // Modal functions
@@ -1471,6 +1460,12 @@
       window.location.href = 'sign-up.html';
     }
 
+    // Toggle day card function
+    function toggleDayCard(button) {
+      const dayCard = button.closest('.itinerary-day-card');
+      dayCard.classList.toggle('collapsed');
+    }
+
     // Close modals when clicking outside
     document.addEventListener('click', function(e) {
       const successModal = document.getElementById('itinerary-success-modal');
@@ -1492,6 +1487,78 @@
         if (successModal.style.display === 'flex') closeSuccessModal();
         if (authModal.style.display === 'flex') closeAuthModal();
         if (welcomeModal.style.display === 'flex') closeWelcomeModal();
+      }
+    });
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Start loading animation
+      startLoadingAnimation();
+      
+      // Get quiz data from localStorage
+      const quizDataStr = localStorage.getItem('quizData');
+      
+      if (!quizDataStr) {
+        // No quiz data - redirect back to home
+        console.error('No quiz data found');
+        window.location.href = 'index.html';
+        return;
+      }
+      
+      try {
+        const quizData = JSON.parse(quizDataStr);
+        console.log('Quiz data received:', quizData);
+        
+        // Clear the stored data
+        localStorage.removeItem('quizData');
+        
+        // Wait for customize.js to load and then generate itinerary
+        const waitForFunction = async () => {
+          let attempts = 0;
+          while (!window.generateItineraryFromQuiz && attempts < 50) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+          }
+          
+          if (window.generateItineraryFromQuiz) {
+            console.log('Calling generateItineraryFromQuiz with data:', quizData);
+            
+            // Generate the itinerary
+            await window.generateItineraryFromQuiz(quizData);
+            
+            // Stop loading and transition
+            stopLoadingAnimation();
+            transitionToItinerary();
+            
+          } else {
+            console.error('generateItineraryFromQuiz function not found');
+            document.getElementById('itinerary-cards').innerHTML = `
+              <div class="info-card">
+                <h3 style="color: var(--warning);">Error Loading Itinerary</h3>
+                <p>There was an error generating your itinerary. Please try again.</p>
+                <button onclick="window.location.href='index.html'" style="
+                  margin-top: 20px;
+                  background: var(--primary);
+                  color: white;
+                  padding: 12px 24px;
+                  border: none;
+                  border-radius: 8px;
+                  font-size: 14px;
+                  font-weight: 600;
+                  cursor: pointer;
+                ">Start Over</button>
+              </div>
+            `;
+            stopLoadingAnimation();
+            transitionToItinerary();
+          }
+        };
+        
+        await waitForFunction();
+        
+      } catch (error) {
+        console.error('Error parsing quiz data:', error);
+        window.location.href = 'index.html';
       }
     });
   </script>

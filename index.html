@@ -94,7 +94,7 @@
             transform: translateY(-4px);
         }
 
-        /* NEW: Hero Section with Dark Overlay */
+        /* Hero Section with Dark Overlay */
         .hero-section {
             position: relative;
             background-size: cover;
@@ -145,6 +145,698 @@
             text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
             font-weight: 500;
         }
+
+        /* Quiz Modal Styles */
+        :root {
+            --primary: #2D5016;
+            --primary-light: #4A7C28;
+            --primary-lighter: #6B9A3C;
+            --accent: #F39C12;
+            --orange: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --success: #27AE60;
+            --warning: #E74C3C;
+            --info: #3498DB;
+            --text-primary: #222222;
+            --text-secondary: #717171;
+            --border: #DDDDDD;
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        .quiz-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+            padding: 20px;
+        }
+
+        .quiz-modal.active {
+            display: flex;
+        }
+
+        .quiz-container {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .quiz-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .quiz-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .quiz-close:hover {
+            background: #e5e7eb;
+            transform: scale(1.1);
+        }
+
+        .quiz-content {
+            padding: 24px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #E8F5E9;
+            margin-bottom: 24px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .question-slide {
+            display: none;
+        }
+
+        .question-slide.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .options-grid {
+            display: grid;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .option-button {
+            padding: 16px 20px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option-button:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .option-button:hover .option-icon {
+            color: var(--primary);
+        }
+
+        .option-button.selected {
+            border-color: var(--primary);
+            background: #F0F7ED;
+            box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        .option-button.selected .option-icon {
+            color: var(--primary);
+        }
+
+        .option-icon {
+            font-size: 20px;
+            width: 24px;
+            flex-shrink: 0;
+            color: var(--primary-light);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Season-specific icon colors */
+        .option-icon.icon-spring {
+            color: #10B981; /* Green */
+        }
+        
+        .option-icon.icon-summer {
+            color: #F59E0B; /* Orange */
+        }
+        
+        .option-icon.icon-autumn {
+            color: #DC2626; /* Red */
+        }
+        
+        .option-icon.icon-winter {
+            color: #3B82F6; /* Blue */
+        }
+        
+        /* Difficulty-specific icon colors */
+        .option-icon.icon-easy {
+            color: #10B981; /* Green */
+        }
+        
+        .option-icon.icon-moderate {
+            color: #F59E0B; /* Orange */
+        }
+        
+        .option-icon.icon-challenging {
+            color: #EF4444; /* Red */
+        }
+        
+        /* Location icon colors */
+        .option-icon.icon-globe {
+            color: #14B8A6; /* Teal - Anywhere */
+        }
+        
+        .option-icon.icon-mountain {
+            color: #8B5CF6; /* Purple */
+        }
+        
+        .option-icon.icon-compass {
+            color: #06B6D4; /* Cyan */
+        }
+        
+        .option-icon.icon-tree {
+            color: #059669; /* Forest green */
+        }
+        
+        /* Trek type icon colors */
+        .option-icon.icon-dayhike {
+            color: #F59E0B; /* Orange for day */
+        }
+        
+        .option-icon.icon-multiday {
+            color: #6366F1; /* Indigo for multi-day */
+        }
+        
+        /* Trek length icon colors */
+        .option-icon.icon-calendar {
+            color: #2563EB; /* Blue */
+        }
+        
+        /* Accommodation icon colors */
+        .option-icon.icon-camping {
+            color: #059669; /* Forest green */
+        }
+        
+        .option-icon.icon-huts {
+            color: #92400E; /* Brown */
+        }
+        
+        .option-icon.icon-bed {
+            color: #7C3AED; /* Purple */
+        }
+        
+        .option-icon.icon-mixed {
+            color: #2563EB; /* Blue */
+        }
+
+        .option-content {
+            flex: 1;
+        }
+
+        .option-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .option-description {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .interest-button {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            text-align: center;
+        }
+
+        .interest-button i {
+            font-size: 20px;
+            color: var(--primary-light);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Interest-specific icon colors */
+        .interest-button .fa-binoculars {
+            color: #8B5CF6; /* Purple - Wildlife */
+        }
+        
+        .interest-button .fa-camera {
+            color: #EC4899; /* Pink - Photography */
+        }
+        
+        .interest-button .fa-landmark {
+            color: #7C3AED; /* Violet - Culture */
+        }
+        
+        .interest-button .fa-person {
+            color: #2563EB; /* Blue - Solitude */
+        }
+        
+        .interest-button .fa-water {
+            color: #06B6D4; /* Cyan - Lakes */
+        }
+        
+        .interest-button .fa-tree {
+            color: #059669; /* Forest green - Forests */
+        }
+
+        .interest-button:hover {
+            border-color: var(--primary-light);
+        }
+
+        .interest-button:hover i {
+            color: var(--primary);
+            transform: scale(1.15);
+        }
+
+        .interest-button.selected {
+            border-color: var(--primary);
+            background: #F0F7ED;
+            box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        .interest-button.selected i {
+            color: var(--primary);
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-button {
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-button i {
+            font-size: 14px;
+        }
+
+        .nav-button.back {
+            background: var(--white);
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+
+        .nav-button.back:hover {
+            color: var(--primary);
+        }
+
+        .nav-button.next {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-button.next:hover {
+            background: var(--primary-light);
+        }
+
+        .nav-button.generate {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            resize: vertical;
+            min-height: 100px;
+            margin-top: 20px;
+        }
+
+        .text-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        /* Add these styles to your index.html in the Quiz Modal Styles section */
+
+/* Location Input Styles */
+.location-input-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+.location-text-input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background: var(--white);
+}
+
+.location-text-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+}
+
+.location-text-input.recognized {
+    border-color: var(--success);
+    background: #f0f9f0;
+}
+
+.location-helper-text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Autocomplete Suggestions */
+.location-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-top: 4px;
+    display: none;
+}
+
+.suggestions-dropdown {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
+.suggestion-item:hover,
+.suggestion-item.highlighted {
+    background: #f8f9fa;
+}
+
+.suggestion-item i {
+    color: var(--primary-light);
+    width: 16px;
+    text-align: center;
+}
+
+.suggestion-item i.fa-fire {
+    color: var(--accent);
+}
+
+.recognition-message {
+    padding: 8px 12px;
+    background: #f0f9f0;
+    border: 1px solid #27ae60;
+    border-radius: var(--radius-sm);
+    color: #27ae60;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Divider */
+.divider-with-text {
+    text-align: center;
+    margin: 24px 0;
+    position: relative;
+}
+
+.divider-with-text::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+    transform: translateY(-50%);
+}
+
+.divider-with-text span {
+    background: var(--white);
+    padding: 0 16px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Surprise Me Button */
+.surprise-me-button {
+    width: 100%;
+    padding: 20px 24px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.surprise-me-button:hover {
+    border-color: var(--primary);
+    background: linear-gradient(145deg, #fcfcfc 0%, #f8fdf6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.surprise-me-button:hover i {
+    color: var(--primary);
+}
+
+.surprise-me-button.selected {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.surprise-me-button.selected i {
+    color: white;
+}
+
+.surprise-me-button i:first-child {
+    font-size: 20px;
+    color: var(--primary-light);
+}
+
+.surprise-me-button i:last-child {
+    font-size: 16px;
+    color: var(--accent);
+    position: absolute;
+    right: 24px;
+}
+
+.surprise-me-button.selected i:last-child {
+    color: white;
+    animation: sparkle 0.6s ease-out;
+}
+
+@keyframes sparkle {
+    0% { transform: scale(0) rotate(0deg); opacity: 0; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+    100% { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+/* Trending Destinations */
+.trending-destinations {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.trending-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.trend-tag {
+    padding: 8px 16px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.trend-tag:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2);
+}
+
+.trend-tag:hover::after {
+    content: '✈️';
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    font-size: 12px;
+    animation: fly 0.5s ease-out;
+}
+
+@keyframes fly {
+    0% { transform: translate(0, 0) scale(0); opacity: 0; }
+    50% { transform: translate(10px, -10px) scale(1.2); opacity: 1; }
+    100% { transform: translate(20px, -20px) scale(0); opacity: 0; }
+}
+
+/* Animation for fade in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar for suggestions dropdown */
+.suggestions-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .location-text-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .surprise-me-button {
+        padding: 18px 20px;
+    }
+    
+    .surprise-me-button i:last-child {
+        position: static;
+        margin-left: auto;
+    }
+    
+    .trending-destinations {
+        justify-content: center;
+    }
+    
+    .trending-label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 4px;
+    }
+}
+
+    
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -166,7 +858,7 @@
             <input 
               type="text" 
               id="user-input" 
-              placeholder="e.g. 5-day trek in the Alps, moderate difficulty" 
+              placeholder="e.g. 5-day trek in the Alps, beginner friendly" 
               class="flex-1 px-4 py-3 rounded-lg text-gray-900 border border-gray-300 focus:border-blue-500 focus:outline-none shadow-sm text-base min-h-[56px]"
             />
             <button 
@@ -181,7 +873,41 @@
       </div>
     </section>
 
-    
+    <!-- Quiz Modal -->
+    <div class="quiz-modal" id="quizModal">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2 class="text-2xl font-bold">Complete Your Trek Details</h2>
+                <p class="text-gray-600 mt-2">We just need a few more details to create your perfect itinerary</p>
+                <button class="quiz-close" onclick="closeQuizModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="quiz-content">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+
+                <!-- Dynamic Question Container -->
+                <div id="questionContainer">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+
+                <!-- Navigation -->
+                <div class="quiz-navigation">
+                    <button class="nav-button back" id="backBtn" onclick="previousQuestion()" style="visibility: hidden;">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button class="nav-button next" id="nextBtn" onclick="nextQuestion()">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-20">
         <div class="max-w-7xl mx-auto text-center">
@@ -226,7 +952,7 @@
         </div>
     </section>
 
-        <!-- Popular Treks Section with Horizontal Scrolling -->
+    <!-- Popular Treks Section with Horizontal Scrolling -->
     <section id="popular-treks" class="py-20 bg-gradient-to-br from-gray-50 to-green-50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-end mb-12">
@@ -614,16 +1340,8 @@
     <!-- Add the Footer Component Script -->
     <script src="js/components/footer.js" type="module"></script>
 
-    <!-- Main functionality -->
+    <!-- Community modal handlers -->
     <script>
-        // Form submission handler
-        document.getElementById("itinerary-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const location = document.getElementById("user-input").value;
-            localStorage.setItem("userLocation", location);
-            window.location.href = "customize.html";
-        });
-
         // Community modal handlers
         const joinCommunityBtn = document.getElementById('join-community-btn');
         const communityModal = document.getElementById('community-modal');
@@ -764,5 +1482,8 @@
             });
         });
     </script>
+
+    <!-- Quiz functionality with enhanced location detection -->
+    <script type="module" src="js/quiz-integration.js"></script>
 </body>
 </html>
