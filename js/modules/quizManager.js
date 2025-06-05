@@ -159,9 +159,25 @@ export class QuizManager {
         
         // Parse location using the LocationParser
         const locationResult = this.locationParser.parseLocation(input);
-        if (locationResult.region) {
-            parsed.location = locationResult.region;
+        console.log('Location parsing result:', locationResult); // Debug
+        
+        if (locationResult.city || locationResult.state || locationResult.country || 
+            locationResult.specificArea || locationResult.region) {
+            // Store the full location details
             parsed.locationDetails = locationResult;
+            
+            // Set the location based on specificity
+            if (locationResult.city) {
+                parsed.location = `${locationResult.city}, ${locationResult.country}`;
+            } else if (locationResult.state) {
+                parsed.location = `${locationResult.state}, ${locationResult.country}`;
+            } else if (locationResult.specificArea) {
+                parsed.location = locationResult.specificArea;
+            } else if (locationResult.country) {
+                parsed.location = locationResult.country;
+            } else if (locationResult.region) {
+                parsed.location = locationResult.region;
+            }
         }
         
         // Duration and trek type detection
@@ -311,6 +327,7 @@ export class QuizManager {
             if (parsed.accommodation) break;
         }
         
+        console.log('Full parsed data:', parsed); // Debug
         return parsed;
     }
     
@@ -382,17 +399,42 @@ export class QuizManager {
      * Get combined data for submission - CRITICAL FIX HERE
      */
     getCombinedData() {
-        const locationAnswer = this.quizAnswers.location || this.parsedData.location;
+        // Check if we already parsed location from initial input
         let finalLocation = 'any';
         let specificLocation = null;
         let parsedLocationDetails = null;
         
+        // First check if location was parsed from initial input
+        if (this.parsedData.location || this.parsedData.locationDetails) {
+            parsedLocationDetails = this.parsedData.locationDetails || {};
+            
+            // Use the most specific location available from initial parsing
+            if (parsedLocationDetails.city) {
+                specificLocation = `${parsedLocationDetails.city}, ${parsedLocationDetails.country}`;
+                finalLocation = specificLocation;
+            } else if (parsedLocationDetails.state) {
+                specificLocation = `${parsedLocationDetails.state}, ${parsedLocationDetails.country}`;
+                finalLocation = specificLocation;
+            } else if (parsedLocationDetails.specificArea) {
+                specificLocation = parsedLocationDetails.specificArea;
+                finalLocation = specificLocation;
+            } else if (parsedLocationDetails.country) {
+                specificLocation = parsedLocationDetails.country;
+                finalLocation = specificLocation;
+            } else if (this.parsedData.location) {
+                finalLocation = this.parsedData.location;
+                specificLocation = parsedLocationDetails.originalInput || this.originalInput;
+            }
+        }
+        
+        // If user provided location in quiz, use that instead
+        const locationAnswer = this.quizAnswers.location;
         if (locationAnswer && locationAnswer !== 'anywhere') {
             if (typeof locationAnswer === 'string') {
                 // Parse the user's location input
                 parsedLocationDetails = this.locationParser.parseLocation(locationAnswer);
                 
-                // CRITICAL FIX: Use specific location, not just region
+                // Use specific location, not just region
                 if (parsedLocationDetails.city) {
                     finalLocation = `${parsedLocationDetails.city}, ${parsedLocationDetails.country}`;
                     specificLocation = finalLocation;
@@ -420,14 +462,14 @@ export class QuizManager {
             }
         }
         
-        // Also pass the original input if we have it from initial parsing
-        if (this.parsedData.locationDetails && !specificLocation) {
-            if (this.parsedData.locationDetails.city) {
-                specificLocation = `${this.parsedData.locationDetails.city}, ${this.parsedData.locationDetails.country}`;
-            } else if (this.parsedData.locationDetails.specificArea) {
-                specificLocation = this.parsedData.locationDetails.specificArea;
-            }
-        }
+        // Debug logging
+        console.log('=== LOCATION PROCESSING DEBUG ===');
+        console.log('Original Input:', this.originalInput);
+        console.log('Parsed Data:', this.parsedData);
+        console.log('Location Details:', parsedLocationDetails);
+        console.log('Final Location:', finalLocation);
+        console.log('Specific Location:', specificLocation);
+        console.log('================================');
         
         return {
             originalInput: this.originalInput,
