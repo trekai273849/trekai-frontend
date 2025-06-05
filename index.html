@@ -14,7 +14,6 @@
     <title>Smart Trails | AI Trek Planner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
         .hero-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -1540,6 +1539,20 @@
             `;
             
             if (question.type === 'single') {
+                html += '<div class="options-grid">';
+                question.options.forEach(option => {
+                    const isSelected = quizAnswers[questionKey] === option.value;
+                    html += `
+                        <button class="option-button ${isSelected ? 'selected' : ''}" 
+                                onclick="selectOption('${questionKey}', '${option.value}')">
+                            ${option.icon ? `<i class="option-icon fas ${option.icon}"></i>` : ''}
+                            <div class="option-content">
+                                <div class="option-title">${option.title}</div>
+                                ${option.description ? `<div class="option-description">${option.description}</div>` : ''}
+                            </div>
+                        </button>
+                    `;
+                });
                 html += '</div>';
             } else if (question.type === 'multi') {
                 html += '<div class="interests-grid">';
@@ -1548,7 +1561,7 @@
                     html += `
                         <button class="interest-button ${isSelected ? 'selected' : ''}" 
                                 onclick="toggleInterest('${option.value}')">
-                            <i data-lucide="${option.icon}" size="24"></i>
+                            <i class="fas ${option.icon}"></i>
                             <span>${option.title}</span>
                         </button>
                     `;
@@ -1565,11 +1578,6 @@
             
             html += '</div>';
             container.innerHTML = html;
-            
-            // Initialize Lucide icons
-            if (window.lucide) {
-                window.lucide.createIcons();
-            }
             
             // Update navigation
             updateNavigation();
@@ -1860,18 +1868,4 @@
         });
     </script>
 </body>
-</html> '<div class="options-grid">';
-                question.options.forEach(option => {
-                    const isSelected = quizAnswers[questionKey] === option.value;
-                    html += `
-                        <button class="option-button ${isSelected ? 'selected' : ''}" 
-                                onclick="selectOption('${questionKey}', '${option.value}')">
-                            ${option.icon ? `<i class="option-icon" data-lucide="${option.icon}" size="24"></i>` : ''}
-                            <div class="option-content">
-                                <div class="option-title">${option.title}</div>
-                                ${option.description ? `<div class="option-description">${option.description}</div>` : ''}
-                            </div>
-                        </button>
-                    `;
-                });
-                html +=
+</html>
