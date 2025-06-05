@@ -836,6 +836,16 @@
     }
 }
 
+        /* Friendly AI Tools Section Styles - Simplified and warmer */
+        @media (max-width: 768px) {
+            #ai-tools .grid {
+                gap: 1.5rem;
+            }
+            
+            #ai-tools .p-8 {
+                padding: 1.5rem;
+            }
+        }
     
     </style>
 </head>
@@ -947,6 +957,123 @@
                     <p class="text-gray-700 leading-relaxed">
                         Just describe your ideal trek and we'll build the plan as your personal guide.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered Tools Section -->
+    <section id="ai-tools" class="py-20 bg-gradient-to-b from-green-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-100 to-blue-100 rounded-full mb-6 shadow-lg">
+                    <i class="fas fa-magic text-3xl text-green-600"></i>
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+                    Your Personal Trek Assistant
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Our smart tools help you plan your perfect adventure.
+                </p>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Trek Matcher Tool -->
+                <div class="group transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl h-full flex flex-col border-2 border-transparent hover:border-purple-200">
+                        <!-- Fun illustration background -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-purple-100 rounded-full mx-auto flex items-center justify-center">
+                                <i class="fas fa-map-marked-alt text-3xl text-purple-600"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center">
+                                <span class="text-sm">✨</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center">Find Your Perfect Trek</h3>
+                        
+                        <p class="text-gray-600 mb-6 flex-grow text-center leading-relaxed">
+                            Tell us about your dream adventure! Trek Intelligence Engine matches you with treks that fit your style, fitness, and bucket list.
+                        </p>
+                        
+                        <div class="bg-purple-50 rounded-xl p-4 mb-6">
+                            <div class="flex items-center justify-center text-sm text-purple-700">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>Quick 2-minute quiz</span>
+                            </div>
+                        </div>
+                        
+                        <a href="trek-matcher.html" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 text-center shadow-md hover:shadow-lg transform hover:scale-105">
+                            Start Trek Matcher →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fitness Assessment Tool -->
+                <div class="group transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl h-full flex flex-col border-2 border-transparent hover:border-green-200">
+                        <!-- Fun illustration background -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-green-100 rounded-full mx-auto flex items-center justify-center">
+                                <i class="fas fa-running text-3xl text-green-600"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-pink-300 rounded-full flex items-center justify-center">
+                                <span class="text-sm">💪</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center">Check Your Trek Fitness</h3>
+                        
+                        <p class="text-gray-600 mb-6 flex-grow text-center leading-relaxed">
+                            Wondering if you're ready? Our friendly fitness check helps you pick treks that match your current fitness level perfectly.
+                        </p>
+                        
+                        <div class="bg-green-50 rounded-xl p-4 mb-6">
+                            <div class="flex items-center justify-center text-sm text-green-700">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                <span>Get personalized advice</span>
+                            </div>
+                        </div>
+                        
+                        <a href="fitness-test.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 text-center shadow-md hover:shadow-lg transform hover:scale-105">
+                            Take Fitness Test →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Packing List Generator -->
+                <div class="group transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl h-full flex flex-col border-2 border-transparent hover:border-orange-200">
+                        <!-- Fun illustration background -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-orange-100 rounded-full mx-auto flex items-center justify-center">
+                                <i class="fas fa-clipboard-list text-3xl text-orange-600"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-300 rounded-full flex items-center justify-center">
+                                <span class="text-sm">📦</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center">Never Forget Gear Again</h3>
+                        
+                        <p class="text-gray-600 mb-6 flex-grow text-center leading-relaxed">
+                            Get a custom packing list for your specific trek. From socks to snacks, we'll make sure you have everything you need!
+                        </p>
+                        
+                        <div class="bg-orange-50 rounded-xl p-4 mb-6">
+                            <div class="flex items-center justify-center text-sm text-orange-700">
+                                <i class="fas fa-print mr-2"></i>
+                                <span>Print-ready checklist</span>
+                            </div>
+                        </div>
+                        
+                        <a href="packing-list-generator.html" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 text-center shadow-md hover:shadow-lg transform hover:scale-105">
+                            Create Packing List →
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1242,39 +1369,6 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-20 px-4 bg-white">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4 gradient-text">Elite Planning for Serious Hikers</h2>
-            <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
-                Unlock advanced features designed for passionate adventurers
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-infinity text-2xl text-white"></i>
-                    </div>
-                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Unlimited Itineraries</h3>
-                    <p class="text-gray-600 leading-relaxed">Create unlimited itineraries and save them all with our Pro subscription.</p>
-                </div>
-                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-sliders-h text-2xl text-white"></i>
-                    </div>
-                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Advanced Planning</h3>
-                    <p class="text-gray-600 leading-relaxed">Use advanced filters, preferences, and regenerate itineraries with feedback.</p>
-                </div>
-                <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-rocket text-2xl text-white"></i>
-                    </div>
-                    <h3 class="font-semibold mb-4 text-xl text-gray-900">Premium Features</h3>
-                    <p class="text-gray-600 leading-relaxed">Access conversational planning and get early access to new features.</p>
-                </div>
             </div>
         </div>
     </section>
