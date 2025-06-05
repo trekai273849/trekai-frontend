@@ -188,12 +188,12 @@
       background: var(--primary);
       transform-origin: left;
       transform: scaleX(0);
-      transition: transform 3s ease;
+      transition: transform 5s ease;
       z-index: 1;
     }
 
     .loading-overlay.active .progress-line {
-      animation: progressFill 12s ease-out;
+      animation: progressFill 20s ease-out;
     }
 
     @keyframes progressFill {
@@ -1352,7 +1352,7 @@
     function startLoadingAnimation() {
       currentStage = 1;
       
-      // Update stages every 3 seconds
+      // Update stages every 5 seconds (increased from 3)
       stageInterval = setInterval(() => {
         const currentStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
         if (currentStageEl) {
@@ -1367,9 +1367,9 @@
             nextStageEl.classList.add('active');
           }
         }
-      }, 3000);
+      }, 5000);
       
-      // Rotate facts every 4 seconds
+      // Rotate facts every 6 seconds (increased from 4)
       let factIndex = 0;
       factInterval = setInterval(() => {
         factIndex = (factIndex + 1) % hikingFacts.length;
@@ -1387,7 +1387,7 @@
             }, 10);
           }, 300);
         }
-      }, 4000);
+      }, 6000);
     }
 
     function stopLoadingAnimation() {

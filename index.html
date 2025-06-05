@@ -1532,12 +1532,11 @@
                 });
                 html += '</div>';
             } else if (question.type === 'text') {
-                const prefilled = questionKey === 'details' ? originalInput : '';
                 html += `
                     <textarea class="text-input" 
                               id="detailsInput" 
                               placeholder="Share any other preferences: budget, group size, must-see places, fitness level, dietary needs, or special interests..."
-                              onchange="updateTextAnswer('${questionKey}')">${prefilled}</textarea>
+                              onchange="updateTextAnswer('${questionKey}')"></textarea>
                 `;
             }
             
@@ -1559,6 +1558,7 @@
             quizAnswers[question] = value;
             setTimeout(nextQuestion, 300);
         }
+        window.selectOption = selectOption;
 
         function toggleInterest(value) {
             if (!quizAnswers.interests) quizAnswers.interests = [];
@@ -1570,11 +1570,13 @@
             }
             renderQuestion();
         }
+        window.toggleInterest = toggleInterest;
 
         function updateTextAnswer(question) {
             const textarea = document.getElementById('detailsInput');
             quizAnswers[question] = textarea.value;
         }
+        window.updateTextAnswer = updateTextAnswer;
 
         function nextQuestion() {
             if (currentQuestion < questionsToShow.length - 1) {
@@ -1584,6 +1586,7 @@
                 submitQuiz();
             }
         }
+        window.nextQuestion = nextQuestion;
 
         function previousQuestion() {
             if (currentQuestion > 0) {
@@ -1591,6 +1594,7 @@
                 renderQuestion();
             }
         }
+        window.previousQuestion = previousQuestion;
 
         function updateNavigation() {
             const backBtn = document.getElementById('backBtn');
@@ -1628,7 +1632,7 @@
                 accommodation: quizAnswers.accommodation || parsedData.accommodation || 'mixed',
                 season: quizAnswers.season || parsedData.season || 'summer',
                 interests: quizAnswers.interests || [],
-                details: quizAnswers.details || originalInput
+                details: quizAnswers.details || ''
             };
             
             // Store in localStorage
@@ -1650,6 +1654,7 @@
             document.getElementById('quizModal').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
+        window.closeQuizModal = closeQuizModal;
 
         // Form submission handler
         document.getElementById("itinerary-form").addEventListener("submit", function (e) {
