@@ -54,161 +54,296 @@
       padding: 40px 20px;
     }
 
-    /* Loading State */
+    /* Professional Loading State */
     .loading-overlay {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255, 255, 255, 0.98);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
       display: none;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       z-index: 1000;
-      backdrop-filter: blur(10px);
+      transition: opacity 0.6s ease;
     }
 
     .loading-overlay.active {
       display: flex;
     }
 
+    .loading-overlay.fade-out {
+      opacity: 0;
+    }
+
     .loading-content {
       text-align: center;
-      max-width: 500px;
-      padding: 20px;
+      max-width: 600px;
+      padding: 40px;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      animation: contentFadeIn 0.6s ease;
     }
 
-    .loading-spinner {
-      width: 60px;
-      height: 60px;
-      border: 3px solid #E8F5E9;
-      border-top-color: var(--primary);
-      border-right-color: var(--primary-light);
+    @keyframes contentFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Professional Loading Animation */
+    .loading-animation {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+
+    .loading-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 32px;
     }
 
-    @keyframes spin {
+    .loading-circle-outer {
+      border: 3px solid #e9ecef;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .loading-circle-inner {
+      border: 3px solid transparent;
+      border-top-color: var(--primary);
+      animation: rotate 1.5s linear infinite;
+    }
+
+    .loading-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+    }
+
+    .loading-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    @keyframes rotate {
       to { transform: rotate(360deg); }
     }
 
-    .loading-stages {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
+    @keyframes pulse {
+      0%, 100% { 
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% { 
+        transform: scale(1.1);
+        opacity: 0.5;
+      }
     }
 
-    .stage {
+    /* Progress Steps */
+    .loading-progress {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .loading-progress::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 60px;
+      right: 60px;
+      height: 2px;
+      background: #e9ecef;
+      z-index: 0;
+    }
+
+    .progress-line {
+      position: absolute;
+      top: 20px;
+      left: 60px;
+      right: 60px;
+      height: 2px;
+      background: var(--primary);
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 3s ease;
+      z-index: 1;
+    }
+
+    .loading-overlay.active .progress-line {
+      animation: progressFill 12s ease-out;
+    }
+
+    @keyframes progressFill {
+      0% { transform: scaleX(0); }
+      25% { transform: scaleX(0.25); }
+      50% { transform: scaleX(0.5); }
+      75% { transform: scaleX(0.75); }
+      100% { transform: scaleX(1); }
+    }
+
+    .progress-step {
+      position: relative;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      opacity: 0.3;
-      transition: all 0.5s ease;
+      gap: 12px;
+      flex: 1;
     }
 
-    .stage.active {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-    .stage.completed {
-      opacity: 0.7;
-    }
-
-    .stage-icon {
-      font-size: 28px;
-      filter: grayscale(1);
-      transition: all 0.5s ease;
-    }
-
-    .stage.active .stage-icon {
-      filter: grayscale(0);
-      animation: bounce 1s ease-in-out infinite;
-    }
-
-    .stage.completed .stage-icon {
-      filter: grayscale(0);
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .stage-label {
-      font-size: 12px;
-      color: var(--text-secondary);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .stage.active .stage-label {
-      color: var(--primary);
-    }
-
-    .loading-text {
-      font-size: 18px;
-      color: var(--text-primary);
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    .hiking-fact-container {
-      background: #F0F7ED;
-      border: 1px solid #E8F5E9;
-      border-radius: var(--radius);
-      padding: 16px 20px;
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid #e9ecef;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-top: 24px;
-      min-height: 60px;
+      justify-content: center;
+      transition: all 0.4s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .fact-icon {
-      font-size: 24px;
-      flex-shrink: 0;
+    .step-circle svg {
+      width: 20px;
+      height: 20px;
+      stroke: #cbd5e1;
+      stroke-width: 2;
+      fill: none;
+      transition: all 0.4s ease;
     }
 
-    .hiking-fact {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      text-align: left;
-      animation: fadeIn 0.5s ease;
+    .progress-step.active .step-circle {
+      border-color: var(--primary);
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
     }
 
-    /* Enhanced loading card for customize.js compatibility */
-    .loading-card {
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 4px 20px var(--shadow);
+    .progress-step.active .step-circle svg {
+      stroke: var(--primary);
+    }
+
+    .progress-step.completed .step-circle {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .progress-step.completed .step-circle svg {
+      stroke: white;
+      fill: white;
+    }
+
+    .step-label {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 500;
       text-align: center;
+      transition: color 0.4s ease;
     }
 
-    .loading-card h3 {
-      font-size: 1.3em;
-      color: var(--text-dark);
-      margin-bottom: 15px;
+    .progress-step.active .step-label {
+      color: var(--primary);
+      font-weight: 600;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
+    .progress-step.completed .step-label {
+      color: var(--text-primary);
+    }
+
+    /* Loading Text */
+    .loading-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .loading-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    /* Trek Facts */
+    .trek-fact-card {
+      background: linear-gradient(135deg, #f0f7ed 0%, #e8f5e9 100%);
+      border: 1px solid #d4e4d0;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+      min-height: 80px;
+      transition: all 0.4s ease;
+    }
+
+    .fact-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
+    }
+
+    .fact-icon-wrapper svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--primary);
+    }
+
+    .trek-fact-text {
+      font-size: 15px;
+      color: var(--text-primary);
+      line-height: 1.6;
+      text-align: left;
+      opacity: 0;
+      animation: factFadeIn 0.6s ease forwards;
+    }
+
+    @keyframes factFadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     /* Results Container */
     #itinerary-cards {
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       z-index: 10;
     }
@@ -872,6 +1007,11 @@
       }
     }
     
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
     @keyframes fadeOut {
       from { opacity: 1; }
       to { opacity: 0; }
@@ -881,6 +1021,42 @@
     @media (max-width: 768px) {
       .main-content-area {
         padding: 20px 16px;
+      }
+
+      .loading-content {
+        padding: 30px 20px;
+      }
+
+      .loading-animation {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 30px;
+      }
+
+      .loading-title {
+        font-size: 20px;
+      }
+
+      .loading-subtitle {
+        font-size: 14px;
+      }
+
+      .loading-progress {
+        gap: 0;
+      }
+
+      .step-circle {
+        width: 32px;
+        height: 32px;
+      }
+
+      .step-circle svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .step-label {
+        font-size: 11px;
       }
 
       .section-header {
@@ -944,30 +1120,15 @@
       .info-card h3 {
         font-size: 1.5em;
       }
-
-      .loading-stages {
-        gap: 16px;
-      }
-
-      .stage-icon {
-        font-size: 24px;
-      }
-
-      .stage-label {
-        font-size: 11px;
-      }
-
-      .hiking-fact {
-        font-size: 13px;
-      }
     }
 
     @media (max-width: 480px) {
-      .loading-stages {
-        gap: 12px;
+      .loading-progress::before,
+      .progress-line {
+        display: none;
       }
 
-      .stage {
+      .progress-step {
         flex: 0 0 45%;
       }
     }
@@ -985,35 +1146,75 @@
     <div id="itinerary-cards"></div>
   </main>
 
-  <!-- Loading Overlay -->
+  <!-- Professional Loading Overlay -->
   <div class="loading-overlay active" id="loadingOverlay">
     <div class="loading-content">
-      <div class="loading-spinner"></div>
-      
-      <div class="loading-stages">
-        <div class="stage active" data-stage="1">
-          <div class="stage-icon">🗺️</div>
-          <div class="stage-label">Analyzing preferences</div>
-        </div>
-        <div class="stage" data-stage="2">
-          <div class="stage-icon">🏔️</div>
-          <div class="stage-label">Finding perfect trails</div>
-        </div>
-        <div class="stage" data-stage="3">
-          <div class="stage-icon">🏕️</div>
-          <div class="stage-label">Planning accommodations</div>
-        </div>
-        <div class="stage" data-stage="4">
-          <div class="stage-icon">✨</div>
-          <div class="stage-label">Crafting your itinerary</div>
+      <!-- Loading Animation -->
+      <div class="loading-animation">
+        <div class="loading-circle loading-circle-outer"></div>
+        <div class="loading-circle loading-circle-inner"></div>
+        <div class="loading-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
+          </svg>
         </div>
       </div>
       
-      <div class="loading-text">Creating your perfect trek...</div>
+      <!-- Progress Steps -->
+      <div class="loading-progress">
+        <div class="progress-line"></div>
+        
+        <div class="progress-step active" data-stage="1">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+            </svg>
+          </div>
+          <div class="step-label">Analyzing preferences</div>
+        </div>
+        
+        <div class="progress-step" data-stage="2">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+            </svg>
+          </div>
+          <div class="step-label">Finding trails</div>
+        </div>
+        
+        <div class="progress-step" data-stage="3">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+            </svg>
+          </div>
+          <div class="step-label">Planning stays</div>
+        </div>
+        
+        <div class="progress-step" data-stage="4">
+          <div class="step-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z" />
+            </svg>
+          </div>
+          <div class="step-label">Finalizing details</div>
+        </div>
+      </div>
       
-      <div class="hiking-fact-container">
-        <div class="fact-icon">💡</div>
-        <div class="hiking-fact" id="hikingFact">Did you know? The Appalachian Trail spans 2,190 miles across 14 states!</div>
+      <!-- Loading Text -->
+      <h2 class="loading-title">Crafting Your Perfect Trek</h2>
+      <p class="loading-subtitle">We're creating a personalized itinerary just for you</p>
+      
+      <!-- Trek Facts -->
+      <div class="trek-fact-card">
+        <div class="fact-icon-wrapper">
+          <svg viewBox="0 0 24 24">
+            <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+          </svg>
+        </div>
+        <div class="trek-fact-text" id="hikingFact">
+          Did you know? The Appalachian Trail spans 2,190 miles across 14 states!
+        </div>
       </div>
     </div>
   </div>
@@ -1153,7 +1354,7 @@
       
       // Update stages every 3 seconds
       stageInterval = setInterval(() => {
-        const currentStageEl = document.querySelector(`.stage[data-stage="${currentStage}"]`);
+        const currentStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
         if (currentStageEl) {
           currentStageEl.classList.remove('active');
           currentStageEl.classList.add('completed');
@@ -1161,7 +1362,7 @@
         
         currentStage++;
         if (currentStage <= 4) {
-          const nextStageEl = document.querySelector(`.stage[data-stage="${currentStage}"]`);
+          const nextStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
           if (nextStageEl) {
             nextStageEl.classList.add('active');
           }
@@ -1174,11 +1375,17 @@
         factIndex = (factIndex + 1) % hikingFacts.length;
         const factElement = document.getElementById('hikingFact');
         if (factElement) {
-          factElement.style.animation = 'none';
+          // Fade out
+          factElement.style.opacity = '0';
           setTimeout(() => {
             factElement.textContent = hikingFacts[factIndex];
-            factElement.style.animation = 'fadeIn 0.5s ease';
-          }, 10);
+            // Fade in with new animation
+            factElement.style.animation = 'none';
+            setTimeout(() => {
+              factElement.style.animation = 'factFadeIn 0.6s ease forwards';
+              factElement.style.opacity = '1';
+            }, 10);
+          }, 300);
         }
       }, 4000);
     }
@@ -1188,13 +1395,33 @@
       clearInterval(factInterval);
       
       // Reset stages
-      document.querySelectorAll('.stage').forEach(stage => {
+      document.querySelectorAll('.progress-step').forEach(stage => {
         stage.classList.remove('active', 'completed');
       });
-      const firstStage = document.querySelector('.stage[data-stage="1"]');
+      const firstStage = document.querySelector('.progress-step[data-stage="1"]');
       if (firstStage) {
         firstStage.classList.add('active');
       }
+    }
+
+    // Smooth transition to itinerary
+    function transitionToItinerary() {
+      const overlay = document.getElementById('loadingOverlay');
+      
+      // Add fade-out class
+      overlay.classList.add('fade-out');
+      
+      // Wait for fade animation then hide
+      setTimeout(() => {
+        overlay.classList.remove('active');
+        overlay.classList.remove('fade-out');
+        
+        // Show itinerary with fade-in
+        const itineraryCards = document.getElementById('itinerary-cards');
+        if (itineraryCards) {
+          itineraryCards.classList.add('show');
+        }
+      }, 600);
     }
 
     // Modal functions
@@ -1296,14 +1523,13 @@
           if (window.generateItineraryFromQuiz) {
             console.log('Calling generateItineraryFromQuiz with data:', quizData);
             
-            // Stop the initial loading animation as customize.js will handle its own
-            setTimeout(() => {
-              stopLoadingAnimation();
-              document.getElementById('loadingOverlay').classList.remove('active');
-            }, 1000);
-            
             // Generate the itinerary
             await window.generateItineraryFromQuiz(quizData);
+            
+            // Stop loading and transition
+            stopLoadingAnimation();
+            transitionToItinerary();
+            
           } else {
             console.error('generateItineraryFromQuiz function not found');
             document.getElementById('itinerary-cards').innerHTML = `
@@ -1324,7 +1550,7 @@
               </div>
             `;
             stopLoadingAnimation();
-            document.getElementById('loadingOverlay').classList.remove('active');
+            transitionToItinerary();
           }
         };
         

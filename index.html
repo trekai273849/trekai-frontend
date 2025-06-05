@@ -257,30 +257,6 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        .captured-info {
-            background: #F0F7ED;
-            border: 1px solid #E8F5E9;
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 24px;
-        }
-
-        .captured-info h4 {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .captured-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 0;
-            font-size: 14px;
-            color: var(--text-dark);
-        }
-
         .options-grid {
             display: grid;
             gap: 10px;
@@ -501,12 +477,6 @@
                 <!-- Progress Bar -->
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressBar" style="width: 0%"></div>
-                </div>
-
-                <!-- Captured Information Display -->
-                <div class="captured-info" id="capturedInfo" style="display: none;">
-                    <h4>✓ We've captured from your input:</h4>
-                    <div id="capturedItems"></div>
                 </div>
 
                 <!-- Dynamic Question Container -->
@@ -1051,6 +1021,43 @@
             }
         };
 
+        // Fuzzy string matching function
+        function fuzzyMatch(str1, str2, threshold = 0.8) {
+            // Simple Levenshtein distance implementation
+            const distance = (a, b) => {
+                if (a.length === 0) return b.length;
+                if (b.length === 0) return a.length;
+                
+                const matrix = [];
+                for (let i = 0; i <= b.length; i++) {
+                    matrix[i] = [i];
+                }
+                for (let j = 0; j <= a.length; j++) {
+                    matrix[0][j] = j;
+                }
+                
+                for (let i = 1; i <= b.length; i++) {
+                    for (let j = 1; j <= a.length; j++) {
+                        if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                            matrix[i][j] = matrix[i - 1][j - 1];
+                        } else {
+                            matrix[i][j] = Math.min(
+                                matrix[i - 1][j - 1] + 1,
+                                matrix[i][j - 1] + 1,
+                                matrix[i - 1][j] + 1
+                            );
+                        }
+                    }
+                }
+                
+                return matrix[b.length][a.length];
+            };
+            
+            const maxLen = Math.max(str1.length, str2.length);
+            const similarity = 1 - (distance(str1, str2) / maxLen);
+            return similarity >= threshold;
+        }
+
         // Parse user input to extract information
         function parseUserInput(input) {
             const parsed = {
@@ -1064,57 +1071,289 @@
             
             const lowerInput = input.toLowerCase();
             
-            // Trek type detection
-            if (lowerInput.includes('day hike') || lowerInput.includes('day trip') || lowerInput.includes('day trek')) {
-                parsed.trekType = 'day-hike';
-            } else if (lowerInput.match(/\d+\s*day/)) {
-                parsed.trekType = 'multi-day';
-                const daysMatch = lowerInput.match(/(\d+)\s*day/);
-                if (daysMatch) {
-                    const days = parseInt(daysMatch[1]);
-                    if (days <= 2) parsed.duration = '3-5';
-                    else if (days <= 5) parsed.duration = '3-5';
-                    else if (days <= 8) parsed.duration = '6-8';
-                    else if (days <= 14) parsed.duration = '9-14';
-                    else parsed.duration = '15+';
+            // Duration and trek type detection (MUST come before day hike detection)
+            const durationPatterns = [
+                { regex: /(\d+)\s*day(?:s)?\s*(?:hike|trek|trip|tour|walk)/i, type: 'days' },
+                { regex: /(\d+)\s*night(?:s)?/i, type: 'nights' },
+                { regex: /(\d+)\s*week(?:s)?/i, type: 'weeks' },
+                { regex: /week[\s-]?long/i, type: 'week' },
+                { regex: /fortnight/i, type: 'fortnight' },
+                { regex: /month[\s-]?long/i, type: 'month' },
+                { regex: /weekend/i, type: 'weekend' },
+                { regex: /long weekend/i, type: 'long-weekend' }
+            ];
+            
+            let durationFound = false;
+            for (const pattern of durationPatterns) {
+                const match = lowerInput.match(pattern.regex);
+                if (match) {
+                    durationFound = true;
+                    
+                    if (pattern.type === 'days') {
+                        const days = parseInt(match[1]);
+                        if (days === 1) {
+                            parsed.trekType = 'day-hike';
+                        } else {
+                            parsed.trekType = 'multi-day';
+                            if (days <= 5) parsed.duration = '3-5';
+                            else if (days <= 8) parsed.duration = '6-8';
+                            else if (days <= 14) parsed.duration = '9-14';
+                            else parsed.duration = '15+';
+                        }
+                    } else if (pattern.type === 'nights') {
+                        const nights = parseInt(match[1]);
+                        parsed.trekType = 'multi-day';
+                        const days = nights + 1;
+                        if (days <= 5) parsed.duration = '3-5';
+                        else if (days <= 8) parsed.duration = '6-8';
+                        else if (days <= 14) parsed.duration = '9-14';
+                        else parsed.duration = '15+';
+                    } else if (pattern.type === 'weeks') {
+                        const weeks = parseInt(match[1]);
+                        parsed.trekType = 'multi-day';
+                        if (weeks === 1) parsed.duration = '6-8';
+                        else if (weeks === 2) parsed.duration = '9-14';
+                        else parsed.duration = '15+';
+                    } else if (pattern.type === 'week') {
+                        parsed.trekType = 'multi-day';
+                        parsed.duration = '6-8';
+                    } else if (pattern.type === 'fortnight') {
+                        parsed.trekType = 'multi-day';
+                        parsed.duration = '9-14';
+                    } else if (pattern.type === 'month') {
+                        parsed.trekType = 'multi-day';
+                        parsed.duration = '15+';
+                    } else if (pattern.type === 'weekend') {
+                        parsed.trekType = 'multi-day';
+                        parsed.duration = '3-5';
+                    } else if (pattern.type === 'long-weekend') {
+                        parsed.trekType = 'multi-day';
+                        parsed.duration = '3-5';
+                    }
+                    break;
                 }
             }
             
-            // Location detection
+            // Only check for day hike if no duration was found
+            if (!durationFound) {
+                if (lowerInput.match(/day\s*(?:hike|trip|trek|tour|walk)/i) && 
+                    !lowerInput.match(/\d+\s*day/i)) {
+                    parsed.trekType = 'day-hike';
+                }
+            }
+            
+            // Comprehensive location detection with fuzzy matching
             const locations = {
+                // Europe - Alps
                 'alps': 'europe',
+                'alp': 'europe',
+                'alpine': 'europe',
                 'french alps': 'europe',
                 'swiss alps': 'europe',
                 'italian alps': 'europe',
+                'austrian alps': 'europe',
                 'dolomites': 'europe',
+                'dolomiti': 'europe',
+                'dolimites': 'europe', // common misspelling
+                'mont blanc': 'europe',
+                'chamonix': 'europe',
+                'zermatt': 'europe',
+                'matterhorn': 'europe',
+                'eiger': 'europe',
+                'jungfrau': 'europe',
+                'bernese oberland': 'europe',
+                
+                // Europe - Other
                 'pyrenees': 'europe',
+                'picos de europa': 'europe',
                 'scotland': 'europe',
+                'scottish highlands': 'europe',
                 'norway': 'europe',
+                'lofoten': 'europe',
                 'iceland': 'europe',
+                'ireland': 'europe',
+                'wales': 'europe',
+                'england': 'europe',
+                'lake district': 'europe',
+                'peak district': 'europe',
+                'snowdonia': 'europe',
+                'corsica': 'europe',
+                'gr20': 'europe',
+                'spain': 'europe',
+                'portugal': 'europe',
+                'italy': 'europe',
+                'france': 'europe',
+                'switzerland': 'europe',
+                'austria': 'europe',
+                'germany': 'europe',
+                'black forest': 'europe',
+                'bavaria': 'europe',
+                'tatras': 'europe',
+                'carpathians': 'europe',
+                'transylvania': 'europe',
+                'romania': 'europe',
+                'bulgaria': 'europe',
+                'greece': 'europe',
+                'crete': 'europe',
+                'macedonia': 'europe',
+                'albania': 'europe',
+                'croatia': 'europe',
+                'slovenia': 'europe',
+                'bosnia': 'europe',
+                'montenegro': 'europe',
+                'serbia': 'europe',
+                'sweden': 'europe',
+                'finland': 'europe',
+                'lapland': 'europe',
+                
+                // Asia - Himalayas
                 'himalayas': 'asia',
+                'himalaya': 'asia',
                 'nepal': 'asia',
+                'everest': 'asia',
+                'annapurna': 'asia',
+                'langtang': 'asia',
+                'manaslu': 'asia',
+                'kanchenjunga': 'asia',
+                'makalu': 'asia',
+                'dhaulagiri': 'asia',
                 'bhutan': 'asia',
                 'tibet': 'asia',
-                'japan': 'asia',
-                'india': 'asia',
+                'ladakh': 'asia',
+                'kashmir': 'asia',
+                'karakoram': 'asia',
+                'k2': 'asia',
                 'pakistan': 'asia',
+                'india': 'asia',
+                'sikkim': 'asia',
+                
+                // Asia - Other
+                'japan': 'asia',
+                'japanese alps': 'asia',
+                'fuji': 'asia',
+                'mount fuji': 'asia',
+                'hokkaido': 'asia',
+                'kumano kodo': 'asia',
+                'china': 'asia',
+                'taiwan': 'asia',
+                'korea': 'asia',
+                'mongolia': 'asia',
+                'kyrgyzstan': 'asia',
+                'tajikistan': 'asia',
+                'kazakhstan': 'asia',
+                'vietnam': 'asia',
+                'thailand': 'asia',
+                'malaysia': 'asia',
+                'indonesia': 'asia',
+                'philippines': 'asia',
+                'sri lanka': 'asia',
+                'myanmar': 'asia',
+                'cambodia': 'asia',
+                'laos': 'asia',
+                
+                // Americas
                 'peru': 'americas',
+                'inca trail': 'americas',
+                'machu picchu': 'americas',
+                'huayhuash': 'americas',
+                'cordillera blanca': 'americas',
+                'salkantay': 'americas',
                 'andes': 'americas',
                 'patagonia': 'americas',
+                'torres del paine': 'americas',
+                'fitz roy': 'americas',
                 'chile': 'americas',
                 'argentina': 'americas',
+                'bolivia': 'americas',
+                'ecuador': 'americas',
+                'colombia': 'americas',
+                'venezuela': 'americas',
+                'brazil': 'americas',
                 'canada': 'americas',
+                'canadian rockies': 'americas',
+                'banff': 'americas',
+                'jasper': 'americas',
+                'british columbia': 'americas',
+                'yukon': 'americas',
                 'usa': 'americas',
+                'united states': 'americas',
                 'alaska': 'americas',
+                'denali': 'americas',
+                'yosemite': 'americas',
+                'grand canyon': 'americas',
+                'zion': 'americas',
+                'rocky mountains': 'americas',
+                'rockies': 'americas',
+                'appalachian': 'americas',
+                'sierra nevada': 'americas',
+                'cascade': 'americas',
+                'colorado': 'americas',
+                'utah': 'americas',
+                'california': 'americas',
+                'washington': 'americas',
+                'oregon': 'americas',
+                'montana': 'americas',
+                'wyoming': 'americas',
+                'mexico': 'americas',
+                'guatemala': 'americas',
+                'costa rica': 'americas',
+                'panama': 'americas',
+                
+                // Oceania
                 'new zealand': 'oceania',
+                'milford track': 'oceania',
+                'routeburn': 'oceania',
+                'kepler': 'oceania',
+                'abel tasman': 'oceania',
+                'tongariro': 'oceania',
+                'fiordland': 'oceania',
+                'queenstown': 'oceania',
+                'south island': 'oceania',
+                'north island': 'oceania',
                 'australia': 'oceania',
                 'tasmania': 'oceania',
+                'overland track': 'oceania',
+                'larapinta': 'oceania',
+                'great ocean walk': 'oceania',
+                'blue mountains': 'oceania',
+                'grampians': 'oceania',
+                'papua new guinea': 'oceania',
+                'kokoda': 'oceania',
+                'fiji': 'oceania',
+                'vanuatu': 'oceania',
+                
+                // Africa
                 'kilimanjaro': 'africa',
+                'tanzania': 'africa',
+                'kenya': 'africa',
+                'mount kenya': 'africa',
                 'morocco': 'africa',
+                'atlas mountains': 'africa',
+                'toubkal': 'africa',
                 'ethiopia': 'africa',
-                'south africa': 'africa'
+                'simien mountains': 'africa',
+                'south africa': 'africa',
+                'drakensberg': 'africa',
+                'table mountain': 'africa',
+                'namibia': 'africa',
+                'uganda': 'africa',
+                'rwenzori': 'africa',
+                'rwanda': 'africa',
+                'madagascar': 'africa',
+                'reunion': 'africa',
+                'mauritius': 'africa',
+                'lesotho': 'africa',
+                'malawi': 'africa',
+                'zambia': 'africa',
+                'zimbabwe': 'africa',
+                'botswana': 'africa',
+                'egypt': 'africa',
+                'sinai': 'africa',
+                'algeria': 'africa',
+                'tunisia': 'africa'
             };
             
+            // First try exact matching
             for (const [key, value] of Object.entries(locations)) {
                 if (lowerInput.includes(key)) {
                     parsed.location = value;
@@ -1122,25 +1361,75 @@
                 }
             }
             
-            // Difficulty detection
-            if (lowerInput.includes('beginner') || lowerInput.includes('easy') || lowerInput.includes('gentle')) {
-                parsed.difficulty = 'easy';
-            } else if (lowerInput.includes('moderate') || lowerInput.includes('intermediate')) {
-                parsed.difficulty = 'moderate';
-            } else if (lowerInput.includes('challenging') || lowerInput.includes('difficult') || lowerInput.includes('advanced') || lowerInput.includes('hard')) {
-                parsed.difficulty = 'challenging';
+            // If no exact match, try fuzzy matching for words longer than 5 characters
+            if (!parsed.location) {
+                const words = lowerInput.split(/\s+/);
+                for (const word of words) {
+                    if (word.length > 5) {
+                        for (const [key, value] of Object.entries(locations)) {
+                            if (key.length > 5 && fuzzyMatch(word, key, 0.8)) {
+                                parsed.location = value;
+                                break;
+                            }
+                        }
+                        if (parsed.location) break;
+                    }
+                }
             }
             
-            // Season detection
-            if (lowerInput.includes('summer')) parsed.season = 'summer';
-            else if (lowerInput.includes('winter')) parsed.season = 'winter';
-            else if (lowerInput.includes('spring')) parsed.season = 'spring';
-            else if (lowerInput.includes('autumn') || lowerInput.includes('fall')) parsed.season = 'autumn';
+            // Difficulty detection with more patterns
+            const difficultyPatterns = {
+                easy: ['easy', 'beginner', 'gentle', 'leisurely', 'relaxed', 'simple', 'light', 'casual'],
+                moderate: ['moderate', 'intermediate', 'medium', 'average', 'normal'],
+                challenging: ['challenging', 'difficult', 'hard', 'strenuous', 'tough', 'demanding', 
+                             'advanced', 'expert', 'extreme', 'technical', 'arduous']
+            };
             
-            // Accommodation detection
-            if (lowerInput.includes('camping') || lowerInput.includes('tent')) parsed.accommodation = 'camping';
-            else if (lowerInput.includes('hut')) parsed.accommodation = 'huts';
-            else if (lowerInput.includes('lodge') || lowerInput.includes('hotel')) parsed.accommodation = 'lodges';
+            for (const [level, patterns] of Object.entries(difficultyPatterns)) {
+                for (const pattern of patterns) {
+                    if (lowerInput.includes(pattern)) {
+                        parsed.difficulty = level;
+                        break;
+                    }
+                }
+                if (parsed.difficulty) break;
+            }
+            
+            // Season detection with more patterns
+            const seasonPatterns = {
+                spring: ['spring', 'april', 'may', 'march'],
+                summer: ['summer', 'june', 'july', 'august', 'warm season', 'hot season'],
+                autumn: ['autumn', 'fall', 'september', 'october', 'november'],
+                winter: ['winter', 'december', 'january', 'february', 'cold season', 'snow season']
+            };
+            
+            for (const [season, patterns] of Object.entries(seasonPatterns)) {
+                for (const pattern of patterns) {
+                    if (lowerInput.includes(pattern)) {
+                        parsed.season = season;
+                        break;
+                    }
+                }
+                if (parsed.season) break;
+            }
+            
+            // Accommodation detection with more patterns
+            const accommodationPatterns = {
+                camping: ['camping', 'tent', 'camp', 'bivouac', 'wild camping'],
+                huts: ['hut', 'refuge', 'rifugio', 'mountain hut', 'alpine hut', 'bothies', 'cabins'],
+                lodges: ['lodge', 'hotel', 'guesthouse', 'inn', 'teahouse', 'accommodation', 'stay'],
+                mixed: ['mixed accommodation', 'variety of accommodation', 'huts and camping']
+            };
+            
+            for (const [type, patterns] of Object.entries(accommodationPatterns)) {
+                for (const pattern of patterns) {
+                    if (lowerInput.includes(pattern)) {
+                        parsed.accommodation = type;
+                        break;
+                    }
+                }
+                if (parsed.accommodation) break;
+            }
             
             return parsed;
         }
@@ -1247,7 +1536,7 @@
                 html += `
                     <textarea class="text-input" 
                               id="detailsInput" 
-                              placeholder="Add any special requirements or preferences..."
+                              placeholder="Share any other preferences: budget, group size, must-see places, fitness level, dietary needs, or special interests..."
                               onchange="updateTextAnswer('${questionKey}')">${prefilled}</textarea>
                 `;
             }
@@ -1354,7 +1643,6 @@
         function openQuizModal() {
             document.getElementById('quizModal').classList.add('active');
             document.body.style.overflow = 'hidden';
-            displayCapturedInfo();
             renderQuestion();
         }
 
