@@ -12,6 +12,68 @@ let selectedSuggestionIndex = -1;
 // Global functions that need to be accessible from HTML
 window.selectOption = function(question, value) {
     quizManager.quizAnswers[question] = value;
+    
+    // Special handling for trek-type selection
+    if (question === 'trek-type') {
+        // Regenerate questions based on the selection
+        if (value === 'day-hike') {
+            // Remove trek-length and accommodation from remaining questions
+            const currentIndex = quizManager.questionsToShow.indexOf('trek-type');
+            const remainingQuestions = quizManager.questionsToShow.slice(currentIndex + 1);
+            
+            // Filter out trek-length and accommodation
+            const filteredQuestions = remainingQuestions.filter(q => 
+                q !== 'trek-length' && q !== 'accommodation'
+            );
+            
+            // Update the questions array
+            quizManager.questionsToShow = [
+                ...quizManager.questionsToShow.slice(0, currentIndex + 1),
+                ...filteredQuestions
+            ];
+        } else if (value === 'multi-day') {
+            // Make sure trek-length and accommodation are included if they were removed
+            const currentIndex = quizManager.questionsToShow.indexOf('trek-type');
+            const remainingQuestions = quizManager.questionsToShow.slice(currentIndex + 1);
+            
+            // Check if trek-length is missing and should be added
+            if (!remainingQuestions.includes('trek-length') && 
+                !quizManager.parsedData.duration &&
+                quizManager.questionTemplates['trek-length']) {
+                remainingQuestions.unshift('trek-length');
+            }
+            
+            // Check if accommodation is missing and should be added
+            if (!remainingQuestions.includes('accommodation') && 
+                !quizManager.parsedData.accommodation &&
+                quizManager.questionTemplates['accommodation']) {
+                // Find appropriate position for accommodation (after difficulty, before season)
+                const difficultyIndex = remainingQuestions.indexOf('difficulty');
+                const seasonIndex = remainingQuestions.indexOf('season');
+                
+                if (difficultyIndex !== -1 && seasonIndex !== -1) {
+                    remainingQuestions.splice(difficultyIndex + 1, 0, 'accommodation');
+                } else if (difficultyIndex !== -1) {
+                    remainingQuestions.splice(difficultyIndex + 1, 0, 'accommodation');
+                } else {
+                    // Add before interests
+                    const interestsIndex = remainingQuestions.indexOf('interests');
+                    if (interestsIndex !== -1) {
+                        remainingQuestions.splice(interestsIndex, 0, 'accommodation');
+                    } else {
+                        remainingQuestions.push('accommodation');
+                    }
+                }
+            }
+            
+            // Update the questions array
+            quizManager.questionsToShow = [
+                ...quizManager.questionsToShow.slice(0, currentIndex + 1),
+                ...remainingQuestions
+            ];
+        }
+    }
+    
     setTimeout(nextQuestion, 300);
 };
 

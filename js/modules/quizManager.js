@@ -245,10 +245,13 @@ export class QuizManager {
         
         // Only check for day hike if no duration was found
         if (!durationFound) {
+            // Check for explicit day hike patterns
             if (lowerInput.match(/day\s*(?:hike|trip|trek|tour|walk)/i) && 
                 !lowerInput.match(/\d+\s*day/i)) {
                 parsed.trekType = 'day-hike';
             }
+            // If just "hike" alone, don't assume - let the quiz ask
+            // This allows the user to choose between day hike and multi-day
         }
         
         // Additional country/region detection (fallback for places not in city database)
@@ -347,7 +350,7 @@ export class QuizManager {
         ];
         
         // Filter out questions we already have answers for
-        const questions = allQuestions.filter(q => {
+        let questions = allQuestions.filter(q => {
             if (q === 'trek-type' && parsed.trekType) return false;
             if (q === 'trek-length' && parsed.duration) return false;
             if (q === 'location' && parsed.location) return false;
@@ -357,14 +360,14 @@ export class QuizManager {
             return true;
         });
         
-        // Skip trek-length if day hike
+        // Skip trek-length and accommodation if day hike was parsed
         if (parsed.trekType === 'day-hike') {
-            const lengthIndex = questions.indexOf('trek-length');
-            if (lengthIndex > -1) questions.splice(lengthIndex, 1);
-            
-            // Also skip accommodation for day hikes
-            const accomIndex = questions.indexOf('accommodation');
-            if (accomIndex > -1) questions.splice(accomIndex, 1);
+            questions = questions.filter(q => q !== 'trek-length' && q !== 'accommodation');
+        }
+        
+        // Also check quiz answers in case trek-type was already answered
+        if (this.quizAnswers['trek-type'] === 'day-hike') {
+            questions = questions.filter(q => q !== 'trek-length' && q !== 'accommodation');
         }
         
         return questions;
@@ -471,18 +474,28 @@ export class QuizManager {
         console.log('Specific Location:', specificLocation);
         console.log('================================');
         
-        return {
+        // Determine trek type
+        const trekType = this.quizAnswers['trek-type'] || this.parsedData.trekType || 'multi-day';
+        
+        // For day hikes, don't include trek length or accommodation
+        const result = {
             originalInput: this.originalInput,
-            trekType: this.quizAnswers['trek-type'] || this.parsedData.trekType || 'multi-day',
-            trekLength: this.quizAnswers['trek-length'] || this.parsedData.duration || '6-8',
+            trekType: trekType,
             location: finalLocation,
-            specificLocation: specificLocation || finalLocation, // Ensure we always have specific location
+            specificLocation: specificLocation || finalLocation,
             locationDetails: parsedLocationDetails || this.parsedData.locationDetails || {},
             difficulty: this.quizAnswers.difficulty || this.parsedData.difficulty || 'moderate',
-            accommodation: this.quizAnswers.accommodation || this.parsedData.accommodation || 'mixed',
             season: this.quizAnswers.season || this.parsedData.season || 'summer',
             interests: this.quizAnswers.interests || [],
             details: this.quizAnswers.details || ''
         };
+        
+        // Only add trek length and accommodation for multi-day treks
+        if (trekType === 'multi-day') {
+            result.trekLength = this.quizAnswers['trek-length'] || this.parsedData.duration || '6-8';
+            result.accommodation = this.quizAnswers.accommodation || this.parsedData.accommodation || 'mixed';
+        }
+        
+        return result;
     }
 }
