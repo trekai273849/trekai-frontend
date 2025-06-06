@@ -1,16 +1,11 @@
 // packingListService.js
 
 export class AdaptivePackingListGenerator {
-    constructor(quizData) {
-        // This class now takes the raw quizData object.
-        // The _mapQuizDataToInputs method will translate it internally.
-        const { basic, advanced } = this._mapQuizDataToInputs(quizData);
-        
-        this.basic = basic;
-        this.advanced = advanced;
+    // ✅ FIX: Reverted to the original generic constructor
+    constructor(basicInputs, advancedInputs) {
+        this.basic = basicInputs;
+        this.advanced = advancedInputs;
         this.items = {};
-        
-        // The input depth calculation is now part of the service itself
         this.inputDepth = this._calculateInputDepth();
     }
 
