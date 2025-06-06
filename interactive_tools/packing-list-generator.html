@@ -797,22 +797,6 @@
             transform: translateX(0);
         }
 
-        .success-icon {
-            width: 40px;
-            height: 40px;
-            background: #D1FAE5;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .success-icon i {
-            color: var(--green);
-            font-size: 20px;
-        }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero-title {
@@ -974,7 +958,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Hero Section -->
         <div class="hero-section">
             <div class="hero-icon">
                 <i class="fas fa-backpack"></i>
@@ -985,7 +968,6 @@
             </p>
         </div>
 
-        <!-- Progress Steps -->
         <div class="progress-container">
             <div class="progress-step">
                 <div class="step-circle active" id="step1-circle">1</div>
@@ -1003,11 +985,9 @@
             </div>
         </div>
 
-        <!-- Step 1: Trek Details -->
         <div class="form-section active" id="step1">
             <h2 class="form-title">Tell us about your adventure</h2>
             
-            <!-- Quick Presets -->
             <div class="form-group">
                 <label class="form-label">
                     <i class="fas fa-rocket" style="color: #7c3aed;"></i>
@@ -1103,7 +1083,6 @@
             </div>
         </div>
 
-        <!-- Step 2: Conditions & Preferences -->
         <div class="form-section" id="step2">
             <h2 class="form-title">Conditions & Special Needs</h2>
             
@@ -1199,9 +1178,7 @@
                 </div>
             </div>
 
-            <!-- Advanced Options (initially hidden) -->
             <div id="advancedOptions" style="display: none;">
-                <!-- Temperature Range -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-thermometer-half" style="color: #ef4444;"></i>
@@ -1223,7 +1200,6 @@
                     </div>
                 </div>
 
-                <!-- Elevation Profile -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-chart-line" style="color: #8b5cf6;"></i>
@@ -1247,7 +1223,6 @@
                     </div>
                 </div>
 
-                <!-- Physical Demands -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-dumbbell" style="color: #f59e0b;"></i>
@@ -1279,7 +1254,6 @@
                     </div>
                 </div>
 
-                <!-- Water & Resupply -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-tint" style="color: #3b82f6;"></i>
@@ -1311,7 +1285,6 @@
                     </div>
                 </div>
 
-                <!-- Accommodation Mix -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-bed" style="color: #10b981;"></i>
@@ -1339,7 +1312,6 @@
                     </div>
                 </div>
 
-                <!-- Activity Specifics -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-tasks" style="color: #ec4899;"></i>
@@ -1371,7 +1343,6 @@
                     </div>
                 </div>
 
-                <!-- Group Dynamics -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-users" style="color: #7c3aed;"></i>
@@ -1404,7 +1375,6 @@
                     </div>
                 </div>
 
-                <!-- Preferences -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-sliders-h" style="color: #0ea5e9;"></i>
@@ -1432,7 +1402,6 @@
                     </div>
                 </div>
 
-                <!-- Additional Context -->
                 <div class="form-group">
                     <label class="form-label">
                         <i class="fas fa-comment-alt" style="color: #6366f1;"></i>
@@ -1462,9 +1431,7 @@
             </div>
         </div>
 
-        <!-- Step 3: Generated Packing List -->
         <div class="form-section" id="step3">
-            <!-- Summary Card -->
             <div class="summary-card">
                 <div class="summary-header">
                     <div>
@@ -1488,7 +1455,6 @@
                 </div>
             </div>
 
-            <!-- Action Buttons -->
             <div class="action-group" style="display: flex; gap: 12px; margin-bottom: 32px; justify-content: center; flex-wrap: wrap;">
                 <button class="btn btn-primary" id="saveToAdventures">
                     <i class="fas fa-save"></i>
@@ -1504,16 +1470,13 @@
                 </button>
             </div>
 
-            <!-- Specificity Notes -->
             <div id="specificityNotes" class="specificity-notes" style="display: none;">
                 <h4>List Customization Details</h4>
                 <ul id="specificityList"></ul>
             </div>
 
-            <!-- Packing List Categories -->
             <div class="categories-grid" id="packingListContent"></div>
 
-            <!-- Start New Button -->
             <div class="action-card">
                 <div class="action-buttons" style="justify-content: center;">
                     <button class="btn btn-secondary" id="startNew">
@@ -1525,7 +1488,6 @@
         </div>
     </div>
 
-    <!-- Auth Modal -->
     <div id="authModal" class="auth-modal">
         <div class="auth-modal-content">
             <button class="close-modal" id="closeAuthModal">×</button>
@@ -1547,7 +1509,6 @@
         </div>
     </div>
 
-    <!-- Success Notification -->
     <div id="successNotification" class="success-notification">
         <div class="success-icon">
             <i class="fas fa-check"></i>
@@ -1558,7 +1519,6 @@
         </div>
     </div>
 
-    <!-- Firebase Scripts -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
@@ -1773,6 +1733,7 @@
                 state.basic.specialNeeds.push(option.dataset.need);
             });
             console.log('Special needs updated:', state.basic.specialNeeds);
+            checkStep2Completion(); // Added to re-evaluate completion
         }
 
         function checkStep1Completion() {
@@ -1870,7 +1831,6 @@
                     console.log('Toggle option clicked:', this.dataset.need);
                     this.classList.toggle('selected');
                     updateSpecialNeeds();
-                    checkStep2Completion();
                 };
             });
         }
@@ -2003,75 +1963,6 @@
             };
         }
 
-        // Core Form Functions
-        function selectOption(field, value, selector, element) {
-            console.log('Selecting:', field, value);
-            
-            // Update state
-            state.basic[field] = value;
-            
-            // Remove selected class from all similar buttons
-            document.querySelectorAll(selector).forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            
-            // Add selected class to clicked element
-            if (element) {
-                element.classList.add('selected');
-                console.log('Added selected class to:', element);
-            }
-        }
-
-        function updateSpecialNeeds() {
-            state.basic.specialNeeds = [];
-            document.querySelectorAll('.toggle-option.selected').forEach(option => {
-                state.basic.specialNeeds.push(option.dataset.need);
-            });
-            console.log('Special needs updated:', state.basic.specialNeeds);
-        }
-
-        function checkStep1Completion() {
-            const isComplete = state.basic.tripStyle && state.basic.terrain;
-            document.getElementById('nextStep1').disabled = !isComplete;
-            console.log('Step 1 complete:', isComplete);
-        }
-
-        function checkStep2Completion() {
-            const isComplete = state.basic.weather;
-            document.getElementById('generateList').disabled = !isComplete;
-            console.log('Step 2 complete:', isComplete);
-        }
-
-        function goToStep(step) {
-            console.log('Going to step:', step);
-            
-            document.querySelectorAll('.form-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            document.getElementById(`step${step}`).classList.add('active');
-            updateProgressIndicators(step);
-            state.currentStep = step;
-        }
-
-        function updateProgressIndicators(step) {
-            for (let i = 1; i <= 3; i++) {
-                const circle = document.getElementById(`step${i}-circle`);
-                const label = document.getElementById(`step${i}-label`);
-                
-                if (i <= step) {
-                    circle.classList.add('active');
-                    label.classList.add('active');
-                } else {
-                    circle.classList.remove('active');
-                    label.classList.remove('active');
-                }
-            }
-            
-            document.getElementById('connector1').classList.toggle('active', step > 1);
-            document.getElementById('connector2').classList.toggle('active', step > 2);
-        }
-
         // Advanced Options Functions
         function toggleAdvancedOptions() {
             const advancedDiv = document.getElementById('advancedOptions');
@@ -2111,104 +2002,6 @@
             });
             state.advanced.preferences.specified = Object.values(state.advanced.preferences)
                 .some(v => typeof v === 'boolean' && v === true);
-        }
-
-        function applyPreset(preset) {
-            console.log('Applying preset:', preset);
-            
-            // Remove active state from all presets
-            document.querySelectorAll('.preset-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Add active state to clicked preset
-            document.querySelector(`[data-preset="${preset}"]`).classList.add('active');
-            
-            const presets = {
-                'weekend-warrior': {
-                    tripStyle: 'camping-short',
-                    terrain: 'forest'
-                },
-                'alpine-adventure': {
-                    tripStyle: 'hut-trek',
-                    terrain: 'alpine'
-                },
-                'tropical-trek': {
-                    tripStyle: 'camping-short',
-                    terrain: 'jungle'
-                }
-            };
-            
-            const presetData = presets[preset];
-            if (presetData) {
-                // Apply trip style selection
-                if (presetData.tripStyle) {
-                    const tripButton = document.querySelector(`[data-trip="${presetData.tripStyle}"]`);
-                    if (tripButton) {
-                        selectOption('tripStyle', presetData.tripStyle, '.trip-style-button', tripButton);
-                    }
-                }
-                
-                // Apply terrain selection
-                if (presetData.terrain) {
-                    const terrainButton = document.querySelector(`[data-terrain="${presetData.terrain}"]`);
-                    if (terrainButton) {
-                        selectOption('terrain', presetData.terrain, '.terrain-button', terrainButton);
-                    }
-                }
-                
-                checkStep1Completion();
-            }
-        }
-
-        function updateSpecialNeeds() {
-            state.basic.specialNeeds = [];
-            document.querySelectorAll('.toggle-option.selected').forEach(option => {
-                state.basic.specialNeeds.push(option.dataset.need);
-            });
-            console.log('Special needs updated:', state.basic.specialNeeds);
-        }
-
-        function checkStep1Completion() {
-            const isComplete = state.basic.tripStyle && state.basic.terrain;
-            document.getElementById('nextStep1').disabled = !isComplete;
-            console.log('Step 1 complete:', isComplete);
-        }
-
-        function checkStep2Completion() {
-            const isComplete = state.basic.weather;
-            document.getElementById('generateList').disabled = !isComplete;
-            console.log('Step 2 complete:', isComplete);
-        }
-
-        function goToStep(step) {
-            console.log('Going to step:', step);
-            
-            document.querySelectorAll('.form-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            document.getElementById(`step${step}`).classList.add('active');
-            updateProgressIndicators(step);
-            state.currentStep = step;
-        }
-
-        function updateProgressIndicators(step) {
-            for (let i = 1; i <= 3; i++) {
-                const circle = document.getElementById(`step${i}-circle`);
-                const label = document.getElementById(`step${i}-label`);
-                
-                if (i <= step) {
-                    circle.classList.add('active');
-                    label.classList.add('active');
-                } else {
-                    circle.classList.remove('active');
-                    label.classList.remove('active');
-                }
-            }
-            
-            document.getElementById('connector1').classList.toggle('active', step > 1);
-            document.getElementById('connector2').classList.toggle('active', step > 2);
         }
 
         // Adaptive Packing List Generator
@@ -2718,7 +2511,7 @@
                 goToStep(3);
                 
                 btn.innerHTML = '<i class="fas fa-magic"></i> Generate List';
-                btn.disabled = false;
+                checkStep2Completion(); // Re-enable if conditions are met
             }, 1500);
         }
 
@@ -2733,6 +2526,7 @@
             document.getElementById('itemCount').textContent = `${metadata.totalItems} items`;
             
             // Show specificity notes if detailed
+            document.getElementById('specificityNotes').style.display = 'none'; // Reset
             if (metadata.inputDepth.level !== 'basic' && metadata.specificityNotes.length > 0) {
                 showSpecificityNotes(metadata.specificityNotes);
             }
@@ -2807,6 +2601,13 @@
                 
                 const card = createCategoryCard(category, categoryItems, categoryInfo[category], metadata);
                 container.appendChild(card);
+            });
+            
+            // Add event listeners to newly created checkboxes
+            container.querySelectorAll('.item-checkbox input[type="checkbox"]').forEach(checkbox => {
+                checkbox.onchange = function() {
+                    updateItemCheck(this.dataset.item, this.checked);
+                };
             });
         }
 
@@ -2889,7 +2690,11 @@
 
         function updateProgress() {
             const totalItems = Object.values(state.packingList || {}).flat().length;
-            if (totalItems === 0) return;
+            if (totalItems === 0) {
+                document.getElementById('progressText').textContent = '0%';
+                document.getElementById('progressBar').style.width = '0%';
+                return;
+            };
             
             const checkedCount = state.checkedItems.size;
             const progress = Math.round((checkedCount / totalItems) * 100);
@@ -3032,20 +2837,20 @@
             
             // Reset advanced state
             Object.keys(state.advanced).forEach(key => {
-                if (typeof state.advanced[key] === 'object') {
-                    if (Array.isArray(state.advanced[key])) {
-                        state.advanced[key] = [];
-                    } else {
-                        Object.keys(state.advanced[key]).forEach(subKey => {
-                            if (subKey === 'specified') {
-                                state.advanced[key][subKey] = false;
-                            } else if (typeof state.advanced[key][subKey] === 'boolean') {
-                                state.advanced[key][subKey] = false;
-                            } else {
-                                state.advanced[key][subKey] = '';
-                            }
-                        });
+                const category = state.advanced[key];
+                if (typeof category === 'object' && category !== null) {
+                    if (Array.isArray(category.types)) {
+                        category.types = [];
                     }
+                    Object.keys(category).forEach(subKey => {
+                        if (subKey === 'specified') {
+                            category[subKey] = false;
+                        } else if (typeof category[subKey] === 'boolean') {
+                            category[subKey] = false;
+                        } else {
+                            category[subKey] = null; // Resetting to null or empty string
+                        }
+                    });
                 } else {
                     state.advanced[key] = '';
                 }
