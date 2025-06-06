@@ -1686,13 +1686,10 @@
             };
         };
 
-        // Initialize app when DOM is ready - simplified approach
+        // Initialize app when DOM is ready
         window.addEventListener('load', function() {
             console.log('Initializing app...');
-            initializeApp();
-        });
-
-        function initializeApp() {
+            
             // Initialize all event handlers
             setupButtonHandlers();
             setupNavigationHandlers();
@@ -1701,7 +1698,7 @@
             // Initialize UI elements
             document.getElementById('tempDayHighValue').textContent = '20°C';
             document.getElementById('tempNightLowValue').textContent = '10°C';
-        }
+        });
         
         // Setup all button click handlers directly
         function setupButtonHandlers() {
