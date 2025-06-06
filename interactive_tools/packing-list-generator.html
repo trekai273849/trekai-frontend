@@ -772,6 +772,278 @@
         .hidden {
             display: none !important;
         }
+
+        /* Additional styles when printing class is active */
+        body.printing {
+            overflow: visible !important;
+        }
+
+        /* Print Styles */
+        @media print {
+            /* Hide all non-essential elements */
+            .hero-section,
+            .progress-container,
+            .form-section,
+            .action-group,
+            .action-card,
+            .auth-modal,
+            .success-notification,
+            #step1,
+            #step2,
+            #toggleAdvanced,
+            #advancedOptions {
+                display: none !important;
+            }
+            
+            /* Reset body styling */
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Container adjustments */
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Remove the redundant header */
+            #step3::before {
+                display: none;
+            }
+            
+            /* Show step 3 */
+            #step3 {
+                display: block !important;
+                padding-top: 20px;
+                position: relative;
+            }
+            
+            /* Add Smart Trails branding in summary card */
+            .summary-card::before {
+                content: "SMART TRAILS";
+                display: block;
+                font-size: 18pt;
+                font-weight: bold;
+                color: #16a34a;
+                letter-spacing: 3px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            /* Summary card styling */
+            .summary-card {
+                background: white !important;
+                border: 2px solid #16a34a;
+                border-radius: 8px !important;
+                padding: 20px !important;
+                margin-bottom: 30px !important;
+                page-break-inside: avoid;
+                box-shadow: none !important;
+                text-align: center;
+            }
+            
+            .summary-header {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            
+            .summary-title {
+                font-size: 20pt !important;
+                color: black !important;
+                margin-bottom: 10px !important;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            
+            /* Add "PACKING CHECKLIST" text before the dynamic title */
+            .summary-title::before {
+                content: "PACKING CHECKLIST FOR\A";
+                display: block;
+                font-size: 12pt;
+                font-weight: normal;
+                margin-bottom: 5px;
+                white-space: pre;
+            }
+            
+            .summary-subtitle {
+                font-size: 14pt !important;
+                color: #333 !important;
+                margin-bottom: 15px !important;
+            }
+            
+            /* Hide badges and progress bar in print */
+            .summary-badges,
+            .progress-bar-container {
+                display: none !important;
+            }
+            
+            /* Add print info */
+            .summary-card::after {
+                content: "Trekker: ________________    Date: ________________    Printed from smarttrails.guide";
+                display: block;
+                margin-top: 15px;
+                font-size: 10pt;
+                color: #666;
+                text-align: center;
+            }
+            
+            /* Categories grid */
+            .categories-grid {
+                display: block !important;
+                margin: 0 !important;
+            }
+            
+            /* Category cards */
+            .category-card {
+                border: 1px solid #ddd !important;
+                background: white !important;
+                padding: 15px !important;
+                margin-bottom: 20px !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                box-shadow: none !important;
+            }
+            
+            /* Category headers */
+            .category-header {
+                font-size: 16pt !important;
+                font-weight: bold !important;
+                margin-bottom: 15px !important;
+                padding-bottom: 10px !important;
+                border-bottom: 2px solid #16a34a !important;
+                color: black !important;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            
+            .category-icon {
+                display: none !important; /* Hide emojis in print */
+            }
+            
+            /* Items list */
+            .item-list {
+                display: block !important;
+            }
+            
+            .item-checkbox {
+                display: flex !important;
+                align-items: flex-start !important;
+                margin-bottom: 8px !important;
+                padding: 5px 0 !important;
+                background: white !important;
+                page-break-inside: avoid;
+            }
+            
+            .item-checkbox:hover {
+                box-shadow: none !important;
+            }
+            
+            /* Checkbox styling for print - square checkboxes */
+            .item-checkbox input[type="checkbox"] {
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                width: 16px !important;
+                height: 16px !important;
+                border: 2px solid #000 !important;
+                border-radius: 0 !important;
+                margin-right: 10px !important;
+                margin-top: 1px !important;
+                flex-shrink: 0 !important;
+                background: white !important;
+                position: relative !important;
+                print-color-adjust: exact !important;
+                -webkit-print-color-adjust: exact !important;
+            }
+            
+            /* Checked state for print */
+            .item-checkbox input[type="checkbox"]:checked {
+                background: #16a34a !important;
+                border-color: #16a34a !important;
+            }
+            
+            .item-checkbox input[type="checkbox"]:checked::after {
+                content: "✓" !important;
+                position: absolute !important;
+                top: -3px !important;
+                left: 1px !important;
+                font-size: 14px !important;
+                font-weight: bold !important;
+                color: white !important;
+            }
+            
+            /* Item text */
+            .item-text {
+                color: black !important;
+                font-size: 11pt !important;
+                line-height: 1.4 !important;
+                text-decoration: none !important;
+                opacity: 1 !important;
+            }
+            
+            /* Page setup */
+            @page {
+                margin: 0.75in;
+                size: letter;
+            }
+            
+            /* Single column layout for better readability */
+            .categories-grid {
+                column-count: 1 !important;
+                display: block !important;
+                margin: 0 !important;
+            }
+            
+            .category-card {
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            /* Notes section - add after categories */
+            .categories-grid::after {
+                content: "NOTES & ADDITIONAL ITEMS\n\n_________________________________________________________________\n\n_________________________________________________________________\n\n_________________________________________________________________\n\n_________________________________________________________________";
+                display: block;
+                font-weight: bold;
+                font-size: 14pt;
+                margin-top: 40px;
+                margin-bottom: 60px;
+                padding-top: 30px;
+                border-top: 2px solid #16a34a;
+                page-break-inside: avoid;
+                color: black;
+                white-space: pre-line;
+                line-height: 2;
+            }
+            
+            /* Footer with copyright */
+            body::after {
+                content: "© Smart Trails | smarttrails.guide | Your adventure starts here";
+                display: block;
+                text-align: center;
+                font-size: 10pt;
+                color: #666;
+                position: fixed;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+            }
+            
+            /* Specific category styling for print - subtle backgrounds */
+            .category-card:nth-child(odd) { 
+                background: #fafafa !important; 
+                border: 1px solid #e0e0e0 !important;
+            }
+            .category-card:nth-child(even) { 
+                background: white !important; 
+                border: 1px solid #e0e0e0 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1253,7 +1525,7 @@
             document.getElementById('generateList').addEventListener('click', generatePackingList);
             document.getElementById('startNew').addEventListener('click', resetForm);
             document.getElementById('copyList').addEventListener('click', copyListToClipboard);
-            document.getElementById('printList').addEventListener('click', () => window.print());
+            document.getElementById('printList').addEventListener('click', () => handlePrint());
             document.getElementById('saveToAdventures').addEventListener('click', saveToAdventures);
         }
 
@@ -1965,6 +2237,20 @@
             document.getElementById('toggleAdvanced').innerHTML = '<i class="fas fa-cog"></i> Show Advanced Options';
             
             goToStep(1);
+        }
+
+        // Handle print functionality
+        function handlePrint() {
+            // Add a print-specific class to body for additional control
+            document.body.classList.add('printing');
+            
+            // Trigger print
+            window.print();
+            
+            // Remove the class after printing
+            setTimeout(() => {
+                document.body.classList.remove('printing');
+            }, 1000);
         }
 
         // Close auth modal function
