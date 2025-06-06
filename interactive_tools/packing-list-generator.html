@@ -1700,6 +1700,123 @@
             document.getElementById('tempNightLowValue').textContent = '10°C';
         });
         
+        // Core Form Functions (declare these before they're used)
+        function selectOption(field, value, selector, element) {
+            console.log('Selecting:', field, value);
+            
+            // Update state
+            state.basic[field] = value;
+            
+            // Remove selected class from all similar buttons
+            document.querySelectorAll(selector).forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked element
+            if (element) {
+                element.classList.add('selected');
+                console.log('Added selected class to:', element);
+            }
+        }
+
+        function applyPreset(preset) {
+            console.log('Applying preset:', preset);
+            
+            // Remove active state from all presets
+            document.querySelectorAll('.preset-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active state to clicked preset
+            document.querySelector(`[data-preset="${preset}"]`).classList.add('active');
+            
+            const presets = {
+                'weekend-warrior': {
+                    tripStyle: 'camping-short',
+                    terrain: 'forest'
+                },
+                'alpine-adventure': {
+                    tripStyle: 'hut-trek',
+                    terrain: 'alpine'
+                },
+                'tropical-trek': {
+                    tripStyle: 'camping-short',
+                    terrain: 'jungle'
+                }
+            };
+            
+            const presetData = presets[preset];
+            if (presetData) {
+                // Apply trip style selection
+                if (presetData.tripStyle) {
+                    const tripButton = document.querySelector(`[data-trip="${presetData.tripStyle}"]`);
+                    if (tripButton) {
+                        selectOption('tripStyle', presetData.tripStyle, '.trip-style-button', tripButton);
+                    }
+                }
+                
+                // Apply terrain selection
+                if (presetData.terrain) {
+                    const terrainButton = document.querySelector(`[data-terrain="${presetData.terrain}"]`);
+                    if (terrainButton) {
+                        selectOption('terrain', presetData.terrain, '.terrain-button', terrainButton);
+                    }
+                }
+                
+                checkStep1Completion();
+            }
+        }
+
+        function updateSpecialNeeds() {
+            state.basic.specialNeeds = [];
+            document.querySelectorAll('.toggle-option.selected').forEach(option => {
+                state.basic.specialNeeds.push(option.dataset.need);
+            });
+            console.log('Special needs updated:', state.basic.specialNeeds);
+        }
+
+        function checkStep1Completion() {
+            const isComplete = state.basic.tripStyle && state.basic.terrain;
+            document.getElementById('nextStep1').disabled = !isComplete;
+            console.log('Step 1 complete:', isComplete);
+        }
+
+        function checkStep2Completion() {
+            const isComplete = state.basic.weather;
+            document.getElementById('generateList').disabled = !isComplete;
+            console.log('Step 2 complete:', isComplete);
+        }
+
+        function goToStep(step) {
+            console.log('Going to step:', step);
+            
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(`step${step}`).classList.add('active');
+            updateProgressIndicators(step);
+            state.currentStep = step;
+        }
+
+        function updateProgressIndicators(step) {
+            for (let i = 1; i <= 3; i++) {
+                const circle = document.getElementById(`step${i}-circle`);
+                const label = document.getElementById(`step${i}-label`);
+                
+                if (i <= step) {
+                    circle.classList.add('active');
+                    label.classList.add('active');
+                } else {
+                    circle.classList.remove('active');
+                    label.classList.remove('active');
+                }
+            }
+            
+            document.getElementById('connector1').classList.toggle('active', step > 1);
+            document.getElementById('connector2').classList.toggle('active', step > 2);
+        }
+
         // Setup all button click handlers directly
         function setupButtonHandlers() {
             // Trip style buttons
