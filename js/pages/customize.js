@@ -1,4 +1,4 @@
-// js/pages/customize.js - Updated for Quiz Interface with Location Fixes
+// js/pages/customize.js - Updated for Quiz Interface with Location Fixes and Enhanced Packing Section
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections, extractDays } from '../utils/itinerary.js';
@@ -436,6 +436,203 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     return html;
   }
 
+  // Parse packing list text into structured categories
+  function parsePackingList(packingListText) {
+    const categories = {
+      essentials: { icon: '🎯', name: 'Essentials', items: [] },
+      clothing: { icon: '👕', name: 'Clothing', items: [] },
+      footwear: { icon: '🥾', name: 'Footwear', items: [] },
+      camping: { icon: '🏕️', name: 'Camping Gear', items: [] },
+      navigation: { icon: '🧭', name: 'Navigation', items: [] },
+      safety: { icon: '⛑️', name: 'Safety & First Aid', items: [] },
+      personal: { icon: '🧴', name: 'Personal Care', items: [] },
+      food: { icon: '🍲', name: 'Food & Water', items: [] },
+      optional: { icon: '✨', name: 'Optional', items: [] }
+    };
+
+    // Split text into lines and categorize items
+    const lines = packingListText.split('\n');
+    let currentCategory = 'essentials';
+    
+    // Define keywords for categorization
+    const categoryKeywords = {
+      clothing: ['clothing', 'wear', 'shirt', 'pants', 'jacket', 'layer', 'socks', 'underwear', 'hat', 'gloves'],
+      footwear: ['boots', 'shoes', 'footwear', 'sandals', 'gaiters'],
+      camping: ['tent', 'sleeping', 'backpack', 'camping', 'stove', 'mat', 'pad'],
+      navigation: ['map', 'compass', 'gps', 'headlamp', 'flashlight', 'battery'],
+      safety: ['first aid', 'medication', 'sunscreen', 'emergency', 'whistle', 'knife'],
+      personal: ['toiletries', 'soap', 'towel', 'toilet', 'sanitizer'],
+      food: ['food', 'water', 'snacks', 'meals', 'energy', 'hydration'],
+      optional: ['camera', 'book', 'optional', 'extra']
+    };
+
+    lines.forEach(line => {
+      const trimmedLine = line.trim();
+      
+      // Skip empty lines and headers
+      if (!trimmedLine || trimmedLine.includes(':') && trimmedLine.endsWith(':')) {
+        // Check if it's a category header
+        const headerLower = trimmedLine.toLowerCase();
+        Object.keys(categoryKeywords).forEach(cat => {
+          if (headerLower.includes(cat)) {
+            currentCategory = cat;
+          }
+        });
+        return;
+      }
+      
+      // Extract item (remove bullets, dashes, asterisks)
+      const item = trimmedLine.replace(/^[-•*]\s*/, '').trim();
+      if (item) {
+        // Try to categorize based on keywords
+        let itemCategory = currentCategory;
+        const itemLower = item.toLowerCase();
+        
+        for (const [cat, keywords] of Object.entries(categoryKeywords)) {
+          if (keywords.some(keyword => itemLower.includes(keyword))) {
+            itemCategory = cat;
+            break;
+          }
+        }
+        
+        categories[itemCategory].items.push(item);
+      }
+    });
+    
+    // If essentials is empty, distribute items to other categories
+    if (categories.essentials.items.length === 0) {
+      delete categories.essentials;
+    }
+    
+    return categories;
+  }
+
+  // Render packing categories with checkboxes
+  function renderPackingCategories(categories) {
+    let html = '';
+    let itemIndex = 0;
+    
+    Object.entries(categories).forEach(([catKey, category]) => {
+      if (category.items.length === 0) return;
+      
+      const categoryColors = {
+        essentials: 'background: #FEF3C7; border-color: #FDE68A;',
+        clothing: 'background: #EFF6FF; border-color: #DBEAFE;',
+        footwear: 'background: #FFFBEB; border-color: #FEF3C7;',
+        camping: 'background: #F0FDF4; border-color: #D1FAE5;',
+        navigation: 'background: #FAF5FF; border-color: #F3E8FF;',
+        safety: 'background: #FEF2F2; border-color: #FEE2E2;',
+        personal: 'background: #EEF2FF; border-color: #E0E7FF;',
+        food: 'background: #FFF7ED; border-color: #FED7AA;',
+        optional: 'background: #F9FAFB; border-color: #F3F4F6;'
+      };
+      
+      html += `
+        <div style="border: 2px solid #E5E7EB; border-radius: 12px; padding: 20px; ${categoryColors[catKey] || ''}">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-dark);">
+            <span style="font-size: 24px;">${category.icon}</span>
+            <span>${category.name}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+      `;
+      
+      category.items.forEach(item => {
+        const itemId = `pack-item-${itemIndex++}`;
+        html += `
+          <label style="display: flex; align-items: flex-start; background: white; padding: 12px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" 
+                 onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" 
+                 onmouseout="this.style.boxShadow='none'">
+            <input type="checkbox" id="${itemId}" data-item="${item}" 
+                   style="width: 18px; height: 18px; margin-right: 12px; margin-top: 2px; cursor: pointer;"
+                   onchange="updatePackingProgress(this)">
+            <span class="packing-item-text" style="flex: 1; color: var(--text-dark); transition: all 0.2s ease;">${item}</span>
+          </label>
+        `;
+      });
+      
+      html += `
+          </div>
+        </div>
+      `;
+    });
+    
+    // Count total items for progress tracking
+    window.packingListState.totalItems = itemIndex;
+    
+    return html;
+  }
+
+  // Initialize packing list event listeners
+  function initializePackingListeners() {
+    updatePackingProgress();
+  }
+
+  // Update packing progress
+  window.updatePackingProgress = function(checkbox) {
+    const item = checkbox.dataset.item;
+    
+    if (checkbox.checked) {
+      window.packingListState.checkedItems.add(item);
+      checkbox.nextElementSibling.style.textDecoration = 'line-through';
+      checkbox.nextElementSibling.style.opacity = '0.6';
+    } else {
+      window.packingListState.checkedItems.delete(item);
+      checkbox.nextElementSibling.style.textDecoration = 'none';
+      checkbox.nextElementSibling.style.opacity = '1';
+    }
+    
+    const progress = Math.round((window.packingListState.checkedItems.size / window.packingListState.totalItems) * 100);
+    document.getElementById('packing-progress').textContent = `${progress}%`;
+    document.getElementById('packing-progress-bar').style.width = `${progress}%`;
+  };
+
+  // Reset packing checklist
+  window.resetPackingList = function() {
+    document.querySelectorAll('#packing-categories input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+      checkbox.nextElementSibling.style.textDecoration = 'none';
+      checkbox.nextElementSibling.style.opacity = '1';
+    });
+    
+    window.packingListState.checkedItems.clear();
+    document.getElementById('packing-progress').textContent = '0%';
+    document.getElementById('packing-progress-bar').style.width = '0%';
+  };
+
+  // Copy packing list to clipboard
+  window.copyPackingList = function() {
+    let listText = `PACKING LIST\n${'='.repeat(50)}\n`;
+    listText += `Trek: ${currentQuizData?.specificLocation || currentQuizData?.location || 'Trek'}\n`;
+    listText += `Duration: ${currentQuizData?.trekLength || 'Multi-day'}\n`;
+    listText += `Season: ${currentQuizData?.season || 'All season'}\n`;
+    listText += `Difficulty: ${currentQuizData?.difficulty || 'Moderate'}\n`;
+    listText += `${'='.repeat(50)}\n\n`;
+    
+    Object.entries(window.packingListState.categories).forEach(([catKey, category]) => {
+      if (category.items.length > 0) {
+        listText += `${category.name.toUpperCase()}:\n`;
+        category.items.forEach(item => {
+          const isChecked = window.packingListState.checkedItems.has(item);
+          listText += `${isChecked ? '☑' : '☐'} ${item}\n`;
+        });
+        listText += '\n';
+      }
+    });
+    
+    navigator.clipboard.writeText(listText).then(() => {
+      // Show a temporary success message
+      const button = event.target.closest('button');
+      const originalHTML = button.innerHTML;
+      button.innerHTML = '<i class="fas fa-check" style="margin-right: 8px;"></i>Copied!';
+      button.style.background = 'var(--success)';
+      
+      setTimeout(() => {
+        button.innerHTML = originalHTML;
+        button.style.background = 'var(--primary)';
+      }, 2000);
+    });
+  };
+
   // Enhanced render function with grouped layout
   function processAndRenderEnhancedItinerary(text) {
     const container = document.getElementById('itinerary-cards');
@@ -591,10 +788,62 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     mapSection.appendChild(mapCard);
     contentSections.appendChild(mapSection);
 
-    // PACKING SECTION
+    // PACKING SECTION - Enhanced with interactive checklist
     if (cachedPackingList) {
-      const packingSection = createEnhancedSection('packing-section', 'Packing List', '🎒', cachedPackingList);
+      const packingSection = document.createElement('div');
+      packingSection.className = 'content-section-result';
+      packingSection.id = 'packing-section';
+
+      const packingCard = document.createElement('div');
+      packingCard.className = 'info-card';
+      
+      // Create structured packing list from the text
+      const packingData = parsePackingList(cachedPackingList);
+      
+      packingCard.innerHTML = `
+        <h3><span class="info-card-icon">🎒</span> Packing List</h3>
+        
+        <!-- Progress Section -->
+        <div style="background: linear-gradient(135deg, #D1FAE5 0%, #DBEAFE 100%); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-weight: 600; color: var(--text-dark);">Packing Progress</span>
+            <span style="font-weight: 700; color: var(--primary);" id="packing-progress">0%</span>
+          </div>
+          <div style="width: 100%; height: 12px; background: white; border-radius: 9999px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);">
+            <div id="packing-progress-bar" style="height: 100%; background: linear-gradient(to right, var(--primary), var(--primary-light)); border-radius: 9999px; transition: width 0.5s ease-out; width: 0%;"></div>
+          </div>
+        </div>
+        
+        <!-- Packing Categories -->
+        <div id="packing-categories" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px;">
+          ${renderPackingCategories(packingData)}
+        </div>
+        
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap;">
+          <button onclick="resetPackingList()" style="padding: 12px 24px; border-radius: 8px; border: 2px solid var(--primary); background: white; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+            <i class="fas fa-redo" style="margin-right: 8px;"></i>Reset Checklist
+          </button>
+          <button onclick="copyPackingList()" style="padding: 12px 24px; border-radius: 8px; border: none; background: var(--primary); color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+            <i class="fas fa-copy" style="margin-right: 8px;"></i>Copy List
+          </button>
+        </div>
+      `;
+      
+      packingSection.appendChild(packingCard);
       contentSections.appendChild(packingSection);
+      
+      // Initialize packing list state
+      window.packingListState = {
+        totalItems: 0,
+        checkedItems: new Set(),
+        categories: packingData
+      };
+      
+      // Add checkbox listeners after DOM is ready
+      setTimeout(() => {
+        initializePackingListeners();
+      }, 100);
     }
 
     // INSIGHTS SECTION

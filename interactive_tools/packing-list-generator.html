@@ -527,6 +527,136 @@
             gap: 12px;
         }
 
+        /* Auth Modal Styles */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-modal.active {
+            display: flex;
+        }
+
+        .auth-modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #9CA3AF;
+            transition: color 0.2s;
+        }
+
+        .close-modal:hover {
+            color: #374151;
+        }
+
+        .modal-icon {
+            width: 64px;
+            height: 64px;
+            background: #F3F4F6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .modal-icon i {
+            font-size: 32px;
+            color: var(--green);
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .modal-text {
+            color: #6B7280;
+            margin-bottom: 24px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .auth-buttons .btn {
+            flex: 1;
+        }
+
+        /* Success Modal Styles */
+        .success-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 12px;
+            padding: 16px 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1001;
+            transform: translateX(400px);
+            transition: transform 0.3s ease-out;
+        }
+
+        .success-notification.show {
+            transform: translateX(0);
+        }
+
+        .success-icon {
+            width: 40px;
+            height: 40px;
+            background: #D1FAE5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .success-icon i {
+            color: var(--green);
+            font-size: 20px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero-title {
@@ -556,6 +686,20 @@
             .action-group {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .auth-buttons {
+                flex-direction: column;
+            }
+
+            .success-notification {
+                right: 10px;
+                left: 10px;
+                transform: translateY(-100px);
+            }
+
+            .success-notification.show {
+                transform: translateY(0);
             }
         }
 
@@ -752,13 +896,17 @@
                         Start New List
                     </button>
                     <div class="action-group">
+                        <button class="btn btn-primary" id="saveToAdventures">
+                            <i class="fas fa-save"></i>
+                            Save to My Adventures
+                        </button>
                         <button class="btn btn-outline" id="copyList">
                             <i class="fas fa-copy"></i>
                             Copy List
                         </button>
-                        <button class="btn btn-primary" id="printList">
+                        <button class="btn btn-outline" id="printList">
                             <i class="fas fa-print"></i>
-                            Print List
+                            Print
                         </button>
                     </div>
                 </div>
@@ -766,7 +914,59 @@
         </div>
     </div>
 
-    <script>
+    <!-- Auth Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <button class="close-modal" onclick="closeAuthModal()">×</button>
+            <div class="modal-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="modal-title">Sign In Required</h3>
+            <p class="modal-text">To save your packing list to your adventures, please sign in or create an account.</p>
+            <div class="auth-buttons">
+                <a href="../sign-up.html" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i>
+                    Sign Up
+                </a>
+                <a href="../sign-up.html?mode=signin" class="btn btn-outline">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="successNotification" class="success-notification">
+        <div class="success-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <div>
+            <strong>Success!</strong>
+            <p>Your packing list has been saved to your adventures.</p>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+        
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD48TPwzdcYiD6AfVgh6PX1P86OQ7qgPHg",
+            authDomain: "smarttrailsauth.firebaseapp.com",
+            projectId: "smarttrailsauth",
+            storageBucket: "smarttrailsauth.firebasestorage.app",
+            messagingSenderId: "763807584090",
+            appId: "1:763807584090:web:822fb9109f7be5d432ed63",
+            measurementId: "G-M6N5V4TDX6"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
         // Global state
         const state = {
             currentStep: 1,
@@ -780,8 +980,15 @@
                 specialNeeds: []
             },
             packingList: null,
-            checkedItems: new Set()
+            checkedItems: new Set(),
+            currentUser: null
         };
+
+        // Check authentication state
+        onAuthStateChanged(auth, (user) => {
+            state.currentUser = user;
+            console.log('Auth state changed:', user ? 'Logged in' : 'Not logged in');
+        });
 
         // Initialize the app
         document.addEventListener('DOMContentLoaded', function() {
@@ -857,6 +1064,7 @@
             document.getElementById('startNew').addEventListener('click', resetForm);
             document.getElementById('copyList').addEventListener('click', copyListToClipboard);
             document.getElementById('printList').addEventListener('click', () => window.print());
+            document.getElementById('saveToAdventures').addEventListener('click', saveToAdventures);
         }
 
         function selectOption(field, value, selector) {
@@ -1215,8 +1423,97 @@
                     .join('\n\n');
             
             navigator.clipboard.writeText(listText).then(() => {
-                alert('✅ Packing list copied to clipboard!');
+                const button = document.getElementById('copyList');
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.classList.add('btn-primary');
+                button.classList.remove('btn-outline');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.classList.remove('btn-primary');
+                    button.classList.add('btn-outline');
+                }, 2000);
             });
+        }
+
+        async function saveToAdventures() {
+            // Check if user is authenticated
+            if (!state.currentUser) {
+                // Show auth modal
+                document.getElementById('authModal').classList.add('active');
+                return;
+            }
+
+            const button = document.getElementById('saveToAdventures');
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner loading-icon"></i> Saving...';
+            button.disabled = true;
+
+            try {
+                // Get auth token
+                const token = await state.currentUser.getIdToken();
+                
+                // Prepare gear list data
+                const gearListData = {
+                    title: `${state.formData.trekType.replace('-', ' ')} Packing List - ${state.formData.season}`,
+                    type: 'gear-list',
+                    metadata: {
+                        trekType: state.formData.trekType,
+                        season: state.formData.season,
+                        duration: state.formData.duration,
+                        difficulty: state.formData.difficulty,
+                        groupSize: state.formData.groupSize,
+                        hasGuide: state.formData.hasGuide,
+                        specialNeeds: state.formData.specialNeeds,
+                        totalItems: Object.values(state.packingList).flat().length,
+                        checkedItems: Array.from(state.checkedItems)
+                    },
+                    content: state.packingList,
+                    createdAt: new Date().toISOString()
+                };
+
+                // TODO: Replace with actual API endpoint when gear list API is ready
+                // For now, we'll store it in localStorage as a fallback
+                const existingLists = JSON.parse(localStorage.getItem('userGearLists') || '[]');
+                existingLists.push({
+                    ...gearListData,
+                    id: `gear_${Date.now()}`,
+                    userId: state.currentUser.uid
+                });
+                localStorage.setItem('userGearLists', JSON.stringify(existingLists));
+
+                // Show success notification
+                showSuccessNotification();
+                
+                // Reset button after delay
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-check"></i> Saved!';
+                    button.disabled = false;
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalHTML;
+                    }, 2000);
+                }, 500);
+
+            } catch (error) {
+                console.error('Error saving gear list:', error);
+                button.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed to save';
+                button.disabled = false;
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                }, 3000);
+            }
+        }
+
+        function showSuccessNotification() {
+            const notification = document.getElementById('successNotification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
         }
 
         function resetForm() {
@@ -1250,6 +1547,25 @@
             
             goToStep(1);
         }
+
+        // Close auth modal function
+        window.closeAuthModal = function() {
+            document.getElementById('authModal').classList.remove('active');
+        };
+
+        // Close modal when clicking outside
+        document.getElementById('authModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAuthModal();
+            }
+        });
+
+        // ESC key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAuthModal();
+            }
+        });
     </script>
 </body>
 </html>
