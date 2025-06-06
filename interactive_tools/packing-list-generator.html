@@ -58,6 +58,7 @@
             border-radius: 50%;
             box-shadow: var(--shadow-md);
             margin-bottom: 24px;
+            color: var(--green); /* SVG will inherit this color */
         }
 
         .hero-icon i {
@@ -1135,7 +1136,11 @@
         <!-- Hero Section -->
         <div class="hero-section">
             <div class="hero-icon">
-                <i class="fas fa-backpack"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-10z"></path>
+                    <path d="M8 8V6a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v2"></path>
+                    <path d="M8 14h8"></path>
+                </svg>
             </div>
             <h1 class="hero-title">AI-Powered Packing List Generator</h1>
             <p class="hero-subtitle">
@@ -1702,17 +1707,6 @@
                     Sign In
                 </a>
             </div>
-        </div>
-    </div>
-
-    <!-- Success Notification -->
-    <div id="successNotification" class="success-notification">
-        <div class="success-icon">
-            <i class="fas fa-check"></i>
-        </div>
-        <div>
-            <strong>Success!</strong>
-            <p>Your packing list has been saved to your adventures.</p>
         </div>
     </div>
 
