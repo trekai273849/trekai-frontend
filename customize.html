@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TJDWMQZV');</script>
-  <!-- End Google Tag Manager -->
-
   <meta charset="UTF-8" />
   <title>Your Custom Trek Itinerary - Smart Trails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="styles/main.css" />
   
   <style>
@@ -353,357 +351,7 @@
       transform: translateY(0);
     }
 
-    /* Navigation Tabs for Results */
-    .results-nav-tabs {
-      background: white;
-      box-shadow: 0 2px 10px var(--shadow);
-      margin-bottom: 40px;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .results-nav-container {
-      display: flex;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-
-    .results-nav-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .results-nav-tab {
-      padding: 20px 30px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-size: 1em;
-      font-weight: 600;
-      color: var(--text-secondary);
-      white-space: nowrap;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .results-nav-tab:hover {
-      color: var(--primary);
-      background: var(--bg-light);
-    }
-
-    .results-nav-tab.active {
-      color: var(--primary);
-      background: var(--bg-light);
-    }
-
-    .results-nav-tab.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--primary);
-    }
-
-    /* Enhanced Itinerary Timeline */
-    .itinerary-timeline {
-      position: relative;
-      padding-left: 40px;
-    }
-
-    .itinerary-timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: #E0E0E0;
-    }
-
-    /* Day Cards */
-    .itinerary-day-card {
-      position: relative;
-      margin-bottom: 40px;
-      background: white;
-      border-radius: 16px;
-      padding: 0;
-      box-shadow: 0 4px 20px var(--shadow);
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
-
-    .itinerary-day-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 30px var(--shadow);
-    }
-
-    .day-card-header {
-      background: linear-gradient(135deg, #f8fafb 0%, #e8f0e5 100%);
-      padding: 25px 30px;
-      border-bottom: 1px solid #e5e7eb;
-      position: relative;
-    }
-
-    .day-number {
-      font-size: 0.85em;
-      color: var(--primary);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-    }
-
-    .day-title-enhanced {
-      font-size: 1.4em;
-      margin: 0;
-      color: var(--text-dark);
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    /* Main Content Section */
-    .day-card-content {
-      padding: 35px;
-    }
-
-    /* Description Box */
-    .day-description-box {
-      background: #f0f7ff;
-      border-left: 4px solid var(--info);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-
-    .day-description-enhanced {
-      color: var(--text-dark);
-      line-height: 1.8;
-      margin: 0;
-      font-size: 0.95em;
-    }
-
-    /* Distance section */
-    .distance-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 25px;
-      padding: 16px 20px;
-      background: #f0f4f8;
-      border-radius: 12px;
-      border-left: 4px solid var(--primary);
-    }
-
-    .distance-icon {
-      font-size: 1.2em;
-      flex-shrink: 0;
-    }
-
-    .distance-text {
-      font-size: 1.05em;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
-
-    /* Grouped details container */
-    .grouped-details-container {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    /* Detail groups */
-    .detail-group {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 24px;
-      background: #fafbfc;
-    }
-
-    .detail-group-title {
-      font-size: 1.1em;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #e5e7eb;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .detail-group-content {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    /* Individual detail items */
-    .detail-item {
-      padding: 12px 16px;
-      border-bottom: 1px solid #f0f0f0;
-      margin: 0;
-      background: white;
-      border-radius: 8px;
-      margin-bottom: 8px;
-    }
-
-    .detail-item:last-child {
-      border-bottom: none;
-      padding-bottom: 12px;
-      margin-bottom: 0;
-    }
-
-    .detail-item .detail-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    .detail-item .detail-icon {
-      font-size: 1.1em;
-      width: 24px;
-      min-width: 24px;
-      text-align: center;
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 24px;
-      line-height: 1;
-    }
-
-    .detail-item .detail-label {
-      font-weight: 600;
-      color: var(--text-dark);
-      font-size: 0.95em;
-    }
-
-    .detail-item .detail-content {
-      color: var(--text-secondary);
-      line-height: 1.6;
-      font-size: 0.95em;
-      padding-left: 34px;
-      margin: 0;
-    }
-
-    /* Regular detail items */
-    .detail-item:not(.highlights):not(.tips) {
-      background: transparent;
-      border-radius: 0;
-      margin-bottom: 0;
-      border: none;
-      padding: 12px 0;
-    }
-
-    /* Special styling for highlights */
-    .detail-item.highlights {
-      background: white;
-      border: 1px solid #fcd34d;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 12px;
-    }
-
-    .detail-item.highlights .detail-header {
-      margin-bottom: 10px;
-    }
-
-    .detail-item.highlights .detail-content {
-      background: #fef9e7;
-      padding: 12px 16px;
-      border-radius: 6px;
-      margin-left: 0;
-      padding-left: 16px;
-      border-left: 3px solid #f39c12;
-      font-style: italic;
-      color: #92400e;
-    }
-
-    /* Special styling for tips */
-    .detail-item.tips {
-      background: white;
-      border: 1px solid #86efac;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 12px;
-    }
-
-    .detail-item.tips .detail-header {
-      margin-bottom: 10px;
-    }
-
-    .detail-item.tips .detail-content {
-      background: #f0fdf4;
-      padding: 12px 16px;
-      border-radius: 6px;
-      margin-left: 0;
-      padding-left: 16px;
-      border-left: 3px solid #4ade80;
-      font-style: italic;
-      color: #166534;
-    }
-
-    /* Special styling for difficulty color */
-    .detail-item.difficulty .detail-content {
-      font-weight: 600;
-    }
-
-    /* Collapsible Day Cards */
-    .day-card-toggle {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-      background: white;
-      border: 2px solid #e5e7eb;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .day-card-toggle:hover {
-      border-color: var(--primary);
-      transform: scale(1.05);
-    }
-
-    .day-card-toggle svg {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.3s ease;
-      color: var(--text-secondary);
-    }
-
-    .itinerary-day-card.collapsed .day-card-toggle svg {
-      transform: rotate(180deg);
-    }
-
-    .itinerary-day-card.collapsed .day-card-content {
-      display: none;
-    }
-
-    /* Enhanced timeline dot */
-    .itinerary-day-card::before {
-      content: '';
-      position: absolute;
-      left: -30px;
-      top: 35px;
-      width: 20px;
-      height: 20px;
-      background: white;
-      border: 3px solid var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(45, 80, 22, 0.1);
-      z-index: 1;
-    }
-
-    /* Additional Sections Cards */
+    /* Additional Sections Cards (used for rendering) */
     .info-card {
       background: white;
       border-radius: 16px;
@@ -720,672 +368,281 @@
       align-items: center;
       gap: 15px;
     }
-
-    .info-card-icon {
-      font-size: 1.5em;
-    }
-
-    /* Section Headers */
-    .section-header {
-      font-size: 2.5em;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 15px;
-      margin-top: 50px;
-    }
-
-    .section-subtitle {
-      font-size: 1.1em;
-      color: var(--text-secondary);
-      margin-bottom: 40px;
-    }
-
-    /* Content Sections */
-    .content-section-result {
-      display: none;
-    }
-
-    .content-section-result.active {
-      display: block;
-      animation: fadeIn 0.5s ease-out;
-    }
-
+    
     .enhanced-content {
       color: var(--text-secondary);
       line-height: 1.8;
     }
-
-    /* Action Buttons */
-    .action-buttons-container {
-      display: flex;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
+    
+    .enhanced-content strong {
+        color: var(--text-dark);
+        font-weight: 600;
     }
 
-    .action-btn {
-      flex: 1;
-      min-width: 200px;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 1em;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .action-btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      color: white;
-      box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
-    }
-
-    .action-btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
-    }
-
-    .action-btn-secondary {
-      background: white;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .action-btn-secondary:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Modal styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      backdrop-filter: blur(4px);
-    }
-
-    .modal {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      padding: 40px;
-      max-width: 480px;
-      width: 90%;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transform: scale(1);
-      animation: modalAppear 0.3s ease-out;
-    }
-
-    .auth-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #4A7C28, #2D5016);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      animation: iconBounce 0.6s ease-out 0.2s both;
-      box-shadow: 0 8px 16px rgba(45, 80, 22, 0.3);
-    }
-    
-    .welcome-icon {
-      background: linear-gradient(135deg, #4A7C28, #2D5016);
-      box-shadow: 0 8px 16px rgba(45, 80, 22, 0.3);
-    }
-    
-    .auth-icon svg {
-      width: 40px;
-      height: 40px;
-      stroke: white;
-      stroke-width: 2;
-      fill: white;
-    }
-    
-    .modal-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1f2937;
-      text-align: center;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #1f2937, #4b5563);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .modal-message {
-      font-size: 16px;
-      color: #6b7280;
-      text-align: center;
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
-    
-    .auth-benefits {
-      margin: 24px 0;
-      text-align: left;
-      background: #f0f7e7;
-      padding: 20px;
-      border-radius: 12px;
-      border-left: 4px solid #4A7C28;
-    }
-    
-    .auth-benefits h4 {
-      font-size: 14px;
-      font-weight: 600;
-      color: #2D5016;
-      margin-bottom: 12px;
-    }
-    
-    .benefit-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-      font-size: 14px;
-      color: #2D5016;
-    }
-    
-    .benefit-item:before {
-      content: "✓";
-      color: #4A7C28;
-      font-weight: bold;
-      margin-right: 10px;
-      font-size: 16px;
-    }
-    
-    .button-primary {
-      background: linear-gradient(135deg, #4A7C28, #2D5016);
-      color: white;
-      padding: 16px 24px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: none;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
-      margin-bottom: 12px;
-      width: 100%;
-    }
-    
-    .button-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(45, 80, 22, 0.4);
-    }
-    
-    .button-secondary {
-      background: transparent;
-      color: #2D5016;
-      border: 2px solid #4A7C28;
-      padding: 16px 24px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-      width: 100%;
-    }
-    
-    .button-secondary:hover {
-      background: #4A7C28;
-      color: white;
-      transform: translateY(-1px);
-    }
-    
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 32px;
-    }
-    
-    .close-button {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: #f3f4f6;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      color: #6b7280;
-    }
-    
-    .close-button:hover {
-      background: #e5e7eb;
-      transform: scale(1.1);
-    }
-    
-    @keyframes iconBounce {
-      0% {
-        opacity: 0;
-        transform: scale(0.3);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    
-    @keyframes modalAppear {
-      from {
-        opacity: 0;
-        transform: scale(0.9) translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-    
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to { opacity: 0; }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .main-content-area {
-        padding: 20px 16px;
-      }
-
-      .loading-content {
-        padding: 30px 20px;
-      }
-
-      .loading-animation {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 30px;
-      }
-
-      .loading-title {
-        font-size: 20px;
-      }
-
-      .loading-subtitle {
-        font-size: 14px;
-      }
-
-      .loading-progress {
-        gap: 0;
-      }
-
-      .step-circle {
-        width: 32px;
-        height: 32px;
-      }
-
-      .step-circle svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .step-label {
-        font-size: 11px;
-      }
-
-      .section-header {
-        font-size: 2em;
-      }
-
-      .results-nav-tab {
-        padding: 16px 20px;
-        font-size: 0.9em;
-      }
-
-      .day-card-header {
-        padding: 20px;
-      }
-
-      .day-card-content {
-        padding: 20px;
-      }
-
-      .detail-group {
-        padding: 18px;
-      }
-
-      .detail-group-title {
-        font-size: 1em;
-        margin-bottom: 15px;
-      }
-
-      .grouped-details-container {
-        gap: 20px;
-      }
-
-      .detail-item {
-        padding: 12px;
-      }
-
-      .detail-item .detail-content {
-        padding-left: 0;
-        margin-top: 5px;
-      }
-
-      .detail-item.highlights .detail-content,
-      .detail-item.tips .detail-content {
-        margin-left: 0;
-        margin-top: 10px;
-        padding: 12px 16px;
-      }
-
-      .action-buttons-container {
-        flex-direction: column;
-      }
-
-      .action-btn {
-        width: 100%;
-      }
-
-      .info-card {
-        padding: 20px;
-      }
-
-      .info-card h3 {
-        font-size: 1.5em;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .loading-progress::before,
-      .progress-line {
-        display: none;
-      }
-
-      .progress-step {
-        flex: 0 0 45%;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Main Content Area -->
   <main class="main-content-area">
-    <!-- Results Container -->
     <div id="itinerary-cards"></div>
   </main>
 
-  <!-- Professional Loading Overlay -->
   <div class="loading-overlay active" id="loadingOverlay">
     <div class="loading-content">
-      <!-- Loading Animation -->
       <div class="loading-animation">
         <div class="loading-circle loading-circle-outer"></div>
         <div class="loading-circle loading-circle-inner"></div>
         <div class="loading-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/></svg>
         </div>
       </div>
-      
-      <!-- Progress Steps -->
       <div class="loading-progress">
         <div class="progress-line"></div>
-        
-        <div class="progress-step active" data-stage="1">
-          <div class="step-circle">
-            <svg viewBox="0 0 24 24">
-              <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-            </svg>
-          </div>
-          <div class="step-label">Analyzing preferences</div>
-        </div>
-        
-        <div class="progress-step" data-stage="2">
-          <div class="step-circle">
-            <svg viewBox="0 0 24 24">
-              <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-            </svg>
-          </div>
-          <div class="step-label">Finding trails</div>
-        </div>
-        
-        <div class="progress-step" data-stage="3">
-          <div class="step-circle">
-            <svg viewBox="0 0 24 24">
-              <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
-            </svg>
-          </div>
-          <div class="step-label">Planning stays</div>
-        </div>
-        
-        <div class="progress-step" data-stage="4">
-          <div class="step-circle">
-            <svg viewBox="0 0 24 24">
-              <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z" />
-            </svg>
-          </div>
-          <div class="step-label">Finalizing details</div>
-        </div>
+        <div class="progress-step active" data-stage="1"><div class="step-circle"><svg viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg></div><div class="step-label">Analyzing preferences</div></div>
+        <div class="progress-step" data-stage="2"><div class="step-circle"><svg viewBox="0 0 24 24"><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" /></svg></div><div class="step-label">Finding trails</div></div>
+        <div class="progress-step" data-stage="3"><div class="step-circle"><svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg></div><div class="step-label">Planning stays</div></div>
+        <div class="progress-step" data-stage="4"><div class="step-circle"><svg viewBox="0 0 24 24"><path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z" /></svg></div><div class="step-label">Finalizing details</div></div>
       </div>
-      
-      <!-- Loading Text -->
       <h2 class="loading-title">Crafting Your Perfect Trek</h2>
       <p class="loading-subtitle">It can take up to a minute to create an adventure just for you</p>
-      
-      <!-- Trek Facts -->
       <div class="trek-fact-card">
-        <div class="fact-icon-wrapper">
-          <svg viewBox="0 0 24 24">
-            <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-          </svg>
-        </div>
-        <div class="trek-fact-text" id="hikingFact">
-          Did you know? The Appalachian Trail spans 2,190 miles across 14 states!
-        </div>
+        <div class="fact-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg></div>
+        <div class="trek-fact-text" id="hikingFact">Did you know? The Appalachian Trail spans 2,190 miles across 14 states!</div>
       </div>
     </div>
   </div>
 
-  <!-- Success Modal -->
-  <div class="modal-overlay" id="itinerary-success-modal" style="display: none;">
-    <div class="modal">
-      <button class="close-button" onclick="closeSuccessModal()" aria-label="Close">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="auth-icon">
-        <svg viewBox="0 0 24 24">
-          <polyline points="20,6 9,17 4,12"></polyline>
-        </svg>
-      </div>
-      
-      <h2 class="modal-title">Adventure Saved! 🎉</h2>
-      <p class="modal-message">Your custom itinerary has been safely stored in your account. Ready to hit the trails!</p>
-      
-      <div class="button-group">
-        <a href="my-itineraries.html" class="button button-primary">
-          View My Adventures
-        </a>
-        <button class="button button-secondary" onclick="closeSuccessModal()">
-          Plan Another Trek
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Authentication Required Modal -->
-  <div class="modal-overlay" id="auth-required-modal" style="display: none;">
-    <div class="modal">
-      <button class="close-button" onclick="closeAuthModal()" aria-label="Close">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="auth-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-          <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22l-9-12z"/>
-        </svg>
-      </div>
-      
-      <h2 class="modal-title">🏔️ Save Your Adventure</h2>
-      <p class="modal-message">Join thousands of adventurers and save your custom itinerary to access it anytime, anywhere!</p>
-      
-      <div class="auth-benefits">
-        <h4>🎯 What you'll get:</h4>
-        <div class="benefit-item">Personalized trail recommendations</div>
-        <div class="benefit-item">Gear lists and local insights</div>
-        <div class="benefit-item">Save your favorite itineraries</div>
-        <div class="benefit-item">Regenerate itineraries with feedback</div>
-      </div>
-      
-      <div class="button-group">
-        <button class="button-primary" onclick="redirectToSignUp()">
-          🚀 Join Our Community
-        </button>
-        <button class="button-secondary" onclick="redirectToSignIn()">
-          🏠 I Have an Account
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Welcome Back Modal -->
-  <div class="modal-overlay" id="welcome-back-modal" style="display: none;">
-    <div class="modal">
-      <button class="close-button" onclick="closeWelcomeModal()" aria-label="Close">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="auth-icon welcome-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-          <polyline points="22,4 12,14.01 9,11.01"/>
-        </svg>
-      </div>
-      
-      <h2 class="modal-title">🎉 Welcome to Smart Trails!</h2>
-      <p class="modal-message">Your adventure has been saved! You're now part of our amazing trekking community.</p>
-      
-      <div class="button-group">
-        <a href="my-itineraries.html" class="button-primary">
-          🗺️ View My Adventures
-        </a>
-        <button class="button-secondary" onclick="closeWelcomeModal()">
-          🥾 Plan Another Trek
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer Container -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
-  <script src="js/utils/itinerary.js" type="module"></script>
-  <script src="js/pages/customize.js" type="module"></script>
   <script src="js/components/navbar.js" type="module"></script>
   <script src="js/components/footer.js" type="module"></script>
   
-  <!-- Initialize Script -->
-  <script>
-    // Loading animation functions
-    let stageInterval;
-    let factInterval;
-    let currentStage = 1;
+  <script type="module">
+    // 1. IMPORT the service
+    import { AdaptivePackingListGenerator } from './js/services/packingListService.js';
 
+    // 2. RENDERING FUNCTIONS
+    
+    /**
+     * Renders the locally-generated packing list into a styled HTML string.
+     */
+    function renderPackingList(packingData) {
+      const { items, metadata } = packingData;
+      if (!items || metadata.totalItems === 0) return '';
+
+      const categoryInfo = {
+        clothing: { icon: '👕', name: 'Clothing' },
+        footwear: { icon: '🥾', name: 'Footwear' },
+        camping: { icon: '🏕️', name: 'Camping & Shelter' },
+        navigation: { icon: '🧭', name: 'Navigation' },
+        safety: { icon: '⛑️', name: 'Safety & First Aid' },
+        personal: { icon: '🧴', name: 'Personal Care' },
+        food: { icon: '🍲', name: 'Food & Water' },
+        optional: { icon: '✨', name: 'Optional Items' }
+      };
+
+      let categoriesHtml = '';
+      for (const [category, categoryItems] of Object.entries(items)) {
+        if (categoryItems.length > 0) {
+          categoriesHtml += `
+            <div>
+              <div class="font-bold text-lg mb-2">${categoryInfo[category]?.icon || '✔️'} ${categoryInfo[category]?.name || category}</div>
+              <ul class="space-y-1">
+                ${categoryItems.map(item => `<li class="text-gray-700 border-b border-gray-100 py-1">${item.name} ${item.quantity ? `(${item.quantity})` : ''}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+        }
+      }
+
+      return `
+        <div class="info-card" id="packing-list-section">
+          <h3 class="flex items-center gap-4 text-2xl font-bold mb-6">
+            <i class="fas fa-clipboard-list text-green-600"></i>
+            Your Custom Packing List
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            ${categoriesHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * Parses the AI's markdown-like response into structured HTML cards.
+     */
+    function renderAiResponse(responseText) {
+      // Split the content by "###" headers, keeping the headers
+      const sections = responseText.split(/(?=###\s)/g).filter(Boolean);
+      let html = '';
+
+      // The first part is the intro paragraph, if it doesn't start with a header
+      if (sections.length > 0 && !sections[0].startsWith('###')) {
+        const intro = sections.shift().trim();
+        // Convert newlines to <br> and wrap in a styled card
+        html += `<div class="info-card enhanced-content">${intro.replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>')}</div>`;
+      }
+      
+      for (const section of sections) {
+          const lines = section.trim().split('\n');
+          const title = lines.shift().replace('###', '').trim();
+          let content = lines.join('\n').trim();
+
+          // Simple markdown-to-HTML conversion
+          content = content
+              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+              .replace(/^- (.*$)/gm, '<li class="ml-4 list-disc">$1</li>')
+              .replace(/\n/g, '<br>');
+
+          // Assign an icon based on the title
+          let iconClass = 'fa-info-circle';
+          if (title.toLowerCase().includes('day')) iconClass = 'fa-calendar-day';
+          if (title.toLowerCase().includes('insights')) iconClass = 'fa-lightbulb';
+          if (title.toLowerCase().includes('practical')) iconClass = 'fa-cogs';
+
+          html += `
+            <div class="info-card">
+              <h3 class="flex items-center gap-4 text-2xl font-bold mb-4"><i class="fas ${iconClass} text-blue-600"></i>${title}</h3>
+              <div class="enhanced-content">${content}</div>
+            </div>
+          `;
+      }
+
+      return html;
+    }
+
+    // 3. MAIN ORCHESTRATION FUNCTION
+    async function generateAndDisplayItinerary(quizData) {
+      try {
+        console.log('Generating itinerary from quiz data:', quizData);
+
+        // --- Step A: Generate Packing List Locally (Fast) ---
+        const generator = new AdaptivePackingListGenerator(quizData);
+        const packingData = generator.generate();
+        const packingListHtml = renderPackingList(packingData);
+        console.log('✅ Packing list generated locally.');
+
+        // --- Step B: Call AI for Itinerary Text (Slower) ---
+        // As requested, this call assumes the packing list prompt has been removed from the backend.
+        const response = await fetch('/api/finalize', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // If you use authentication, the token should be added here
+            // 'Authorization': `Bearer ${your_auth_token}`
+          },
+          body: JSON.stringify({
+            location: quizData.location,
+            filters: {
+              difficulty: quizData.difficulty,
+              accommodation: quizData.accommodation,
+              duration: quizData.length,
+              season: quizData.season
+            },
+            comments: `Key interests: ${(quizData.interests || []).join(', ')}`,
+            title: `${quizData.location || 'Custom'} Trek Itinerary`
+          })
+        });
+
+        if (!response.ok) {
+          const errorBody = await response.text();
+          throw new Error(`API call failed with status ${response.status}: ${errorBody}`);
+        }
+        
+        const itineraryData = await response.json();
+        const itineraryText = itineraryData.reply;
+        console.log('✅ AI itinerary text received.');
+
+        // --- Step C: Combine and Render ---
+        const itineraryHtml = renderAiResponse(itineraryText);
+        const finalHtml = itineraryHtml + packingListHtml; // Packing list at the end
+        
+        document.getElementById('itinerary-cards').innerHTML = finalHtml;
+
+      } catch (error) {
+        console.error('Failed to generate full itinerary:', error);
+        document.getElementById('itinerary-cards').innerHTML = `
+          <div class="info-card text-center">
+            <h3 class="text-red-600 text-2xl font-bold mb-4">Oops! Something Went Wrong</h3>
+            <p>We couldn't generate your itinerary. This could be a connection issue or a server problem. Please try again later.</p>
+            <a href="index.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded">Go Back Home</a>
+          </div>
+        `;
+      }
+    }
+
+    // 4. INITIALIZE ON PAGE LOAD
+    document.addEventListener('DOMContentLoaded', async () => {
+      startLoadingAnimation();
+      
+      const quizDataStr = localStorage.getItem('quizData');
+      if (!quizDataStr) {
+        console.error('No quiz data found, redirecting to home.');
+        window.location.href = 'index.html';
+        return;
+      }
+
+      try {
+        const quizData = JSON.parse(quizDataStr);
+        // Do not remove quiz data immediately, in case of refresh
+        // localStorage.removeItem('quizData'); 
+
+        await generateAndDisplayItinerary(quizData);
+        
+      } catch (error) {
+        console.error('Error on page load:', error);
+      } finally {
+        // This will run whether there was an error or not
+        stopLoadingAnimation();
+        transitionToItinerary();
+      }
+    });
+
+  </script>
+
+  <script>
+    let stageInterval, factInterval, currentStage = 1;
     const hikingFacts = [
       "Did you know? The Appalachian Trail spans 2,190 miles across 14 states!",
       "Fun fact: Mount Everest grows about 4 millimeters each year due to geological forces.",
       "Hiking tip: The 'Leave No Trace' principles help preserve trails for future generations.",
       "Did you know? The Inca Trail to Machu Picchu limits visitors to 500 per day to protect the path.",
       "Trail wisdom: 'Cotton kills' - synthetic fabrics dry faster and keep you warmer when wet.",
-      "Fun fact: The Pacific Crest Trail crosses through 7 national parks and 25 national forests.",
-      "Did you know? Norway's 'allemannsretten' law gives everyone the right to roam freely in nature.",
-      "Hiking burns about 400-700 calories per hour depending on terrain and pack weight.",
-      "The longest hiking trail in the world is Canada's Trans Canada Trail at 24,000 km!",
-      "Did you know? Studies show that hiking can increase creative problem-solving by 50%.",
-      "Fun fact: The Swiss have over 65,000 km of marked hiking trails - that's 1.5x Earth's circumference!",
-      "Trail tip: Trekking poles can reduce stress on knees by up to 25% on descents."
+      "Fun fact: The Pacific Crest Trail crosses through 7 national parks and 25 national forests."
     ];
 
     function startLoadingAnimation() {
       currentStage = 1;
-      
-      // Update stages every 5 seconds (increased from 3)
+      document.querySelector('.progress-step[data-stage="1"]').classList.add('active');
       stageInterval = setInterval(() => {
         const currentStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
-        if (currentStageEl) {
-          currentStageEl.classList.remove('active');
-          currentStageEl.classList.add('completed');
-        }
-        
+        if (currentStageEl) currentStageEl.classList.add('completed');
         currentStage++;
         if (currentStage <= 4) {
-          const nextStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
-          if (nextStageEl) {
-            nextStageEl.classList.add('active');
-          }
+          document.querySelector(`.progress-step[data-stage="${currentStage}"]`)?.classList.add('active');
+        } else {
+          clearInterval(stageInterval);
         }
       }, 5000);
       
-      // Rotate facts every 6 seconds (increased from 4)
       let factIndex = 0;
       factInterval = setInterval(() => {
         factIndex = (factIndex + 1) % hikingFacts.length;
         const factElement = document.getElementById('hikingFact');
         if (factElement) {
-          // Fade out
           factElement.style.opacity = '0';
           setTimeout(() => {
             factElement.textContent = hikingFacts[factIndex];
-            // Fade in with new animation
             factElement.style.animation = 'none';
-            setTimeout(() => {
-              factElement.style.animation = 'factFadeIn 0.6s ease forwards';
-              factElement.style.opacity = '1';
-            }, 10);
-          }, 300);
+            factElement.offsetHeight; /* trigger reflow */
+            factElement.style.animation = 'factFadeIn 0.6s ease forwards';
+          }, 400);
         }
       }, 6000);
     }
@@ -1393,174 +650,18 @@
     function stopLoadingAnimation() {
       clearInterval(stageInterval);
       clearInterval(factInterval);
-      
-      // Reset stages
-      document.querySelectorAll('.progress-step').forEach(stage => {
-        stage.classList.remove('active', 'completed');
-      });
-      const firstStage = document.querySelector('.progress-step[data-stage="1"]');
-      if (firstStage) {
-        firstStage.classList.add('active');
-      }
     }
 
-    // Smooth transition to itinerary
     function transitionToItinerary() {
       const overlay = document.getElementById('loadingOverlay');
-      
-      // Add fade-out class
-      overlay.classList.add('fade-out');
-      
-      // Wait for fade animation then hide
-      setTimeout(() => {
-        overlay.classList.remove('active');
-        overlay.classList.remove('fade-out');
-        
-        // Show itinerary with fade-in
-        const itineraryCards = document.getElementById('itinerary-cards');
-        if (itineraryCards) {
-          itineraryCards.classList.add('show');
-        }
-      }, 600);
-    }
-
-    // Modal functions
-    function closeSuccessModal() {
-      const modal = document.getElementById('itinerary-success-modal');
-      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.style.animation = '';
-      }, 200);
-    }
-
-    function closeAuthModal() {
-      const modal = document.getElementById('auth-required-modal');
-      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.style.animation = '';
-      }, 200);
-    }
-
-    function closeWelcomeModal() {
-      const modal = document.getElementById('welcome-back-modal');
-      modal.style.animation = 'fadeOut 0.2s ease-out forwards';
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.style.animation = '';
-      }, 200);
-    }
-
-    function redirectToSignUp() {
-      window.location.href = 'sign-up.html';
-    }
-
-    function redirectToSignIn() {
-      window.location.href = 'sign-up.html';
-    }
-
-    // Toggle day card function
-    function toggleDayCard(button) {
-      const dayCard = button.closest('.itinerary-day-card');
-      dayCard.classList.toggle('collapsed');
-    }
-
-    // Close modals when clicking outside
-    document.addEventListener('click', function(e) {
-      const successModal = document.getElementById('itinerary-success-modal');
-      const authModal = document.getElementById('auth-required-modal');
-      const welcomeModal = document.getElementById('welcome-back-modal');
-      
-      if (e.target === successModal) closeSuccessModal();
-      if (e.target === authModal) closeAuthModal();
-      if (e.target === welcomeModal) closeWelcomeModal();
-    });
-
-    // Close modals with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const successModal = document.getElementById('itinerary-success-modal');
-        const authModal = document.getElementById('auth-required-modal');
-        const welcomeModal = document.getElementById('welcome-back-modal');
-        
-        if (successModal.style.display === 'flex') closeSuccessModal();
-        if (authModal.style.display === 'flex') closeAuthModal();
-        if (welcomeModal.style.display === 'flex') closeWelcomeModal();
+      if (overlay) {
+        overlay.classList.add('fade-out');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          document.getElementById('itinerary-cards')?.classList.add('show');
+        }, 600);
       }
-    });
-
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', async () => {
-      // Start loading animation
-      startLoadingAnimation();
-      
-      // Get quiz data from localStorage
-      const quizDataStr = localStorage.getItem('quizData');
-      
-      if (!quizDataStr) {
-        // No quiz data - redirect back to home
-        console.error('No quiz data found');
-        window.location.href = 'index.html';
-        return;
-      }
-      
-      try {
-        const quizData = JSON.parse(quizDataStr);
-        console.log('Quiz data received:', quizData);
-        
-        // Clear the stored data
-        localStorage.removeItem('quizData');
-        
-        // Wait for customize.js to load and then generate itinerary
-        const waitForFunction = async () => {
-          let attempts = 0;
-          while (!window.generateItineraryFromQuiz && attempts < 50) {
-            await new Promise(resolve => setTimeout(resolve, 100));
-            attempts++;
-          }
-          
-          if (window.generateItineraryFromQuiz) {
-            console.log('Calling generateItineraryFromQuiz with data:', quizData);
-            
-            // Generate the itinerary
-            await window.generateItineraryFromQuiz(quizData);
-            
-            // Stop loading and transition
-            stopLoadingAnimation();
-            transitionToItinerary();
-            
-          } else {
-            console.error('generateItineraryFromQuiz function not found');
-            document.getElementById('itinerary-cards').innerHTML = `
-              <div class="info-card">
-                <h3 style="color: var(--warning);">Error Loading Itinerary</h3>
-                <p>There was an error generating your itinerary. Please try again.</p>
-                <button onclick="window.location.href='index.html'" style="
-                  margin-top: 20px;
-                  background: var(--primary);
-                  color: white;
-                  padding: 12px 24px;
-                  border: none;
-                  border-radius: 8px;
-                  font-size: 14px;
-                  font-weight: 600;
-                  cursor: pointer;
-                ">Start Over</button>
-              </div>
-            `;
-            stopLoadingAnimation();
-            transitionToItinerary();
-          }
-        };
-        
-        await waitForFunction();
-        
-      } catch (error) {
-        console.error('Error parsing quiz data:', error);
-        window.location.href = 'index.html';
-      }
-    });
+    }
   </script>
 </body>
 </html>
