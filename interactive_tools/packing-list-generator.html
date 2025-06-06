@@ -197,6 +197,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
+            position: relative;
         }
 
         .option-button:hover {
@@ -210,6 +211,15 @@
             color: #065F46;
             transform: scale(1.05);
             box-shadow: var(--shadow-md);
+        }
+        
+        /* Specific button styles to ensure selection works */
+        .trip-style-button.selected,
+        .terrain-button.selected,
+        .weather-button.selected {
+            border-color: var(--green) !important;
+            background: #D1FAE5 !important;
+            color: #065F46 !important;
         }
 
         /* Input Field */
@@ -1676,12 +1686,16 @@
             };
         };
 
-        // Event Delegation Setup
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize app when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeApp);
+        } else {
             initializeApp();
-        });
+        }
 
         function initializeApp() {
+            console.log('Initializing app...');
+            
             // Event delegation for better performance
             document.addEventListener('click', handleClick);
             document.addEventListener('change', handleChange);
@@ -1689,13 +1703,60 @@
             
             // Initialize advanced listeners
             initializeAdvancedListeners();
+            
+            // Add direct click handlers as fallback for critical buttons
+            addDirectClickHandlers();
+        }
+        
+        // Add direct click handlers as fallback
+        function addDirectClickHandlers() {
+            // Trip style buttons
+            document.querySelectorAll('.trip-style-button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectOption('tripStyle', this.dataset.trip, '.trip-style-button', this);
+                    checkStep1Completion();
+                });
+            });
+            
+            // Terrain buttons
+            document.querySelectorAll('.terrain-button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectOption('terrain', this.dataset.terrain, '.terrain-button', this);
+                    checkStep1Completion();
+                });
+            });
+            
+            // Weather buttons
+            document.querySelectorAll('.weather-button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectOption('weather', this.dataset.weather, '.weather-button', this);
+                    checkStep2Completion();
+                });
+            });
+            
+            // Preset buttons
+            document.querySelectorAll('.preset-button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    applyPreset(this.dataset.preset);
+                });
+            });
         }
 
         // Click Handler
         function handleClick(e) {
+            // Prevent default for all buttons
+            if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                e.preventDefault();
+            }
+            
             // Preset buttons
             if (e.target.closest('.preset-button')) {
-                const preset = e.target.closest('.preset-button').dataset.preset;
+                const button = e.target.closest('.preset-button');
+                const preset = button.dataset.preset;
                 applyPreset(preset);
                 return;
             }
@@ -1726,6 +1787,7 @@
             
             // Toggle special needs
             if (e.target.closest('.toggle-option')) {
+                e.preventDefault();
                 const option = e.target.closest('.toggle-option');
                 option.classList.toggle('selected');
                 updateSpecialNeeds();
@@ -1897,12 +1959,15 @@
 
         // Form Functions
         function selectOption(field, value, selector, element) {
+            // Update state
             state.basic[field] = value;
             
+            // Remove selected class from all similar buttons
             document.querySelectorAll(selector).forEach(btn => {
                 btn.classList.remove('selected');
             });
             
+            // Add selected class to clicked element
             if (element) {
                 element.classList.add('selected');
             }
@@ -1934,17 +1999,21 @@
             
             const presetData = presets[preset];
             if (presetData) {
-                // Apply selections
-                Object.entries(presetData).forEach(([key, value]) => {
-                    state.basic[key] = value;
-                    const button = document.querySelector(`[data-${key.replace('Style', '')}="${value}"]`);
-                    if (button) {
-                        document.querySelectorAll(button.className.split(' ')[0]).forEach(btn => {
-                            btn.classList.remove('selected');
-                        });
-                        button.classList.add('selected');
+                // Apply trip style selection
+                if (presetData.tripStyle) {
+                    const tripButton = document.querySelector(`[data-trip="${presetData.tripStyle}"]`);
+                    if (tripButton) {
+                        selectOption('tripStyle', presetData.tripStyle, '.trip-style-button', tripButton);
                     }
-                });
+                }
+                
+                // Apply terrain selection
+                if (presetData.terrain) {
+                    const terrainButton = document.querySelector(`[data-terrain="${presetData.terrain}"]`);
+                    if (terrainButton) {
+                        selectOption('terrain', presetData.terrain, '.terrain-button', terrainButton);
+                    }
+                }
                 
                 checkStep1Completion();
             }
