@@ -183,6 +183,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
+        /* Option button styles */
         .option-button {
             padding: 16px;
             border: 2px solid #E5E7EB;
@@ -657,6 +658,11 @@
             font-size: 20px;
         }
 
+        .action-group {
+            display: flex;
+            gap: 12px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero-title {
@@ -675,6 +681,26 @@
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             }
             
+            .preset-options {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .trip-style-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .terrain-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .weather-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .equipment-needs {
+                grid-template-columns: 1fr !important;
+            }
+            
             .summary-header {
                 flex-direction: column;
             }
@@ -686,6 +712,11 @@
             .action-group {
                 width: 100%;
                 justify-content: center;
+                flex-direction: column;
+            }
+            
+            .action-group .btn {
+                width: 100%;
             }
 
             .auth-buttons {
@@ -701,6 +732,40 @@
             .success-notification.show {
                 transform: translateY(0);
             }
+        }
+
+        /* Preset button styles */
+        .preset-button:hover,
+        .trip-style-button:hover,
+        .terrain-button:hover,
+        .weather-button:hover {
+            border-color: var(--green);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .preset-button.active,
+        .trip-style-button.selected,
+        .terrain-button.selected,
+        .weather-button.selected {
+            border-color: var(--green);
+            background: #D1FAE5;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Toggle option styles */
+        .toggle-option {
+            position: relative;
+        }
+
+        .toggle-option.selected {
+            border-color: var(--green);
+            background: #D1FAE5;
+        }
+
+        .toggle-option:hover {
+            border-color: #D1D5DB;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
 
         /* Hide elements */
@@ -726,12 +791,12 @@
         <div class="progress-container">
             <div class="progress-step">
                 <div class="step-circle active" id="step1-circle">1</div>
-                <span class="step-label active" id="step1-label">Trek Details</span>
+                <span class="step-label active" id="step1-label">Trip Overview</span>
             </div>
             <div class="step-connector" id="connector1"></div>
             <div class="progress-step">
                 <div class="step-circle" id="step2-circle">2</div>
-                <span class="step-label" id="step2-label">Preferences</span>
+                <span class="step-label" id="step2-label">Conditions</span>
             </div>
             <div class="step-connector" id="connector2"></div>
             <div class="progress-step">
@@ -742,51 +807,92 @@
 
         <!-- Step 1: Trek Details -->
         <div class="form-section active" id="step1">
-            <h2 class="form-title">Tell us about your trek</h2>
+            <h2 class="form-title">Tell us about your adventure</h2>
             
+            <!-- Quick Presets -->
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-rocket" style="color: #7c3aed;"></i>
+                    Quick Start (Optional)
+                </label>
+                <div class="preset-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px;">
+                    <button class="preset-button" onclick="applyPreset('weekend-warrior')" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="font-size: 24px; margin-bottom: 8px;">🥾</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Weekend Warrior</div>
+                        <div style="font-size: 13px; color: #6B7280;">2-3 day moderate hike</div>
+                    </button>
+                    <button class="preset-button" onclick="applyPreset('alpine-adventure')" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="font-size: 24px; margin-bottom: 8px;">🏔️</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Alpine Adventure</div>
+                        <div style="font-size: 13px; color: #6B7280;">High altitude multi-day</div>
+                    </button>
+                    <button class="preset-button" onclick="applyPreset('tropical-trek')" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="font-size: 24px; margin-bottom: 8px;">🌴</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Tropical Trek</div>
+                        <div style="font-size: 13px; color: #6B7280;">Warm weather hiking</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-calendar-alt" style="color: #3b82f6;"></i>
+                    Trip Style
+                </label>
+                <div class="trip-style-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;">
+                    <button class="trip-style-button" data-trip="day" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <i class="fas fa-sun" style="font-size: 32px; color: #F59E0B; display: block; margin-bottom: 12px;"></i>
+                        <strong style="display: block; margin-bottom: 4px;">Day Trip</strong>
+                        <small style="color: #6B7280; font-size: 12px;">Return same day</small>
+                    </button>
+                    <button class="trip-style-button" data-trip="camping-short" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <i class="fas fa-campground" style="font-size: 32px; color: #10B981; display: block; margin-bottom: 12px;"></i>
+                        <strong style="display: block; margin-bottom: 4px;">2-3 Days</strong>
+                        <small style="color: #6B7280; font-size: 12px;">Camping</small>
+                    </button>
+                    <button class="trip-style-button" data-trip="hut-trek" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <i class="fas fa-home" style="font-size: 32px; color: #3B82F6; display: block; margin-bottom: 12px;"></i>
+                        <strong style="display: block; margin-bottom: 4px;">4-7 Days</strong>
+                        <small style="color: #6B7280; font-size: 12px;">Hut to hut</small>
+                    </button>
+                    <button class="trip-style-button" data-trip="expedition" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <i class="fas fa-flag" style="font-size: 32px; color: #7C3AED; display: block; margin-bottom: 12px;"></i>
+                        <strong style="display: block; margin-bottom: 4px;">7+ Days</strong>
+                        <small style="color: #6B7280; font-size: 12px;">Full expedition</small>
+                    </button>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label class="form-label">
                     <i class="fas fa-mountain" style="color: #16a34a;"></i>
-                    Trek Type
+                    Primary Terrain
                 </label>
-                <div class="button-grid">
-                    <button class="option-button" data-trek-type="day-hike">Day Hike</button>
-                    <button class="option-button" data-trek-type="multi-day">Multi Day</button>
-                    <button class="option-button" data-trek-type="high-altitude">High Altitude</button>
-                    <button class="option-button" data-trek-type="wilderness">Wilderness</button>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">
-                    <i class="fas fa-thermometer-half" style="color: #f97316;"></i>
-                    Season
-                </label>
-                <div class="button-grid">
-                    <button class="option-button" data-season="spring">Spring</button>
-                    <button class="option-button" data-season="summer">Summer</button>
-                    <button class="option-button" data-season="monsoon">Monsoon</button>
-                    <button class="option-button" data-season="winter">Winter</button>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">
-                    <i class="fas fa-calendar" style="color: #3b82f6;"></i>
-                    Duration (days)
-                </label>
-                <input type="number" class="input-field" id="duration" min="1" max="30" placeholder="Enter number of days">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">
-                    <i class="fas fa-map-marker-alt" style="color: #ef4444;"></i>
-                    Difficulty Level
-                </label>
-                <div class="button-grid button-grid-3">
-                    <button class="option-button" data-difficulty="easy">Easy</button>
-                    <button class="option-button" data-difficulty="moderate">Moderate</button>
-                    <button class="option-button" data-difficulty="difficult">Difficult</button>
+                <div class="terrain-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;">
+                    <button class="terrain-button" data-terrain="forest" style="padding: 16px 8px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 28px; margin-bottom: 4px;">🌲</div>
+                        <div style="font-size: 14px;">Forest Trails</div>
+                    </button>
+                    <button class="terrain-button" data-terrain="alpine" style="padding: 16px 8px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 28px; margin-bottom: 4px;">🏔️</div>
+                        <div style="font-size: 14px;">Alpine/Rocky</div>
+                    </button>
+                    <button class="terrain-button" data-terrain="desert" style="padding: 16px 8px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 28px; margin-bottom: 4px;">🏜️</div>
+                        <div style="font-size: 14px;">Desert/Arid</div>
+                    </button>
+                    <button class="terrain-button" data-terrain="coastal" style="padding: 16px 8px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 28px; margin-bottom: 4px;">🌊</div>
+                        <div style="font-size: 14px;">Coastal</div>
+                    </button>
+                    <button class="terrain-button" data-terrain="glacier" style="padding: 16px 8px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 28px; margin-bottom: 4px;">🧊</div>
+                        <div style="font-size: 14px;">Snow/Glacier</div>
+                    </button>
+                    <button class="terrain-button" data-terrain="jungle" style="padding: 16px 8px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 28px; margin-bottom: 4px;">🌴</div>
+                        <div style="font-size: 14px;">Tropical</div>
+                    </button>
                 </div>
             </div>
 
@@ -801,53 +907,136 @@
 
         <!-- Step 2: Preferences -->
         <div class="form-section" id="step2">
-            <h2 class="form-title">Your trekking preferences</h2>
+            <h2 class="form-title">Conditions & Special Needs</h2>
             
             <div class="form-group">
                 <label class="form-label">
-                    <i class="fas fa-users" style="color: #7c3aed;"></i>
-                    Group Size
+                    <i class="fas fa-cloud-sun" style="color: #3b82f6;"></i>
+                    Expected Weather
                 </label>
-                <div class="button-grid">
-                    <button class="option-button" data-group="solo">Solo</button>
-                    <button class="option-button" data-group="2-3">2-3 people</button>
-                    <button class="option-button" data-group="4-6">4-6 people</button>
-                    <button class="option-button" data-group="7+">7+ people</button>
+                <div class="weather-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;">
+                    <button class="weather-button" data-weather="sunny-warm" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">☀️</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Sunny & Warm</div>
+                        <small style="color: #6B7280; font-size: 12px;">20-30°C / 70-85°F</small>
+                    </button>
+                    <button class="weather-button" data-weather="sunny-cold" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">🌤️</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Sunny & Cold</div>
+                        <small style="color: #6B7280; font-size: 12px;">0-15°C / 32-60°F</small>
+                    </button>
+                    <button class="weather-button" data-weather="rainy" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">🌧️</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Rainy/Wet</div>
+                        <small style="color: #6B7280; font-size: 12px;">Monsoon conditions</small>
+                    </button>
+                    <button class="weather-button" data-weather="snow" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">❄️</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Snow/Ice</div>
+                        <small style="color: #6B7280; font-size: 12px;">Below 0°C / 32°F</small>
+                    </button>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Will you have a guide/porter service?</label>
-                <div class="button-grid button-grid-2">
-                    <button class="option-button" data-guide="yes">✅ Yes, with guide</button>
-                    <button class="option-button" data-guide="no">❌ No, self-guided</button>
+                <label class="form-label">
+                    <i class="fas fa-exclamation-triangle" style="color: #f97316;"></i>
+                    Special Conditions (select all that apply)
+                </label>
+                <div class="equipment-needs" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                    <button class="toggle-option" data-need="river-crossing" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 24px;">💧</div>
+                            <div>
+                                <div style="font-weight: 600;">River Crossings</div>
+                                <div style="font-size: 12px; color: #6B7280;">Need water shoes/sandals</div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="toggle-option" data-need="scrambling" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 24px;">🧗</div>
+                            <div>
+                                <div style="font-weight: 600;">Technical Scrambling</div>
+                                <div style="font-size: 12px; color: #6B7280;">Rope & climbing gear</div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="toggle-option" data-need="self-cooking" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 24px;">🍳</div>
+                            <div>
+                                <div style="font-weight: 600;">Self-Catered</div>
+                                <div style="font-size: 12px; color: #6B7280;">Full cooking setup needed</div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="toggle-option" data-need="remote-area" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 24px;">📡</div>
+                            <div>
+                                <div style="font-weight: 600;">Remote Area</div>
+                                <div style="font-size: 12px; color: #6B7280;">Emergency communication</div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="toggle-option" data-need="photography" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 24px;">📸</div>
+                            <div>
+                                <div style="font-weight: 600;">Photography Focus</div>
+                                <div style="font-size: 12px; color: #6B7280;">Camera gear protection</div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="toggle-option" data-need="water-scarce" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 24px;">🏜️</div>
+                            <div>
+                                <div style="font-weight: 600;">Limited Water</div>
+                                <div style="font-size: 12px; color: #6B7280;">Extra capacity needed</div>
+                            </div>
+                        </div>
+                    </button>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="form-label">Special Requirements (select all that apply)</label>
-                <div>
-                    <div class="checkbox-option" data-special="photography">
-                        <input type="checkbox" id="photography">
-                        <span class="checkbox-icon">📸</span>
-                        <label for="photography" style="cursor: pointer;">Photography equipment</label>
-                    </div>
-                    <div class="checkbox-option" data-special="medical">
-                        <input type="checkbox" id="medical">
-                        <span class="checkbox-icon">🏥</span>
-                        <label for="medical" style="cursor: pointer;">Medical conditions</label>
-                    </div>
-                    <div class="checkbox-option" data-special="dietary">
-                        <input type="checkbox" id="dietary">
-                        <span class="checkbox-icon">🥗</span>
-                        <label for="dietary" style="cursor: pointer;">Special dietary needs</label>
-                    </div>
-                    <div class="checkbox-option" data-special="ultralight">
-                        <input type="checkbox" id="ultralight">
-                        <span class="checkbox-icon">🪶</span>
-                        <label for="ultralight" style="cursor: pointer;">Ultralight trekking</label>
+            <!-- Advanced Options (initially hidden) -->
+            <div id="advancedOptions" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-users" style="color: #7c3aed;"></i>
+                        Group Size
+                    </label>
+                    <div class="button-grid">
+                        <button class="option-button" data-group="solo">Solo</button>
+                        <button class="option-button" data-group="2-3">2-3 people</button>
+                        <button class="option-button" data-group="4-6">4-6 people</button>
+                        <button class="option-button" data-group="7+">7+ people</button>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="form-label">Additional Preferences</label>
+                    <div>
+                        <div class="checkbox-option" data-special="ultralight">
+                            <input type="checkbox" id="ultralight">
+                            <span class="checkbox-icon">🪶</span>
+                            <label for="ultralight" style="cursor: pointer;">Ultralight approach (minimize weight)</label>
+                        </div>
+                        <div class="checkbox-option" data-special="medical">
+                            <input type="checkbox" id="medical">
+                            <span class="checkbox-icon">🏥</span>
+                            <label for="medical" style="cursor: pointer;">Special medical needs</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 24px 0;">
+                <button id="toggleAdvanced" onclick="toggleAdvancedOptions()" style="background: none; border: none; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 14px;">
+                    <i class="fas fa-cog"></i> Show Advanced Options
+                </button>
             </div>
 
             <div class="button-container">
@@ -885,30 +1074,32 @@
                 </div>
             </div>
 
+            <!-- Action Buttons (moved here) -->
+            <div class="action-group" style="display: flex; gap: 12px; margin-bottom: 32px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="saveToAdventures">
+                    <i class="fas fa-save"></i>
+                    Save to My Adventures
+                </button>
+                <button class="btn btn-outline" id="copyList">
+                    <i class="fas fa-copy"></i>
+                    Copy List
+                </button>
+                <button class="btn btn-outline" id="printList">
+                    <i class="fas fa-print"></i>
+                    Print
+                </button>
+            </div>
+
             <!-- Packing List Categories -->
             <div class="categories-grid" id="packingListContent"></div>
 
-            <!-- Action Buttons -->
+            <!-- Start New Button (at bottom) -->
             <div class="action-card">
-                <div class="action-buttons">
+                <div class="action-buttons" style="justify-content: center;">
                     <button class="btn btn-secondary" id="startNew">
                         <i class="fas fa-file-alt"></i>
                         Start New List
                     </button>
-                    <div class="action-group">
-                        <button class="btn btn-primary" id="saveToAdventures">
-                            <i class="fas fa-save"></i>
-                            Save to My Adventures
-                        </button>
-                        <button class="btn btn-outline" id="copyList">
-                            <i class="fas fa-copy"></i>
-                            Copy List
-                        </button>
-                        <button class="btn btn-outline" id="printList">
-                            <i class="fas fa-print"></i>
-                            Print
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -971,13 +1162,13 @@
         const state = {
             currentStep: 1,
             formData: {
-                trekType: '',
-                season: '',
-                duration: '',
-                difficulty: '',
+                tripStyle: '',
+                terrain: '',
+                weather: '',
+                specialNeeds: [],
                 groupSize: '',
-                hasGuide: '',
-                specialNeeds: []
+                ultralight: false,
+                medical: false
             },
             packingList: null,
             checkedItems: new Set(),
@@ -996,65 +1187,59 @@
         });
 
         function initializeEventListeners() {
-            // Step 1 - Trek Type
-            document.querySelectorAll('[data-trek-type]').forEach(btn => {
+            // Step 1 - Trip Style
+            document.querySelectorAll('.trip-style-button').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    selectOption('trekType', this.dataset.trekType, '[data-trek-type]');
+                    selectOption('tripStyle', this.dataset.trip, '.trip-style-button');
                     checkStep1Completion();
                 });
             });
 
-            // Step 1 - Season
-            document.querySelectorAll('[data-season]').forEach(btn => {
+            // Step 1 - Terrain
+            document.querySelectorAll('.terrain-button').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    selectOption('season', this.dataset.season, '[data-season]');
+                    selectOption('terrain', this.dataset.terrain, '.terrain-button');
                     checkStep1Completion();
                 });
             });
 
-            // Step 1 - Duration
-            document.getElementById('duration').addEventListener('input', function() {
-                state.formData.duration = this.value;
-                checkStep1Completion();
-            });
-
-            // Step 1 - Difficulty
-            document.querySelectorAll('[data-difficulty]').forEach(btn => {
+            // Step 2 - Weather
+            document.querySelectorAll('.weather-button').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    selectOption('difficulty', this.dataset.difficulty, '[data-difficulty]');
-                    checkStep1Completion();
+                    selectOption('weather', this.dataset.weather, '.weather-button');
+                    checkStep2Completion();
                 });
             });
 
-            // Step 2 - Group Size
+            // Step 2 - Special Needs (toggle buttons)
+            document.querySelectorAll('.toggle-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                    updateSpecialNeeds();
+                    checkStep2Completion();
+                });
+            });
+
+            // Advanced options - Group Size
             document.querySelectorAll('[data-group]').forEach(btn => {
                 btn.addEventListener('click', function() {
                     selectOption('groupSize', this.dataset.group, '[data-group]');
-                    checkStep2Completion();
                 });
             });
 
-            // Step 2 - Guide
-            document.querySelectorAll('[data-guide]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    selectOption('hasGuide', this.dataset.guide, '[data-guide]');
-                    checkStep2Completion();
-                });
-            });
-
-            // Step 2 - Special Needs
+            // Advanced options - Checkboxes
             document.querySelectorAll('.checkbox-option').forEach(option => {
                 option.addEventListener('click', function(e) {
                     if (e.target.type !== 'checkbox') {
                         const checkbox = this.querySelector('input[type="checkbox"]');
                         checkbox.checked = !checkbox.checked;
                     }
-                    updateSpecialNeeds();
+                    updateAdvancedOptions();
                 });
             });
 
             document.querySelectorAll('.checkbox-option input[type="checkbox"]').forEach(checkbox => {
-                checkbox.addEventListener('change', updateSpecialNeeds);
+                checkbox.addEventListener('change', updateAdvancedOptions);
             });
 
             // Navigation buttons
@@ -1067,40 +1252,81 @@
             document.getElementById('saveToAdventures').addEventListener('click', saveToAdventures);
         }
 
-        function selectOption(field, value, selector) {
-            state.formData[field] = value;
-            
-            // Update UI
-            document.querySelectorAll(selector).forEach(btn => {
-                btn.classList.remove('selected');
+        // Preset functionality
+        window.applyPreset = function(preset) {
+            // Remove active state from all presets
+            document.querySelectorAll('.preset-button').forEach(btn => {
+                btn.classList.remove('active');
             });
-            event.target.classList.add('selected');
+            
+            // Add active state to clicked preset
+            event.target.closest('.preset-button').classList.add('active');
+            
+            // Apply preset values
+            if (preset === 'weekend-warrior') {
+                selectPresetOption('.trip-style-button[data-trip="camping-short"]');
+                selectPresetOption('.terrain-button[data-terrain="forest"]');
+                state.formData.tripStyle = 'camping-short';
+                state.formData.terrain = 'forest';
+            } else if (preset === 'alpine-adventure') {
+                selectPresetOption('.trip-style-button[data-trip="hut-trek"]');
+                selectPresetOption('.terrain-button[data-terrain="alpine"]');
+                state.formData.tripStyle = 'hut-trek';
+                state.formData.terrain = 'alpine';
+            } else if (preset === 'tropical-trek') {
+                selectPresetOption('.trip-style-button[data-trip="camping-short"]');
+                selectPresetOption('.terrain-button[data-terrain="jungle"]');
+                state.formData.tripStyle = 'camping-short';
+                state.formData.terrain = 'jungle';
+            }
+            
+            checkStep1Completion();
+        };
+
+        function selectPresetOption(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                // Remove selected from all similar elements
+                const parentClass = element.className.split(' ')[0];
+                document.querySelectorAll(`.${parentClass}`).forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                element.classList.add('selected');
+            }
         }
+
+        window.toggleAdvancedOptions = function() {
+            const advancedDiv = document.getElementById('advancedOptions');
+            const toggleBtn = document.getElementById('toggleAdvanced');
+            
+            if (advancedDiv.style.display === 'none') {
+                advancedDiv.style.display = 'block';
+                toggleBtn.innerHTML = '<i class="fas fa-cog"></i> Hide Advanced Options';
+            } else {
+                advancedDiv.style.display = 'none';
+                toggleBtn.innerHTML = '<i class="fas fa-cog"></i> Show Advanced Options';
+            }
+        };
 
         function updateSpecialNeeds() {
             state.formData.specialNeeds = [];
-            document.querySelectorAll('.checkbox-option').forEach(option => {
-                const checkbox = option.querySelector('input[type="checkbox"]');
-                if (checkbox.checked) {
-                    state.formData.specialNeeds.push(option.dataset.special);
-                    option.classList.add('selected');
-                } else {
-                    option.classList.remove('selected');
-                }
+            document.querySelectorAll('.toggle-option.selected').forEach(option => {
+                state.formData.specialNeeds.push(option.dataset.need);
             });
         }
 
+        function updateAdvancedOptions() {
+            state.formData.ultralight = document.getElementById('ultralight').checked;
+            state.formData.medical = document.getElementById('medical').checked;
+        }
+
         function checkStep1Completion() {
-            const isComplete = state.formData.trekType && 
-                             state.formData.season && 
-                             state.formData.duration && 
-                             state.formData.difficulty;
-            
+            const isComplete = state.formData.tripStyle && state.formData.terrain;
             document.getElementById('nextStep1').disabled = !isComplete;
         }
 
         function checkStep2Completion() {
-            const isComplete = state.formData.groupSize && state.formData.hasGuide;
+            const isComplete = state.formData.weather;
             document.getElementById('generateList').disabled = !isComplete;
         }
 
@@ -1168,29 +1394,61 @@
                 optional: []
             };
 
+            // Parse trip style for duration and accommodation
+            const tripInfo = {
+                duration: 1,
+                accommodation: 'none',
+                isExpedition: false
+            };
+            
+            switch(state.formData.tripStyle) {
+                case 'day':
+                    tripInfo.duration = 1;
+                    tripInfo.accommodation = 'none';
+                    break;
+                case 'camping-short':
+                    tripInfo.duration = 3;
+                    tripInfo.accommodation = 'camping';
+                    break;
+                case 'hut-trek':
+                    tripInfo.duration = 5;
+                    tripInfo.accommodation = 'hut';
+                    break;
+                case 'expedition':
+                    tripInfo.duration = 10;
+                    tripInfo.accommodation = 'camping';
+                    tripInfo.isExpedition = true;
+                    break;
+            }
+
             // Base clothing
             list.clothing = [
                 'Base layer top and bottom (moisture-wicking)',
-                'Trekking pants (2 pairs)',
-                'Quick-dry t-shirts (2-3)',
-                'Underwear (trek duration + 1 extra)',
-                'Trekking socks (duration + 2 extra pairs)',
+                `Trekking pants (${tripInfo.duration > 3 ? '2 pairs' : '1 pair'})`,
+                `Quick-dry t-shirts (${Math.min(tripInfo.duration + 1, 4)})`,
+                `Underwear (${tripInfo.duration + 2} pairs)`,
+                `Trekking socks (${tripInfo.duration + 2} pairs)`,
                 'Sun hat with brim',
                 'Buff or neck gaiter'
             ];
 
-            // Season-specific clothing
-            if (state.formData.season === 'winter') {
+            // Weather-specific clothing
+            if (state.formData.weather === 'sunny-warm') {
                 list.clothing.push(
-                    'Insulated jacket (down or synthetic)',
-                    'Fleece jacket (mid-layer)',
-                    'Thermal underwear (2 sets)',
-                    'Winter gloves and liner gloves',
-                    'Warm beanie/winter hat',
-                    'Hardshell jacket (waterproof)',
-                    'Hardshell pants (waterproof)'
+                    'Lightweight long-sleeve shirts (sun protection)',
+                    'Shorts (2 pairs)',
+                    'Light fleece or jacket (for evenings)',
+                    'Sunglasses with UV protection'
                 );
-            } else if (state.formData.season === 'monsoon') {
+            } else if (state.formData.weather === 'sunny-cold') {
+                list.clothing.push(
+                    'Fleece jacket (mid-layer)',
+                    'Softshell jacket',
+                    'Thermal underwear (1 set)',
+                    'Warm gloves',
+                    'Beanie/warm hat'
+                );
+            } else if (state.formData.weather === 'rainy') {
                 list.clothing.push(
                     'Rain jacket (waterproof/breathable)',
                     'Rain pants',
@@ -1199,59 +1457,103 @@
                     'Extra quick-dry clothing',
                     'Waterproof gloves'
                 );
-            } else if (state.formData.season === 'summer') {
+            } else if (state.formData.weather === 'snow') {
                 list.clothing.push(
-                    'Lightweight long-sleeve shirts (sun protection)',
-                    'Shorts (2 pairs)',
-                    'Light fleece or jacket (for evenings)',
-                    'Sunglasses with UV protection',
-                    'Light rain jacket'
+                    'Insulated jacket (down or synthetic)',
+                    'Fleece jacket (mid-layer)',
+                    'Thermal underwear (2 sets)',
+                    'Winter gloves and liner gloves',
+                    'Warm beanie/balaclava',
+                    'Hardshell jacket (waterproof)',
+                    'Hardshell pants (waterproof)'
                 );
             }
 
-            // Footwear
-            list.footwear = ['Trekking boots (broken in)', 'Camp shoes/sandals'];
-            if (state.formData.trekType === 'high-altitude' || state.formData.season === 'winter') {
-                list.footwear.push('Gaiters', 'Microspikes or crampons (if icy)');
+            // Terrain-specific items
+            if (state.formData.terrain === 'alpine') {
+                list.clothing.push('Gaiters');
+                list.safety.push('Glacier glasses', 'Extra sun protection');
+                if (state.formData.weather === 'snow') {
+                    list.footwear.push('Microspikes or crampons');
+                }
+            } else if (state.formData.terrain === 'desert') {
+                list.clothing.push('Lightweight sun hoodie', 'Bandana for dust');
+                list.personal.push('Extra lip balm', 'Moisturizer');
+            } else if (state.formData.terrain === 'jungle') {
+                list.clothing.push('Long pants (bug protection)', 'Long sleeve shirts');
+                list.safety.push('Strong insect repellent', 'Permethrin spray');
+            } else if (state.formData.terrain === 'coastal') {
+                list.clothing.push('Board shorts/swimsuit');
+                list.personal.push('Reef-safe sunscreen');
             }
 
-            // Camping gear
-            if (state.formData.hasGuide === 'no') {
+            // Footwear
+            list.footwear = ['Trekking boots (broken in)'];
+            
+            if (tripInfo.duration > 1) {
+                list.footwear.push('Camp shoes/sandals');
+            }
+            
+            if (state.formData.terrain === 'glacier' || state.formData.weather === 'snow') {
+                list.footwear.push('Insulated boots', 'Gaiters');
+            }
+
+            // Special conditions footwear
+            if (state.formData.specialNeeds.includes('river-crossing')) {
+                list.footwear.push('Water shoes or sandals (for crossings)');
+            }
+
+            // Camping gear based on accommodation
+            if (tripInfo.accommodation === 'camping' || tripInfo.isExpedition) {
                 list.camping = [
-                    'Tent (appropriate for season)',
-                    'Sleeping bag (rated for expected temps)',
+                    'Tent (appropriate for conditions)',
+                    `Sleeping bag (rated for ${state.formData.weather === 'snow' ? 'winter' : 'expected'} temps)`,
                     'Sleeping pad/mat',
                     'Camping stove and fuel',
                     'Cookware and utensils',
                     'Water filter or purification tablets',
                     'Lighter/matches (waterproof)'
                 ];
-            } else {
+                
+                if (state.formData.terrain === 'alpine' || state.formData.weather === 'snow') {
+                    list.camping.push('4-season tent', 'Insulated sleeping pad');
+                }
+            } else if (tripInfo.accommodation === 'hut') {
                 list.camping = [
-                    'Sleeping bag (check if provided)',
                     'Sleeping bag liner',
-                    'Inflatable pillow'
+                    'Travel pillow',
+                    'Hut slippers (lightweight)'
                 ];
             }
 
             // Backpack
-            const days = parseInt(state.formData.duration) || 1;
-            list.camping.push(
-                `Backpack (${days <= 3 ? '40-50L' : '60-70L'})`,
-                'Daypack (20-30L) for side trips',
-                'Dry bags/stuff sacks',
-                'Carabiners'
-            );
+            if (tripInfo.duration === 1) {
+                list.camping.push('Daypack (20-30L)');
+            } else if (tripInfo.duration <= 3) {
+                list.camping.push('Backpack (40-50L)');
+            } else if (tripInfo.duration <= 7) {
+                list.camping.push('Backpack (60-70L)');
+            } else {
+                list.camping.push('Expedition pack (70-85L)');
+            }
+            
+            list.camping.push('Dry bags/stuff sacks', 'Carabiners');
 
             // Navigation
             list.navigation = [
                 'Map and compass',
                 'GPS device or smartphone with offline maps',
                 'Headlamp with extra batteries',
-                'Backup flashlight',
-                'Power bank (10,000+ mAh)',
-                'Charging cables'
+                'Power bank (10,000+ mAh)'
             ];
+
+            if (state.formData.specialNeeds.includes('remote-area')) {
+                list.navigation.push(
+                    'Satellite communicator',
+                    'Emergency beacon (PLB/EPIRB)',
+                    'Solar charger'
+                );
+            }
 
             // Safety
             list.safety = [
@@ -1259,17 +1561,28 @@
                 'Personal medications',
                 'Sunscreen (SPF 50+)',
                 'Lip balm with SPF',
-                'Insect repellent',
                 'Water bottles or hydration system (3L capacity)',
                 'Emergency whistle',
                 'Multi-tool or knife'
             ];
+            
+            if (state.formData.terrain !== 'jungle') {
+                list.safety.push('Insect repellent');
+            }
 
-            if (state.formData.difficulty === 'difficult' || state.formData.trekType === 'high-altitude') {
+            if (state.formData.specialNeeds.includes('scrambling')) {
+                list.safety.push(
+                    'Climbing harness',
+                    'Dynamic rope (30m)',
+                    'Carabiners (4-6)',
+                    'Helmet'
+                );
+            }
+
+            if (state.formData.terrain === 'alpine' || tripInfo.isExpedition) {
                 list.safety.push(
                     'Altitude sickness medication',
-                    'Emergency shelter/bivy',
-                    'Rope (20-30m)'
+                    'Emergency shelter/bivy'
                 );
             }
 
@@ -1281,47 +1594,115 @@
                 'Wet wipes',
                 'Towel (quick-dry)',
                 'Prescription glasses/contacts',
-                'Duct tape (small roll)',
-                'Plastic bags (various sizes)'
+                'Duct tape (small roll)'
             ];
 
             // Food
-            list.food = [
-                `Breakfast items (${days} days + 1 extra)`,
-                `Lunch/snacks (${days} days + extra)`,
-                `Dinner items (${days} days + 1 extra)`,
-                'Energy bars and trail mix',
+            const days = tripInfo.duration;
+            list.food = [];
+            
+            if (state.formData.specialNeeds.includes('self-cooking') || tripInfo.accommodation === 'camping') {
+                list.food.push(
+                    `Breakfast items (${days} days + 1 extra)`,
+                    `Lunch/snacks (${days} days + extra)`,
+                    `Dinner items (${days} days + 1 extra)`
+                );
+            } else {
+                list.food.push(
+                    'Trail snacks',
+                    'Energy bars'
+                );
+            }
+            
+            list.food.push(
                 'Electrolyte powder/tablets',
-                'Instant coffee/tea bags'
-            ];
+                'Energy gels (for long days)'
+            );
+
+            if (state.formData.specialNeeds.includes('water-scarce')) {
+                list.food.push(
+                    'Extra water capacity (5L+)',
+                    'Backup purification (tablets)'
+                );
+            }
 
             // Optional
-            list.optional = [
-                'Trekking poles',
-                'Camera with extra batteries',
-                'Kindle/book',
-                'Playing cards',
-                'Journal and pen',
-                'Portable solar charger'
-            ];
-
-            // Special needs
+            list.optional = ['Trekking poles'];
+            
             if (state.formData.specialNeeds.includes('photography')) {
-                list.optional.push('Camera gear bag', 'Lens cleaning kit', 'Tripod (lightweight)');
+                list.optional.push(
+                    'Camera with extra batteries',
+                    'Lens cleaning kit',
+                    'Weatherproof camera bag',
+                    'Tripod (lightweight)'
+                );
             }
-            if (state.formData.specialNeeds.includes('medical')) {
-                list.safety.push('Advanced first aid supplies', 'Emergency medications');
+            
+            if (tripInfo.duration > 3) {
+                list.optional.push(
+                    'Kindle/book',
+                    'Playing cards',
+                    'Journal and pen'
+                );
             }
-            if (state.formData.specialNeeds.includes('dietary')) {
-                list.food.push('Special dietary foods', 'Food allergy medications');
+
+            if (state.formData.specialNeeds.includes('remote-area')) {
+                list.optional.push('Portable weather radio');
+            }
+
+            // Ultralight modifications
+            if (state.formData.ultralight) {
+                // Remove some optional items
+                list.optional = list.optional.filter(item => 
+                    item.includes('Camera') || item.includes('Trekking poles')
+                );
+                // Modify descriptions
+                list.camping = list.camping.map(item => {
+                    if (item.includes('Tent')) return 'Ultralight tent or tarp shelter';
+                    if (item.includes('Sleeping pad')) return 'Ultralight sleeping pad';
+                    return item;
+                });
+            }
+
+            // Medical additions
+            if (state.formData.medical) {
+                list.safety.push(
+                    'Advanced first aid supplies',
+                    'Emergency medications',
+                    'Medical information card'
+                );
             }
 
             return list;
         }
 
         function renderPackingList() {
+            // Parse trip info for summary
+            const tripLabels = {
+                'day': 'Day Trip',
+                'camping-short': '2-3 Day Camping',
+                'hut-trek': '4-7 Day Hut Trek',
+                'expedition': '7+ Day Expedition'
+            };
+            
+            const terrainLabels = {
+                'forest': 'Forest Trails',
+                'alpine': 'Alpine/Rocky',
+                'desert': 'Desert/Arid',
+                'coastal': 'Coastal',
+                'glacier': 'Snow/Glacier',
+                'jungle': 'Tropical'
+            };
+            
+            const weatherLabels = {
+                'sunny-warm': 'Sunny & Warm',
+                'sunny-cold': 'Sunny & Cold',
+                'rainy': 'Rainy/Wet',
+                'snow': 'Snow/Ice'
+            };
+            
             // Update summary
-            const summaryText = `${state.formData.duration}-day ${state.formData.difficulty} ${state.formData.trekType.replace('-', ' ')} trek in ${state.formData.season}`;
+            const summaryText = `${tripLabels[state.formData.tripStyle]} in ${terrainLabels[state.formData.terrain]} - ${weatherLabels[state.formData.weather]}`;
             document.getElementById('summaryText').textContent = summaryText;
             
             // Count total items
@@ -1410,10 +1791,18 @@
         }
 
         function copyListToClipboard() {
+            const tripLabels = {
+                'day': 'Day Trip',
+                'camping-short': '2-3 Day Camping',
+                'hut-trek': '4-7 Day Hut Trek',
+                'expedition': '7+ Day Expedition'
+            };
+            
             const listText = `PACKING LIST\n${'='.repeat(50)}\n` +
-                `Trek: ${state.formData.duration}-day ${state.formData.difficulty} ${state.formData.trekType.replace('-', ' ')}\n` +
-                `Season: ${state.formData.season}\n` +
-                `Group: ${state.formData.groupSize}\n` +
+                `Trek: ${tripLabels[state.formData.tripStyle]}\n` +
+                `Terrain: ${state.formData.terrain}\n` +
+                `Weather: ${state.formData.weather}\n` +
+                `Special Conditions: ${state.formData.specialNeeds.length > 0 ? state.formData.specialNeeds.join(', ') : 'None'}\n` +
                 `${'='.repeat(50)}\n\n` +
                 Object.entries(state.packingList)
                     .filter(([_, items]) => items.length > 0)
@@ -1455,17 +1844,24 @@
                 const token = await state.currentUser.getIdToken();
                 
                 // Prepare gear list data
+                const tripLabels = {
+                    'day': 'Day Trip',
+                    'camping-short': '2-3 Day Camping',
+                    'hut-trek': '4-7 Day Hut Trek',
+                    'expedition': '7+ Day Expedition'
+                };
+                
                 const gearListData = {
-                    title: `${state.formData.trekType.replace('-', ' ')} Packing List - ${state.formData.season}`,
+                    title: `${tripLabels[state.formData.tripStyle]} Packing List - ${state.formData.terrain}`,
                     type: 'gear-list',
                     metadata: {
-                        trekType: state.formData.trekType,
-                        season: state.formData.season,
-                        duration: state.formData.duration,
-                        difficulty: state.formData.difficulty,
-                        groupSize: state.formData.groupSize,
-                        hasGuide: state.formData.hasGuide,
+                        tripStyle: state.formData.tripStyle,
+                        terrain: state.formData.terrain,
+                        weather: state.formData.weather,
                         specialNeeds: state.formData.specialNeeds,
+                        groupSize: state.formData.groupSize,
+                        ultralight: state.formData.ultralight,
+                        medical: state.formData.medical,
                         totalItems: Object.values(state.packingList).flat().length,
                         checkedItems: Array.from(state.checkedItems)
                     },
@@ -1520,20 +1916,20 @@
             // Reset state
             state.currentStep = 1;
             state.formData = {
-                trekType: '',
-                season: '',
-                duration: '',
-                difficulty: '',
+                tripStyle: '',
+                terrain: '',
+                weather: '',
+                specialNeeds: [],
                 groupSize: '',
-                hasGuide: '',
-                specialNeeds: []
+                ultralight: false,
+                medical: false
             };
             state.packingList = null;
             state.checkedItems = new Set();
             
             // Reset UI
-            document.querySelectorAll('.option-button').forEach(btn => {
-                btn.classList.remove('selected');
+            document.querySelectorAll('.preset-button, .trip-style-button, .terrain-button, .weather-button, .toggle-option, .option-button').forEach(btn => {
+                btn.classList.remove('selected', 'active');
             });
             
             document.querySelectorAll('.checkbox-option').forEach(option => {
@@ -1541,9 +1937,12 @@
                 option.querySelector('input[type="checkbox"]').checked = false;
             });
             
-            document.getElementById('duration').value = '';
             document.getElementById('nextStep1').disabled = true;
             document.getElementById('generateList').disabled = true;
+            
+            // Reset advanced options
+            document.getElementById('advancedOptions').style.display = 'none';
+            document.getElementById('toggleAdvanced').innerHTML = '<i class="fas fa-cog"></i> Show Advanced Options';
             
             goToStep(1);
         }
