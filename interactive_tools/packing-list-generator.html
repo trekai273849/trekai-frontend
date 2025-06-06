@@ -816,17 +816,17 @@
                     Quick Start (Optional)
                 </label>
                 <div class="preset-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px;">
-                    <button class="preset-button" onclick="applyPreset('weekend-warrior')" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                    <button class="preset-button" onclick="applyPreset('weekend-warrior', event)" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
                         <div style="font-size: 24px; margin-bottom: 8px;">🥾</div>
                         <div style="font-weight: 600; margin-bottom: 4px;">Weekend Warrior</div>
                         <div style="font-size: 13px; color: #6B7280;">2-3 day moderate hike</div>
                     </button>
-                    <button class="preset-button" onclick="applyPreset('alpine-adventure')" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                    <button class="preset-button" onclick="applyPreset('alpine-adventure', event)" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
                         <div style="font-size: 24px; margin-bottom: 8px;">🏔️</div>
                         <div style="font-weight: 600; margin-bottom: 4px;">Alpine Adventure</div>
                         <div style="font-size: 13px; color: #6B7280;">High altitude multi-day</div>
                     </button>
-                    <button class="preset-button" onclick="applyPreset('tropical-trek')" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
+                    <button class="preset-button" onclick="applyPreset('tropical-trek', event)" style="padding: 16px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: left;">
                         <div style="font-size: 24px; margin-bottom: 8px;">🌴</div>
                         <div style="font-weight: 600; margin-bottom: 4px;">Tropical Trek</div>
                         <div style="font-size: 13px; color: #6B7280;">Warm weather hiking</div>
@@ -918,12 +918,12 @@
                     <button class="weather-button" data-weather="sunny-warm" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
                         <div style="font-size: 32px; margin-bottom: 8px;">☀️</div>
                         <div style="font-weight: 600; margin-bottom: 4px;">Sunny & Warm</div>
-                        <small style="color: #6B7280; font-size: 12px;">20-30°C / 70-85°F</small>
+                        <small style="color: #6B7280; font-size: 12px;">20-30°C</small>
                     </button>
                     <button class="weather-button" data-weather="sunny-cold" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
                         <div style="font-size: 32px; margin-bottom: 8px;">🌤️</div>
                         <div style="font-weight: 600; margin-bottom: 4px;">Sunny & Cold</div>
-                        <small style="color: #6B7280; font-size: 12px;">0-15°C / 32-60°F</small>
+                        <small style="color: #6B7280; font-size: 12px;">0-15°C</small>
                     </button>
                     <button class="weather-button" data-weather="rainy" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
                         <div style="font-size: 32px; margin-bottom: 8px;">🌧️</div>
@@ -933,7 +933,7 @@
                     <button class="weather-button" data-weather="snow" style="padding: 20px 12px; border: 2px solid #E5E7EB; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease; text-align: center;">
                         <div style="font-size: 32px; margin-bottom: 8px;">❄️</div>
                         <div style="font-weight: 600; margin-bottom: 4px;">Snow/Ice</div>
-                        <small style="color: #6B7280; font-size: 12px;">Below 0°C / 32°F</small>
+                        <small style="color: #6B7280; font-size: 12px;">Below 0°C</small>
                     </button>
                 </div>
             </div>
@@ -1189,31 +1189,35 @@
         function initializeEventListeners() {
             // Step 1 - Trip Style
             document.querySelectorAll('.trip-style-button').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    selectOption('tripStyle', this.dataset.trip, '.trip-style-button');
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectOption('tripStyle', this.dataset.trip, '.trip-style-button', this);
                     checkStep1Completion();
                 });
             });
 
             // Step 1 - Terrain
             document.querySelectorAll('.terrain-button').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    selectOption('terrain', this.dataset.terrain, '.terrain-button');
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectOption('terrain', this.dataset.terrain, '.terrain-button', this);
                     checkStep1Completion();
                 });
             });
 
             // Step 2 - Weather
             document.querySelectorAll('.weather-button').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    selectOption('weather', this.dataset.weather, '.weather-button');
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectOption('weather', this.dataset.weather, '.weather-button', this);
                     checkStep2Completion();
                 });
             });
 
             // Step 2 - Special Needs (toggle buttons)
             document.querySelectorAll('.toggle-option').forEach(option => {
-                option.addEventListener('click', function() {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
                     this.classList.toggle('selected');
                     updateSpecialNeeds();
                     checkStep2Completion();
@@ -1222,8 +1226,9 @@
 
             // Advanced options - Group Size
             document.querySelectorAll('[data-group]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    selectOption('groupSize', this.dataset.group, '[data-group]');
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    selectOption('groupSize', this.dataset.group, '[data-group]', this);
                 });
             });
 
@@ -1252,15 +1257,30 @@
             document.getElementById('saveToAdventures').addEventListener('click', saveToAdventures);
         }
 
+        // Updated selectOption to accept element directly
+        function selectOption(field, value, selector, element) {
+            state.formData[field] = value;
+            
+            // Update UI
+            document.querySelectorAll(selector).forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add selected class to the clicked element
+            if (element) {
+                element.classList.add('selected');
+            }
+        }
+
         // Preset functionality
-        window.applyPreset = function(preset) {
+        window.applyPreset = function(preset, event) {
             // Remove active state from all presets
             document.querySelectorAll('.preset-button').forEach(btn => {
                 btn.classList.remove('active');
             });
             
             // Add active state to clicked preset
-            event.target.closest('.preset-button').classList.add('active');
+            event.currentTarget.classList.add('active');
             
             // Apply preset values
             if (preset === 'weekend-warrior') {
