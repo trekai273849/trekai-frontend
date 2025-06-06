@@ -1,8 +1,8 @@
-// js/pages/customize.js - Updated with Route Map Integration
+// js/pages/customize.js - Updated for Quiz Interface with Location Fixes
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections, extractDays } from '../utils/itinerary.js';
-import { RouteMapManager } from '../components/routeMap.js';
+// import { RouteMapManager } from '../components/routeMap.js'; // Commented out for now
 
 // Firebase configuration
 const firebaseConfig = {
@@ -27,13 +27,13 @@ let firebase = {
 
 // Store quiz data globally
 let currentQuizData = null;
-let parsedDays = []; // Store parsed days globally for map
 
 document.addEventListener('DOMContentLoaded', () => {
   let cachedPackingList = '';
   let cachedInsights = '';
   let cachedPracticalInfo = '';
   let rawItineraryText = '';
+  let parsedDays = []; // Added to store parsed days globally
 
   // Function to get location-specific tips
   function getLocationTip(location) {
@@ -460,13 +460,13 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     const navTabs = document.createElement('div');
     navTabs.className = 'results-nav-tabs';
     navTabs.innerHTML = `
-      <div class="results-nav-container">
-        <button class="results-nav-tab active" data-section="itinerary">Itinerary</button>
-        <button class="results-nav-tab" data-section="map">Route Map</button>
-        <button class="results-nav-tab" data-section="packing">What to Pack</button>
-        <button class="results-nav-tab" data-section="insights">Local Insights</button>
-        <button class="results-nav-tab" data-section="practical">Practical Info</button>
-      </div>
+       <div class="results-nav-container">
+    <button class="results-nav-tab active" data-section="itinerary">Itinerary</button>
+    <button class="results-nav-tab" data-section="map">Route Map</button>
+    <button class="results-nav-tab" data-section="packing">What to Pack</button>
+    <button class="results-nav-tab" data-section="insights">Local Insights</button>
+    <button class="results-nav-tab" data-section="practical">Practical Info</button>
+  </div>
     `;
     resultsWrapper.appendChild(navTabs);
 
@@ -499,17 +499,29 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     const timeline = document.createElement('div');
     timeline.className = 'itinerary-timeline';
 
-    // Extract days and store globally
-    const days = extractDays(text);
-    parsedDays = days; // Store globally for map
+    // Extract days
+    const dayRegex = /(?:(?:\*\*\*|\#{1,3}|\*\*|\*)?\s*Day\s+(\d+)[:\s]+([^\n]*?)(?:\*\*\*|\*\*|\*)?)(?:\n)([\s\S]*?)(?=(?:\*\*\*|\#{1,3}|\*\*|\*)?Day\s+\d+[:\s]|#{1,3}\s*Packing List|#{1,3}\s*Local Insights|#{1,3}\s*Practical Information|$)/gi;
+    
+    let dayMatch;
+    let dayCount = 0;
 
-    // Process each day
-    days.forEach(day => {
+    // Extract and store days globally
+    const days = extractDays(text);
+    parsedDays = days;
+
+    while ((dayMatch = dayRegex.exec(text)) !== null) {
+      dayCount++;
+      const dayNum = dayMatch[1];
+      const title = dayMatch[2].trim();
+      let bodyText = dayMatch[3].trim();
+      
+      bodyText = bodyText.replace(/#{1,3}/g, '');
+
       // Create enhanced day card
       const dayCard = document.createElement('div');
       dayCard.className = 'itinerary-day-card';
 
-      const details = parseDayDetails(day.bodyText);
+      const details = parseDayDetails(bodyText);
       
       // Debug: Log the details to see what we're working with
       console.log('Day details:', details);
@@ -518,8 +530,8 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       dayCard.innerHTML = `
         <!-- Card Header -->
         <div class="day-card-header">
-          <div class="day-number">Day ${day.dayNum}</div>
-          <h3 class="day-title-enhanced">${day.title}</h3>
+          <div class="day-number">Day ${dayNum}</div>
+          <h3 class="day-title-enhanced">${title}</h3>
           <button class="day-card-toggle" onclick="toggleDayCard(this)" aria-label="Toggle day details">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -551,12 +563,12 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       `;
 
       timeline.appendChild(dayCard);
-    });
+    }
 
     itinerarySection.appendChild(timeline);
     contentSections.appendChild(itinerarySection);
 
-    // MAP SECTION
+    // MAP SECTION - Updated with placeholder image
     const mapSection = document.createElement('div');
     mapSection.className = 'content-section-result';
     mapSection.id = 'map-section';
@@ -565,11 +577,14 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     mapCard.className = 'info-card';
     mapCard.innerHTML = `
       <h3><span class="info-card-icon">🗺️</span> Route Map</h3>
-      <div id="route-map-container" style="height: 500px; margin-top: 20px; border-radius: 12px; overflow: hidden;">
-        <div class="loading-spinner" style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-secondary);">
-          <div class="auth-spinner" style="margin-right: 10px;"></div>
-          Loading map...
-        </div>
+      <div id="route-map-container" style="margin-top: 20px; text-align: center;">
+        <img src="images/illustrations/maps-coming-soon.png" 
+             alt="Maps coming soon" 
+             style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 20px; color: var(--text-secondary); font-size: 0.95em; line-height: 1.6;">
+          Interactive route maps are coming soon! We're working on bringing you detailed trail maps with waypoints, 
+          elevation profiles, and GPS coordinates for your adventures.
+        </p>
       </div>
     `;
 
@@ -766,7 +781,7 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     `;
   }
 
-  // Setup navigation for results tabs
+  // Setup navigation for results tabs - Simplified version
   function setupResultsNavigation() {
     const tabs = document.querySelectorAll('.results-nav-tab');
     const sections = document.querySelectorAll('.content-section-result');
@@ -807,8 +822,9 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       setTimeout(updateScrollIndicators, 100);
     }
 
+    // Simplified tab click handler
     tabs.forEach(tab => {
-      tab.addEventListener('click', async () => { // Make it async
+      tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         sections.forEach(s => s.classList.remove('active'));
 
@@ -818,24 +834,6 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
         const section = document.getElementById(`${targetSection}-section`);
         if (section) {
           section.classList.add('active');
-          
-          // Initialize map when map tab is clicked
-          if (targetSection === 'map' && !window.mapInitialized) {
-            const mapManager = new RouteMapManager();
-            const mapContainer = document.getElementById('route-map-container');
-            
-            if (mapContainer && currentQuizData) {
-              await mapManager.initializeMap(mapContainer, {
-                location: currentQuizData.specificLocation || currentQuizData.location,
-                locationDetails: currentQuizData.locationDetails,
-                days: parsedDays,
-                rawItinerary: rawItineraryText,
-                isPopularTrek: false
-              });
-              
-              window.mapInitialized = true;
-            }
-          }
         }
 
         // Center the clicked tab in the viewport
