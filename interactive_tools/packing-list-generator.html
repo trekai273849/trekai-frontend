@@ -1686,184 +1686,160 @@
             };
         };
 
-        // Initialize app when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeApp);
-        } else {
+        // Initialize app when DOM is ready - simplified approach
+        window.addEventListener('load', function() {
+            console.log('Initializing app...');
             initializeApp();
-        }
+        });
 
         function initializeApp() {
-            console.log('Initializing app...');
+            // Initialize all event handlers
+            setupButtonHandlers();
+            setupNavigationHandlers();
+            setupAdvancedHandlers();
             
-            // Event delegation for better performance
-            document.addEventListener('click', handleClick);
-            document.addEventListener('change', handleChange);
-            document.addEventListener('input', handleInput);
-            
-            // Initialize advanced listeners
-            initializeAdvancedListeners();
-            
-            // Add direct click handlers as fallback for critical buttons
-            addDirectClickHandlers();
+            // Initialize UI elements
+            document.getElementById('tempDayHighValue').textContent = '20°C';
+            document.getElementById('tempNightLowValue').textContent = '10°C';
         }
         
-        // Add direct click handlers as fallback
-        function addDirectClickHandlers() {
+        // Setup all button click handlers directly
+        function setupButtonHandlers() {
             // Trip style buttons
             document.querySelectorAll('.trip-style-button').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.onclick = function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Trip style clicked:', this.dataset.trip);
                     selectOption('tripStyle', this.dataset.trip, '.trip-style-button', this);
                     checkStep1Completion();
-                });
+                };
             });
             
             // Terrain buttons
             document.querySelectorAll('.terrain-button').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.onclick = function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Terrain clicked:', this.dataset.terrain);
                     selectOption('terrain', this.dataset.terrain, '.terrain-button', this);
                     checkStep1Completion();
-                });
+                };
             });
             
             // Weather buttons
             document.querySelectorAll('.weather-button').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.onclick = function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Weather clicked:', this.dataset.weather);
                     selectOption('weather', this.dataset.weather, '.weather-button', this);
                     checkStep2Completion();
-                });
+                };
             });
             
             // Preset buttons
             document.querySelectorAll('.preset-button').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.onclick = function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Preset clicked:', this.dataset.preset);
                     applyPreset(this.dataset.preset);
-                });
+                };
+            });
+            
+            // Toggle options (special needs)
+            document.querySelectorAll('.toggle-option').forEach(btn => {
+                btn.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Toggle option clicked:', this.dataset.need);
+                    this.classList.toggle('selected');
+                    updateSpecialNeeds();
+                    checkStep2Completion();
+                };
             });
         }
-
-        // Click Handler
-        function handleClick(e) {
-            // Prevent default for all buttons
-            if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+        
+        // Setup navigation button handlers
+        function setupNavigationHandlers() {
+            // Next/Back buttons
+            document.getElementById('nextStep1').onclick = function(e) {
                 e.preventDefault();
-            }
+                goToStep(2);
+            };
             
-            // Preset buttons
-            if (e.target.closest('.preset-button')) {
-                const button = e.target.closest('.preset-button');
-                const preset = button.dataset.preset;
-                applyPreset(preset);
-                return;
-            }
-            
-            // Trip style buttons
-            if (e.target.closest('.trip-style-button')) {
-                const button = e.target.closest('.trip-style-button');
-                selectOption('tripStyle', button.dataset.trip, '.trip-style-button', button);
-                checkStep1Completion();
-                return;
-            }
-            
-            // Terrain buttons
-            if (e.target.closest('.terrain-button')) {
-                const button = e.target.closest('.terrain-button');
-                selectOption('terrain', button.dataset.terrain, '.terrain-button', button);
-                checkStep1Completion();
-                return;
-            }
-            
-            // Weather buttons
-            if (e.target.closest('.weather-button')) {
-                const button = e.target.closest('.weather-button');
-                selectOption('weather', button.dataset.weather, '.weather-button', button);
-                checkStep2Completion();
-                return;
-            }
-            
-            // Toggle special needs
-            if (e.target.closest('.toggle-option')) {
+            document.getElementById('backStep2').onclick = function(e) {
                 e.preventDefault();
-                const option = e.target.closest('.toggle-option');
-                option.classList.toggle('selected');
-                updateSpecialNeeds();
-                checkStep2Completion();
-                return;
-            }
+                goToStep(1);
+            };
             
-            // Navigation buttons
-            switch(e.target.id) {
-                case 'nextStep1':
-                    goToStep(2);
-                    break;
-                case 'backStep2':
-                    goToStep(1);
-                    break;
-                case 'generateList':
-                    generatePackingList();
-                    break;
-                case 'startNew':
-                    resetForm();
-                    break;
-                case 'copyList':
-                    copyListToClipboard();
-                    break;
-                case 'printList':
-                    window.print();
-                    break;
-                case 'saveToAdventures':
-                    saveToAdventures();
-                    break;
-                case 'toggleAdvanced':
-                    toggleAdvancedOptions();
-                    break;
-                case 'closeAuthModal':
-                    closeAuthModal();
-                    break;
-            }
+            document.getElementById('generateList').onclick = function(e) {
+                e.preventDefault();
+                generatePackingList();
+            };
             
-            // Checkbox items
-            if (e.target.closest('.checkbox-item')) {
-                const item = e.target.closest('.checkbox-item');
-                const checkbox = item.querySelector('input[type="checkbox"]');
-                if (e.target !== checkbox) {
-                    checkbox.checked = !checkbox.checked;
-                    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-            }
+            document.getElementById('startNew').onclick = function(e) {
+                e.preventDefault();
+                resetForm();
+            };
             
-            // Auth modal outside click
-            if (e.target.id === 'authModal') {
+            document.getElementById('copyList').onclick = function(e) {
+                e.preventDefault();
+                copyListToClipboard();
+            };
+            
+            document.getElementById('printList').onclick = function(e) {
+                e.preventDefault();
+                window.print();
+            };
+            
+            document.getElementById('saveToAdventures').onclick = function(e) {
+                e.preventDefault();
+                saveToAdventures();
+            };
+            
+            document.getElementById('toggleAdvanced').onclick = function(e) {
+                e.preventDefault();
+                toggleAdvancedOptions();
+            };
+            
+            document.getElementById('closeAuthModal').onclick = function(e) {
+                e.preventDefault();
                 closeAuthModal();
-            }
+            };
         }
-
-        // Change Handler
-        function handleChange(e) {
-            // Accommodation checkboxes
-            if (e.target.id && e.target.id.startsWith('accommodation-')) {
-                updateAccommodation();
-                return;
-            }
+        
+        // Setup advanced option handlers
+        function setupAdvancedHandlers() {
+            // Temperature sliders
+            document.getElementById('tempDayHigh').oninput = function() {
+                document.getElementById('tempDayHighValue').textContent = this.value + '°C';
+                state.advanced.temperature.dayHigh = parseInt(this.value);
+                state.advanced.temperature.specified = true;
+            };
             
-            // Activity checkboxes
-            if (e.target.id && e.target.id.startsWith('activity-')) {
-                updateActivities();
-                return;
-            }
+            document.getElementById('tempNightLow').oninput = function() {
+                document.getElementById('tempNightLowValue').textContent = this.value + '°C';
+                state.advanced.temperature.nightLow = parseInt(this.value);
+                state.advanced.temperature.specified = true;
+            };
             
-            // Preference checkboxes
-            if (e.target.id && e.target.id.startsWith('pref-')) {
-                updatePreferences();
-                return;
-            }
+            // Elevation inputs
+            ['elevStart', 'elevMax', 'elevCamp'].forEach(id => {
+                document.getElementById(id).oninput = function() {
+                    const key = id.replace('elev', '').toLowerCase();
+                    state.advanced.elevation[key] = this.value ? parseInt(this.value) : null;
+                    state.advanced.elevation.specified = !!(
+                        state.advanced.elevation.start || 
+                        state.advanced.elevation.max || 
+                        state.advanced.elevation.camp
+                    );
+                };
+            });
             
-            // Dropdowns
-            const dropdownMappings = {
+            // Dropdown handlers
+            const dropdowns = {
                 'dailyDistance': ['physical', 'dailyDistance'],
                 'elevationGain': ['physical', 'elevationGain'],
                 'waterSources': ['logistics', 'waterSources'],
@@ -1872,51 +1848,165 @@
                 'experienceLevel': ['group', 'experience']
             };
             
-            if (dropdownMappings[e.target.id]) {
-                const [category, field] = dropdownMappings[e.target.id];
-                state.advanced[category][field] = e.target.value;
-                state.advanced[category].specified = true;
-            }
+            Object.entries(dropdowns).forEach(([id, [category, field]]) => {
+                document.getElementById(id).onchange = function() {
+                    state.advanced[category][field] = this.value;
+                    if (this.value) {
+                        state.advanced[category].specified = true;
+                    }
+                };
+            });
             
-            // Packing list checkboxes
-            if (e.target.type === 'checkbox' && e.target.closest('.item-checkbox')) {
-                const item = e.target.dataset.item || e.target.id;
-                updateItemCheck(item, e.target.checked);
-            }
-        }
-
-        // Input Handler
-        const handleInput = debounce((e) => {
-            // Temperature sliders
-            if (e.target.id === 'tempDayHigh' || e.target.id === 'tempNightLow') {
-                const display = document.getElementById(e.target.id + 'Value');
-                display.textContent = e.target.value + '°C';
-                state.advanced.temperature[e.target.id === 'tempDayHigh' ? 'dayHigh' : 'nightLow'] = parseInt(e.target.value);
-                state.advanced.temperature.specified = true;
-                return;
-            }
-            
-            // Elevation inputs
-            if (['elevStart', 'elevMax', 'elevCamp'].includes(e.target.id)) {
-                const key = e.target.id.replace('elev', '').toLowerCase();
-                state.advanced.elevation[key] = e.target.value ? parseInt(e.target.value) : null;
-                state.advanced.elevation.specified = !!(state.advanced.elevation.start || state.advanced.elevation.max || state.advanced.elevation.camp);
-                return;
-            }
+            // Checkbox handlers
+            document.querySelectorAll('.checkbox-item').forEach(item => {
+                item.onclick = function(e) {
+                    const checkbox = this.querySelector('input[type="checkbox"]');
+                    if (e.target !== checkbox) {
+                        checkbox.checked = !checkbox.checked;
+                    }
+                    
+                    // Update state based on checkbox type
+                    if (checkbox.id.startsWith('accommodation-')) {
+                        updateAccommodation();
+                    } else if (checkbox.id.startsWith('activity-')) {
+                        updateActivities();
+                    } else if (checkbox.id.startsWith('pref-')) {
+                        updatePreferences();
+                    }
+                };
+            });
             
             // Additional context
-            if (e.target.id === 'additionalContext') {
-                state.advanced.context = e.target.value.trim();
-            }
-        }, 150);
-
-        // Advanced Options Functions
-        function initializeAdvancedListeners() {
-            // Set initial slider values
-            document.getElementById('tempDayHighValue').textContent = '20°C';
-            document.getElementById('tempNightLowValue').textContent = '10°C';
+            document.getElementById('additionalContext').oninput = function() {
+                state.advanced.context = this.value.trim();
+            };
+            
+            // Modal outside click
+            document.getElementById('authModal').onclick = function(e) {
+                if (e.target === this) {
+                    closeAuthModal();
+                }
+            };
         }
 
+        // Core Form Functions
+        function selectOption(field, value, selector, element) {
+            console.log('Selecting:', field, value);
+            
+            // Update state
+            state.basic[field] = value;
+            
+            // Remove selected class from all similar buttons
+            document.querySelectorAll(selector).forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked element
+            if (element) {
+                element.classList.add('selected');
+                console.log('Added selected class to:', element);
+            }
+        }
+
+        function applyPreset(preset) {
+            console.log('Applying preset:', preset);
+            
+            // Remove active state from all presets
+            document.querySelectorAll('.preset-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active state to clicked preset
+            document.querySelector(`[data-preset="${preset}"]`).classList.add('active');
+            
+            const presets = {
+                'weekend-warrior': {
+                    tripStyle: 'camping-short',
+                    terrain: 'forest'
+                },
+                'alpine-adventure': {
+                    tripStyle: 'hut-trek',
+                    terrain: 'alpine'
+                },
+                'tropical-trek': {
+                    tripStyle: 'camping-short',
+                    terrain: 'jungle'
+                }
+            };
+            
+            const presetData = presets[preset];
+            if (presetData) {
+                // Apply trip style selection
+                if (presetData.tripStyle) {
+                    const tripButton = document.querySelector(`[data-trip="${presetData.tripStyle}"]`);
+                    if (tripButton) {
+                        selectOption('tripStyle', presetData.tripStyle, '.trip-style-button', tripButton);
+                    }
+                }
+                
+                // Apply terrain selection
+                if (presetData.terrain) {
+                    const terrainButton = document.querySelector(`[data-terrain="${presetData.terrain}"]`);
+                    if (terrainButton) {
+                        selectOption('terrain', presetData.terrain, '.terrain-button', terrainButton);
+                    }
+                }
+                
+                checkStep1Completion();
+            }
+        }
+
+        function updateSpecialNeeds() {
+            state.basic.specialNeeds = [];
+            document.querySelectorAll('.toggle-option.selected').forEach(option => {
+                state.basic.specialNeeds.push(option.dataset.need);
+            });
+            console.log('Special needs updated:', state.basic.specialNeeds);
+        }
+
+        function checkStep1Completion() {
+            const isComplete = state.basic.tripStyle && state.basic.terrain;
+            document.getElementById('nextStep1').disabled = !isComplete;
+            console.log('Step 1 complete:', isComplete);
+        }
+
+        function checkStep2Completion() {
+            const isComplete = state.basic.weather;
+            document.getElementById('generateList').disabled = !isComplete;
+            console.log('Step 2 complete:', isComplete);
+        }
+
+        function goToStep(step) {
+            console.log('Going to step:', step);
+            
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(`step${step}`).classList.add('active');
+            updateProgressIndicators(step);
+            state.currentStep = step;
+        }
+
+        function updateProgressIndicators(step) {
+            for (let i = 1; i <= 3; i++) {
+                const circle = document.getElementById(`step${i}-circle`);
+                const label = document.getElementById(`step${i}-label`);
+                
+                if (i <= step) {
+                    circle.classList.add('active');
+                    label.classList.add('active');
+                } else {
+                    circle.classList.remove('active');
+                    label.classList.remove('active');
+                }
+            }
+            
+            document.getElementById('connector1').classList.toggle('active', step > 1);
+            document.getElementById('connector2').classList.toggle('active', step > 2);
+        }
+
+        // Advanced Options Functions
         function toggleAdvancedOptions() {
             const advancedDiv = document.getElementById('advancedOptions');
             const toggleBtn = document.getElementById('toggleAdvancedText');
@@ -1955,22 +2045,6 @@
             });
             state.advanced.preferences.specified = Object.values(state.advanced.preferences)
                 .some(v => typeof v === 'boolean' && v === true);
-        }
-
-        // Form Functions
-        function selectOption(field, value, selector, element) {
-            // Update state
-            state.basic[field] = value;
-            
-            // Remove selected class from all similar buttons
-            document.querySelectorAll(selector).forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            
-            // Add selected class to clicked element
-            if (element) {
-                element.classList.add('selected');
-            }
         }
 
         function applyPreset(preset) {
