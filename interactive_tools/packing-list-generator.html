@@ -2049,19 +2049,24 @@
             document.querySelectorAll('.toggle-option.selected').forEach(option => {
                 state.basic.specialNeeds.push(option.dataset.need);
             });
+            console.log('Special needs updated:', state.basic.specialNeeds);
         }
 
         function checkStep1Completion() {
             const isComplete = state.basic.tripStyle && state.basic.terrain;
             document.getElementById('nextStep1').disabled = !isComplete;
+            console.log('Step 1 complete:', isComplete);
         }
 
         function checkStep2Completion() {
             const isComplete = state.basic.weather;
             document.getElementById('generateList').disabled = !isComplete;
+            console.log('Step 2 complete:', isComplete);
         }
 
         function goToStep(step) {
+            console.log('Going to step:', step);
+            
             document.querySelectorAll('.form-section').forEach(section => {
                 section.classList.remove('active');
             });
