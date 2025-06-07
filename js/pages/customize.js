@@ -324,16 +324,172 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Make generateItinerary available globally for the quiz - WITH LOCATION FIXES
-  window.generateItineraryFromQuiz = async function(quizData) {
+window.generateItineraryFromQuiz = async function(quizData) {
+    console.log('1. Starting generateItineraryFromQuiz');
     currentQuizData = quizData; // Store for later use
     
     // Generate packing list using the service
+    console.log('2. Generating packing list');
     const { basicInputs, advancedInputs } = mapQuizDataToPackingInputs(quizData);
     const packingGenerator = new AdaptivePackingListGenerator(basicInputs, advancedInputs);
     const packingData = packingGenerator.generate();
     
     // Store packing data for later use
     window.generatedPackingList = packingData;
+    console.log('3. Packing list generated:', packingData);
+    
+    // CRITICAL FIX: Use specificLocation if available
+    let location = quizData.specificLocation || quizData.location;
+    if (location === 'any' || location === 'anywhere') {
+        location = 'a beautiful mountain region';
+    }
+    
+    let duration = quizData.trekType === 'day-hike' ? 'day hike' : `${quizData.trekLength} day trek`;
+    
+    console.log('4. Location and duration:', { location, duration });
+    
+    // Build comprehensive prompt with specific location instructions
+    let prompt = `Create a ${duration} itinerary specifically for ${location}. 
+IMPORTANT: The itinerary MUST be in ${location}, not any other location.
+
+Preferences:
+- Difficulty: ${quizData.difficulty}
+- Season: ${quizData.season}`;
+    
+    if (quizData.trekType === 'multi-day') {
+      prompt += `\n- Accommodation: ${quizData.accommodation}`;
+    }
+    
+    if (quizData.interests && quizData.interests.length > 0) {
+      prompt += `\n- Interests: ${quizData.interests.join(', ')}`;
+    }
+    
+    // Add location context if we have it
+    if (quizData.locationDetails) {
+      if (quizData.locationDetails.specificArea) {
+        prompt += `\n- Specific area: ${quizData.locationDetails.specificArea}`;
+      }
+      if (quizData.locationDetails.originalInput) {
+        prompt += `\n- User specified: "${quizData.locationDetails.originalInput}"`;
+      }
+    }
+    
+    if (quizData.details) {
+      prompt += `\n- Special requirements: ${quizData.details}`;
+    }
+    
+    // Add specific format requirements
+    prompt += `\n\nPlease format the itinerary with:
+    - Day-by-day breakdown with clear titles
+    - Distance, elevation gain/loss, terrain, difficulty, accommodation for each day
+    - Highlights, tips, water sources, and lunch suggestions
+    - A packing list section
+    - Local insights section
+    - Practical information section`;
+
+    const outputDiv = document.getElementById('itinerary-cards');
+    
+    console.log('5. Showing loading screen');
+    // Show enhanced loading with the specific location
+    showProgressiveLoading(outputDiv, location);
+
+    try {
+      let useMockData = false;
+      let data = null;
+      
+      try {
+        console.log('6. Starting API call to:', 'https://trekai-api.onrender.com/api/finalize');
+        console.log('7. API payload:', {
+          location: location,
+          filters: {
+            difficulty: quizData.difficulty,
+            accommodation: quizData.accommodation || 'Not applicable',
+            technical: 'None',
+            altitude: "2000–3000m"
+          },
+          comments: prompt,
+          title: `${location} ${duration}`
+        });
+        
+        const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            location: location,
+            filters: {
+              difficulty: quizData.difficulty,
+              accommodation: quizData.accommodation || 'Not applicable',
+              technical: 'None',
+              altitude: "2000–3000m"
+            },
+            comments: prompt,
+            title: `${location} ${duration}`
+          })
+        });
+
+        console.log('8. API response received. Status:', response.status);
+
+        if (!response.ok) {
+          console.warn(`Server returned status ${response.status}. Using mock data instead.`);
+          useMockData = true;
+        } else {
+          data = await response.json();
+          console.log('9. API data parsed:', data);
+          
+          if (!data || !data.reply) {
+            console.warn('API returned empty response. Using mock data instead.');
+            useMockData = true;
+          }
+        }
+      } catch (apiError) {
+        console.error('10. API request failed:', apiError);
+        useMockData = true;
+      }
+      
+      // Rest of your existing code for mock data...
+      console.log('11. Using mock data?', useMockData);
+      
+      if (useMockData) {
+        console.log("Using mock data for development");
+        // ... your existing mock data code ...
+      }
+      
+      console.log('12. Clearing loading intervals');
+      clearLoadingIntervals(outputDiv);
+      
+      // Also hide the professional loading overlay
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      if (loadingOverlay) {
+        console.log('13. Hiding loading overlay');
+        loadingOverlay.classList.remove('active');
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 600);
+      }
+      
+      console.log('14. Processing itinerary text');
+      rawItineraryText = data.reply;
+      const preprocessedText = preprocessRawText(rawItineraryText);
+
+      // Extract sections
+      cachedPackingList = extractSection(preprocessedText, 'Packing List');
+      cachedInsights = extractSection(preprocessedText, 'Local Insights');
+      cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
+
+      console.log('15. Showing results');
+      // Show results after a brief delay
+      setTimeout(() => {
+        outputDiv.classList.add('show');
+        processAndRenderEnhancedItinerary(preprocessedText);
+        console.log('16. Rendering complete');
+      }, 500);
+
+    } catch (error) {
+      console.error('17. Error in main try block:', error);
+      clearLoadingIntervals(outputDiv);
+      outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
+    }
+};
     
     // CRITICAL FIX: Use specificLocation if available
     let location = quizData.specificLocation || quizData.location;
