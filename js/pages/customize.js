@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import { preprocessRawText, extractSection, processSubsections, extractDays } from '../utils/itinerary.js';
+import { AdaptivePackingListGenerator } from '../services/packingListService.js';
 // import { RouteMapManager } from '../components/routeMap.js'; // Commented out for now
 
 // Firebase configuration
@@ -34,6 +35,186 @@ document.addEventListener('DOMContentLoaded', () => {
   let cachedPracticalInfo = '';
   let rawItineraryText = '';
   let parsedDays = []; // Added to store parsed days globally
+
+  // Function to map quiz data to packing service format
+  function mapQuizDataToPackingInputs(quizData) {
+    // Map trek type and length to trip style with better logic
+    const getTripStyle = () => {
+      if (quizData.trekType === 'day-hike') return 'day';
+      
+      // Parse trek length properly
+      const lengthMap = {
+        '1-3': 'camping-short',
+        '4-7': quizData.accommodation === 'huts' ? 'hut-trek' : 'camping-short',
+        '8-14': 'expedition',
+        '15+': 'expedition'
+      };
+      
+      return lengthMap[quizData.trekLength] || 'camping-short';
+    };
+    
+    // Enhanced terrain mapping based on location
+    const getTerrain = () => {
+      const location = (quizData.specificLocation || quizData.location || '').toLowerCase();
+      
+      // More comprehensive location mapping
+      const terrainMappings = {
+        alpine: ['alps', 'alpine', 'mountain', 'himalaya', 'andes', 'rockies', 'pyrenees'],
+        desert: ['desert', 'sahara', 'gobi', 'atacama', 'mojave'],
+        coastal: ['coast', 'beach', 'sea', 'ocean', 'cliff'],
+        jungle: ['jungle', 'amazon', 'tropical', 'rainforest', 'borneo'],
+        glacier: ['glacier', 'iceland', 'patagonia', 'arctic', 'snow'],
+        forest: ['forest', 'wood', 'trail', 'appalachian', 'black forest']
+      };
+      
+      for (const [terrain, keywords] of Object.entries(terrainMappings)) {
+        if (keywords.some(keyword => location.includes(keyword))) {
+          return terrain;
+        }
+      }
+      
+      // Use interests as fallback
+      if (quizData.interests?.includes('forests')) return 'forest';
+      if (quizData.interests?.includes('lakes')) return 'alpine'; // Lakes often in alpine areas
+      
+      return 'forest'; // default
+    };
+    
+    // More nuanced weather mapping based on season and location
+    const getWeather = () => {
+      const location = (quizData.specificLocation || quizData.location || '').toLowerCase();
+      
+      // Check for specific conditions
+      if (location.includes('monsoon') || (quizData.season === 'spring' && location.includes('asia'))) {
+        return 'rainy';
+      }
+      
+      if (location.includes('arctic') || location.includes('winter')) {
+        return 'snow';
+      }
+      
+      // Standard season mapping
+      const seasonMap = {
+        'summer': 'sunny-warm',
+        'winter': 'snow',
+        'autumn': 'sunny-cold',
+        'fall': 'sunny-cold',
+        'spring': 'rainy'
+      };
+      
+      // Adjust for tropical locations
+      if (location.includes('tropical') || location.includes('equator')) {
+        return quizData.season === 'winter' ? 'rainy' : 'sunny-warm';
+      }
+      
+      return seasonMap[quizData.season] || 'sunny-warm';
+    };
+    
+    // Comprehensive special needs mapping
+    const getSpecialNeeds = () => {
+      const needs = [];
+      
+      // Map interests to special needs
+      if (quizData.interests?.includes('photography')) {
+        needs.push('photography');
+      }
+      
+      if (quizData.interests?.includes('wildlife')) {
+        needs.push('remote-area'); // Wildlife viewing often in remote areas
+      }
+      
+      // Map difficulty to technical needs
+      if (quizData.difficulty === 'challenging') {
+        needs.push('scrambling');
+      }
+      
+      // Map accommodation to cooking needs
+      if (quizData.accommodation === 'camping' || quizData.accommodation === 'mixed') {
+        needs.push('self-cooking');
+      }
+      
+      // Check location for river crossings
+      const location = (quizData.specificLocation || quizData.location || '').toLowerCase();
+      if (location.includes('river') || location.includes('stream') || location.includes('ford')) {
+        needs.push('river-crossing');
+      }
+      
+      // Check for water scarcity in deserts
+      if (getTerrain() === 'desert') {
+        needs.push('water-scarce');
+      }
+      
+      return needs;
+    };
+    
+    // Create advanced inputs with more detail from quiz data
+    const getAdvancedInputs = () => {
+      const advanced = {
+        temperature: { specified: false },
+        elevation: { specified: false },
+        physical: { 
+          dailyDistance: quizData.difficulty === 'easy' ? 'easy' : 
+                         quizData.difficulty === 'challenging' ? 'challenging' : 'moderate',
+          specified: true 
+        },
+        logistics: { 
+          waterSources: getTerrain() === 'desert' ? 'scarce' : 'regular',
+          specified: getTerrain() === 'desert'
+        },
+        accommodation: {
+          types: [],
+          specified: false
+        },
+        activities: {
+          photography: quizData.interests?.includes('photography') || false,
+          wildlife: quizData.interests?.includes('wildlife') || false,
+          swimming: quizData.interests?.includes('lakes') || false,
+          stargazing: quizData.interests?.includes('solitude') || false,
+          specified: quizData.interests?.length > 0
+        },
+        group: { specified: false },
+        preferences: { 
+          safety: quizData.difficulty === 'challenging',
+          comfort: quizData.accommodation === 'hotels',
+          specified: quizData.difficulty === 'challenging' || quizData.accommodation === 'hotels'
+        },
+        context: quizData.details || ''
+      };
+      
+      // Map accommodation types
+      if (quizData.accommodation) {
+        const accommodationMap = {
+          'camping': ['tent'],
+          'huts': ['hut'],
+          'mixed': ['tent', 'hut'],
+          'hotels': ['hotel']
+        };
+        advanced.accommodation.types = accommodationMap[quizData.accommodation] || [];
+        advanced.accommodation.specified = advanced.accommodation.types.length > 0;
+      }
+      
+      return advanced;
+    };
+    
+    // Basic inputs
+    const basicInputs = {
+      tripStyle: getTripStyle(),
+      terrain: getTerrain(),
+      weather: getWeather(),
+      specialNeeds: getSpecialNeeds()
+    };
+    
+    // Advanced inputs
+    const advancedInputs = getAdvancedInputs();
+    
+    // Log the mapping for debugging
+    console.log('Quiz Data to Packing Service Mapping:', {
+      original: quizData,
+      mapped: { basicInputs, advancedInputs }
+    });
+    
+    return { basicInputs, advancedInputs };
+  }
 
   // Function to get location-specific tips
   function getLocationTip(location) {
@@ -145,6 +326,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Make generateItinerary available globally for the quiz - WITH LOCATION FIXES
   window.generateItineraryFromQuiz = async function(quizData) {
     currentQuizData = quizData; // Store for later use
+    
+    // Generate packing list using the service
+    const { basicInputs, advancedInputs } = mapQuizDataToPackingInputs(quizData);
+    const packingGenerator = new AdaptivePackingListGenerator(basicInputs, advancedInputs);
+    const packingData = packingGenerator.generate();
+    
+    // Store packing data for later use
+    window.generatedPackingList = packingData;
     
     // CRITICAL FIX: Use specificLocation if available
     let location = quizData.specificLocation || quizData.location;
@@ -436,116 +625,53 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     return html;
   }
 
-  // Parse packing list text into structured categories
-  function parsePackingList(packingListText) {
-    const categories = {
-      essentials: { icon: '🎯', name: 'Essentials', items: [] },
-      clothing: { icon: '👕', name: 'Clothing', items: [] },
-      footwear: { icon: '🥾', name: 'Footwear', items: [] },
-      camping: { icon: '🏕️', name: 'Camping Gear', items: [] },
-      navigation: { icon: '🧭', name: 'Navigation', items: [] },
-      safety: { icon: '⛑️', name: 'Safety & First Aid', items: [] },
-      personal: { icon: '🧴', name: 'Personal Care', items: [] },
-      food: { icon: '🍲', name: 'Food & Water', items: [] },
-      optional: { icon: '✨', name: 'Optional', items: [] }
-    };
-
-    // Split text into lines and categorize items
-    const lines = packingListText.split('\n');
-    let currentCategory = 'essentials';
-    
-    // Define keywords for categorization
-    const categoryKeywords = {
-      clothing: ['clothing', 'wear', 'shirt', 'pants', 'jacket', 'layer', 'socks', 'underwear', 'hat', 'gloves'],
-      footwear: ['boots', 'shoes', 'footwear', 'sandals', 'gaiters'],
-      camping: ['tent', 'sleeping', 'backpack', 'camping', 'stove', 'mat', 'pad'],
-      navigation: ['map', 'compass', 'gps', 'headlamp', 'flashlight', 'battery'],
-      safety: ['first aid', 'medication', 'sunscreen', 'emergency', 'whistle', 'knife'],
-      personal: ['toiletries', 'soap', 'towel', 'toilet', 'sanitizer'],
-      food: ['food', 'water', 'snacks', 'meals', 'energy', 'hydration'],
-      optional: ['camera', 'book', 'optional', 'extra']
-    };
-
-    lines.forEach(line => {
-      const trimmedLine = line.trim();
-      
-      // Skip empty lines and headers
-      if (!trimmedLine || trimmedLine.includes(':') && trimmedLine.endsWith(':')) {
-        // Check if it's a category header
-        const headerLower = trimmedLine.toLowerCase();
-        Object.keys(categoryKeywords).forEach(cat => {
-          if (headerLower.includes(cat)) {
-            currentCategory = cat;
-          }
-        });
-        return;
-      }
-      
-      // Extract item (remove bullets, dashes, asterisks)
-      const item = trimmedLine.replace(/^[-•*]\s*/, '').trim();
-      if (item) {
-        // Try to categorize based on keywords
-        let itemCategory = currentCategory;
-        const itemLower = item.toLowerCase();
-        
-        for (const [cat, keywords] of Object.entries(categoryKeywords)) {
-          if (keywords.some(keyword => itemLower.includes(keyword))) {
-            itemCategory = cat;
-            break;
-          }
-        }
-        
-        categories[itemCategory].items.push(item);
-      }
-    });
-    
-    // If essentials is empty, distribute items to other categories
-    if (categories.essentials.items.length === 0) {
-      delete categories.essentials;
-    }
-    
-    return categories;
-  }
-
-  // Render packing categories with checkboxes
+  // Helper function to render packing categories
   function renderPackingCategories(categories) {
-    let html = '';
-    let itemIndex = 0;
+    const categoryInfo = {
+      clothing: { icon: '👕', name: 'Clothing', color: '#EFF6FF' },
+      footwear: { icon: '🥾', name: 'Footwear', color: '#FFFBEB' },
+      camping: { icon: '🏕️', name: 'Camping Gear', color: '#F0FDF4' },
+      navigation: { icon: '🧭', name: 'Navigation', color: '#FAF5FF' },
+      safety: { icon: '⛑️', name: 'Safety & First Aid', color: '#FEF2F2' },
+      personal: { icon: '🧴', name: 'Personal Care', color: '#EEF2FF' },
+      food: { icon: '🍲', name: 'Food & Water', color: '#FFF7ED' },
+      optional: { icon: '✨', name: 'Optional', color: '#F9FAFB' }
+    };
     
-    Object.entries(categories).forEach(([catKey, category]) => {
-      if (category.items.length === 0) return;
+    let html = '';
+    
+    Object.entries(categories).forEach(([catKey, items]) => {
+      if (items.length === 0) return;
       
-      const categoryColors = {
-        essentials: 'background: #FEF3C7; border-color: #FDE68A;',
-        clothing: 'background: #EFF6FF; border-color: #DBEAFE;',
-        footwear: 'background: #FFFBEB; border-color: #FEF3C7;',
-        camping: 'background: #F0FDF4; border-color: #D1FAE5;',
-        navigation: 'background: #FAF5FF; border-color: #F3E8FF;',
-        safety: 'background: #FEF2F2; border-color: #FEE2E2;',
-        personal: 'background: #EEF2FF; border-color: #E0E7FF;',
-        food: 'background: #FFF7ED; border-color: #FED7AA;',
-        optional: 'background: #F9FAFB; border-color: #F3F4F6;'
-      };
+      const catInfo = categoryInfo[catKey];
       
       html += `
-        <div style="border: 2px solid #E5E7EB; border-radius: 12px; padding: 20px; ${categoryColors[catKey] || ''}">
+        <div style="border: 2px solid #E5E7EB; border-radius: 12px; padding: 20px; background: ${catInfo.color};">
           <div style="display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-dark);">
-            <span style="font-size: 24px;">${category.icon}</span>
-            <span>${category.name}</span>
+            <span style="font-size: 24px;">${catInfo.icon}</span>
+            <span>${catInfo.name}</span>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px;">
       `;
       
-      category.items.forEach(item => {
-        const itemId = `pack-item-${itemIndex++}`;
+      items.forEach((item, index) => {
+        const itemId = `pack-${catKey}-${index}`;
+        const quantity = item.quantity ? ` (${item.quantity})` : '';
+        const notes = item.notes ? `<div style="font-size: 12px; color: #6b7280; margin-left: 30px; margin-top: 4px;">${item.notes}</div>` : '';
+        
         html += `
           <label style="display: flex; align-items: flex-start; background: white; padding: 12px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" 
                  onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" 
                  onmouseout="this.style.boxShadow='none'">
-            <input type="checkbox" id="${itemId}" data-item="${item}" 
+            <input type="checkbox" id="${itemId}" data-item="${item.name}" 
                    style="width: 18px; height: 18px; margin-right: 12px; margin-top: 2px; cursor: pointer;"
                    onchange="updatePackingProgress(this)">
-            <span class="packing-item-text" style="flex: 1; color: var(--text-dark); transition: all 0.2s ease;">${item}</span>
+            <div style="flex: 1;">
+              <span class="packing-item-text" style="color: var(--text-dark); transition: all 0.2s ease;">
+                ${item.name}${quantity}
+              </span>
+              ${notes}
+            </div>
           </label>
         `;
       });
@@ -555,9 +681,6 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
         </div>
       `;
     });
-    
-    // Count total items for progress tracking
-    window.packingListState.totalItems = itemIndex;
     
     return html;
   }
@@ -573,12 +696,12 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     
     if (checkbox.checked) {
       window.packingListState.checkedItems.add(item);
-      checkbox.nextElementSibling.style.textDecoration = 'line-through';
-      checkbox.nextElementSibling.style.opacity = '0.6';
+      checkbox.nextElementSibling.querySelector('.packing-item-text').style.textDecoration = 'line-through';
+      checkbox.nextElementSibling.querySelector('.packing-item-text').style.opacity = '0.6';
     } else {
       window.packingListState.checkedItems.delete(item);
-      checkbox.nextElementSibling.style.textDecoration = 'none';
-      checkbox.nextElementSibling.style.opacity = '1';
+      checkbox.nextElementSibling.querySelector('.packing-item-text').style.textDecoration = 'none';
+      checkbox.nextElementSibling.querySelector('.packing-item-text').style.opacity = '1';
     }
     
     const progress = Math.round((window.packingListState.checkedItems.size / window.packingListState.totalItems) * 100);
@@ -590,8 +713,11 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
   window.resetPackingList = function() {
     document.querySelectorAll('#packing-categories input[type="checkbox"]').forEach(checkbox => {
       checkbox.checked = false;
-      checkbox.nextElementSibling.style.textDecoration = 'none';
-      checkbox.nextElementSibling.style.opacity = '1';
+      const textElement = checkbox.nextElementSibling.querySelector('.packing-item-text');
+      if (textElement) {
+        textElement.style.textDecoration = 'none';
+        textElement.style.opacity = '1';
+      }
     });
     
     window.packingListState.checkedItems.clear();
@@ -608,12 +734,27 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     listText += `Difficulty: ${currentQuizData?.difficulty || 'Moderate'}\n`;
     listText += `${'='.repeat(50)}\n\n`;
     
-    Object.entries(window.packingListState.categories).forEach(([catKey, category]) => {
-      if (category.items.length > 0) {
-        listText += `${category.name.toUpperCase()}:\n`;
-        category.items.forEach(item => {
-          const isChecked = window.packingListState.checkedItems.has(item);
-          listText += `${isChecked ? '☑' : '☐'} ${item}\n`;
+    Object.entries(window.packingListState.categories).forEach(([catKey, items]) => {
+      if (items.length > 0) {
+        const categoryInfo = {
+          clothing: 'CLOTHING',
+          footwear: 'FOOTWEAR',
+          camping: 'CAMPING GEAR',
+          navigation: 'NAVIGATION',
+          safety: 'SAFETY & FIRST AID',
+          personal: 'PERSONAL CARE',
+          food: 'FOOD & WATER',
+          optional: 'OPTIONAL ITEMS'
+        };
+        
+        listText += `${categoryInfo[catKey] || catKey.toUpperCase()}:\n`;
+        items.forEach(item => {
+          const isChecked = window.packingListState.checkedItems.has(item.name);
+          const quantity = item.quantity ? ` (${item.quantity})` : '';
+          listText += `${isChecked ? '☑' : '☐'} ${item.name}${quantity}\n`;
+          if (item.notes) {
+            listText += `   Note: ${item.notes}\n`;
+          }
         });
         listText += '\n';
       }
@@ -788,8 +929,8 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     mapSection.appendChild(mapCard);
     contentSections.appendChild(mapSection);
 
-    // PACKING SECTION - Enhanced with interactive checklist
-    if (cachedPackingList) {
+    // PACKING SECTION - Enhanced with generated checklist
+    if (window.generatedPackingList) {
       const packingSection = document.createElement('div');
       packingSection.className = 'content-section-result';
       packingSection.id = 'packing-section';
@@ -797,8 +938,7 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       const packingCard = document.createElement('div');
       packingCard.className = 'info-card';
       
-      // Create structured packing list from the text
-      const packingData = parsePackingList(cachedPackingList);
+      const { items, metadata } = window.generatedPackingList;
       
       packingCard.innerHTML = `
         <h3><span class="info-card-icon">🎒</span> Packing List</h3>
@@ -814,9 +954,19 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
           </div>
         </div>
         
+        <!-- Trip Summary -->
+        <div style="background: #f8f9fa; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+          <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">
+            <strong>Trip:</strong> ${currentQuizData.trekLength || 'Multi-day'} ${currentQuizData.trekType === 'day-hike' ? 'day hike' : 'trek'}<br>
+            <strong>Season:</strong> ${currentQuizData.season || 'All season'}<br>
+            <strong>Difficulty:</strong> ${currentQuizData.difficulty || 'Moderate'}<br>
+            ${metadata.totalItems} items • ${metadata.customizationLevel}
+          </p>
+        </div>
+        
         <!-- Packing Categories -->
         <div id="packing-categories" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px;">
-          ${renderPackingCategories(packingData)}
+          ${renderPackingCategories(items)}
         </div>
         
         <!-- Action Buttons -->
@@ -835,9 +985,9 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       
       // Initialize packing list state
       window.packingListState = {
-        totalItems: 0,
+        totalItems: metadata.totalItems,
         checkedItems: new Set(),
-        categories: packingData
+        categories: items
       };
       
       // Add checkbox listeners after DOM is ready
