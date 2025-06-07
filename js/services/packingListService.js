@@ -137,7 +137,7 @@ export class AdaptivePackingListGenerator {
     addClothing(duration) {
         const isDetailed = this.inputDepth.level !== 'basic';
         
-        if (isDetailed && this.advanced.temperature.specified) {
+        if (isDetailed && this.advanced?.temperature?.specified) {
             const weight = this.calculateBaseLayerWeight();
             this.items.clothing.push({
                 name: `Base layer top (${weight}weight)`,

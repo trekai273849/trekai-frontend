@@ -520,26 +520,44 @@
      * Maps the quiz data structure to the format expected by the packing list service.
      */
     function mapQuizDataToInputs(quizData) {
-        const tripStyleMapping = {
-            '1-3': 'camping-short', '4-7': 'hut-trek', '8+': 'expedition', 'day-hike': 'day'
-        };
-        const terrainMapping = {
-            'mountains': 'alpine', 'forest': 'forest', 'coast': 'coastal', 'desert': 'desert', 'jungle': 'jungle', 'any': 'alpine'
-        };
-        const weatherMapping = {
-            'spring': 'sunny-cold', 'summer': 'sunny-warm', 'autumn': 'rainy', 'winter': 'snow'
-        };
-        const basic = {
-            tripStyle: tripStyleMapping[quizData.length] || tripStyleMapping[quizData.trekType] || 'camping-short',
-            terrain: terrainMapping[quizData.terrain] || 'alpine',
-            weather: weatherMapping[quizData.season] || 'sunny-cold',
-            specialNeeds: quizData.interests || []
-        };
-        const advanced = {
-            // This can be expanded later if the quiz becomes more detailed
-        };
-        return { basic, advanced };
-    }
+    const tripStyleMapping = {
+        '1-3': 'camping-short', '4-7': 'hut-trek', '8+': 'expedition', 'day-hike': 'day'
+    };
+    const terrainMapping = {
+        'mountains': 'alpine', 'forest': 'forest', 'coast': 'coastal', 'desert': 'desert', 'jungle': 'jungle', 'any': 'alpine'
+    };
+    const weatherMapping = {
+        'spring': 'sunny-cold', 'summer': 'sunny-warm', 'autumn': 'rainy', 'winter': 'snow'
+    };
+
+    const basic = {
+        tripStyle: tripStyleMapping[quizData.length] || tripStyleMapping[quizData.trekType] || 'camping-short',
+        terrain: terrainMapping[quizData.terrain] || 'alpine',
+        weather: weatherMapping[quizData.season] || 'sunny-cold',
+        specialNeeds: quizData.interests || []
+    };
+    
+    // ✅ FIX: Create the full structure for the 'advanced' object with default values.
+    const advanced = {
+        temperature: { specified: false, dayHigh: null, nightLow: null },
+        elevation: { specified: false, start: null, max: null, camp: null },
+        physical: { specified: false, dailyDistance: '', elevationGain: '' },
+        logistics: { specified: false, waterSources: '', resupplyFreq: '' },
+        accommodation: { 
+            types: quizData.accommodation ? [quizData.accommodation] : [],
+            specified: !!quizData.accommodation
+        },
+        activities: {
+            photography: (quizData.interests || []).includes('photography'),
+            specified: (quizData.interests || []).length > 0
+        },
+        group: { specified: false, size: '', experience: '' },
+        preferences: { specified: false, ultralight: false, comfort: false, safety: false, minimalist: false },
+        context: ''
+    };
+
+    return { basic, advanced };
+}
 
     // 3. MAIN ORCHESTRATION FUNCTION
     async function generateAndDisplayItinerary(quizData) {
