@@ -692,22 +692,149 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
 
   // Update packing progress
   window.updatePackingProgress = function(checkbox) {
-    const item = checkbox.dataset.item;
-    
-    if (checkbox.checked) {
-      window.packingListState.checkedItems.add(item);
-      checkbox.nextElementSibling.querySelector('.packing-item-text').style.textDecoration = 'line-through';
-      checkbox.nextElementSibling.querySelector('.packing-item-text').style.opacity = '0.6';
-    } else {
-      window.packingListState.checkedItems.delete(item);
-      checkbox.nextElementSibling.querySelector('.packing-item-text').style.textDecoration = 'none';
-      checkbox.nextElementSibling.querySelector('.packing-item-text').style.opacity = '1';
+  // Add defensive check
+  if (!checkbox || !checkbox.dataset) {
+    console.error('Invalid checkbox element passed to updatePackingProgress');
+    return;
+  }
+  
+  const item = checkbox.dataset.item;
+  
+  if (checkbox.checked) {
+    window.packingListState.checkedItems.add(item);
+    // Find the text element more safely
+    const labelElement = checkbox.closest('label');
+    if (labelElement) {
+      const textElement = labelElement.querySelector('.packing-item-text');
+      if (textElement) {
+        textElement.style.textDecoration = 'line-through';
+        textElement.style.opacity = '0.6';
+      }
     }
-    
+  } else {
+    window.packingListState.checkedItems.delete(item);
+    // Find the text element more safely
+    const labelElement = checkbox.closest('label');
+    if (labelElement) {
+      const textElement = labelElement.querySelector('.packing-item-text');
+      if (textElement) {
+        textElement.style.textDecoration = 'none';
+        textElement.style.opacity = '1';
+      }
+    }
+  }
+  
+  // Only update progress if packingListState exists
+  if (window.packingListState && window.packingListState.totalItems > 0) {
     const progress = Math.round((window.packingListState.checkedItems.size / window.packingListState.totalItems) * 100);
-    document.getElementById('packing-progress').textContent = `${progress}%`;
-    document.getElementById('packing-progress-bar').style.width = `${progress}%`;
+    const progressElement = document.getElementById('packing-progress');
+    const progressBarElement = document.getElementById('packing-progress-bar');
+    
+    if (progressElement) progressElement.textContent = `${progress}%`;
+    if (progressBarElement) progressBarElement.style.width = `${progress}%`;
+  }
+};
+
+// Also update the renderPackingCategories function to use event listeners instead of inline handlers
+function renderPackingCategories(categories) {
+  const categoryInfo = {
+    clothing: { icon: '👕', name: 'Clothing', color: '#EFF6FF' },
+    footwear: { icon: '🥾', name: 'Footwear', color: '#FFFBEB' },
+    camping: { icon: '🏕️', name: 'Camping Gear', color: '#F0FDF4' },
+    navigation: { icon: '🧭', name: 'Navigation', color: '#FAF5FF' },
+    safety: { icon: '⛑️', name: 'Safety & First Aid', color: '#FEF2F2' },
+    personal: { icon: '🧴', name: 'Personal Care', color: '#EEF2FF' },
+    food: { icon: '🍲', name: 'Food & Water', color: '#FFF7ED' },
+    optional: { icon: '✨', name: 'Optional', color: '#F9FAFB' }
   };
+  
+  let html = '';
+  let totalItems = 0;
+  
+  Object.entries(categories).forEach(([catKey, items]) => {
+    if (items.length === 0) return;
+    
+    const catInfo = categoryInfo[catKey];
+    
+    html += `
+      <div style="border: 2px solid #E5E7EB; border-radius: 12px; padding: 20px; background: ${catInfo.color};">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-dark);">
+          <span style="font-size: 24px;">${catInfo.icon}</span>
+          <span>${catInfo.name}</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+    `;
+    
+    items.forEach((item, index) => {
+      const itemId = `pack-${catKey}-${index}`;
+      const quantity = item.quantity ? ` (${item.quantity})` : '';
+      const notes = item.notes ? `<div style="font-size: 12px; color: #6b7280; margin-left: 30px; margin-top: 4px;">${item.notes}</div>` : '';
+      totalItems++;
+      
+      html += `
+        <label style="display: flex; align-items: flex-start; background: white; padding: 12px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" 
+               data-label-id="${itemId}">
+          <input type="checkbox" id="${itemId}" data-item="${item.name}" 
+                 style="width: 18px; height: 18px; margin-right: 12px; margin-top: 2px; cursor: pointer;"
+                 class="packing-checkbox">
+          <div style="flex: 1;">
+            <span class="packing-item-text" style="color: var(--text-dark); transition: all 0.2s ease;">
+              ${item.name}${quantity}
+            </span>
+            ${notes}
+          </div>
+        </label>
+      `;
+    });
+    
+    html += `
+        </div>
+      </div>
+    `;
+  });
+  
+  // Update the total items count
+  window.packingListState = window.packingListState || {};
+  window.packingListState.totalItems = totalItems;
+  
+  return html;
+}
+
+// Update initializePackingListeners to use event delegation
+function initializePackingListeners() {
+  const packingContainer = document.getElementById('packing-categories');
+  if (!packingContainer) return;
+  
+  // Use event delegation for better reliability
+  packingContainer.addEventListener('change', function(e) {
+    if (e.target && e.target.classList.contains('packing-checkbox')) {
+      window.updatePackingProgress(e.target);
+    }
+  });
+  
+  // Add hover effects
+  packingContainer.addEventListener('mouseover', function(e) {
+    const label = e.target.closest('label');
+    if (label && label.dataset.labelId) {
+      label.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+    }
+  });
+  
+  packingContainer.addEventListener('mouseout', function(e) {
+    const label = e.target.closest('label');
+    if (label && label.dataset.labelId) {
+      label.style.boxShadow = 'none';
+    }
+  });
+  
+  // Initialize progress
+  if (window.updatePackingProgress) {
+    const progressElement = document.getElementById('packing-progress');
+    const progressBarElement = document.getElementById('packing-progress-bar');
+    if (progressElement) progressElement.textContent = '0%';
+    if (progressBarElement) progressBarElement.style.width = '0%';
+  }
+}
 
   // Reset packing checklist
   window.resetPackingList = function() {
