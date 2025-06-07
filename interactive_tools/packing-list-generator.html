@@ -200,6 +200,11 @@
             text-align: center;
             position: relative;
         }
+        
+        /* Ensure all child elements don't interfere with clicks */
+        .option-button * {
+            pointer-events: none;
+        }
 
         .option-button:hover {
             border-color: #D1D5DB;
@@ -864,6 +869,11 @@
             transition: all 0.3s ease;
             text-align: left;
         }
+        
+        /* Ensure all child elements don't interfere with clicks */
+        .preset-button * {
+            pointer-events: none;
+        }
 
         .preset-button:hover {
             border-color: var(--green);
@@ -886,6 +896,11 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left;
+        }
+        
+        /* Ensure all child elements don't interfere with clicks */
+        .toggle-option * {
+            pointer-events: none;
         }
 
         .toggle-option.selected {
@@ -1796,23 +1811,27 @@
             };
         };
 
-        // Initialize app on DOM ready (remains the same)
-        window.addEventListener('load', function() {
-            console.log('Initializing app...');
-            setupButtonHandlers();
-            setupNavigationHandlers();
-            setupAdvancedHandlers();
+        // Initialize app on DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing app...');
+            
+            // Small delay to ensure all elements are rendered
+            setTimeout(() => {
+                setupButtonHandlers();
+                setupNavigationHandlers();
+                setupAdvancedHandlers();
 
-            // ✅ FIX: Check if the element exists before setting its textContent
-            const tempDayHighValueEl = document.getElementById('tempDayHighValue');
-            if (tempDayHighValueEl) {
-                tempDayHighValueEl.textContent = '20°C';
-            }
+                // ✅ FIX: Check if the element exists before setting its textContent
+                const tempDayHighValueEl = document.getElementById('tempDayHighValue');
+                if (tempDayHighValueEl) {
+                    tempDayHighValueEl.textContent = '20°C';
+                }
 
-            const tempNightLowValueEl = document.getElementById('tempNightLowValue');
-            if (tempNightLowValueEl) {
-                tempNightLowValueEl.textContent = '10°C';
-            }
+                const tempNightLowValueEl = document.getElementById('tempNightLowValue');
+                if (tempNightLowValueEl) {
+                    tempNightLowValueEl.textContent = '10°C';
+                }
+            }, 100);
         });
         
         // Core Form Functions (remains the same)
@@ -1937,124 +1956,129 @@
         function setupButtonHandlers() {
             // Trip style buttons
             document.querySelectorAll('.trip-style-button').forEach(btn => {
-                btn.onclick = function(e) {
+                btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('Trip style clicked:', this.dataset.trip);
-                    selectOption('tripStyle', this.dataset.trip, '.trip-style-button', this);
+                    const button = e.currentTarget; // Use currentTarget to always get the button
+                    console.log('Trip style clicked:', button.dataset.trip);
+                    selectOption('tripStyle', button.dataset.trip, '.trip-style-button', button);
                     checkStep1Completion();
-                };
+                });
             });
             
             // Terrain buttons
             document.querySelectorAll('.terrain-button').forEach(btn => {
-                btn.onclick = function(e) {
+                btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('Terrain clicked:', this.dataset.terrain);
-                    selectOption('terrain', this.dataset.terrain, '.terrain-button', this);
+                    const button = e.currentTarget; // Use currentTarget to always get the button
+                    console.log('Terrain clicked:', button.dataset.terrain);
+                    selectOption('terrain', button.dataset.terrain, '.terrain-button', button);
                     checkStep1Completion();
-                };
+                });
             });
             
             // Weather buttons
             document.querySelectorAll('.weather-button').forEach(btn => {
-                btn.onclick = function(e) {
+                btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('Weather clicked:', this.dataset.weather);
-                    selectOption('weather', this.dataset.weather, '.weather-button', this);
+                    const button = e.currentTarget; // Use currentTarget to always get the button
+                    console.log('Weather clicked:', button.dataset.weather);
+                    selectOption('weather', button.dataset.weather, '.weather-button', button);
                     checkStep2Completion();
-                };
+                });
             });
             
             // Preset buttons
             document.querySelectorAll('.preset-button').forEach(btn => {
-                btn.onclick = function(e) {
+                btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('Preset clicked:', this.dataset.preset);
-                    applyPreset(this.dataset.preset);
-                };
+                    const button = e.currentTarget; // Use currentTarget to always get the button
+                    console.log('Preset clicked:', button.dataset.preset);
+                    applyPreset(button.dataset.preset);
+                });
             });
             
             // Toggle options (special needs)
             document.querySelectorAll('.toggle-option').forEach(btn => {
-                btn.onclick = function(e) {
+                btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('Toggle option clicked:', this.dataset.need);
-                    this.classList.toggle('selected');
+                    const button = e.currentTarget; // Use currentTarget to always get the button
+                    console.log('Toggle option clicked:', button.dataset.need);
+                    button.classList.toggle('selected');
                     updateSpecialNeeds();
-                };
+                });
             });
         }
         
         function setupNavigationHandlers() {
             // Next/Back buttons
-            document.getElementById('nextStep1').onclick = function(e) {
+            document.getElementById('nextStep1').addEventListener('click', function(e) {
                 e.preventDefault();
                 goToStep(2);
-            };
+            });
             
-            document.getElementById('backStep2').onclick = function(e) {
+            document.getElementById('backStep2').addEventListener('click', function(e) {
                 e.preventDefault();
                 goToStep(1);
-            };
+            });
             
-            document.getElementById('generateList').onclick = function(e) {
+            document.getElementById('generateList').addEventListener('click', function(e) {
                 e.preventDefault();
                 generatePackingList();
-            };
+            });
             
-            document.getElementById('startNew').onclick = function(e) {
+            document.getElementById('startNew').addEventListener('click', function(e) {
                 e.preventDefault();
                 resetForm();
-            };
+            });
             
-            document.getElementById('copyList').onclick = function(e) {
+            document.getElementById('copyList').addEventListener('click', function(e) {
                 e.preventDefault();
                 copyListToClipboard();
-            };
+            });
             
-            document.getElementById('printList').onclick = function(e) {
+            document.getElementById('printList').addEventListener('click', function(e) {
                 e.preventDefault();
                 window.print();
-            };
+            });
             
-            document.getElementById('saveToAdventures').onclick = function(e) {
+            document.getElementById('saveToAdventures').addEventListener('click', function(e) {
                 e.preventDefault();
                 saveToAdventures();
-            };
+            });
             
-            document.getElementById('toggleAdvanced').onclick = function(e) {
+            document.getElementById('toggleAdvanced').addEventListener('click', function(e) {
                 e.preventDefault();
                 toggleAdvancedOptions();
-            };
+            });
             
-            document.getElementById('closeAuthModal').onclick = function(e) {
+            document.getElementById('closeAuthModal').addEventListener('click', function(e) {
                 e.preventDefault();
                 closeAuthModal();
-            };
+            });
         }
         
         function setupAdvancedHandlers() {
             // Temperature sliders
-            document.getElementById('tempDayHigh').oninput = function() {
+            document.getElementById('tempDayHigh').addEventListener('input', function() {
                 document.getElementById('tempDayHighValue').textContent = this.value + '°C';
                 state.advanced.temperature.dayHigh = parseInt(this.value);
                 state.advanced.temperature.specified = true;
-            };
+            });
             
-            document.getElementById('tempNightLow').oninput = function() {
+            document.getElementById('tempNightLow').addEventListener('input', function() {
                 document.getElementById('tempNightLowValue').textContent = this.value + '°C';
                 state.advanced.temperature.nightLow = parseInt(this.value);
                 state.advanced.temperature.specified = true;
-            };
+            });
             
             // Elevation inputs
             ['elevStart', 'elevMax', 'elevCamp'].forEach(id => {
-                document.getElementById(id).oninput = function() {
+                document.getElementById(id).addEventListener('input', function() {
                     const key = id.replace('elev', '').toLowerCase();
                     state.advanced.elevation[key] = this.value ? parseInt(this.value) : null;
                     state.advanced.elevation.specified = !!(
@@ -2062,7 +2086,7 @@
                         state.advanced.elevation.max || 
                         state.advanced.elevation.camp
                     );
-                };
+                });
             });
             
             // Dropdown handlers
@@ -2076,17 +2100,17 @@
             };
             
             Object.entries(dropdowns).forEach(([id, [category, field]]) => {
-                document.getElementById(id).onchange = function() {
+                document.getElementById(id).addEventListener('change', function() {
                     state.advanced[category][field] = this.value;
                     if (this.value) {
                         state.advanced[category].specified = true;
                     }
-                };
+                });
             });
             
             // Checkbox handlers
             document.querySelectorAll('.checkbox-item').forEach(item => {
-                item.onclick = function(e) {
+                item.addEventListener('click', function(e) {
                     const checkbox = this.querySelector('input[type="checkbox"]');
                     if (e.target !== checkbox) {
                         checkbox.checked = !checkbox.checked;
@@ -2100,20 +2124,20 @@
                     } else if (checkbox.id.startsWith('pref-')) {
                         updatePreferences();
                     }
-                };
+                });
             });
             
             // Additional context
-            document.getElementById('additionalContext').oninput = function() {
+            document.getElementById('additionalContext').addEventListener('input', function() {
                 state.advanced.context = this.value.trim();
-            };
+            });
             
             // Modal outside click
-            document.getElementById('authModal').onclick = function(e) {
+            document.getElementById('authModal').addEventListener('click', function(e) {
                 if (e.target === this) {
                     closeAuthModal();
                 }
-            };
+            });
         }
 
         // Advanced Options Functions (remain the same)
