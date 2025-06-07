@@ -212,11 +212,16 @@
         }
 
         .option-button.selected {
-            border-color: var(--green);
-            background: #D1FAE5;
-            color: #065F46;
+            border-color: var(--green) !important;
+            background: #D1FAE5 !important;
+            color: #065F46 !important;
             transform: scale(1.05);
             box-shadow: var(--shadow-md);
+        }
+        
+        /* Debug - make selection super obvious */
+        .selected {
+            outline: 3px solid red !important;
         }
         
         /* Specific button styles to ensure selection works */
@@ -1710,7 +1715,10 @@
 
     <script type="module">
         // Import the reusable logic
-        import { AdaptivePackingListGenerator } from './packingListService.js';
+        import { AdaptivePackingListGenerator } from '../js/services/packingListService.js';
+        
+        // Test if import worked
+        console.log('AdaptivePackingListGenerator imported:', typeof AdaptivePackingListGenerator);
         
         // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
@@ -1729,6 +1737,18 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        
+        // Debug function - expose to window for testing
+        window.debugTest = function() {
+            console.log('Running debug test...');
+            const firstButton = document.querySelector('.trip-style-button');
+            console.log('First button:', firstButton);
+            if (firstButton) {
+                firstButton.classList.add('selected');
+                console.log('Manually added selected class');
+                console.log('Button classes:', firstButton.className);
+            }
+        };
 
         // State Management (remains the same, but getInputDepth can be removed)
         const state = {
@@ -1815,8 +1835,21 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, initializing app...');
             
+            // Test if buttons exist
+            const testButton = document.querySelector('.trip-style-button');
+            console.log('Test button found:', testButton);
+            console.log('Test button dataset:', testButton?.dataset);
+            
+            // Add a simple test click handler
+            if (testButton) {
+                testButton.addEventListener('click', function() {
+                    console.log('TEST: Button clicked directly!');
+                });
+            }
+            
             // Small delay to ensure all elements are rendered
             setTimeout(() => {
+                console.log('Setting up handlers...');
                 setupButtonHandlers();
                 setupNavigationHandlers();
                 setupAdvancedHandlers();
@@ -1831,26 +1864,38 @@
                 if (tempNightLowValueEl) {
                     tempNightLowValueEl.textContent = '10°C';
                 }
+                
+                console.log('Setup complete!');
             }, 100);
         });
         
         // Core Form Functions (remains the same)
         function selectOption(field, value, selector, element) {
-            console.log('Selecting:', field, value);
+            console.log('=== SELECT OPTION DEBUG ===');
+            console.log('Field:', field);
+            console.log('Value:', value);
+            console.log('Selector:', selector);
+            console.log('Element:', element);
+            console.log('Element classes before:', element?.className);
             
             // Update state
             state.basic[field] = value;
+            console.log('State updated:', state.basic);
             
             // Remove selected class from all similar buttons
-            document.querySelectorAll(selector).forEach(btn => {
+            const allButtons = document.querySelectorAll(selector);
+            console.log('Found buttons to deselect:', allButtons.length);
+            allButtons.forEach(btn => {
                 btn.classList.remove('selected');
             });
             
             // Add selected class to clicked element
             if (element) {
                 element.classList.add('selected');
-                console.log('Added selected class to:', element);
+                console.log('Element classes after:', element.className);
+                console.log('Has selected class?', element.classList.contains('selected'));
             }
+            console.log('=== END DEBUG ===');
         }
         
         function applyPreset(preset) {
