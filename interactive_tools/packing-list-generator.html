@@ -215,23 +215,11 @@
             border-color: var(--green) !important;
             background: #D1FAE5 !important;
             color: #065F46 !important;
-            transform: scale(1.05);
-            box-shadow: var(--shadow-md);
+            transform: scale(1.02);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15), var(--shadow-md);
+            transition: all 0.2s ease;
         }
-        
-        /* Debug - make selection super obvious */
-        .selected {
-            outline: 3px solid red !important;
-        }
-        
-        /* Specific button styles to ensure selection works */
-        .trip-style-button.selected,
-        .terrain-button.selected,
-        .weather-button.selected {
-            border-color: var(--green) !important;
-            background: #D1FAE5 !important;
-            color: #065F46 !important;
-        }
+
 
         /* Input Field */
         .input-field {
@@ -889,7 +877,7 @@
         .preset-button.active {
             border-color: var(--green);
             background: #D1FAE5;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15), var(--shadow-md);
         }
 
         /* Toggle option styles */
@@ -911,6 +899,7 @@
         .toggle-option.selected {
             border-color: var(--green);
             background: #D1FAE5;
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
         }
 
         .toggle-option:hover {
@@ -1717,9 +1706,6 @@
         // Import the reusable logic
         import { AdaptivePackingListGenerator } from '../js/services/packingListService.js';
         
-        // Test if import worked
-        console.log('AdaptivePackingListGenerator imported:', typeof AdaptivePackingListGenerator);
-        
         // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
@@ -1737,20 +1723,8 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-        
-        // Debug function - expose to window for testing
-        window.debugTest = function() {
-            console.log('Running debug test...');
-            const firstButton = document.querySelector('.trip-style-button');
-            console.log('First button:', firstButton);
-            if (firstButton) {
-                firstButton.classList.add('selected');
-                console.log('Manually added selected class');
-                console.log('Button classes:', firstButton.className);
-            }
-        };
 
-        // State Management (remains the same, but getInputDepth can be removed)
+        // State Management
         const state = {
             currentStep: 1,
             basic: {
@@ -1833,28 +1807,13 @@
 
         // Initialize app on DOM ready
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing app...');
-            
-            // Test if buttons exist
-            const testButton = document.querySelector('.trip-style-button');
-            console.log('Test button found:', testButton);
-            console.log('Test button dataset:', testButton?.dataset);
-            
-            // Add a simple test click handler
-            if (testButton) {
-                testButton.addEventListener('click', function() {
-                    console.log('TEST: Button clicked directly!');
-                });
-            }
-            
             // Small delay to ensure all elements are rendered
             setTimeout(() => {
-                console.log('Setting up handlers...');
                 setupButtonHandlers();
                 setupNavigationHandlers();
                 setupAdvancedHandlers();
 
-                // ✅ FIX: Check if the element exists before setting its textContent
+                // Initialize temperature displays
                 const tempDayHighValueEl = document.getElementById('tempDayHighValue');
                 if (tempDayHighValueEl) {
                     tempDayHighValueEl.textContent = '20°C';
@@ -1864,43 +1823,26 @@
                 if (tempNightLowValueEl) {
                     tempNightLowValueEl.textContent = '10°C';
                 }
-                
-                console.log('Setup complete!');
             }, 100);
         });
         
         // Core Form Functions (remains the same)
         function selectOption(field, value, selector, element) {
-            console.log('=== SELECT OPTION DEBUG ===');
-            console.log('Field:', field);
-            console.log('Value:', value);
-            console.log('Selector:', selector);
-            console.log('Element:', element);
-            console.log('Element classes before:', element?.className);
-            
             // Update state
             state.basic[field] = value;
-            console.log('State updated:', state.basic);
             
             // Remove selected class from all similar buttons
-            const allButtons = document.querySelectorAll(selector);
-            console.log('Found buttons to deselect:', allButtons.length);
-            allButtons.forEach(btn => {
+            document.querySelectorAll(selector).forEach(btn => {
                 btn.classList.remove('selected');
             });
             
             // Add selected class to clicked element
             if (element) {
                 element.classList.add('selected');
-                console.log('Element classes after:', element.className);
-                console.log('Has selected class?', element.classList.contains('selected'));
             }
-            console.log('=== END DEBUG ===');
         }
         
         function applyPreset(preset) {
-            console.log('Applying preset:', preset);
-            
             // Remove active state from all presets
             document.querySelectorAll('.preset-button').forEach(btn => {
                 btn.classList.remove('active');
@@ -1951,25 +1893,20 @@
             document.querySelectorAll('.toggle-option.selected').forEach(option => {
                 state.basic.specialNeeds.push(option.dataset.need);
             });
-            console.log('Special needs updated:', state.basic.specialNeeds);
-            checkStep2Completion(); // Added to re-evaluate completion
+            checkStep2Completion();
         }
         
         function checkStep1Completion() {
             const isComplete = state.basic.tripStyle && state.basic.terrain;
             document.getElementById('nextStep1').disabled = !isComplete;
-            console.log('Step 1 complete:', isComplete);
         }
         
         function checkStep2Completion() {
             const isComplete = state.basic.weather;
             document.getElementById('generateList').disabled = !isComplete;
-            console.log('Step 2 complete:', isComplete);
         }
         
         function goToStep(step) {
-            console.log('Going to step:', step);
-            
             document.querySelectorAll('.form-section').forEach(section => {
                 section.classList.remove('active');
             });
@@ -1997,15 +1934,14 @@
             document.getElementById('connector2').classList.toggle('active', step > 2);
         }
         
-        // Event handler setup functions (setupButtonHandlers, setupNavigationHandlers, etc. remain the same)
+        // Event handler setup functions
         function setupButtonHandlers() {
             // Trip style buttons
             document.querySelectorAll('.trip-style-button').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const button = e.currentTarget; // Use currentTarget to always get the button
-                    console.log('Trip style clicked:', button.dataset.trip);
+                    const button = e.currentTarget;
                     selectOption('tripStyle', button.dataset.trip, '.trip-style-button', button);
                     checkStep1Completion();
                 });
@@ -2016,8 +1952,7 @@
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const button = e.currentTarget; // Use currentTarget to always get the button
-                    console.log('Terrain clicked:', button.dataset.terrain);
+                    const button = e.currentTarget;
                     selectOption('terrain', button.dataset.terrain, '.terrain-button', button);
                     checkStep1Completion();
                 });
@@ -2028,8 +1963,7 @@
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const button = e.currentTarget; // Use currentTarget to always get the button
-                    console.log('Weather clicked:', button.dataset.weather);
+                    const button = e.currentTarget;
                     selectOption('weather', button.dataset.weather, '.weather-button', button);
                     checkStep2Completion();
                 });
@@ -2040,8 +1974,7 @@
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const button = e.currentTarget; // Use currentTarget to always get the button
-                    console.log('Preset clicked:', button.dataset.preset);
+                    const button = e.currentTarget;
                     applyPreset(button.dataset.preset);
                 });
             });
@@ -2051,8 +1984,7 @@
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const button = e.currentTarget; // Use currentTarget to always get the button
-                    console.log('Toggle option clicked:', button.dataset.need);
+                    const button = e.currentTarget;
                     button.classList.toggle('selected');
                     updateSpecialNeeds();
                 });
