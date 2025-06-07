@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Make generateItinerary available globally for the quiz - WITH LOCATION FIXES
-window.generateItineraryFromQuiz = async function(quizData) {
+  window.generateItineraryFromQuiz = async function(quizData) {
     console.log('1. Starting generateItineraryFromQuiz');
     currentQuizData = quizData; // Store for later use
     
@@ -451,136 +451,6 @@ Preferences:
       
       if (useMockData) {
         console.log("Using mock data for development");
-        // ... your existing mock data code ...
-      }
-      
-      console.log('12. Clearing loading intervals');
-      clearLoadingIntervals(outputDiv);
-      
-      // Also hide the professional loading overlay
-      const loadingOverlay = document.getElementById('loadingOverlay');
-      if (loadingOverlay) {
-        console.log('13. Hiding loading overlay');
-        loadingOverlay.classList.remove('active');
-        setTimeout(() => {
-          loadingOverlay.style.display = 'none';
-        }, 600);
-      }
-      
-      console.log('14. Processing itinerary text');
-      rawItineraryText = data.reply;
-      const preprocessedText = preprocessRawText(rawItineraryText);
-
-      // Extract sections
-      cachedPackingList = extractSection(preprocessedText, 'Packing List');
-      cachedInsights = extractSection(preprocessedText, 'Local Insights');
-      cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
-
-      console.log('15. Showing results');
-      // Show results after a brief delay
-      setTimeout(() => {
-        outputDiv.classList.add('show');
-        processAndRenderEnhancedItinerary(preprocessedText);
-        console.log('16. Rendering complete');
-      }, 500);
-
-    } catch (error) {
-      console.error('17. Error in main try block:', error);
-      clearLoadingIntervals(outputDiv);
-      outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-    }
-};
-    
-    // CRITICAL FIX: Use specificLocation if available
-    let location = quizData.specificLocation || quizData.location;
-    if (location === 'any' || location === 'anywhere') {
-        location = 'a beautiful mountain region';
-    }
-    
-    let duration = quizData.trekType === 'day-hike' ? 'day hike' : `${quizData.trekLength} day trek`;
-    
-    // Build comprehensive prompt with specific location instructions
-    let prompt = `Create a ${duration} itinerary specifically for ${location}. 
-IMPORTANT: The itinerary MUST be in ${location}, not any other location.
-
-Preferences:
-- Difficulty: ${quizData.difficulty}
-- Season: ${quizData.season}`;
-    
-    if (quizData.trekType === 'multi-day') {
-      prompt += `\n- Accommodation: ${quizData.accommodation}`;
-    }
-    
-    if (quizData.interests && quizData.interests.length > 0) {
-      prompt += `\n- Interests: ${quizData.interests.join(', ')}`;
-    }
-    
-    // Add location context if we have it
-    if (quizData.locationDetails) {
-      if (quizData.locationDetails.specificArea) {
-        prompt += `\n- Specific area: ${quizData.locationDetails.specificArea}`;
-      }
-      if (quizData.locationDetails.originalInput) {
-        prompt += `\n- User specified: "${quizData.locationDetails.originalInput}"`;
-      }
-    }
-    
-    if (quizData.details) {
-      prompt += `\n- Special requirements: ${quizData.details}`;
-    }
-    
-    // Add specific format requirements
-    prompt += `\n\nPlease format the itinerary with:
-    - Day-by-day breakdown with clear titles
-    - Distance, elevation gain/loss, terrain, difficulty, accommodation for each day
-    - Highlights, tips, water sources, and lunch suggestions
-    - A packing list section
-    - Local insights section
-    - Practical information section`;
-
-    const outputDiv = document.getElementById('itinerary-cards');
-    
-    // Show enhanced loading with the specific location
-    showProgressiveLoading(outputDiv, location);
-
-    try {
-      let useMockData = false;
-      let data = null;
-        const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            location: location, // Use the specific location
-            filters: {
-              difficulty: quizData.difficulty,
-              accommodation: quizData.accommodation || 'Not applicable',
-              technical: 'None',
-              altitude: "2000–3000m"
-            },
-            comments: prompt,
-            title: `${location} ${duration}`
-          })
-        });
-
-        if (!response.ok) {
-          console.warn(`Server returned status ${response.status}. Using mock data instead.`);
-          useMockData = true;
-        } else {
-          data = await response.json();
-          
-          if (!data || !data.reply) {
-            console.warn('API returned empty response. Using mock data instead.');
-            useMockData = true;
-          }
-        }
-      } catch (apiError) {
-        console.warn('API request failed:', apiError);
-        useMockData = true;
-      }
-      
-      // Mock data fallback based on quiz selections
-      if (useMockData) {
-        console.log("Using mock data for development");
         await new Promise(resolve => setTimeout(resolve, 2000));
         
         const dayCount = quizData.trekType === 'day-hike' ? 1 : 
@@ -641,8 +511,20 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
         data = { reply: mockItinerary };
       }
       
+      console.log('12. Clearing loading intervals');
       clearLoadingIntervals(outputDiv);
       
+      // Also hide the professional loading overlay
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      if (loadingOverlay) {
+        console.log('13. Hiding loading overlay');
+        loadingOverlay.classList.remove('active');
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 600);
+      }
+      
+      console.log('14. Processing itinerary text');
       rawItineraryText = data.reply;
       const preprocessedText = preprocessRawText(rawItineraryText);
 
@@ -651,16 +533,18 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       cachedInsights = extractSection(preprocessedText, 'Local Insights');
       cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
 
+      console.log('15. Showing results');
       // Show results after a brief delay
       setTimeout(() => {
         outputDiv.classList.add('show');
         processAndRenderEnhancedItinerary(preprocessedText);
+        console.log('16. Rendering complete');
       }, 500);
 
     } catch (error) {
+      console.error('17. Error in main try block:', error);
       clearLoadingIntervals(outputDiv);
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-      console.error('Error generating itinerary:', error);
     }
   };
 
@@ -779,7 +663,7 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     return html;
   }
 
-  // Helper function to render packing categories
+  // Helper function to render packing categories with event delegation
   function renderPackingCategories(categories) {
     const categoryInfo = {
       clothing: { icon: '👕', name: 'Clothing', color: '#EFF6FF' },
@@ -793,6 +677,7 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     };
     
     let html = '';
+    let totalItems = 0;
     
     Object.entries(categories).forEach(([catKey, items]) => {
       if (items.length === 0) return;
@@ -812,14 +697,14 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
         const itemId = `pack-${catKey}-${index}`;
         const quantity = item.quantity ? ` (${item.quantity})` : '';
         const notes = item.notes ? `<div style="font-size: 12px; color: #6b7280; margin-left: 30px; margin-top: 4px;">${item.notes}</div>` : '';
+        totalItems++;
         
         html += `
           <label style="display: flex; align-items: flex-start; background: white; padding: 12px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" 
-                 onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" 
-                 onmouseout="this.style.boxShadow='none'">
+                 data-label-id="${itemId}">
             <input type="checkbox" id="${itemId}" data-item="${item.name}" 
                    style="width: 18px; height: 18px; margin-right: 12px; margin-top: 2px; cursor: pointer;"
-                   onchange="updatePackingProgress(this)">
+                   class="packing-checkbox">
             <div style="flex: 1;">
               <span class="packing-item-text" style="color: var(--text-dark); transition: all 0.2s ease;">
                 ${item.name}${quantity}
@@ -836,168 +721,105 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       `;
     });
     
+    // Update the total items count
+    window.packingListState = window.packingListState || {};
+    window.packingListState.totalItems = totalItems;
+    
     return html;
   }
 
   // Initialize packing list event listeners
   function initializePackingListeners() {
-    updatePackingProgress();
+    const packingContainer = document.getElementById('packing-categories');
+    if (!packingContainer) return;
+    
+    // Use event delegation for better reliability
+    packingContainer.addEventListener('change', function(e) {
+      if (e.target && e.target.classList.contains('packing-checkbox')) {
+        window.updatePackingProgress(e.target);
+      }
+    });
+    
+    // Add hover effects
+    packingContainer.addEventListener('mouseover', function(e) {
+      const label = e.target.closest('label');
+      if (label && label.dataset.labelId) {
+        label.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+      }
+    });
+    
+    packingContainer.addEventListener('mouseout', function(e) {
+      const label = e.target.closest('label');
+      if (label && label.dataset.labelId) {
+        label.style.boxShadow = 'none';
+      }
+    });
+    
+    // Initialize progress
+    if (window.updatePackingProgress) {
+      const progressElement = document.getElementById('packing-progress');
+      const progressBarElement = document.getElementById('packing-progress-bar');
+      if (progressElement) progressElement.textContent = '0%';
+      if (progressBarElement) progressBarElement.style.width = '0%';
+    }
   }
 
   // Update packing progress
   window.updatePackingProgress = function(checkbox) {
-  // Add defensive check
-  if (!checkbox || !checkbox.dataset) {
-    console.error('Invalid checkbox element passed to updatePackingProgress');
-    return;
-  }
-  
-  const item = checkbox.dataset.item;
-  
-  if (checkbox.checked) {
-    window.packingListState.checkedItems.add(item);
-    // Find the text element more safely
-    const labelElement = checkbox.closest('label');
-    if (labelElement) {
-      const textElement = labelElement.querySelector('.packing-item-text');
-      if (textElement) {
-        textElement.style.textDecoration = 'line-through';
-        textElement.style.opacity = '0.6';
+    // Add defensive check
+    if (!checkbox || !checkbox.dataset) {
+      console.error('Invalid checkbox element passed to updatePackingProgress');
+      return;
+    }
+    
+    const item = checkbox.dataset.item;
+    
+    if (checkbox.checked) {
+      window.packingListState.checkedItems.add(item);
+      // Find the text element more safely
+      const labelElement = checkbox.closest('label');
+      if (labelElement) {
+        const textElement = labelElement.querySelector('.packing-item-text');
+        if (textElement) {
+          textElement.style.textDecoration = 'line-through';
+          textElement.style.opacity = '0.6';
+        }
+      }
+    } else {
+      window.packingListState.checkedItems.delete(item);
+      // Find the text element more safely
+      const labelElement = checkbox.closest('label');
+      if (labelElement) {
+        const textElement = labelElement.querySelector('.packing-item-text');
+        if (textElement) {
+          textElement.style.textDecoration = 'none';
+          textElement.style.opacity = '1';
+        }
       }
     }
-  } else {
-    window.packingListState.checkedItems.delete(item);
-    // Find the text element more safely
-    const labelElement = checkbox.closest('label');
-    if (labelElement) {
-      const textElement = labelElement.querySelector('.packing-item-text');
-      if (textElement) {
-        textElement.style.textDecoration = 'none';
-        textElement.style.opacity = '1';
-      }
-    }
-  }
-  
-  // Only update progress if packingListState exists
-  if (window.packingListState && window.packingListState.totalItems > 0) {
-    const progress = Math.round((window.packingListState.checkedItems.size / window.packingListState.totalItems) * 100);
-    const progressElement = document.getElementById('packing-progress');
-    const progressBarElement = document.getElementById('packing-progress-bar');
     
-    if (progressElement) progressElement.textContent = `${progress}%`;
-    if (progressBarElement) progressBarElement.style.width = `${progress}%`;
-  }
-};
-
-// Also update the renderPackingCategories function to use event listeners instead of inline handlers
-function renderPackingCategories(categories) {
-  const categoryInfo = {
-    clothing: { icon: '👕', name: 'Clothing', color: '#EFF6FF' },
-    footwear: { icon: '🥾', name: 'Footwear', color: '#FFFBEB' },
-    camping: { icon: '🏕️', name: 'Camping Gear', color: '#F0FDF4' },
-    navigation: { icon: '🧭', name: 'Navigation', color: '#FAF5FF' },
-    safety: { icon: '⛑️', name: 'Safety & First Aid', color: '#FEF2F2' },
-    personal: { icon: '🧴', name: 'Personal Care', color: '#EEF2FF' },
-    food: { icon: '🍲', name: 'Food & Water', color: '#FFF7ED' },
-    optional: { icon: '✨', name: 'Optional', color: '#F9FAFB' }
-  };
-  
-  let html = '';
-  let totalItems = 0;
-  
-  Object.entries(categories).forEach(([catKey, items]) => {
-    if (items.length === 0) return;
-    
-    const catInfo = categoryInfo[catKey];
-    
-    html += `
-      <div style="border: 2px solid #E5E7EB; border-radius: 12px; padding: 20px; background: ${catInfo.color};">
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-dark);">
-          <span style="font-size: 24px;">${catInfo.icon}</span>
-          <span>${catInfo.name}</span>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-    `;
-    
-    items.forEach((item, index) => {
-      const itemId = `pack-${catKey}-${index}`;
-      const quantity = item.quantity ? ` (${item.quantity})` : '';
-      const notes = item.notes ? `<div style="font-size: 12px; color: #6b7280; margin-left: 30px; margin-top: 4px;">${item.notes}</div>` : '';
-      totalItems++;
+    // Only update progress if packingListState exists
+    if (window.packingListState && window.packingListState.totalItems > 0) {
+      const progress = Math.round((window.packingListState.checkedItems.size / window.packingListState.totalItems) * 100);
+      const progressElement = document.getElementById('packing-progress');
+      const progressBarElement = document.getElementById('packing-progress-bar');
       
-      html += `
-        <label style="display: flex; align-items: flex-start; background: white; padding: 12px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" 
-               data-label-id="${itemId}">
-          <input type="checkbox" id="${itemId}" data-item="${item.name}" 
-                 style="width: 18px; height: 18px; margin-right: 12px; margin-top: 2px; cursor: pointer;"
-                 class="packing-checkbox">
-          <div style="flex: 1;">
-            <span class="packing-item-text" style="color: var(--text-dark); transition: all 0.2s ease;">
-              ${item.name}${quantity}
-            </span>
-            ${notes}
-          </div>
-        </label>
-      `;
-    });
-    
-    html += `
-        </div>
-      </div>
-    `;
-  });
-  
-  // Update the total items count
-  window.packingListState = window.packingListState || {};
-  window.packingListState.totalItems = totalItems;
-  
-  return html;
-}
-
-// Update initializePackingListeners to use event delegation
-function initializePackingListeners() {
-  const packingContainer = document.getElementById('packing-categories');
-  if (!packingContainer) return;
-  
-  // Use event delegation for better reliability
-  packingContainer.addEventListener('change', function(e) {
-    if (e.target && e.target.classList.contains('packing-checkbox')) {
-      window.updatePackingProgress(e.target);
+      if (progressElement) progressElement.textContent = `${progress}%`;
+      if (progressBarElement) progressBarElement.style.width = `${progress}%`;
     }
-  });
-  
-  // Add hover effects
-  packingContainer.addEventListener('mouseover', function(e) {
-    const label = e.target.closest('label');
-    if (label && label.dataset.labelId) {
-      label.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
-    }
-  });
-  
-  packingContainer.addEventListener('mouseout', function(e) {
-    const label = e.target.closest('label');
-    if (label && label.dataset.labelId) {
-      label.style.boxShadow = 'none';
-    }
-  });
-  
-  // Initialize progress
-  if (window.updatePackingProgress) {
-    const progressElement = document.getElementById('packing-progress');
-    const progressBarElement = document.getElementById('packing-progress-bar');
-    if (progressElement) progressElement.textContent = '0%';
-    if (progressBarElement) progressBarElement.style.width = '0%';
-  }
-}
+  };
 
   // Reset packing checklist
   window.resetPackingList = function() {
     document.querySelectorAll('#packing-categories input[type="checkbox"]').forEach(checkbox => {
       checkbox.checked = false;
-      const textElement = checkbox.nextElementSibling.querySelector('.packing-item-text');
-      if (textElement) {
-        textElement.style.textDecoration = 'none';
-        textElement.style.opacity = '1';
+      const labelElement = checkbox.closest('label');
+      if (labelElement) {
+        const textElement = labelElement.querySelector('.packing-item-text');
+        if (textElement) {
+          textElement.style.textDecoration = 'none';
+          textElement.style.opacity = '1';
+        }
       }
     });
     
