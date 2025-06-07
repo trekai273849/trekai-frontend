@@ -428,7 +428,17 @@
 
     // ✅ FIX 1: Define the absolute URL for your backend server.
     // Use the port your Node.js server is running on.
-    const API_BASE_URL = 'http://localhost:3001';
+    const getApiBaseUrl = () => {
+    const hostname = window.location.hostname;
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        // We are in the local development environment
+        return 'http://localhost:3001';
+    } else {
+        // We are in the deployed production environment (e.g., Netlify, Vercel)
+        // This URL should point to your *deployed Render backend*
+        return 'https://trekai-api.onrender.com'; // ❗️ IMPORTANT: Replace with your actual Render URL
+    }
+};
 
     // 2. RENDERING FUNCTIONS
     

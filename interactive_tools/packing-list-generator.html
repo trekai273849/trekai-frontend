@@ -88,13 +88,22 @@
 
         // Initialize app on DOM ready (remains the same)
         window.addEventListener('load', function() {
-            console.log('Initializing app...');
-            setupButtonHandlers();
-            setupNavigationHandlers();
-            setupAdvancedHandlers();
-            document.getElementById('tempDayHighValue').textContent = '20°C';
-            document.getElementById('tempNightLowValue').textContent = '10°C';
-        });
+    console.log('Initializing app...');
+    setupButtonHandlers();
+    setupNavigationHandlers();
+    setupAdvancedHandlers();
+
+    // ✅ FIX: Check if the element exists before setting its textContent
+    const tempDayHighValueEl = document.getElementById('tempDayHighValue');
+    if (tempDayHighValueEl) {
+        tempDayHighValueEl.textContent = '20°C';
+    }
+
+    const tempNightLowValueEl = document.getElementById('tempNightLowValue');
+    if (tempNightLowValueEl) {
+        tempNightLowValueEl.textContent = '10°C';
+    }
+});
         
         // Core Form Functions (remains the same)
         function selectOption(field, value, selector, element) { /* ... */ }
