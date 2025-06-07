@@ -546,8 +546,6 @@ Preferences:
     try {
       let useMockData = false;
       let data = null;
-      
-      try {
         const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
