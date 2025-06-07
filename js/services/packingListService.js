@@ -1,72 +1,11 @@
 // packingListService.js
 
 export class AdaptivePackingListGenerator {
-    // ✅ FIX: Reverted to the original generic constructor
     constructor(basicInputs, advancedInputs) {
         this.basic = basicInputs;
         this.advanced = advancedInputs;
         this.items = {};
         this.inputDepth = this._calculateInputDepth();
-    }
-
-    // NEW: Internal mapper to translate quiz data into the format the generator needs
-    _mapQuizDataToInputs(quizData) {
-        // --- Basic Inputs Mapping ---
-        const tripStyleMapping = {
-            '1-3': 'camping-short',
-            '4-7': 'hut-trek',
-            '8+': 'expedition',
-            'day-hike': 'day'
-        };
-
-        // This mapping is an example; you might need to adjust based on your quiz's location/terrain values
-        const terrainMapping = {
-            'mountains': 'alpine',
-            'forest': 'forest',
-            'coast': 'coastal',
-            'desert': 'desert',
-            'jungle': 'jungle',
-            'any': 'alpine' // Default for 'surprise me' or 'any'
-        };
-        
-        const weatherMapping = {
-            'spring': 'sunny-cold',
-            'summer': 'sunny-warm',
-            'autumn': 'rainy',
-            'winter': 'snow'
-        };
-
-        const basic = {
-            tripStyle: tripStyleMapping[quizData.length] || tripStyleMapping[quizData.trekType] || 'camping-short',
-            terrain: terrainMapping[quizData.terrain] || 'alpine', // Default to alpine if no match
-            weather: weatherMapping[quizData.season] || 'sunny-cold',
-            specialNeeds: quizData.interests || []
-        };
-
-        // --- Advanced Inputs (derived from basic quiz data) ---
-        const advanced = {
-            temperature: { specified: false, dayHigh: null, nightLow: null },
-            elevation: { specified: false, start: null, max: null, camp: null },
-            physical: { specified: false, dailyDistance: '', elevationGain: '' },
-            logistics: { specified: false, waterSources: '', resupplyFreq: '' },
-            accommodation: { 
-                types: quizData.accommodation ? [quizData.accommodation] : [],
-                specified: !!quizData.accommodation
-            },
-            activities: {
-                photography: (quizData.interests || []).includes('photography'),
-                wildlife: (quizData.interests || []).includes('wildlife'),
-                scrambling: (quizData.interests || []).includes('scrambling'),
-                swimming: (quizData.interests || []).includes('swimming'),
-                stargazing: (quizData.interests || []).includes('stargazing'),
-                specified: (quizData.interests || []).length > 0
-            },
-            group: { specified: false, size: '', experience: '' },
-            preferences: { specified: false, ultralight: false, comfort: false, safety: false, minimalist: false },
-            context: ''
-        };
-
-        return { basic, advanced };
     }
 
     _calculateInputDepth() {
@@ -222,13 +161,19 @@ export class AdaptivePackingListGenerator {
                        duration.days <= 7 ? '60-70L backpack' :
                        '70-85L expedition pack';
         this.items.camping.push({ name: packSize, priority: 'essential' });
-        if (duration.type === 'camping' || duration.type === 'expedition' || this.basic.accommodation === 'camping') {
+        
+        // Check accommodation in both advanced (where it actually is) and basic (for compatibility)
+        const hasHutAccommodation = this.advanced?.accommodation?.types?.includes('hut');
+        const hasCampingAccommodation = this.advanced?.accommodation?.types?.includes('tent') || 
+                                       this.advanced?.accommodation?.types?.includes('camping');
+        
+        if (duration.type === 'camping' || duration.type === 'expedition' || hasCampingAccommodation) {
             this.items.camping.push(
                 { name: 'Tent (weather appropriate)', priority: 'essential' },
                 { name: 'Sleeping bag', priority: 'essential', notes: this.getSleepingBagNotes() },
                 { name: 'Sleeping pad', priority: 'essential' }
             );
-        } else if (duration.type === 'hut' || this.basic.accommodation === 'huts') {
+        } else if (duration.type === 'hut' || hasHutAccommodation) {
             this.items.camping.push(
                 { name: 'Sleeping bag liner', priority: 'essential' },
                 { name: 'Travel pillow', priority: 'nice-to-have' }
@@ -305,12 +250,15 @@ export class AdaptivePackingListGenerator {
     }
 
     addFood(duration) {
-        if (this.basic.specialNeeds.includes('self-cooking') || duration.type === 'camping' || this.basic.accommodation === 'camping') {
-             this.items.food.push(
-                { name: 'Camping stove + fuel', priority: 'essential' },
-                { name: 'Cookware set', priority: 'essential' }
-            );
+        const needsCooking = this.basic.specialNeeds.includes('self-cooking') || 
+                           duration.type === 'camping' || 
+                           this.advanced?.accommodation?.types?.includes('camping') ||
+                           this.advanced?.accommodation?.types?.includes('tent');
+                           
+        if (needsCooking) {
             this.items.food.push(
+                { name: 'Camping stove + fuel', priority: 'essential' },
+                { name: 'Cookware set', priority: 'essential' },
                 { name: 'Breakfast items', quantity: `${duration.days + 1} days`, priority: 'essential' },
                 { name: 'Lunch + snacks', quantity: `${duration.days + 1} days`, priority: 'essential' },
                 { name: 'Dinner items', quantity: `${duration.days} days`, priority: 'essential' },
