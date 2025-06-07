@@ -10,83 +10,11 @@
   <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8" />
-  <title>My Saved Items | Smart Trails</title>
+  <title>My Saved Itineraries | Smart Trails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css" />
   <style>
-    /* Tab styles */
-    .tab-navigation {
-      display: flex;
-      border-bottom: 2px solid #e5e7eb;
-      margin-bottom: 1.5rem;
-    }
-    
-    .tab-button {
-      position: relative;
-      padding: 0.75rem 1.5rem;
-      font-weight: 500;
-      color: #6b7280;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .tab-button:hover {
-      color: #3b82f6;
-    }
-    
-    .tab-button.active {
-      color: #3b82f6;
-    }
-    
-    .tab-button.active::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: #3b82f6;
-      border-radius: 3px 3px 0 0;
-    }
-    
-    .tab-count {
-      background: #e5e7eb;
-      color: #6b7280;
-      font-size: 0.75rem;
-      padding: 0.125rem 0.5rem;
-      border-radius: 9999px;
-      font-weight: normal;
-    }
-    
-    .tab-button.active .tab-count {
-      background: #dbeafe;
-      color: #3b82f6;
-    }
-    
-    /* Tab content */
-    .tab-content {
-      display: none;
-    }
-    
-    .tab-content.active {
-      display: block;
-    }
-    
-    /* Type-specific card colors */
-    .gear-list-gradient {
-      background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-    }
-    
-    .info-guide-gradient {
-      background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-    }
-    
     /* Modal styles */
     .modal-backdrop {
       position: fixed;
@@ -113,7 +41,7 @@
       background-color: white;
       border-radius: 0.5rem;
       max-width: 90%;
-      width: 600px;
+      width: 400px;
       transform: scale(0.95);
       transition: transform 0.2s ease;
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -162,6 +90,37 @@
       background-color: rgba(0, 0, 0, 0.05);
     }
     
+    /* Responsive adjustments for create modal */
+    @media (max-width: 640px) {
+      #create-modal .modal-content {
+        max-width: calc(100% - 2rem);
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+      }
+      
+      /* Ensure modal is vertically centered even on small screens */
+      #create-modal.modal-backdrop {
+        align-items: center;
+        padding: 1rem;
+      }
+    }
+    
+    /* Very small screens - ensure no scrolling needed */
+    @media (max-height: 600px) {
+      #create-modal .modal-content {
+        max-height: calc(100vh - 1rem);
+      }
+      
+      #create-modal h2 {
+        font-size: 1.125rem;
+        margin-bottom: 0.25rem;
+      }
+      
+      #create-modal p {
+        margin-bottom: 0.75rem;
+      }
+    }
+    
     /* Button hover effect */
     .delete-btn {
       position: relative;
@@ -203,11 +162,11 @@
     }
     
     /* Card transition effect */
-    .itinerary-card, .gear-card, .guide-card {
+    .itinerary-card {
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
     
-    .itinerary-card.removing, .gear-card.removing, .guide-card.removing {
+    .itinerary-card.removing {
       opacity: 0;
       transform: scale(0.95);
     }
@@ -282,44 +241,6 @@
       margin: 0 auto 20px;
       box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
     }
-    
-    /* Empty state styles */
-    .empty-state {
-      text-center;
-      padding: 3rem 1rem;
-    }
-    
-    .empty-state-icon {
-      width: 80px;
-      height: 80px;
-      background: #f3f4f6;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-size: 2.5rem;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 640px) {
-      .tab-button {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.875rem;
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-      
-      .tab-count {
-        font-size: 0.625rem;
-      }
-      
-      #create-modal .modal-content {
-        max-width: calc(100% - 2rem);
-        margin: 1rem;
-        max-height: calc(100vh - 2rem);
-      }
-    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -331,77 +252,29 @@
   <!-- Hero Header -->
   <header class="relative bg-cover bg-center h-48 flex items-center justify-center text-white" style="background-image: url('Images/alps.jpg');">
     <div class="bg-black bg-opacity-50 p-6 rounded-lg">
-      <h1 class="text-3xl font-bold mb-2">My Adventures</h1>
+      <h1 class="text-3xl font-bold mb-2">My Saved Itineraries</h1>
     </div>
   </header>
 
   <!-- Main Content -->
   <main class="max-w-5xl mx-auto p-6">
     <div id="auth-status" class="mb-6">
-      <p class="text-center text-gray-600">Loading your saved items...</p>
+      <p class="text-center text-gray-600">Loading your itineraries...</p>
     </div>
     
-    <!-- Tab Navigation -->
-    <div class="tab-navigation" id="tab-nav" style="display: none;">
-      <button class="tab-button active" data-tab="itineraries">
-        <span>Itineraries</span>
-        <span class="tab-count" id="itineraries-count">0</span>
-      </button>
-      <button class="tab-button" data-tab="gear-lists">
-        <span>Gear Lists</span>
-        <span class="tab-count" id="gear-lists-count">0</span>
-      </button>
-      <button class="tab-button" data-tab="info-guides">
-        <span>Info Guides</span>
-        <span class="tab-count" id="info-guides-count">0</span>
-      </button>
+    <div id="itineraries-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+      <!-- Itineraries will be loaded here -->
     </div>
-    
-    <!-- Tab Content: Itineraries -->
-    <div id="itineraries-tab" class="tab-content active">
-      <div id="itineraries-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
-        <!-- Itineraries will be loaded here -->
-      </div>
-      
-      <div id="no-itineraries" class="empty-state hidden">
-        <div class="empty-state-icon">🗺️</div>
-        <p class="text-xl text-gray-600 mb-4">You don't have any saved itineraries yet.</p>
-        <button onclick="openCreateModal('itinerary')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">Create Your First Itinerary</button>
-      </div>
-    </div>
-    
-    <!-- Tab Content: Gear Lists -->
-    <div id="gear-lists-tab" class="tab-content">
-      <div id="gear-lists-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
-        <!-- Gear lists will be loaded here -->
-      </div>
-      
-      <div id="no-gear-lists" class="empty-state">
-        <div class="empty-state-icon">🎒</div>
-        <p class="text-xl text-gray-600 mb-4">You haven't created any gear lists yet.</p>
-        <p class="text-gray-500 mb-6">Organize your equipment for different adventures and conditions.</p>
-        <button onclick="openCreateModal('gear-list')" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md inline-block">Create Your First Gear List</button>
-      </div>
-    </div>
-    
-    <!-- Tab Content: Info Guides -->
-    <div id="info-guides-tab" class="tab-content">
-      <div id="info-guides-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
-        <!-- Info guides will be loaded here -->
-      </div>
-      
-      <div id="no-info-guides" class="empty-state">
-        <div class="empty-state-icon">📚</div>
-        <p class="text-xl text-gray-600 mb-4">You haven't saved any info guides yet.</p>
-        <p class="text-gray-500 mb-6">Save helpful guides about safety, skills, and destinations.</p>
-        <button onclick="openCreateModal('info-guide')" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md inline-block">Browse Info Guides</button>
-      </div>
+
+    <div id="no-itineraries" class="text-center py-10 hidden">
+      <p class="text-xl text-gray-600 mb-4">You don't have any saved itineraries yet.</p>
+      <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">Create an Itinerary</a>
     </div>
   </main>
   
-  <!-- Create Options Modal -->
+  <!-- Create Itinerary Options Modal -->
   <div id="create-modal" class="modal-backdrop">
-    <div class="modal-content">
+    <div class="modal-content" style="max-width: 600px;">
       <div class="p-4 md:p-5">
         <button class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors" onclick="closeCreateModal()">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -412,7 +285,7 @@
         <h2 class="text-xl font-bold text-center mb-1">Start Your Adventure</h2>
         <p class="text-gray-600 text-center text-sm mb-4">Choose how you'd like to plan your next trek</p>
         
-        <div class="grid grid-cols-2 gap-3" id="itinerary-options">
+        <div class="grid grid-cols-2 gap-3">
           <!-- Explore Popular Hikes Option -->
           <a href="popular-hikes.html" class="block p-3 md:p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-lg transition-all duration-200 group">
             <div class="flex flex-col items-center text-center">
@@ -449,54 +322,13 @@
             </div>
           </a>
         </div>
-        
-        <!-- Gear List Options (hidden by default) -->
-        <div class="grid grid-cols-2 gap-3 hidden" id="gear-list-options">
-          <a href="#" class="block p-3 md:p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:shadow-lg transition-all duration-200 group">
-            <div class="flex flex-col items-center text-center">
-              <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-3 group-hover:bg-green-200 transition-colors">
-                <span class="text-2xl">🏕️</span>
-              </div>
-              <h3 class="text-sm md:text-base font-semibold mb-1">Use Template</h3>
-              <p class="text-xs text-gray-600 mb-2 md:mb-3 hidden md:block">Start with a pre-made gear list for common activities</p>
-              <div class="w-full">
-                <span class="block w-full py-1.5 md:py-2 px-3 md:px-4 bg-green-600 text-white rounded-md text-xs md:text-sm font-medium group-hover:bg-green-700 transition-colors">
-                  Browse Templates
-                </span>
-              </div>
-            </div>
-          </a>
-          
-          <a href="#" class="block p-3 md:p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:shadow-lg transition-all duration-200 group">
-            <div class="flex flex-col items-center text-center">
-              <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-3 group-hover:bg-green-200 transition-colors">
-                <span class="text-2xl">✏️</span>
-              </div>
-              <h3 class="text-sm md:text-base font-semibold mb-1">Create Custom</h3>
-              <p class="text-xs text-gray-600 mb-2 md:mb-3 hidden md:block">Build your own gear list from scratch</p>
-              <div class="w-full">
-                <span class="block w-full py-1.5 md:py-2 px-3 md:px-4 bg-green-600 text-white rounded-md text-xs md:text-sm font-medium group-hover:bg-green-700 transition-colors">
-                  Start Building
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-        
-        <!-- Info Guide Options (hidden by default) -->
-        <div class="text-center hidden" id="info-guide-options">
-          <p class="text-gray-600 mb-4">Browse our collection of helpful guides about trekking, safety, and destinations.</p>
-          <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md inline-block">
-            Browse All Guides
-          </a>
-        </div>
       </div>
     </div>
   </div>
 
   <!-- Delete Confirmation Modal -->
   <div id="delete-modal" class="modal-backdrop">
-    <div class="modal-content" style="max-width: 400px;">
+    <div class="modal-content">
       <div class="p-6">
         <div class="flex items-center justify-center mb-5 text-red-500">
           <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -504,8 +336,8 @@
                   d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-center mb-2">Delete Item</h3>
-        <p class="text-gray-600 text-center mb-6">Are you sure you want to delete this <span id="delete-item-type">item</span>? This action cannot be undone.</p>
+        <h3 class="text-xl font-bold text-center mb-2">Delete Itinerary</h3>
+        <p class="text-gray-600 text-center mb-6">Are you sure you want to delete this itinerary? This action cannot be undone.</p>
         <div class="flex gap-3">
           <button id="cancel-delete" class="flex-1 py-2.5 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md transition duration-200 font-medium">
             Cancel
@@ -527,20 +359,9 @@
 
     // API URL constant 
     const API_BASE_URL = 'https://trekai-api.onrender.com';
-    
-    // Current tab state
-    let currentTab = 'itineraries';
-    let currentUser = null;
-    
-    // Item counts
-    let itemCounts = {
-      itineraries: 0,
-      gearLists: 0,
-      infoGuides: 0
-    };
 
     // Loading skeleton HTML template
-    const createLoadingSkeleton = (count = 3, type = 'itinerary') => {
+    const createLoadingSkeleton = (count = 3) => {
       let skeletons = '';
       
       for (let i = 0; i < count; i++) {
@@ -551,15 +372,15 @@
           
           <!-- Content skeleton -->
           <div class="p-4">
-            <!-- Type badge skeleton -->
-            <div class="skeleton h-6 w-20 rounded-full mb-3"></div>
-            
             <!-- Date skeleton -->
             <div class="skeleton h-4 w-24 rounded mb-3"></div>
             
-            <!-- Details skeleton -->
-            ${type === 'gear-list' ? '<div class="skeleton h-4 w-32 rounded mb-3"></div>' : ''}
-            ${type === 'info-guide' ? '<div class="skeleton h-4 w-28 rounded mb-3"></div>' : ''}
+            <!-- Filter tags skeleton -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <div class="skeleton h-6 w-16 rounded-full"></div>
+              <div class="skeleton h-6 w-20 rounded-full"></div>
+              <div class="skeleton h-6 w-14 rounded-full"></div>
+            </div>
             
             <!-- Buttons skeleton -->
             <div class="flex gap-2">
@@ -574,71 +395,51 @@
       return skeletons;
     };
 
-    // Tab switching functionality
-    function setupTabs() {
-      const tabButtons = document.querySelectorAll('.tab-button');
-      
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const tabName = button.dataset.tab;
-          switchTab(tabName);
-        });
-      });
-    }
-    
-    function switchTab(tabName) {
-      // Update active tab button
-      document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-      
-      // Hide all tab contents
-      document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
-      });
-      
-      // Show selected tab content
-      document.getElementById(`${tabName}-tab`).classList.add('active');
-      
-      // Update current tab
-      currentTab = tabName;
-      
-      // Load content for the selected tab if needed
-      if (tabName === 'gear-lists' && itemCounts.gearLists === 0) {
-        // For now, show empty state
-        document.getElementById('no-gear-lists').classList.remove('hidden');
-      } else if (tabName === 'info-guides' && itemCounts.infoGuides === 0) {
-        // For now, show empty state
-        document.getElementById('no-info-guides').classList.remove('hidden');
-      }
+    // Function to show loading skeletons
+    function showLoadingSkeletons() {
+      const container = document.getElementById('itineraries-container');
+      container.innerHTML = createLoadingSkeleton(6); // Show 6 skeleton cards
+      container.classList.remove('hidden');
     }
 
-    // Update item counts
-    function updateItemCounts() {
-      document.getElementById('itineraries-count').textContent = itemCounts.itineraries;
-      document.getElementById('gear-lists-count').textContent = itemCounts.gearLists;
-      document.getElementById('info-guides-count').textContent = itemCounts.infoGuides;
+    // Function to hide loading and show content
+    function hideLoadingSkeletons() {
+      const container = document.getElementById('itineraries-container');
+      container.classList.add('fade-in');
+    }
+
+    // Function to show welcome message for new users
+    function showNewUserWelcome() {
+      const container = document.getElementById('itineraries-container');
+      container.innerHTML = `
+        <div class="col-span-full">
+          <div class="welcome-message">
+            <div class="welcome-icon">
+              <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Welcome to Smart Trails! 🎉</h2>
+            <p class="text-lg text-gray-600 mb-6">Your account has been created successfully.</p>
+            <p class="text-gray-500 mb-8">Your adventure library is being set up. You can start creating your first trek while we finish preparing everything!</p>
+            <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+              Plan Your First Adventure
+            </button>
+          </div>
+        </div>
+      `;
+      container.classList.remove('hidden');
+      
+      // Try fetching again after 10 seconds
+      setTimeout(() => {
+        console.log('Retrying to fetch itineraries for new user...');
+        window.location.reload();
+      }, 10000); // Increased from 5 to 10 seconds
     }
 
     // Modal functions
-    window.openCreateModal = function(type = 'itinerary') {
+    window.openCreateModal = function() {
       const modal = document.getElementById('create-modal');
-      
-      // Hide all option sets
-      document.getElementById('itinerary-options').classList.add('hidden');
-      document.getElementById('gear-list-options').classList.add('hidden');
-      document.getElementById('info-guide-options').classList.add('hidden');
-      
-      // Show appropriate options based on type
-      if (type === 'gear-list') {
-        document.getElementById('gear-list-options').classList.remove('hidden');
-      } else if (type === 'info-guide') {
-        document.getElementById('info-guide-options').classList.remove('hidden');
-      } else {
-        document.getElementById('itinerary-options').classList.remove('hidden');
-      }
-      
       modal.classList.add('active');
     }
     
@@ -669,11 +470,41 @@
       }
     });
 
+    // Check if user is logged in
+    onAuthStateChanged(auth, (user) => {
+      const authStatusDiv = document.getElementById('auth-status');
+      
+      if (user) {
+        // User is signed in
+        authStatusDiv.innerHTML = `
+          <div class="flex justify-end items-center mb-8">
+            <div>
+              <button onclick="openCreateModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Create New Itinerary</button>
+            </div>
+          </div>
+        `;
+        
+        // Show loading skeletons before fetching
+        showLoadingSkeletons();
+        
+        // Fetch user's itineraries
+        fetchItineraries(user);
+      } else {
+        // User is not signed in
+        authStatusDiv.innerHTML = `
+          <div class="text-center py-8">
+            <p class="text-xl text-gray-700 mb-4">Please sign in to view your saved itineraries.</p>
+            <a href="sign-up.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">Sign In</a>
+          </div>
+        `;
+      }
+    });
+
     // Enhanced location-specific data for images and gradients
     const locationData = [
       {
         keywords: ["nepal", "nepalese", "kathmandu", "everest base camp", "annapurna", "himalaya"],
-        image: "Images/nepal.jpg",
+        image: "Images/nepal.jpg", // Try the main images folder first
         gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         icon: "🏔️"
       },
@@ -718,10 +549,34 @@
         image: "Images/himalayas.jpg",
         gradient: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
         icon: "🏔️"
+      },
+      {
+        keywords: ["japan", "japanese", "fuji", "tokyo", "kyoto"],
+        image: "Images/locations/japan.jpg",
+        gradient: "linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%)",
+        icon: "🗻"
+      },
+      {
+        keywords: ["norway", "norwegian", "scandinavia", "fjords"],
+        image: "Images/locations/norway.jpg",
+        gradient: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
+        icon: "⛰️"
+      },
+      {
+        keywords: ["scotland", "scottish", "highlands"],
+        image: "Images/locations/scotland.jpg",
+        gradient: "linear-gradient(135deg, #d9afd9 0%, #97d9e1 100%)",
+        icon: "🏞️"
+      },
+      {
+        keywords: ["switzerland", "swiss"],
+        image: "Images/locations/switzerland.jpg",
+        gradient: "linear-gradient(135deg, #93a5cf 0%, #e4efe9 100%)",
+        icon: "🏔️"
       }
     ];
     
-    // Default gradient for when no match is found
+    // Default gradient for when no match is found - more attractive gradient
     const defaultLocationData = {
       gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       icon: "🥾"
@@ -731,8 +586,10 @@
     function getLocationData(location) {
       if (!location) return defaultLocationData;
       
+      // Convert to lowercase for case-insensitive matching
       const locationLower = location.toLowerCase();
       
+      // Try to find a match in our location data
       for (const locData of locationData) {
         for (const keyword of locData.keywords) {
           if (locationLower.includes(keyword) || keyword.includes(locationLower)) {
@@ -741,6 +598,7 @@
         }
       }
       
+      // Return default if no match found
       return defaultLocationData;
     }
     
@@ -770,7 +628,7 @@
       return metadata;
     }
     
-    // Function to create a header for an itinerary card
+    // UPDATED Function to create a header for an itinerary card
     function createCardHeader(itinerary) {
       // Parse trek metadata from comments
       const trekMeta = parseTrekMetadata(itinerary.comments);
@@ -837,94 +695,6 @@
       `;
     }
 
-    // Function to show loading skeletons
-    function showLoadingSkeletons() {
-      const container = document.getElementById('itineraries-container');
-      container.innerHTML = createLoadingSkeleton(6);
-      container.classList.remove('hidden');
-    }
-
-    // Function to hide loading and show content
-    function hideLoadingSkeletons() {
-      const container = document.getElementById('itineraries-container');
-      container.classList.add('fade-in');
-    }
-
-    // Function to show welcome message for new users
-    function showNewUserWelcome() {
-      const container = document.getElementById('itineraries-container');
-      container.innerHTML = `
-        <div class="col-span-full">
-          <div class="welcome-message">
-            <div class="welcome-icon">
-              <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">Welcome to Smart Trails! 🎉</h2>
-            <p class="text-lg text-gray-600 mb-6">Your account has been created successfully.</p>
-            <p class="text-gray-500 mb-8">Your adventure library is being set up. You can start creating your first trek while we finish preparing everything!</p>
-            <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
-              Plan Your First Adventure
-            </button>
-          </div>
-        </div>
-      `;
-      container.classList.remove('hidden');
-      
-      // Try fetching again after 10 seconds
-      setTimeout(() => {
-        console.log('Retrying to fetch itineraries for new user...');
-        window.location.reload();
-      }, 10000);
-    }
-
-    // Check if user is logged in
-    onAuthStateChanged(auth, (user) => {
-      const authStatusDiv = document.getElementById('auth-status');
-      
-      if (user) {
-        currentUser = user;
-        
-        // User is signed in
-        authStatusDiv.innerHTML = `
-          <div class="flex justify-end items-center mb-8">
-            <div>
-              <button onclick="openCreateModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Create New</button>
-            </div>
-          </div>
-        `;
-        
-        // Show tab navigation
-        document.getElementById('tab-nav').style.display = 'flex';
-        
-        // Setup tab functionality
-        setupTabs();
-        
-        // Show loading skeletons before fetching
-        showLoadingSkeletons();
-        
-        // Fetch user's itineraries
-        fetchItineraries(user);
-        
-        // TODO: Fetch gear lists and info guides when APIs are ready
-        // For now, just update counts to 0
-        updateItemCounts();
-        
-      } else {
-        // User is not signed in
-        authStatusDiv.innerHTML = `
-          <div class="text-center py-8">
-            <p class="text-xl text-gray-700 mb-4">Please sign in to view your saved items.</p>
-            <a href="sign-up.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">Sign In</a>
-          </div>
-        `;
-        
-        // Hide tab navigation
-        document.getElementById('tab-nav').style.display = 'none';
-      }
-    });
-
     // Updated function to fetch itineraries with better new user handling and retry logic
     async function fetchItineraries(user, retryCount = 0) {
       try {
@@ -934,6 +704,7 @@
         // For new users, add a delay to ensure backend sync
         if (isNewUser && retryCount === 0) {
           console.log('New user detected - waiting for backend sync...');
+          // Show a special loading message for new users
           const container = document.getElementById('itineraries-container');
           container.innerHTML = `
             <div class="col-span-full">
@@ -952,7 +723,7 @@
           `;
           container.classList.remove('hidden');
           
-          await new Promise(resolve => setTimeout(resolve, 5000));
+          await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds instead of 3
         }
         
         // First check if the API health endpoint is responding
@@ -966,7 +737,7 @@
         }
 
         // Get fresh token with force refresh for new users
-        const token = await user.getIdToken(isNewUser);
+        const token = await user.getIdToken(isNewUser); // Force refresh for new users
         
         const response = await fetch(`${API_BASE_URL}/api/itineraries`, {
           headers: {
@@ -980,8 +751,8 @@
             // For new users, retry a few times before showing welcome
             if (isNewUser && retryCount < 3) {
               console.log(`New user 401 - retrying (attempt ${retryCount + 1}/3)...`);
-              await new Promise(resolve => setTimeout(resolve, 3000));
-              return fetchItineraries(user, retryCount + 1);
+              await new Promise(resolve => setTimeout(resolve, 3000)); // Wait 3 more seconds
+              return fetchItineraries(user, retryCount + 1); // Retry
             }
             
             // After retries, show welcome for new users
@@ -1000,7 +771,7 @@
         
         // Handle the new response format with pagination
         const responseData = await response.json();
-        console.log('Raw response:', responseData);
+        console.log('Raw response:', responseData); // Debug log
         
         // Extract itineraries array from response
         let itineraries;
@@ -1012,11 +783,7 @@
           itineraries = [];
         }
         
-        console.log('Processed itineraries:', itineraries);
-        
-        // Update count
-        itemCounts.itineraries = itineraries.length;
-        updateItemCounts();
+        console.log('Processed itineraries:', itineraries); // Debug log
         
         const container = document.getElementById('itineraries-container');
         
@@ -1144,7 +911,7 @@
                     </svg>
                     ${isPopularTrek ? 'View Trek' : 'View Itinerary'}
                   </a>
-                  <button class="delete-btn flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 rounded-md transition-colors duration-200" data-id="${itinerary._id}" data-type="itinerary">
+                  <button class="delete-btn flex items-center justify-center bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 rounded-md transition-colors duration-200" data-id="${itinerary._id}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                     </svg>
@@ -1160,7 +927,74 @@
           hideLoadingSkeletons();
           
           // Set up delete functionality with modal
-          setupDeleteFunctionality();
+          const modal = document.getElementById('delete-modal');
+          const cancelButton = document.getElementById('cancel-delete');
+          const confirmButton = document.getElementById('confirm-delete');
+          let currentItineraryId = null;
+          
+          // Close modal when cancel is clicked
+          cancelButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+            currentItineraryId = null;
+          });
+          
+          // Handle clicking outside modal to close
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.classList.remove('active');
+              currentItineraryId = null;
+            }
+          });
+          
+          // Set up delete buttons to show modal
+          document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              currentItineraryId = e.currentTarget.dataset.id;
+              modal.classList.add('active');
+            });
+          });
+          
+          // Handle confirm delete action
+          confirmButton.addEventListener('click', async () => {
+            if (!currentItineraryId) return;
+            
+            try {
+              const token = await user.getIdToken();
+              
+              const response = await fetch(`${API_BASE_URL}/api/itineraries/${currentItineraryId}`, {
+                method: 'DELETE',
+                headers: {
+                  'Authorization': `Bearer ${token}`
+                }
+              });
+              
+              if (!response.ok) throw new Error('Failed to delete itinerary');
+              
+              // Find and remove the card from the DOM
+              const deleteButton = document.querySelector(`.delete-btn[data-id="${currentItineraryId}"]`);
+              const card = deleteButton.closest('.itinerary-card');
+              card.classList.add('removing');
+              
+              setTimeout(() => {
+                card.remove();
+                
+                // Check if there are any itineraries left
+                if (container.children.length === 0) {
+                  document.getElementById('no-itineraries').classList.remove('hidden');
+                  container.classList.add('hidden');
+                }
+              }, 300);
+              
+              // Hide the modal
+              modal.classList.remove('active');
+              currentItineraryId = null;
+              
+            } catch (error) {
+              console.error('Error deleting itinerary:', error);
+              alert('Failed to delete itinerary. Please try again.');
+              modal.classList.remove('active');
+            }
+          });
         }
       } catch (error) {
         console.error('Error fetching itineraries:', error);
@@ -1185,105 +1019,6 @@
           window.location.reload();
         });
       }
-    }
-    
-    // Set up delete functionality
-    function setupDeleteFunctionality() {
-      const modal = document.getElementById('delete-modal');
-      const cancelButton = document.getElementById('cancel-delete');
-      const confirmButton = document.getElementById('confirm-delete');
-      let currentItemId = null;
-      let currentItemType = null;
-      
-      // Close modal when cancel is clicked
-      cancelButton.addEventListener('click', () => {
-        modal.classList.remove('active');
-        currentItemId = null;
-        currentItemType = null;
-      });
-      
-      // Handle clicking outside modal to close
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.remove('active');
-          currentItemId = null;
-          currentItemType = null;
-        }
-      });
-      
-      // Set up delete buttons to show modal
-      document.querySelectorAll('.delete-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          currentItemId = e.currentTarget.dataset.id;
-          currentItemType = e.currentTarget.dataset.type || 'itinerary';
-          
-          // Update modal text based on type
-          const typeText = currentItemType === 'itinerary' ? 'itinerary' : 
-                          currentItemType === 'gear-list' ? 'gear list' : 
-                          'info guide';
-          document.getElementById('delete-item-type').textContent = typeText;
-          
-          modal.classList.add('active');
-        });
-      });
-      
-      // Handle confirm delete action
-      confirmButton.addEventListener('click', async () => {
-        if (!currentItemId || !currentUser) return;
-        
-        try {
-          const token = await currentUser.getIdToken();
-          
-          // For now, only handle itineraries
-          // TODO: Add API endpoints for gear lists and info guides
-          if (currentItemType === 'itinerary') {
-            const response = await fetch(`${API_BASE_URL}/api/itineraries/${currentItemId}`, {
-              method: 'DELETE',
-              headers: {
-                'Authorization': `Bearer ${token}`
-              }
-            });
-            
-            if (!response.ok) throw new Error('Failed to delete itinerary');
-          }
-          
-          // Find and remove the card from the DOM
-          const deleteButton = document.querySelector(`.delete-btn[data-id="${currentItemId}"]`);
-          const card = deleteButton.closest(`.${currentItemType === 'itinerary' ? 'itinerary' : currentItemType}-card`);
-          card.classList.add('removing');
-          
-          setTimeout(() => {
-            card.remove();
-            
-            // Update count
-            if (currentItemType === 'itinerary') {
-              itemCounts.itineraries--;
-            } else if (currentItemType === 'gear-list') {
-              itemCounts.gearLists--;
-            } else if (currentItemType === 'info-guide') {
-              itemCounts.infoGuides--;
-            }
-            updateItemCounts();
-            
-            // Check if there are any items left in current tab
-            const container = document.getElementById(`${currentTab}-container`);
-            if (container && container.children.length === 0) {
-              document.getElementById(`no-${currentTab}`).classList.remove('hidden');
-              container.classList.add('hidden');
-            }
-          }, 300);
-          
-          // Hide the modal
-          modal.classList.remove('active');
-          currentItemId = null;
-          currentItemType = null;
-          
-        } catch (error) {
-          console.error('Error deleting item:', error);
-          alert('Failed to delete item. Please try again.');
-          modal.classList.remove('active');
-        }
-      });
     }
   </script>
 

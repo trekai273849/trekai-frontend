@@ -1,7 +1,9 @@
-// js/pages/customize.js - Updated for Quiz Interface with Location Fixes
+// js/pages/customize.js - Updated for Quiz Interface with Location Fixes and Enhanced Packing Section
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-import { preprocessRawText, extractSection, processSubsections } from '../utils/itinerary.js';
+import { preprocessRawText, extractSection, processSubsections, extractDays } from '../utils/itinerary.js';
+import { AdaptivePackingListGenerator } from '../services/packingListService.js';
+// import { RouteMapManager } from '../components/routeMap.js'; // Commented out for now
 
 // Firebase configuration
 const firebaseConfig = {
@@ -32,6 +34,187 @@ document.addEventListener('DOMContentLoaded', () => {
   let cachedInsights = '';
   let cachedPracticalInfo = '';
   let rawItineraryText = '';
+  let parsedDays = []; // Added to store parsed days globally
+
+  // Function to map quiz data to packing service format
+  function mapQuizDataToPackingInputs(quizData) {
+    // Map trek type and length to trip style with better logic
+    const getTripStyle = () => {
+      if (quizData.trekType === 'day-hike') return 'day';
+      
+      // Parse trek length properly
+      const lengthMap = {
+        '1-3': 'camping-short',
+        '4-7': quizData.accommodation === 'huts' ? 'hut-trek' : 'camping-short',
+        '8-14': 'expedition',
+        '15+': 'expedition'
+      };
+      
+      return lengthMap[quizData.trekLength] || 'camping-short';
+    };
+    
+    // Enhanced terrain mapping based on location
+    const getTerrain = () => {
+      const location = (quizData.specificLocation || quizData.location || '').toLowerCase();
+      
+      // More comprehensive location mapping
+      const terrainMappings = {
+        alpine: ['alps', 'alpine', 'mountain', 'himalaya', 'andes', 'rockies', 'pyrenees'],
+        desert: ['desert', 'sahara', 'gobi', 'atacama', 'mojave'],
+        coastal: ['coast', 'beach', 'sea', 'ocean', 'cliff'],
+        jungle: ['jungle', 'amazon', 'tropical', 'rainforest', 'borneo'],
+        glacier: ['glacier', 'iceland', 'patagonia', 'arctic', 'snow'],
+        forest: ['forest', 'wood', 'trail', 'appalachian', 'black forest']
+      };
+      
+      for (const [terrain, keywords] of Object.entries(terrainMappings)) {
+        if (keywords.some(keyword => location.includes(keyword))) {
+          return terrain;
+        }
+      }
+      
+      // Use interests as fallback
+      if (quizData.interests?.includes('forests')) return 'forest';
+      if (quizData.interests?.includes('lakes')) return 'alpine'; // Lakes often in alpine areas
+      
+      return 'forest'; // default
+    };
+    
+    // More nuanced weather mapping based on season and location
+    const getWeather = () => {
+      const location = (quizData.specificLocation || quizData.location || '').toLowerCase();
+      
+      // Check for specific conditions
+      if (location.includes('monsoon') || (quizData.season === 'spring' && location.includes('asia'))) {
+        return 'rainy';
+      }
+      
+      if (location.includes('arctic') || location.includes('winter')) {
+        return 'snow';
+      }
+      
+      // Standard season mapping
+      const seasonMap = {
+        'summer': 'sunny-warm',
+        'winter': 'snow',
+        'autumn': 'sunny-cold',
+        'fall': 'sunny-cold',
+        'spring': 'rainy'
+      };
+      
+      // Adjust for tropical locations
+      if (location.includes('tropical') || location.includes('equator')) {
+        return quizData.season === 'winter' ? 'rainy' : 'sunny-warm';
+      }
+      
+      return seasonMap[quizData.season] || 'sunny-warm';
+    };
+    
+    // Comprehensive special needs mapping
+    const getSpecialNeeds = () => {
+      const needs = [];
+      
+      // Map interests to special needs
+      if (quizData.interests?.includes('photography')) {
+        needs.push('photography');
+      }
+      
+      if (quizData.interests?.includes('wildlife')) {
+        needs.push('remote-area'); // Wildlife viewing often in remote areas
+      }
+      
+      // Map difficulty to technical needs
+      if (quizData.difficulty === 'challenging') {
+        needs.push('scrambling');
+      }
+      
+      // Map accommodation to cooking needs
+      if (quizData.accommodation === 'camping' || quizData.accommodation === 'mixed') {
+        needs.push('self-cooking');
+      }
+      
+      // Check location for river crossings
+      const location = (quizData.specificLocation || quizData.location || '').toLowerCase();
+      if (location.includes('river') || location.includes('stream') || location.includes('ford')) {
+        needs.push('river-crossing');
+      }
+      
+      // Check for water scarcity in deserts
+      if (getTerrain() === 'desert') {
+        needs.push('water-scarce');
+      }
+      
+      return needs;
+    };
+    
+    // Create advanced inputs with more detail from quiz data
+    const getAdvancedInputs = () => {
+      const advanced = {
+        temperature: { specified: false },
+        elevation: { specified: false },
+        physical: { 
+          dailyDistance: quizData.difficulty === 'easy' ? 'easy' : 
+                         quizData.difficulty === 'challenging' ? 'challenging' : 'moderate',
+          specified: true 
+        },
+        logistics: { 
+          waterSources: getTerrain() === 'desert' ? 'scarce' : 'regular',
+          specified: getTerrain() === 'desert'
+        },
+        accommodation: {
+          types: [],
+          specified: false
+        },
+        activities: {
+          photography: quizData.interests?.includes('photography') || false,
+          wildlife: quizData.interests?.includes('wildlife') || false,
+          swimming: quizData.interests?.includes('lakes') || false,
+          stargazing: quizData.interests?.includes('solitude') || false,
+          specified: quizData.interests?.length > 0
+        },
+        group: { specified: false },
+        preferences: { 
+          safety: quizData.difficulty === 'challenging',
+          comfort: quizData.accommodation === 'hotels',
+          specified: quizData.difficulty === 'challenging' || quizData.accommodation === 'hotels'
+        },
+        context: quizData.details || ''
+      };
+      
+      // Map accommodation types
+      if (quizData.accommodation) {
+        const accommodationMap = {
+          'camping': ['tent'],
+          'huts': ['hut'],
+          'mixed': ['tent', 'hut'],
+          'hotels': ['hotel']
+        };
+        advanced.accommodation.types = accommodationMap[quizData.accommodation] || [];
+        advanced.accommodation.specified = advanced.accommodation.types.length > 0;
+      }
+      
+      return advanced;
+    };
+    
+    // Basic inputs
+    const basicInputs = {
+      tripStyle: getTripStyle(),
+      terrain: getTerrain(),
+      weather: getWeather(),
+      specialNeeds: getSpecialNeeds()
+    };
+    
+    // Advanced inputs
+    const advancedInputs = getAdvancedInputs();
+    
+    // Log the mapping for debugging
+    console.log('Quiz Data to Packing Service Mapping:', {
+      original: quizData,
+      mapped: { basicInputs, advancedInputs }
+    });
+    
+    return { basicInputs, advancedInputs };
+  }
 
   // Function to get location-specific tips
   function getLocationTip(location) {
@@ -142,7 +325,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Make generateItinerary available globally for the quiz - WITH LOCATION FIXES
   window.generateItineraryFromQuiz = async function(quizData) {
+    console.log('1. Starting generateItineraryFromQuiz');
     currentQuizData = quizData; // Store for later use
+    
+    // Generate packing list using the service
+    console.log('2. Generating packing list');
+    const { basicInputs, advancedInputs } = mapQuizDataToPackingInputs(quizData);
+    const packingGenerator = new AdaptivePackingListGenerator(basicInputs, advancedInputs);
+    const packingData = packingGenerator.generate();
+    
+    // Store packing data for later use
+    window.generatedPackingList = packingData;
+    console.log('3. Packing list generated:', packingData);
     
     // CRITICAL FIX: Use specificLocation if available
     let location = quizData.specificLocation || quizData.location;
@@ -151,6 +345,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     let duration = quizData.trekType === 'day-hike' ? 'day hike' : `${quizData.trekLength} day trek`;
+    
+    console.log('4. Location and duration:', { location, duration });
     
     // Build comprehensive prompt with specific location instructions
     let prompt = `Create a ${duration} itinerary specifically for ${location}. 
@@ -193,6 +389,7 @@ Preferences:
 
     const outputDiv = document.getElementById('itinerary-cards');
     
+    console.log('5. Showing loading screen');
     // Show enhanced loading with the specific location
     showProgressiveLoading(outputDiv, location);
 
@@ -201,11 +398,24 @@ Preferences:
       let data = null;
       
       try {
+        console.log('6. Starting API call to:', 'https://trekai-api.onrender.com/api/finalize');
+        console.log('7. API payload:', {
+          location: location,
+          filters: {
+            difficulty: quizData.difficulty,
+            accommodation: quizData.accommodation || 'Not applicable',
+            technical: 'None',
+            altitude: "2000–3000m"
+          },
+          comments: prompt,
+          title: `${location} ${duration}`
+        });
+        
         const response = await fetch('https://trekai-api.onrender.com/api/finalize', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            location: location, // Use the specific location
+            location: location,
             filters: {
               difficulty: quizData.difficulty,
               accommodation: quizData.accommodation || 'Not applicable',
@@ -217,11 +427,14 @@ Preferences:
           })
         });
 
+        console.log('8. API response received. Status:', response.status);
+
         if (!response.ok) {
           console.warn(`Server returned status ${response.status}. Using mock data instead.`);
           useMockData = true;
         } else {
           data = await response.json();
+          console.log('9. API data parsed:', data);
           
           if (!data || !data.reply) {
             console.warn('API returned empty response. Using mock data instead.');
@@ -229,11 +442,13 @@ Preferences:
           }
         }
       } catch (apiError) {
-        console.warn('API request failed:', apiError);
+        console.error('10. API request failed:', apiError);
         useMockData = true;
       }
       
-      // Mock data fallback based on quiz selections
+      // Rest of your existing code for mock data...
+      console.log('11. Using mock data?', useMockData);
+      
       if (useMockData) {
         console.log("Using mock data for development");
         await new Promise(resolve => setTimeout(resolve, 2000));
@@ -296,8 +511,20 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
         data = { reply: mockItinerary };
       }
       
+      console.log('12. Clearing loading intervals');
       clearLoadingIntervals(outputDiv);
       
+      // Also hide the professional loading overlay
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      if (loadingOverlay) {
+        console.log('13. Hiding loading overlay');
+        loadingOverlay.classList.remove('active');
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 600);
+      }
+      
+      console.log('14. Processing itinerary text');
       rawItineraryText = data.reply;
       const preprocessedText = preprocessRawText(rawItineraryText);
 
@@ -306,16 +533,18 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       cachedInsights = extractSection(preprocessedText, 'Local Insights');
       cachedPracticalInfo = extractSection(preprocessedText, 'Practical Information');
 
+      console.log('15. Showing results');
       // Show results after a brief delay
       setTimeout(() => {
         outputDiv.classList.add('show');
         processAndRenderEnhancedItinerary(preprocessedText);
+        console.log('16. Rendering complete');
       }, 500);
 
     } catch (error) {
+      console.error('17. Error in main try block:', error);
       clearLoadingIntervals(outputDiv);
       outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Our site is receiving heavy traffic right now – try again in one minute.</p>';
-      console.error('Error generating itinerary:', error);
     }
   };
 
@@ -434,6 +663,220 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     return html;
   }
 
+  // Helper function to render packing categories with event delegation
+  function renderPackingCategories(categories) {
+    const categoryInfo = {
+      clothing: { icon: '👕', name: 'Clothing', color: '#EFF6FF' },
+      footwear: { icon: '🥾', name: 'Footwear', color: '#FFFBEB' },
+      camping: { icon: '🏕️', name: 'Camping Gear', color: '#F0FDF4' },
+      navigation: { icon: '🧭', name: 'Navigation', color: '#FAF5FF' },
+      safety: { icon: '⛑️', name: 'Safety & First Aid', color: '#FEF2F2' },
+      personal: { icon: '🧴', name: 'Personal Care', color: '#EEF2FF' },
+      food: { icon: '🍲', name: 'Food & Water', color: '#FFF7ED' },
+      optional: { icon: '✨', name: 'Optional', color: '#F9FAFB' }
+    };
+    
+    let html = '';
+    let totalItems = 0;
+    
+    Object.entries(categories).forEach(([catKey, items]) => {
+      if (items.length === 0) return;
+      
+      const catInfo = categoryInfo[catKey];
+      
+      html += `
+        <div style="border: 2px solid #E5E7EB; border-radius: 12px; padding: 20px; background: ${catInfo.color};">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-dark);">
+            <span style="font-size: 24px;">${catInfo.icon}</span>
+            <span>${catInfo.name}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+      `;
+      
+      items.forEach((item, index) => {
+        const itemId = `pack-${catKey}-${index}`;
+        const quantity = item.quantity ? ` (${item.quantity})` : '';
+        const notes = item.notes ? `<div style="font-size: 12px; color: #6b7280; margin-left: 30px; margin-top: 4px;">${item.notes}</div>` : '';
+        totalItems++;
+        
+        html += `
+          <label style="display: flex; align-items: flex-start; background: white; padding: 12px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;" 
+                 data-label-id="${itemId}">
+            <input type="checkbox" id="${itemId}" data-item="${item.name}" 
+                   style="width: 18px; height: 18px; margin-right: 12px; margin-top: 2px; cursor: pointer;"
+                   class="packing-checkbox">
+            <div style="flex: 1;">
+              <span class="packing-item-text" style="color: var(--text-dark); transition: all 0.2s ease;">
+                ${item.name}${quantity}
+              </span>
+              ${notes}
+            </div>
+          </label>
+        `;
+      });
+      
+      html += `
+          </div>
+        </div>
+      `;
+    });
+    
+    // Update the total items count
+    window.packingListState = window.packingListState || {};
+    window.packingListState.totalItems = totalItems;
+    
+    return html;
+  }
+
+  // Initialize packing list event listeners
+  function initializePackingListeners() {
+    const packingContainer = document.getElementById('packing-categories');
+    if (!packingContainer) return;
+    
+    // Use event delegation for better reliability
+    packingContainer.addEventListener('change', function(e) {
+      if (e.target && e.target.classList.contains('packing-checkbox')) {
+        window.updatePackingProgress(e.target);
+      }
+    });
+    
+    // Add hover effects
+    packingContainer.addEventListener('mouseover', function(e) {
+      const label = e.target.closest('label');
+      if (label && label.dataset.labelId) {
+        label.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+      }
+    });
+    
+    packingContainer.addEventListener('mouseout', function(e) {
+      const label = e.target.closest('label');
+      if (label && label.dataset.labelId) {
+        label.style.boxShadow = 'none';
+      }
+    });
+    
+    // Initialize progress
+    if (window.updatePackingProgress) {
+      const progressElement = document.getElementById('packing-progress');
+      const progressBarElement = document.getElementById('packing-progress-bar');
+      if (progressElement) progressElement.textContent = '0%';
+      if (progressBarElement) progressBarElement.style.width = '0%';
+    }
+  }
+
+  // Update packing progress
+  window.updatePackingProgress = function(checkbox) {
+    // Add defensive check
+    if (!checkbox || !checkbox.dataset) {
+      console.error('Invalid checkbox element passed to updatePackingProgress');
+      return;
+    }
+    
+    const item = checkbox.dataset.item;
+    
+    if (checkbox.checked) {
+      window.packingListState.checkedItems.add(item);
+      // Find the text element more safely
+      const labelElement = checkbox.closest('label');
+      if (labelElement) {
+        const textElement = labelElement.querySelector('.packing-item-text');
+        if (textElement) {
+          textElement.style.textDecoration = 'line-through';
+          textElement.style.opacity = '0.6';
+        }
+      }
+    } else {
+      window.packingListState.checkedItems.delete(item);
+      // Find the text element more safely
+      const labelElement = checkbox.closest('label');
+      if (labelElement) {
+        const textElement = labelElement.querySelector('.packing-item-text');
+        if (textElement) {
+          textElement.style.textDecoration = 'none';
+          textElement.style.opacity = '1';
+        }
+      }
+    }
+    
+    // Only update progress if packingListState exists
+    if (window.packingListState && window.packingListState.totalItems > 0) {
+      const progress = Math.round((window.packingListState.checkedItems.size / window.packingListState.totalItems) * 100);
+      const progressElement = document.getElementById('packing-progress');
+      const progressBarElement = document.getElementById('packing-progress-bar');
+      
+      if (progressElement) progressElement.textContent = `${progress}%`;
+      if (progressBarElement) progressBarElement.style.width = `${progress}%`;
+    }
+  };
+
+  // Reset packing checklist
+  window.resetPackingList = function() {
+    document.querySelectorAll('#packing-categories input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+      const labelElement = checkbox.closest('label');
+      if (labelElement) {
+        const textElement = labelElement.querySelector('.packing-item-text');
+        if (textElement) {
+          textElement.style.textDecoration = 'none';
+          textElement.style.opacity = '1';
+        }
+      }
+    });
+    
+    window.packingListState.checkedItems.clear();
+    document.getElementById('packing-progress').textContent = '0%';
+    document.getElementById('packing-progress-bar').style.width = '0%';
+  };
+
+  // Copy packing list to clipboard
+  window.copyPackingList = function() {
+    let listText = `PACKING LIST\n${'='.repeat(50)}\n`;
+    listText += `Trek: ${currentQuizData?.specificLocation || currentQuizData?.location || 'Trek'}\n`;
+    listText += `Duration: ${currentQuizData?.trekLength || 'Multi-day'}\n`;
+    listText += `Season: ${currentQuizData?.season || 'All season'}\n`;
+    listText += `Difficulty: ${currentQuizData?.difficulty || 'Moderate'}\n`;
+    listText += `${'='.repeat(50)}\n\n`;
+    
+    Object.entries(window.packingListState.categories).forEach(([catKey, items]) => {
+      if (items.length > 0) {
+        const categoryInfo = {
+          clothing: 'CLOTHING',
+          footwear: 'FOOTWEAR',
+          camping: 'CAMPING GEAR',
+          navigation: 'NAVIGATION',
+          safety: 'SAFETY & FIRST AID',
+          personal: 'PERSONAL CARE',
+          food: 'FOOD & WATER',
+          optional: 'OPTIONAL ITEMS'
+        };
+        
+        listText += `${categoryInfo[catKey] || catKey.toUpperCase()}:\n`;
+        items.forEach(item => {
+          const isChecked = window.packingListState.checkedItems.has(item.name);
+          const quantity = item.quantity ? ` (${item.quantity})` : '';
+          listText += `${isChecked ? '☑' : '☐'} ${item.name}${quantity}\n`;
+          if (item.notes) {
+            listText += `   Note: ${item.notes}\n`;
+          }
+        });
+        listText += '\n';
+      }
+    });
+    
+    navigator.clipboard.writeText(listText).then(() => {
+      // Show a temporary success message
+      const button = event.target.closest('button');
+      const originalHTML = button.innerHTML;
+      button.innerHTML = '<i class="fas fa-check" style="margin-right: 8px;"></i>Copied!';
+      button.style.background = 'var(--success)';
+      
+      setTimeout(() => {
+        button.innerHTML = originalHTML;
+        button.style.background = 'var(--primary)';
+      }, 2000);
+    });
+  };
+
   // Enhanced render function with grouped layout
   function processAndRenderEnhancedItinerary(text) {
     const container = document.getElementById('itinerary-cards');
@@ -458,12 +901,13 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     const navTabs = document.createElement('div');
     navTabs.className = 'results-nav-tabs';
     navTabs.innerHTML = `
-      <div class="results-nav-container">
-        <button class="results-nav-tab active" data-section="itinerary">Itinerary</button>
-        <button class="results-nav-tab" data-section="packing">What to Pack</button>
-        <button class="results-nav-tab" data-section="insights">Local Insights</button>
-        <button class="results-nav-tab" data-section="practical">Practical Info</button>
-      </div>
+       <div class="results-nav-container">
+    <button class="results-nav-tab active" data-section="itinerary">Itinerary</button>
+    <button class="results-nav-tab" data-section="map">Route Map</button>
+    <button class="results-nav-tab" data-section="packing">What to Pack</button>
+    <button class="results-nav-tab" data-section="insights">Local Insights</button>
+    <button class="results-nav-tab" data-section="practical">Practical Info</button>
+  </div>
     `;
     resultsWrapper.appendChild(navTabs);
 
@@ -501,6 +945,10 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     
     let dayMatch;
     let dayCount = 0;
+
+    // Extract and store days globally
+    const days = extractDays(text);
+    parsedDays = days;
 
     while ((dayMatch = dayRegex.exec(text)) !== null) {
       dayCount++;
@@ -561,10 +1009,94 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     itinerarySection.appendChild(timeline);
     contentSections.appendChild(itinerarySection);
 
-    // PACKING SECTION
-    if (cachedPackingList) {
-      const packingSection = createEnhancedSection('packing-section', 'Packing List', '🎒', cachedPackingList);
+    // MAP SECTION - Updated with placeholder image
+    const mapSection = document.createElement('div');
+    mapSection.className = 'content-section-result';
+    mapSection.id = 'map-section';
+
+    const mapCard = document.createElement('div');
+    mapCard.className = 'info-card';
+    mapCard.innerHTML = `
+      <h3><span class="info-card-icon">🗺️</span> Route Map</h3>
+      <div id="route-map-container" style="margin-top: 20px; text-align: center;">
+        <img src="images/illustrations/maps-coming-soon.png" 
+             alt="Maps coming soon" 
+             style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 20px; color: var(--text-secondary); font-size: 0.95em; line-height: 1.6;">
+          Interactive route maps are coming soon! We're working on bringing you detailed trail maps with waypoints, 
+          elevation profiles, and GPS coordinates for your adventures.
+        </p>
+      </div>
+    `;
+
+    mapSection.appendChild(mapCard);
+    contentSections.appendChild(mapSection);
+
+    // PACKING SECTION - Enhanced with generated checklist
+    if (window.generatedPackingList) {
+      const packingSection = document.createElement('div');
+      packingSection.className = 'content-section-result';
+      packingSection.id = 'packing-section';
+
+      const packingCard = document.createElement('div');
+      packingCard.className = 'info-card';
+      
+      const { items, metadata } = window.generatedPackingList;
+      
+      packingCard.innerHTML = `
+        <h3><span class="info-card-icon">🎒</span> Packing List</h3>
+        
+        <!-- Progress Section -->
+        <div style="background: linear-gradient(135deg, #D1FAE5 0%, #DBEAFE 100%); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-weight: 600; color: var(--text-dark);">Packing Progress</span>
+            <span style="font-weight: 700; color: var(--primary);" id="packing-progress">0%</span>
+          </div>
+          <div style="width: 100%; height: 12px; background: white; border-radius: 9999px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);">
+            <div id="packing-progress-bar" style="height: 100%; background: linear-gradient(to right, var(--primary), var(--primary-light)); border-radius: 9999px; transition: width 0.5s ease-out; width: 0%;"></div>
+          </div>
+        </div>
+        
+        <!-- Trip Summary -->
+        <div style="background: #f8f9fa; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+          <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">
+            <strong>Trip:</strong> ${currentQuizData.trekLength || 'Multi-day'} ${currentQuizData.trekType === 'day-hike' ? 'day hike' : 'trek'}<br>
+            <strong>Season:</strong> ${currentQuizData.season || 'All season'}<br>
+            <strong>Difficulty:</strong> ${currentQuizData.difficulty || 'Moderate'}<br>
+            ${metadata.totalItems} items • ${metadata.customizationLevel}
+          </p>
+        </div>
+        
+        <!-- Packing Categories -->
+        <div id="packing-categories" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px;">
+          ${renderPackingCategories(items)}
+        </div>
+        
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap;">
+          <button onclick="resetPackingList()" style="padding: 12px 24px; border-radius: 8px; border: 2px solid var(--primary); background: white; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+            <i class="fas fa-redo" style="margin-right: 8px;"></i>Reset Checklist
+          </button>
+          <button onclick="copyPackingList()" style="padding: 12px 24px; border-radius: 8px; border: none; background: var(--primary); color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+            <i class="fas fa-copy" style="margin-right: 8px;"></i>Copy List
+          </button>
+        </div>
+      `;
+      
+      packingSection.appendChild(packingCard);
       contentSections.appendChild(packingSection);
+      
+      // Initialize packing list state
+      window.packingListState = {
+        totalItems: metadata.totalItems,
+        checkedItems: new Set(),
+        categories: items
+      };
+      
+      // Add checkbox listeners after DOM is ready
+      setTimeout(() => {
+        initializePackingListeners();
+      }, 100);
     }
 
     // INSIGHTS SECTION
@@ -751,7 +1283,7 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
     `;
   }
 
-  // Setup navigation for results tabs
+  // Setup navigation for results tabs - Simplified version
   function setupResultsNavigation() {
     const tabs = document.querySelectorAll('.results-nav-tab');
     const sections = document.querySelectorAll('.content-section-result');
@@ -792,6 +1324,7 @@ Begin your adventure in ${location} with gradual elevation gain through beautifu
       setTimeout(updateScrollIndicators, 100);
     }
 
+    // Simplified tab click handler
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));

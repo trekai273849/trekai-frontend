@@ -13,6 +13,7 @@
   <title>Your Custom Trek Itinerary - Smart Trails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="styles/main.css" />
   
   <style>
@@ -25,14 +26,13 @@
       --orange: #F39C12;
       --text-dark: #2C3E50;
       --text-light: #5D6D7E;
+      --text-secondary: #717171;
       --bg-light: #F8F9FA;
       --white: #FFFFFF;
       --shadow: rgba(0, 0, 0, 0.1);
       --success: #27AE60;
       --warning: #E74C3C;
       --info: #3498DB;
-      --text-primary: #222222;
-      --text-secondary: #717171;
       --border: #DDDDDD;
       --background-secondary: #F7F7F7;
       --radius: 12px;
@@ -40,6 +40,17 @@
       --shadow-sm: rgba(0, 0, 0, 0.04) 0px 6px 16px;
       --shadow-md: rgba(0, 0, 0, 0.12) 0px 6px 16px;
       --shadow-lg: rgba(0, 0, 0, 0.12) 0px 6px 20px;
+    }
+
+    @media (max-width: 480px) {
+      .loading-progress::before,
+      .progress-line {
+        display: none;
+      }
+
+      .progress-step {
+        flex: 0 0 45%;
+      }
     }
 
     body {
@@ -353,13 +364,66 @@
       transform: translateY(0);
     }
 
-    /* Navigation Tabs for Results */
+    /* Results wrapper */
+    .results-wrapper {
+      margin-top: 20px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      margin-top: 50px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1em;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+
+    /* Navigation Tabs with scroll indicators */
     .results-nav-tabs {
       background: white;
       box-shadow: 0 2px 10px var(--shadow);
       margin-bottom: 40px;
       border-radius: 16px;
+      position: relative;
       overflow: hidden;
+    }
+
+    /* Gradient indicators for scrollable tabs */
+    .results-nav-tabs::before,
+    .results-nav-tabs::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      pointer-events: none;
+      z-index: 2;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .results-nav-tabs::before {
+      left: 0;
+      background: linear-gradient(to right, white 0%, transparent 100%);
+    }
+
+    .results-nav-tabs::after {
+      right: 0;
+      background: linear-gradient(to left, white 0%, transparent 100%);
+    }
+
+    /* Show indicators based on scroll position */
+    .results-nav-tabs.has-scroll.scroll-start::after,
+    .results-nav-tabs.has-scroll.scroll-middle::before,
+    .results-nav-tabs.has-scroll.scroll-middle::after,
+    .results-nav-tabs.has-scroll.scroll-end::before {
+      opacity: 1;
     }
 
     .results-nav-container {
@@ -367,6 +431,7 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
+      scroll-behavior: smooth;
     }
 
     .results-nav-container::-webkit-scrollbar {
@@ -384,6 +449,7 @@
       white-space: nowrap;
       transition: all 0.3s ease;
       position: relative;
+      flex-shrink: 0;
     }
 
     .results-nav-tab:hover {
@@ -404,6 +470,42 @@
       right: 0;
       height: 3px;
       background: var(--primary);
+    }
+
+    /* Content Sections */
+    .content-sections {
+      margin-top: 20px;
+    }
+
+    .content-section-result {
+      display: none;
+    }
+
+    .content-section-result.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    /* Info Cards */
+    .info-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .info-card h3 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .info-card-icon {
+      font-size: 1.5em;
     }
 
     /* Enhanced Itinerary Timeline */
@@ -439,6 +541,20 @@
       box-shadow: 0 6px 30px var(--shadow);
     }
 
+    .itinerary-day-card::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 35px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 3px solid var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(45, 80, 22, 0.1);
+      z-index: 1;
+    }
+
     .day-card-header {
       background: linear-gradient(135deg, #f8fafb 0%, #e8f0e5 100%);
       padding: 25px 30px;
@@ -463,12 +579,47 @@
       line-height: 1.3;
     }
 
-    /* Main Content Section */
+    .day-card-toggle {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .day-card-toggle:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .day-card-toggle svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+      color: var(--text-secondary);
+    }
+
+    .itinerary-day-card.collapsed .day-card-toggle svg {
+      transform: rotate(180deg);
+    }
+
+    .itinerary-day-card.collapsed .day-card-content {
+      display: none;
+    }
+
+    /* Day Card Content */
     .day-card-content {
       padding: 35px;
     }
 
-    /* Description Box */
     .day-description-box {
       background: #f0f7ff;
       border-left: 4px solid var(--info);
@@ -589,26 +740,13 @@
       margin: 0;
     }
 
-    /* Regular detail items */
-    .detail-item:not(.highlights):not(.tips) {
-      background: transparent;
-      border-radius: 0;
-      margin-bottom: 0;
-      border: none;
-      padding: 12px 0;
-    }
-
-    /* Special styling for highlights */
+    /* Special styling for highlights and tips */
     .detail-item.highlights {
       background: white;
       border: 1px solid #fcd34d;
       border-radius: 8px;
       padding: 16px;
       margin-bottom: 12px;
-    }
-
-    .detail-item.highlights .detail-header {
-      margin-bottom: 10px;
     }
 
     .detail-item.highlights .detail-content {
@@ -622,17 +760,12 @@
       color: #92400e;
     }
 
-    /* Special styling for tips */
     .detail-item.tips {
       background: white;
       border: 1px solid #86efac;
       border-radius: 8px;
       padding: 16px;
       margin-bottom: 12px;
-    }
-
-    .detail-item.tips .detail-header {
-      margin-bottom: 10px;
     }
 
     .detail-item.tips .detail-content {
@@ -646,110 +779,18 @@
       color: #166534;
     }
 
-    /* Special styling for difficulty color */
     .detail-item.difficulty .detail-content {
       font-weight: 600;
     }
 
-    /* Collapsible Day Cards */
-    .day-card-toggle {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-      background: white;
-      border: 2px solid #e5e7eb;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+    /* Packing list specific styles */
+    .packing-item-text {
+      flex: 1;
+      color: var(--text-dark);
       transition: all 0.2s ease;
     }
 
-    .day-card-toggle:hover {
-      border-color: var(--primary);
-      transform: scale(1.05);
-    }
-
-    .day-card-toggle svg {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.3s ease;
-      color: var(--text-secondary);
-    }
-
-    .itinerary-day-card.collapsed .day-card-toggle svg {
-      transform: rotate(180deg);
-    }
-
-    .itinerary-day-card.collapsed .day-card-content {
-      display: none;
-    }
-
-    /* Enhanced timeline dot */
-    .itinerary-day-card::before {
-      content: '';
-      position: absolute;
-      left: -30px;
-      top: 35px;
-      width: 20px;
-      height: 20px;
-      background: white;
-      border: 3px solid var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(45, 80, 22, 0.1);
-      z-index: 1;
-    }
-
-    /* Additional Sections Cards */
-    .info-card {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 4px 20px var(--shadow);
-      margin-bottom: 30px;
-    }
-
-    .info-card h3 {
-      font-size: 1.8em;
-      margin-bottom: 25px;
-      color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .info-card-icon {
-      font-size: 1.5em;
-    }
-
-    /* Section Headers */
-    .section-header {
-      font-size: 2.5em;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 15px;
-      margin-top: 50px;
-    }
-
-    .section-subtitle {
-      font-size: 1.1em;
-      color: var(--text-secondary);
-      margin-bottom: 40px;
-    }
-
-    /* Content Sections */
-    .content-section-result {
-      display: none;
-    }
-
-    .content-section-result.active {
-      display: block;
-      animation: fadeIn 0.5s ease-out;
-    }
-
+    /* Enhanced content */
     .enhanced-content {
       color: var(--text-secondary);
       line-height: 1.8;
@@ -802,6 +843,35 @@
       color: white;
     }
 
+    /* Loading styles */
+    .loading-card {
+      background: white;
+      border-radius: 16px;
+      padding: 60px 40px;
+      text-align: center;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .loading-spinner {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 30px;
+      border: 4px solid #f3f4f6;
+      border-top: 4px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     /* Modal styles */
     .modal-overlay {
       position: fixed;
@@ -843,12 +913,7 @@
       animation: iconBounce 0.6s ease-out 0.2s both;
       box-shadow: 0 8px 16px rgba(45, 80, 22, 0.3);
     }
-    
-    .welcome-icon {
-      background: linear-gradient(135deg, #4A7C28, #2D5016);
-      box-shadow: 0 8px 16px rgba(45, 80, 22, 0.3);
-    }
-    
+
     .auth-icon svg {
       width: 40px;
       height: 40px;
@@ -856,7 +921,7 @@
       stroke-width: 2;
       fill: white;
     }
-    
+
     .modal-title {
       font-size: 28px;
       font-weight: 700;
@@ -867,7 +932,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .modal-message {
       font-size: 16px;
       color: #6b7280;
@@ -875,7 +940,7 @@
       margin-bottom: 24px;
       line-height: 1.5;
     }
-    
+
     .auth-benefits {
       margin: 24px 0;
       text-align: left;
@@ -884,14 +949,14 @@
       border-radius: 12px;
       border-left: 4px solid #4A7C28;
     }
-    
+
     .auth-benefits h4 {
       font-size: 14px;
       font-weight: 600;
       color: #2D5016;
       margin-bottom: 12px;
     }
-    
+
     .benefit-item {
       display: flex;
       align-items: center;
@@ -899,7 +964,7 @@
       font-size: 14px;
       color: #2D5016;
     }
-    
+
     .benefit-item:before {
       content: "✓";
       color: #4A7C28;
@@ -907,7 +972,7 @@
       margin-right: 10px;
       font-size: 16px;
     }
-    
+
     .button-primary {
       background: linear-gradient(135deg, #4A7C28, #2D5016);
       color: white;
@@ -925,12 +990,12 @@
       margin-bottom: 12px;
       width: 100%;
     }
-    
+
     .button-primary:hover {
       transform: translateY(-1px);
       box-shadow: 0 6px 16px rgba(45, 80, 22, 0.4);
     }
-    
+
     .button-secondary {
       background: transparent;
       color: #2D5016;
@@ -946,20 +1011,20 @@
       display: inline-block;
       width: 100%;
     }
-    
+
     .button-secondary:hover {
       background: #4A7C28;
       color: white;
       transform: translateY(-1px);
     }
-    
+
     .button-group {
       display: flex;
       flex-direction: column;
       gap: 12px;
       margin-top: 32px;
     }
-    
+
     .close-button {
       position: absolute;
       top: 16px;
@@ -976,12 +1041,12 @@
       transition: all 0.2s ease;
       color: #6b7280;
     }
-    
+
     .close-button:hover {
       background: #e5e7eb;
       transform: scale(1.1);
     }
-    
+
     @keyframes iconBounce {
       0% {
         opacity: 0;
@@ -995,7 +1060,7 @@
         transform: scale(1);
       }
     }
-    
+
     @keyframes modalAppear {
       from {
         opacity: 0;
@@ -1006,12 +1071,7 @@
         transform: scale(1) translateY(0);
       }
     }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
+
     @keyframes fadeOut {
       from { opacity: 1; }
       to { opacity: 0; }
@@ -1121,17 +1181,6 @@
         font-size: 1.5em;
       }
     }
-
-    @media (max-width: 480px) {
-      .loading-progress::before,
-      .progress-line {
-        display: none;
-      }
-
-      .progress-step {
-        flex: 0 0 45%;
-      }
-    }
   </style>
 </head>
 <body>
@@ -1139,6 +1188,9 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJDWMQZV"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Include navbar -->
+  <div id="navbar-container"></div>
 
   <!-- Main Content Area -->
   <main class="main-content-area">
@@ -1222,7 +1274,7 @@
   <!-- Success Modal -->
   <div class="modal-overlay" id="itinerary-success-modal" style="display: none;">
     <div class="modal">
-      <button class="close-button" onclick="closeSuccessModal()" aria-label="Close">
+      <button class="close-button" onclick="window.showSuccessModal && window.closeSuccessModal()" aria-label="Close">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1242,7 +1294,7 @@
         <a href="my-itineraries.html" class="button button-primary">
           View My Adventures
         </a>
-        <button class="button button-secondary" onclick="closeSuccessModal()">
+        <button class="button button-secondary" onclick="window.closeSuccessModal && window.closeSuccessModal()">
           Plan Another Trek
         </button>
       </div>
@@ -1252,7 +1304,7 @@
   <!-- Authentication Required Modal -->
   <div class="modal-overlay" id="auth-required-modal" style="display: none;">
     <div class="modal">
-      <button class="close-button" onclick="closeAuthModal()" aria-label="Close">
+      <button class="close-button" onclick="window.closeAuthModal && window.closeAuthModal()" aria-label="Close">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1277,10 +1329,10 @@
       </div>
       
       <div class="button-group">
-        <button class="button-primary" onclick="redirectToSignUp()">
+        <button class="button-primary" onclick="window.location.href='sign-up.html'">
           🚀 Join Our Community
         </button>
-        <button class="button-secondary" onclick="redirectToSignIn()">
+        <button class="button-secondary" onclick="window.location.href='sign-up.html'">
           🏠 I Have an Account
         </button>
       </div>
@@ -1290,7 +1342,7 @@
   <!-- Welcome Back Modal -->
   <div class="modal-overlay" id="welcome-back-modal" style="display: none;">
     <div class="modal">
-      <button class="close-button" onclick="closeWelcomeModal()" aria-label="Close">
+      <button class="close-button" onclick="window.closeWelcomeModal && window.closeWelcomeModal()" aria-label="Close">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1311,7 +1363,7 @@
         <a href="my-itineraries.html" class="button-primary">
           🗺️ View My Adventures
         </a>
-        <button class="button-secondary" onclick="closeWelcomeModal()">
+        <button class="button-secondary" onclick="window.closeWelcomeModal && window.closeWelcomeModal()">
           🥾 Plan Another Trek
         </button>
       </div>
@@ -1327,105 +1379,10 @@
   <script src="js/components/navbar.js" type="module"></script>
   <script src="js/components/footer.js" type="module"></script>
   
-  <!-- Initialize Script -->
+  <!-- Modal Helper Functions -->
   <script>
-    // Loading animation functions
-    let stageInterval;
-    let factInterval;
-    let currentStage = 1;
-
-    const hikingFacts = [
-      "Did you know? The Appalachian Trail spans 2,190 miles across 14 states!",
-      "Fun fact: Mount Everest grows about 4 millimeters each year due to geological forces.",
-      "Hiking tip: The 'Leave No Trace' principles help preserve trails for future generations.",
-      "Did you know? The Inca Trail to Machu Picchu limits visitors to 500 per day to protect the path.",
-      "Trail wisdom: 'Cotton kills' - synthetic fabrics dry faster and keep you warmer when wet.",
-      "Fun fact: The Pacific Crest Trail crosses through 7 national parks and 25 national forests.",
-      "Did you know? Norway's 'allemannsretten' law gives everyone the right to roam freely in nature.",
-      "Hiking burns about 400-700 calories per hour depending on terrain and pack weight.",
-      "The longest hiking trail in the world is Canada's Trans Canada Trail at 24,000 km!",
-      "Did you know? Studies show that hiking can increase creative problem-solving by 50%.",
-      "Fun fact: The Swiss have over 65,000 km of marked hiking trails - that's 1.5x Earth's circumference!",
-      "Trail tip: Trekking poles can reduce stress on knees by up to 25% on descents."
-    ];
-
-    function startLoadingAnimation() {
-      currentStage = 1;
-      
-      // Update stages every 5 seconds (increased from 3)
-      stageInterval = setInterval(() => {
-        const currentStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
-        if (currentStageEl) {
-          currentStageEl.classList.remove('active');
-          currentStageEl.classList.add('completed');
-        }
-        
-        currentStage++;
-        if (currentStage <= 4) {
-          const nextStageEl = document.querySelector(`.progress-step[data-stage="${currentStage}"]`);
-          if (nextStageEl) {
-            nextStageEl.classList.add('active');
-          }
-        }
-      }, 5000);
-      
-      // Rotate facts every 6 seconds (increased from 4)
-      let factIndex = 0;
-      factInterval = setInterval(() => {
-        factIndex = (factIndex + 1) % hikingFacts.length;
-        const factElement = document.getElementById('hikingFact');
-        if (factElement) {
-          // Fade out
-          factElement.style.opacity = '0';
-          setTimeout(() => {
-            factElement.textContent = hikingFacts[factIndex];
-            // Fade in with new animation
-            factElement.style.animation = 'none';
-            setTimeout(() => {
-              factElement.style.animation = 'factFadeIn 0.6s ease forwards';
-              factElement.style.opacity = '1';
-            }, 10);
-          }, 300);
-        }
-      }, 6000);
-    }
-
-    function stopLoadingAnimation() {
-      clearInterval(stageInterval);
-      clearInterval(factInterval);
-      
-      // Reset stages
-      document.querySelectorAll('.progress-step').forEach(stage => {
-        stage.classList.remove('active', 'completed');
-      });
-      const firstStage = document.querySelector('.progress-step[data-stage="1"]');
-      if (firstStage) {
-        firstStage.classList.add('active');
-      }
-    }
-
-    // Smooth transition to itinerary
-    function transitionToItinerary() {
-      const overlay = document.getElementById('loadingOverlay');
-      
-      // Add fade-out class
-      overlay.classList.add('fade-out');
-      
-      // Wait for fade animation then hide
-      setTimeout(() => {
-        overlay.classList.remove('active');
-        overlay.classList.remove('fade-out');
-        
-        // Show itinerary with fade-in
-        const itineraryCards = document.getElementById('itinerary-cards');
-        if (itineraryCards) {
-          itineraryCards.classList.add('show');
-        }
-      }, 600);
-    }
-
-    // Modal functions
-    function closeSuccessModal() {
+    // Modal functions - make them globally available
+    window.closeSuccessModal = function() {
       const modal = document.getElementById('itinerary-success-modal');
       modal.style.animation = 'fadeOut 0.2s ease-out forwards';
       setTimeout(() => {
@@ -1434,7 +1391,7 @@
       }, 200);
     }
 
-    function closeAuthModal() {
+    window.closeAuthModal = function() {
       const modal = document.getElementById('auth-required-modal');
       modal.style.animation = 'fadeOut 0.2s ease-out forwards';
       setTimeout(() => {
@@ -1443,7 +1400,7 @@
       }, 200);
     }
 
-    function closeWelcomeModal() {
+    window.closeWelcomeModal = function() {
       const modal = document.getElementById('welcome-back-modal');
       modal.style.animation = 'fadeOut 0.2s ease-out forwards';
       setTimeout(() => {
@@ -1452,29 +1409,15 @@
       }, 200);
     }
 
-    function redirectToSignUp() {
-      window.location.href = 'sign-up.html';
-    }
-
-    function redirectToSignIn() {
-      window.location.href = 'sign-up.html';
-    }
-
-    // Toggle day card function
-    function toggleDayCard(button) {
-      const dayCard = button.closest('.itinerary-day-card');
-      dayCard.classList.toggle('collapsed');
-    }
-
     // Close modals when clicking outside
     document.addEventListener('click', function(e) {
       const successModal = document.getElementById('itinerary-success-modal');
       const authModal = document.getElementById('auth-required-modal');
       const welcomeModal = document.getElementById('welcome-back-modal');
       
-      if (e.target === successModal) closeSuccessModal();
-      if (e.target === authModal) closeAuthModal();
-      if (e.target === welcomeModal) closeWelcomeModal();
+      if (e.target === successModal) window.closeSuccessModal();
+      if (e.target === authModal) window.closeAuthModal();
+      if (e.target === welcomeModal) window.closeWelcomeModal();
     });
 
     // Close modals with Escape key
@@ -1484,17 +1427,14 @@
         const authModal = document.getElementById('auth-required-modal');
         const welcomeModal = document.getElementById('welcome-back-modal');
         
-        if (successModal.style.display === 'flex') closeSuccessModal();
-        if (authModal.style.display === 'flex') closeAuthModal();
-        if (welcomeModal.style.display === 'flex') closeWelcomeModal();
+        if (successModal.style.display === 'flex') window.closeSuccessModal();
+        if (authModal.style.display === 'flex') window.closeAuthModal();
+        if (welcomeModal.style.display === 'flex') window.closeWelcomeModal();
       }
     });
 
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', async () => {
-      // Start loading animation
-      startLoadingAnimation();
-      
       // Get quiz data from localStorage
       const quizDataStr = localStorage.getItem('quizData');
       
@@ -1523,12 +1463,8 @@
           if (window.generateItineraryFromQuiz) {
             console.log('Calling generateItineraryFromQuiz with data:', quizData);
             
-            // Generate the itinerary
+            // Generate the itinerary using the function from customize.js
             await window.generateItineraryFromQuiz(quizData);
-            
-            // Stop loading and transition
-            stopLoadingAnimation();
-            transitionToItinerary();
             
           } else {
             console.error('generateItineraryFromQuiz function not found');
@@ -1549,8 +1485,6 @@
                 ">Start Over</button>
               </div>
             `;
-            stopLoadingAnimation();
-            transitionToItinerary();
           }
         };
         
